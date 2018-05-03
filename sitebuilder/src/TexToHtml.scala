@@ -10,10 +10,11 @@ object TeXToHtml {
   val newCommReg = "(\\\\newcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
 
   val renewCommReg = "(\\\\renewcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
+  val wd = pwd / 'sitebuilder / "resources"
 
-  val preamble = read(pwd / 'sitebuilder / "resources" / "mypreamble_2017.tex")
+  val preamble = read(wd / "mypreamble_2017.tex")
 
-  val texFile = read(pwd / 'sitebuilder / "resources" / "stat-and-prob.tex")
+  val texFile = read(wd / "stat-and-prob.tex")
 
   val fullText = texFile.replace("\\input{mypreamble_2017}", preamble)
 
@@ -29,18 +30,34 @@ class TeXToHtml(header: String, text: String) {
 
   val defs = defReg.findAllMatchIn(header).toVector
 
-  val newCommands = newCommReg.findAllMatchIn(header).toVector ++ renewCommReg
+  val newCommands = newCommReg.findAllMatchIn(header).toVector
+    .filter((c) => !c.group(2).startsWith("\\para"))
+
+  val renewCommands = renewCommReg
+    .findAllMatchIn(header)
+    .toVector ++ renewCommReg
     .findAllMatchIn(header)
     .toVector
 
-  val defSubs = (defs ++ newCommands).map((m) =>
-    m.group(2) -> m.group(3).trim.drop(1).dropRight(1))
+  val allSubs: Vector[Regex.Match] =
+    defs ++ newCommands ++ renewCommands
+
+  val defSubs =
+    allSubs.map((m) => m.group(2) -> m.group(3).trim.drop(1).dropRight(1))
 
   lazy val defReplaced = defSubs.foldLeft[String](text) {
-    case (t, (x, y)) =>    // FIXME first character eaten up (the //// was attempted compensation)
-      new Regex(x.replace("\\", "\\\\") + "[^a-zA-Z0-9]")
-        .replaceAllIn(t, y.replace("\\", "\\\\"))
+    case (t, (x, y)) =>
+      new Regex(x.replace("\\", "\\\\") + "([^a-zA-Z0-9])")
+        .replaceAllIn(t, (m) => Regex.quoteReplacement(y + m.group(1)))
   }
+
+  lazy val newFile = header + """\begin{document}""" + defReplaced
+
+  def replace = write.over(wd / "repl.tex", newFile)
+}
+
+object NewTex extends App {
+  TeXToHtml.converter.replace
 }
 /*
 The cases for begin{_} :
