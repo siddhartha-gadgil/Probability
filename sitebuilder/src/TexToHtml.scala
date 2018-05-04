@@ -5,6 +5,50 @@ import ammonite.ops._
 import scala.util.matching._
 
 object TeXToHtml {
+  val top =
+    """
+<html>
+<head>
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+  <!-- mathjax config similar to math.stackexchange -->
+  <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+      </script>
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$']],
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+</head>
+<body>
+<div class="container">
+<p>&nbsp;</p>
+
+"""
+
+  val foot =
+    """
+</div>
+  </body>
+</body>
+</html>
+"""
+
+
   val defReg = "(\\\\def)(\\\\[a-zA-Z0-9]+)([^\n%]+)".r
 
   val newCommReg = "(\\\\newcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
@@ -31,7 +75,6 @@ class TeXToHtml(header: String, text: String) {
   val defs = defReg.findAllMatchIn(header).toVector
 
   val newCommands = newCommReg.findAllMatchIn(header).toVector
-    .filter((c) => !c.group(2).startsWith("\\para"))
 
   val renewCommands = renewCommReg
     .findAllMatchIn(header)
@@ -39,11 +82,11 @@ class TeXToHtml(header: String, text: String) {
     .findAllMatchIn(header)
     .toVector
 
-  val allSubs: Vector[Regex.Match] =
-    defs ++ newCommands ++ renewCommands
 
   val defSubs =
-    allSubs.map((m) => m.group(2) -> m.group(3).trim.drop(1).dropRight(1))
+    (defs.map((m) => m.group(2) -> m.group(3).trim.drop(1).dropRight(1)) ++
+      (newCommands ++ renewCommands).map((m) => m.group(2) -> m.group(3).trim.drop(2).dropRight(1))
+      ).filterNot((c) => Set("\\I", "\\matrices", "\\para", "\\parag").contains(c._1))
 
   lazy val defReplaced = defSubs.foldLeft[String](text) {
     case (t, (x, y)) =>
