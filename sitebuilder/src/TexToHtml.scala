@@ -64,9 +64,9 @@ object TeXToHtml {
 
   val Array(header, text) = fullText.split("\\\\begin\\{document\\}")
 
-  val begReg = """\\begin\{([^\}]+)\}\s""".r
+  val begReg = """\\begin\{([^\}]+)\}""".r
 
-  val endReg = """\\end\{([^\}]+)\}\s""".r
+  val endReg = """\\end\{([^\}]+)\}""".r
 
   val converter = new TeXToHtml(header, text)
 
@@ -87,16 +87,16 @@ object TeXToHtml {
   def maxOpt[B: Ordering](v: Vector[B]): Option[B] = if (v.isEmpty) None else Some(v.max)
 
 
-  val thmEnvs = Set(
-    "example",
-    "question",
-    "definition",
-    "remark",
-    "exercise",
-    "lemma",
-    "problem",
-    "proposition",
-    "theorem"
+  val thmEnvs = Map(
+    "example" -> "Example",
+    "question" -> "Question",
+    "definition" -> "Definition",
+    "remark" -> "Remark",
+    "exercise" -> "Exercise",
+    "lemma" -> "Lemma",
+    "problem" -> "Problem",
+    "proposition" -> "Proposition",
+    "theorem" -> "Theorem"
   )
 
   val mathEnvs = Set(
@@ -156,7 +156,7 @@ object TeXToHtml {
       (m) =>
 //        if (inMath(m.start, txt) || inDisplayMath(m.start, txt)) m.group(0)
 //        else
-        if (thmEnvs.contains(m.group(1))) s"""<div class="${m.group(1)}">"""
+        if (thmEnvs.keySet.contains(m.group(1))) s"""<div class="${m.group(1)}"> <strong>${thmEnvs(m.group(1))}</strong> """
         else if (mathEnvs.contains(m.group(1))) Regex.quoteReplacement("$$"+m.group(0))
         else s"""<div class="${m.group(1)}">"""
     )
