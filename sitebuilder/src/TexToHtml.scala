@@ -49,7 +49,7 @@ object TeXToHtml {
 """
 
 
-  val defReg = "(\\\\def)(\\\\[a-zA-Z0-9]+)([^\n%]+)".r
+  val defReg = "(\\\\def|\\\\newcommand|\\\\renewcommand)(\\\\[a-zA-Z0-9]+)([^\n%]+)".r
 
   val newCommReg = "(\\\\newcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
 
@@ -88,11 +88,18 @@ class TeXToHtml(header: String, text: String) {
       (newCommands ++ renewCommands).map((m) => m.group(2) -> m.group(3).trim.drop(2).dropRight(1))
       ).filterNot((c) => Set("\\I", "\\matrices", "\\para", "\\parag").contains(c._1))
 
-  lazy val defReplaced = defSubs.foldLeft[String](text) {
+  def defReplace(txt: String) = defSubs.foldLeft[String](txt) {
     case (t, (x, y)) =>
       new Regex(x.replace("\\", "\\\\") + "([^a-zA-Z0-9])")
         .replaceAllIn(t, (m) => Regex.quoteReplacement(y + m.group(1)))
   }
+
+  def recDefReplace(txt: String): String = {
+    val next = defReplace(txt)
+    if (next == txt) next else recDefReplace(next)
+  }
+
+  lazy val defReplaced = recDefReplace(text)
 
   lazy val newFile = header + """\begin{document}""" + defReplaced
 

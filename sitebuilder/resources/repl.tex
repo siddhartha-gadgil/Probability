@@ -424,23 +424,23 @@ This is the mathematical side of the picture. It is easy to make up any number o
 \begin{example}\label{eg:onecointoss} $\Omega=\{0,1\}$. Fix a number $0\le p \le 1$ and let $p_{1}=p$ and $p_{0}=1-p$. The sample space is the same as before, but the probability space is different for each value of $p$. Again there are only four events, and their probabilities are $\mathbf{P}\{\emptyset\}=0$, $\mathbf{P}\{0\}=1-p$, $\mathbf{P}\{1\}=p$ and $\mathbf{P}\{0,1\}=1$. 
 \end{example}
 
-\begin{example}\label{eg:ncointosses} Fix a positive integer $n$. Let $$\Omega=\{0,1\}^{n}=\{\underline{\ome}{\; : \;} \underline{\ome}=(\omega_{1},\ldots ,\omega_{n})\mbox{ with }\omega_{i}=0\mbox{ or }1\mbox{ for each }i\le n\}.$$
-Let $p_{\underline{\ome}}=2^{-n}$ for each $\underline{\ome}\in \Omega$. Since $\Omega$ has $2^{n}$ elements, it follows that this is a valid assignment of elementary probabilities. 
+\begin{example}\label{eg:ncointosses} Fix a positive integer $n$. Let $$\Omega=\{0,1\}^{n}=\{\underline{\omega}{\; : \;} \underline{\omega}=(\omega_{1},\ldots ,\omega_{n})\mbox{ with }\omega_{i}=0\mbox{ or }1\mbox{ for each }i\le n\}.$$
+Let $p_{\underline{\omega}}=2^{-n}$ for each $\underline{\omega}\in \Omega$. Since $\Omega$ has $2^{n}$ elements, it follows that this is a valid assignment of elementary probabilities. 
 
-There are $2^{\#\Omega}=2^{2^{n}}$ events. One example is $A_{k}=\{\underline{\ome}{\; : \;} \underline{\ome}\in \Omega \mbox{ and } \omega_{1}+\ldots +\omega_{n}=k
+There are $2^{\#\Omega}=2^{2^{n}}$ events. One example is $A_{k}=\{\underline{\omega}{\; : \;} \underline{\omega}\in \Omega \mbox{ and } \omega_{1}+\ldots +\omega_{n}=k
 \}$ where $k$ is some fixed integer. In words, $A_{k}$ consists of those $n$-tuples of zeros and ones that have a total of $k$ many ones. Since there are $\binom{n}{k}$ ways to choose where to place these ones, we see that $\#A_{k}=\binom{n}{k}$. Consequently,
 $$
-\mathbf{P}\{A_{k}\}=\sum_{\underline{\ome}\in A_{k}}p_{\underline{\ome}} = \frac{\# A_{k}}{2^{n}}=\begin{cases} \binom{n}{k}2^{-n} &\mbox{ if }0\le k\le n, \\ 0 & \mbox{ otherwise}. \end{cases}
+\mathbf{P}\{A_{k}\}=\sum_{\underline{\omega}\in A_{k}}p_{\underline{\omega}} = \frac{\# A_{k}}{2^{n}}=\begin{cases} \binom{n}{k}2^{-n} &\mbox{ if }0\le k\le n, \\ 0 & \mbox{ otherwise}. \end{cases}
 $$
 It will be convenient to adopt the notation that $\binom{a}{b}=0$ if $a,b$ are positive integers and if $b>a$ or if $b<0$. Then we can simply write $\mathbf{P}\{A_{k}\}=\binom{n}{k}2^{-n}$ without having to split the values of $k$ into cases.
 \end{example}
 
 \begin{example}\label{eg:rballsinmbins} Fix two positive integers $r$ and $m$. Let 
-$$\Omega=\{\underline{\ome}{\; : \;} \underline{\ome}=(\omega_{1},\ldots ,\omega_{r}) \mbox{ with }1\le \omega_{i} \le m \mbox{ for each }i\le r\}.$$
+$$\Omega=\{\underline{\omega}{\; : \;} \underline{\omega}=(\omega_{1},\ldots ,\omega_{r}) \mbox{ with }1\le \omega_{i} \le m \mbox{ for each }i\le r\}.$$
 
-The cardinality of $\Omega$ is $m^{r}$ (since each co-ordinate $\omega_{i}$ can take one of $m$ values). Hence, if we set $p_{\underline{\ome}}=m^{-r}$ for each $\underline{\ome}\in \Omega$, we get a valid probability space. 
+The cardinality of $\Omega$ is $m^{r}$ (since each co-ordinate $\omega_{i}$ can take one of $m$ values). Hence, if we set $p_{\underline{\omega}}=m^{-r}$ for each $\underline{\omega}\in \Omega$, we get a valid probability space. 
 
-Of course, there are $2^{m^{r}}$ many events, which is quite large even for small numbers like $m=3$ and $r=4$. Some interesting events are $A=\{\underline{\ome} {\; : \;} \omega_{r}=1\}$, $B=\{\underline{\ome}{\; : \;} \omega_{i}\not=1 \mbox{ for all }i\}$, $C=\{\underline{\ome}{\; : \;} \omega_{i}\not=\omega_{j} \mbox{ if } i\not= j\}$. The reason why these are interesting will be explained later. Because of equal elementary probabilities, the probability of an event $S$ is just $\#S/m^{r}$.
+Of course, there are $2^{m^{r}}$ many events, which is quite large even for small numbers like $m=3$ and $r=4$. Some interesting events are $A=\{\underline{\omega} {\; : \;} \omega_{r}=1\}$, $B=\{\underline{\omega}{\; : \;} \omega_{i}\not=1 \mbox{ for all }i\}$, $C=\{\underline{\omega}{\; : \;} \omega_{i}\not=\omega_{j} \mbox{ if } i\not= j\}$. The reason why these are interesting will be explained later. Because of equal elementary probabilities, the probability of an event $S$ is just $\#S/m^{r}$.
 \begin{itemize}\setlength\itemsep{3pt}
 \item Counting $A$: We have $m$ choices for each of  $\omega_{1},\ldots ,\omega_{r-1}$. There is only one choice for $\omega_{r}$. Hence $\#A=m^{r-1}$. Thus, $\mathbf{P}(A)=\frac{m^{r-1}}{m^{r}} = \frac{1}{m}$.
 \item Counting $B$: We have $m-1$ choices for each $\omega_{i}$ (since $\omega_{i}$ cannot be $1$). Hence $\#B=(m-1)^{r}$ and thus $\mathbf{P}(B)=\frac{(m-1)^{r}}{m^{r}}=(1-\frac{1}{m})^{r}$.
@@ -477,7 +477,7 @@ The same probability space can also be a model for the tossing of the same coin 
 
 \para{Example~\ref{eg:rballsinmbins}} There are several situations that can be captured by this probability space. We list some.
 \begin{itemize}\setlength\itemsep{3pt}
-\item There are $r$ labelled balls and $m$ labelled bins. One by one, we put the balls into bins ``at random''. Then, by letting $\omega_{i}$ be the bin-number into which the $i^{\mbox{\tiny th}}$ ball goes, we can capture the full configuration by the vector $\underline{\ome}=(\omega_{1},\ldots ,\omega_{n})$. If each ball is placed completely at random then the probabilities are $m^{-r}$ for each configuration $\underline{\ome}$. 
+\item There are $r$ labelled balls and $m$ labelled bins. One by one, we put the balls into bins ``at random''. Then, by letting $\omega_{i}$ be the bin-number into which the $i^{\mbox{\tiny th}}$ ball goes, we can capture the full configuration by the vector $\underline{\omega}=(\omega_{1},\ldots ,\omega_{n})$. If each ball is placed completely at random then the probabilities are $m^{-r}$ for each configuration $\underline{\omega}$. 
 
 In that example, $A$ is the event that the last ball ends up in the first bin, $B$ is the event that the first bin is empty and $C$ is the event that no bin contains more than one ball. 
 \item If $m=6$, then this may also be the model for throwing a fair die $r$ times. Then $\omega_{i}$ is the outcome on the $i^{\mbox{\tiny th}}$ throw. Of course, it also models throwing $r$ different (and distinguishable) fair dice.
@@ -489,16 +489,16 @@ In that example, $A$ is the event that the last ball ends up in the first bin, $
 The next example is more involved and interesting.
 \begin{example} \para{Real-life situation} Imagine a man-woman pair. Their first child is random, for example, the sex of the child, or the height to which the child will ultimately grow, etc cannot be predicted with certainty. How to make a probability model that captures the situation?
 
-\para{A  possible probability model} Let there be $n$ genes in each human, and each of the genes can take two possible values (Mendel's ``factors''), which we denote as $0$ or $1$. Then, let $\Omega=\{0,1\}^{n}=\{\x=(x_{1},\ldots ,x_{n}){\; : \;} x_{i}=0 \mbox{ or }1\}$. In this sense, each human being can be encoded as a vector in $\{0,1\}^{n}$. 
+\para{A  possible probability model} Let there be $n$ genes in each human, and each of the genes can take two possible values (Mendel's ``factors''), which we denote as $0$ or $1$. Then, let $\Omega=\{0,1\}^{n}=\{\mathbf{x}=(x_{1},\ldots ,x_{n}){\; : \;} x_{i}=0 \mbox{ or }1\}$. In this sense, each human being can be encoded as a vector in $\{0,1\}^{n}$. 
 
-To assign probabilities, one must know the parents. Let the two parents have gene sequences ${\bf a}=(a_{1},\ldots,a_{n})$ and ${\bf b}=(b_{1},\ldots ,b_{n})$. Then the possible offsprings gene sequences are in the set $\Omega_{0}:=\{\x\in \{0,1\}^{n}{\; : \;} x_{i}=a_{i} \mbox{ or }b_{i}, \; \mbox{ for each }i\le n\}$. Let $L:=\#\{i{\; : \;} a_{i}\not=b_{i}\}$.
+To assign probabilities, one must know the parents. Let the two parents have gene sequences ${\bf a}=(a_{1},\ldots,a_{n})$ and ${\bf b}=(b_{1},\ldots ,b_{n})$. Then the possible offsprings gene sequences are in the set $\Omega_{0}:=\{\mathbf{x}\in \{0,1\}^{n}{\; : \;} x_{i}=a_{i} \mbox{ or }b_{i}, \; \mbox{ for each }i\le n\}$. Let $L:=\#\{i{\; : \;} a_{i}\not=b_{i}\}$.
 
 One possible assignment of probabilities is that each of these offsprings is equally likely. In that case we can capture the situation in the following probability models. 
 \begin{enumerate}\setlength\itemsep{6pt}
-\item Let $\Omega_{0}$ be the sample space and let $p_{\x}=2^{-L}$ for each $\x \in \Omega_{0}$.
-\item Let $\Omega$ be the sample space and let $$p_{\x}=\begin{cases}2^{-L} & \mbox{ if }\x\in \Omega_{0}\\ 0 & \mbox{ if }\x \not\in \Omega_{0}. \end{cases}$$
+\item Let $\Omega_{0}$ be the sample space and let $p_{\mathbf{x}}=2^{-L}$ for each $\mathbf{x} \in \Omega_{0}$.
+\item Let $\Omega$ be the sample space and let $$p_{\mathbf{x}}=\begin{cases}2^{-L} & \mbox{ if }\mathbf{x}\in \Omega_{0}\\ 0 & \mbox{ if }\mathbf{x} \not\in \Omega_{0}. \end{cases}$$
 \end{enumerate}
-The second one has the advantage that if we change the parent pair, we don't have to change the sample space, only the elementary probabilities. What are some interesting events? Hypothetically, the susceptibility to a disease $X$ could be determined by the first ten genes, say the person is likely to get the disease if there are at-most four $1$s among the first ten. This would correspond to the event that $A=\{\x\in \Omega_{0}{\; : \;} x_{0}+\ldots+x_{10}\le 4\}$. (Caution: As far as I know, reading the genetic sequence to infer about the phenotype is still an impractical task in general). 
+The second one has the advantage that if we change the parent pair, we don't have to change the sample space, only the elementary probabilities. What are some interesting events? Hypothetically, the susceptibility to a disease $X$ could be determined by the first ten genes, say the person is likely to get the disease if there are at-most four $1$s among the first ten. This would correspond to the event that $A=\{\mathbf{x}\in \Omega_{0}{\; : \;} x_{0}+\ldots+x_{10}\le 4\}$. (Caution: As far as I know, reading the genetic sequence to infer about the phenotype is still an impractical task in general). 
 
 
 \parag{Reasonable model?} There are many simplifications involved here. Firstly, genes are somewhat ill-defined concepts, better defined are nucleotides in the DNA (and even then there are two copies of each gene). Secondly, there are many ``errors'' in real DNA, even the total number of genes can change, there can be big chunks missing, a whole extra chromosome etc. Thirdly, the assumption that all possible gene-sequences in $\Omega_{0}$ are equally likely is incorrect - if two genes are physically close to each other in a chromosome, then they are likely to both come from the father or both from the mother. Lastly, if our interest originally was to guess the eventual height of the child or its intelligence, then it is not clear that these are determined by the genes alone (environmental factors such as availability of food etc. also matter). Finally, in case of the problem that Solomon faced, the information about genes of the parents was not available, the model as written would be use. 
@@ -512,20 +512,20 @@ The second one has the advantage that if we change the parent pair, we don't hav
 \section{Examples of discrete probability spaces}
 \begin{example} \parag{Toss $n$ coins}. We saw this before, but assumed that the coins are fair. Now we do not. The sample space is
 $$
-\Omega=\{0,1\}^{n}=\{\underline{\ome}=(\omega_{1},\ldots ,\omega_{n}){\; : \;} \omega_{i}=0 \mbox{ or } 1 \mbox{ for each }i\le n\}.
+\Omega=\{0,1\}^{n}=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{n}){\; : \;} \omega_{i}=0 \mbox{ or } 1 \mbox{ for each }i\le n\}.
 $$
-Further we assign $p_{\underline{\ome}}=\alpha_{\omega_{1}}^{(1)}\ldots \alpha_{\omega_{n}}^{(n)}$. Here $\alpha_{0}^{(j)}$ and $\alpha_{1}^{(j)}$ are supposed to indicate the probabilities that the $j^{\mbox{th}}$ coin falls tails up or heads up, respectively. Why did we take the product of $\alpha^{(j)}_{\cdot}$s and not some other combination? This is a non-mathematical question about what model is suited for the given real-life example. For now, the only justification is that empirically the above model seems to capture the real life situation accurately.
+Further we assign $p_{\underline{\omega}}=\alpha_{\omega_{1}}^{(1)}\ldots \alpha_{\omega_{n}}^{(n)}$. Here $\alpha_{0}^{(j)}$ and $\alpha_{1}^{(j)}$ are supposed to indicate the probabilities that the $j^{\mbox{th}}$ coin falls tails up or heads up, respectively. Why did we take the product of $\alpha^{(j)}_{\cdot}$s and not some other combination? This is a non-mathematical question about what model is suited for the given real-life example. For now, the only justification is that empirically the above model seems to capture the real life situation accurately.
 
-In particular, if the $n$ coins are identical, we may write $p=\alpha_{1}^{(j)}$ (for any $j$) and the elementary probabilities become  $p_{\underline{\ome}}=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}$ where $q=1-p$. 
+In particular, if the $n$ coins are identical, we may write $p=\alpha_{1}^{(j)}$ (for any $j$) and the elementary probabilities become  $p_{\underline{\omega}}=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}$ where $q=1-p$. 
 
-Fix $0\le k\le n$ and let $B_{k}=\{\underline{\ome}{\; : \;} \sum_{i=1}^{n}\omega_{i}=k\}$ be the event that we see exactly $k$ heads out of $n$ tosses. Then $\mathbf{P}(B_{k})=\binom{n}{k}p^{k}q^{n-k}$. If $A_{k}$ is the event that there are at least $k$ heads, then
+Fix $0\le k\le n$ and let $B_{k}=\{\underline{\omega}{\; : \;} \sum_{i=1}^{n}\omega_{i}=k\}$ be the event that we see exactly $k$ heads out of $n$ tosses. Then $\mathbf{P}(B_{k})=\binom{n}{k}p^{k}q^{n-k}$. If $A_{k}$ is the event that there are at least $k$ heads, then
 $\mathbf{P}(A_{k})=\sum\limits_{\ell=k}^{n}\binom{n}{\ell}p^{\ell}q^{n-\ell}$.
 \end{example}
 
 \begin{example} \parag{Toss a coin $n$ times}. Again 
 \begin{align*}
-\Omega=\{0,1\}^{n}&=\{\underline{\ome}=(\omega_{1},\ldots ,\omega_{n}){\; : \;} \omega_{i}=0 \mbox{ or } 1 \mbox{ for each }i\le n\}, \\
-p_{\underline{\ome}}&=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}.
+\Omega=\{0,1\}^{n}&=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{n}){\; : \;} \omega_{i}=0 \mbox{ or } 1 \mbox{ for each }i\le n\}, \\
+p_{\underline{\omega}}&=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}.
 \end{align*}
 This is the same probability space that we got for the tossing of $n$ identical looking coins. Implicit is the assumption that once a coin is tossed, for the next toss it is as good as a different coin but with the same $p$. It is possible to imagine a world where coins retain the memory of what happened before (or as explained before, we can make a ``coin'' that remembers previous tosses!), in which case this would not be a good model for the given situation. We don't believe that this is the case for coins in our world, and this can be verified empirically.
 \end{example}
@@ -543,7 +543,7 @@ An interesting random variable is the number of correct guesses. This is the fun
 Let $A=\{0^{k}1{\; : \;} k\ge n\}$ be the event that at least $n$ tails fall before a head turns up. Then $\mathbf{P}(A)=q^{n}p+q^{n+1}p+\ldots =q^{n}$.
 \end{example}
 
-\begin{example} \parag{Place $r$ distinguishable balls in $m$ distinguishable urns at random}. We saw this before (the words ``labelled'' and ``distinguishable'' mean the same thing here). The sample space is $\Omega=[m]^{r}=\{\underline{\ome}=(\omega_{1},\ldots ,\omega_{r}){\; : \;} 1\le \omega_{i}\le m\}$ and $p_{\underline{\ome}}=m^{-r}$ for every $\underline{\ome}\in \Omega$. Here $\omega_{i}$ indicates the urn number into which the $i^{\mbox{th}}$ ball goes.
+\begin{example} \parag{Place $r$ distinguishable balls in $m$ distinguishable urns at random}. We saw this before (the words ``labelled'' and ``distinguishable'' mean the same thing here). The sample space is $\Omega=[m]^{r}=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{r}){\; : \;} 1\le \omega_{i}\le m\}$ and $p_{\underline{\omega}}=m^{-r}$ for every $\underline{\omega}\in \Omega$. Here $\omega_{i}$ indicates the urn number into which the $i^{\mbox{th}}$ ball goes.
 \end{example}
 
 \begin{example} \parag{Place $r$ indistinguishable balls in $m$ distinguishable urns at random}. 
@@ -560,7 +560,7 @@ We give two proposals for the elementary probabilities.
 That these are legitimate probability spaces depend on two combinatorial facts.
 \begin{exercise} 
 \begin{enumerate}\setlength\itemsep{6pt}
-\item Let $(\ell_{1},\ldots ,\ell_{m})\in \Omega$. Show that $\#\{\underline{\ome}\in [m]^{r} {\; : \;} \sum_{j=1}^{r}{\mathbf 1}_{\omega_{j}=i}=\ell_{i} \mbox{ for each }i\in [m]\} = \frac{n!}{\ell_{1}!\ell_{2}!\ldots \ell_{m}!}$. Hence or directly, show that $\sum\limits_{\omega\in \Omega}p_{\omega}^{\tiny MB}=1$.
+\item Let $(\ell_{1},\ldots ,\ell_{m})\in \Omega$. Show that $\#\{\underline{\omega}\in [m]^{r} {\; : \;} \sum_{j=1}^{r}{\mathbf 1}_{\omega_{j}=i}=\ell_{i} \mbox{ for each }i\in [m]\} = \frac{n!}{\ell_{1}!\ell_{2}!\ldots \ell_{m}!}$. Hence or directly, show that $\sum\limits_{\omega\in \Omega}p_{\omega}^{\tiny MB}=1$.
 \item Show that $\# \Omega = \binom{m+r-1}{r-1}$. Hence, $\sum\limits_{\omega\in \Omega}p_{\omega}^{\tiny BE}=1$.
 \end{enumerate}
 
@@ -576,8 +576,8 @@ This leaves open the question of whether there is a natural mechanism of assigni
 
 %\begin{example} \parag{Place $r$ balls in $n$ urns at random}. We give two proposals for probability space to capture this situation.\footnote{Standard notations: Always $\mathbb{N}=\{0,1,2,\ldots\}$ and $\mathbb{N}_{+}=\{1,2,\ldots \}$. For $n\in \mathbb{N}_{+}$, we write $[n]$ for the set $\{1,2,\ldots ,n\}$.}
 %\begin{enumerate}\setlength\itemsep{6pt}
-%\item Let $\Omega_{\mbox{\tiny MB}}=[n]^{r}=\{\underline{\ome}{\; : \;} \omega_{i}\in[n] \mbox{ for each }i=1,2,\ldots ,r\}$ and $p_{\underline{\ome}}=\frac{1}{n^{r}}$ for each $\underline{\ome}\in \Omega_{\mbox{\tiny MB}}$.
-%\item Let $\Omega_{\mbox{\tiny BE}}=\{\underline{\ell}=(\ell_{1},\ell_{2},\ldots ,\ell_{n}){\; : \;} \ell_{i}\in \mathbb{N}, \; \ell_{1}+\ldots +\ell_{n}=r\}$ and $p_{\underline{\ell}}=\frac{1}{\#\Omega_{\mbox{\tiny BE}}}$ for each $\underline{\ome}\in \Omega_{\mbox{\tiny BE}}$. Actually $\# \Omega_{\mbox{\tiny BE}}=\binom{n+r-1}{n-1}$ but we keep that calculation for later.
+%\item Let $\Omega_{\mbox{\tiny MB}}=[n]^{r}=\{\underline{\omega}{\; : \;} \omega_{i}\in[n] \mbox{ for each }i=1,2,\ldots ,r\}$ and $p_{\underline{\omega}}=\frac{1}{n^{r}}$ for each $\underline{\omega}\in \Omega_{\mbox{\tiny MB}}$.
+%\item Let $\Omega_{\mbox{\tiny BE}}=\{\underline{\ell}=(\ell_{1},\ell_{2},\ldots ,\ell_{n}){\; : \;} \ell_{i}\in \mathbb{N}, \; \ell_{1}+\ldots +\ell_{n}=r\}$ and $p_{\underline{\ell}}=\frac{1}{\#\Omega_{\mbox{\tiny BE}}}$ for each $\underline{\omega}\in \Omega_{\mbox{\tiny BE}}$. Actually $\# \Omega_{\mbox{\tiny BE}}=\binom{n+r-1}{n-1}$ but we keep that calculation for later.
 %\end{enumerate}
 %In the first case, $\omega_{i}$ indicates the urn number to which that $i^{\mbox{th}}$ ball goes. In the second case $\ell_{j}$ indicates the number of balls in the urn $j$. The two models are however not the same. To see this take a simple case of $r=2$ and $n=2$.
 %\begin{example} When $r=n=2$, we get
@@ -599,21 +599,21 @@ This leaves open the question of whether there is a natural mechanism of assigni
 %\item A child gets each gene from one of the two parents.
 %\item Mendel's law asserting independence of distinct genes holds exactly (at this point we have not yet introduced the notion of independence, but this is just to motivate the model).
 %\end{enumerate}
-%The genes of the two parents can be denoted as $\alpha_{F},\alpha_{M}\in \{0,1\}^{N}$.  The space of all children is $\Omega=\{-1,+1\}^{N}$. Set $p_{\underline{\ome}}=2^{-N}$ for each $\underline{\ome}\in \Omega$. One can come up with more realistic assignments of probabilities, but that is not the purpose for the moment.
+%The genes of the two parents can be denoted as $\alpha_{F},\alpha_{M}\in \{0,1\}^{N}$.  The space of all children is $\Omega=\{-1,+1\}^{N}$. Set $p_{\underline{\omega}}=2^{-N}$ for each $\underline{\omega}\in \Omega$. One can come up with more realistic assignments of probabilities, but that is not the purpose for the moment.
 
 %This is an excellent example of a real-life situation of a probability space, where each parent pair defines a probability space on all possible humans. The difference between a sample point (all potential children) and a realization of a random experiment (an actual child) is quite clear. One can also see many interesting random variables such as the height, weight etc. In fact, if you consider the height of a child from birth to death, you get a function-valued random variable, called a {\em stochastic process}.
 %\end{example}
 
-\begin{example} \parag{Sampling with replacement from a population}. Define $\Omega=\{\underline{\ome}\in [N]^{k}{\; : \;} \omega_{i}\in [N] \mbox{ for }1\le i\le k\}$ with $p_{\underline{\ome}}=1/N^{k}$ for each $\underline{\ome}\in \Omega$. Here $[N]$ is the population (so the size of the population is $N$) and the size of the sample is $k$. Often the language used is of a box with $N$ coupons from which $k$ are drawn with replacement.
+\begin{example} \parag{Sampling with replacement from a population}. Define $\Omega=\{\underline{\omega}\in [N]^{k}{\; : \;} \omega_{i}\in [N] \mbox{ for }1\le i\le k\}$ with $p_{\underline{\omega}}=1/N^{k}$ for each $\underline{\omega}\in \Omega$. Here $[N]$ is the population (so the size of the population is $N$) and the size of the sample is $k$. Often the language used is of a box with $N$ coupons from which $k$ are drawn with replacement.
 \end{example}
 
 \begin{example} \parag{Sampling without replacement from a population}. Now we take 
 \begin{align*}
-\Omega=\left\{\underline{\ome}\in [N]^{k}{\; : \;} \omega_{i}\mbox{ are distinct elements of } [N]\right\}, \\
-p_{\underline{\ome}}=\frac{1}{N(N-1)\ldots (N-k+1)}  \mbox{ for each }\underline{\ome}\in \Omega.
+\Omega=\left\{\underline{\omega}\in [N]^{k}{\; : \;} \omega_{i}\mbox{ are distinct elements of } [N]\right\}, \\
+p_{\underline{\omega}}=\frac{1}{N(N-1)\ldots (N-k+1)}  \mbox{ for each }\underline{\omega}\in \Omega.
 \end{align*}
 
-Fix $m<N$ and define the random variable $X(\underline{\ome})=\sum_{i=1}^{k}{\mathbf 1}_{\omega_{i}\le m}$. If the population $[N]$ contains a subset, say $[m]$, (could be the subset of people having a certain disease), then $X(\underline{\ome})$ counts the number of people in the sample who have the disease. Using $X$ one can define  events such as $A=\{\underline{\ome}{\; : \;} X(\underline{\ome})=\ell\}$ for some $\ell\le m$. If $\underline{\ome}\in A$, then $\ell$ of the $\omega_{i}$ must be in $[m]$ and the rest in $[N]\setminus [m]$. Hence $$\#A=\binom{k}{\ell}m(m-1)\ldots (m-\ell+1)(N-m)(N-m-1)\ldots (N-m-(k-\ell)+1).$$
+Fix $m<N$ and define the random variable $X(\underline{\omega})=\sum_{i=1}^{k}{\mathbf 1}_{\omega_{i}\le m}$. If the population $[N]$ contains a subset, say $[m]$, (could be the subset of people having a certain disease), then $X(\underline{\omega})$ counts the number of people in the sample who have the disease. Using $X$ one can define  events such as $A=\{\underline{\omega}{\; : \;} X(\underline{\omega})=\ell\}$ for some $\ell\le m$. If $\underline{\omega}\in A$, then $\ell$ of the $\omega_{i}$ must be in $[m]$ and the rest in $[N]\setminus [m]$. Hence $$\#A=\binom{k}{\ell}m(m-1)\ldots (m-\ell+1)(N-m)(N-m-1)\ldots (N-m-(k-\ell)+1).$$
 As the probabilities are equal for all sample points, we get
 \begin{align*}
 \mathbf{P}(A)&= \frac{\binom{k}{\ell}m(m-1)\ldots (m-\ell+1)(N-m)(N-m-1)\ldots (N-m-(k-\ell)+1)}{N(N-1)\ldots (N-k+1)} \\
@@ -657,7 +657,7 @@ The dart board can be considered to be the disk $\Omega=\{(x,y){\; : \;} x^{2}+y
 We need a branch of mathematics called {\em measure theory} to make proper sense of uncountable probability spaces. This will not be done in this course although we shall later say a bit about the difficulties involved. The same difficulty shows up in the following ``random experiments'' also.
 \begin{enumerate}\setlength\itemsep{6pt}
 \item \parag{Draw a number at random from the interval $[0,1]$}. $\Omega=[0,1]$ which is uncountable.
-\item \parag{Toss a fair coin infinitely many times}. $\Omega=\{0,1\}^{\mathbb{N}}:=\{\underline{\ome}=(\omega_{1},\omega_{2},\ldots ){\; : \;} \omega_{i}=0 \mbox{ or }1\}$. This is again an uncountable set.
+\item \parag{Toss a fair coin infinitely many times}. $\Omega=\{0,1\}^{\mathbb{N}}:=\{\underline{\omega}=(\omega_{1},\omega_{2},\ldots ){\; : \;} \omega_{i}=0 \mbox{ or }1\}$. This is again an uncountable set.
 \end{enumerate}
 \end{example}
 \begin{remark} In one sense, the first non-example is almost irredeemable but  the second non-example can be dealt with, except for technicalities beyond this course. We shall later give a set of working rules to work with such ``continuous probabilities''. Fully satisfactory development will have to wait for a course in measure theory.
@@ -1050,13 +1050,13 @@ $$
 \mathbf{P}\left(A_{i_{1}}\cap \ldots \cap A_{i_{k}}\right) =\sum\limits_{\omega\in \Omega}p_{\omega}{\mathbf 1}_{A_{i_{1}}\cap \ldots \cap A_{i_{k}}}(\omega)= \sum\limits_{\omega\in \Omega}p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell}}}(\omega).
 $$
 Hence, the right hand side is given by adding over $i_{1}<\ldots <i_{k}$, multiplying by $(-1)^{k-1}$ and then summing over $k$ from $1$ to $n$.
-\bes
+\begin{eqnarray*}
 \mbox{RHS} &=& \sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1}<\ldots <i_{k}\le n} \; \sum\limits_{\omega\in \Omega} \;p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell}}}(\omega) \\
 &=& \sum\limits_{\omega \in \Omega}\sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1}<\ldots <i_{k}\le n} p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell}}}(\omega) \\
 &=& -\sum\limits_{\omega \in \Omega}p_{\omega}\sum\limits_{k=1}^{n}\sum\limits_{1\le i_{1}<\ldots <i_{k}\le n}\prod\limits_{\ell=1}^{k}(-{\mathbf 1}_{A_{i_{\ell}}}(\omega)) \\
 &=& -\sum\limits_{\omega \in \Omega}p_{\omega} \left(\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j}}(\omega)) \; - \; 1\right) \\
 &=& \sum\limits_{\omega \in \Omega}p_{\omega}{\mathbf 1}_{A}(\omega).
-\ees
+\end{eqnarray*}
 because the quantity $\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j}}(\omega))$ equals $-1$ if $\omega$ belongs to at least one of the $A_{i}$s, and is zero otherwise. Thus the claim follows.
 \end{proof}
 %\begin{remark} The way to think about the inclusion-exclusion is as follows (this is what the proof does, but we elaborate a little here). Count how many times each $p_{\omega}$ is counted on both sides of the equation.
@@ -1084,7 +1084,7 @@ Let $A_{i}=\{(\pi,{\sigma}){\; : \;} \pi(i)={\sigma}(i)\}$ so that $A^{c}=A_{1}\
 \end{align*}
 by the expansion $e^{-1}=1-\frac{1}{2!}+\frac{1}{3!}-\ldots $. Hence $\mathbf{P}(A)\approx e^{-1}\approx 0.3679$.
 \end{example} 
-\begin{example}\label{eg:probofemptyurn2} Place $n$ distinguishable balls in $r$ distinguishable urns at random. Let $A$ be the event that some urn is empty. The probability space is $\Omega=\{\underline{\ome}=(\omega_{1},\ldots,\omega_{n}){\; : \;} 1\le \omega_{i}\le r\}$ with $p_{\underline{\ome}}=r^{-n}$. Let $A_{\ell}=\{\underline{\ome}{\; : \;} \omega_{i}\not=\ell\}$ for $\ell=1,2\ldots ,r$. Then, $A=A_{1}\cup \ldots \cup A_{r-1}$ (as $A_{r}$ is empty, we could include it or not, makes no difference).
+\begin{example}\label{eg:probofemptyurn2} Place $n$ distinguishable balls in $r$ distinguishable urns at random. Let $A$ be the event that some urn is empty. The probability space is $\Omega=\{\underline{\omega}=(\omega_{1},\ldots,\omega_{n}){\; : \;} 1\le \omega_{i}\le r\}$ with $p_{\underline{\omega}}=r^{-n}$. Let $A_{\ell}=\{\underline{\omega}{\; : \;} \omega_{i}\not=\ell\}$ for $\ell=1,2\ldots ,r$. Then, $A=A_{1}\cup \ldots \cup A_{r-1}$ (as $A_{r}$ is empty, we could include it or not, makes no difference).
 
 It is easy to see that $\mathbf{P}(A_{i_{1}}\cap \ldots \cap A_{i_{k}})=(r-k)^{n}r^{-n}=(1-\frac{k}{r})^{n}$. We could use the inclusion-exclusion formula to write the expression
 $$
@@ -1161,7 +1161,7 @@ We remarked in the context of inclusion-exclusion formulas that often the probab
 
 \begin{definition} Let $A,B$ be events in a common probability space. We say that $A$ and $B$ are {\em independent} is $\mathbf{P}(A\cap B)=\mathbf{P}(A)\mathbf{P}(B)$.
 \end{definition}
-\begin{example} Toss a fair coin $n$ times. Then $\Omega=\{\underline{\ome}{\; : \;} \underline{\ome}=(\omega_{1},\ldots ,\omega_{n}), \; \omega_{i}\mbox{ is }0\mbox{ or }1\}$ and $p_{\underline{\ome}}=2^{-n}$ for each $\underline{\ome}$. Let $A=\{\underline{\ome}{\; : \;} \omega_{1}=0\}$ and let $B=\{\underline{\ome}{\; : \;} \omega_{2}=0\}$. Then, from the definition of probabilities, we can see that $\mathbf{P}(A)=1/2$, $\mathbf{P}(B)=1/2$ (because the elementary probabilities are equal, and both the sets $A$ and $B$ contain exactly $2^{n-1}$ elements). Further, $A\cap B=\{\underline{\ome}{\; : \;} \omega_{1}=1, \omega_{2}=0\}$ has $2^{n-2}$ elements, whence $\mathbf{P}(A\cap B)=1/4$. Thus, $\mathbf{P}(A\cap B)=\mathbf{P}(A)\mathbf{P}(B)$ and hence $A$ and $B$ are independent. 
+\begin{example} Toss a fair coin $n$ times. Then $\Omega=\{\underline{\omega}{\; : \;} \underline{\omega}=(\omega_{1},\ldots ,\omega_{n}), \; \omega_{i}\mbox{ is }0\mbox{ or }1\}$ and $p_{\underline{\omega}}=2^{-n}$ for each $\underline{\omega}$. Let $A=\{\underline{\omega}{\; : \;} \omega_{1}=0\}$ and let $B=\{\underline{\omega}{\; : \;} \omega_{2}=0\}$. Then, from the definition of probabilities, we can see that $\mathbf{P}(A)=1/2$, $\mathbf{P}(B)=1/2$ (because the elementary probabilities are equal, and both the sets $A$ and $B$ contain exactly $2^{n-1}$ elements). Further, $A\cap B=\{\underline{\omega}{\; : \;} \omega_{1}=1, \omega_{2}=0\}$ has $2^{n-2}$ elements, whence $\mathbf{P}(A\cap B)=1/4$. Thus, $\mathbf{P}(A\cap B)=\mathbf{P}(A)\mathbf{P}(B)$ and hence $A$ and $B$ are independent. 
 \end{example}
 If two events are independent, then the probability of their intersection can be found from the individual probabilities. How do we check if two events are independent? By checking if the probability of the event is equal to the product of the individual probabilities! It seems totally circular and useless! There are many reasons why it is not an empty notion as we shall see. 
 
@@ -1271,7 +1271,7 @@ $
 \mathbf{P}\left(A_{i_{1}}\cap A_{i_{2}}\cap \ldots \cap A_{i_{m}}\right)=\mathbf{P}(A_{i_{1}})\mathbf{P}(A_{i_{2}})\ldots \mathbf{P}(A_{i_{m}})$ for every choice of $m\le n$ and every choice of $1\le i_{1}<i_{2}<\ldots <i_{m}\le n$.
 \end{definition}
  The independence of $n$ events requires us to check $2^{n}$ equations (that many choices of $i_{1},i_{2},\ldots$). Should it not suffice to check that each pair of $A_{i}$ and $A_{j}$ are independent? The following example shows that this is not the case!
-\begin{example} Let $\Omega=\{0,1\}^{n}$ with $p_{\underline{\ome}}=2^{-n}$ for each $\underline{\ome}\in \Omega$. Define the events $A=\{\underline{\ome}{\; : \;} \omega_{1}=0\}$, $A=\{\underline{\ome}{\; : \;} \omega_{2}=0\}$ and $C=\{\underline{\ome}{\; : \;} \omega_{1}+\omega_{2}=0 \mbox{ or }2\}$. In words, we toss a fair coin $n$ times and $A$ denotes the event that the first toss is a tail, $B$ denotes the event that the second toss is a tail and $C$ denotes the event that out of the first two tosses are both heads or both tails. Then $\mathbf{P}(A)=\mathbf{P}(B)=\mathbf{P}(C)=\frac{1}{4}$. Further, 
+\begin{example} Let $\Omega=\{0,1\}^{n}$ with $p_{\underline{\omega}}=2^{-n}$ for each $\underline{\omega}\in \Omega$. Define the events $A=\{\underline{\omega}{\; : \;} \omega_{1}=0\}$, $A=\{\underline{\omega}{\; : \;} \omega_{2}=0\}$ and $C=\{\underline{\omega}{\; : \;} \omega_{1}+\omega_{2}=0 \mbox{ or }2\}$. In words, we toss a fair coin $n$ times and $A$ denotes the event that the first toss is a tail, $B$ denotes the event that the second toss is a tail and $C$ denotes the event that out of the first two tosses are both heads or both tails. Then $\mathbf{P}(A)=\mathbf{P}(B)=\mathbf{P}(C)=\frac{1}{4}$. Further, 
 \[\begin{aligned}
 \mathbf{P}(A\cap B)=\frac{1}{4}, \; \mathbf{P}(B\cap C)=\frac{1}{4}, \; P(A\cap C)=\frac{1}{4}, \; \mathbf{P}(A\cap B\cap C)=\frac{1}{4}.
 \end{aligned}\]
@@ -1390,9 +1390,9 @@ $$
 A random variable $X$ having this pmf (or equivalently the CDF) is said to have {\em Bernoulli distribution} with parameter $p$ and  write $X\sim \mbox{Ber}(p)$. For example, if $\Omega=\{1,2,\ldots ,10\}$ with $p_{i}=1/10$, and $X(\omega)={\mathbf 1}_{\omega\le 3}$, then $X\sim \mbox{Ber}(0.3)$. Any random variable taking only the values $0$ and $1$, has Bernoulli distribution.
 \end{example}
 
-\begin{example}  Fix $n\ge 1$ and $p\in [0,1]$. The pmf defined by $f(k)=\binom{n}{k}p^{k}q^{n-k}$ for $0\le k\le n$ is called the {\em Binomial  distribution} with parameters $n$ and $p$ and is denoted Bin($n,p$). The CDF is as usual defined by $F(t)=\sum_{u:\u\le t}f(u)$, but it does not have any particularly nice expression. 
+\begin{example}  Fix $n\ge 1$ and $p\in [0,1]$. The pmf defined by $f(k)=\binom{n}{k}p^{k}q^{n-k}$ for $0\le k\le n$ is called the {\em Binomial  distribution} with parameters $n$ and $p$ and is denoted Bin($n,p$). The CDF is as usual defined by $F(t)=\sum_{u:\mathbf{u}\le t}f(u)$, but it does not have any particularly nice expression. 
 
-For example, if $\Omega=\{0,1\}^{n}$ with $p_{\underline{\ome}}=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}$, and $X(\underline{\ome})=\omega_{1}+\ldots +\omega_{n}$, then $X\sim \mbox{Bin}(n,p)$. In words, the number of heads in $n$ tosses of a $p$-coin has $\mbox{Bin}(n,p)$ distribution.
+For example, if $\Omega=\{0,1\}^{n}$ with $p_{\underline{\omega}}=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}$, and $X(\underline{\omega})=\omega_{1}+\ldots +\omega_{n}$, then $X\sim \mbox{Bin}(n,p)$. In words, the number of heads in $n$ tosses of a $p$-coin has $\mbox{Bin}(n,p)$ distribution.
 \end{example}
 
 \begin{example} Fix $p\in (0,1]$ and let $f(k)=q^{k-1}p$ for $k\in \mathbb{N}_{+}$. This is called the {\em Geometric  distribution} with parameter $p$ and is denoted Geo($p$). The CDF is
@@ -1462,13 +1462,13 @@ We shall take the second option out. Whenever we write continuous distribution f
 \section{Uncountable probability spaces - conceptual difficulties}
 The following two ``random experiments'' are easy to imagine, but difficult to fit into the framework of probability spaces\footnote{This section should be omitted by everyone other than those who are keen to know what we meant by the conceptual difficulties of uncountable probability spaces}.
 \begin{enumerate}\setlength\itemsep{6pt}
-\item Toss a $p$-coin infinitely many times: Clearly the sample space is $\Omega=\{0,1\}^{\mathbb{N}}$. But what is $p_{\underline{\ome}}$ for any $\underline{\ome}\in \Omega$? The only reasonable answer is $p_{\underline{\ome}}=0$ for all $\omega$. But then how to define $\mathbf{P}(A)$ for any $A$?   For example, if $A=\{\underline{\ome}{\; : \;} \omega_{1}=0,\omega_{2}=0,\omega_{3}=1\}$, then everyone agrees that $\mathbf{P}(A)$ ``ought to be'' $q^{2}p$, but how does that come about? The basic problem is that $\Omega$ is uncountable, and probabilities of events are not got by summing probabilities of singletons.
+\item Toss a $p$-coin infinitely many times: Clearly the sample space is $\Omega=\{0,1\}^{\mathbb{N}}$. But what is $p_{\underline{\omega}}$ for any $\underline{\omega}\in \Omega$? The only reasonable answer is $p_{\underline{\omega}}=0$ for all $\omega$. But then how to define $\mathbf{P}(A)$ for any $A$?   For example, if $A=\{\underline{\omega}{\; : \;} \omega_{1}=0,\omega_{2}=0,\omega_{3}=1\}$, then everyone agrees that $\mathbf{P}(A)$ ``ought to be'' $q^{2}p$, but how does that come about? The basic problem is that $\Omega$ is uncountable, and probabilities of events are not got by summing probabilities of singletons.
 \item Draw a number at random from $[0,1]$: Again, it is clear that $\Omega=[0,1]$, but it also seems reasonable that $p_{x}=0$ for all $x$. Again, $\Omega$ is uncountable, and probabilities of events are not got by summing probabilities of singletons. It is ``clear'' that if $A=[0.1,0.4]$, then $\mathbf{P}(A)$ ``ought to be'' $0.3$, but it gets confusing when one tries to derive this from something more basic!
 \end{enumerate}
 
 \para{The resolution} Let $\Omega$ be uncountable. There is a class of {\em basic subsets} (usually not singletons) of $\Omega$ for which we take the probabilities as given. We also take the rules of probability, namely, countable additivity, as axioms. Then we use the rules to compute the probabilities of more complex events (subsets of $\Omega$) by expressing those events in terms of the basic sets using countable intersections, unions and complements and applying the rules of probability.
 
-\begin{example} In the example of infinite sequence of tosses, $\Omega=\{0,1\}^{\mathbb{N}}$. Any set of the form $A=\{\underline{\ome}{\; : \;} \omega_{1}=\epsilon_{1},\ldots ,\omega_{k}=\epsilon_{k}\}$ where $k\ge 1$ and $\epsilon_{i}\in \{0,1\}$ will be called a basic set and its probability is \underline{defined} to be $\mathbf{P}(A)=\prod_{j=1}^{k}p^{\epsilon_{j}}q^{1-\epsilon_{j}}$ where we assume that $p>0$. Now consider a more complex event, for example, $B=\{\underline{\ome} {\; : \;} \omega_{k}=1\mbox{ for some }k\}$. We can write $B=A_{1}\cup A_{2}\cup A_{3}\cup\ldots$ where $A_{k}=\{\underline{\ome}{\; : \;} \omega_{1}=0,\ldots ,\omega_{k-1}=0,\omega_{k}=1\}$. Since $A_{k}$ are pairwise disjoint, the rules of probability demand that $\mathbf{P}(B)$ should be $\sum_{k}\mathbf{P}(A_{k})=\sum_{k}q^{k-1}p$ which is in fact equal to $1$.
+\begin{example} In the example of infinite sequence of tosses, $\Omega=\{0,1\}^{\mathbb{N}}$. Any set of the form $A=\{\underline{\omega}{\; : \;} \omega_{1}=\epsilon_{1},\ldots ,\omega_{k}=\epsilon_{k}\}$ where $k\ge 1$ and $\epsilon_{i}\in \{0,1\}$ will be called a basic set and its probability is \underline{defined} to be $\mathbf{P}(A)=\prod_{j=1}^{k}p^{\epsilon_{j}}q^{1-\epsilon_{j}}$ where we assume that $p>0$. Now consider a more complex event, for example, $B=\{\underline{\omega} {\; : \;} \omega_{k}=1\mbox{ for some }k\}$. We can write $B=A_{1}\cup A_{2}\cup A_{3}\cup\ldots$ where $A_{k}=\{\underline{\omega}{\; : \;} \omega_{1}=0,\ldots ,\omega_{k-1}=0,\omega_{k}=1\}$. Since $A_{k}$ are pairwise disjoint, the rules of probability demand that $\mathbf{P}(B)$ should be $\sum_{k}\mathbf{P}(A_{k})=\sum_{k}q^{k-1}p$ which is in fact equal to $1$.
 \end{example}
 \begin{example} In the example of drawing a number at random from $[0,1]$, $\Omega=[0,1]$. Any interval $(a,b)$ with $0\le a<b\le 1$ is called a basic set and its probability is defined as $\mathbf{P}(a,b)=b-a$. Now consider a non-basic event $B=[a,b]$. We can write $B=A_{1}\cup A_{2}\cup A_{3}\ldots$ where $A_{k}=(a+(1/k),b-(1/k))$. Then $A_{k}$ is an increasing sequence of events and the rules of probability say that $\mathbf{P}(B)$ must be equal to $\lim_{k\rightarrow \infty}\mathbf{P}(A_{k})=\lim_{k\rightarrow \infty}(b-a-(2/k)) = b-a$. Another example could be $C=[0.1,0.2)\cup(0.3,0.7]$. Similarly argue that $\mathbf{P}(\{x\})=0$ for any $x\in [0,1]$. A more interesting one is $D=\mathbb Q \cap [0,1]$. Since it is a countable union of singletons, it must have zero probability! Even more interesting is the $1/3$-Cantor set. Although uncountable, it has zero probability!
 \end{example}
@@ -1888,7 +1888,7 @@ This completes the proof that $f(x,y)$ is indeed a density. Note that $b>0$ and 
 \end{example}
 %\begin{example} (Multivariate normal distribution). Let $\mu$ be an $m\times 1$ vector and let $\Sigma$ be an $m\times m$ positive definite matrix. Then, define
 %$$
-%f(\x) = \frac{1}{(2\pi)^{m/2}\sqrt{\det(\Sigma)}} \exp\left\{ -\frac{1}{2}(\x-\mu)^{t}\Sigma^{-1}(\x-\mu)\right\}.
+%f(\mathbf{x}) = \frac{1}{(2\pi)^{m/2}\sqrt{\det(\Sigma)}} \exp\left\{ -\frac{1}{2}(\mathbf{x}-\mu)^{t}\Sigma^{-1}(\mathbf{x}-\mu)\right\}.
 %$$
 %This is a density on $\mathbb{R}^{m}$ and is called the Multivariate normal density with mean vector $\mu$ and covariance matrix $\Sigma$. This can be seen from the multivariate change of variables formula (introduced later). Further, it is a fact that the marginal distribution of $X_{k}$ if $N(\mu_{k},\sigma_{k,k})$.
 %\end{example}
@@ -1935,15 +1935,15 @@ This completes the proof that $f(x,y)$ is indeed a density. Note that $b>0$ and 
 %$$
 %is a density in $\mathbb{R}^{2}$.
 
-\para{Matrix form of writing the density} Let $\Sigma^{-1}=\left[\begin{array}{cc} a & c \\ c & b \end{array}\right]$. Then, $\det(\Sigma)=\frac{1}{\det(\Sigma^{-1})}=\frac{1}{ab-c^{2}}$. Hence, we may re-write the density above as (let $\u$ be the column vector with co-ordinates $x,y$)
+\para{Matrix form of writing the density} Let $\Sigma^{-1}=\left[\begin{array}{cc} a & c \\ c & b \end{array}\right]$. Then, $\det(\Sigma)=\frac{1}{\det(\Sigma^{-1})}=\frac{1}{ab-c^{2}}$. Hence, we may re-write the density above as (let $\mathbf{u}$ be the column vector with co-ordinates $x,y$)
 $$
-f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)}} e^{-\frac{1}{2}\u^{t}\Sigma^{-1}\u }.
+f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)}} e^{-\frac{1}{2}\mathbf{u}^{t}\Sigma^{-1}\mathbf{u} }.
 $$
 This is precisely in the form in which we wrote for general $n$ in the example earlier. The conditions $a>0,b>0,ab-c^{2}>0$ translate precisely to what is called positive-definiteness. One way to say it is that $\Sigma$ is a symmetric matrix and all its eigenvalues are strictly positive.
 
 \para{Final form} We can now introduce an extra pair of parameters $\mu_{1},\mu_{2}$ and define a density
 $$
-f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)}} e^{-\frac{1}{2}(\u-\mu)^{t}\Sigma^{-1}(\u-\mu) }.
+f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)}} e^{-\frac{1}{2}(\mathbf{u}-\mu)^{t}\Sigma^{-1}(\mathbf{u}-\mu) }.
 $$
 where $\mu$ is a column vector with co-ordinates $\mu_{1},\mu_{2}$. This is the full bi-variate normal density.
 
@@ -1968,23 +1968,23 @@ where $J[T^{-1}]({\bf y})$ is the Jacobian determinant of the function $T^{-1}$ 
 
 Consider a solid cube with non-uniform density. If you rotate it, the density at any point now is the same as the original density, but at a different point (the one which came to the current position). Instead of rotating, suppose we uniformly expand the cube so that the center stays where it is and the side of the cube becomes twice what it is. What happens to the density at the center? It goes down by a factor of $8$. This is simply because of volume change - the same mass spreads over a larger volume. More generally, we can have non-uniform expansion, we may cool some parts of the cube, heat some parts and to varying degrees. What happens to the density? At each point, the density changes by a factor given by the Jacobian determinant.
 
-Now for a slightly more mathematical justification. We use the language for two variables ($m=2$) but the same reasoning works for any $m$. Fix twp point $\x=(x_{1},x_{2})$ and $\y=(y_{1},y_{2})$ such that $\y=T(\x)$ (and hence $\x=T^{-1}(\y)$). The density of ${\bf Y}$ at $\y$ is given by 
+Now for a slightly more mathematical justification. We use the language for two variables ($m=2$) but the same reasoning works for any $m$. Fix twp point $\mathbf{x}=(x_{1},x_{2})$ and $\mathbf{y}=(y_{1},y_{2})$ such that $\mathbf{y}=T(\mathbf{x})$ (and hence $\mathbf{x}=T^{-1}(\mathbf{y})$). The density of ${\bf Y}$ at $\mathbf{y}$ is given by 
 \begin{align*} 
-g(\y)&\approx \frac{1}{\mbox{area}(\mathcal N)}\mathbf{P}\{{\bf Y}\in \mathcal N\}
-%f(\x)&\approx \frac{1}{\mbox{area}(\mathcal N)}\mathbf{P}\{{\bf X}\in \mathcal N\}
+g(\mathbf{y})&\approx \frac{1}{\mbox{area}(\mathcal N)}\mathbf{P}\{{\bf Y}\in \mathcal N\}
+%f(\mathbf{x})&\approx \frac{1}{\mbox{area}(\mathcal N)}\mathbf{P}\{{\bf X}\in \mathcal N\}
 \end{align*}
-where $\mathcal N$ is a small neighbourhood of the point $\y$ (for example a disk of small radius $\delta$ centered at $\y$). By the one-one nature of $T$ and the relationship ${\bf Y}=T({\bf X})$, we see that $$\mathbf{P}\{{\bf Y}\in \mathcal N\}=\mathbf{P}\{{\bf X}\in T^{-1}(\mathcal N)\}$$ where $T^{-1}(\mathcal N)$ is the image of $\mathcal N$ after mapping by $T^{-1}$.  Now, $T^{-1}(\mathcal N)$ is a small neighbourhood of $\x$ (if $\mathcal N$ is a disk, then $T^{-1}(\mathcal N)$ would be an approximate ellipse) and hence, by the same interpretation of density we see that
+where $\mathcal N$ is a small neighbourhood of the point $\mathbf{y}$ (for example a disk of small radius $\delta$ centered at $\mathbf{y}$). By the one-one nature of $T$ and the relationship ${\bf Y}=T({\bf X})$, we see that $$\mathbf{P}\{{\bf Y}\in \mathcal N\}=\mathbf{P}\{{\bf X}\in T^{-1}(\mathcal N)\}$$ where $T^{-1}(\mathcal N)$ is the image of $\mathcal N$ after mapping by $T^{-1}$.  Now, $T^{-1}(\mathcal N)$ is a small neighbourhood of $\mathbf{x}$ (if $\mathcal N$ is a disk, then $T^{-1}(\mathcal N)$ would be an approximate ellipse) and hence, by the same interpretation of density we see that
 \begin{align*} 
-\mathbf{P}\{{\bf X}\in T^{-1}(\mathcal N)\}&\approx \mbox{area}(T^{-1}(\mathcal N))f(\x)
-%f(\x)&\approx \frac{1}{\mbox{area}(\mathcal N)}\mathbf{P}\{{\bf X}\in \mathcal N\}
+\mathbf{P}\{{\bf X}\in T^{-1}(\mathcal N)\}&\approx \mbox{area}(T^{-1}(\mathcal N))f(\mathbf{x})
+%f(\mathbf{x})&\approx \frac{1}{\mbox{area}(\mathcal N)}\mathbf{P}\{{\bf X}\in \mathcal N\}
 \end{align*}
 Putting the three displayed equations together, we arrive at the formula
 $$
-g(\y)\approx f(\x)\frac{\mbox{area}(T^{-1}(\mathcal N))}{\mbox{area}(\mathcal N)}
+g(\mathbf{y})\approx f(\mathbf{x})\frac{\mbox{area}(T^{-1}(\mathcal N))}{\mbox{area}(\mathcal N)}
 $$
-Thus the problem boils down to how areas change under transformations. A linear map $S(\y)=A\y$ where $A$ is a $2\times 2$ matrix changes area of any region by a factor of $|\det(A)|$, i.e., $\mbox{area}(S(\mathcal R))=|\det(A)|\mbox{area}(\mathcal R)$. 
+Thus the problem boils down to how areas change under transformations. A linear map $S(\mathbf{y})=A\mathbf{y}$ where $A$ is a $2\times 2$ matrix changes area of any region by a factor of $|\det(A)|$, i.e., $\mbox{area}(S(\mathcal R))=|\det(A)|\mbox{area}(\mathcal R)$. 
 
-The differentiability of $T$ means that in a small neighbourhood of $\y$, the mapping $T^{-1}$ looks like a linear map, $T^{-1}(\y+\mathbf h)\approx \x+DT^{-1}(\y){\bf h}$. Therefore, the areas of small neighbourhoods of $\y$ change by a factor equal to $|\det(DT^{-1}(\y))|$ which is the Jacobian determinant. In other words, $\mbox{area}(T^{-1}(\mathcal N))\approx |JT^{-1}(\y)|\mbox{area}(\mathcal N)$. Consequently $g(\y)=f(T^{-1}\y)|JT^{-1}(\y)|$.
+The differentiability of $T$ means that in a small neighbourhood of $\mathbf{y}$, the mapping $T^{-1}$ looks like a linear map, $T^{-1}(\mathbf{y}+\mathbf h)\approx \mathbf{x}+DT^{-1}(\mathbf{y}){\bf h}$. Therefore, the areas of small neighbourhoods of $\mathbf{y}$ change by a factor equal to $|\det(DT^{-1}(\mathbf{y}))|$ which is the Jacobian determinant. In other words, $\mbox{area}(T^{-1}(\mathcal N))\approx |JT^{-1}(\mathbf{y})|\mbox{area}(\mathcal N)$. Consequently $g(\mathbf{y})=f(T^{-1}\mathbf{y})|JT^{-1}(\mathbf{y})|$.
 
 
 \para{Enlarging the applicability of the change of variable formula} The change of variable formula is applicable in greater generality than we stated above. 
@@ -2075,7 +2075,7 @@ When we turn it around, this gives us a quicker way to check independence.
 
 
 
-\begin{example} Let $\Omega=\{0,1\}^{n}$ with $p_{\underline{\ome}}=p^{\sum \omega_{k}}q^{n-\sum \omega_{k}}$. Define $X_{k}:\Omega\rightarrow \mathbb{R}$ by $X_{k}(\underline{\ome})=\omega_{k}$. In words, we are considering the probability space corresponding to $n$ tosses of a fair coin and $X_{k}$ is the result of the $k$th toss. We claim that $X_{1},\ldots ,X_{n}$ are independent. Indeed, the joint pmf of $X_{1},\ldots ,X_{n}$ is 
+\begin{example} Let $\Omega=\{0,1\}^{n}$ with $p_{\underline{\omega}}=p^{\sum \omega_{k}}q^{n-\sum \omega_{k}}$. Define $X_{k}:\Omega\rightarrow \mathbb{R}$ by $X_{k}(\underline{\omega})=\omega_{k}$. In words, we are considering the probability space corresponding to $n$ tosses of a fair coin and $X_{k}$ is the result of the $k$th toss. We claim that $X_{1},\ldots ,X_{n}$ are independent. Indeed, the joint pmf of $X_{1},\ldots ,X_{n}$ is 
 $$
 f(t_{1},\ldots ,t_{n})=p^{\sum t_{k}}q^{n-\sum t_{k}} \hspace{3mm} \mbox{ where }t_{i}=0\mbox{ or }1 \mbox{ for each }i\le n.
 $$
@@ -2111,9 +2111,9 @@ A very useful (and intuitively acceptable!) fact about independence is as follow
 {\color{magenta}
 \para{Conditioning on random variables}\footnote{This part was not covered in class and may be safely omitted .} 
 Let $X_{1},\ldots ,X_{k+\ell}$ be random variables on a common probability space. Let $f(t_{1},\ldots ,t_{k+\ell})$ be the pmf of $(X_{1},\ldots ,X_{k+\ell})$ and let $g(t_{1},\ldots ,t_{\ell})$ be the pmf of $(X_{k+1},\ldots ,X_{k+\ell})$ (of course we can compute $g$ from $f$ by summing over the first $k$ indices). Then, for any $s_{1},\ldots ,s_{\ell}$ such that $\mathbf{P}\{X_{k+1}=s_{1},\ldots X_{m}=s_{\ell}\}>0$, we can define
-\ben\label{eq:conditionalpmf}
+\begin{equation}\label{eq:conditionalpmf}
 h_{s_{1},\ldots ,s_{\ell}}(t_{1},\ldots,t_{k})=\mathbf{P}\{X_{1}= t_{1},\ldots ,X_{k}= t_{k}\left.\vphantom{\hbox{\Large (}}\right| X_{k+1}=s_{1},\ldots X_{m}=s_{\ell}\}=\frac{f(t_{1},\ldots ,t_{k},s_{1},\ldots ,s_{\ell})}{g(s_{1},\ldots ,s_{\ell})}.
-\een
+\end{equation}
 It is easy to see that $h_{s_{1},\ldots,s_{\ell}}(\cdot)$ is a pmf on $\mathbb{R}^{k}$. It is called the conditional pmf of $(X_{1},\ldots ,X_{k})$ given that $X_{k+1}=s_{1},\ldots X_{m}=s_{\ell}$. 
 
 Its interpretation is as follows. Originally we had random observables $X_{1},\ldots ,X_{k}$ which had a certain joint pmf. Then we observe the values of the random variables $X_{k+1},\ldots ,X_{k+\ell}$, say they turn out to be $s_{1},\ldots ,s_{\ell}$, respectively. Then we update the distribution (or pmf) of $X_{1},\ldots ,X_{k}$ according to the above recipe. The conditional pmf is the new function $h_{s_{1},\ldots,s_{\ell}}(\cdot)$.
@@ -2124,9 +2124,9 @@ This looks complicated, but is utterly obvious if you think in terms of assignin
 \end{exercise}
 
 \parag{Conditional densities} Now suppose $X_{1},\ldots ,X_{k+\ell}$ have joint density $f(t_{1},\ldots ,t_{k+\ell})$ and let $g(s_{1},\ldots ,s_{\ell})$ by the density of $(X_{k+1},\ldots ,X_{k+\ell})$. Then, we define the conditional density of $(X_{1},\ldots ,X_{k})$ given $X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}$ as
-\ben\label{eq:conditionalpdf}
+\begin{equation}\label{eq:conditionalpdf}
 h_{s_{1},\ldots ,s_{\ell}}(t_{1},\ldots,t_{k})=\frac{f(t_{1},\ldots ,t_{k},s_{1},\ldots ,s_{\ell})}{g(s_{1},\ldots ,s_{\ell})}.
-\een
+\end{equation}
 This is well-defined whenever $g(s_{1},\ldots ,s_{\ell})>0$.
 
 \begin{remark} Note the difference between \eqref{eq:conditionalpmf} and \eqref{eq:conditionalpdf}. In the latter we have left out the middle term because $\mathbf{P}\{X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}\}=0$. In \eqref{eq:conditionalpmf} the definition of pmf comes from the definition of conditional probability of events but in \eqref{eq:conditionalpdf} this is not so. We simply define the conditional density by analogy with the case of conditional pmf.  This is similar to the difference between interpretation of pmf ($f(t)$ is actually the probability of an event) and pdf ($f(t)$ is not the probability of an event but the density of probability near $t$).
@@ -2179,7 +2179,7 @@ We state one more property of expectations, its relationship to independence.
 \end{lemma}
 \begin{proof} Independence means that the joint density (analogous statements for pmf omitted) of $(X,Y)$ is f the form $f(t,s)=g(t)h(s)$ where $g(t)$ is the density of $X$ and $h(s)$ is the density of $Y$. Hence, 
 $$
-\mathbf{E}[H_{1}(X)H_{2}(Y)]=\intt_{-\infty}^{\infty}\!\!\intt_{-\infty}^{\infty} H_{1}(t)H_{2}(s) f(t,s)dt ds = \left(\int\limits_{-\infty}^{\infty} H_{1}(t)g(t) dt \right)\left(\int\limits_{-\infty}^{\infty} H_{2}(s)g(s) ds \right)
+\mathbf{E}[H_{1}(X)H_{2}(Y)]=\int\limits_{-\infty}^{\infty}\!\!\int\limits_{-\infty}^{\infty} H_{1}(t)H_{2}(s) f(t,s)dt ds = \left(\int\limits_{-\infty}^{\infty} H_{1}(t)g(t) dt \right)\left(\int\limits_{-\infty}^{\infty} H_{2}(s)g(s) ds \right)
 $$
 which is precisely $\mathbf{E}[H_{1}(X)]\mathbf{E}[H_{2}(Y)]$.
 \end{proof}
@@ -2287,7 +2287,7 @@ To get the last line, observe that $\Gamma(3/2)=\frac{1}{2}\Gamma(1/2)$ and $\Ga
 \begin{exercise} Show that $\mbox{Var}(cX)=c^{2}\mbox{Var}(X)$ (hence $\mbox{sd}(cX)=|c|\mbox{sd}(X)$). Further, if $X$ and $Y$ are independent, then $\mbox{Var}(X+Y)=\mbox{Var}(X)+\mbox{Var}(Y)$.
 \end{exercise}
 
-Note that the properties of ovariance are very much like properties of inner-products in vector spaces. In particular, we have the following analogue of the well-known inequality for vectors $(\u\cdot \v)^{2}\le(\u\cdot \u)(\v\cdot \v)$.
+Note that the properties of ovariance are very much like properties of inner-products in vector spaces. In particular, we have the following analogue of the well-known inequality for vectors $(\mathbf{u}\cdot \mathbf{v})^{2}\le(\mathbf{u}\cdot \mathbf{u})(\mathbf{v}\cdot \mathbf{v})$.
 
 \para{Cauchy-Schwarz inequality}  If $X$ and $Y$ are random variables with finite variances, then $(\mbox{\textrm Cov}(X,Y))^{2}\le \mbox{Var}(X)\mbox{Var}(Y)$ with equality if and only if $Y=aX+b$ for some scalars $a,b$. 
 
@@ -2358,10 +2358,10 @@ $$
 
 
  %Let us take the simple example of $X_{k}$ having $\mbox{Ber}(p)$ distribution where $0<p<1$. Then $\overline{X}_{n}-p=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-p)$. If we take the fourth power instead of the second, we get
-%\bes
+%\begin{eqnarray*}
 %\mathbf{E}[|\overline{X}_{n}-p|^{4}] &=& \frac{1}{n^{4}}\sum_{i=1}^{n}\sum_{j=1}^{n}\sum_{k=1}^{n}\sum_{\ell=1}^{n}\mathbf{E}[(X_{i}-p)(X_{j}-p)(X_{k}-p)(X_{\ell}-p)] \\
 %&=& \frac{1}{n^{4}}\sum_{i=1}^{n}\mathbf{E}[(X_{i}-p)^{4}] + \frac{3}{n^{4}}\sum_{i=1}^{n}\sum_{\stackrel{j=1}{j\not=i}}^{n}\mathbf{E}[(X_{i}-p)^{2}]\mathbf{E}[(X_{j}-p)^{2}].
-%\ees
+%\end{eqnarray*}
 %This is because  $\mathbf{E}[(X_{i}-p)(X_{j}-p)(X_{k}-p)(X_{\ell}-p)]$ vanishes if one of $i,j,k,\ell$ occurs only once (since expectation factors when we have independence). Either all four are must be equal, or they must be equal in pairs. For $X\sim \mbox{Ber}(p)$, it is easy to see that $\mathbf{E}[(X-p)^{4}]=pq(p^{3}+q^{3})$. Thus, 
 %$$
 %\mathbf{E}[|\overline{X}_{n}-p|^{4}] = \frac{1}{n^{3}}pq(p^{3}+q^{3}) + \frac{3(n-1)}{n^{3}}p^{2}q^{2} \le \frac{4pq}{n^{2}}.
