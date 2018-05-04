@@ -48,8 +48,8 @@ object TeXToHtml {
 </html>
 """
 
-
-  val defReg = "(\\\\def|\\\\newcommand|\\\\renewcommand)(\\\\[a-zA-Z0-9]+)([^\n%]+)".r
+  val defReg =
+    "(\\\\def|\\\\newcommand|\\\\renewcommand)(\\\\[a-zA-Z0-9]+)([^\n%]+)".r
 
   val newCommReg = "(\\\\newcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
 
@@ -84,8 +84,8 @@ object TeXToHtml {
 
   val blankLineReg = "\n([ \t]*\n)".r
 
-  def maxOpt[B: Ordering](v: Vector[B]): Option[B] = if (v.isEmpty) None else Some(v.max)
-
+  def maxOpt[B: Ordering](v: Vector[B]): Option[B] =
+    if (v.isEmpty) None else Some(v.max)
 
   val thmEnvs = Map(
     "example" -> "Example",
@@ -108,16 +108,14 @@ object TeXToHtml {
     "tabular"
   )
 
+  def indices(r: Regex, txt: String): Vector[Int] =
+    r.findAllMatchIn(txt).toVector.map(_.start)
 
+  def dollarIndices(txt: String): Vector[Int] = indices(dolReg, txt).map(_ + 1)
 
-  def indices(r: Regex, txt: String): Vector[Int] = r.findAllMatchIn(txt).toVector.map(_.start)
-
-  def dollarIndices(txt: String) : Vector[Int] = indices(dolReg, txt).map(_ + 1)
-
-  def displayIndices(txt: String) : Vector[Int] = indices(doldolReg, txt)
+  def displayIndices(txt: String): Vector[Int] = indices(doldolReg, txt)
 
   def itemizeBegs(txt: String): Vector[Int] = indices(begItReg, txt)
-
 
   def itemizeEnds(txt: String): Vector[Int] = indices(endItReg, txt)
 
@@ -127,52 +125,88 @@ object TeXToHtml {
 
   def items(txt: String): Vector[Int] = indices("""\\item""".r, txt)
 
-  def firstItem(j: Int, txt: String) : Boolean = {
+  def firstItem(j: Int, txt: String): Boolean = {
     val lastBeg = (enumerateBegs(txt) ++ itemizeBegs(txt)).filter(_ < j).max
-    maxOpt(items(txt).filter(_ < j)).map{
-      _ < lastBeg
-    }.getOrElse(true)
+    maxOpt(items(txt).filter(_ < j))
+      .map {
+        _ < lastBeg
+      }
+      .getOrElse(true)
 
   }
 
-  def inMath(j: Int, txt: String) : Boolean = dollarIndices(txt).filter(_ < j).size % 2 == 1
+  def inMath(j: Int, txt: String): Boolean =
+    dollarIndices(txt).filter(_ < j).size % 2 == 1
 
-  def inDisplayMath(j: Int, txt: String) : Boolean = displayIndices(txt).filter(_ < j).size % 2 == 1
-
+  def inDisplayMath(j: Int, txt: String): Boolean =
+    displayIndices(txt).filter(_ < j).size % 2 == 1
 
   def replaceItems(txt: String): String = {
     val itemLess =
-      """\\item""".r.replaceAllIn(txt,
-        (m) => if (firstItem(m.start, txt)) "<li>" else "</li>\n<li>"
-      )
-    itemLess.replace("""\begin{itemize}""", "<ul>")
+      """\\item""".r.replaceAllIn(
+        txt,
+        (m) => if (firstItem(m.start, txt)) "<li>" else "</li>\n<li>")
+    itemLess
+      .replace("""\begin{itemize}""", "<ul>")
       .replace("""\end{itemize}""", "</ul>")
       .replace("""\begin{enumerate}""", "<ol>")
       .replace("""\end{enumerate}""", "</ol>")
   }
 
   def replaceBegins(txt: String) =
-    begReg.replaceAllIn(txt,
+    begReg.replaceAllIn(
+      txt,
       (m) =>
 //        if (inMath(m.start, txt) || inDisplayMath(m.start, txt)) m.group(0)
 //        else
-        if (thmEnvs.keySet.contains(m.group(1))) s"""<div class="${m.group(1)}"> <strong>${thmEnvs(m.group(1))}</strong> """
-        else if (mathEnvs.contains(m.group(1))) Regex.quoteReplacement("$$"+m.group(0))
+        if (thmEnvs.keySet.contains(m.group(1))) s"""<div class="${m
+          .group(1)}"> <strong>${thmEnvs(m.group(1))}</strong> """
+        else if (mathEnvs.contains(m.group(1)))
+          Regex.quoteReplacement("$$" + m.group(0))
         else s"""<div class="${m.group(1)}">"""
     )
 
   def replaceEnds(txt: String) =
-    endReg.replaceAllIn(txt,
+    endReg.replaceAllIn(
+      txt,
       (m) =>
 //        if (inMath(m.start, txt) || inDisplayMath(m.start, txt)) {println(s"${m.group(0)} in math environment"); m.group(0)}
 //        else
-        if (mathEnvs.contains(m.group(1))) Regex.quoteReplacement(m.group(0)+"$$")
+        if (mathEnvs.contains(m.group(1)))
+          Regex.quoteReplacement(m.group(0) + "$$")
         else "</div>"
     )
 
   def replaceBlanks(txt: String) = blankLineReg.replaceAllIn(txt, "</p>\n<p>")
 
+  def replaceSec(txt: String) =
+    """(\\section\{)([^\}]+)\}""".r
+      .replaceAllIn(txt, (m) => s"<h2>${m.group(2)}</h2><p>")
 
+  def replacePara(txt: String) =
+    """(\\para\{)([^\}]+)\}""".r
+      .replaceAllIn(txt, (m) => s"<strong>${Regex.quoteReplacement(m.group(2))}:</strong>")
+
+  def replaceParag(txt: String) =
+    """(\\parag\{)([^\}]+)\}""".r
+      .replaceAllIn(txt, (m) => s"<strong>${Regex.quoteReplacement(m.group(2))}</strong>")
+
+  val bfReg1 = "(\\{\\\\bf )([^\\}]+)\\}".r
+
+  val bfReg2 = "(\\{\\\\bf\\{)([^\\}]+)\\}\\}".r
+
+  def replaceBf(txt: String) = {
+    val step = bfReg1.replaceAllIn(
+      txt,
+      (m) => Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>"))
+    bfReg2.replaceAllIn(step, (m) => s"<strong>${m.group(2)}</strong>")
+  }
+
+  val emReg = "(\\{\\\\em )([^\\}]+)\\}".r
+
+  def replaceEm(txt: String) =
+    emReg.replaceAllIn(txt,
+                       (m) => Regex.quoteReplacement(s"<em>${m.group(2)}</em>"))
 }
 
 class TeXToHtml(header: String, text: String) {
@@ -188,11 +222,11 @@ class TeXToHtml(header: String, text: String) {
     .findAllMatchIn(header)
     .toVector
 
-
   val defSubs =
     (defs.map((m) => m.group(2) -> m.group(3).trim.drop(1).dropRight(1)) ++
-      (newCommands ++ renewCommands).map((m) => m.group(2) -> m.group(3).trim.drop(2).dropRight(1))
-      ).filterNot((c) => Set("\\I", "\\matrices", "\\para", "\\parag").contains(c._1))
+      (newCommands ++ renewCommands).map((m) =>
+        m.group(2) -> m.group(3).trim.drop(2).dropRight(1))).filterNot((c) =>
+      Set("\\I", "\\matrices", "\\para", "\\parag").contains(c._1))
 
   def defReplace(txt: String) = defSubs.foldLeft[String](txt) {
     case (t, (x, y)) =>
@@ -205,9 +239,11 @@ class TeXToHtml(header: String, text: String) {
     if (next == txt) next else recDefReplace(next)
   }
 
-  lazy val defReplaced = recDefReplace(text)
+  lazy val defReplaced = recDefReplace(text).replace("""\noindent""", "")
 
-    lazy val allReplaced = replaceBlanks(replaceEnds(replaceBegins(replaceItems(defReplaced))))
+  lazy val allReplaced =
+    replaceEm(replaceBf(replacePara(replaceParag(replaceSec(
+      replaceBlanks(replaceEnds(replaceBegins(replaceItems(defReplaced)))))))))
 
   lazy val newFile = header + """\begin{document}""" + defReplaced
 
