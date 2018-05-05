@@ -48,12 +48,12 @@ object TeXToHtml {
 </html>
 """
 
-  val defReg =
+  val defReg: Regex =
     "(\\\\def|\\\\newcommand|\\\\renewcommand)(\\\\[a-zA-Z0-9]+)([^\n%]+)".r
 
-  val newCommReg = "(\\\\newcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
+  val newCommReg: Regex = "(\\\\newcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
 
-  val renewCommReg = "(\\\\renewcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
+  val renewCommReg: Regex = "(\\\\renewcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
 
   def trimLine(l: String): String =
     if (l.startsWith("%")) ""
@@ -63,27 +63,28 @@ object TeXToHtml {
         .map((m) => m.before.toString + m.group(0).head)
         .getOrElse(l)
 
-  def readTrim(f: Path) = read.lines(f).map(trimLine).mkString("", "\n", "\n")
+  def readTrim(f: Path): String = read.lines(f).map(trimLine).mkString("", "\n", "\n")
 
-  val wd = pwd / 'sitebuilder / "resources"
+  val wd: Path = pwd / 'sitebuilder / "resources"
 
-  val preamble = readTrim(wd / "mypreamble_2017.tex")
+  val preamble: String = readTrim(wd / "mypreamble_2017.tex")
 
-  val texFile = readTrim(wd / "stat-and-prob.tex")
+  val texFile: String = readTrim(wd / "stat-and-prob.tex")
 
-  val fullText = texFile.replace("\\input{mypreamble_2017}", preamble)
+  val fullText: String = texFile.replace("\\input{mypreamble_2017}", preamble)
 
-  val Array(header, textPadded) = fullText.split("\\\\begin\\{document\\}")
+  val Array(header: String, textPadded: String) = fullText.split("\\\\begin\\{document\\}")
 
-  val text = textPadded
+  val text: String = textPadded
     .split("""\\maketitle""")
     .last
     .split("""\\begin\{thebibliography\}""")
     .head
 
-  val begReg = """\\begin\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
+  val begReg: Regex = """\\begin\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
-  val fullBegReg = """\\begin\{([a-zA-Z0-9\*]*)\}(\[[^\[\]]+\])?(\\label\{[a-zA-Z0-9]+\})?""".r
+  val fullBegReg: Regex =
+    """\\begin\{([a-zA-Z0-9\*]*)\}(\[[^\[\]]+\])?(\\label\{[a-zA-Z0-9:+-_]+\})?""".r
 
   val endReg = """\\end\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
@@ -203,28 +204,46 @@ object TeXToHtml {
 //      .getOrElse(head + txt)
 //  }.replace("""\\begin""", """\begin""").replace("""\$""", "$")
 
-  def recRplBegins(txt: String, head: String = "", thmCounter: Int = 0, labels: Map[String, Int] = Map()): (String, Int, Map[String, Int]) = {
+  def recRplBegins(
+      txt: String,
+      head: String = "",
+      thmCounter: Int = 0,
+      labels: Map[String, Int] = Map()): (String, Int, Map[String, Int]) = {
     fullBegReg
       .findFirstMatchIn(txt)
       .map { (m) =>
         val title = Option(m.group(2))
-        val labelOpt = Option(m.group(3)).map(_.drop("""\label{""".size).dropRight(1))
-        val newCounter = if (thmEnvs.keySet.contains(m.group(1))) thmCounter + 1 else thmCounter
-        val newLabels =  if (thmEnvs.keySet.contains(m.group(1))) labelOpt.map((l) => labels + (l -> newCounter)).getOrElse(labels) else labels
+        val labelOpt =
+          Option(m.group(3)).map(_.drop("""\label{""".size).dropRight(1))
+        val newCounter =
+          if (thmEnvs.keySet.contains(m.group(1))) thmCounter + 1
+          else thmCounter
+        val newLabels =
+          if (thmEnvs.keySet.contains(m.group(1)))
+            labelOpt.map((l) => labels + (l -> newCounter)).getOrElse(labels)
+          else labels
         val newString =
           if (thmEnvs.keySet.contains(m.group(1))) s"""<div class="${m
-            .group(1)}"> <strong>${thmEnvs(m.group(1))} $newCounter ${title.map((s) => "("+s.drop(1).dropRight(1)+")").getOrElse("")}</strong>"""
+            .group(1)}"> <strong>${thmEnvs(m.group(1))} $newCounter ${title
+            .map((s) => "(" + s.drop(1).dropRight(1) + ")")
+            .getOrElse("")}</strong>"""
           else if (mathEnvs.contains(m.group(1)))
             Regex.quoteReplacement("$$" + m.group(0))
-          else if (divEnvs.contains(m.group(1))) s"""<div class="${m.group(1)}">"""
+          else if (divEnvs.contains(m.group(1)))
+            s"""<div class="${m.group(1)}">"""
           else Regex.quoteReplacement(m.group(0))
-        recRplBegins(m.after.toString, head + m.before.toString + newString, newCounter, newLabels)
+        recRplBegins(m.after.toString,
+                     head + m.before.toString + newString,
+                     newCounter,
+                     newLabels)
       }
       .getOrElse((head + txt, thmCounter, labels))
   }
 
-  def rplBegins(txt: String) : String = recRplBegins(txt)._1.replace("""\\begin""", """\begin""").replace("""\$""", "$")
-
+  def rplBegins(txt: String): String =
+    recRplBegins(txt)._1
+      .replace("""\\begin""", """\begin""")
+      .replace("""\$""", "$")
 
   def replaceEnds(txt: String) =
     endReg.replaceAllIn(
@@ -240,16 +259,25 @@ object TeXToHtml {
 
   def replaceBlanks(txt: String): String =
     blankLineReg.replaceAllIn(
-      txt, (m) =>
-        if (inDisplayMath(m.start, txt)) m.group(0) else "</p>\n<p class=\"text-justify\">")
+      txt,
+      (m) =>
+        if (doldolReg.findAllIn(m.before).size % 2 == 1) {
+          print(m.before.toString.drop(m.before.toString.size - 25));
+          println(m.after.toString.take(25)); m.group(0)
+        } else "</p>\n<p class=\"text-justify\">"
+    )
 
   def replaceSec(txt: String) =
     """(\\section\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
-      .replaceAllIn(txt, (m) => s"""<h2>${m.group(2)}</h2><p class="text-justify">""")
+      .replaceAllIn(
+        txt,
+        (m) => s"""<h2>${m.group(2)}</h2><p class="text-justify">""")
 
   def replaceSubSec(txt: String) =
     """(\\subsection\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
-      .replaceAllIn(txt, (m) => s"""<strong>${m.group(2)} .</strong><p class="text-justify">""")
+      .replaceAllIn(
+        txt,
+        (m) => s"""<strong>${m.group(2)} .</strong><p class="text-justify">""")
 
   def replacePara(txt: String) =
     """(\\para\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
@@ -313,13 +341,11 @@ class TeXToHtml(header: String, text: String) {
 
   lazy val defReplaced = recDefReplace(text).replace("""\noindent""", "")
 
-
-
   lazy val baseReplaced =
-    replaceEm(
-      replaceBf(
-        replacePara(replaceParag(
-          replaceBlanks(replaceEnds(replaceItems(defReplaced)))))))
+    replaceEnds(
+      replaceEm(
+        replaceBf(
+          replacePara(replaceParag(replaceBlanks(replaceItems(defReplaced)))))))
 
   lazy val allReplaced = replaceSec(rplBegins(baseReplaced))
 
@@ -332,7 +358,7 @@ class TeXToHtml(header: String, text: String) {
   def html() = write.over(pwd / "docs" / "crude" / "index.html", crudeHtml)
 }
 
-object CrudeBuild extends App{
+object CrudeBuild extends App {
   import TeXToHtml._
   converter.html()
   println(fullBegReg.findAllIn(text))

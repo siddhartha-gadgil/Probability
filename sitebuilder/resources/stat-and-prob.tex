@@ -63,17 +63,6 @@
 
 \maketitle
 
-\setcounter{page}{4}
-
-
-
-\newpage
-\vspace*{\fill}
-\begin{center}
-\Huge {\bf Probability}
-\end{center}
-\vspace*{\fill}
-\newpage
 
 \section{What is statistics and what is probability?}
 Sometimes statistics is described as {\em the art or science of decision making in the face of uncertainty}.  Here are some examples to illustrate what it means.
@@ -1680,11 +1669,11 @@ Let $\Y=T(\X)$. In co-ordinates we may write $\Y=(Y_{1},\ldots ,Y_{m})$ and $Y_{
 
 \para{The change of variable formula} In the setting described above,  the joint density of $Y_{1},\ldots ,Y_{m}$ is given by
 $$
-g({\bf y})=f\l(T^{-1}{\bf y}\r)\Given J[T^{-1}]({\bf y})\Given
+g(\mathbf{y})=f\l(T^{-1}\mathbf{y}\r)\Given J[T^{-1}](\mathbf{y})\Given
 $$
-where $J[T^{-1}]({\bf y})$ is the Jacobian determinant of the function $T^{-1}$ at the point ${\bf y}=(y_{1},\ldots ,y_{m})$.
+where $J[T^{-1}](\mathbf{y})$ is the Jacobian determinant of the function $T^{-1}$ at the point $\mathbf{y}=(y_{1},\ldots ,y_{m})$.
 
-\para{Justification} We shall not prove this formula, but give a imprecise but convincing justification that can be made into a proof. There are two factors on the right.  The first one, $f(T^{-1}{\bf y})$ is easy to understand - if $\Y$ is to be close to ${\bf y}$, then $\X$ must be close to $T^{-1}{\bf y}$. The second factor involving the Jacobian determinant comes from the volume change. Let us explain with analogy with mass density which is a more familiar quantity.
+\para{Justification} We shall not prove this formula, but give a imprecise but convincing justification that can be made into a proof. There are two factors on the right.  The first one, $f(T^{-1}\mathbf{y})$ is easy to understand - if $\Y$ is to be close to $\mathbf{y}$, then $\X$ must be close to $T^{-1}\mathbf{y}$. The second factor involving the Jacobian determinant comes from the volume change. Let us explain with analogy with mass density which is a more familiar quantity.
 
 Consider a solid cube with non-uniform density. If you rotate it, the density at any point now is the same as the original density, but at a different point (the one which came to the current position). Instead of rotating, suppose we uniformly expand the cube so that the center stays where it is and the side of the cube becomes twice what it is. What happens to the density at the center? It goes down by a factor of $8$. This is simply because of volume change - the same mass spreads over a larger volume. More generally, we can have non-uniform expansion, we may cool some parts of the cube, heat some parts and to varying degrees. What happens to the density? At each point, the density changes by a factor given by the Jacobian determinant.
 
