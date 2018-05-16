@@ -30,9 +30,7 @@ object TeXToHtml {
 
 
   <!-- mathjax config similar to math.stackexchange -->
-  <script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-      </script>
+
 
 
   <script type="text/x-mathjax-config">
@@ -41,7 +39,7 @@ object TeXToHtml {
   tex2jax: {
   inlineMath: [ ['$', '$'] ],
   displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
-  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  TeX: { equationNumbers: { autoNumber: "all" } },
   processEscapes: true,
   skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
   },
@@ -49,6 +47,9 @@ object TeXToHtml {
   "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
   });
   </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
 </head>
 <body>"""
 
@@ -164,11 +165,12 @@ object TeXToHtml {
     .replace("~", " ")
     .replace("\\newpage", "")
     .replace("\\vspace{4mm}", "")
+    .replace("\\vspace{2mm}", "")
 
   val begReg: Regex = """\\begin\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
   val fullBegReg: Regex =
-    """\\begin\{([a-zA-Z0-9\*]*)\}([\s]*\[[^\[\]]+\])?([\s]*\\label\{[a-zA-Z0-9:+-_]+\})?""".r
+    """\\begin\{([a-zA-Z0-9\*]*)\}([\s]*\[[^\[\]]+\])?([\s]*\\label\{[a-zA-Z0-9:+-_' ]+\})?""".r
 
   val endReg = """\\end\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
@@ -406,7 +408,7 @@ object TeXToHtml {
       (m) =>
         if (dolReg
               .findAllIn(txt)
-              .size % 2 == 0 && dolReg.findAllIn(txt).size % 2 == 0)
+              .size % 2 == 0 && doldolReg.findAllIn(txt).size % 2 == 0)
           Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
         else m.group(2))
     bfReg2.replaceAllIn(
@@ -414,16 +416,33 @@ object TeXToHtml {
       (m) =>
         if (dolReg
               .findAllIn(txt)
-              .size % 2 == 0 && dolReg.findAllIn(txt).size % 2 == 0)
+              .size % 2 == 0 && doldolReg.findAllIn(txt).size % 2 == 0)
           Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
         else m.group(2))
   }
 
-  val emReg = "(\\{\\\\em )([^\\}]+)\\}".r
+  val emReg = "(\\{\\\\em)([ \\\\])([^\\}]+)\\}".r
 
   def replaceEm(txt: String) =
     emReg.replaceAllIn(txt,
-                       (m) => Regex.quoteReplacement(s"<em>${m.group(2)}</em>"))
+                       (m) => Regex.quoteReplacement(s"<em>${m.group(2)}${m.group(3)}</em>"))
+
+  val undReg = "(\\{\\\\underline)([ \\\\])([^\\}]+)\\}".r
+
+  def replaceUnderline(txt: String) =
+    """(\\underline\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
+      .replaceAllIn(
+        txt,
+        (m) =>
+          if (dolReg
+            .findAllIn(txt)
+            .size % 2 == 0 && doldolReg.findAllIn(txt).size % 2 == 0)
+            Regex.quoteReplacement(s"<u>${m.group(2)}</u>")
+          else
+            s"\\underline\{${m.group(2)}\}"
+      )
+
+
 
   val tinyReg = "(\\{\\\\tiny )([^\\}]+)\\}".r
 
@@ -469,10 +488,12 @@ class TeXToHtml(header: String, text: String) {
   lazy val baseReplaced =
     replaceEnds(
       replaceTiny(
+//        replaceUnderline(
       replaceEm(
         replaceBf(
           replacePara(replaceParag(replaceBlanks(replaceItems(defReplaced)))))))
     )
+//    )
 
   lazy val (begReplaced, labels) = rplBegins(baseReplaced)
 
