@@ -159,10 +159,10 @@ $$
 </div></div></div>
 </div></div></div></p>
 <p class="text-justify">
-Summary: There are many situations in real life where one is required to make decisions under uncertainty. A general template for the answer could be to fix a small number that we allow as the probability of error, and deduce thresholds based on it. This brings us to the question of computing probabilities in various situations.</p>
+<strong>Summary:</strong> There are many situations in real life where one is required to make decisions under uncertainty. A general template for the answer could be to fix a small number that we allow as the probability of error, and deduce thresholds based on it. This brings us to the question of computing probabilities in various situations.</p>
 <p class="text-justify"></p>
 <p class="text-justify">
-Probability: Probability theory is a branch of pure mathematics, and forms the theoretical basis of statistics. In itself, probability theory has some basic objects and their relations (like real numbers, addition etc for analysis) and it makes no pretense of saying anything about the real world. Axioms are given and theorems are then deduced about these objects, just as in any other part of mathematics.</p>
+<strong>Probability:</strong> Probability theory is a branch of pure mathematics, and forms the theoretical basis of statistics. In itself, probability theory has some basic objects and their relations (like real numbers, addition etc for analysis) and it makes no pretense of saying anything about the real world. Axioms are given and theorems are then deduced about these objects, just as in any other part of mathematics.</p>
 <p class="text-justify">But a very important aspect of probability is that it is <em> applicable</em>. In other words, there are many real-world situations in which it is reasonable to take a model in probability and it turns out to reasonably replicate features of  the real-world situation.</p>
 <p class="text-justify">In the example above, to compute the probability one must make the assumption that the deck of cards was completely shuffled. In other words, all possible 52! orders of the 52 cards are assumed to be equally likely. Whether this assumption is reasonable or not depends on how well the card was shuffled, whether the psychic was able to get a peek at the cards, whether some insider is informing the psychic of the cards etc. All these are non-mathematical questions, and must be decided on other basis.</p>
 <p class="text-justify"><strong>However...:</strong> Probability and statistics are very relevant in many situations that do not involve any uncertainty on the face of it. Here are some examples.
@@ -181,7 +181,7 @@ Probability: Probability theory is a branch of pure mathematics, and forms the t
 <li> Any function $X:\Omega\rightarrow \mathbb{R}$ is called a <em> random variable</em>.  For a random variable we define its <em> expected value</em> or <em> mean</em> as $\mathbf{E}[X]=\sum_{\omega \in \Omega}X(\omega)p_{\omega}$.
 </ul>
 </div></div></div></p>
-<p class="text-justify"><em>\underline{ All of probability in one line</em>}: Take an (interesting) probability space $(\Omega, p)$ and an (interesting) event $A\subseteq \Omega$. Find $\mathbf{P}(A)$.</p>
+<p class="text-justify"><em><u> All of probability in one line</em></u>: Take an (interesting) probability space $(\Omega, p)$ and an (interesting) event $A\subseteq \Omega$. Find $\mathbf{P}(A)$.</p>
 <p class="text-justify"></p>
 <p class="text-justify">
 This is the mathematical side of the picture. It is easy to make up any number of probability spaces -  simply take a finite set and assign non-negative numbers to each element of the set so that the total is $1$.
@@ -239,7 +239,7 @@ $$\Omega=\{\underline{\omega}{\; : \;} \underline{\omega}=(\omega_{1},\ldots ,\o
 The next example is more involved and interesting.
 <div id="theorem-13"><div class="panel panel-info example"> <div class="panel-heading">Example 13 </div><div class="panel-body"> <strong>Real-life situation:</strong> Imagine a man-woman pair. Their first child is random, for example, the sex of the child, or the height to which the child will ultimately grow, etc cannot be predicted with certainty. How to make a probability model that captures the situation?</p>
 <p class="text-justify"><strong>A  possible probability model:</strong> Let there be $n$ genes in each human, and each of the genes can take two possible values (Mendel's ``factors''), which we denote as $0$ or $1$. Then, let $\Omega=\{0,1\}^{n}=\{\mathbf{x}=(x_{1},\ldots ,x_{n}){\; : \;} x_{i}=0 \mbox{ or }1\}$. In this sense, each human being can be encoded as a vector in $\{0,1\}^{n}$.</p>
-<p class="text-justify">To assign probabilities, one must know the parents. Let the two parents have gene sequences $a=(a_{1},\ldots,a_{n})$ and $b=(b_{1},\ldots ,b_{n})$. Then the possible offsprings gene sequences are in the set $\Omega_{0}:=\{\mathbf{x}\in \{0,1\}^{n}{\; : \;} x_{i}=a_{i} \mbox{ or }b_{i}, \; \mbox{ for each }i\le n\}$. Let $L:=\#\{i{\; : \;} a_{i}\not=b_{i}\}$.</p>
+<p class="text-justify">To assign probabilities, one must know the parents. Let the two parents have gene sequences ${\bf a}=(a_{1},\ldots,a_{n})$ and ${\bf b}=(b_{1},\ldots ,b_{n})$. Then the possible offsprings gene sequences are in the set $\Omega_{0}:=\{\mathbf{x}\in \{0,1\}^{n}{\; : \;} x_{i}=a_{i} \mbox{ or }b_{i}, \; \mbox{ for each }i\le n\}$. Let $L:=\#\{i{\; : \;} a_{i}\not=b_{i}\}$.</p>
 <p class="text-justify">One possible assignment of probabilities is that each of these offsprings is equally likely. In that case we can capture the situation in the following probability models.
 <ol>
 <li> Let $\Omega_{0}$ be the sample space and let $p_{\mathbf{x}}=2^{-L}$ for each $\mathbf{x} \in \Omega_{0}$.
@@ -266,8 +266,8 @@ $\mathbf{P}(A_{k})=\sum\limits_{\ell=k}^{n}\binom{n}{\ell}p^{\ell}q^{n-\ell}$.
 </div></div></div></p>
 <p class="text-justify"><div id="theorem-16"><div class="panel panel-info example"> <div class="panel-heading">Example 16 </div><div class="panel-body"> <strong>Toss a coin $n$ times</strong>. Again
 \begin{align*}
-\Omega=\{0,1\}^{n}&=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{n}){\; : \;} \omega_{i}=0 \mbox{ or } 1 \mbox{ for each }i\le n\}, \\
-p_{\underline{\omega}}&=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}.
+\Omega=\{0,1\}^{n}&=\{<u>\omega</u>=(\omega_{1},\ldots ,\omega_{n}){\; : \;} \omega_{i}=0 \mbox{ or } 1 \mbox{ for each }i\le n\}, \\
+p_{<u>\omega</u>}&=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}.
 \end{align*}
 This is the same probability space that we got for the tossing of $n$ identical looking coins. Implicit is the assumption that once a coin is tossed, for the next toss it is as good as a different coin but with the same $p$. It is possible to imagine a world where coins retain the memory of what happened before (or as explained before, we can make a ``coin'' that remembers previous tosses!), in which case this would not be a good model for the given situation. We don't believe that this is the case for coins in our world, and this can be verified empirically.
 </div></div></div></p>
@@ -324,8 +324,8 @@ That these are legitimate probability spaces depend on two combinatorial facts.
 </div></div></div></p>
 <p class="text-justify"><div id="theorem-24"><div class="panel panel-info example"> <div class="panel-heading">Example 24 </div><div class="panel-body"> <strong>Sampling without replacement from a population</strong>. Now we take
 \begin{align*}
-\Omega=\left\{\underline{\omega}\in [N]^{k}{\; : \;} \omega_{i}\mbox{ are distinct elements of } [N]\right\}, \\
-p_{\underline{\omega}}=\frac{1}{N(N-1)\ldots (N-k+1)}  \mbox{ for each }\underline{\omega}\in \Omega.
+\Omega=\left\{<u>\omega</u>\in [N]^{k}{\; : \;} \omega_{i}\mbox{ are distinct elements of } [N]\right\}, \\
+p_{<u>\omega</u>}=\frac{1}{N(N-1)\ldots (N-k+1)}  \mbox{ for each }<u>\omega</u>\in \Omega.
 \end{align*}</p>
 <p class="text-justify">Fix $m  <  N$ and define the random variable $X(\underline{\omega})=\sum_{i=1}^{k}{\mathbf 1}_{\omega_{i}\le m}$. If the population $[N]$ contains a subset, say $[m]$, (could be the subset of people having a certain disease), then $X(\underline{\omega})$ counts the number of people in the sample who have the disease. Using $X$ one can define  events such as $A=\{\underline{\omega}{\; : \;} X(\underline{\omega})=\ell\}$ for some $\ell\le m$. If $\underline{\omega}\in A$, then $\ell$ of the $\omega_{i}$ must be in $[m]$ and the rest in $[N]\setminus [m]$. Hence $$\#A=\binom{k}{\ell}m(m-1)\ldots (m-\ell+1)(N-m)(N-m-1)\ldots (N-m-(k-\ell)+1).$$
 As the probabilities are equal for all sample points, we get
@@ -465,7 +465,7 @@ One last remark on why we assumed $\Omega$ to be countable.
 <p class="text-justify">Now, a countable union of finite sets is countable (or finite). Therefore $A=\bigcup_{n}A_{n}$ is a countable set. But note that $A$ is also the set $\{\omega{\; : \;} f(\omega) > 0\}$ (since, if $f(\omega) > 0$ it must belong to some $A_{n}$). Consequently, even if the underlying set $\Omega$ is uncountable, our function will have to be equal to zero except on a countable subset of $\Omega$. In other words, we are reduced to the case of countable sums!
 </div></div></div></p>
 <p class="text-justify"><strong>5.2 Second approach.</strong><p class="text-justify"> In the first approach, we assumed that you are already familiar with the notion of limits and series and used them to define countable sums. In the second approach, we start from scratch and define infinite sums. The end result is exactly the same. For the purposes of this course, you may ignore the rest of the section.
-<div id="theorem-44"><div class="panel panel-info definition"> <div class="panel-heading">Definition 44 </div><div class="panel-body"> If $\Omega$ is a countable set and $f:\Omega \rightarrow \mathbb{R}_{+}$ is a non-negative function, then we \underline{define}
+<div id="theorem-44"><div class="panel panel-info definition"> <div class="panel-heading">Definition 44 </div><div class="panel-body"> If $\Omega$ is a countable set and $f:\Omega \rightarrow \mathbb{R}_{+}$ is a non-negative function, then we <u>define</u>
 $$
 \sum\limits_{\omega}f(\omega) :=\sup\left\{\sum\limits_{\omega\in A}f(\omega) {\; : \;} A\subseteq \Omega \mbox{ is finite}\right\}
 $$
@@ -1016,7 +1016,7 @@ The following two ``random experiments'' are easy to imagine, but difficult to f
 <li> Draw a number at random from $[0,1]$: Again, it is clear that $\Omega=[0,1]$, but it also seems reasonable that $p_{x}=0$ for all $x$. Again, $\Omega$ is uncountable, and probabilities of events are not got by summing probabilities of singletons. It is ``clear'' that if $A=[0.1,0.4]$, then $\mathbf{P}(A)$ ``ought to be'' $0.3$, but it gets confusing when one tries to derive this from something more basic!
 </ol></p>
 <p class="text-justify"><strong>The resolution:</strong> Let $\Omega$ be uncountable. There is a class of <em> basic subsets</em> (usually not singletons) of $\Omega$ for which we take the probabilities as given. We also take the rules of probability, namely, countable additivity, as axioms. Then we use the rules to compute the probabilities of more complex events (subsets of $\Omega$) by expressing those events in terms of the basic sets using countable intersections, unions and complements and applying the rules of probability.</p>
-<p class="text-justify"><div id="theorem-84"><div class="panel panel-info example"> <div class="panel-heading">Example 84 </div><div class="panel-body"> In the example of infinite sequence of tosses, $\Omega=\{0,1\}^{\mathbb{N}}$. Any set of the form $A=\{\underline{\omega}{\; : \;} \omega_{1}=\epsilon_{1},\ldots ,\omega_{k}=\epsilon_{k}\}$ where $k\ge 1$ and $\epsilon_{i}\in \{0,1\}$ will be called a basic set and its probability is \underline{defined} to be $\mathbf{P}(A)=\prod_{j=1}^{k}p^{\epsilon_{j}}q^{1-\epsilon_{j}}$ where we assume that $p > 0$. Now consider a more complex event, for example, $B=\{\underline{\omega} {\; : \;} \omega_{k}=1\mbox{ for some }k\}$. We can write $B=A_{1}\cup A_{2}\cup A_{3}\cup\ldots$ where $A_{k}=\{\underline{\omega}{\; : \;} \omega_{1}=0,\ldots ,\omega_{k-1}=0,\omega_{k}=1\}$. Since $A_{k}$ are pairwise disjoint, the rules of probability demand that $\mathbf{P}(B)$ should be $\sum_{k}\mathbf{P}(A_{k})=\sum_{k}q^{k-1}p$ which is in fact equal to $1$.
+<p class="text-justify"><div id="theorem-84"><div class="panel panel-info example"> <div class="panel-heading">Example 84 </div><div class="panel-body"> In the example of infinite sequence of tosses, $\Omega=\{0,1\}^{\mathbb{N}}$. Any set of the form $A=\{\underline{\omega}{\; : \;} \omega_{1}=\epsilon_{1},\ldots ,\omega_{k}=\epsilon_{k}\}$ where $k\ge 1$ and $\epsilon_{i}\in \{0,1\}$ will be called a basic set and its probability is <u>defined</u> to be $\mathbf{P}(A)=\prod_{j=1}^{k}p^{\epsilon_{j}}q^{1-\epsilon_{j}}$ where we assume that $p > 0$. Now consider a more complex event, for example, $B=\{\underline{\omega} {\; : \;} \omega_{k}=1\mbox{ for some }k\}$. We can write $B=A_{1}\cup A_{2}\cup A_{3}\cup\ldots$ where $A_{k}=\{\underline{\omega}{\; : \;} \omega_{1}=0,\ldots ,\omega_{k-1}=0,\omega_{k}=1\}$. Since $A_{k}$ are pairwise disjoint, the rules of probability demand that $\mathbf{P}(B)$ should be $\sum_{k}\mathbf{P}(A_{k})=\sum_{k}q^{k-1}p$ which is in fact equal to $1$.
 </div></div></div>
 <div id="theorem-85"><div class="panel panel-info example"> <div class="panel-heading">Example 85 </div><div class="panel-body"> In the example of drawing a number at random from $[0,1]$, $\Omega=[0,1]$. Any interval $(a,b)$ with $0\le a < b\le 1$ is called a basic set and its probability is defined as $\mathbf{P}(a,b)=b-a$. Now consider a non-basic event $B=[a,b]$. We can write $B=A_{1}\cup A_{2}\cup A_{3}\ldots$ where $A_{k}=(a+(1/k),b-(1/k))$. Then $A_{k}$ is an increasing sequence of events and the rules of probability say that $\mathbf{P}(B)$ must be equal to $\lim_{k\rightarrow \infty}\mathbf{P}(A_{k})=\lim_{k\rightarrow \infty}(b-a-(2/k)) = b-a$. Another example could be $C=[0.1,0.2)\cup(0.3,0.7]$. Similarly argue that $\mathbf{P}(\{x\})=0$ for any $x\in [0,1]$. A more interesting one is $D=\mathbb Q \cap [0,1]$. Since it is a countable union of singletons, it must have zero probability! Even more interesting is the $1/3$-Cantor set. Although uncountable, it has zero probability!
 </div></div></div></p>
@@ -1037,7 +1037,7 @@ Let $F$ be any CDF. Then, the above consistency theorem really asserts that ther
 </li>
 <li> For a general set $A\subseteq \mathbb{R}$, here is a general scheme: Find countably many pairwise disjoint intervals $I_{j}=(a_{j},b_{j}]$ such that $A\subseteq \cup_{j}I_{j}$. Then we define $\mathbf{P}\{X\in A\}$ as the infimum (over all such coverings by intervals) of the quantity $\sum_{j}F(b_{j})-F(a_{j})$.
 </ol></p>
-<p class="text-justify"><em>\underline{ All of probability in another line</em>}: Take an (interesting) random variable $X$ with a given CDF $F$ and an (interesting) set $A\subseteq \mathbb{R}$. Find $\mathbf{P}\{X\in A\}$.</p>
+<p class="text-justify"><em><u> All of probability in another line</em></u>: Take an (interesting) random variable $X$ with a given CDF $F$ and an (interesting) set $A\subseteq \mathbb{R}$. Find $\mathbf{P}\{X\in A\}$.</p>
 <p class="text-justify">
 \medskip
 There are loose threads here but they can be safely ignored for  this course. We just remark about them for those who are curious to know.</p>
@@ -1132,7 +1132,7 @@ $$
 F_{\nu,\lambda}(t)=1-e^{-\lambda t}\sum\limits_{k=0}^{\nu-1}\frac{(\lambda t)^{k}}{k!}.
 $$
 Once the expression is given, it is easy to check it by induction (and integration by parts). A curious observation is that the right hand side is exactly $\mathbf{P}(N\ge \nu)$ where $N\sim \mbox{Pois}(\lambda t)$. This is in fact indicating a deep connection between Poisson distribution and the Gamma distributions. The function $\Gamma(\nu)$, also known as Euler's Gamma function, is an interesting and important  one and occurs all over mathematics.
-\footnote{The Gamma function: The function $\Gamma:(0,\infty)\rightarrow \mathbb{R}$ defined by $\Gamma(\nu)=\int_{0}^{\infty}e^{-t}t^{\nu-1}dt$ is a very important function that often occurs in mathematics and physics. There is no simpler expression for it, although one can find it explicitly for special values of $\nu$. One of its most important properties is that $\Gamma(\nu+1)=\nu\Gamma(\nu)$. To see this, consider
+\footnote{<strong>The Gamma function:</strong> The function $\Gamma:(0,\infty)\rightarrow \mathbb{R}$ defined by $\Gamma(\nu)=\int_{0}^{\infty}e^{-t}t^{\nu-1}dt$ is a very important function that often occurs in mathematics and physics. There is no simpler expression for it, although one can find it explicitly for special values of $\nu$. One of its most important properties is that $\Gamma(\nu+1)=\nu\Gamma(\nu)$. To see this, consider
 $$
 \Gamma(\nu+1)=\int_{0}^{\infty}e^{-t}t^{\nu}dt = -e^{-t}t^{\nu}\left.\vphantom{\hbox{\Large (}}\right|_{0}^{\infty}+\nu\int_{0}^{\infty}e^{-t}t^{\nu-1}dt = \nu \Gamma(\nu).
 $$
@@ -1141,7 +1141,7 @@ Starting with  $\Gamma(1)=1$ (direct computation) and using the above relationsh
 \Gamma(1/2)= \int_{0}^{\infty}x^{-1/2}e^{-x}dx = \sqrt{2}\int_{0}^{\infty}e^{-y^{2}/2}dy
 \end{aligned}\]
 by substituting $x=y^{2}/2$. The last integral was computed above in the context of the normal distribution and equal to $\sqrt{\pi/2}$. Hence we get $\Gamma(1/2)=\sqrt{\pi}$. From this, using again the relation $\Gamma(\nu+1)=\nu\Gamma(\nu)$, we can compute $\Gamma(3/2)=\frac{1}{2}\sqrt{\pi}$, $\Gamma(5/2)=\frac{3}{4}\sqrt{\pi}$, etc. Yet another useful fact about the Gamma function is its asymptotics as $\nu\rightarrow\infty$.</p>
-<p class="text-justify">Stirling's approximation: $\frac{\Gamma(\nu+1)}{\nu^{\nu+\frac{1}{2}}e^{-\nu}\sqrt{2\pi}}\rightarrow 1$ as $\nu\rightarrow \infty$.</p>
+<p class="text-justify"><strong>Stirling's approximation:</strong> $\frac{\Gamma(\nu+1)}{\nu^{\nu+\frac{1}{2}}e^{-\nu}\sqrt{2\pi}}\rightarrow 1$ as $\nu\rightarrow \infty$.</p>
 <p class="text-justify"><strong>A small digression:</strong> It was Euler's  idea to observe that $n!=\int_{0}^{\infty}x^{n}e^{-x}dx$ and that on the right side $n$ could be replaced by  any real number greater than $-1$. But this was his second approach to defining the Gamma function. His first approach was as follows. Fix a positive integer $n$. Then for any $\ell\ge 1$ (also a positive integer), we may write
 \[\begin{aligned}
 n!=\frac{(n+\ell)!}{(n+1)(n+2)\ldots (n+\ell)} = \frac{\ell!(\ell+1)\ldots (\ell+n)}{(n+1)\ldots (n+\ell)} = \frac{\ell! \ \ell^{n}}{(n+1)\ldots (n+\ell)}\cdot\frac{(\ell+1)\ldots (\ell+n)}{\ell^{n}}
@@ -1351,12 +1351,12 @@ Conversely any function having these four properties is the joint CDF of some ra
 <p class="text-justify"> More generally, we can recover the joint CDF of any subset of $X_{1},\ldots ,X_{n}$, for example, the joint CDF of $X_{1},\ldots ,X_{k}$ is just $F(t_{1},\ldots ,t_{k},+\infty,\ldots ,+\infty)$.</p>
 <p class="text-justify"><strong>Joint pmf and pdf:</strong> Just like in the case of one random variable, we can consider the following two classes of random variables.
 <ol>
-<li> Distributions with a pmf. These are CDFs for which there exist points $t_{1},t_{2},\ldots $ in $\mathbb{R}^{m}$ and non-negative numbers $w_{i}$ such that $\sum_{i}w_{i}=1$ (often we write $f(t_{i})$ in place of $w_{i}$) and such that for every $t\in \mathbb{R}^{m}$ we have
-$$ F(t)=\sum_{i{\; : \;} t_{i}\le t} w_{i} $$
-where $s\le t$ means that each co-ordinate of $s$ is less than or equal to the corresponding co-ordinate of $t$.
+<li> Distributions with a pmf. These are CDFs for which there exist points ${\bf t}_{1},{\bf t}_{2},\ldots $ in $\mathbb{R}^{m}$ and non-negative numbers $w_{i}$ such that $\sum_{i}w_{i}=1$ (often we write $f(t_{i})$ in place of $w_{i}$) and such that for every ${\bf t}\in \mathbb{R}^{m}$ we have
+$$ F({\bf t})=\sum_{i{\; : \;} {\bf t}_{i}\le {\bf t}} w_{i} $$
+where ${\bf s}\le {\bf t}$ means that each co-ordinate of $s$ is less than or equal to the corresponding co-ordinate of ${\bf t}$.
 </li>
-<li> Distributions with a pdf. These are CDFs for which there is a non-negative function (may assume piecewise continuous for convenience) $f:\mathbb{R}^{m}\rightarrow \mathbb{R}_{+}$ such that for every $t\in \mathbb{R}^{m}$ we have
-$$ F(t)=\int\limits_{-\infty}^{t_{1}}\!\ldots \int\limits_{-\infty}^{t_{m}} f(u_{1},\ldots ,u_{m})du_{1}\ldots du_{m}. $$
+<li> Distributions with a pdf. These are CDFs for which there is a non-negative function (may assume piecewise continuous for convenience) $f:\mathbb{R}^{m}\rightarrow \mathbb{R}_{+}$ such that for every ${\bf t}\in \mathbb{R}^{m}$ we have
+$$ F({\bf t})=\int\limits_{-\infty}^{t_{1}}\!\ldots \int\limits_{-\infty}^{t_{m}} f(u_{1},\ldots ,u_{m})du_{1}\ldots du_{m}. $$
 </ol>
 We give two examples, one of each kind.
 <div id="theorem-113"><div class="panel panel-info example"> <div class="panel-heading">Example 113 </div><div class="panel-body"> (Multinomial distribution). Fix parameters $r,m$ (two  positive integers) and $p_{1},\ldots ,p_{m}$ (positive numbers that add to $1$). The <em> multinomial pmf</em> with these parameters is given by
@@ -1453,7 +1453,7 @@ $$
 g(\mathbf{y})\approx f(\mathbf{x})\frac{\mbox{area}(T^{-1}(\mathcal N))}{\mbox{area}(\mathcal N)}
 $$
 Thus the problem boils down to how areas change under transformations. A linear map $S(\mathbf{y})=A\mathbf{y}$ where $A$ is a $2\times 2$ matrix changes area of any region by a factor of $|\det(A)|$, i.e., $\mbox{area}(S(\mathcal R))=|\det(A)|\mbox{area}(\mathcal R)$.</p>
-<p class="text-justify">The differentiability of $T$ means that in a small neighbourhood of $\mathbf{y}$, the mapping $T^{-1}$ looks like a linear map, $T^{-1}(\mathbf{y}+\mathbf h)\approx \mathbf{x}+DT^{-1}(\mathbf{y})h$. Therefore, the areas of small neighbourhoods of $\mathbf{y}$ change by a factor equal to $|\det(DT^{-1}(\mathbf{y}))|$ which is the Jacobian determinant. In other words, $\mbox{area}(T^{-1}(\mathcal N))\approx |JT^{-1}(\mathbf{y})|\mbox{area}(\mathcal N)$. Consequently $g(\mathbf{y})=f(T^{-1}\mathbf{y})|JT^{-1}(\mathbf{y})|$.</p>
+<p class="text-justify">The differentiability of $T$ means that in a small neighbourhood of $\mathbf{y}$, the mapping $T^{-1}$ looks like a linear map, $T^{-1}(\mathbf{y}+\mathbf h)\approx \mathbf{x}+DT^{-1}(\mathbf{y}){\bf h}$. Therefore, the areas of small neighbourhoods of $\mathbf{y}$ change by a factor equal to $|\det(DT^{-1}(\mathbf{y}))|$ which is the Jacobian determinant. In other words, $\mbox{area}(T^{-1}(\mathcal N))\approx |JT^{-1}(\mathbf{y})|\mbox{area}(\mathcal N)$. Consequently $g(\mathbf{y})=f(T^{-1}\mathbf{y})|JT^{-1}(\mathbf{y})|$.</p>
 <p class="text-justify">
 <strong>Enlarging the applicability of the change of variable formula:</strong> The change of variable formula is applicable in greater generality than we stated above.
 <ol>
@@ -1641,7 +1641,7 @@ Expectation is a very important quantity. Using it, we can define several other 
 That is $\mbox{Var}(X)=\mathbf{E}[X^{2}]-(\mathbf{E}[X])^{2}$.</p>
 <p class="text-justify"><strong>Standard deviation:</strong> The standard deviation of $X$ is defined as $\mbox{s.d.}(X):=\sqrt{\mbox{Var}(X)}$.</p>
 <p class="text-justify"><strong>Mean absolute deviation:</strong> The mean absolute deviation of $X$ is defined as the $\mathbf{E}[|X-\mbox{med}(X)|]$.</p>
-<p class="text-justify"><strong>Coefficient of variation:</strong> The coefficient of variation of $X$ is defined as $\mbox{c.v.}(X)=\frac{\mbox{s.d.}(X)}{|E[X]|}$.</p>
+<p class="text-justify"><strong>Coefficient of variation:</strong> The coefficient of variation of $X$ is defined as $\mbox{c.v.}(X)=\frac{\mbox{s.d.}(X)}{|{\bf E}[X]|}$.</p>
 <p class="text-justify"></p>
 <p class="text-justify">
 <strong>Covariance:</strong> Let $X,Y$ be random variables on a common probability space. The <em> covariance</em> of $X$ and $Y$ is defined as $\mbox{Cov}(X,Y)=\mathbf{E}[(X-\mathbf{E}[X])(Y-\mathbf{E}[Y])]$. It can also be written as $\mbox{Cov}(X,Y)=\mathbf{E}[XY]-\mathbf{E}[X]\mathbf{E}[Y]$.</p>
@@ -1928,7 +1928,7 @@ $$
 </div></div></div></p>
 <p class="text-justify"><strong>Gibbs measures:</strong> Let ${\mathcal A}$ be a countable set and let ${\mathcal H}:{\mathcal A}\rightarrow \mathbb{R}$ be a given function. For any $E\in \mathbb{R}$, consider the set of ${\mathcal P}_{E}$ of all probability mass functions on $\Omega$ under which ${\mathcal H}$ has expected value $E$. In other words,
 $$
-{\mathcal P}_{E}:=\{p=\left(p_{i}\right)_{i\in {\mathcal A}}{\; : \;} \sum_{i\in {\mathcal A}} p(i){\mathcal H}(i)=E\}.
+{\mathcal P}_{E}:=\{{\bf p}=\left(p_{i}\right)_{i\in {\mathcal A}}{\; : \;} \sum_{i\in {\mathcal A}} p(i){\mathcal H}(i)=E\}.
 $$
 ${\mathcal P}_{E}$ is non-empty if and only if ${\mathcal H}_{\min}\le E\le {\mathcal H}_{\max}$.
 <div id="theorem-151"><div class="panel panel-info lemma"> <div class="panel-heading">Lemma 151 </div><div class="panel-body"> Assume that ${\mathcal H}_{\min}\le E\le {\mathcal H}_{\max}$. Then, there is a unique pmf in ${\mathcal P}_{E}$ with maximal entropy and it is given by
@@ -1954,7 +1954,7 @@ This minimizing pmf is called the <em> Boltzmann-Gibbs</em> distribution. An ana
 <p class="text-justify">
 \vspace*{\fill}
 \begin{center}
-\Huge Statistics
+\Huge <strong>Statistics</strong>
 \end{center}
 \vspace*{\fill}</p>
 <p class="text-justify">
@@ -2045,7 +2045,7 @@ Further the first inequality is an equality if and only if $x_{1}\le a\le x_{n}$
 </li>
 <li> $X_{1},\ldots, X_{n}$ are i.i.d. $N(\mu,{\sigma}^{2})$. Estimate $\mu$ and ${\sigma}^{2}$.
 </ol>
-[Note: The first case is when ${\sigma}^{2}$ is known and $\mu$ is unknown. Then the known value of ${\sigma}^{2}$ may be used to estimate $\mu$. In the second case it is similar, now $\mu$ is known and ${\sigma}^{2}$ is not known. In the third case, both are unknown].
+[<strong>Note:</strong> The first case is when ${\sigma}^{2}$ is known and $\mu$ is unknown. Then the known value of ${\sigma}^{2}$ may be used to estimate $\mu$. In the second case it is similar, now $\mu$ is known and ${\sigma}^{2}$ is not known. In the third case, both are unknown].
 </div></div></div></p>
 <p class="text-justify"><div id="theorem-159"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 159 </div><div class="panel-body"> $X_{1},\ldots, X_{n}$ are i.i.d. $\mbox{Geo}(p)$ Estimate $\mu=1/p$.
 </div></div></div></p>
@@ -2150,7 +2150,7 @@ This is our confidence interval.</p>
 Since $\mu$ is known, we use $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ to estimate ${\sigma}^{2}$. Here is an exercise.
 <div id="theorem-168"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 168 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(0,1)$ random variables. Then, $Z_{1}^{2}+\ldots +Z_{n}^{2}\sim \mbox{Gamma}(n/2,1/2)$.
 </div></div></div>
-Solution: For $t > 0$ we have
+<strong>Solution:</strong> For $t > 0$ we have
 \begin{align*}
 \mathbf{P}\{Z_{1}^{2}\le t\} &= \mathbf{P}\{-\sqrt{t}\le Z_{1}\le \sqrt{t}\}
 = 2\int\limits_{0}^{\sqrt{t}}\frac{1}{\sqrt{2\pi}}e^{-u^{2}/2}du = \frac{1}{\sqrt{2\pi}}\int\limits_{0}^{t}e^{-s/2}s^{-1/2}ds.

@@ -53,7 +53,7 @@ object TeXToHtml {
 </head>
 <body>"""
 
-  def nav(part1: String, part2: String, part3: String) =
+  def nav(part1: String, part2: String, part3: String): String =
     s"""
     |<nav class="navbar navbar-default navbar-fixed-top">
     |    <div class="container-fluid">
@@ -176,19 +176,19 @@ object TeXToHtml {
 
   val converter = new TeXToHtml(header, text)
 
-  val dolReg = "[^\\$]\\$[^\\$]".r
+  val dolReg : Regex = "\\$".r
 
-  val doldolReg = "\\$\\$".r
+  val doldolReg: Regex = "\\$\\$".r
 
-  val begItReg = """\\begin\{itemize\}""".r
+  val begItReg: Regex = """\\begin\{itemize\}""".r
 
-  val endItReg = """\\end\{itemize\}""".r
+  val endItReg: Regex = """\\end\{itemize\}""".r
 
-  val begEnReg = """\\begin\{enumerate\}""".r
+  val begEnReg: Regex = """\\begin\{enumerate\}""".r
 
-  val endEnReg = """\\begin\{enumerate\}""".r
+  val endEnReg: Regex = """\\begin\{enumerate\}""".r
 
-  val blankLineReg = "\n([ \t]*\n)".r
+  val blankLineReg: Regex = "\n([ \t]*\n)".r
 
   def maxOpt[B: Ordering](v: Vector[B]): Option[B] =
     if (v.isEmpty) None else Some(v.max)
@@ -215,7 +215,7 @@ object TeXToHtml {
   def indices(r: Regex, txt: String): Vector[Int] =
     r.findAllMatchIn(txt).toVector.map(_.start)
 
-  def dollarIndices(txt: String): Vector[Int] = indices(dolReg, txt).map(_ + 1)
+//  def dollarIndices(txt: String): Vector[Int] = indices(dolReg, txt).map(_ + 1)
 
   def displayIndices(txt: String): Vector[Int] = indices(doldolReg, txt)
 
@@ -239,8 +239,8 @@ object TeXToHtml {
 
   }
 
-  def inMath(j: Int, txt: String): Boolean =
-    dollarIndices(txt).filter(_ < j).size % 2 == 1
+//  def inMath(j: Int, txt: String): Boolean =
+//    dollarIndices(txt).filter(_ < j).size % 2 == 1
 
   def inDisplayMath(j: Int, txt: String): Boolean =
     displayIndices(txt).filter(_ < j).size % 2 == 1
@@ -407,18 +407,18 @@ object TeXToHtml {
       txt,
       (m) =>
         if (dolReg
-              .findAllIn(txt)
-              .size % 2 == 0 && doldolReg.findAllIn(txt).size % 2 == 0)
+              .findAllIn(m.before + " ")
+              .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0)
           Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
-        else m.group(2))
+        else s"\\{\\\\bf ${m.group(2)}\\}")
     bfReg2.replaceAllIn(
       step,
       (m) =>
         if (dolReg
-              .findAllIn(txt)
-              .size % 2 == 0 && doldolReg.findAllIn(txt).size % 2 == 0)
+              .findAllIn(m.before + " ")
+              .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0)
           Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
-        else m.group(2))
+        else s"\\{\\\\bf ${m.group(2)}\\}")
   }
 
   val emReg = "(\\{\\\\em)([ \\\\])([^\\}]+)\\}".r
@@ -435,11 +435,11 @@ object TeXToHtml {
         txt,
         (m) =>
           if (dolReg
-            .findAllIn(txt)
-            .size % 2 == 0 && doldolReg.findAllIn(txt).size % 2 == 0)
+            .findAllIn(m.before + " ")
+            .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0)
             Regex.quoteReplacement(s"<u>${m.group(2)}</u>")
           else
-            s"\\underline\{${m.group(2)}\}"
+            s"\\\\underline\\{${m.group(2).replace("\\", "\\\\")}\\}"
       )
 
 
@@ -488,12 +488,12 @@ class TeXToHtml(header: String, text: String) {
   lazy val baseReplaced =
     replaceEnds(
       replaceTiny(
-//        replaceUnderline(
+        replaceUnderline(
       replaceEm(
         replaceBf(
           replacePara(replaceParag(replaceBlanks(replaceItems(defReplaced)))))))
     )
-//    )
+    )
 
   lazy val (begReplaced, labels) = rplBegins(baseReplaced)
 
