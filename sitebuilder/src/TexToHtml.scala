@@ -7,51 +7,52 @@ import scala.util.matching._
 object TeXToHtml {
   val top =
     """
-<html>
-<head>
-<meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title> Probability Models and Stastics</title>
-<link rel="icon" href="../IIScLogo.jpg">
-
-<!-- Latest compiled and minified CSS  for Bootstrap -->
-<link rel="stylesheet" href="../css/bootstrap.min.css">
-
-<style type="text/css">
-   body { padding-top: 60px; }
-   .section {padding-top: 60px;}
-   #arxiv {
-     border-style: solid;
-     border-width: 1px;
-   }
-</style>
-
-
-  <!-- mathjax config similar to math.stackexchange -->
-
-
-
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-  jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
-  inlineMath: [ ['$', '$'] ],
-  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
-  TeX: { equationNumbers: { autoNumber: "all" } },
-  processEscapes: true,
-  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-  },
-  messageStyle: "none",
-  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-  });
-  </script>
-  <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-       </script>
-</head>
-<body>"""
+      |<html>
+      |<head>
+      |<meta charset="utf-8">
+      |   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      |   <meta name="viewport" content="width=device-width, initial-scale=1">
+      |
+      |<title> Probability Models and Stastics</title>
+      |<link rel="icon" href="../IIScLogo.jpg">
+      |
+      |<!-- Latest compiled and minified CSS  for Bootstrap -->
+      |<link rel="stylesheet" href="../css/bootstrap.min.css">
+      |
+      |<style type="text/css">
+      |   body { padding-top: 60px; }
+      |   .section {padding-top: 60px;}
+      |   #arxiv {
+      |     border-style: solid;
+      |     border-width: 1px;
+      |   }
+      |</style>
+      |
+      |
+      |  <!-- mathjax config similar to math.stackexchange -->
+      |
+      |
+      |
+      |  <script type="text/x-mathjax-config">
+      |  MathJax.Hub.Config({
+      |  jax: ["input/TeX", "output/HTML-CSS"],
+      |  tex2jax: {
+      |  inlineMath: [ ['$', '$'] ],
+      |  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+      |  TeX: { equationNumbers: { autoNumber: "all" } },
+      |  processEscapes: true,
+      |  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      |  },
+      |  messageStyle: "none",
+      |  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      |  });
+      |  </script>
+      |  <script type="text/javascript" async
+      |      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+      |       </script>
+      |</head>
+      |<body>
+    """.stripMargin
 
   def nav(part1: String, part2: String, part3: String): String =
     s"""
@@ -166,17 +167,19 @@ object TeXToHtml {
     .replace("\\newpage", "")
     .replace("\\vspace{4mm}", "")
     .replace("\\vspace{2mm}", "")
+    .replace( """\"{o}""", "&ouml;")
+
 
   val begReg: Regex = """\\begin\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
   val fullBegReg: Regex =
     """\\begin\{([a-zA-Z0-9\*]*)\}([\s]*\[[^\[\]]+\])?([\s]*\\label\{[a-zA-Z0-9:+-_' ]+\})?""".r
 
-  val endReg = """\\end\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
+  val endReg: Regex = """\\end\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
   val converter = new TeXToHtml(header, text)
 
-  val dolReg : Regex = "\\$".r
+  val dolReg: Regex = "\\$".r
 
   val doldolReg: Regex = "\\$\\$".r
 
@@ -188,7 +191,7 @@ object TeXToHtml {
 
   val endEnReg: Regex = """\\begin\{enumerate\}""".r
 
-  val blankLineReg: Regex = "\n([ \t]*\n)".r
+  val blankLineReg: Regex = "\n[ \t]*\n[\\s]*".r
 
   def maxOpt[B: Ordering](v: Vector[B]): Option[B] =
     if (v.isEmpty) None else Some(v.max)
@@ -207,6 +210,7 @@ object TeXToHtml {
 
   val mathEnvs = Set(
     "align*",
+    "align",
     "equation*",
     "equation"
   )
@@ -232,11 +236,7 @@ object TeXToHtml {
 
   def firstItem(j: Int, txt: String): Boolean = {
     val lastBeg = (enumerateBegs(txt) ++ itemizeBegs(txt)).filter(_ < j).max
-    maxOpt(items(txt).filter(_ < j))
-      .map {
-        _ < lastBeg
-      }
-      .getOrElse(true)
+    maxOpt(items(txt).filter(_ < j)).forall(_ < lastBeg)
 
   }
 
@@ -244,7 +244,7 @@ object TeXToHtml {
 //    dollarIndices(txt).filter(_ < j).size % 2 == 1
 
   def inDisplayMath(j: Int, txt: String): Boolean =
-    displayIndices(txt).filter(_ < j).size % 2 == 1
+    displayIndices(txt).count(_ < j) % 2 == 1
 
   def replaceItems(txt: String): String = {
     val itemLess =
@@ -258,7 +258,7 @@ object TeXToHtml {
       .replace("""\end{enumerate}""", "</ol>")
   }
 
-  def replaceBegins(txt: String) =
+  def replaceBegins(txt: String): String =
     begReg.replaceAllIn(
       txt,
       (m) =>
@@ -281,7 +281,7 @@ object TeXToHtml {
       .map { (m) =>
         val title = Option(m.group(2))
         val labelOpt =
-          Option(m.group(3)).map(_.trim.drop("""\label{""".size).dropRight(1))
+          Option(m.group(3)).map(_.trim.drop("""\label{""".length).dropRight(1))
         val newCounter =
           if (thmEnvs.keySet.contains(m.group(1))) thmCounter + 1
           else thmCounter
@@ -291,13 +291,14 @@ object TeXToHtml {
           else labels
         val newString =
           if (thmEnvs.keySet.contains(m.group(1)))
-            s"""<div id="theorem-${newCounter}"><div class="panel panel-${thmEnvs(m.group(1))._2} ${m
+            s"""<div id="theorem-${newCounter}"><div class="panel panel-${thmEnvs(
+              m.group(1))._2} ${m
               .group(1)}"> <div class="panel-heading">${thmEnvs(m.group(1))._1} $newCounter ${title
               .map((s) => "(" + s.drop(1).dropRight(1) + ")")
               .getOrElse("")}</div><div class="panel-body">"""
           else if (mathEnvs.contains(m.group(1)))
 //            Regex.quoteReplacement(
-              "$$" + m.group(0)//.replace("""\label""", """tag""")
+            "$$" + m.group(0) //.replace("""\label""", """tag""")
 //            )
           else if (divEnvs.contains(m.group(1)))
             s"""<div class="${m.group(1)}">"""
@@ -402,7 +403,6 @@ object TeXToHtml {
 
   val bfReg2 = "(\\{\\\\bf\\{)([^\\}]+)\\}\\}".r
 
-
   def replaceBf(txt: String) = {
     val step = bfReg1.replaceAllIn(
       txt,
@@ -411,7 +411,8 @@ object TeXToHtml {
               .findAllIn(m.before + " ")
               .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0)
           Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
-        else s"\\{\\\\bf ${m.group(2)}\\}")
+        else s"\\{\\\\bf ${m.group(2)}\\}"
+    )
     bfReg2.replaceAllIn(
       step,
       (m) =>
@@ -419,14 +420,16 @@ object TeXToHtml {
               .findAllIn(m.before + " ")
               .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0)
           Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
-        else s"\\{\\\\bf ${m.group(2)}\\}")
+        else s"\\{\\\\bf ${m.group(2)}\\}"
+    )
   }
 
   val emReg = "(\\{\\\\em)([ \\\\])([^\\}]+)\\}".r
 
   def replaceEm(txt: String) =
-    emReg.replaceAllIn(txt,
-                       (m) => Regex.quoteReplacement(s"<em>${m.group(2)}${m.group(3)}</em>"))
+    emReg.replaceAllIn(
+      txt,
+      (m) => Regex.quoteReplacement(s"<em>${m.group(2)}${m.group(3)}</em>"))
 
   val undReg = "(\\{\\\\underline)([ \\\\])([^\\}]+)\\}".r
 
@@ -436,23 +439,19 @@ object TeXToHtml {
         txt,
         (m) =>
           if (dolReg
-            .findAllIn(m.before + " ")
-            .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0)
+                .findAllIn(m.before + " ")
+                .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0)
             Regex.quoteReplacement(s"<u>${m.group(2)}</u>")
           else
             s"\\\\underline\\{${m.group(2).replace("\\", "\\\\")}\\}"
       )
 
-
-
   val tinyReg = "(\\{\\\\tiny )([^\\}]+)\\}".r
 
-  def replaceTiny (txt: String) =
+  def replaceTiny(txt: String) =
     tinyReg.replaceAllIn(txt,
-      (m) => Regex.quoteReplacement(s"""{${m.group(2)}}"""))
+                         (m) => Regex.quoteReplacement(s"""{${m.group(2)}}"""))
 }
-
-
 
 class TeXToHtml(header: String, text: String) {
   import TeXToHtml._
@@ -489,12 +488,7 @@ class TeXToHtml(header: String, text: String) {
   lazy val baseReplaced =
     replaceEnds(
       replaceTiny(
-        replaceUnderline(
-      replaceEm(
-        replaceBf(
-          replacePara(replaceParag(replaceBlanks(replaceItems(defReplaced)))))))
-    )
-    )
+        replaceEm(replacePara(replaceParag(replaceItems(defReplaced))))))
 
   lazy val (begReplaced, labels) = rplBegins(baseReplaced)
 
@@ -507,9 +501,12 @@ class TeXToHtml(header: String, text: String) {
           .map((n) => s"""<a href="#theorem-$n">$n</a>""")
           .getOrElse(m.group(0)))
 
-  lazy val (allReplaced, sections) = recReplaceSection(refReplaced)
+  lazy val (secReplaced, sections) = recReplaceSection(refReplaced)
 
-  lazy val sortedSections: Vector[(Int, String)] = sections.toVector.sortBy(_._1)
+  lazy val allReplaced = replaceUnderline(replaceBf(replaceBlanks(secReplaced)))
+
+  lazy val sortedSections: Vector[(Int, String)] =
+    sections.toVector.sortBy(_._1)
 
   def sectionList(v: Vector[(Int, String)]): String =
     v.map {
@@ -535,31 +532,6 @@ object TeXBuild extends App {
   converter.html()
 }
 
-/*
-The cases for begin{_} :
-Vector(
-  "center",
-  "example",
-  "question",
-  "definition",
-  "itemize",
-  "cases",
-  "enumerate",
-  "remark",
-  "align*",
-  "exercise",
-  "lemma",
-  "problem",
-  "proposition",
-  "proof",
-  "equation*",
-  "aligned",
-  "figure",
-  "theorem",
-  "array",
-  "equation",
-  "tabular",
-  "thebibliography"
-)
 
- */
+
+
