@@ -1748,7 +1748,8 @@ f(r,\theta)=\frac{1}{2\pi}\lam e^{-\lam r} \hsp{2mm}\mb{ for }r>0,\theta\in (0,2
 $$
 Define the transformation $T:\R_{+}\times (0,2\pi)\to \R^{2}$ by $T(r,\theta)=(\sqrt{r}\cos\theta,\sqrt{r}\sin \theta)$. The image of $T$ consists of all $(x,y)\in \R^{2}$ with $y\not=0$. The inverse is $T^{-1}(x,y)=(x^{2}+y^{2},\arctan(y/x))$ where $\arctan(y/x)$ is defined so as to take values in $(0,\pi)$ when $y>0$ and to take values in $(\pi,2\pi)$ when $y<0$. Thus
 $$
-JT^{-1}(x,y) = \det\matrices{2x}{2y}{\frac{-y}{x^{2}+y^{2}}}{\frac{x}{x^{2}+y^{2}}}=2.
+JT^{-1}(x,y) = \det\l[\begin{array}{cc} 2x & 2y \\ \frac{-y}{x^{2}+y^{2}} & \frac{x}{x^{2}+y^{2}} \end{array} \r]
+=2.
 $$
 Therefore, $(X,Y)$ has joint density
 $$
@@ -3065,17 +3066,18 @@ We define $O_{j}$ as the number of time intervals in which we see exactly $j$ pa
 
 First estimate $\lam$, for example $\hat{\lam}=\bar{X}_{n}$ is an MLE as well as method of moments estimate. Then we use this to calculate Poisson probabilities and the expected numbers. In other words, $E_{j}=e^{-\hat{\lam}}\frac{\hat{\lam}^{j}}{j!}$. For the given data we find that $\hat{\lam}=3.87$. The table is as follows.
 
-\begin{center}
-\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c||}
+\[
+\begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
-$j$  & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & $\ge$ 10 \\
+j  & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & \ge 10 \\
 \hline
-$O_{j}$  & 57 & 203 & 383 & 525 & 532 & 408 & 273 & 139 & 45 & 27 & 16 \\
+O_{j}  & 57 & 203 & 383 & 525 & 532 & 408 & 273 & 139 & 45 & 27 & 16 \\
 \hline
-$E_{j}$ & 54.4 & 210.5 & 407.4 & 525.4 & 508.4 & 393.5 & 253.8 & 140.3 & 67.9 & 29.2 & 17.1 \\
+E_{j} & 54.4 & 210.5 & 407.4 & 525.4 & 508.4 & 393.5 & 253.8 & 140.3 & 67.9 & 29.2 & 17.1 \\
 \hline
-\end{tabular}
-\end{center}
+\end{array}
+\]
+
 Two remarks: The original data would have consisted of several more bins for $j=11,12\ldots$. These have been clubbed together to perform the $\chi^{2}$ test (instead of a minimum of $5$ per bin, they may have ensured that there are at least $10$ per bin). Also, the estimate $\hat{\lam}=3.87$ was obtained before clubbing these bins. Indeed, if the data is merely presented as the above table, there will be some ambiguity in how to find $\hat{\lam}$ as one of the bins says ``$\ge 10$''.
 
 Then we compute
@@ -3201,21 +3203,21 @@ Another way to write it is $\hat{\bet}=\frac{s_{Y}}{s_{X}}r_{X,Y}$ where $r_{X,Y
 \para{A motivation for the least squares criterion} Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alp+\bet X_{i}+\eps_{i}$ where $\eps_{i}$ are i.i.d. $N(0,\sig^{2})$ ``errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alp+\bet X_{i},\sig^{2})$ random variables. Now we can extimate $\alp,\bet$ by the maximum likelihood method.
 
 \beg [Hubble's 1929 experiment on the recession velocity of nebulae and their distance to earth] Hubble collected the following data that I took from \href{http://lib.stat.cmu.edu/DASL/Datafiles/Hubble.html}{this website}. Here $X$ is the number of megaparsecs from the nebula to earth and $Y$ is the observed recession velocity in $10^{3}$km/s.
-\begin{center}
-\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\[
+\begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
-$X$  & 0.032 & 0.034 & 0.214 & 0.263 & 0.275 & 0.275 & 0.45 & 0.5 & 0.5 & 0.63 & 0.8 &  2 \\
+X  & 0.032 & 0.034 & 0.214 & 0.263 & 0.275 & 0.275 & 0.45 & 0.5 & 0.5 & 0.63 & 0.8 &  2 \\
 \hline
-$Y$  & 0.17 & 0.29 & -0.13 & -0.07 & -0.185 & -0.22 & 0.2 & 0.29 & 0.27 & 0.2 & 0.3 & 1.09\\
-\hline
-\hline
-$X$ & 0.9 & 0.9 & 0.9 & 0.9 & 1 & 1.1 & 1.1 & 1.4 & 1.7 & 2 & 2 & 2 \\
-\hline
-$Y$ & -0.03 & 0.65 & 0.15 & 0.5 & 0.92 & 0.45 & 0.5 & 0.5 & 0.96 & 0.5 & 0.85 & 0.8   \\
+Y  & 0.17 & 0.29 & -0.13 & -0.07 & -0.185 & -0.22 & 0.2 & 0.29 & 0.27 & 0.2 & 0.3 & 1.09\\
 \hline
 \hline
-\end{tabular}
-\end{center}
+X & 0.9 & 0.9 & 0.9 & 0.9 & 1 & 1.1 & 1.1 & 1.4 & 1.7 & 2 & 2 & 2 \\
+\hline
+Y & -0.03 & 0.65 & 0.15 & 0.5 & 0.92 & 0.45 & 0.5 & 0.5 & 0.96 & 0.5 & 0.85 & 0.8   \\
+\hline
+\hline
+\end{array}
+\]
 We fit two straight lines to this data.
 \benu
 \item Fit the line $Y=\alp+\bet X$. The least squares estimators (as derived earlier) turn out to be $\hat{\alp}=-0.04078$ and $\hat{\bet}=0.45416$.  If $Z_{i}=\alp+\bet X_{i}$ are the predicted values of $Y_{i}$s, then one can see that the {\em residual sum of squares} is $\sum_{i}(Y_{i}-Z_{i})^{2}=1.1934$.
@@ -3231,33 +3233,33 @@ More importantly, in this example, physics tells us  that the line must pass thr
 \eeg
 
 \beg I have taken this example from the \href{http://ces.iisc.ernet.in/hpg/nvjoshi/statspunedatabook/databook.html}{ wonderful compilation of data sets} by A. P. Gore, S. A. Paranjpe, M. B. Kulkarni. In this example, $Y$ denotes the number of frogs of age $X$ (in some delimited population).
-\begin{center}
-\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\[
+\begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
-$X$  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\
+X  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\
 \hline
-$Y$  & 9093 & 35 & 30 & 28 & 12 & 8 & 5 & 2\\
+Y  & 9093 & 35 & 30 & 28 & 12 & 8 & 5 & 2\\
 \hline
 \hline
-\end{tabular}
-\end{center}
+\end{array}
+\]
 A prediction about life-times says that the survival probability $P(t)$ (which is the chance that an individual survives up to age $t$ or more) decays as $P(t)=Ae^{-bt}$ for some constants $A$ and $b$. We would like to check this agains the given data.
 
 What we need are individuals that survive beyond age $t$. Taking $Z$ to be the cumulative sums of $Y$, this gives us
-\begin{center}
-\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\[
+\begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
-$X$  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\
+X  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\
 \hline
-$Z$  & 9213 &  120 & 85 & 55 & 27 & 15 & 7 & 2\\
+Z  & 9213 &  120 & 85 & 55 & 27 & 15 & 7 & 2\\
 \hline
-$P=Z/n$ & 1.0000  &  0.0130 &   0.0092  &  0.0060  &  0.0029  &  0.0016  &  0.0008  &  0.0002 \\
+P=Z/n & 1.0000  &  0.0130 &   0.0092  &  0.0060  &  0.0029  &  0.0016  &  0.0008  &  0.0002 \\
 \hline
-$W=\log P$ &  0  & -4.3409  & -4.6857 &  -5.1210  & -5.8325  & -6.4203 &  -7.1825 &  -8.4352 \\
+W=\log P &  0  & -4.3409  & -4.6857 &  -5.1210  & -5.8325  & -6.4203 &  -7.1825 &  -8.4352 \\
 \hline
 \hline
-\end{tabular}
-\end{center}
+\end{array}
+\]
 We compute that $\bar{X}=4.5$, $\bar{W}=-5.25$, $\mb{std}(X)=2.45$, $\mb{std}(W)= 2.52$ and $\mb{corr}(X,W)=0.92$. Hence, in the linear regression $W=a+bX$, we see that $\hat{b}=0.94$ and $\hat{a}=-9.49$. The residual sum of squares is $7.0$.
 \eeg
 
@@ -3279,21 +3281,21 @@ If the model has $p$ parameters, then define $\bar{SS}=SS/(n-1-p)$. In particula
 
 In particular, $\bar{R}_{0}^{2}=R_{0}^{2}$ as before. But $R_{1}^{2}=1-\frac{SS_{1}/(n-2)}{SS_{0}/(n-1)}$. Note that $\bar{R}^{2}$ does not necessarily increase upon adding an extra parameter. If we want a polynomial fit, then a rule of thumb is to keep adding more powers as long as $\bar{R}^{2}$ continues to increase and stop the moment it decreases.
 \beg To illustrate the point let us look at a simulated data set. I generated $25$ i.i.d $N(0,1)$ variables $X_{i}$ and then generated $25$ i.i.d. $N(0,1/4)$ variables $\eps_{i}$. And set $Y_{i}=2X_{i}+\eps_{i}$. The  data set obtained was as follows.
-\begin{center}
-\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\[
+\begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
-$X$  & -0.87&0.07&-1.22&-1.12&-0.01&1.53&-0.77&0.37&-0.23&1.11&-1.09&0.03&0.55 \\
+X  & -0.87&0.07&-1.22&-1.12&-0.01&1.53&-0.77&0.37&-0.23&1.11&-1.09&0.03&0.55 \\
 \hline
-$Y$  & -2.43&-0.56&-2.19&-2.32&-0.12&3.77&-1.4&0.84&0.34&1.83&-1.83&0.48&0.98 \\
-\hline
-\hline
-$X$ & 1.1&1.54&0.08&-1.5&-0.75&-1.07&2.35&-0.62&0.74&-0.2&0.88&-0.77 &\\
-\hline
-$Y$ & 2.3&2.5&-0.41&-2.94&-1.13&-0.84&4.36&-1.14&1.45&-1.36&1.55&-2.43  &  \\
+Y  & -2.43&-0.56&-2.19&-2.32&-0.12&3.77&-1.4&0.84&0.34&1.83&-1.83&0.48&0.98 \\
 \hline
 \hline
-\end{tabular}
-\end{center}
+X & 1.1&1.54&0.08&-1.5&-0.75&-1.07&2.35&-0.62&0.74&-0.2&0.88&-0.77 &\\
+\hline
+Y & 2.3&2.5&-0.41&-2.94&-1.13&-0.84&4.36&-1.14&1.45&-1.36&1.55&-2.43  &  \\
+\hline
+\hline
+\end{array}
+\]
 To this data set we fit two models (A) $Y=\bet X$ and (B) $Y=a+bX$. The results are as follows.
 \begin{align*}
 \mb{SS}_{0}=96.20, &\;\;  R_{0}^{2}=0 \\

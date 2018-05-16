@@ -152,7 +152,7 @@ Sometimes statistics is described as <em> the art or science of decision making 
 <p class="text-justify"><div id="theorem-3"><div class="panel panel-info example"> <div class="panel-heading">Example 3 </div><div class="panel-body"> A psychic claims to have divine visions unavailable to most of us. You are assigned the task of testing her claims. You take a standard deck of cards, shuffle it well and keep it face down on the table. The psychic writes down the list of cards in some order - whatever her vision tells her about how the deck is ordered. Then you count the number of correct guesses. If the number is 1 or 2, perhaps you can dismiss her claims. If it is 45, perhaps you ought to be take her seriously. Again, where to draw the line?</p>
 <p class="text-justify">The logic is this. Roughly one may say that <em> surprise</em> is just the name for our reaction to an event that we <em> \'{a</em> priori} thought to have low chance of occurring. Thus, we approach the experiment with the belief that the psychic is just guessing at random, and if the results are such that under that random-guess-hypothesis they have very small probability, then we are willing to be surprised, that is willing to discard our preconception and accept that she is a psychic.</p>
 <p class="text-justify">How low a probability is surprising? In the context of psychics, let us say, $1/10000$. Once we fix that, we must find a number $m\le 52$ such that by pure guessing, the probability to get more than $m$ correct guesses is less that $1/10000$. Then we tell the psychic that if she gets more than $m$ correct guesses, we accept her claim, and otherwise, reject her claim.  This raises the simple (and you can do it yourself)
-<div id="theorem-4"><div class="panel panel-info question"> <div class="panel-heading">Question 4 </div><div class="panel-body"> For a deck of $52$ cards, find the number $m$ such that
+<div id="theorem-4"><div class="panel panel-danger question"> <div class="panel-heading">Question 4 </div><div class="panel-body"> For a deck of $52$ cards, find the number $m$ such that
 $$
 \mathbf{P}(\mbox{by random guessing we get more than }m\mbox{ correct guesses}) < \frac{1}{10000}.
 $$
@@ -174,7 +174,7 @@ $$
 <p class="text-justify"></p>
 <p class="text-justify"></section>
              <section><h2 id="section-2">2. Discrete probability spaces.</h2><p class="text-justify">
-<div id="theorem-7"><div class="panel panel-info definition"> <div class="panel-heading">Definition 7 </div><div class="panel-body"> Let $\Omega$ be a finite or countable\footnote{For those unfamiliar with countable sets, it will be explained in some detail later.} set. Let $p:\Omega\rightarrow [0,1]$ be a function such that $\sum_{\omega\in \Omega}p_{\omega}=1$. Then $(\Omega,p)$ is called a <em> discrete probability space</em>. $\Omega$ is called the <em> sample space</em> and $p_{\omega}$ are called <em> elementary probabilities</em>.
+<div id="theorem-7"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 7 </div><div class="panel-body"> Let $\Omega$ be a finite or countable\footnote{For those unfamiliar with countable sets, it will be explained in some detail later.} set. Let $p:\Omega\rightarrow [0,1]$ be a function such that $\sum_{\omega\in \Omega}p_{\omega}=1$. Then $(\Omega,p)$ is called a <em> discrete probability space</em>. $\Omega$ is called the <em> sample space</em> and $p_{\omega}$ are called <em> elementary probabilities</em>.
 <ul>
 <li> Any subset $A\subseteq \Omega$ is called an <em> event</em>. For an event $A$ we define its <em> probability</em> as $\mathbf{P}(A)=\sum_{\omega\in A}p_{\omega}$.
 </li>
@@ -250,7 +250,7 @@ The second one has the advantage that if we change the parent pair, we don't hav
 <p class="text-justify">
 <strong>Reasonable model?</strong> There are many simplifications involved here. Firstly, genes are somewhat ill-defined concepts, better defined are nucleotides in the DNA (and even then there are two copies of each gene). Secondly, there are many ``errors'' in real DNA, even the total number of genes can change, there can be big chunks missing, a whole extra chromosome etc. Thirdly, the assumption that all possible gene-sequences in $\Omega_{0}$ are equally likely is incorrect - if two genes are physically close to each other in a chromosome, then they are likely to both come from the father or both from the mother. Lastly, if our interest originally was to guess the eventual height of the child or its intelligence, then it is not clear that these are determined by the genes alone (environmental factors such as availability of food etc. also matter). Finally, in case of the problem that Solomon faced, the information about genes of the parents was not available, the model as written would be use.</p>
 <p class="text-justify"></div></div></div></p>
-<p class="text-justify"><div id="theorem-14"><div class="panel panel-info remark"> <div class="panel-heading">Remark 14 </div><div class="panel-body"> We have discussed at length the reasonability of the model in this example to indicate the enormous effort needed to find a sufficiently  accurate but also reasonably simple probability model for a real-world situation. Henceforth, we shall omit such caveats and simply switch back-and-forth between a real-world situation and a reasonable-looking probability model as if there is no difference between the two. However, thinking about the appropriateness of the chosen models is much encouraged.
+<p class="text-justify"><div id="theorem-14"><div class="panel panel-success remark"> <div class="panel-heading">Remark 14 </div><div class="panel-body"> We have discussed at length the reasonability of the model in this example to indicate the enormous effort needed to find a sufficiently  accurate but also reasonably simple probability model for a real-world situation. Henceforth, we shall omit such caveats and simply switch back-and-forth between a real-world situation and a reasonable-looking probability model as if there is no difference between the two. However, thinking about the appropriateness of the chosen models is much encouraged.
 </div></div></div></p>
 <p class="text-justify">
 </section>
@@ -293,7 +293,7 @@ We give two proposals for the elementary probabilities.
 <li> Let $p^{\mbox{BE}}_{(\ell_{1},\ldots ,\ell_{m})}=\frac{1}{\binom{m+r-1}{r-1}}$ for each $(\ell_{1},\ldots ,\ell_{m})\in \Omega$. Elementary probabilities are chosen so that all distinguishable configurations are equally likely.
 </ol>
 That these are legitimate probability spaces depend on two combinatorial facts.
-<div id="theorem-22"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 22 </div><div class="panel-body">
+<div id="theorem-22"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 22 </div><div class="panel-body">
 <ol>
 <li> Let $(\ell_{1},\ldots ,\ell_{m})\in \Omega$. Show that $\#\{\underline{\omega}\in [m]^{r} {\; : \;} \sum_{j=1}^{r}{\mathbf 1}_{\omega_{j}=i}=\ell_{i} \mbox{ for each }i\in [m]\} = \frac{n!}{\ell_{1}!\ell_{2}!\ldots \ell_{m}!}$. Hence or directly, show that $\sum\limits_{\omega\in \Omega}p_{\omega}^{MB}=1$.
 </li>
@@ -362,7 +362,7 @@ A=\{\omega \in \Omega{\; : \;} & \mbox{ the subset of edges in }\omega \\
 <li> <strong>Toss a fair coin infinitely many times</strong>. $\Omega=\{0,1\}^{\mathbb{N}}:=\{\underline{\omega}=(\omega_{1},\omega_{2},\ldots ){\; : \;} \omega_{i}=0 \mbox{ or }1\}$. This is again an uncountable set.
 </ol>
 </div></div></div>
-<div id="theorem-29"><div class="panel panel-info remark"> <div class="panel-heading">Remark 29 </div><div class="panel-body"> In one sense, the first non-example is almost irredeemable but  the second non-example can be dealt with, except for technicalities beyond this course. We shall later give a set of working rules to work with such ``continuous probabilities''. Fully satisfactory development will have to wait for a course in measure theory.
+<div id="theorem-29"><div class="panel panel-success remark"> <div class="panel-heading">Remark 29 </div><div class="panel-body"> In one sense, the first non-example is almost irredeemable but  the second non-example can be dealt with, except for technicalities beyond this course. We shall later give a set of working rules to work with such ``continuous probabilities''. Fully satisfactory development will have to wait for a course in measure theory.
 </div></div></div></p>
 <p class="text-justify">
 </section>
@@ -370,7 +370,7 @@ A=\{\omega \in \Omega{\; : \;} & \mbox{ the subset of edges in }\omega \\
 <p class="text-justify"></p>
 <p class="text-justify"></p>
 <p class="text-justify"></p>
-<p class="text-justify"><div id="theorem-30"><div class="panel panel-info definition"> <div class="panel-heading">Definition 30 </div><div class="panel-body"> An set $\Omega$ is said to be <em> finite</em> if there is an $n\in \mathbb{N}$ and a bijection from $\Omega$ onto $[n]$. An infinite set $\Omega$ is said to be countable if there is a bijection from $\mathbb{N}$ onto $\Omega$.
+<p class="text-justify"><div id="theorem-30"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 30 </div><div class="panel-body"> An set $\Omega$ is said to be <em> finite</em> if there is an $n\in \mathbb{N}$ and a bijection from $\Omega$ onto $[n]$. An infinite set $\Omega$ is said to be countable if there is a bijection from $\mathbb{N}$ onto $\Omega$.
 </div></div></div>
 Generally, the word countable also includes finite sets. If $\Omega$ is an infinite countable set, then using any bijection $f:\mathbb{N}\rightarrow \Omega$, we can list the elements of $\Omega$ as a sequence $$f(1),f(2),f(3)\ldots$$ so that each element of $\Omega$ occurs exactly once in the sequence. Conversely, if you can write the elements of $\Omega$ as a sequence, it defines an injective function from natural numbers onto $\Omega$ (send $1$ to the first element of the sequence, $2$ to the second element etc).</p>
 <p class="text-justify"><div id="theorem-31"><div class="panel panel-info example"> <div class="panel-heading">Example 31 </div><div class="panel-body"> The set of integers $\mathbb{Z}$ is countable. Define $f:\mathbb{N}\rightarrow \mathbb{Z}$ by
@@ -415,7 +415,7 @@ Let $Y_{1},Y_{2},Y_{3},\ldots$ be any numbers in $\{0,1,\ldots ,9\}$ with the on
 </div></div></div></p>
 <p class="text-justify"><div id="theorem-36"><div class="panel panel-info example"> <div class="panel-heading">Example 36 </div><div class="panel-body"> Let $A_{1},A_{2},\ldots $ be subsets of a set $\Omega$. Suppose each $A_{i}$ is countable (finite is allowed). Then $\cup_{i}A_{i}$ is also countable. We leave it as an exercise. [<em> Hint:</em> If each $A_{i}$ is countably infinite and pairwise disjoint, then $\cup A_{i}$ can be thought of as $\mathbb{N}\times \mathbb{N}$].
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-37"><div class="panel panel-info lemma"> <div class="panel-heading">Lemma 37 (Schr\"{o}der-Bernstein)</div><div class="panel-body"> Let $A,B$ be two sets and suppose there exist injective functions $f:A\rightarrow B$ and $g:B\rightarrow A$. Then, there exists a bijective function $h:A\rightarrow B$.
+<p class="text-justify"><div id="theorem-37"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 37 (Schr\"{o}der-Bernstein)</div><div class="panel-body"> Let $A,B$ be two sets and suppose there exist injective functions $f:A\rightarrow B$ and $g:B\rightarrow A$. Then, there exists a bijective function $h:A\rightarrow B$.
 </div></div></div>
 We omit the proof as it is irrelevant to the rest of the course\footnote{For those interested, we describe the idea of the proof somewhat informally. Consider the two sets $A$ and $B$ (assumed to have no common elements) and draw a blue arrow from each $x\in A$ to $f(x)\in B$ and a red arrow from each $y\in B$ to $g(y)\in A$. Start at any $x\in A$ or $y\in B$ and follow the arrows in the forward and backward directions. There are only three possibilities
 <ol>
@@ -443,14 +443,14 @@ This is the same as $x_{n}\le y_{m}$. Since $y_{k}$ are non-decreasing, it follo
 </div></div></div></p>
 <p class="text-justify">Since $f_{+}$ and $f_{-}$ are non-negative functions, we know how to define their sums. Let $S_{+}=\sum_{\omega}f_{+}(\omega)$ and $S_{-}=\sum_{\omega}f_{-}(\omega)$. Recall that one or both of $S_{+},S_{-}$ could be equal to $+\infty$, in which case we say that $\sum_{\omega}f(\omega)$ <em> does not converge absolutely</em> and do not assign it any value. If both $S_{+}$ and $S_{-}$ are finite, then we define $\sum_{\omega}f(\omega)= S_{+}-S_{-}$. In this case we say that $\sum f$ <em> converges absolutely</em>.</p>
 <p class="text-justify">This completes our definition of absolutely convergent sums. A few exercises to show that when working with absolutely convergent sums, the usual rules of addition remain valid. For example, we can add the numbers in any order.</p>
-<p class="text-justify"><div id="theorem-39"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 39 </div><div class="panel-body"> Show that $\sum_{\omega}f(\omega)$ converges absolutely if and only if $\sum_{\omega}|f(\omega)|$ is finite (since $|f(\omega)|$ is a non-negative function, this latter sum is always defined, and may equal $+\infty$).
+<p class="text-justify"><div id="theorem-39"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 39 </div><div class="panel-body"> Show that $\sum_{\omega}f(\omega)$ converges absolutely if and only if $\sum_{\omega}|f(\omega)|$ is finite (since $|f(\omega)|$ is a non-negative function, this latter sum is always defined, and may equal $+\infty$).
 </div></div></div></p>
 <p class="text-justify">For non-negative $f$, we can find the sum by using any particular bijection and then taking limits of partial sums. What about general $f$?
-<div id="theorem-40"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 40 </div><div class="panel-body"> Let $f:\Omega \rightarrow \mathbb{R}$. Suppose $\sum_{\omega\in \Omega}f(\omega)$ be summable and let the sum be $S$. Then, for any bijection $\varphi:\mathbb{N}\rightarrow \Omega$, we have $\lim_{n\rightarrow \infty}(f(\varphi(1))+\ldots +f(\varphi(n)))=S$.</p>
+<div id="theorem-40"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 40 </div><div class="panel-body"> Let $f:\Omega \rightarrow \mathbb{R}$. Suppose $\sum_{\omega\in \Omega}f(\omega)$ be summable and let the sum be $S$. Then, for any bijection $\varphi:\mathbb{N}\rightarrow \Omega$, we have $\lim_{n\rightarrow \infty}(f(\varphi(1))+\ldots +f(\varphi(n)))=S$.</p>
 <p class="text-justify">Conversely, if $\lim_{n\rightarrow \infty}(f(\varphi(1))+\ldots +f(\varphi(n)))$ exists and is the same finite number for any bijection $\varphi:\mathbb{N}\rightarrow \mathbb{R}$, then $f$ must be absolutely summable and $\sum_{\omega\in \Omega}f(\omega)$ is equal to this common limit.
 </div></div></div></p>
 <p class="text-justify">The usual properties of summation without which life would not be worth living, are still valid.
-<div id="theorem-41"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 41 </div><div class="panel-body"> Let $f,g:\Omega\rightarrow \mathbb{R}_{+}$ and $a,b\in \mathbb{R}$. If $\sum f$ and $\sum g$ converge absolutely,  then  $\sum (af+bg)$ converges absolutely and $\sum (af+bg) = a\sum f +b\sum g$. Further, if $f(\omega)\le g(\omega)$ for all $\omega\in \Omega$, then $\sum f \le \sum g$.
+<div id="theorem-41"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 41 </div><div class="panel-body"> Let $f,g:\Omega\rightarrow \mathbb{R}_{+}$ and $a,b\in \mathbb{R}$. If $\sum f$ and $\sum g$ converge absolutely,  then  $\sum (af+bg)$ converges absolutely and $\sum (af+bg) = a\sum f +b\sum g$. Further, if $f(\omega)\le g(\omega)$ for all $\omega\in \Omega$, then $\sum f \le \sum g$.
 </div></div></div></p>
 <p class="text-justify">
 <div id="theorem-42"><div class="panel panel-info example"> <div class="panel-heading">Example 42 </div><div class="panel-body"> This example will illustrate why we refuse to assign a value to $\sum_{\omega}f(\omega)$ in some cases. Let $\Omega=\mathbb{Z}$ and define $f(0)=0$ and $f(n)=1/n$ for $n\not=0$. At first one may like to say that $\sum_{n\in \mathbb{Z}}f(n)=0$, since we can cancel $f(n)$ and $f(-n)$ for each $n$. However, following our definitions
@@ -461,27 +461,27 @@ Hence $S_{+}$ and $S_{-}$ are both $+\infty$ which means our definition does not
 <p class="text-justify">Indeed, by ordering the numbers appropriately, we can get any value we like! For example, here is how to get $10$. We know that $1+\frac{1}{2}+\ldots +\frac{1}{n}$ grows without bound. Just keep adding these positive number till the sum exceeds $10$ for the first time. Then start adding the negative numbers $-1-\frac{1}{2}-\ldots -\frac{1}{m}$ till the sum comes below $10$. Then add the positive numbers $\frac{1}{n+1}+\frac{1}{n+2}+\ldots +\frac{1}{n'}$ till the sum exceeds $10$ again, and then negative numbers till the sum falls below $10$ again, etc. Using the fact that the individual terms in the series are going to zero, it is easy to see that the partial sums then converge to $10$. There is nothing special about $10$, we can get any number we want!
 </div></div></div>
 One last remark on why we assumed $\Omega$ to be countable.
-<div id="theorem-43"><div class="panel panel-info remark"> <div class="panel-heading">Remark 43 </div><div class="panel-body"> What if $\Omega$ is uncountable? Take any $f:\Omega\rightarrow \mathbb{R}_{+}$. Define the sets $A_{n}=\{\omega{\; : \;} f(\omega)\ge 1/n\}$. For some $n$, if $A_{n}$ has infinitely many elements, then clearly the only reasonable value that we can assign to $\sum f(\omega)$ is $+\infty$ (since the sum over elements of $A_{n}$ itself is larger than any finite number). Therefore, for $\sum f(\omega)$ to be a finite number it is essential that $A_{n}$ is a finite set for each set.</p>
+<div id="theorem-43"><div class="panel panel-success remark"> <div class="panel-heading">Remark 43 </div><div class="panel-body"> What if $\Omega$ is uncountable? Take any $f:\Omega\rightarrow \mathbb{R}_{+}$. Define the sets $A_{n}=\{\omega{\; : \;} f(\omega)\ge 1/n\}$. For some $n$, if $A_{n}$ has infinitely many elements, then clearly the only reasonable value that we can assign to $\sum f(\omega)$ is $+\infty$ (since the sum over elements of $A_{n}$ itself is larger than any finite number). Therefore, for $\sum f(\omega)$ to be a finite number it is essential that $A_{n}$ is a finite set for each set.</p>
 <p class="text-justify">Now, a countable union of finite sets is countable (or finite). Therefore $A=\bigcup_{n}A_{n}$ is a countable set. But note that $A$ is also the set $\{\omega{\; : \;} f(\omega) > 0\}$ (since, if $f(\omega) > 0$ it must belong to some $A_{n}$). Consequently, even if the underlying set $\Omega$ is uncountable, our function will have to be equal to zero except on a countable subset of $\Omega$. In other words, we are reduced to the case of countable sums!
 </div></div></div></p>
 <p class="text-justify"><strong>5.2 Second approach.</strong><p class="text-justify"> In the first approach, we assumed that you are already familiar with the notion of limits and series and used them to define countable sums. In the second approach, we start from scratch and define infinite sums. The end result is exactly the same. For the purposes of this course, you may ignore the rest of the section.
-<div id="theorem-44"><div class="panel panel-info definition"> <div class="panel-heading">Definition 44 </div><div class="panel-body"> If $\Omega$ is a countable set and $f:\Omega \rightarrow \mathbb{R}_{+}$ is a non-negative function, then we <u>define</u>
+<div id="theorem-44"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 44 </div><div class="panel-body"> If $\Omega$ is a countable set and $f:\Omega \rightarrow \mathbb{R}_{+}$ is a non-negative function, then we <u>define</u>
 $$
 \sum\limits_{\omega}f(\omega) :=\sup\left\{\sum\limits_{\omega\in A}f(\omega) {\; : \;} A\subseteq \Omega \mbox{ is finite}\right\}
 $$
 where the supremum takes values in $\bar{\mathbb{R}}_{+}=\mathbb{R}_{+}\cup\{+\infty\}$. We say that $\sum f(\omega)$ converges if the supremum has a finite value.
 </div></div></div>
-<div id="theorem-45"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 45 </div><div class="panel-body"> Show that if $f,g:\Omega\rightarrow \mathbb{R}_{+}$ and $a,b\in \mathbb{R}_{+}$, then  $\sum (af+bg) = a\sum f +b\sum g$. Further, if $f(\omega)\le g(\omega)$ for all $\omega\in \Omega$, then $\sum f \le \sum g$.
+<div id="theorem-45"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 45 </div><div class="panel-body"> Show that if $f,g:\Omega\rightarrow \mathbb{R}_{+}$ and $a,b\in \mathbb{R}_{+}$, then  $\sum (af+bg) = a\sum f +b\sum g$. Further, if $f(\omega)\le g(\omega)$ for all $\omega\in \Omega$, then $\sum f \le \sum g$.
 </div></div></div></p>
 <p class="text-justify">
 Next, we would like to remove the condition of non-negativity. For a real number $x$ we write $x_{+}=x\vee 0$ and $x_{-}=(-x)\vee 0$. Then $x=x_{+}-x_{-}$ while $|x|=x_{+}+x_{-}$.
-<div id="theorem-46"><div class="panel panel-info definition"> <div class="panel-heading">Definition 46 </div><div class="panel-body"> Now suppose $f:\Omega\rightarrow \mathbb{R}$ takes both positive and negative values. Then we first define the non-negative functions $f_{+},f_{-}:\Omega\rightarrow \mathbb{R}_{+}$ by $f_{+}(\omega)=(f(\omega))_{+}$ and $f_{-}(\omega)=(f(\omega))_{-}$ and set $S_{+}=\sum_{\omega}f_{+}(\omega)$ and $S_{-}=\sum_{\omega}f_{-}(\omega)$. If both $S_{+}$ and $S_{-}$ are finite, then we define $\sum_{\omega}f(\omega)= S_{+}-S_{-}$.
+<div id="theorem-46"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 46 </div><div class="panel-body"> Now suppose $f:\Omega\rightarrow \mathbb{R}$ takes both positive and negative values. Then we first define the non-negative functions $f_{+},f_{-}:\Omega\rightarrow \mathbb{R}_{+}$ by $f_{+}(\omega)=(f(\omega))_{+}$ and $f_{-}(\omega)=(f(\omega))_{-}$ and set $S_{+}=\sum_{\omega}f_{+}(\omega)$ and $S_{-}=\sum_{\omega}f_{-}(\omega)$. If both $S_{+}$ and $S_{-}$ are finite, then we define $\sum_{\omega}f(\omega)= S_{+}-S_{-}$.
 </div></div></div>
-<div id="theorem-47"><div class="panel panel-info remark"> <div class="panel-heading">Remark 47 </div><div class="panel-body"> The condition that $S_{+}$ and $S_{-}$ are both finite is the same as the condition that $\sum_{\omega}|f(\omega)|$ is finite. If these happen,  we say that the sum $\sum f(\omega)$ <em> converges absolutely</em>.
+<div id="theorem-47"><div class="panel panel-success remark"> <div class="panel-heading">Remark 47 </div><div class="panel-body"> The condition that $S_{+}$ and $S_{-}$ are both finite is the same as the condition that $\sum_{\omega}|f(\omega)|$ is finite. If these happen,  we say that the sum $\sum f(\omega)$ <em> converges absolutely</em>.
 </div></div></div>
-<div id="theorem-48"><div class="panel panel-info remark"> <div class="panel-heading">Remark 48 </div><div class="panel-body"> Sometimes it is convenient to set $\sum f(\omega)$ to $+\infty$ if  $S_{+}=\infty$ and $S_{-} < \infty$ and set $\sum f(\omega)$ to $-\infty$ if $S_{+} < \infty$ and $S_{-}=\infty$. But there is no reasonable value to assign if both the sums are infinite.
+<div id="theorem-48"><div class="panel panel-success remark"> <div class="panel-heading">Remark 48 </div><div class="panel-body"> Sometimes it is convenient to set $\sum f(\omega)$ to $+\infty$ if  $S_{+}=\infty$ and $S_{-} < \infty$ and set $\sum f(\omega)$ to $-\infty$ if $S_{+} < \infty$ and $S_{-}=\infty$. But there is no reasonable value to assign if both the sums are infinite.
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-49"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 49 </div><div class="panel-body"> Show that the two approaches give the same answers.
+<p class="text-justify"><div id="theorem-49"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 49 </div><div class="panel-body"> Show that the two approaches give the same answers.
 </div></div></div></p>
 <p class="text-justify"></p>
 <p class="text-justify"></p>
@@ -535,7 +535,7 @@ Next, we would like to remove the condition of non-negativity. For a real number
              <section><h2 id="section-6">6. Basic rules of probability.</h2><p class="text-justify">
 So far we have defined the notion of probability space and probability of an event. But most often, we do not calculate probabilities from the definition. This is like in integration, where one defined the integral of a function as a limit of Riemann sums, but that definition is used only to find integrals of $x^{n}$, $\sin(x)$ and a few such functions. Instead, integrals of complicated expressions such as $x\sin(x)+2\cos^{2}(x)\tan(x)$ are calculated by various rules, such as substitution rule, integration by parts etc. In probability we need some similar rules relating probabilities of various combinations of events to the individual probabilities.</p>
 <p class="text-justify">
-<div id="theorem-50"><div class="panel panel-info proposition"> <div class="panel-heading">Proposition 50 </div><div class="panel-body"> Let $(\Omega,p_{\cdot})$ be a discrete probability space.
+<div id="theorem-50"><div class="panel panel-primary proposition"> <div class="panel-heading">Proposition 50 </div><div class="panel-body"> Let $(\Omega,p_{\cdot})$ be a discrete probability space.
 <ol>
 <li> For any event $A$, we have $0\le \mathbf{P}(A)\le 1$. Also, $\mathbf{P}(\emptyset)=0$ and $\mathbf{P}(\Omega)=1$.
 </li>
@@ -572,7 +572,7 @@ But the three sums here are precisely $\mathbf{P}(A)$, $\mathbf{P}(B)$ and $\mat
 <li> This is similar to finite additivity but needs a more involved argument. We leave it as an exercise for the interested reader. \qedhere
 </ol>
 </div>
-<div id="theorem-51"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 51 </div><div class="panel-body"> Adapt the proof to prove that for a countable family of events $A_{k}$ in a common probability space (no disjointness assumed), we have
+<div id="theorem-51"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 51 </div><div class="panel-body"> Adapt the proof to prove that for a countable family of events $A_{k}$ in a common probability space (no disjointness assumed), we have
 $$
 \mathbf{P}(\cup_{k}A_{k})\le \sum_{k}\mathbf{P}(A_{k}).
 $$
@@ -586,14 +586,14 @@ $$
 <p class="text-justify"></p>
 <p class="text-justify"></p>
 <p class="text-justify">
-<div id="theorem-52"><div class="panel panel-info definition"> <div class="panel-heading">Definition 52 (Limsup and liminf of sets)</div><div class="panel-body"> If $A_{k}$, $k\ge 1$, is a sequence of subsets of $\Omega$, we define
+<div id="theorem-52"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 52 (Limsup and liminf of sets)</div><div class="panel-body"> If $A_{k}$, $k\ge 1$, is a sequence of subsets of $\Omega$, we define
 $$\begin{equation*}
 \limsup A_{k}=\bigcap_{N=1}^{\infty}\bigcup_{k=N}^{\infty}A_{k}, \qquad \mbox{ and } \qquad  \liminf A_{k}=\bigcup_{N=1}^{\infty}\bigcap_{k=N}^{\infty}A_{k}.
 \end{equation*}$$
 In words, $\limsup A_{k}$ is the set of all $\omega$ that belong to infinitely many of the $A_{k}$s, and $\liminf A_{k}$ is the set of all $\omega$ that belong to all but finitely many of the $A_{k}$s.</p>
 <p class="text-justify">Two special cases are of increasing and decreasing sequences of events. This means $A_{1}\subseteq A_{2}\subseteq A_{3}\subseteq \ldots$ and $A_{1}\supseteq A_{2}\supseteq A_{3}\supseteq \ldots$. In these cases, the limsup and liminf are the same (so we refer to it as the limit of the sequence of sets). It is $\cup_{k}A_{k}$ in the case of increasing events and $\cap_{k}A_{k}$ in the case of decreasing events.
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-53"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 53 </div><div class="panel-body"> Events below are all contained in a discrete probability space. Use countable additivity of probability to show that
+<p class="text-justify"><div id="theorem-53"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 53 </div><div class="panel-body"> Events below are all contained in a discrete probability space. Use countable additivity of probability to show that
 <ol>
 <li> If $A_{k}$ are increasing events with limit $A$, show that $\mathbf{P}(A)$ is the increasing limit of $\mathbf{P}(A_{k})$.
 </li>
@@ -615,7 +615,7 @@ Now we re-write the basic rules of probability as follows.</p>
              <section><h2 id="section-7">7. Inclusion-exclusion formula.</h2><p class="text-justify">
 In general, there is no simple rule for $\mathbf{P}(A\cup B)$ in terms of $\mathbf{P}(A)$ and $\mathbf{P}(B)$. Indeed, consider the probability space $\Omega=\{0,1\}$ with $p_{0}=p_{1}=\frac{1}{2}$. If $A=\{0\}$ and $B=\{1\}$, then $\mathbf{P}(A)=\mathbf{P}(B)=\frac{1}{2}$ and $\mathbf{P}(A\cup B)=1$. However, if $A=B=\{0\}$, then $\mathbf{P}(A)=\mathbf{P}(B)=\frac{1}{2}$ as before, but $\mathbf{P}(A\cup B)=\frac{1}{2}$. This shows that $\mathbf{P}(A\cup B)$ cannot be determined from $\mathbf{P}(A)$ and $\mathbf{P}(B)$. Similarly for $\mathbf{P}(A\cap B)$ or other set constructions.</p>
 <p class="text-justify">However, it is easy to see that $\mathbf{P}(A\cup B)=\mathbf{P}(A)+\mathbf{P}(B)-\mathbf{P}(A\cap B)$. This formula is not entirely useless, because in special situations we shall later see that the probability of the intersection is easy to compute and hence we may compute the probability of the union. Generalizing this idea to more than two sets, we get the following surprisingly useful formula.
- <div id="theorem-54"><div class="panel panel-info proposition"> <div class="panel-heading">Proposition 54 (Inclusion-Exclusion formula)</div><div class="panel-body">
+ <div id="theorem-54"><div class="panel panel-primary proposition"> <div class="panel-heading">Proposition 54 (Inclusion-Exclusion formula)</div><div class="panel-body">
 Let $(\Omega,p)$ be a probability space and let $A_{1},\ldots ,A_{n}$ be events. Then,
 $$
 \mathbf{P}\left(\bigcup_{i=1}^{n}A_{i}\right) = S_{1}-S_{2}+S_{3}-\ldots +(-1)^{n-1}S_{n}
@@ -690,7 +690,7 @@ The event that ``exactly $m$ of the events $A_{1}, A_{2},\ldots ,A_{n}$ occur'' 
 $$
 C_{m}=B_{m}\setminus B_{m+1} = \bigcup_{\stackrel{S\subseteq [n]}{|S|=m}} \; \left(\bigcap_{i\in S}A_{i}\right)\bigcap \left( \bigcap_{i\not\in S}A_{i}^{c}\right).
 $$
-<div id="theorem-57"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 57 </div><div class="panel-body"> Let $A_{1},\ldots ,A_{n}$ be events in a probability space $(\Omega,p)$ and let $m\le n$. Let $B_{m}$ and $C_{m}$ be as above. Show that
+<div id="theorem-57"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 57 </div><div class="panel-body"> Let $A_{1},\ldots ,A_{n}$ be events in a probability space $(\Omega,p)$ and let $m\le n$. Let $B_{m}$ and $C_{m}$ be as above. Show that
 \begin{align*}
 \mathbf{P}(B_{m}) &= \sum_{k=m}^{n}(-1)^{k-m}\binom{k-1}{k-m}S_{k} \\
 &= S_{m}-\binom{m}{1}S_{m+1}+\binom{m+1}{2}S_{m+2}-\binom{m+2}{3}S_{m+3}+\ldots  \\
@@ -698,7 +698,7 @@ $$
 &= S_{m}-\binom{m+1}{1}S_{m+1}+\binom{m+2}{2}S_{m+2}-\binom{m+3}{3}S_{m+3}+\ldots  \\
 \end{align*}
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-58"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 58 </div><div class="panel-body"> Return to the setting of exercise <a href="#theorem-55">55</a> but with $n$ cards in a deck, so that $\Omega=S_{n}\times S_{n}$ and $p_{(\pi,{\sigma})}=\frac{1}{(n!)^{2}}$. Let $A_{m}$ be the event that there are exactly $m$ matches between the two decks.
+<p class="text-justify"><div id="theorem-58"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 58 </div><div class="panel-body"> Return to the setting of exercise <a href="#theorem-55">55</a> but with $n$ cards in a deck, so that $\Omega=S_{n}\times S_{n}$ and $p_{(\pi,{\sigma})}=\frac{1}{(n!)^{2}}$. Let $A_{m}$ be the event that there are exactly $m$ matches between the two decks.
 <ol>
 <li> For fixed $m\ge 0$, show that $\mathbf{P}(A_{m})\rightarrow e^{-1}\frac{1}{m!}$ as $n\rightarrow \infty$.
 </li>
@@ -712,7 +712,7 @@ $$
 Inclusion-exclusion formula is nice when we can calculate the probabilities of intersections of the events under consideration. Things are not always this nice, and sometimes that may be very difficult. Even if we could find them, summing them with signs according to the inclusion-exclusion formula may be difficult as the example <a href="#theorem-56">56</a> demonstrates. The <em> idea</em> behind the inclusion-exclusion formula can however be often used to compute <em> approximate values of probabilities</em>, which is very valuable in most applications. That is what we do next.</p>
 <p class="text-justify">
 We know that $\mathbf{P}(A_{1}\cup \ldots \cup A_{n})\le \mathbf{P}(A_{1})+\ldots +\mathbf{P}(A_{n})$ for any events $A_{1},\ldots ,A_{n}$. This is an extremely useful inequality, often called the <em> union bound</em>. Its usefulness is in the fact that there is no assumption made about the events $A_{i}$s (such as whether they are disjoint or not). The following inequalities generalize the union bound, and gives both upper and lower bounds for the probability of the union of a bunch of events.</p>
-<p class="text-justify"><div id="theorem-59"><div class="panel panel-info lemma"> <div class="panel-heading">Lemma 59 (Bonferroni's inequalities)</div><div class="panel-body"> Let $A_{1},\ldots, A_{n}$ be events in a probability space $(\Omega,p)$ and let $A=A_{1}\cup \ldots \cup A_{n}$. We have the following upper and lower bounds for  $\mathbf{P}(A)$.
+<p class="text-justify"><div id="theorem-59"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 59 (Bonferroni's inequalities)</div><div class="panel-body"> Let $A_{1},\ldots, A_{n}$ be events in a probability space $(\Omega,p)$ and let $A=A_{1}\cup \ldots \cup A_{n}$. We have the following upper and lower bounds for  $\mathbf{P}(A)$.
 \begin{align*}
 \mathbf{P}(A) &\le \sum_{k=1}^{m}(-1)^{k-1}S_{k}, \hspace{2mm} \mbox{ for any odd }m. \\
 \mathbf{P}(A) &\ge \sum_{k=1}^{m}(-1)^{k-1}S_{k}, \hspace{2mm} \mbox{ for any even }m.
@@ -741,7 +741,7 @@ If we take $n=40$ and $r=10$, the bounds we get are $0.1418\le \mathbf{P}(A)\le 
 </section>
              <section><h2 id="section-9">9. Independence - a first look.</h2><p class="text-justify">
 We remarked in the context of inclusion-exclusion formulas that often the probabilities of intersections of events is easy to find, and then we can use them to find probabilities of unions etc. In many contexts, this is related to one of the most important notions in probability.</p>
-<p class="text-justify"><div id="theorem-61"><div class="panel panel-info definition"> <div class="panel-heading">Definition 61 </div><div class="panel-body"> Let $A,B$ be events in a common probability space. We say that $A$ and $B$ are <em> independent</em> is $\mathbf{P}(A\cap B)=\mathbf{P}(A)\mathbf{P}(B)$.
+<p class="text-justify"><div id="theorem-61"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 61 </div><div class="panel-body"> Let $A,B$ be events in a common probability space. We say that $A$ and $B$ are <em> independent</em> is $\mathbf{P}(A\cap B)=\mathbf{P}(A)\mathbf{P}(B)$.
 </div></div></div>
 <div id="theorem-62"><div class="panel panel-info example"> <div class="panel-heading">Example 62 </div><div class="panel-body"> Toss a fair coin $n$ times. Then $\Omega=\{\underline{\omega}{\; : \;} \underline{\omega}=(\omega_{1},\ldots ,\omega_{n}), \; \omega_{i}\mbox{ is }0\mbox{ or }1\}$ and $p_{\underline{\omega}}=2^{-n}$ for each $\underline{\omega}$. Let $A=\{\underline{\omega}{\; : \;} \omega_{1}=0\}$ and let $B=\{\underline{\omega}{\; : \;} \omega_{2}=0\}$. Then, from the definition of probabilities, we can see that $\mathbf{P}(A)=1/2$, $\mathbf{P}(B)=1/2$ (because the elementary probabilities are equal, and both the sets $A$ and $B$ contain exactly $2^{n-1}$ elements). Further, $A\cap B=\{\underline{\omega}{\; : \;} \omega_{1}=1, \omega_{2}=0\}$ has $2^{n-2}$ elements, whence $\mathbf{P}(A\cap B)=1/4$. Thus, $\mathbf{P}(A\cap B)=\mathbf{P}(A)\mathbf{P}(B)$ and hence $A$ and $B$ are independent.
 </div></div></div>
@@ -752,7 +752,7 @@ If two events are independent, then the probability of their intersection can be
 <p class="text-justify">
 </section>
              <section><h2 id="section-10">10. Conditional probability and independence.</h2><p class="text-justify">
-<div id="theorem-63"><div class="panel panel-info definition"> <div class="panel-heading">Definition 63 </div><div class="panel-body"> Let $A,B$ be two events in the same probability space.
+<div id="theorem-63"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 63 </div><div class="panel-body"> Let $A,B$ be two events in the same probability space.
 <ol>
 <li> If $\mathbf{P}(B)\not=0$, we define the <em> conditional probability of $A$ given $B$</em> as $$\mathbf{P}\left(A\left.\vphantom{\hbox{\Large (}}\right| B\right):=\frac{\mathbf{P}(A\cap B)}{\mathbf{P}(B)}.$$
 </li>
@@ -780,7 +780,7 @@ Then both $\mathbf{P}(A)=\mathbf{P}(B)=\frac{1}{13}$. However, $\mathbf{P}(B\ \p
 </div></div></div></p>
 <p class="text-justify">
 <strong>Caution:</strong> Independence should not be confused with disjointness! If $A$ and $B$ are disjoint, $\mathbf{P}(A\cap B)=0$ and hence $A$ and $B$ can be independent if and only if one of $\mathbf{P}(A)$ or $\mathbf{P}(B)$ equals $0$. Intuitively, if $A$ and $B$ are disjoint, then knowing that $A$ occurred gives us a lot of information about $B$ (that it did not occur!), so independence is not to be expected.</p>
-<p class="text-justify"><div id="theorem-66"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 66 </div><div class="panel-body"> If $A$ and $B$ are independent, show that the following pairs of events are also independent.
+<p class="text-justify"><div id="theorem-66"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 66 </div><div class="panel-body"> If $A$ and $B$ are independent, show that the following pairs of events are also independent.
 <ol>
 <li> $A$ and $B^{c}$.
 </li>
@@ -814,7 +814,7 @@ which is equal to $\mathbf{P}(B)$ since $A_{i}$ are pairwise disjoint and exhaus
 where we used the total probability rule to get the denominator. \qedhere
 </ol>
 </div>
-<div id="theorem-67"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 67 </div><div class="panel-body"> Suppose $A_{i}$ are events such that $\mathbf{P}(A_{1}\cap \ldots \cap A_{n}) > 0$. Then show that $$\mathbf{P}(A_{1}\cap \ldots \cap A_{n})=\mathbf{P}(A_{1})\mathbf{P}(A_{2}\ \pmb{\big|} \  A_{1})\mathbf{P}(A_{3}\ \pmb{\big|} \  A_{1}\cap A_{2})\ldots \mathbf{P}(A_{n}\ \pmb{\big|} \  A_{1}\cap \ldots \cap A_{n-1}).$$
+<div id="theorem-67"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 67 </div><div class="panel-body"> Suppose $A_{i}$ are events such that $\mathbf{P}(A_{1}\cap \ldots \cap A_{n}) > 0$. Then show that $$\mathbf{P}(A_{1}\cap \ldots \cap A_{n})=\mathbf{P}(A_{1})\mathbf{P}(A_{2}\ \pmb{\big|} \  A_{1})\mathbf{P}(A_{3}\ \pmb{\big|} \  A_{1}\cap A_{2})\ldots \mathbf{P}(A_{n}\ \pmb{\big|} \  A_{1}\cap \ldots \cap A_{n-1}).$$
 </div></div></div></p>
 <p class="text-justify"><div id="theorem-68"><div class="panel panel-info example"> <div class="panel-heading">Example 68 </div><div class="panel-body"> Consider a rare disease $X$ that affects one in a million people. A medical test is used to test for the presence of the disease. The test is 99\% accurate in the sense that if a person has no disease, the chance that the test shows positive is 1\% and if the person has disease, the chance that the test shows negative is also 1\%.</p>
 <p class="text-justify">Suppose a person is tested for the disease and the test result is positive. What is the chance that the person has the disease $X$?</p>
@@ -837,7 +837,7 @@ The surprise here comes from not taking into account the relative sizes of the s
 <p class="text-justify">
 </section>
              <section><h2 id="section-11">11. Independence of three or more events.</h2><p class="text-justify">
-<div id="theorem-69"><div class="panel panel-info definition"> <div class="panel-heading">Definition 69 </div><div class="panel-body"> Events $A_{1},\ldots ,A_{n}$ in a common probability space are said to be independent if
+<div id="theorem-69"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 69 </div><div class="panel-body"> Events $A_{1},\ldots ,A_{n}$ in a common probability space are said to be independent if
 $
 \mathbf{P}\left(A_{i_{1}}\cap A_{i_{2}}\cap \ldots \cap A_{i_{m}}\right)=\mathbf{P}(A_{i_{1}})\mathbf{P}(A_{i_{2}})\ldots \mathbf{P}(A_{i_{m}})$ for every choice of $m\le n$ and every choice of $1\le i_{1} < i_{2} < \ldots  < i_{m}\le n$.
 </div></div></div>
@@ -849,7 +849,7 @@ $
 Thus,  $A,B,C$ are independent <em> pairwise</em>, but not independent by our definition because $\mathbf{P}(A\cap B\cap C)\not= \frac{1}{8}=\mathbf{P}(A)\mathbf{P}(B)\mathbf{P}(C)$.</p>
 <p class="text-justify">Intuitively this is right. Knowing $A$ does not given any information about $C$ (similarly with $A$ and $B$ or $B$ and $C$), but knowing $A$ and $B$ tells us completely whether or not $C$ occurred! Thus is is right that the definition should not declare them to be independent.
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-71"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 71 </div><div class="panel-body"> Let $A_{1},\ldots ,A_{n}$ be events in a common probability space. Then, $A_{1}, A_{2},\ldots ,A_{n}$ are independent if and only if the following equalities hold: For each $i$, define $B_{i}$ as $A_{i}$ and $A_{i}^{c}$. Then
+<p class="text-justify"><div id="theorem-71"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 71 </div><div class="panel-body"> Let $A_{1},\ldots ,A_{n}$ be events in a common probability space. Then, $A_{1}, A_{2},\ldots ,A_{n}$ are independent if and only if the following equalities hold: For each $i$, define $B_{i}$ as $A_{i}$ and $A_{i}^{c}$. Then
 \[\begin{aligned}
 \mathbf{P}(B_{1}\cap B_{2}\cap \ldots \cap B_{n})=\mathbf{P}(B_{1})\mathbf{P}(B_{2})\ldots \mathbf{P}(B_{n}).
 \end{aligned}\]
@@ -858,11 +858,11 @@ Thus,  $A,B,C$ are independent <em> pairwise</em>, but not independent by our de
 <p class="text-justify"></section>
              <section><h2 id="section-12">12. Subtleties of conditional probability.</h2><p class="text-justify">
 Conditional probabilities are quite subtle. Apart from the common mistake of confusing $\mathbf{P}(A\ \pmb{\big|} \  B)$ for $\mathbf{P}(B\ \pmb{\big|} \  A)$, there are other points one sometimes overlooks. In fact, most of the paradoxical sounding puzzles in probability are based on confusing aspects of probability. Let us see one.</p>
-<p class="text-justify"><div id="theorem-72"><div class="panel panel-info question"> <div class="panel-heading">Question 72 </div><div class="panel-body"> A man says ``I have two children, and one of them is a boy''. What is the chance that the other one is a girl?
+<p class="text-justify"><div id="theorem-72"><div class="panel panel-danger question"> <div class="panel-heading">Question 72 </div><div class="panel-body"> A man says ``I have two children, and one of them is a boy''. What is the chance that the other one is a girl?
 </div></div></div>
 There are four possibilities $BB, BG,GB,GG$, of which $GG$ has been eliminated. Of the remaining three, two are favourable, hence the chance is $2/3$ that the other child is a girl. This is a possible solution. If you accept this as reasonable, here is another question.</p>
 <p class="text-justify">
-<div id="theorem-73"><div class="panel panel-info question"> <div class="panel-heading">Question 73 </div><div class="panel-body"> A man says ``I have two children, and one of them is a boy born on a Sunday''. What is the chance that the other one is a girl?
+<div id="theorem-73"><div class="panel panel-danger question"> <div class="panel-heading">Question 73 </div><div class="panel-body"> A man says ``I have two children, and one of them is a boy born on a Sunday''. What is the chance that the other one is a girl?
 </div></div></div>
 Does the addition of the information about the boy change the probability? One opinion is that it should not. The other is to follow the same solution pattern as before. Write down all the $2\times2\times7\times7$ possibilities: $BBss$ (boy, boy, sunday, sunday), $BBsm$, etc. The given information that one is a boy who was born on Sunday eliminates many possibilities and what remain are $27$ possibilities $BGt*$, $GB*t$, $BBt*$, $BB*t$ where $*$ is any day of the week. Take care to not double count $BBtt$ to see that there are $27$ possibilities. Of these, $14$ are favourable (i.e., the other child is a girl), hence we conclude that the probability is $14/27$.</p>
 <p class="text-justify">Is the correct answer $14/27$ as calculated here or is it $2/3$ (since the  information of the day of birth of the boy is irrelevant, why should we change our earlier answer of $2/3$?)?</p>
@@ -932,7 +932,7 @@ Since $F(t)$ is the probability of a certain event, these statements can be prov
 <p class="text-justify">To prove the second property, let $A_{n}=\{\omega {\; : \;} X(\omega)\le n\}$ for $n\ge 1$. Then, $A_{n}$ are increasing in $n$ and $\bigcup_{n=1}^{\infty}A_{n}=\Omega$. Hence, $F(n)=\mathbf{P}(A_{n})\rightarrow \mathbf{P}(\Omega)=1$ as $n\rightarrow \infty$. Since $F$ is increasing, it follows that $\lim_{t\rightarrow +\infty}F(t)=1$. Similarly one can prove that $\lim_{t\rightarrow -\infty}F(t)=0$.</p>
 <p class="text-justify">Right continuity of $F$ is also proved the same way, by considering the events $B_{n}=\{\omega {\; : \;} X(\omega)\le t+\frac{1}{n}\}$. We omit details.
 </div>
-<div id="theorem-75"><div class="panel panel-info remark"> <div class="panel-heading">Remark 75 </div><div class="panel-body">
+<div id="theorem-75"><div class="panel panel-success remark"> <div class="panel-heading">Remark 75 </div><div class="panel-body">
 It is easy to see that one can recover the pmf from the CDF and vice versa. For example, given the pmf $f$, we can write the CDF as $F(t)=\sum_{u:u\le t}f(u)$. Conversely, given the CDF, by looking at the locations of the jumps and the sizes of the jumps, we can recover the pmf.
 </div></div></div></p>
 <p class="text-justify">The point is that probabilistic questions about $X$ can be answered by knowing its CDF $F_{X}$. Therefore, in a sense, the probability space becomes irrelevant. For example, the expected value of a random variable can be computed using its CDF only. Hence, we shall often make statements like ``$X$ is a random variable with pmf $f$'' or ``$X$ is a random variable with CDF $F$'', without bothering to indicate the probability space.</p>
@@ -970,7 +970,7 @@ $$
 \mathbf{E}[X] = \sum_{\omega\in \Omega}X(\omega)p_{\omega} = \sum_{k}\sum_{\omega\in A_{k}}X(\omega)p_{\omega} = \sum_{k}x_{k}\mathbf{P}(A_{k})=\sum_{k}x_{k}f(x_{k}).
 $$
 Similarly, $\mathbf{E}[X^{2}]=\sum_{k}x_{k}^{2}f(x_{k})$. More generally, if $h:\mathbb{R}\rightarrow \mathbb{R}$ is any function, then the random variable $h(X)$ has expectation $\mathbf{E}[h(X)]=\sum_{k}h(x_{k})f(x_{k})$. Although this sounds trivial, there is a very useful point here. To calculate $\mathbf{E}[X^{2}]$ we do not have to compute the pmf of $X^{2}$ first, which can be done but would be more complicated. Instead, in the above formulas, $\mathbf{E}[h(X)]$ has been computed directly in terms of the pmf of $X$.
-<div id="theorem-81"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 81 </div><div class="panel-body"> Find $\mathbf{E}[X]$ and $\mathbf{E}[X^{2}]$ in each case.
+<div id="theorem-81"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 81 </div><div class="panel-body"> Find $\mathbf{E}[X]$ and $\mathbf{E}[X^{2}]$ in each case.
 <ol>
 <li> $X\sim \mbox{Bin}(n,p)$.
 </li>
@@ -984,7 +984,7 @@ Similarly, $\mathbf{E}[X^{2}]=\sum_{k}x_{k}^{2}f(x_{k})$. More generally, if $h:
 <p class="text-justify"></section>
              <section><h2 id="section-14">14. General probability distributions.</h2><p class="text-justify">
 We take the first three of the four properties of CDF proved in the previous section as the <em> definition</em> of a CDF or distribution function, in general.
-<div id="theorem-82"><div class="panel panel-info definition"> <div class="panel-heading">Definition 82 </div><div class="panel-body"> A (cumulative) distribution function (or CDF for short) is any function $F:\mathbb{R}\rightarrow [0,1]$ be a non-decreasing, right continuous function such that $F(t)\rightarrow 0$ as $t\rightarrow -\infty$ and $F(t)\rightarrow 1$ as $t\rightarrow +\infty$.
+<div id="theorem-82"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 82 </div><div class="panel-body"> A (cumulative) distribution function (or CDF for short) is any function $F:\mathbb{R}\rightarrow [0,1]$ be a non-decreasing, right continuous function such that $F(t)\rightarrow 0$ as $t\rightarrow -\infty$ and $F(t)\rightarrow 1$ as $t\rightarrow +\infty$.
 </div></div></div>
 If $(\Omega,p)$ is a discrete probability space and $X:\Omega\mapsto \mathbb{R}$ is any random variable, then the function $F(t)=\mathbf{P}\{\omega{\; : \;} X(\omega)\le t\}$ is a CDF, as discussed in the previous section. However, there are distribution functions that do not arise in this manner.
 <div id="theorem-83"><div class="panel panel-info example"> <div class="panel-heading">Example 83 </div><div class="panel-body"> Let
@@ -1023,10 +1023,10 @@ The following two ``random experiments'' are easy to imagine, but difficult to f
 <p class="text-justify"><strong>Consistency:</strong> Is this truly a solution to the question of uncountable spaces? Are we assured of never running into inconsistencies? Not always.
 <div id="theorem-86"><div class="panel panel-info example"> <div class="panel-heading">Example 86 </div><div class="panel-body"> Let $\Omega=[0,1]$ and let intervals $(a,b)$ be open sets with their probabilities defined as $\mathbf{P}(a,b)=\sqrt{b-a}$. This quickly leads to problems. For example, $\mathbf{P}(0,1)=1$ by definition. But $(0,1)=(0,0.5)\cup(0.5,1)\cup \{1/2\}$ from which the rules of probability would imply that $\mathbf{P}(0,1)$ must be at least $\mathbf{P}(0,1/2)+\mathbf{P}(1/2,1)=\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}=\sqrt{2}$ which is greater than $1$. Inconsistency!
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-87"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 87 </div><div class="panel-body"> Show that we run into inconsistencies if we define $\mathbf{P}(a,b)=(b-a)^{2}$ for $0\le a < b\le 1$.
+<p class="text-justify"><div id="theorem-87"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 87 </div><div class="panel-body"> Show that we run into inconsistencies if we define $\mathbf{P}(a,b)=(b-a)^{2}$ for $0\le a < b\le 1$.
 </div></div></div></p>
 <p class="text-justify">Thus, one cannot arbitrarily assign probabilities to basic events. However, if we use the notion of distribution function to assign probabilities to intervals, then no inconsistencies arise.
-<div id="theorem-88"><div class="panel panel-info theorem"> <div class="panel-heading">Theorem 88 </div><div class="panel-body"> Let $\Omega=\mathbb{R}$ and let intervals of the form $(a,b]$ with $a < b$ be called basic sets. Let $F$ be any distribution function. <em> Define</em> the probabilities of basic sets as $\mathbf{P}\{(a,b]\}=F(b)-F(a)$. Then, applying the rules of probability to compute probabilities of more complex sets (got by taking countable intersections, unions and complements) will never lead to inconsistency.
+<div id="theorem-88"><div class="panel panel-primary theorem"> <div class="panel-heading">Theorem 88 </div><div class="panel-body"> Let $\Omega=\mathbb{R}$ and let intervals of the form $(a,b]$ with $a < b$ be called basic sets. Let $F$ be any distribution function. <em> Define</em> the probabilities of basic sets as $\mathbf{P}\{(a,b]\}=F(b)-F(a)$. Then, applying the rules of probability to compute probabilities of more complex sets (got by taking countable intersections, unions and complements) will never lead to inconsistency.
 </div></div></div>
 Let $F$ be any CDF. Then, the above consistency theorem really asserts that there exists (a possibly uncountable) probability space and a random variable such that $F(t)=\mathbf{P}\{X\le t\}$ for all $t$. We say that $X$ has distribution $F$. However, it takes a lot of technicalities to define what uncountable probability spaces look like and what random variables mean in this more general setting, we shall never define them.</p>
 <p class="text-justify">The job of a probabilist consists in taking a CDF $F$ (then the probabilities of intervals are already given to us as $F(b)-F(a)$ etc.) and find probabilities of more general subsets of $\mathbb{R}$. Here are the working rules.  Instead we can use the following simple working rules to answer questions about the distribution of a random variable.
@@ -1041,9 +1041,9 @@ Let $F$ be any CDF. Then, the above consistency theorem really asserts that ther
 <p class="text-justify">
 \medskip
 There are loose threads here but they can be safely ignored for  this course. We just remark about them for those who are curious to know.</p>
-<p class="text-justify"><div id="theorem-89"><div class="panel panel-info remark"> <div class="panel-heading">Remark 89 </div><div class="panel-body"> The above method starts from a CDF $F$ and defines $\mathbf{P}\{X\in A\}$ for all subsets $A\subseteq \mathbb{R}$. However, for most choices of $F$,  the countable additivity property turns out to be  violated! However, the sets which do violate them rarely arise in practice and hence we ignore them for the present.
+<p class="text-justify"><div id="theorem-89"><div class="panel panel-success remark"> <div class="panel-heading">Remark 89 </div><div class="panel-body"> The above method starts from a CDF $F$ and defines $\mathbf{P}\{X\in A\}$ for all subsets $A\subseteq \mathbb{R}$. However, for most choices of $F$,  the countable additivity property turns out to be  violated! However, the sets which do violate them rarely arise in practice and hence we ignore them for the present.
 </div></div></div></p>
-<p class="text-justify"> <div id="theorem-90"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 90 </div><div class="panel-body"> Let $X$ be  a random variable with distribution $F$. Use the working rules to find the following probabilities.
+<p class="text-justify"> <div id="theorem-90"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 90 </div><div class="panel-body"> Let $X$ be  a random variable with distribution $F$. Use the working rules to find the following probabilities.
  <ol>
  <li> Write $\mathbf{P}\{a < X < b\}$, $\mathbf{P}\{a\le X < b\}$, $\mathbf{P}\{a\le X\le b\}$ in terms of $F$.
  </li>
@@ -1072,7 +1072,7 @@ F(t) :=\int_{-\infty}^{t}f(u) du.
 \end{aligned}\]
 Again, $F$ is a CDF. Indeed, it is clear that $F$ has the increasing property (if $t > s$, then $F(t)-F(s)=\int_{s}^{t}f(u)du$ which is non-negative because $f(u)$ is non-negative for all $u$), and its limits at $\pm \infty$ are as they should be (why?). As for right-continuity, $F$ is in-fact continuous. Actually $F$ is differentiable except at points where $f$ is discontinuous and $F'(t)=f(t)$.
 </ol></p>
-<p class="text-justify"><div id="theorem-92"><div class="panel panel-info remark"> <div class="panel-heading">Remark 92 </div><div class="panel-body"> We understand the pmf. For example if $X$ has pmf $f$, then $f(t_{i})$ is just the probability that $X$ takes the value $t_{i}$. How to interpret the pdf? If $X$ has pdf $f$, then as we already remarked, the CDF is continuous and hence $\mathbf{P}\{X=t\}=0$. Therefore $f(t)$ cannot be interpreted as $\mathbf{P}\{X=t\}$ (in fact, pdf can take values greater than $1$, so it cannot be a probability!).</p>
+<p class="text-justify"><div id="theorem-92"><div class="panel panel-success remark"> <div class="panel-heading">Remark 92 </div><div class="panel-body"> We understand the pmf. For example if $X$ has pmf $f$, then $f(t_{i})$ is just the probability that $X$ takes the value $t_{i}$. How to interpret the pdf? If $X$ has pdf $f$, then as we already remarked, the CDF is continuous and hence $\mathbf{P}\{X=t\}=0$. Therefore $f(t)$ cannot be interpreted as $\mathbf{P}\{X=t\}$ (in fact, pdf can take values greater than $1$, so it cannot be a probability!).</p>
 <p class="text-justify">To interpret $f(a)$, take a small positive number $\delta$ and look at
 $$
 F(a+\delta)-F(a)  = \int\limits_{a}^{a+\delta}f(u) du \approx \delta f(a).
@@ -1104,7 +1104,7 @@ $$
 $$
 There is no closed form expression for the CDF. It is standard notation to write $\varphi$ and $\Phi$ to denote the normal density and CDF when $\mu=0$ and ${\sigma}^{2}=1$. N($0,1$) is called the standard normal distribution. By a change of variable one can check that $\Phi_{\mu,{\sigma}^{2}}(t)=\Phi(\frac{t-\mu}{{\sigma}})$.</p>
 <p class="text-justify">We said that the normal CDF has no simple expression, but is it even clear that it is a CDF?! In other words, is the proposed density a true pdf? Clearly $\varphi(t)=\frac{1}{\sqrt{2\pi}}e^{-t^{2}/2}$ is non-negative. We need to check that its integral is $1$.</p>
-<p class="text-justify"><div id="theorem-96"><div class="panel panel-info lemma"> <div class="panel-heading">Lemma 96 </div><div class="panel-body"> Fix $\mu\in \mathbb{R}$ and ${\sigma} > 0$ and let $\varphi(t)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2{\sigma}^{2}}(t-\mu)^{2}}$. Then, $\int\limits_{-\infty}^{\infty}\varphi(t) dt =1$.
+<p class="text-justify"><div id="theorem-96"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 96 </div><div class="panel-body"> Fix $\mu\in \mathbb{R}$ and ${\sigma} > 0$ and let $\varphi(t)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2{\sigma}^{2}}(t-\mu)^{2}}$. Then, $\int\limits_{-\infty}^{\infty}\varphi(t) dt =1$.
 </div></div></div></p>
 <p class="text-justify"><div class="proof"> It suffices to check the case $\mu=0$ and ${\sigma}^{2}=1$ (why?).   To find its integral is quite non-trivial. Let $I=\int_{-\infty}^{\infty} \varphi(t)dt$. We introduce the two-variable function $h(t,s):=\varphi(t)\varphi(s)=(2\pi)^{-1}e^{-(t^{2}+s^{2})/2}$. On the one hand,
 $$
@@ -1163,7 +1163,7 @@ Euler then showed (by a rather simple argument that we skip) that the limit on t
 0 &\mbox{if }t\ge 1.\end{cases}
 \end{aligned}\]
 Here $B(\alpha,\beta):=\int_{0}^{1}t^{\alpha-1}(1-t)^{\beta-1}dt$. Again, for special values of $\alpha,\beta$ (eg., positive integers), one can find the value of $B(\alpha,\beta)$, but in general there is no simple expression. However, it can be expressed in terms of the Gamma function!
-<div id="theorem-99"><div class="panel panel-info proposition"> <div class="panel-heading">Proposition 99 </div><div class="panel-body"> For any $\alpha,\beta > 0$, we have $B(\alpha,\beta)=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$.
+<div id="theorem-99"><div class="panel panel-primary proposition"> <div class="panel-heading">Proposition 99 </div><div class="panel-body"> For any $\alpha,\beta > 0$, we have $B(\alpha,\beta)=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$.
 </div></div></div>
 <div class="proof"> For $\beta=1$ we see that $B(\alpha,1)=\int_{0}^{1}t^{\alpha-1}=\frac{1}{\alpha}$ which is also equal to $\frac{\Gamma(\alpha)\Gamma(1)}{\Gamma(\alpha+1)}$ as required. Similarly (or by the symmetry relation $B(\alpha,\beta)=B(\beta,\alpha)$), we see that $B(1,\beta)$ also has the desired expression.</p>
 <p class="text-justify">Now for any other <em> positive integer</em> value of $\alpha$ and real $\beta > 0$ we can integrate by parts and get
@@ -1193,7 +1193,7 @@ $$
 f(t)=\frac{\lambda}{\pi(\lambda^{2}+(t-a)^{2})}\qquad F(t)=\frac{1}{2}+\frac{1}{\pi}\tan^{-1}\left(\frac{t-a}{\lambda}\right).
 $$
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-101"><div class="panel panel-info remark"> <div class="panel-heading">Remark 101 </div><div class="panel-body"> Does every CDF come from a pdf? Not necessarily. For example any CDF that is not continuous (for example, CDFs of discrete distributions such as Binomial, Poisson, Geometric etc.). In fact even continuous CDFs may not have densities (there is a good example manufactured out of the $1/3$-Cantor set, but that would take us out of the topic now). However, suppose $F$ is a <em> continuous</em> CDF and suppose $F$ is differentiable except at finitely many points and that the derivative is a continuous function. Then $f(t):=F'(t)$ defines a pdf which by the fundamental theorm of Calculus satisfies $F(t)=\int_{-\infty}^{t}f(u)du$.
+<p class="text-justify"><div id="theorem-101"><div class="panel panel-success remark"> <div class="panel-heading">Remark 101 </div><div class="panel-body"> Does every CDF come from a pdf? Not necessarily. For example any CDF that is not continuous (for example, CDFs of discrete distributions such as Binomial, Poisson, Geometric etc.). In fact even continuous CDFs may not have densities (there is a good example manufactured out of the $1/3$-Cantor set, but that would take us out of the topic now). However, suppose $F$ is a <em> continuous</em> CDF and suppose $F$ is differentiable except at finitely many points and that the derivative is a continuous function. Then $f(t):=F'(t)$ defines a pdf which by the fundamental theorm of Calculus satisfies $F(t)=\int_{-\infty}^{t}f(u)du$.
 </div></div></div></p>
 <p class="text-justify">
 </section>
@@ -1228,7 +1228,7 @@ $$
 \mathbf{P}\{X=t_{k}\} = \mathbf{P}\left\{\sum_{j=1}^{k-1}f(t_{j}) < U\le \sum_{j=1}^{k}f(t_{j})\right\} = f(t_{k}).
 $$
 Thus $X$ has pmf $f$.</p>
-<p class="text-justify"><div id="theorem-103"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 103 </div><div class="panel-body"> Draw 100 random numbers from each of the following distributions and draw the histograms. Compare with the pmf.
+<p class="text-justify"><div id="theorem-103"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 103 </div><div class="panel-body"> Draw 100 random numbers from each of the following distributions and draw the histograms. Compare with the pmf.
 <ol>
 <li> Bin($n,p$) for $n=10,20,40$ and $p=0.5, 0.3, 0.9$.
 </li>
@@ -1269,7 +1269,7 @@ $$
 The derivative does not exist at $0$ and $1$, but as remarked earlier, it does not matter if we change the value of the density at finitely many points (as the integral over any interval will remain the same). Anyway, we notice that the density is that of Beta($1/3,1$). Hence $X\sim \mbox{Beta}(1/3,1)$.
 </div></div></div>
 This gives us the idea that to generate random number from a CDF $F$, we should find a function $\psi:[0,1]\rightarrow \mathbb{R}$ such that $X:=\psi(U)$ has the distribution $F$. How to find the distribution of $X$?</p>
-<p class="text-justify"><div id="theorem-106"><div class="panel panel-info lemma"> <div class="panel-heading">Lemma 106 </div><div class="panel-body"> Let $\psi:(0,1)\rightarrow \mathbb{R}$ be a  strictly increasing function with $a=\psi(0+)$ and $b=\psi(1-)$. Let $X=\psi(U)$. Then $X$ has CDF
+<p class="text-justify"><div id="theorem-106"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 106 </div><div class="panel-body"> Let $\psi:(0,1)\rightarrow \mathbb{R}$ be a  strictly increasing function with $a=\psi(0+)$ and $b=\psi(1-)$. Let $X=\psi(U)$. Then $X$ has CDF
 $$
 F(t)=\begin{cases} 0 & \mbox{ if }t\le a \\ \psi^{-1}(t) & \mbox{ if }a < t < b \\ 1 & \mbox{ if }t\ge b. \end{cases}
 $$
@@ -1302,7 +1302,7 @@ w_{0} & w_{1} & w_{2} & \ldots & \ldots & w_{1000}
 $$
 Now draw a uniform random number $U$. Look up the table and find the value of $i$ for which $w_{i} < U < w_{i+1}$. Then set $X=t_{i}$. If it so happens that $U < w_{0}$, set $X=t_{0}=-5$ and if $U > w_{1000}$ set $X=t_{1000}=5$. But since $\Phi(-5) < 0.00001$ and $\Phi(5) > 0.99999$, it is highly unlikely that the last two cases will occur. The random variable $X$ has a distribution close to $N(0,1)$.
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-109"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 109 </div><div class="panel-body"> Give an explicit method to draw random numbers from the following densities.
+<p class="text-justify"><div id="theorem-109"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 109 </div><div class="panel-body"> Give an explicit method to draw random numbers from the following densities.
 <ol>
 <li> Cauchy distribution with density $\frac{1}{\pi(1+x^{2})}$.
 </li>
@@ -1314,13 +1314,13 @@ Now draw a uniform random number $U$. Look up the table and find the value of $i
 <p class="text-justify">
 We have described a general principle. When we do more computations with random variables and understand the relationships between different distributions, better tricks can be found.  For example, we shall see later that we can generate two $N(0,1)$ random numbers as follows: Pick two uniform random numbers $U,V$ and set $X=\sqrt{-2\log(1-U)}\cos(2\pi V)$ and $Y=\sqrt{-2\log(1-U)}\sin(2\pi V)$. Then it turns out that $X$ and $Y$ have exactly $N(0,1)$ distribution! As another example, suppose we need to generate from Gamma($3,1$) distribution, we can first generate three uniforms $U_{1},U_{2},U_{3}$ and set $\xi_{i}=-\log(1-U_{i})$ (so $\xi_{i}$ have exponential distribution) and then define $X=\xi_{1}+\xi_{2}+\xi_{3}$. It turns out that $X$ has Gamma($3,1$) distribution!</p>
 <p class="text-justify">
-<div id="theorem-110"><div class="panel panel-info remark"> <div class="panel-heading">Remark 110 </div><div class="panel-body"> We have conveniently skipped the question of how to draw random numbers from uniform distribution in the first place. This is a difficult topic and various results, proved and unproved, are used in generating such numbers. For example,
+<div id="theorem-110"><div class="panel panel-success remark"> <div class="panel-heading">Remark 110 </div><div class="panel-body"> We have conveniently skipped the question of how to draw random numbers from uniform distribution in the first place. This is a difficult topic and various results, proved and unproved, are used in generating such numbers. For example,
 </div></div></div></p>
 <p class="text-justify">
 </section>
              <section><h2 id="section-18">18. Joint distributions.</h2><p class="text-justify">
 In many situations we study several random variables at once. In such a case, knowing the individual distributions is not sufficient to answer all relevant questions. This is like saying that knowing $\mathbf{P}(A)$ and $\mathbf{P}(B)$ is insufficient to calculate $\mathbf{P}(A\cap B)$ or $\mathbf{P}(A\cup B)$ etc.</p>
-<p class="text-justify"><div id="theorem-111"><div class="panel panel-info definition"> <div class="panel-heading">Definition 111 (Joint distribution)</div><div class="panel-body"> Let $X_{1},X_{2},\ldots ,X_{m}$ be random variables on the same probability space. We call $\mathbf{X}=(X_{1},\ldots ,X_{m})$ a <em> random vector</em>, as it is just a vector of random variables. The CDF of $\mathbf{X}$, also called the joint CDF of $X_{1},\ldots,X_{m}$ is the function $F:\mathbb{R}^{m}\rightarrow \mathbb{R}$ defined as
+<p class="text-justify"><div id="theorem-111"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 111 (Joint distribution)</div><div class="panel-body"> Let $X_{1},X_{2},\ldots ,X_{m}$ be random variables on the same probability space. We call $\mathbf{X}=(X_{1},\ldots ,X_{m})$ a <em> random vector</em>, as it is just a vector of random variables. The CDF of $\mathbf{X}$, also called the joint CDF of $X_{1},\ldots,X_{m}$ is the function $F:\mathbb{R}^{m}\rightarrow \mathbb{R}$ defined as
 $$
 F(t_{1},\ldots ,t_{m})=\mathbf{P}\{X_{1}\le t_{1},\ldots ,X_{m}\le t_{m}\} = \mathbf{P}\left\{\bigcap_{i=1}^{m}\{X_{i}\le t_{i}\} \right\}.
 $$.
@@ -1478,7 +1478,7 @@ $$
 for $y_{1} > 0$ and $y_{2}\in (0,1)$.</p>
 <p class="text-justify">In particular, we see that $Y_{1}=X_{1}+X_{2}$ has density $h_{1}(t)=\int_{0}^{1}\lambda^{2}te^{-\lambda t}ds = \lambda^{2}te^{-\lambda t}$ (for $t > 0$)  which means that $Y_{1}\sim \mbox{Gamma}(2,\lambda)$. Similarly, $Y_{2}=\frac{X_{1}}{X_{1}+X_{2}}$ has density $h_{2}(s)=\int_{0}^{\infty} \lambda^{2}t e^{-\lambda t}dt =1$ (for $s\in (0,1)$) which means that $Y_{2}$ has $\mbox{Unif}(0,1)$ distribution. In fact, $Y_{1}$ and $Y_{2}$ are also independent since $g(u,v)=h_{1}(u)h_{2}(v)$.
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-117"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 117 </div><div class="panel-body"> Let $X_{1}\sim \mbox{Gamma}(\nu_{1},\lambda)$ and $X_{2}\sim \mbox{Gamma}(\nu_{2},\lambda)$ (note that the shape parameter is the same) and assume that they are independent. Find the joint distribution of $X_{1}+X_{2}$ and $\frac{X_{1}}{X_{1}+X_{2}}$.
+<p class="text-justify"><div id="theorem-117"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 117 </div><div class="panel-body"> Let $X_{1}\sim \mbox{Gamma}(\nu_{1},\lambda)$ and $X_{2}\sim \mbox{Gamma}(\nu_{2},\lambda)$ (note that the shape parameter is the same) and assume that they are independent. Find the joint distribution of $X_{1}+X_{2}$ and $\frac{X_{1}}{X_{1}+X_{2}}$.
 </div></div></div></p>
 <p class="text-justify"><div id="theorem-118"><div class="panel panel-info example"> <div class="panel-heading">Example 118 </div><div class="panel-body"> Suppose we are given that $X_{1}$ and $X_{2}$ are independent and each has $\mbox{Exp}(\lambda)$ distribution. What is the distribution of the random variable $X_{1}+X_{2}$?</p>
 <p class="text-justify">The change of variable formula works for transformations from $\mathbb{R}^{m}$ to $\mathbb{R}^{m}$ whereas here we have two random variables $X_{1},X_{2}$ and our interest is in one random variable $X_{1}+X_{2}$. To use the change of variable formula, we must introduce an <em> auxiliary</em> variable. For example, we take $Y_{1}=X_{1}+X_{2}$ and $Y_{2}=X_{1}/(X_{1}+X_{2})$. Then as in the first example, we find the joint density of $(Y_{1},Y_{2})$ using the change of variable formula and then integrate out the second variable to get the density of $Y_{1}$.</p>
@@ -1502,7 +1502,8 @@ f(r,\theta)=\frac{1}{2\pi}\lambda e^{-\lambda r} \hspace{2mm}\mbox{ for }r > 0,\
 $$
 Define the transformation $T:\mathbb{R}_{+}\times (0,2\pi)\rightarrow \mathbb{R}^{2}$ by $T(r,\theta)=(\sqrt{r}\cos\theta,\sqrt{r}\sin \theta)$. The image of $T$ consists of all $(x,y)\in \mathbb{R}^{2}$ with $y\not=0$. The inverse is $T^{-1}(x,y)=(x^{2}+y^{2},\arctan(y/x))$ where $\arctan(y/x)$ is defined so as to take values in $(0,\pi)$ when $y > 0$ and to take values in $(\pi,2\pi)$ when $y < 0$. Thus
 $$
-JT^{-1}(x,y) = \det\matrices{2x}{2y}{\frac{-y}{x^{2}+y^{2}}}{\frac{x}{x^{2}+y^{2}}}=2.
+JT^{-1}(x,y) = \det\left[\begin{array}{cc} 2x & 2y \\ \frac{-y}{x^{2}+y^{2}} & \frac{x}{x^{2}+y^{2}} \end{array} \right]
+=2.
 $$
 Therefore, $(X,Y)$ has joint density
 $$
@@ -1510,16 +1511,16 @@ g(x,y) = 2f(x^{2}+y^{2},\arctan(y/x)) = \frac{\lambda}{\pi} e^{-\lambda(x^{2}+y^
 $$
 This is for $(x,y)\in \mathbb{R}^{2}$ with $y\not=0$, but as we have remarked earlier, the value of a pdf in $\mathbb{R}^{2}$ on a line does not matter, we may define $g(x,y)$ as above for all $(x,y)$ (main point is that the CDF does not change). Since $g(x,y)$ separates into a function of $x$ and a function of $y$, $X,Y$ are independent $N(0,\frac{1}{2\lambda})$.
 </div></div></div>
-<div id="theorem-120"><div class="panel panel-info remark"> <div class="panel-heading">Remark 120 </div><div class="panel-body"> Relationships between random variables derived by the change of variable formulas can be used for simulation too. For instance, the CDF of $N(0,1)$ is not explicit and hence simulating from that distribution is difficult (must resort to numerical methods). However, we can easily simulate it as follows. Simulate an $\mbox{Exp}(1/2)$ random variable $R$ (easy, as the distribution function can be inverted) and simulate an independent $\mbox{Unif}(0,2\pi)$ random variable $\Theta$. Then set $X=\sqrt{R}\cos(\Theta)$ and $Y=\sqrt{R}\sin(\Theta)$. These are two independent $N(0,1)$ random numbers. Here it should be noted that the random numbers in $(0,1)$ given by a random number generator are supposed to be independent uniform random numbers (otherwise, it is not acceptable as a random number generator).
+<div id="theorem-120"><div class="panel panel-success remark"> <div class="panel-heading">Remark 120 </div><div class="panel-body"> Relationships between random variables derived by the change of variable formulas can be used for simulation too. For instance, the CDF of $N(0,1)$ is not explicit and hence simulating from that distribution is difficult (must resort to numerical methods). However, we can easily simulate it as follows. Simulate an $\mbox{Exp}(1/2)$ random variable $R$ (easy, as the distribution function can be inverted) and simulate an independent $\mbox{Unif}(0,2\pi)$ random variable $\Theta$. Then set $X=\sqrt{R}\cos(\Theta)$ and $Y=\sqrt{R}\sin(\Theta)$. These are two independent $N(0,1)$ random numbers. Here it should be noted that the random numbers in $(0,1)$ given by a random number generator are supposed to be independent uniform random numbers (otherwise, it is not acceptable as a random number generator).
 </div></div></div></p>
 <p class="text-justify">
 </section>
              <section><h2 id="section-20">20. Independence and conditioning of random variables.</h2><p class="text-justify">
-<div id="theorem-121"><div class="panel panel-info definition"> <div class="panel-heading">Definition 121 </div><div class="panel-body"> Let $\mathbf{X}=(X_{1},\ldots ,X_{m})$ be a random vector (this means that $X_{i}$ are random variables on a common probability space). We say that $X_{i}$ are <em> independent</em> if $F_{\mathbf{X}}(t_{1},\ldots ,t_{m})=F_{1}(t_{1})\ldots F_{m}(t_{m})$ for all $t_{1},\ldots ,t_{m}$.
+<div id="theorem-121"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 121 </div><div class="panel-body"> Let $\mathbf{X}=(X_{1},\ldots ,X_{m})$ be a random vector (this means that $X_{i}$ are random variables on a common probability space). We say that $X_{i}$ are <em> independent</em> if $F_{\mathbf{X}}(t_{1},\ldots ,t_{m})=F_{1}(t_{1})\ldots F_{m}(t_{m})$ for all $t_{1},\ldots ,t_{m}$.
 </div></div></div>
-<div id="theorem-122"><div class="panel panel-info remark"> <div class="panel-heading">Remark 122 </div><div class="panel-body"> Recalling the definition of independence of events, the equality $F_{\mathbf{X}}(t_{1},\ldots ,t_{m})=F_{1}(t_{1})\ldots F_{m}(t_{m})$ is just saying that the events $\{X_{1}\le t_{1}\}, \ldots \{X_{m}\le t_{m}\}$ are independent. More generally, it is true that $X_{1},\ldots ,X_{m}$ are independent if and only if $\{X_{1}\in A_{1}\},\ldots ,\{X_{m}\in A_{m}\}$ are independent events for any $A_{1},\ldots, A_{m}\subseteq \mathbb{R}$.
+<div id="theorem-122"><div class="panel panel-success remark"> <div class="panel-heading">Remark 122 </div><div class="panel-body"> Recalling the definition of independence of events, the equality $F_{\mathbf{X}}(t_{1},\ldots ,t_{m})=F_{1}(t_{1})\ldots F_{m}(t_{m})$ is just saying that the events $\{X_{1}\le t_{1}\}, \ldots \{X_{m}\le t_{m}\}$ are independent. More generally, it is true that $X_{1},\ldots ,X_{m}$ are independent if and only if $\{X_{1}\in A_{1}\},\ldots ,\{X_{m}\in A_{m}\}$ are independent events for any $A_{1},\ldots, A_{m}\subseteq \mathbb{R}$.
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-123"><div class="panel panel-info remark"> <div class="panel-heading">Remark 123 </div><div class="panel-body"> In case $X_{1},\ldots ,X_{m}$ have a joint pmf or a joint pdf (which we denote by $f(t_{1},\ldots ,t_{m})$), the condition for independence is equivalent to
+<p class="text-justify"><div id="theorem-123"><div class="panel panel-success remark"> <div class="panel-heading">Remark 123 </div><div class="panel-body"> In case $X_{1},\ldots ,X_{m}$ have a joint pmf or a joint pdf (which we denote by $f(t_{1},\ldots ,t_{m})$), the condition for independence is equivalent to
 $$
 f(t_{1},\ldots ,t_{m})=f_{1}(t_{1})f_{2}(t_{2})\ldots f_{m}(t_{m})
 $$
@@ -1557,7 +1558,7 @@ from which we deduce that $X$ and $Y$ are independent and $X\sim N(\mu_{1},\frac
 <p class="text-justify">A very useful (and intuitively acceptable!) fact about independence is as follows.</p>
 <p class="text-justify"><strong>Fact:</strong> Suppose $X_{1},\ldots ,X_{n}$ are independent random variables. Let $k_{1} < k_{2} < \ldots  < k_{m}=n$. Let $Y_{1}=h_{1}(X_{1},\ldots ,X_{k_{1}})$, $Y_{2}=h_{2}(X_{k_{1}+{1}},\ldots ,X_{k_{2}}), \ldots Y_{m}=h_{m}(X_{k_{m-1}},\ldots ,X_{k_{m}})$. Then, $Y_{1},\ldots ,Y_{m}$ are also independent.</p>
 <p class="text-justify">
-<div id="theorem-127"><div class="panel panel-info remark"> <div class="panel-heading">Remark 127 </div><div class="panel-body"> In the previous section we defined independence of events and now we have defined independence of random variables. How are they related? We leave it to you to check that events $A_{1},\ldots ,A_{n}$ are independent (according the definition of the previous section) if and only if the random variables ${\mathbf 1}_{A_{1}},\ldots ,{\mathbf 1}_{A_{m}}$ are independent (according the definition of this section)
+<div id="theorem-127"><div class="panel panel-success remark"> <div class="panel-heading">Remark 127 </div><div class="panel-body"> In the previous section we defined independence of events and now we have defined independence of random variables. How are they related? We leave it to you to check that events $A_{1},\ldots ,A_{n}$ are independent (according the definition of the previous section) if and only if the random variables ${\mathbf 1}_{A_{1}},\ldots ,{\mathbf 1}_{A_{m}}$ are independent (according the definition of this section)
 </div></div></div></p>
 <p class="text-justify">
 {\color{magenta}
@@ -1568,7 +1569,7 @@ h_{s_{1},\ldots ,s_{\ell}}(t_{1},\ldots,t_{k})=\mathbf{P}\{X_{1}= t_{1},\ldots ,
 \end{equation}$$
 It is easy to see that $h_{s_{1},\ldots,s_{\ell}}(\cdot)$ is a pmf on $\mathbb{R}^{k}$. It is called the conditional pmf of $(X_{1},\ldots ,X_{k})$ given that $X_{k+1}=s_{1},\ldots X_{m}=s_{\ell}$.</p>
 <p class="text-justify">Its interpretation is as follows. Originally we had random observables $X_{1},\ldots ,X_{k}$ which had a certain joint pmf. Then we observe the values of the random variables $X_{k+1},\ldots ,X_{k+\ell}$, say they turn out to be $s_{1},\ldots ,s_{\ell}$, respectively. Then we update the distribution (or pmf) of $X_{1},\ldots ,X_{k}$ according to the above recipe. The conditional pmf is the new function $h_{s_{1},\ldots,s_{\ell}}(\cdot)$.</p>
-<p class="text-justify"><div id="theorem-128"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 128 </div><div class="panel-body"> Let $(X_{1},\ldots ,X_{n-1})$ be a random vector with multinomial distribution with parameters $r,n,p_{1},\ldots ,p_{n}$. Let $k < n-1$. Given that $X_{k+1}=s_{1},\ldots ,X_{n-1}=s_{n-k+1}$, show that the conditional distribution of $(X_{1},\ldots ,X_{k})$ is multinomial with parameters $r',n'$, $q_{1},\ldots ,q_{k+1}$ where $r'=r-(s_{1}+\ldots +s_{n-k+1})$, $n'=k+1$, $q_{j}=p_{j}/(p_{1}+\ldots +p_{k}+p_{n})$ for $j\le k$ and $q_{k+1}=p_{n}/(p_{1}+\ldots +p_{k}+p_{n})$.</p>
+<p class="text-justify"><div id="theorem-128"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 128 </div><div class="panel-body"> Let $(X_{1},\ldots ,X_{n-1})$ be a random vector with multinomial distribution with parameters $r,n,p_{1},\ldots ,p_{n}$. Let $k < n-1$. Given that $X_{k+1}=s_{1},\ldots ,X_{n-1}=s_{n-k+1}$, show that the conditional distribution of $(X_{1},\ldots ,X_{k})$ is multinomial with parameters $r',n'$, $q_{1},\ldots ,q_{k+1}$ where $r'=r-(s_{1}+\ldots +s_{n-k+1})$, $n'=k+1$, $q_{j}=p_{j}/(p_{1}+\ldots +p_{k}+p_{n})$ for $j\le k$ and $q_{k+1}=p_{n}/(p_{1}+\ldots +p_{k}+p_{n})$.</p>
 <p class="text-justify">This looks complicated, but is utterly obvious if you think in terms of assigning $r$ balls into $n$ urns by putting each ball into the urns with probabilities $p_{1},\ldots ,p_{n}$ and letting $X_{j}$ denote the number of balls that end up in the $j^{\mbox{th}}$ urn.
 </div></div></div></p>
 <p class="text-justify"><strong>Conditional densities</strong> Now suppose $X_{1},\ldots ,X_{k+\ell}$ have joint density $f(t_{1},\ldots ,t_{k+\ell})$ and let $g(s_{1},\ldots ,s_{\ell})$ by the density of $(X_{k+1},\ldots ,X_{k+\ell})$. Then, we define the conditional density of $(X_{1},\ldots ,X_{k})$ given $X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}$ as
@@ -1576,7 +1577,7 @@ $$\begin{equation}\label{eq:conditionalpdf}
 h_{s_{1},\ldots ,s_{\ell}}(t_{1},\ldots,t_{k})=\frac{f(t_{1},\ldots ,t_{k},s_{1},\ldots ,s_{\ell})}{g(s_{1},\ldots ,s_{\ell})}.
 \end{equation}$$
 This is well-defined whenever $g(s_{1},\ldots ,s_{\ell}) > 0$.</p>
-<p class="text-justify"><div id="theorem-129"><div class="panel panel-info remark"> <div class="panel-heading">Remark 129 </div><div class="panel-body"> Note the difference between \eqref{eq:conditionalpmf} and \eqref{eq:conditionalpdf}. In the latter we have left out the middle term because $\mathbf{P}\{X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}\}=0$. In \eqref{eq:conditionalpmf} the definition of pmf comes from the definition of conditional probability of events but in \eqref{eq:conditionalpdf} this is not so. We simply define the conditional density by analogy with the case of conditional pmf.  This is similar to the difference between interpretation of pmf ($f(t)$ is actually the probability of an event) and pdf ($f(t)$ is not the probability of an event but the density of probability near $t$).
+<p class="text-justify"><div id="theorem-129"><div class="panel panel-success remark"> <div class="panel-heading">Remark 129 </div><div class="panel-body"> Note the difference between \eqref{eq:conditionalpmf} and \eqref{eq:conditionalpdf}. In the latter we have left out the middle term because $\mathbf{P}\{X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}\}=0$. In \eqref{eq:conditionalpmf} the definition of pmf comes from the definition of conditional probability of events but in \eqref{eq:conditionalpdf} this is not so. We simply define the conditional density by analogy with the case of conditional pmf.  This is similar to the difference between interpretation of pmf ($f(t)$ is actually the probability of an event) and pdf ($f(t)$ is not the probability of an event but the density of probability near $t$).
 </div></div></div></p>
 <p class="text-justify"><div id="theorem-130"><div class="panel panel-info example"> <div class="panel-heading">Example 130 </div><div class="panel-body"> Let $(X,Y)$ have bivariate normal density $f(x,y)=\frac{\sqrt{ab-c^{2}}}{2\pi}e^{-\frac{1}{2}(ax^{2}+by^{2}+2cxy)}$ (so we assume $a > 0,b > 0, ab-c^{2} > 0$). In the mid-term you showed that the marginal distribution of $Y$ is $N(0,\frac{a}{ab-c^{2}})$, that is it has density $g(y)=\frac{\sqrt{ab-c^{2}}}{\sqrt{2\pi a}}e^{-\frac{ab-c^{2}}{2a}y^{2}}$. Hence, the conditional density of $X$ given $Y=y$ is
 $$
@@ -1585,7 +1586,7 @@ $$
 Thus the conditional distribution of $X$ given $Y=y$ is $N(-\frac{cy}{a},\frac{1}{a})$. Compare this with marginal (unconditional) distribution of $X$ which is $N(0,\frac{b}{ab-c^{2}})$.</p>
 <p class="text-justify">In the special case when $c=0$, we see that for any value of $y$, the conditional distribution of $X$ given $Y=y$ is the same as the unconditional distribution of $X$. What does this mean? It is just another way of saying that $X$ and $Y$ are independent! Indeed, when $c=0$, the joint density $f(x,y)$ splits into a product of two functions, one of $x$ alone and one of $y$ alone.
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-131"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 131 </div><div class="panel-body"> Let $(X,Y)$ have joint density $f(x,y)$. Let the marginal densities of $X$ and $Y$ be $g(x)$ and $h(y)$ respectively. Let $h_{x}(y)$ be the conditional density of $Y$ given $X=x$.
+<p class="text-justify"><div id="theorem-131"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 131 </div><div class="panel-body"> Let $(X,Y)$ have joint density $f(x,y)$. Let the marginal densities of $X$ and $Y$ be $g(x)$ and $h(y)$ respectively. Let $h_{x}(y)$ be the conditional density of $Y$ given $X=x$.
 <ol>
 <li> If $X$ and $Y$ are independent, show that for any $x$, we have $h_{x}(y)=h(y)$ for all $y$.
 </li>
@@ -1597,7 +1598,7 @@ Analogous statements hold for the case of pmf.
 <p class="text-justify"></section>
              <section><h2 id="section-21">21. Mean and Variance.</h2><p class="text-justify">
 Let $X$ be a random variable with distribution $F$. We shall assume that it has pmf or pdf denoted by $f$.
-<div id="theorem-132"><div class="panel panel-info definition"> <div class="panel-heading">Definition 132 </div><div class="panel-body"> The <em> expected value</em> (also called <em> mean</em>) of $X$ is defined as the quantity $\mathbf{E}[X]=\sum_{t}tf(t)$ if $f$ is a pmf and $\mathbf{E}[X]=\int_{-\infty}^{+\infty} t f(t)dt$ if $f$ is a pdf (provided the sum or the integral converges absolutely). </div></div></div>
+<div id="theorem-132"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 132 </div><div class="panel-body"> The <em> expected value</em> (also called <em> mean</em>) of $X$ is defined as the quantity $\mathbf{E}[X]=\sum_{t}tf(t)$ if $f$ is a pmf and $\mathbf{E}[X]=\int_{-\infty}^{+\infty} t f(t)dt$ if $f$ is a pdf (provided the sum or the integral converges absolutely). </div></div></div>
 Note that this agrees with the definition we gave earlier for random variables with pmf. it is possible to define expect value for distributions without pmf or pdf, but we shall not do it here.</p>
 <p class="text-justify">
 <strong>Properties of expectation:</strong> Let $X,Y$ be random variables both having pmf $f,g$ or  pdf $f,g$, respectively.
@@ -1619,7 +1620,7 @@ For random variables on a discrete probability space (then they have  pmf), we h
 <p class="text-justify"></p>
 <p class="text-justify">
 We state one more property of expectations, its relationship to independence.
-<div id="theorem-133"><div class="panel panel-info lemma"> <div class="panel-heading">Lemma 133 </div><div class="panel-body"> Let $X,Y$ be random variables on a common probability space. If $X$ and $Y$ are independent, then $\mathbf{E}[H_{1}(X)H_{2}(Y)]=\mathbf{E}[H_{1}(X)]\mathbf{E}[H_{2}(Y)]$ for any functions $H_{1},H_{2}:\mathbb{R}\rightarrow \mathbb{R}$ (for which the expectations make sense). In particular, $\mathbf{E}[XY]=\mathbf{E}[X]\mathbf{E}[Y]$.
+<div id="theorem-133"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 133 </div><div class="panel-body"> Let $X,Y$ be random variables on a common probability space. If $X$ and $Y$ are independent, then $\mathbf{E}[H_{1}(X)H_{2}(Y)]=\mathbf{E}[H_{1}(X)]\mathbf{E}[H_{2}(Y)]$ for any functions $H_{1},H_{2}:\mathbb{R}\rightarrow \mathbb{R}$ (for which the expectations make sense). In particular, $\mathbf{E}[XY]=\mathbf{E}[X]\mathbf{E}[Y]$.
 </div></div></div>
 <div class="proof"> Independence means that the joint density (analogous statements for pmf omitted) of $(X,Y)$ is f the form $f(t,s)=g(t)h(s)$ where $g(t)$ is the density of $X$ and $h(s)$ is the density of $Y$. Hence,
 $$
@@ -1675,10 +1676,10 @@ On the other hand
 \end{align*}
 To get the last line, observe that $\Gamma(3/2)=\frac{1}{2}\Gamma(1/2)$ and $\Gamma(1/2)=\sqrt{\pi}$. Thus we now have a meaning for the parameters $\mu$ and ${\sigma}^{2}$ - they are the mean and variance of the $N(\mu,{\sigma}^{2})$ distribution. Again note that the mean is the same for all $N(0,{\sigma}^{2})$ distributions but the variances are different, capturing the spread of the distribution.
 </div></div></div>
-<div id="theorem-135"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 135 </div><div class="panel-body"> Let $X\sim N(0,1)$. Show that $\mathbf{E}[X^{n}]=0$ if $n$ is odd and if $n$ is even then $\mathbf{E}[X^{n}]=(n-1)(n-3)\ldots (3)(1)$ (product of all odd numbers up to and including $n-1$). What happens if $X\sim N(0,{\sigma}^{2})$?
+<div id="theorem-135"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 135 </div><div class="panel-body"> Let $X\sim N(0,1)$. Show that $\mathbf{E}[X^{n}]=0$ if $n$ is odd and if $n$ is even then $\mathbf{E}[X^{n}]=(n-1)(n-3)\ldots (3)(1)$ (product of all odd numbers up to and including $n-1$). What happens if $X\sim N(0,{\sigma}^{2})$?
 </div></div></div></p>
 <p class="text-justify"></p>
-<p class="text-justify"><div id="theorem-136"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 136 </div><div class="panel-body"> Calculate the mean and variance for the following distributions.
+<p class="text-justify"><div id="theorem-136"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 136 </div><div class="panel-body"> Calculate the mean and variance for the following distributions.
 <ol>
 <li> $X\sim \mbox{Geo}(p)$. $\mathbf{E}[X]=\frac{1}{p}$ and $\mbox{Var}(X)=\frac{q}{p^{2}}$.
 </li>
@@ -1689,7 +1690,7 @@ To get the last line, observe that $\Gamma(3/2)=\frac{1}{2}\Gamma(1/2)$ and $\Ga
 <li> $X\sim \mbox{Hypergeo}(N_{1},N_{2},m)$. $\mathbf{E}[X]=\frac{mN_{1}}{N_{1}+N_{2}}$ and $\mbox{Var}(X)=??$.
 </ol>
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-137"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 137 </div><div class="panel-body"> Calculate the mean and variance for the following distributions.
+<p class="text-justify"><div id="theorem-137"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 137 </div><div class="panel-body"> Calculate the mean and variance for the following distributions.
 <ol>
 <li> $X\sim \mbox{Exp}(\lambda)$. $\mathbf{E}[X]=\frac{1}{\lambda}$ and $\mbox{Var}(X)=\frac{1}{\lambda^{2}}$.
 </li>
@@ -1708,7 +1709,7 @@ To get the last line, observe that $\Gamma(3/2)=\frac{1}{2}\Gamma(1/2)$ and $\Ga
 </li>
 <li> (Positivity): $\mbox{\textrm Cov}(X,X)\ge 0$ with equality if and only if $X$ is a constant random variable. Indeed, $\mbox{\textrm Cov}(X,X)=\mbox{Var}(X)$.
 </ol></p>
-<p class="text-justify"><div id="theorem-138"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 138 </div><div class="panel-body"> Show that $\mbox{Var}(cX)=c^{2}\mbox{Var}(X)$ (hence $\mbox{sd}(cX)=|c|\mbox{sd}(X)$). Further, if $X$ and $Y$ are independent, then $\mbox{Var}(X+Y)=\mbox{Var}(X)+\mbox{Var}(Y)$.
+<p class="text-justify"><div id="theorem-138"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 138 </div><div class="panel-body"> Show that $\mbox{Var}(cX)=c^{2}\mbox{Var}(X)$ (hence $\mbox{sd}(cX)=|c|\mbox{sd}(X)$). Further, if $X$ and $Y$ are independent, then $\mbox{Var}(X+Y)=\mbox{Var}(X)+\mbox{Var}(Y)$.
 </div></div></div></p>
 <p class="text-justify">Note that the properties of ovariance are very much like properties of inner-products in vector spaces. In particular, we have the following analogue of the well-known inequality for vectors $(\mathbf{u}\cdot \mathbf{v})^{2}\le(\mathbf{u}\cdot \mathbf{u})(\mathbf{v}\cdot \mathbf{v})$.</p>
 <p class="text-justify"><strong>Cauchy-Schwarz inequality:</strong>  If $X$ and $Y$ are random variables with finite variances, then $(\mbox{\textrm Cov}(X,Y))^{2}\le \mbox{Var}(X)\mbox{Var}(Y)$ with equality if and only if $Y=aX+b$ for some scalars $a,b$.</p>
@@ -1784,9 +1785,9 @@ This gives the following method of finding $I$. Fix a large number $N$ appropria
 <p class="text-justify">In what sense is this an approximation of $I$ and why? Indeed, by WLLN $\mathbf{P}\{|\hat{I}_{n}-I|\ge \delta \}\rightarrow 0$ and hence we expect $\hat{I}_{n}$ to be close to $I$. How large should $n$ be? For this, we fix two numbers $\epsilon=0.01$ and $\delta=0.001$ (you may change the numbers). By Chebyshev's inequality, observe that $\mathbf{P}\{|\hat{I}_{n}-I|\ge \delta \}\rightarrow {\sigma}^{2}/N\delta^{2}$.</p>
 <p class="text-justify"> First find $N$ so that ${\sigma}^{2}/N\delta^{2} < \epsilon$, i.e., $N=\lceil \frac{{\sigma}^{2}}{\delta^{2}}\rceil$. Then, the random variable $\hat{I}_{N}$ is within $\delta$ of $I$ with probability greater than $1-\epsilon$. This is a probabilistic method, hence there is a possibility of large error, but with a small probability. Observe that $N$ grows proportional to <em> square</em> of $1/\delta$. To increase the accuracy by $10$, you must increase the number of samples by a factor of $100$.</p>
 <p class="text-justify"> One last point. To find $N$ we need ${\sigma}^{2}$ which involves computing another integral involving $\varphi$ which we do not know how to compute!  Here we do not need the exact value of the integral. For example,  if our functions satisfies $-M\le \varphi(x)\le M$ for all $x\in [0,1]$, then also $-M\le I\le M$ and hence $(\varphi(x)-\I)^{2}\le 4M^{2}$. This means that ${\sigma}^{2}\le 4M^{2}$. Therefore, if we take $N=\lceil \frac{4M^{2}}{\delta^{2}}\rceil$ then the value of $N$ is larger than required for the desired accuracy. We can work with this $N$. Note that the dependence of  of $N$ on $\delta$ does not change.</p>
-<p class="text-justify"><div id="theorem-139"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 139 </div><div class="panel-body"> We know that $\int_{0}^{1}\frac{1}{1+x^{2}}dx=\frac{\pi}{4}$. Based on this, devise a method to find an approximate value of $\pi$. Use any software you like to implement your method and see how many sample you need to get an approximation to $1$, $2$ and $3$ decimal places consistently (consistently means with a large enough probability, say $0.9$).
+<p class="text-justify"><div id="theorem-139"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 139 </div><div class="panel-body"> We know that $\int_{0}^{1}\frac{1}{1+x^{2}}dx=\frac{\pi}{4}$. Based on this, devise a method to find an approximate value of $\pi$. Use any software you like to implement your method and see how many sample you need to get an approximation to $1$, $2$ and $3$ decimal places consistently (consistently means with a large enough probability, say $0.9$).
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-140"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 140 </div><div class="panel-body"> Devise a method to approximate $e$ and $\pi$ (there are many possible integrals).
+<p class="text-justify"><div id="theorem-140"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 140 </div><div class="panel-body"> Devise a method to approximate $e$ and $\pi$ (there are many possible integrals).
 </div></div></div></p>
 <p class="text-justify">This method can be used to evaluate integrals over any interval. For instance, how would you find $\int_{a}^{b}\varphi(t) dt$ or $\int_{0}^{\infty}\varphi(t) e^{-t}dt$ or $\int_{-\infty}^{\infty}\varphi(t)e^{-t^{2}}dt$ where  $\varphi$ is a function on the appropriate interval? It can also be used to evaluate multiple integrals (and consequently to find the areas and volumes of sets). The only condition is that it should be possible to evaluate the given function $\varphi$ at a point $x$ on the computer. To illustrate, consider the problem of finding the area of a region $\{(x,y){\; : \;} 0\le x,y, \le1, \ 2x^{3}y^{2}\ge 1, \ x^{2}+2y^{2}\le 2.3 \}$. It is complicated to work with such regions analytically, but given a point $(x,y)$, it is easy to check on a computer whether all the constraints given are satisfied.</p>
 <p class="text-justify">As a last remark, how do Monte-Carlo methods compare with the usual numerical methods? In the latter, usually a number $N$ and a set of points $x_{1},\ldots ,x_{N}$ are fixed along with some weights $w_{1},\ldots ,w_{N}$ that sum to $1$. Then one presents $\tilde{I}:=\sum_{k=1}^{N}w_{k}\varphi(x_{k})$ as the approximate value of $I$. Lagrange's method, Gauss quadrature etc are of this type. Under certain assumptions on $\varphi$, the accuracy of these integrals can be like $1/N$ as opposed to $1/\sqrt{N}$ in Monte-Carlo. But when those assumptions are not satisfied, $\tilde{I}$ can be way off $I$. One may regard this as a game of strategy as follows.</p>
@@ -1875,7 +1876,7 @@ This proves CLT for the case of exponential random variables.
              <section><h2 id="section-26">26. Poisson limit for rare events.</h2><p class="text-justify">
 Let $X_{k}\sim \mbox{Ber}(p)$ be independent random variables. Central limit theorem says that if $p$ is fixed and $n$ is large, the distribution of $(X_{n}-np)/\sqrt{np(1-p)}$ is close to the  $N(0,1)$ distribution.</p>
 <p class="text-justify">Now we consider a slightly different situation. Let $X_{1},\ldots ,X_{n}$ have $\mbox{Ber}(n,p_{n})$ distribution where $p_{n}=\frac{\lambda}{n}$, where $\lambda > 0$ is fixed. Then, we shall show that the distribution of $X_{1}+\ldots +X_{n}$ is close to that of $\mbox{Pois}(\lambda)$. Note that the distribution of $X_{1}$ changes with $n$ and hence it would be more correct to write $X_{n,1}, \ldots ,X_{n,n}$.</p>
-<p class="text-justify"><div id="theorem-142"><div class="panel panel-info theorem"> <div class="panel-heading">Theorem 142 </div><div class="panel-body"> Let $\lambda > 0$ be fixed and let $X_{n,1},\ldots ,X_{n,n}$ be i.i.d. $\mbox{Ber}(\lambda/n)$. Let $S_{n}=X_{n,1}+\ldots +X_{n,n}$. Then, for every $k\ge 0$
+<p class="text-justify"><div id="theorem-142"><div class="panel panel-primary theorem"> <div class="panel-heading">Theorem 142 </div><div class="panel-body"> Let $\lambda > 0$ be fixed and let $X_{n,1},\ldots ,X_{n,n}$ be i.i.d. $\mbox{Ber}(\lambda/n)$. Let $S_{n}=X_{n,1}+\ldots +X_{n,n}$. Then, for every $k\ge 0$
 $$
 \mathbf{P}\{S_{n}=k\}\rightarrow e^{-\lambda}\frac{\lambda^{k}}{k!}.
 $$
@@ -1899,7 +1900,7 @@ What is the meaning of this? Bernoulli random variables may be thought of as ind
 </section>
              <section><h2 id="section-27">27. Entropy, Gibbs distribution.</h2><p class="text-justify">
 In this section we talk about entropy, a concept of fundamental importance in physics, mathematics and information theory.\footnote{This section was not covered in class and may be safely omitted}
-<div id="theorem-145"><div class="panel panel-info definition"> <div class="panel-heading">Definition 145 </div><div class="panel-body"> Let $X$ be a random variable that takes values in ${\mathcal A}=\{a_{1},\ldots ,a_{k}\}$ such that $\mathbf{P}(X=a_{i})=p_{i}$. The entropy of $X$ is defined as
+<div id="theorem-145"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 145 </div><div class="panel-body"> Let $X$ be a random variable that takes values in ${\mathcal A}=\{a_{1},\ldots ,a_{k}\}$ such that $\mathbf{P}(X=a_{i})=p_{i}$. The entropy of $X$ is defined as
 $$
 H(X) := -\sum\limits_{i=1}^{k} p_{i}\log p_{i}.
 $$
@@ -1917,7 +1918,7 @@ $$
 <p class="text-justify"><div id="theorem-149"><div class="panel panel-info example"> <div class="panel-heading">Example 149 </div><div class="panel-body"> Let $X\sim N(\mu,{\sigma}^{2})$
 </div></div></div></p>
 <p class="text-justify">Entropy is a measure of the randomness. For example, among the $\mbox{Ber}(p)$ distributions, the entropy is maximized at $p=1/2$ and minimized at $p=0\mbox{ or }1$. It quantifies the intuitive feeling that $\mbox{Ber}(1/2)$ is <em> more random</em> than $\mbox{Ber}(1/4)$.</p>
-<p class="text-justify"><div id="theorem-150"><div class="panel panel-info lemma"> <div class="panel-heading">Lemma 150 </div><div class="panel-body">
+<p class="text-justify"><div id="theorem-150"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 150 </div><div class="panel-body">
 <ol>
 <li> If $|{\mathcal A}|=k$, then $0\le H(X)\le \log k$. $H(X)=0$ if and only if $X$ is degenerate and $H(X)=\log k$ if and only if $X\sim \mbox{Unif}({\mathcal A})$.
 </li>
@@ -1931,7 +1932,7 @@ $$
 {\mathcal P}_{E}:=\{{\bf p}=\left(p_{i}\right)_{i\in {\mathcal A}}{\; : \;} \sum_{i\in {\mathcal A}} p(i){\mathcal H}(i)=E\}.
 $$
 ${\mathcal P}_{E}$ is non-empty if and only if ${\mathcal H}_{\min}\le E\le {\mathcal H}_{\max}$.
-<div id="theorem-151"><div class="panel panel-info lemma"> <div class="panel-heading">Lemma 151 </div><div class="panel-body"> Assume that ${\mathcal H}_{\min}\le E\le {\mathcal H}_{\max}$. Then, there is a unique pmf in ${\mathcal P}_{E}$ with maximal entropy and it is given by
+<div id="theorem-151"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 151 </div><div class="panel-body"> Assume that ${\mathcal H}_{\min}\le E\le {\mathcal H}_{\max}$. Then, there is a unique pmf in ${\mathcal P}_{E}$ with maximal entropy and it is given by
 $$
 p_{\beta}(i)=\frac{1}{Z_{\beta}}e^{-\beta {\mathcal H}(i)}
 $$
@@ -2037,7 +2038,7 @@ Further the first inequality is an equality if and only if $x_{1}\le a\le x_{n}$
 } for fixed $X_{1},\ldots ,X_{n}$, the value of $\sum_{k=1}^{n}|X_{k}-\theta|$ is minimized when $\theta=M_{n}$, the median of $X_{1},\ldots ,X_{n}$ (strictly speaking the median may have several choices, all of them are equally good). Thus we fix $\hat{\theta}=M_{n}$ and then we maximize $\ell(\hat{\theta},\alpha)$ over $\alpha$ by differentiating. We get $\hat{\alpha}=\frac{1}{n}\sum_{k=1}^{n}|X_{k}-\theta|$ (the sample mean-absolute deviation about the median). Thus the MLE of $(\theta,\alpha)$ is $(\hat{\theta},\hat{\alpha})$.
 </div></div></div></p>
 <p class="text-justify">In homeworks and tutorials you will see several other estimation problems which we list in the exercise below.
-<div id="theorem-158"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 158 </div><div class="panel-body"> Find an estimate for the unknown parameters by the method of moments and the maximum likelihood method.
+<div id="theorem-158"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 158 </div><div class="panel-body"> Find an estimate for the unknown parameters by the method of moments and the maximum likelihood method.
  <ol>
 <li> $X_{1},\ldots, X_{n}$ are i.i.d. $N(\mu,1)$. Estimate $\mu$. How do your estimates change if the distribution is $N(\mu,2)$?
 </li>
@@ -2047,14 +2048,14 @@ Further the first inequality is an equality if and only if $x_{1}\le a\le x_{n}$
 </ol>
 [<strong>Note:</strong> The first case is when ${\sigma}^{2}$ is known and $\mu$ is unknown. Then the known value of ${\sigma}^{2}$ may be used to estimate $\mu$. In the second case it is similar, now $\mu$ is known and ${\sigma}^{2}$ is not known. In the third case, both are unknown].
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-159"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 159 </div><div class="panel-body"> $X_{1},\ldots, X_{n}$ are i.i.d. $\mbox{Geo}(p)$ Estimate $\mu=1/p$.
+<p class="text-justify"><div id="theorem-159"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 159 </div><div class="panel-body"> $X_{1},\ldots, X_{n}$ are i.i.d. $\mbox{Geo}(p)$ Estimate $\mu=1/p$.
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-160"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 160 </div><div class="panel-body"> $X_{1},\ldots, X_{n}$ are i.i.d. $\mbox{Pois}(\lambda)$ Estimate $\lambda$.
+<p class="text-justify"><div id="theorem-160"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 160 </div><div class="panel-body"> $X_{1},\ldots, X_{n}$ are i.i.d. $\mbox{Pois}(\lambda)$ Estimate $\lambda$.
 </div></div></div></p>
-<p class="text-justify"><div id="theorem-161"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 161 </div><div class="panel-body"> $X_{1},\ldots, X_{n}$ are i.i.d. $\mbox{Beta}(a,b)$ Estimate $a,b$.
+<p class="text-justify"><div id="theorem-161"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 161 </div><div class="panel-body"> $X_{1},\ldots, X_{n}$ are i.i.d. $\mbox{Beta}(a,b)$ Estimate $a,b$.
 </div></div></div></p>
 <p class="text-justify">The following exercise is approachable by the same methods but requires you to think a little.
-<div id="theorem-162"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 162 </div><div class="panel-body"> $X_{1},\ldots, X_{n}$ are i.i.d. $\mbox{Uniform}[a,b]$ Estimate $a,b$.
+<div id="theorem-162"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 162 </div><div class="panel-body"> $X_{1},\ldots, X_{n}$ are i.i.d. $\mbox{Uniform}[a,b]$ Estimate $a,b$.
 </div></div></div></p>
 <p class="text-justify"></section>
              <section><h2 id="section-30">30. Properties of estimates.</h2><p class="text-justify">
@@ -2072,7 +2073,7 @@ To prove this, consider and random variable $Y$ with mean $\mu$ and observe that
 &= \mathbf{E}[(Y-\mu)^{2}]+(\mu-a)^{2} = \mbox{Var}(Y) + (\mu-a)^{2}.
 \end{align*}
 Use this identity with $T_{n}$ in place of $Y$ and $\theta$ in place of $a$.</p>
-<p class="text-justify"><div id="theorem-163"><div class="panel panel-info remark"> <div class="panel-heading">Remark 163 </div><div class="panel-body"> An analogy. Consider shooting with a rifle having a telescopic sight. A given target can be missed for two reasons. One, the marksman may be unskilled and shoot all over the place, sometimes a meter to the right of the target, sometimes a meter to the left, etc. In this case, the shots have a large variance. Another person may consistently hit a point 20 cm. to the right of the target. Perhaps the telescopic sight is not set right, and this caused the systematic error. This is the bias. Both bias and variance contribute to missing the target.
+<p class="text-justify"><div id="theorem-163"><div class="panel panel-success remark"> <div class="panel-heading">Remark 163 </div><div class="panel-body"> An analogy. Consider shooting with a rifle having a telescopic sight. A given target can be missed for two reasons. One, the marksman may be unskilled and shoot all over the place, sometimes a meter to the right of the target, sometimes a meter to the left, etc. In this case, the shots have a large variance. Another person may consistently hit a point 20 cm. to the right of the target. Perhaps the telescopic sight is not set right, and this caused the systematic error. This is the bias. Both bias and variance contribute to missing the target.
 </div></div></div></p>
 <p class="text-justify">
 <div id="theorem-164"><div class="panel panel-info example"> <div class="panel-heading">Example 164 </div><div class="panel-body"> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$. Let $V_{n}=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$ be an estimate for ${\sigma}^{2}$. By expanding the squares we get
@@ -2096,7 +2097,7 @@ All the remarks in the above two examples apply for any distribution, i.e.,
 <li> The sample variance $s_{n}^{2}=\frac{1}{n-1}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$ is unbiased for the population variance. But $V_{n}=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$ is not, in fact $\mathbf{E}[V_{n}]=\frac{n-1}{n}{\sigma}^{2}$.
 </ol>
  It appears that $s_{n}^{2}$ is better, but the following remark says that one should be cautious in making such a statement.
-<div id="theorem-166"><div class="panel panel-info remark"> <div class="panel-heading">Remark 166 </div><div class="panel-body"> In case of $N(\mu,{\sigma}^{2})$ data, it turns out that although $s_{n}^{2}$ is unbiased and $V_{n}$ is biased, the mean squared error of $V_{n}$ is smaller! Further $V_{n}$ is the maximum likelihood estimate of ${\sigma}^{2}$! Overall, unbiasedness is not so important as having smaller mean squared error, but for estimating variance (when the mean is not known), we always use $s_{n}^{2}$. The computation of the m.s.e is a bit tedious, so we skip it here.
+<div id="theorem-166"><div class="panel panel-success remark"> <div class="panel-heading">Remark 166 </div><div class="panel-body"> In case of $N(\mu,{\sigma}^{2})$ data, it turns out that although $s_{n}^{2}$ is unbiased and $V_{n}$ is biased, the mean squared error of $V_{n}$ is smaller! Further $V_{n}$ is the maximum likelihood estimate of ${\sigma}^{2}$! Overall, unbiasedness is not so important as having smaller mean squared error, but for estimating variance (when the mean is not known), we always use $s_{n}^{2}$. The computation of the m.s.e is a bit tedious, so we skip it here.
 </div></div></div></p>
 <p class="text-justify"><div id="theorem-167"><div class="panel panel-info example"> <div class="panel-heading">Example 167 </div><div class="panel-body"> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mbox{Ber}(p)$. Then $\bar{X}_{n}$ is an estimate for $p$. It is unbiased since $\mathbf{E}[\bar{X}_{n}]=p$. Hence, the m.s.e of $\bar{X}_{n}$ is just the variance which is equal to $p(1-p)/n$.
 </div></div></div></p>
@@ -2148,7 +2149,7 @@ $$
 This is our confidence interval.</p>
 <p class="text-justify">\subsection{Estimating ${\sigma}^{2}$ when $\mu$ is known}
 Since $\mu$ is known, we use $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ to estimate ${\sigma}^{2}$. Here is an exercise.
-<div id="theorem-168"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 168 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(0,1)$ random variables. Then, $Z_{1}^{2}+\ldots +Z_{n}^{2}\sim \mbox{Gamma}(n/2,1/2)$.
+<div id="theorem-168"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 168 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(0,1)$ random variables. Then, $Z_{1}^{2}+\ldots +Z_{n}^{2}\sim \mbox{Gamma}(n/2,1/2)$.
 </div></div></div>
 <strong>Solution:</strong> For $t > 0$ we have
 \begin{align*}
@@ -2170,7 +2171,7 @@ has chi-squared distribution with $n$ degrees of freedom. Hence
 \end{align*}
  Thus, $\left[\frac{ns_{n}^{2}}{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)},\frac{ns_{n}^{2}}{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right]$ is a $(1-\alpha)$-confidence interval for ${\sigma}^{2}$.</p>
 <p class="text-justify"><strong>An important result:</strong> Before going to the next two confidence interval problems, let us try to understand the two examples already covered. In both cases, we came up with a random variable ($\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ and $W_{n}/{\sigma}^{2}$, respectively) which involved the data and the unknown parameter  whose distributions we knew (standard normal and $\chi^{2}_{n}$, respectively) and these distributions do not depend on any parameters. This is generally the key step in any confidence interval problem. For the next two problems, we cannot use the same two random variables as above as they depend on the other unknown parameter too (i.e.,  $\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ uses ${\sigma}$ which will be unknown and $W_{n}/{\sigma}^{2}$ uses $\mu$ which will be unknown). Hence, we need a new result that we state without proof.</p>
-<p class="text-justify"><div id="theorem-169"><div class="panel panel-info theorem"> <div class="panel-heading">Theorem 169 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$ random variables. Let $\bar{Z}_{n}$ and $s_{n}^{2}$ be the sample mean and the sample variance, respectively. Then,
+<p class="text-justify"><div id="theorem-169"><div class="panel panel-primary theorem"> <div class="panel-heading">Theorem 169 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$ random variables. Let $\bar{Z}_{n}$ and $s_{n}^{2}$ be the sample mean and the sample variance, respectively. Then,
 $$
 \bar{Z}_{n}\sim N(\mu,\frac{{\sigma}^{2}}{n}), \;\;  \frac{(n-1)s_{n}^{2}}{{\sigma}^{2}}\sim \chi^{2}_{n-1},
 $$
@@ -2193,7 +2194,7 @@ $$
 \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}}\sim N(0,1).
 $$
 Is it true if ${\sigma}$ is replaced by $s_{n}$? Actually no, but we have a different distribution called <em> Student's $t$-distribution</em>.</p>
-<p class="text-justify"><div id="theorem-170"><div class="panel panel-info exercise"> <div class="panel-heading">Exercise 170 </div><div class="panel-body"> Let $Z\sim N(0,1)$ and $S^{2}\sim \chi^{2}_{n}$ be independent. Then, the density of $\frac{Z}{S/\sqrt{n}}$ is given by
+<p class="text-justify"><div id="theorem-170"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 170 </div><div class="panel-body"> Let $Z\sim N(0,1)$ and $S^{2}\sim \chi^{2}_{n}$ be independent. Then, the density of $\frac{Z}{S/\sqrt{n}}$ is given by
 $$
 \frac{1}{\sqrt{n-1}\mbox{Beta}(\frac{1}{2},\frac{n-1}{2})}\frac{1}{\left(1+\frac{t^{2}}{n-1}\right)^{\frac{n}{2}}}
 $$
@@ -2212,7 +2213,7 @@ The $t$-distribution is symmetric about zero (the density at $t$ and at $-t$ are
 &= 1-\alpha.
 \end{align*}
 Hence, our $(1-\alpha)$-confidence interval is $\left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right),\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right)\right]$.</p>
-<p class="text-justify"><div id="theorem-171"><div class="panel panel-info remark"> <div class="panel-heading">Remark 171 </div><div class="panel-body"> We remarked earlier that as $n\rightarrow \infty$, the $t_{n-1}$ density approaches the standard normal density. Hence, $t_{n-1}(\alpha)$ approaches $z_{\alpha}$ for any $\alpha$ (this can be seen by looking at the $t$-table for large degree of freedom). Therefore, when $n$ is large, we may as well use
+<p class="text-justify"><div id="theorem-171"><div class="panel panel-success remark"> <div class="panel-heading">Remark 171 </div><div class="panel-body"> We remarked earlier that as $n\rightarrow \infty$, the $t_{n-1}$ density approaches the standard normal density. Hence, $t_{n-1}(\alpha)$ approaches $z_{\alpha}$ for any $\alpha$ (this can be seen by looking at the $t$-table for large degree of freedom). Therefore, when $n$ is large, we may as well use
 $$
 \left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alpha/2},\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alpha/2}\right].
 $$
@@ -2333,7 +2334,7 @@ Earlier in the course we discussed the problem of how to test whether a ``psychi
 <p class="text-justify"></p>
 <p class="text-justify"></p>
 <p class="text-justify"></p>
-<p class="text-justify"><div id="theorem-173"><div class="panel panel-info question"> <div class="panel-heading">Question 173 </div><div class="panel-body"> A ``psychic'' claims to guess the order of cards in a deck. We shuffle a deck of cards, ask her to guess and count the number of correct guesses, say $X$.</p>
+<p class="text-justify"><div id="theorem-173"><div class="panel panel-danger question"> <div class="panel-heading">Question 173 </div><div class="panel-body"> A ``psychic'' claims to guess the order of cards in a deck. We shuffle a deck of cards, ask her to guess and count the number of correct guesses, say $X$.</p>
 <p class="text-justify">\medskip
 One hypotheses (we call it the <em> null hypothesis</em> and denote it by $H_{0}$) is that the psychic is guessing randomly. The <em> alternate hypothesis</em> (denoted $H_{1}$) is that his/her guesses are better than random guessing (in itself this does not imply existence of psychic powers. It could be that he/she has managed to see some of the cards etc.). Can we decide between the two hypotheses based on $X$?
 </div></div></div></p>
@@ -2389,7 +2390,7 @@ For $k_{0}=0$, the right side is $1$ while for $k_{0}=52$ it is $1/52!$ which is
 </ol></p>
 <p class="text-justify"><strong>The rationale behind the tests:</strong> If $\bar{X}$ is much larger than $\mu_{0}$ then the greater is the evidence that the true mean $\mu$ is greater than $\mu_{0}$. However, the magnitude depends on the standard deviation and hence we divide by $s$ (if we knew ${\sigma}$ we would divide by that). Another way to see that this is reasonable is that $\mathcal T$ does not depend on the units in which you measure $X_{i}$s (whether $X_{i}$ are measured in meters or centimeters, the value of $\mathcal T$ does not change).</p>
 <p class="text-justify"><strong>The significance level is $\alpha$:</strong> The question is where to draw the threshold. We have seen before that <em> under the null hypothesis</em>  $\mathcal T$ has a $t_{n-1}$ distribution. Recall that this is because, if the null hypothesis is true, then  $\frac{\sqrt{n}(\bar{X}-\mu_{0})}{{\sigma}}\sim N(0,1)$, $(n-1)s^{2}/{\sigma}^{2} \sim \chi^{2}_{n-1}$ and the two are independent.  Thus, the given tests have significance level $\alpha$ for the two problems.</p>
-<p class="text-justify"><div id="theorem-177"><div class="panel panel-info remark"> <div class="panel-heading">Remark 177 </div><div class="panel-body"> Earlier we considered the problem of constructing a $(1-\alpha)$-CI for $\mu$ when ${\sigma}^{2}$ is unknown. The two sided test abovecan be simply stated as follows: Accept the alternative at level $\alpha$ if the corresponding $(1-\alpha)$-CI does not contain $\mu_{0}$. Conversely, if we had dealt with testing problems first, we could define a confidence interval as the set of all those $\mu_{0}$ for which the corresponding test rejects the alternative.</p>
+<p class="text-justify"><div id="theorem-177"><div class="panel panel-success remark"> <div class="panel-heading">Remark 177 </div><div class="panel-body"> Earlier we considered the problem of constructing a $(1-\alpha)$-CI for $\mu$ when ${\sigma}^{2}$ is unknown. The two sided test abovecan be simply stated as follows: Accept the alternative at level $\alpha$ if the corresponding $(1-\alpha)$-CI does not contain $\mu_{0}$. Conversely, if we had dealt with testing problems first, we could define a confidence interval as the set of all those $\mu_{0}$ for which the corresponding test rejects the alternative.</p>
 <p class="text-justify">Thus, confidence intervals and testing are closely related. This is true in some greater generality. For example, we did not construct confidence interval for $\mu$, but you should do so and check that it is closely related to the one-sided tests above.
 </div></div></div></p>
 <p class="text-justify"></section>
@@ -2500,18 +2501,18 @@ If the desired level of significance is $\alpha$, then the Pearson $\chi^{2}$-te
 The physical theories predict that the distribution ought to be Poisson and hence we have taken it as the null hypothesis\footnote{When a new theory is proposed, it should prove itself and is put in the alterntive hypotheis, but here we take it as null.}</p>
 <p class="text-justify">We define $O_{j}$ as the number of time intervals in which we see exactly $j$ particles. Thus $O_{j}=\sum_{i=1}^{2608}{\mathbf 1}_{X_{i}=j}$. How do we find the expected numbers? If the null hypothesis had said that $F$ has Poisson(1) distribution, we could use that to find the expected numbers. But $H_{0}$ only says Poisson($\lambda$) for an unspecified $\lambda$? This brings in a new feature.</p>
 <p class="text-justify">First estimate $\lambda$, for example $\hat{\lambda}=\bar{X}_{n}$ is an MLE as well as method of moments estimate. Then we use this to calculate Poisson probabilities and the expected numbers. In other words, $E_{j}=e^{-\hat{\lambda}}\frac{\hat{\lambda}^{j}}{j!}$. For the given data we find that $\hat{\lambda}=3.87$. The table is as follows.</p>
-<p class="text-justify">\begin{center}
-\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c||}
+<p class="text-justify">\[
+\begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
-$j$  & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & $\ge$ 10 \\
+j  & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & \ge 10 \\
 \hline
-$O_{j}$  & 57 & 203 & 383 & 525 & 532 & 408 & 273 & 139 & 45 & 27 & 16 \\
+O_{j}  & 57 & 203 & 383 & 525 & 532 & 408 & 273 & 139 & 45 & 27 & 16 \\
 \hline
-$E_{j}$ & 54.4 & 210.5 & 407.4 & 525.4 & 508.4 & 393.5 & 253.8 & 140.3 & 67.9 & 29.2 & 17.1 \\
+E_{j} & 54.4 & 210.5 & 407.4 & 525.4 & 508.4 & 393.5 & 253.8 & 140.3 & 67.9 & 29.2 & 17.1 \\
 \hline
-\end{tabular}
-\end{center}
-Two remarks: The original data would have consisted of several more bins for $j=11,12\ldots$. These have been clubbed together to perform the $\chi^{2}$ test (instead of a minimum of $5$ per bin, they may have ensured that there are at least $10$ per bin). Also, the estimate $\hat{\lambda}=3.87$ was obtained before clubbing these bins. Indeed, if the data is merely presented as the above table, there will be some ambiguity in how to find $\hat{\lambda}$ as one of the bins says ``$\ge 10$''.</p>
+\end{array}
+\]</p>
+<p class="text-justify">Two remarks: The original data would have consisted of several more bins for $j=11,12\ldots$. These have been clubbed together to perform the $\chi^{2}$ test (instead of a minimum of $5$ per bin, they may have ensured that there are at least $10$ per bin). Also, the estimate $\hat{\lambda}=3.87$ was obtained before clubbing these bins. Indeed, if the data is merely presented as the above table, there will be some ambiguity in how to find $\hat{\lambda}$ as one of the bins says ``$\ge 10$''.</p>
 <p class="text-justify">Then we compute
 $$
  T=\sum_{j=0}^{10}\frac{(O_{j}-E_{j})^{2}}{E_{j}} = 14.7.
@@ -2578,7 +2579,7 @@ Let $(X_{i},Y_{i})$ be i.i.d random variables. For example, we could pick people
 <p class="text-justify">In other words, we assume that there is an underlying relationship $Y=f(X)$ for an unknown function $f$ which we want to find. From a random sample $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$  we try to guess the function $f$.</p>
 <p class="text-justify">If we allow all possible functions, it is easy to find one that fits all the data points, i.e., there exists a function $f:\mathbb{R}\rightarrow \mathbb{R}$ (in fact we may take $f$ to be a polynomials of degree $n$) such that $f(X_{i})=Y_{i}$ for each $i\le n$ (this is true only if we assume that all $X_{i}$ are distinct which happens if $X$ has a continuous distribution). This is not a good predictor, because the next data point $(U,V)$ will fall way off the curve. We have found a function that ``predicts'' well all the data we have, but not for a future observation!</p>
 <p class="text-justify">Instead, we fix a class of functions, for example the collection of all linear functions $y=mx+c$ where $m,c\in \mathbb{R}$ and within this class, find the best fitting function.</p>
-<p class="text-justify"><div id="theorem-182"><div class="panel panel-info remark"> <div class="panel-heading">Remark 182 </div><div class="panel-body"> One may wonder if linearity is too restrictive. To some extent, but perhaps not as much as it sounds at first.
+<p class="text-justify"><div id="theorem-182"><div class="panel panel-success remark"> <div class="panel-heading">Remark 182 </div><div class="panel-body"> One may wonder if linearity is too restrictive. To some extent, but perhaps not as much as it sounds at first.
 <ol>
 <li> Firstly, many relationships are linear in a reasonable range of the $X$ variable (for example, resistance of a materiaal versus temperature).
 </li>
@@ -2608,21 +2609,21 @@ $$
 Another way to write it is $\hat{\beta}=\frac{s_{Y}}{s_{X}}r_{X,Y}$ where $r_{X,Y}$ is the sample correlation coefficient.</p>
 <p class="text-justify"><strong>A motivation for the least squares criterion:</strong> Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alpha+\beta X_{i}+\epsilon_{i}$ where $\epsilon_{i}$ are i.i.d. $N(0,{\sigma}^{2})$ ``errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alpha+\beta X_{i},{\sigma}^{2})$ random variables. Now we can extimate $\alpha,\beta$ by the maximum likelihood method.</p>
 <p class="text-justify"><div id="theorem-183"><div class="panel panel-info example"> <div class="panel-heading">Example 183 ([Hubble's 1929 experiment on the recession velocity of nebulae and their distance to earth)</div><div class="panel-body"> Hubble collected the following data that I took from \href{http://lib.stat.cmu.edu/DASL/Datafiles/Hubble.html}{this website}. Here $X$ is the number of megaparsecs from the nebula to earth and $Y$ is the observed recession velocity in $10^{3}$km/s.
-\begin{center}
-\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\[
+\begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
-$X$  & 0.032 & 0.034 & 0.214 & 0.263 & 0.275 & 0.275 & 0.45 & 0.5 & 0.5 & 0.63 & 0.8 &  2 \\
+X  & 0.032 & 0.034 & 0.214 & 0.263 & 0.275 & 0.275 & 0.45 & 0.5 & 0.5 & 0.63 & 0.8 &  2 \\
 \hline
-$Y$  & 0.17 & 0.29 & -0.13 & -0.07 & -0.185 & -0.22 & 0.2 & 0.29 & 0.27 & 0.2 & 0.3 & 1.09\\
-\hline
-\hline
-$X$ & 0.9 & 0.9 & 0.9 & 0.9 & 1 & 1.1 & 1.1 & 1.4 & 1.7 & 2 & 2 & 2 \\
-\hline
-$Y$ & -0.03 & 0.65 & 0.15 & 0.5 & 0.92 & 0.45 & 0.5 & 0.5 & 0.96 & 0.5 & 0.85 & 0.8   \\
+Y  & 0.17 & 0.29 & -0.13 & -0.07 & -0.185 & -0.22 & 0.2 & 0.29 & 0.27 & 0.2 & 0.3 & 1.09\\
 \hline
 \hline
-\end{tabular}
-\end{center}
+X & 0.9 & 0.9 & 0.9 & 0.9 & 1 & 1.1 & 1.1 & 1.4 & 1.7 & 2 & 2 & 2 \\
+\hline
+Y & -0.03 & 0.65 & 0.15 & 0.5 & 0.92 & 0.45 & 0.5 & 0.5 & 0.96 & 0.5 & 0.85 & 0.8   \\
+\hline
+\hline
+\end{array}
+\]
 We fit two straight lines to this data.
 <ol>
 <li> Fit the line $Y=\alpha+\beta X$. The least squares estimators (as derived earlier) turn out to be $\hat{\alpha}=-0.04078$ and $\hat{\beta}=0.45416$.  If $Z_{i}=\alpha+\beta X_{i}$ are the predicted values of $Y_{i}$s, then one can see that the <em> residual sum of squares</em> is $\sum_{i}(Y_{i}-Z_{i})^{2}=1.1934$.
@@ -2637,32 +2638,32 @@ The residual sum of squares is smaller in the first, thus one may naively think 
 <p class="text-justify">More importantly, in this example, physics tells us  that the line must pass through zero (that is, there is no recession velocity when two objects are very close). Therefore it is the second line that we consider, not the first. This gives the Hubble constant to be $423$ km./s./megaparsec (the currently accepted values appear to be about $70$, with data going up to distances of hundreds of megaparsecs...see  \href{https://www.cfa.harvard.edu/ dfabricant/huchra/hubble.plot.dat}{this data}!).
 </div></div></div></p>
 <p class="text-justify"><div id="theorem-184"><div class="panel panel-info example"> <div class="panel-heading">Example 184 </div><div class="panel-body"> I have taken this example from the \href{http://ces.iisc.ernet.in/hpg/nvjoshi/statspunedatabook/databook.html}{ wonderful compilation of data sets} by A. P. Gore, S. A. Paranjpe, M. B. Kulkarni. In this example, $Y$ denotes the number of frogs of age $X$ (in some delimited population).
-\begin{center}
-\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\[
+\begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
-$X$  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\
+X  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\
 \hline
-$Y$  & 9093 & 35 & 30 & 28 & 12 & 8 & 5 & 2\\
+Y  & 9093 & 35 & 30 & 28 & 12 & 8 & 5 & 2\\
 \hline
 \hline
-\end{tabular}
-\end{center}
+\end{array}
+\]
 A prediction about life-times says that the survival probability $P(t)$ (which is the chance that an individual survives up to age $t$ or more) decays as $P(t)=Ae^{-bt}$ for some constants $A$ and $b$. We would like to check this agains the given data.</p>
 <p class="text-justify">What we need are individuals that survive beyond age $t$. Taking $Z$ to be the cumulative sums of $Y$, this gives us
-\begin{center}
-\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\[
+\begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
-$X$  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\
+X  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\
 \hline
-$Z$  & 9213 &  120 & 85 & 55 & 27 & 15 & 7 & 2\\
+Z  & 9213 &  120 & 85 & 55 & 27 & 15 & 7 & 2\\
 \hline
-$P=Z/n$ & 1.0000  &  0.0130 &   0.0092  &  0.0060  &  0.0029  &  0.0016  &  0.0008  &  0.0002 \\
+P=Z/n & 1.0000  &  0.0130 &   0.0092  &  0.0060  &  0.0029  &  0.0016  &  0.0008  &  0.0002 \\
 \hline
-$W=\log P$ &  0  & -4.3409  & -4.6857 &  -5.1210  & -5.8325  & -6.4203 &  -7.1825 &  -8.4352 \\
+W=\log P &  0  & -4.3409  & -4.6857 &  -5.1210  & -5.8325  & -6.4203 &  -7.1825 &  -8.4352 \\
 \hline
 \hline
-\end{tabular}
-\end{center}
+\end{array}
+\]
 We compute that $\bar{X}=4.5$, $\bar{W}=-5.25$, $\mbox{std}(X)=2.45$, $\mbox{std}(W)= 2.52$ and $\mbox{corr}(X,W)=0.92$. Hence, in the linear regression $W=a+bX$, we see that $\hat{b}=0.94$ and $\hat{a}=-9.49$. The residual sum of squares is $7.0$.
 </div></div></div></p>
 <p class="text-justify"><strong>How good is the fit?</strong> For the same data $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$, suppose we have two candidates \; (a) \; $Y=f(X)$ and \; (b) \; $Y=g(X)$. How to decide which is better? Or how to say if a fit is good at all?</p>
@@ -2680,21 +2681,21 @@ Obviously we will have $R_{2}^{2}\ge R_{1}^{2}\ge R_{0}^{2}$ (since linear funct
 <p class="text-justify">If the model has $p$ parameters, then define $\bar{SS}=SS/(n-1-p)$. In particular, $\bar{SS}_{0}=\frac{SS_{0}}{n-1}=s_{Y}^{2}$.  Then define the adjusted $R^{2}$ as $\bar{R}^{2}=1-\frac{\bar{SS}}{\bar{SS}_{0}}$.</p>
 <p class="text-justify">In particular, $\bar{R}_{0}^{2}=R_{0}^{2}$ as before. But $R_{1}^{2}=1-\frac{SS_{1}/(n-2)}{SS_{0}/(n-1)}$. Note that $\bar{R}^{2}$ does not necessarily increase upon adding an extra parameter. If we want a polynomial fit, then a rule of thumb is to keep adding more powers as long as $\bar{R}^{2}$ continues to increase and stop the moment it decreases.
 <div id="theorem-185"><div class="panel panel-info example"> <div class="panel-heading">Example 185 </div><div class="panel-body"> To illustrate the point let us look at a simulated data set. I generated $25$ i.i.d $N(0,1)$ variables $X_{i}$ and then generated $25$ i.i.d. $N(0,1/4)$ variables $\epsilon_{i}$. And set $Y_{i}=2X_{i}+\epsilon_{i}$. The  data set obtained was as follows.
-\begin{center}
-\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\[
+\begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
-$X$  & -0.87&0.07&-1.22&-1.12&-0.01&1.53&-0.77&0.37&-0.23&1.11&-1.09&0.03&0.55 \\
+X  & -0.87&0.07&-1.22&-1.12&-0.01&1.53&-0.77&0.37&-0.23&1.11&-1.09&0.03&0.55 \\
 \hline
-$Y$  & -2.43&-0.56&-2.19&-2.32&-0.12&3.77&-1.4&0.84&0.34&1.83&-1.83&0.48&0.98 \\
-\hline
-\hline
-$X$ & 1.1&1.54&0.08&-1.5&-0.75&-1.07&2.35&-0.62&0.74&-0.2&0.88&-0.77 &\\
-\hline
-$Y$ & 2.3&2.5&-0.41&-2.94&-1.13&-0.84&4.36&-1.14&1.45&-1.36&1.55&-2.43  &  \\
+Y  & -2.43&-0.56&-2.19&-2.32&-0.12&3.77&-1.4&0.84&0.34&1.83&-1.83&0.48&0.98 \\
 \hline
 \hline
-\end{tabular}
-\end{center}
+X & 1.1&1.54&0.08&-1.5&-0.75&-1.07&2.35&-0.62&0.74&-0.2&0.88&-0.77 &\\
+\hline
+Y & 2.3&2.5&-0.41&-2.94&-1.13&-0.84&4.36&-1.14&1.45&-1.36&1.55&-2.43  &  \\
+\hline
+\hline
+\end{array}
+\]
 To this data set we fit two models (A) $Y=\beta X$ and (B) $Y=a+bX$. The results are as follows.
 \begin{align*}
 \mbox{SS}_{0}=96.20, &\;\;  R_{0}^{2}=0 \\

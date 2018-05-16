@@ -193,16 +193,16 @@ object TeXToHtml {
   def maxOpt[B: Ordering](v: Vector[B]): Option[B] =
     if (v.isEmpty) None else Some(v.max)
 
-  val thmEnvs = Map(
-    "example" -> "Example",
-    "question" -> "Question",
-    "definition" -> "Definition",
-    "remark" -> "Remark",
-    "exercise" -> "Exercise",
-    "lemma" -> "Lemma",
-    "problem" -> "Problem",
-    "proposition" -> "Proposition",
-    "theorem" -> "Theorem"
+  val thmEnvs: Map[String, (String, String)] = Map(
+    "example" -> ("Example", "info"),
+    "question" -> ("Question", "danger"),
+    "definition" -> ("Definition", "primary"),
+    "remark" -> ("Remark", "success"),
+    "exercise" -> ("Exercise", "warning"),
+    "lemma" -> ("Lemma", "primary"),
+    "problem" -> ("Problem", "danger"),
+    "proposition" -> ("Proposition", "primary"),
+    "theorem" -> ("Theorem", "primary")
   )
 
   val mathEnvs = Set(
@@ -264,7 +264,7 @@ object TeXToHtml {
 //        if (inMath(m.start, txt) || inDisplayMath(m.start, txt)) m.group(0)
 //        else
         if (thmEnvs.keySet.contains(m.group(1))) s"""<div class="${m
-          .group(1)}"> <strong>${thmEnvs(m.group(1))}</strong> """
+          .group(1)}"> <strong>${thmEnvs(m.group(1))._1}</strong> """
         else if (mathEnvs.contains(m.group(1)))
           Regex.quoteReplacement("$$" + m.group(0))
         else s"""<div class="${m.group(1)}">"""
@@ -290,8 +290,8 @@ object TeXToHtml {
           else labels
         val newString =
           if (thmEnvs.keySet.contains(m.group(1)))
-            s"""<div id="theorem-${newCounter}"><div class="panel panel-info ${m
-              .group(1)}"> <div class="panel-heading">${thmEnvs(m.group(1))} $newCounter ${title
+            s"""<div id="theorem-${newCounter}"><div class="panel panel-${thmEnvs(m.group(1))._2} ${m
+              .group(1)}"> <div class="panel-heading">${thmEnvs(m.group(1))._1} $newCounter ${title
               .map((s) => "(" + s.drop(1).dropRight(1) + ")")
               .getOrElse("")}</div><div class="panel-body">"""
           else if (mathEnvs.contains(m.group(1)))
