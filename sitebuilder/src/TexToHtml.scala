@@ -103,28 +103,27 @@ object TeXToHtml {
 
   val banner =
     """
-<div class="container">
-<div class="bg-primary">
-     <div class="banner">
-
-     <center><h2 style="margin-top: 2px;"> Probability and Statistics </h2></center>
-     <center><h4 style="margin-bottom: 2px;"> Notes by Manjunath Krishnapur </h4></center>
-   </div>
- </div>
- <section>
-<p>&nbsp;</p>
-
-"""
+      |<div class="container">
+      |<div class="bg-primary">
+      |     <div class="banner">
+      |
+      |     <center><h2 style="margin-top: 2px;"> Probability and Statistics </h2></center>
+      |     <center><h4 style="margin-bottom: 2px;"> Notes by Manjunath Krishnapur </h4></center>
+      |   </div>
+      | </div>
+      | <section>
+      |<p>&nbsp;</p>
+    """.stripMargin
 
   val foot =
     """
-</div>
-|<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
- |<script type="text/javascript" src='../js/bootstrap.min.js'></script>
- |
-  </body>
-</html>
-"""
+      |</div>
+      ||<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      | |<script type="text/javascript" src='../js/bootstrap.min.js'></script>
+      ||
+      |  </body>
+      |</html>
+    """.stripMargin
 
   val defReg: Regex =
     "(\\\\def|\\\\newcommand|\\\\renewcommand)(\\\\[a-zA-Z0-9]+)([^\n%]+)".r
@@ -167,8 +166,7 @@ object TeXToHtml {
     .replace("\\newpage", "")
     .replace("\\vspace{4mm}", "")
     .replace("\\vspace{2mm}", "")
-    .replace( """\"{o}""", "&ouml;")
-
+    .replace("""\"{o}""", "&ouml;")
 
   val begReg: Regex = """\\begin\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
@@ -451,6 +449,44 @@ object TeXToHtml {
   def replaceTiny(txt: String) =
     tinyReg.replaceAllIn(txt,
                          (m) => Regex.quoteReplacement(s"""{${m.group(2)}}"""))
+
+  def bracesMatched(txt: String): Boolean = {
+//    println(txt.length)
+    val opens = """\{""".r.findAllIn(txt).length
+    val closes = """\}""".r.findAllIn(txt).length
+//    println(opens)
+//    println(closes)
+//    println(txt)
+//    if (opens != closes) scala.io.StdIn.readLine()
+    opens == closes
+  }
+
+  def footnote(txt: String, head: String): (String, String) = {
+    """([^\\])(\})""".r.findFirstMatchIn(txt).map { (m) =>
+      if (bracesMatched(head + m.before))
+        (head+ m.before, m.after.toString)
+      else {
+        footnote(m.after.toString, head + m.before.toString + m.group(0))}
+    }.getOrElse(throw new Exception("Unclosed brace for footnote"))
+  }
+
+  def recReplaceFootnotes(txt: String,
+                          head: String = "",
+                          counter: Int = 0
+                          ): String =
+    """\\footnote\{""".r
+      .findFirstMatchIn(txt)
+      .map { (m) =>
+        val (note, rest) = footnote(m.after.toString, "")
+        println("Footnote found")
+        println(m.after.toString.take(50))
+        val newHead =
+          head + m.before + s"""<sup> <a data-toggle="collapse" href="#footnote-${counter + 1}" aria-expanded="false" aria-controls="footnote-${counter + 1}">
+                                ${counter + 1}
+                                 </a> </sup><span class="collapse small" id="footnote-${counter + 1}">$note</span> """.stripMargin
+        recReplaceFootnotes(rest, newHead, counter + 1)
+      }
+      .getOrElse(head + txt)
 }
 
 class TeXToHtml(header: String, text: String) {
@@ -490,6 +526,7 @@ class TeXToHtml(header: String, text: String) {
       replaceTiny(
         replaceEm(replacePara(replaceParag(replaceItems(defReplaced))))))
 
+
   lazy val (begReplaced, labels) = rplBegins(baseReplaced)
 
   lazy val refReplaced =
@@ -503,7 +540,7 @@ class TeXToHtml(header: String, text: String) {
 
   lazy val (secReplaced, sections) = recReplaceSection(refReplaced)
 
-  lazy val allReplaced = replaceUnderline(replaceBf(replaceBlanks(secReplaced)))
+  lazy val allReplaced = recReplaceFootnotes(replaceUnderline(replaceBf(replaceBlanks(secReplaced))))
 
   lazy val sortedSections: Vector[(Int, String)] =
     sections.toVector.sortBy(_._1)
@@ -531,7 +568,3 @@ object TeXBuild extends App {
   import TeXToHtml._
   converter.html()
 }
-
-
-
-
