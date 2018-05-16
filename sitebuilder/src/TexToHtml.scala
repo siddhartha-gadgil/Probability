@@ -204,12 +204,8 @@ object TeXToHtml {
   )
 
   val mathEnvs = Set(
-    "align*",
     "equation*",
-    "aligned",
-    "array",
-    "equation",
-    "tabular"
+    "equation"
   )
 
   val divEnvs = Set("proof")
@@ -297,8 +293,9 @@ object TeXToHtml {
               .map((s) => "(" + s.drop(1).dropRight(1) + ")")
               .getOrElse("")}</div><div class="panel-body">"""
           else if (mathEnvs.contains(m.group(1)))
-            Regex.quoteReplacement(
-              "$$" + m.group(0).replace("""\label""", """\tag"""))
+//            Regex.quoteReplacement(
+              "$$" + m.group(0)//.replace("""\label""", """tag""")
+//            )
           else if (divEnvs.contains(m.group(1)))
             s"""<div class="${m.group(1)}">"""
           else Regex.quoteReplacement(m.group(0))
@@ -359,7 +356,7 @@ object TeXToHtml {
       .findFirstMatchIn(txt)
       .map { (m) =>
         val newHead =
-          s"""<strong>${section}.${counter + 1} ${m.group(2)}.</strong><p class="text-justify">"""
+          m.before + s"""<strong>${section}.${counter + 1} ${m.group(2)}.</strong><p class="text-justify">"""
         recReplaceSubSection(m.after.toString, newHead, counter + 1, section)
       }
       .getOrElse(head + txt)
@@ -402,6 +399,7 @@ object TeXToHtml {
 
   val bfReg2 = "(\\{\\\\bf\\{)([^\\}]+)\\}\\}".r
 
+
   def replaceBf(txt: String) = {
     val step = bfReg1.replaceAllIn(
       txt,
@@ -426,7 +424,15 @@ object TeXToHtml {
   def replaceEm(txt: String) =
     emReg.replaceAllIn(txt,
                        (m) => Regex.quoteReplacement(s"<em>${m.group(2)}</em>"))
+
+  val tinyReg = "(\\{\\\\tiny )([^\\}]+)\\}".r
+
+  def replaceTiny (txt: String) =
+    tinyReg.replaceAllIn(txt,
+      (m) => Regex.quoteReplacement(s"""{${m.group(2)}}"""))
 }
+
+
 
 class TeXToHtml(header: String, text: String) {
   import TeXToHtml._
@@ -462,9 +468,11 @@ class TeXToHtml(header: String, text: String) {
 
   lazy val baseReplaced =
     replaceEnds(
+      replaceTiny(
       replaceEm(
         replaceBf(
           replacePara(replaceParag(replaceBlanks(replaceItems(defReplaced)))))))
+    )
 
   lazy val (begReplaced, labels) = rplBegins(baseReplaced)
 
@@ -500,10 +508,9 @@ class TeXToHtml(header: String, text: String) {
   def html() = write.over(pwd / "docs" / "draft" / "index.html", draftHtml)
 }
 
-object CrudeBuild extends App {
+object TeXBuild extends App {
   import TeXToHtml._
   converter.html()
-  println(fullBegReg.findAllIn(text))
 }
 
 /*
