@@ -206,6 +206,7 @@ object TeXToHtml {
   )
 
   val mathEnvs = Set(
+    "align*",
     "equation*",
     "equation"
   )
