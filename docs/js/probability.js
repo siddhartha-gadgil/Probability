@@ -2837,7 +2837,6 @@ $c_Lprobability_FairCoin$.prototype.fairR__Lmhtml_Rx = (function() {
   return this.fairR$1
 });
 $c_Lprobability_FairCoin$.prototype.main__V = (function() {
-  var count = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(0);
   var $$md = $m_s_xml_Null$();
   $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel panel-primary"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   var jsx$28 = $$md;

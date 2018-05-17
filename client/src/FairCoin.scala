@@ -2,10 +2,8 @@ package probability
 
 import org.scalajs.dom
 import org.scalajs.dom._
-import org.scalajs.dom.html.Input
 
 import scala.scalajs.js.annotation._
-import scala.xml._
 import scala.util.Random
 
 @JSExportTopLevel("FairCoin")
@@ -13,7 +11,7 @@ object FairCoin {
   import mhtml._
   import scala.xml.Node
 
-  val rnd = new Random()
+  val rnd: Random = new Random()
 
   def getP: Double = if (rnd.nextBoolean()) 0.5 else rnd.nextDouble()
 
@@ -31,8 +29,6 @@ object FairCoin {
 
   @JSExport
   def main(): Unit = {
-
-    val count: Var[Int] = Var(0)
 
     val coinDiv: Node =
       <div class="panel panel-primary">
