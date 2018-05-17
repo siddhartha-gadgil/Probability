@@ -23,7 +23,7 @@ object FairCoin {
 
   val headsR: Rx[Int] = tossesV.map((tosses) => tosses.count(identity))
 
-  val tailsR: Rx[Int] = tossesV.map((tosses) => tosses.count(!(_)))
+  val tailsR: Rx[Int] = tossesV.map((tosses) => tosses.count(!_))
 
   val fairR: Rx[Boolean] = pV.map(_ == 0.5)
 
