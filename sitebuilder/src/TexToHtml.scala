@@ -35,11 +35,11 @@ object TeXToHtml {
       |
       |  <script type="text/x-mathjax-config">
       |  MathJax.Hub.Config({
+      |  TeX: { equationNumbers: { autoNumber: "AMS" } },
       |  jax: ["input/TeX", "output/HTML-CSS"],
       |  tex2jax: {
       |  inlineMath: [ ['$', '$'] ],
       |  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
-      |  TeX: { equationNumbers: { autoNumber: "all" } },
       |  processEscapes: true,
       |  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       |  },
