@@ -46,7 +46,8 @@ object client extends ScalaJSModule {
   )
 
   def ivyDeps = Agg(
-    ivy"org.scala-js::scalajs-dom::0.9.4"
+    ivy"org.scala-js::scalajs-dom::0.9.4",
+    ivy"in.nvilla::monadic-html::0.4.0-RC1"
   )
 
 }

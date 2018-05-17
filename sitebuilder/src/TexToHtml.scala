@@ -118,9 +118,13 @@ object TeXToHtml {
   val foot =
     """
       |</div>
-      ||<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      | |<script type="text/javascript" src='../js/bootstrap.min.js'></script>
-      ||
+      |<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      | <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+      |<script type="text/javascript" src='../js/probability.js'></script>
+      |<script type="text/javascript">
+      |      FairCoin.main();
+      |    </script>
+      |
       |  </body>
       |</html>
     """.stripMargin
@@ -567,4 +571,6 @@ class TeXToHtml(header: String, text: String) {
 object TeXBuild extends App {
   import TeXToHtml._
   converter.html()
+  val js = read(resource/"out.js")
+  write.over(pwd / "docs" / "js" / "probability.js", js)
 }
