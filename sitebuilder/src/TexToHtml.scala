@@ -75,21 +75,21 @@ object TeXToHtml {
     |        <ul class="nav navbar-nav navbar-right">
     |
     |          <li class="dropdown">
-    |            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Part 1 <span class="caret"></span></a>
+    |            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
     |            <ul class="dropdown-menu">
     |             $part1
     |            </ul>
     |          </li>
     |
     |          <li class="dropdown">
-    |            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Part 2 <span class="caret"></span></a>
+    |            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
     |            <ul class="dropdown-menu">
     |             $part2
     |            </ul>
     |          </li>
     |
     |          <li class="dropdown">
-    |            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Part 3 <span class="caret"></span></a>
+    |            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
     |            <ul class="dropdown-menu">
     |             $part3
     |            </ul>
@@ -101,7 +101,7 @@ object TeXToHtml {
     |
   """.stripMargin
 
-  val banner =
+  val banner: String =
     """
       |<div class="container">
       |<div class="bg-primary">
@@ -115,7 +115,7 @@ object TeXToHtml {
       |<p>&nbsp;</p>
     """.stripMargin
 
-  val foot =
+  val foot: String =
     """
       |</div>
       |<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -224,7 +224,7 @@ object TeXToHtml {
 
 //  def dollarIndices(txt: String): Vector[Int] = indices(dolReg, txt).map(_ + 1)
 
-  def displayIndices(txt: String): Vector[Int] = indices(doldolReg, txt)
+//  def displayIndices(txt: String): Vector[Int] = indices(doldolReg, txt)
 
   def itemizeBegs(txt: String): Vector[Int] = indices(begItReg, txt)
 
@@ -242,12 +242,6 @@ object TeXToHtml {
 
   }
 
-//  def inMath(j: Int, txt: String): Boolean =
-//    dollarIndices(txt).filter(_ < j).size % 2 == 1
-
-  def inDisplayMath(j: Int, txt: String): Boolean =
-    displayIndices(txt).count(_ < j) % 2 == 1
-
   def replaceItems(txt: String): String = {
     val itemLess =
       """\\item""".r.replaceAllIn(
@@ -260,18 +254,6 @@ object TeXToHtml {
       .replace("""\end{enumerate}""", "</ol>")
   }
 
-  def replaceBegins(txt: String): String =
-    begReg.replaceAllIn(
-      txt,
-      (m) =>
-//        if (inMath(m.start, txt) || inDisplayMath(m.start, txt)) m.group(0)
-//        else
-        if (thmEnvs.keySet.contains(m.group(1))) s"""<div class="${m
-          .group(1)}"> <strong>${thmEnvs(m.group(1))._1}</strong> """
-        else if (mathEnvs.contains(m.group(1)))
-          Regex.quoteReplacement("$$" + m.group(0))
-        else s"""<div class="${m.group(1)}">"""
-    )
 
   def recRplBegins(
       txt: String,
@@ -293,7 +275,7 @@ object TeXToHtml {
           else labels
         val newString =
           if (thmEnvs.keySet.contains(m.group(1)))
-            s"""<div id="theorem-${newCounter}"><div class="panel panel-${thmEnvs(
+            s"""<div id="theorem-$newCounter"><div class="panel panel-${thmEnvs(
               m.group(1))._2} ${m
               .group(1)}"> <div class="panel-heading">${thmEnvs(m.group(1))._1} $newCounter ${title
               .map((s) => "(" + s.drop(1).dropRight(1) + ")")
@@ -319,7 +301,7 @@ object TeXToHtml {
        .replace("""\$""", "$"),
      recRplBegins(txt)._3)
 
-  def replaceEnds(txt: String) =
+  def replaceEnds(txt: String): String =
     endReg.replaceAllIn(
       txt,
       (m) =>
@@ -337,18 +319,18 @@ object TeXToHtml {
       txt,
       (m) =>
         if (doldolReg.findAllIn(m.before).size % 2 == 1) {
-          print(m.before.toString.drop(m.before.toString.size - 25));
+          print(m.before.toString.drop(m.before.toString.length - 25))
           println(m.after.toString.take(25)); m.group(0)
         } else "</p>\n<p class=\"text-justify\">"
     )
 
-  def replaceSec(txt: String) =
+  def replaceSec(txt: String): String =
     """(\\section\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
       .replaceAllIn(
         txt,
         (m) => s"""<h2>${m.group(2)}</h2><p class="text-justify">""")
 
-  def replaceSubSec(txt: String) =
+  def replaceSubSec(txt: String): String =
     """(\\subsection\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
       .replaceAllIn(
         txt,
@@ -362,7 +344,7 @@ object TeXToHtml {
       .findFirstMatchIn(txt)
       .map { (m) =>
         val newHead =
-          m.before + s"""<strong>${section}.${counter + 1} ${m.group(2)}.</strong><p class="text-justify">"""
+          m.before + s"""<strong>$section.${counter + 1} ${m.group(2)}.</strong><p class="text-justify">"""
         recReplaceSubSection(m.after.toString, newHead, counter + 1, section)
       }
       .getOrElse(head + txt)
@@ -379,7 +361,7 @@ object TeXToHtml {
         val prev = recReplaceSubSection(m.before.toString, "", 0, counter)
         val newHead =
           s"""$head$prev</section>
-             <section><h2 id="section-${counter + 1}">${counter + 1}. ${title}.</h2><p class="text-justify">""".stripMargin
+             <section><h2 id="section-${counter + 1}">${counter + 1}. $title.</h2><p class="text-justify">""".stripMargin
         recReplaceSection(
           m.after.toString,
           newHead,
@@ -389,23 +371,23 @@ object TeXToHtml {
       }
       .getOrElse(head + txt -> secs)
 
-  def replacePara(txt: String) =
+  def replacePara(txt: String): String =
     """(\\para\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
       .replaceAllIn(
         txt,
         (m) => s"<strong>${Regex.quoteReplacement(m.group(2))}:</strong>")
 
-  def replaceParag(txt: String) =
+  def replaceParag(txt: String): String =
     """(\\parag\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
       .replaceAllIn(
         txt,
         (m) => s"<strong>${Regex.quoteReplacement(m.group(2))}</strong>")
 
-  val bfReg1 = "(\\{\\\\bf )([^\\}]+)\\}".r
+  val bfReg1: Regex = "(\\{\\\\bf )([^\\}]+)\\}".r
 
-  val bfReg2 = "(\\{\\\\bf\\{)([^\\}]+)\\}\\}".r
+  val bfReg2: Regex = "(\\{\\\\bf\\{)([^\\}]+)\\}\\}".r
 
-  def replaceBf(txt: String) = {
+  def replaceBf(txt: String): String = {
     val step = bfReg1.replaceAllIn(
       txt,
       (m) =>
@@ -426,16 +408,16 @@ object TeXToHtml {
     )
   }
 
-  val emReg = "(\\{\\\\em)([ \\\\])([^\\}]+)\\}".r
+  val emReg: Regex = "(\\{\\\\em)([ \\\\])([^\\}]+)\\}".r
 
-  def replaceEm(txt: String) =
+  def replaceEm(txt: String): String =
     emReg.replaceAllIn(
       txt,
       (m) => Regex.quoteReplacement(s"<em>${m.group(2)}${m.group(3)}</em>"))
 
-  val undReg = "(\\{\\\\underline)([ \\\\])([^\\}]+)\\}".r
+//  val undReg = "(\\{\\\\underline)([ \\\\])([^\\}]+)\\}".r
 
-  def replaceUnderline(txt: String) =
+  def replaceUnderline(txt: String): String =
     """(\\underline\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
       .replaceAllIn(
         txt,
@@ -448,9 +430,9 @@ object TeXToHtml {
             s"\\\\underline\\{${m.group(2).replace("\\", "\\\\")}\\}"
       )
 
-  val tinyReg = "(\\{\\\\tiny )([^\\}]+)\\}".r
+  val tinyReg: Regex = "(\\{\\\\tiny )([^\\}]+)\\}".r
 
-  def replaceTiny(txt: String) =
+  def replaceTiny(txt: String): String =
     tinyReg.replaceAllIn(txt,
                          (m) => Regex.quoteReplacement(s"""{${m.group(2)}}"""))
 
@@ -496,23 +478,23 @@ object TeXToHtml {
 class TeXToHtml(header: String, text: String) {
   import TeXToHtml._
 
-  val defs = defReg.findAllMatchIn(header).toVector
+  val defs: Vector[Regex.Match] = defReg.findAllMatchIn(header).toVector
 
-  val newCommands = newCommReg.findAllMatchIn(header).toVector
+  val newCommands: Vector[Regex.Match] = newCommReg.findAllMatchIn(header).toVector
 
-  val renewCommands = renewCommReg
+  val renewCommands: Vector[Regex.Match] = renewCommReg
     .findAllMatchIn(header)
     .toVector ++ renewCommReg
     .findAllMatchIn(header)
     .toVector
 
-  val defSubs =
+  val defSubs: Vector[(String, String)] =
     (defs.map((m) => m.group(2) -> m.group(3).trim.drop(1).dropRight(1)) ++
       (newCommands ++ renewCommands).map((m) =>
         m.group(2) -> m.group(3).trim.drop(2).dropRight(1))).filterNot((c) =>
       Set("\\I", "\\matrices", "\\para", "\\parag").contains(c._1))
 
-  def defReplace(txt: String) = defSubs.foldLeft[String](txt) {
+  def defReplace(txt: String): String = defSubs.foldLeft[String](txt) {
     case (t, (x, y)) =>
       new Regex(x.replace("\\", "\\\\") + "([^a-zA-Z0-9])")
         .replaceAllIn(t, (m) => Regex.quoteReplacement(y + m.group(1)))
@@ -523,17 +505,17 @@ class TeXToHtml(header: String, text: String) {
     if (next == txt) next else recDefReplace(next)
   }
 
-  lazy val defReplaced = recDefReplace(text).replace("""\noindent""", "")
+  lazy val defReplaced: String = recDefReplace(text).replace("""\noindent""", "")
 
-  lazy val baseReplaced =
+  lazy val baseReplaced: String =
     replaceEnds(
       replaceTiny(
         replaceEm(replacePara(replaceParag(replaceItems(defReplaced))))))
 
 
-  lazy val (begReplaced, labels) = rplBegins(baseReplaced)
+  lazy val (begReplaced: String, labels: Map[String, Int]) = rplBegins(baseReplaced)
 
-  lazy val refReplaced =
+  lazy val refReplaced: String =
     """\\ref\{([a-zA-Z0-9:+-_]+)\}""".r.replaceAllIn(
       begReplaced,
       (m) =>
@@ -542,9 +524,9 @@ class TeXToHtml(header: String, text: String) {
           .map((n) => s"""<a href="#theorem-$n">$n</a>""")
           .getOrElse(m.group(0)))
 
-  lazy val (secReplaced, sections) = recReplaceSection(refReplaced)
+  lazy val (secReplaced: String, sections: Map[Int, String]) = recReplaceSection(refReplaced)
 
-  lazy val allReplaced = recReplaceFootnotes(replaceUnderline(replaceBf(replaceBlanks(secReplaced))))
+  lazy val allReplaced: String = recReplaceFootnotes(replaceUnderline(replaceBf(replaceBlanks(secReplaced))))
 
   lazy val sortedSections: Vector[(Int, String)] =
     sections.toVector.sortBy(_._1)
@@ -552,20 +534,20 @@ class TeXToHtml(header: String, text: String) {
   def sectionList(v: Vector[(Int, String)]): String =
     v.map {
         case (n, title) =>
-          s"""<li><a href="#section-${n}">${n}. $title</a> </li>"""
+          s"""<li><a href="#section-$n">$n. $title</a> </li>"""
       }
       .mkString("\n")
 
-  lazy val newFile = header + """\begin{document}""" + defReplaced
+  lazy val newFile: String = header + """\begin{document}""" + defReplaced
 
-  def replace() = write.over(wd / "repl.tex", newFile)
+  def replace(): Unit = write.over(wd / "repl.tex", newFile)
 
-  lazy val draftHtml = top + nav(
-    sectionList(sortedSections.take(15)),
-    sectionList(sortedSections.drop(15).take(15)),
-    sectionList(sortedSections.drop(30))) + banner + allReplaced + foot
+  lazy val draftHtml: String = top + nav(
+    sectionList(sortedSections.take(12)),
+    sectionList(sortedSections.slice(12, 27)),
+    sectionList(sortedSections.drop(27))) + banner + allReplaced + foot
 
-  def html() = write.over(pwd / "docs" / "draft" / "index.html", draftHtml)
+  def html(): Unit = write.over(pwd / "docs" / "draft" / "index.html", draftHtml)
 }
 
 object TeXBuild extends App {
