@@ -56,7 +56,7 @@ object TeXToHtml {
 
   def nav(part1: String, part2: String, part3: String): String =
     s"""
-    |<nav class="navbar navbar-light bg-danger navbar-fixed-bottom">
+    |<nav class="navbar navbar-default navbar-fixed-bottom">
     |    <div class="container-fluid">
     |      <!-- Brand and toggle get grouped for better mobile display -->
     |      <div class="navbar-header">

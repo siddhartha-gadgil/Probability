@@ -37,6 +37,7 @@ object FairCoin {
         <p>Try to figure out whether the coin is fair by tossing it several times.</p>{pV.map
         {(p) => <button class="btn btn-primary" onclick={() =>
         tossesV.update(_ :+ (rnd.nextDouble() < p))}>Toss the coin</button>}}
+        <p></p>
         <div> <strong>Heads:</strong> {headsR} </div>
         <div><strong>Tails:</strong> {tailsR} </div>
         <div>
