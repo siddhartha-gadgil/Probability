@@ -1,0 +1,201 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7./MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+<div class="container">
+<h1 class="text-center bg-info">Chapter 25 : Central limit theorem</h1>
+<p>&nbsp;</p>
+
+Let $X_{1},X_{2},\ldots$ be i.i.d. random variables with expectation $\mu$ and variance ${\sigma}^{2}$. We saw that $\bar{X}_{n}$ has mean $\mu$ and standard deviation ${\sigma}/\sqrt{n}$.</p>
+<p class="text-justify">This roughly means that $\bar{X}_{n}$ is close to $\mu$, within a few multiples of ${\sigma}/\sqrt{n}$ (as shown by Chebyshev's inequality). Now we look at $\bar{X}_{n}$ with a finer microscope. In other words, we ask for the probability that $\bar{X}_{n}$ is within the tiny interval $[\mu+\frac{a}{\sqrt{n}},\mu+\frac{b}{\sqrt{n}}]$ for any $a < b$. The answer turns out to be surprising and remarkable!</p>
+<p class="text-justify"><strong>Central limit theorem:</strong> Let $X_{1},X_{2},\ldots$ be i.i.d. random variables with expectation $\mu$ and variance ${\sigma}^{2}$. We assume that $0 < {\sigma}^{2} < \infty$. Then, for any $a < b$, we have
+$$
+\mathbf{P}\left\{ \mu+a\frac{{\sigma}}{\sqrt{n}}\le \bar{X}_{n}\le \mu+b\frac{{\sigma}}{\sqrt{n}}\right\} \rightarrow \Phi(b)-\Phi(a) = \frac{1}{\sqrt{2\pi}}\int\limits_{a}^{b}e^{-t^{2}/2}dt.
+$$</p>
+<p class="text-justify">\medskip
+What is remarkable about this? The end result does not depend on the distribution of $X_{i}$s at all! Only the mean and variance of the distribution were used! As this is one of the most important theorems in all of probability theory, we restate it in several forms, all equivalent to the above.</p>
+<p class="text-justify"><strong>Restatements of central limit theorem:</strong> Let $X_{k}$ be as above. Let $S_{n}=X_{1}+\ldots +X_{n}$. Let $Z$ be a $N(0,1)$ random variable. Then of course $\mathbf{P}\{a < Z < b\}=\Phi(b)-\Phi(a)$.
+<ol>
+<li> $\mathbf{P}\{a < \frac{\sqrt{n}}{{\sigma}}(\bar{X}_{n}-\mu)\le b\} \rightarrow \Phi(b)-\Phi(a) = \mathbf{P}\{a < Z < b\}$. Put another way, this says that for large $n$, the random variable $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}}$ has $N(0,1)$ distribution, approximately. Equivalently, $\sqrt{n}(\bar{X}_{n}-\mu)$ has $N(0,{\sigma}^{2})$ distribution, approximately.</p>
+<p class="text-justify"></li>
+<li> Yet another way to say the same is that $S_{n}$ has approximately normal distribution with mean $n\mu$ and variance $n{\sigma}^{2}$. That is,
+$$
+\mathbf{P}\left\{a\le \frac{S_{n}-n\mu}{{\sigma}\sqrt{n}} \le b\right\} \rightarrow \mathbf{P}\{a < Z < b\}.
+$$
+</ol></p>
+<p class="text-justify">The central limit theorem so deep and surprising and useful. The following example gives a hint as to why.
+<div id="theorem-141"><div class="panel panel-info example"> <div class="panel-heading">Example 141 </div><div class="panel-body"> Let $U_{1},\ldots ,U_{n}$ be i.i.d. Uniform($[-1,1]$) random variables. Let $S_{n}=U_{1}+\ldots +U_{n}$, let $\bar{U}_{n}=S_{n}/n$ (sample mean) and let $Y_{n}=S_{n}/\sqrt{n}$. Consider the problem of finding the distribution of any of these. Since they are got from each other by scaling, finding the distribution of one is the same as finding that of any other. For uniform $[-1,1]$, we know that $\mu=0$ and ${\sigma}^{2}=1/3$. Hence, CLT tells us that
+$$
+\mathbf{P}\left\{\frac{a}{\sqrt{3}} < Y_{n} < \frac{b}{\sqrt{3}}\right\}\rightarrow \Phi(b)-\Phi(a).
+$$
+or equivalently, $\mathbf{P}\{a < Y_{n} < b\}\rightarrow \Phi(b\sqrt{3})-\Phi(a\sqrt{3})$. For large $n$ (practically, $n=50$ is large enough) we may use this limit as a good aproximation to the probability we want.</p>
+<p class="text-justify">Why is this surprising? The way to find the distribution of $Y_{n}$ would be this. Using the convolution formula $n$ times successively, one can find the density of $S_{n}=U_{1}+\ldots +U_{n}$ (in principle! the actual integration may be intractable!). Then we can find the density of $Y_{n}$ by another change of variable (in one dimension). Having got the density of $Y_{n}$, we integrate it from $a$ to $b$ to get $\mathbf{P}\{a < Y_{n} < b\}$.  This is clearly a daunting task (if you don't feel so, just try it for $n=5$).</p>
+<p class="text-justify">The CLT cuts short all this and directly gives an approximate answer! And what is even more surprising is that the original distribution does not matter - we only need to know the mean and variance of the original distribution!
+</div></div></div></p>
+<p class="text-justify">We shall not prove the central limit theorem in general. But we indicate how it is done when $X_{k}$ come from $\mbox{Exp}(\lambda)$ distribution. This is optional and may be skipped.</p>
+<p class="text-justify"><div class="proof"> Let $X_{k}$ be i.i.d. $\mbox{Exp}(1)$ random variables. They have mean $\mu=1$ and variance ${\sigma}^{2}=1$. We know that (this was an exercise), $S_{n}=X_{1}+\ldots +X_{n}$ has $\mbox{Gamma}(n,1)$ distribution. Its density is given by $f_{n}(t)=e^{-t}t^{n-1}/(n-1)!$ for $t > 0$.</p>
+<p class="text-justify">Now let $Y_{n}=\frac{S_{n}-n\mu}{{\sigma}\sqrt{n}}=\frac{S_{n}-n}{\sqrt{n}}$. By a change of variable (in one-dimension) we see that the density of $Y_{n}$ is given by $g_{n}(t)=\sqrt{n}f_{n}(n+t\sqrt{n})$. Let us analyse this.
+$$\begin{align*}
+g_{n}(t) &= \sqrt{n}\ \frac{1}{(n-1)!}e^{-(n+t\sqrt{n})}(n+t\sqrt{n})^{n-1}  \\
+&= \sqrt{n}\ \frac{n^{n-1}}{(n-1)!}e^{-n-t\sqrt{n}}\left(1+\frac{t}{\sqrt{n}}\right)^{n-1} \\
+&\approx \sqrt{n}\ \frac{n^{n-1}}{\sqrt{2\pi}(n-1)^{n-\frac{1}{2}}e^{-n+1}}e^{-n-t\sqrt{n}}\left(1+\frac{t}{\sqrt{n}}\right)^{n-1} \hspace{2mm}(\mbox{by Stirling's formula})\\
+&= \frac{1}{\sqrt{2\pi}(1-\frac{1}{n})^{n-\frac{1}{2}}e^{1}}e^{-t\sqrt{n}}\left(1+\frac{t}{\sqrt{n}}\right)^{n-1}.
+\end{align*}$$
+To find the limit of this, first observe that $(1-\frac{1}{n})^{n-\frac{1}{2}}\rightarrow e^{-1}$. It remains to find the limit of $w_{n}:=e^{-t\sqrt{n}}\left(1+\frac{t}{\sqrt{n}}\right)^{n-1}$. Easiest to do this by taking logarithms. Recall that $\log(1+t)=t-\frac{t^{2}}{2}+\frac{t^{3}}{3}-\ldots$. Hence
+$$\begin{align*}
+\log w_{n} &= -t\sqrt{n} + (n-1)\log\left(1+\frac{t}{\sqrt{n}}\right) \\
+&= -t\sqrt{n} + (n-1)\left[ \frac{t}{\sqrt{n}}-\frac{t^{2}}{2n}+\frac{t^{3}}{3n^{3/2}}-\ldots\right] \\
+&= -\frac{t^{2}}{2}+[\ldots]
+\end{align*}$$
+where in $[\ldots]$ we have put all terms which go to zero as $n\rightarrow \infty$. Since there are infinitely many, we should argue that even after adding all of them, the total goes to zero as $n\rightarrow \infty$. Let us skip this step and simply conclude that $\log w_{n}\rightarrow -t^{2}/2$. Therefore, $g_{n}(t) \rightarrow \varphi(t):=\frac{1}{\sqrt{2\pi}}e^{-t^{2}/2}$ which is the standard normal density.</p>
+<p class="text-justify">What we wanted was $\mathbf{P}\{a < Y_{n} < b\}=\int\limits_{a}^{b}g_{n}(t) dt$. Since $g_{n}(t)\rightarrow \varphi(t)$ for each $t$, it is believable that $\int\limits_{a}^{b}g_{n}(t) dt\rightarrow \int\limits_{a}^{b}\varphi(t) dt$. This too needs justification but we skip it. Thus,
+$$
+\mathbf{P}\{a < Y_{n} < b\} \rightarrow \int\limits_{a}^{b}\varphi(t) dt = \Phi(b)-\Phi(a).
+$$
+This proves CLT for the case of exponential random variables.
+</div></p>
+<p class="text-justify">
+</p>
+<div class="pull-right"><a href="chapter-26.html" class="btn btn-primary">Chapter 26. Poisson limit for rare events</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      FairCoin.main();
+    </script>
+
+  </body>
+</html>
+    

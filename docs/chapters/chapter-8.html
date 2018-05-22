@@ -1,0 +1,179 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7./MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+<div class="container">
+<h1 class="text-center bg-info">Chapter 8 : Bonferroni's inequalities</h1>
+<p>&nbsp;</p>
+
+Inclusion-exclusion formula is nice when we can calculate the probabilities of intersections of the events under consideration. Things are not always this nice, and sometimes that may be very difficult. Even if we could find them, summing them with signs according to the inclusion-exclusion formula may be difficult as the example <a href="#theorem-56">56</a> demonstrates. The <em> idea</em> behind the inclusion-exclusion formula can however be often used to compute <em> approximate values of probabilities</em>, which is very valuable in most applications. That is what we do next.</p>
+<p class="text-justify">We know that $\mathbf{P}(A_{1}\cup \ldots \cup A_{n})\le \mathbf{P}(A_{1})+\ldots +\mathbf{P}(A_{n})$ for any events $A_{1},\ldots ,A_{n}$. This is an extremely useful inequality, often called the <em> union bound</em>. Its usefulness is in the fact that there is no assumption made about the events $A_{i}$s (such as whether they are disjoint or not). The following inequalities generalize the union bound, and gives both upper and lower bounds for the probability of the union of a bunch of events.</p>
+<p class="text-justify"><div id="theorem-59"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 59 (Bonferroni's inequalities)</div><div class="panel-body"> Let $A_{1},\ldots, A_{n}$ be events in a probability space $(\Omega,p)$ and let $A=A_{1}\cup \ldots \cup A_{n}$. We have the following upper and lower bounds for  $\mathbf{P}(A)$.
+$$\begin{align*}
+\mathbf{P}(A) &\le \sum_{k=1}^{m}(-1)^{k-1}S_{k}, \hspace{2mm} \mbox{ for any odd }m. \\
+\mathbf{P}(A) &\ge \sum_{k=1}^{m}(-1)^{k-1}S_{k}, \hspace{2mm} \mbox{ for any even }m.
+\end{align*}$$
+</div></div></div>
+<div class="proof"> We shall write out the proof for the cases $m=1$ and $m=2$. When $m=1$, the inequality is just the union bound
+$$
+ \mathbf{P}(A)\le \mathbf{P}(A_{1})+\ldots +\mathbf{P}(A_{n})
+$$
+which we know. When $m=2$, the inequality to be proved is
+$$
+\mathbf{P}(A)\ge \sum_{k}\mathbf{P}(A_{k})-\sum_{k < \ell}\mathbf{P}(A_{k}\cap A_{\ell})
+$$
+To see this, fix $\omega\in \Omega$ and count the contribution of $p_{\omega}$ to both sides. Like in the proof of the inclusion-exclusion formula, for $\omega \not\in A_{1}\cup\ldots \cup A_{n}$, the contribution to both sides is zero. On the other hand, if $\omega$ belongs to exactly $r$ of the sets for some $r\ge 1$, then it is counted once on the left side and $r-\binom{r}{2}$ times on the right side. Not that $r-\binom{r}{2} = \frac{1}{2}r(3-r)$ which is always non-positive (one if $r=1$, zero if $r=2$ and non-positive if $r\ge 3$). Hence we get $\mbox{LHS}\ge \mbox{RHS}$.</p>
+<p class="text-justify">Similarly, one can prove the other inequalities in the series. We leave it as an exercise. The key point is that $r-\binom{r}{2}+\ldots +(-1)^{k-1}\binom{r}{k}$ is non-negative if $k$ is odd and non-positive if $k$ is even (prove this). Here as always $\binom{x}{y}$ is interpreted as zero if $y > x$.
+</div>
+Here is an application of these inequalities.
+<div id="theorem-60"><div class="panel panel-info example"> <div class="panel-heading">Example 60 </div><div class="panel-body"> Return to Example <a href="#theorem-56">56</a>. We obtained an exact expression for the answer, but that is rather complicated. For example, what is the probability of having at least one empty urn when $n=40$ balls are placed at random in $r=10$ urns? It would be complicated to sum the series. Instead, we could use Bonferroni's inequalities to get the following bounds.
+$$
+ r\left(1-\frac{1}{r}\right)^{n}-\binom{r}{2}\left(1-\frac{2}{r}\right)^{n}\le \mathbf{P}(A) \le r\left(1-\frac{1}{r}\right)^{n}.
+$$
+If we take $n=40$ and $r=10$, the bounds we get are $0.1418\le \mathbf{P}(A)\le 0.1478$. Thus, we get a pretty decent approximation to the probability. By experimenting with other numbers you can check that the approximations are good when $n$ is large compared to $r$ but not otherwise. Can you reason why?
+</div></div></div></p>
+<p class="text-justify">
+</p>
+<div class="pull-right"><a href="chapter-9.html" class="btn btn-primary">Chapter 9. Independence - a first look</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      FairCoin.main();
+    </script>
+
+  </body>
+</html>
+    

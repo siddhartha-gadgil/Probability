@@ -1,0 +1,175 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7./MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+<div class="container">
+<h1 class="text-center bg-info">Chapter 26 : Poisson limit for rare events</h1>
+<p>&nbsp;</p>
+
+Let $X_{k}\sim \mbox{Ber}(p)$ be independent random variables. Central limit theorem says that if $p$ is fixed and $n$ is large, the distribution of $(X_{n}-np)/\sqrt{np(1-p)}$ is close to the  $N(0,1)$ distribution.</p>
+<p class="text-justify">Now we consider a slightly different situation. Let $X_{1},\ldots ,X_{n}$ have $\mbox{Ber}(n,p_{n})$ distribution where $p_{n}=\frac{\lambda}{n}$, where $\lambda > 0$ is fixed. Then, we shall show that the distribution of $X_{1}+\ldots +X_{n}$ is close to that of $\mbox{Pois}(\lambda)$. Note that the distribution of $X_{1}$ changes with $n$ and hence it would be more correct to write $X_{n,1}, \ldots ,X_{n,n}$.</p>
+<p class="text-justify"><div id="theorem-142"><div class="panel panel-primary theorem"> <div class="panel-heading">Theorem 142 </div><div class="panel-body"> Let $\lambda > 0$ be fixed and let $X_{n,1},\ldots ,X_{n,n}$ be i.i.d. $\mbox{Ber}(\lambda/n)$. Let $S_{n}=X_{n,1}+\ldots +X_{n,n}$. Then, for every $k\ge 0$
+$$
+\mathbf{P}\{S_{n}=k\}\rightarrow e^{-\lambda}\frac{\lambda^{k}}{k!}.
+$$
+</div></div></div>
+<div class="proof"> Fix $k$ and observe that
+$$\begin{align*}
+\mathbf{P}\{S_{n}=k\} &= \binom{n}{k}\left(\frac{\lambda}{n}\right)^{k}\left(1-\frac{\lambda}{n}\right)^{n-k} \\
+ &= \frac{n(n-1)\ldots (n-k+1)}{k!}\frac{\lambda^{k}}{n^{k}}\left(1-\frac{\lambda}{n}\right)^{n-k}.
+ \end{align*}$$
+Note that $\frac{n(n-1)\ldots(n-k+1)}{n^{k}}\rightarrow 1$ as $n\rightarrow \infty$ (since $k$ is fixed). Also, $(1-\frac{\lambda}{n})^{n-k}\rightarrow e^{-\lambda}$ (if not clear, note that $(1-\frac{\lambda}{n})^{n}\rightarrow e^{-\lambda}$ and $(1-\frac{\lambda}{n})^{-k}\rightarrow 1$). Hence, the right hand side above converges to $e^{-\lambda}\frac{\lambda^{k}}{k!}$ which is what we wanted to show.
+</div>
+What is the meaning of this? Bernoulli random variables may be thought of as indicators of events, i.e., think of $X_{n,1}$ as ${\mathbf 1}_{A_{1}}$ etc. The theorem considers $n$ events which are independent and each of them is ``rare'' (since the probability of it occurring is $\lambda/n$ which becomes small as $n$ increases). The number of events increases but the chance of each events decreases in such a way that the expected number of events that occur stays constant. Then, the total number of events that actually occur has an approximately Poisson distribution.
+<div id="theorem-143"><div class="panel panel-info example"> <div class="panel-heading">Example 143 </div><div class="panel-body"> (A physical example). A large amount of custard is made in the hostel mess to serve $100$ students. The cook adds $300$ raisins and mixes the custard so that on an average they get $3$ raisins per student. But the number of raisins that a given student gets is random and the above theorem says that it has approximately $\mbox{Pois}(3)$ distribution. How so? Let $X_{k}$ be the indicator of the event that the $k$th raisin ends up in your cup. Since there are $100$ cups, the chance of this happening is $1/100$. The number of raisins in your cup is precisely $X_{1}+X_{2}+\ldots +X_{300}$. Appy the theorem (take $n=100$ and $\lambda=3$).
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-144"><div class="panel panel-info example"> <div class="panel-heading">Example 144 </div><div class="panel-body"> Place $r$ balls in $m$ bins at random. If $m=1000$  and $r=500$, then the number of balls in the first bin has approximately $\mbox{Pois}(1/2)$ distribution. Work out how this comes from the theorem.
+</div></div></div></p>
+<p class="text-justify">The Poisson limit is a much more general phenomenon than what the theorem above captures. For example, consider the problem of a psychic guessing a deck of cards. If $X$ is the number  of correct guesses, we saw (by direct calculation and approximation) that $\mathbf{P}\{X=k\}$ is close to $e^{-1}/k!$. In other words $X$ has approximately $\mbox{Pois}(1)$ distribution. Does it follows from the theorem above. Let us try.</p>
+<p class="text-justify">Set $X_{k}$ to be the indicator of the event that the $k$th guess is correct. Then $X_{k}\sim \mbox{Ber}(1/52)$ and $X=X_{1}+\ldots +X_{52}$. It looks like the theorem tells us that $X$ should have $\mbox{Pois}(1)$ distribution (by taking $n=52$ and $\lambda=1$). But note that $X_{i}$ are not independent random variables and hence the theorem does not strictly apply. The theorem should be thought of as one of many theorems that capture the theme <em> ``in a large collection of rare events that are nearly independent, the actual number of events that occur is approximately Poisson''</em>.</p>
+<p class="text-justify">{\color{magenta}
+
+</p>
+<div class="pull-right"><a href="chapter-27.html" class="btn btn-primary">Chapter 27. Entropy, Gibbs distribution</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      FairCoin.main();
+    </script>
+
+  </body>
+</html>
+    

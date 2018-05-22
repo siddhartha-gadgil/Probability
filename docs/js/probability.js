@@ -2852,7 +2852,7 @@ $c_Lprobability_FairCoin$.prototype.main__V = (function() {
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$2, jsx$1, false, $$buf$2));
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
   var $$md$3 = $m_s_xml_Null$();
-  $$md$3 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-body"), $$md$3, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$3 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-body bg-success"), $$md$3, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   var jsx$26 = $$md$3;
   var jsx$25 = $m_s_xml_TopScope$();
   var $$buf$3 = new $c_s_xml_NodeBuffer().init___();
@@ -2972,10 +2972,13 @@ $c_Lprobability_FairCoin$.prototype.main__V = (function() {
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$26, jsx$25, false, $$buf$3));
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n    "));
   var coinDiv = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$28, jsx$27, false, $$buf);
-  var position = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().querySelector("#theorem-2");
-  var div = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("div");
-  position.parentNode.insertBefore(div, position.nextSibling);
-  $m_Lmhtml_mount$().apply__Lorg_scalajs_dom_raw_Node__s_xml_Node__F0(div, coinDiv)
+  var positionOpt = $m_s_Option$().apply__O__s_Option($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().querySelector("#theorem-2"));
+  positionOpt.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7, coinDiv) {
+    return (function(position$2) {
+      var position = position$2;
+      return new $c_Lmhtml_Cancelable().init___F0(this$7.$$anonfun$main$13__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0(coinDiv, position))
+    })
+  })(this, coinDiv)))
 });
 $c_Lprobability_FairCoin$.prototype.$$js$exported$meth$main__O = (function() {
   this.main__V()
@@ -3130,6 +3133,11 @@ $c_Lprobability_FairCoin$.prototype.$$anonfun$main$12__p1__V = (function() {
   $m_Lprobability_FairCoin$().pV__Lmhtml_Var().$$colon$eq__O__V($m_Lprobability_FairCoin$().getP__D());
   $m_Lprobability_FairCoin$().guessOptV__Lmhtml_Var().$$colon$eq__O__V($m_s_None$());
   $m_Lprobability_FairCoin$().tossesV__Lmhtml_Var().$$colon$eq__O__V($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$()))
+});
+$c_Lprobability_FairCoin$.prototype.$$anonfun$main$13__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0 = (function(coinDiv$1, position) {
+  var div = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("div");
+  position.parentNode.insertBefore(div, position.nextSibling);
+  return $m_Lmhtml_mount$().apply__Lorg_scalajs_dom_raw_Node__s_xml_Node__F0(div, coinDiv$1)
 });
 $c_Lprobability_FairCoin$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
@@ -10265,6 +10273,11 @@ $c_s_Option.prototype.flatMap__F1__s_Option = (function(f) {
 });
 $c_s_Option.prototype.forall__F1__Z = (function(p) {
   return (this.isEmpty__Z() || $uZ(p.apply__O__O(this.get__O())))
+});
+$c_s_Option.prototype.foreach__F1__V = (function(f) {
+  if ((!this.isEmpty__Z())) {
+    f.apply__O__O(this.get__O())
+  }
 });
 $c_s_Option.prototype.$$anonfun$orNull$1__p1__s_Predef$$less$colon$less__O = (function(ev$1) {
   return ev$1.apply__O__O(null)

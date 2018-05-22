@@ -1,0 +1,256 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7./MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+<div class="container">
+<h1 class="text-center bg-info">Chapter 31 : Confidence intervals</h1>
+<p>&nbsp;</p>
+
+ So far, in estimating of an unknown parameter, we give a single number as our guess for the known parameter. It would be better to give an interval and say with what confidence we expect the true parameter to lie within it.  As a very simple example, suppose we have one random variable $X$ with $N(\mu,1)$ distribution. How do we estimate $\mu$? Suppose the observed value of $X$ is $2.7$. Going by any method, the guess for $\mu$ would be $2.7$ itself. But of course $\mu$ is not equal to $X$, so we would like to give an interval in which $\mu$ lies. How about $[X-1,X+1]$? Or $[X-2,X+2]$? Using normal tables, we see that $\mathbf{P}(X-1 < \mu < X+1)=\mathbf{P}(-1 < (X-\mu) < 1)=\mathbf{P}(-1 < Z < 1) \approx 0.68$ and similarly $\mathbf{P}(X-2 < \mu < X+2)\approx 0.95$. Thus, by making the interval longer we can be more confident that the true parameter lies within. But the accuracy of our statement goes down (if you want to know the average height of people in India, and the answer you give is ``between 100cm and 200cm'', it is very probably correct, but of little use!). The probability with which our CI contains the unknown parameter is called the level of confidence. Usually we fix the level of confidence, say as $0.90$ and find an interval <em> as short as possible</em> but subject to the condition that it should have a confidence level of $0.90$.</p>
+<p class="text-justify">In this section we consider the problem of confidence intervals in Normal population. In the next we see a few other examples.</p>
+<p class="text-justify"><strong>The setting:</strong> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$ random variables. We consider four situations.
+<ol>
+<li> Confidence interval for $\mu$ when ${\sigma}^{2}$ is known.
+</li>
+<li> Confidence interval for ${\sigma}^{2}$ when $\mu$ is known.
+</li>
+<li> Confidence interval for $\mu$ when ${\sigma}^{2}$ is unknown.
+</li>
+<li> Confidence interval for ${\sigma}^{2}$ when $\mu$ is unknown.
+</ol></p>
+<p class="text-justify">A starting point in finding a confidence interval for a parameter is to first start with an estimate for the parameter. For example, in finding a CI for $\mu$, we may start with $\bar{X}_{n}$ and enlarge it to an interval $[\bar{X}_{n}-a,\bar{X}_{n}+a]$. Similarly, in finding a CI for ${\sigma}^{2}$ we use the estimate $s_{n}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ if $\mu$ is unknown and $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ if the value of $\mu$ is known.</p>
+<p class="text-justify">\subsection{Estimating $\mu$ when ${\sigma}^{2}$ is known} We look for a confidence interval of the form $I_{n}=[\bar{X}_{n}-a,\bar{X}_{n}+a]$. Then,
+$$
+\mathbf{P}\left(I_{n}\ni \mu\right) = \mathbf{P}\left(-a\le \bar{X}_{n}-\mu\le a\right) =\mathbf{P}\left(-\frac{a\sqrt{n}}{{\sigma}}\le \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}} \le \frac{a\sqrt{n}}{{\sigma}}\right)
+$$
+Now we use two facts about normal distribution that we have seen before.
+<ol>
+<li> If $Y\sim N(\mu,{\sigma}^{2})$ then $aX+b\sim N(a\mu+b,a^{2}{\sigma}^{2})$.
+</li>
+<li> If $Y_{1}\sim N(\mu,{\sigma}^{2})$ and $Y_{2}\sim N(\nu,\tau^{2})$ and they are independent, then $X+Y\sim N(\mu+\nu,{\sigma}^{2}+\tau^{2})$.
+</ol>
+Consequently, $\bar{X}_{n}\sim N(0,{\sigma}^{2}/n)$ and $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}}\sim N(0,1)$.
+Therefore,
+$$
+ \mathbf{P}\left(I_{n}\ni \mu\right)
+ = \mathbf{P}(-\frac{a\sqrt{n}}{{\sigma}}\le Z\le -\frac{a\sqrt{n}}{{\sigma}})
+$$
+ where $Z\sim N(0,1)$. Fix any $0 < \alpha < 1$ and denote by $z_{\alpha}$ the number such that $\mathbf{P}(Z > z_{\alpha})=\alpha$ (in other words, $z_{\alpha}$ is the $(1-\alpha)$-quantile of the standard normal distribution). For example, from normal tables we find that $z_{0.05}\approx1.65$ and $z_{0.005}\approx 2.58$ etc.</p>
+<p class="text-justify">If we set $a=z_{\alpha/2}{\sigma}/\sqrt{n}$, we get
+$$
+\mathbf{P}\left(\left[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2}\right]\ni \mu\right)=1-\alpha.
+$$
+This is our confidence interval.</p>
+<p class="text-justify">\subsection{Estimating ${\sigma}^{2}$ when $\mu$ is known}
+Since $\mu$ is known, we use $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ to estimate ${\sigma}^{2}$. Here is an exercise.
+<div id="theorem-168"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 168 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(0,1)$ random variables. Then, $Z_{1}^{2}+\ldots +Z_{n}^{2}\sim \mbox{Gamma}(n/2,1/2)$.
+</div></div></div>
+<strong>Solution:</strong> For $t > 0$ we have
+$$\begin{align*}
+\mathbf{P}\{Z_{1}^{2}\le t\} &= \mathbf{P}\{-\sqrt{t}\le Z_{1}\le \sqrt{t}\}
+= 2\int\limits_{0}^{\sqrt{t}}\frac{1}{\sqrt{2\pi}}e^{-u^{2}/2}du = \frac{1}{\sqrt{2\pi}}\int\limits_{0}^{t}e^{-s/2}s^{-1/2}ds.
+\end{align*}$$
+Differentiate w.r.t $t$ to see that the density of $Z_{1}^{2}$ is $h(t)=\frac{1}{\sqrt{\pi}}e^{-t/2}t^{-1/2}\sqrt{(1/2)}$, which is just the $\mbox{Gamma}(\frac{1}{2},\frac{1}{2})$ density.</p>
+<p class="text-justify">Now, each $Z_{k}^{2}$ has the same $\mbox{Gamma}(\frac{1}{2},\frac{1}{2})$ density, and they are independent. Earlier we have seen that when we add independent Gamma random variables with the same scale parameter, the sum has a Gamma distribution with the same scale but whose shape parameter is the sum of the shape parameters of the individual summands. Therefore, $Z_{1}^{2}+\ldots +Z_{n}^{2}$ has $\mbox{Gamma}(n/2,1/2)$ distribution. This completes the solution to the exercise.</p>
+<p class="text-justify">\medskip</p>
+<p class="text-justify">In statistics, the distribution $\mbox{Gamma}(1/2,1/2)$ is usually called the <em> chi-squared distribution with $n$ degrees of freedom</em>. Let $\chi_{n}^{2}\left(\alpha\right)$ denote the $1-\alpha$ quantile of this distribution. Similarly, $\chi_{n}^{2}\left(1-\alpha\right)$ is the $\alpha$ quantile (i.e., the probability for the chi-squared random variable to fall below $\chi_{n}^{2}\left(1-\alpha\right)$ is exactly $\alpha$).</p>
+<p class="text-justify">When $X_{i}$ are i.i.d. $N(\mu,{\sigma}^{2})$, we know that $(X_{i}-\mu)/{\sigma}$ are i.i.d. $N(0,1)$. Hence, by the above fact, we see that
+$$
+ \frac{nW_{n}}{{\sigma}^{2}}=\sum_{i=1}^{n}\left(\frac{X_{i}-\mu}{{\sigma}}\right)^{2}
+$$
+has chi-squared distribution with $n$ degrees of freedom. Hence
+$$\begin{align*}
+\mathbf{P}\left\{   \frac{nW_{n}}{\chi_{n}^{2}\left(\frac{\alpha}{2}\right)} \le {\sigma}^{2}\le \frac{nW_{n}}{\chi_{n}^{2}\left(1-\frac{\alpha}{2}\right)}\right\}&=\mathbf{P}\left\{ \chi_{n}^{2}\left(1-\frac{\alpha}{2}\right) \le \frac{nW_{n}}{{\sigma}^{2}} \le \chi_{n}^{2}\left(\frac{\alpha}{2}\right)\right\}=1-\alpha.
+\end{align*}$$
+ Thus, $\left[\frac{ns_{n}^{2}}{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)},\frac{ns_{n}^{2}}{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right]$ is a $(1-\alpha)$-confidence interval for ${\sigma}^{2}$.</p>
+<p class="text-justify"><strong>An important result:</strong> Before going to the next two confidence interval problems, let us try to understand the two examples already covered. In both cases, we came up with a random variable ($\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ and $W_{n}/{\sigma}^{2}$, respectively) which involved the data and the unknown parameter  whose distributions we knew (standard normal and $\chi^{2}_{n}$, respectively) and these distributions do not depend on any parameters. This is generally the key step in any confidence interval problem. For the next two problems, we cannot use the same two random variables as above as they depend on the other unknown parameter too (i.e.,  $\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ uses ${\sigma}$ which will be unknown and $W_{n}/{\sigma}^{2}$ uses $\mu$ which will be unknown). Hence, we need a new result that we state without proof.</p>
+<p class="text-justify"><div id="theorem-169"><div class="panel panel-primary theorem"> <div class="panel-heading">Theorem 169 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$ random variables. Let $\bar{Z}_{n}$ and $s_{n}^{2}$ be the sample mean and the sample variance, respectively. Then,
+$$
+\bar{Z}_{n}\sim N(\mu,\frac{{\sigma}^{2}}{n}), \;\;  \frac{(n-1)s_{n}^{2}}{{\sigma}^{2}}\sim \chi^{2}_{n-1},
+$$
+and the two are independent.
+</div></div></div>
+This is not too hard to prove (a muscle-flexing exercise in change of variable formula) but we skip the proof. Note two important features. First, the surprising independence of the sample mean and the sample variance. Second, the sample variance (appropriately scaled) has $\chi^{2}$ distribution, just like $W_{n}$ in the previous example, but the degree of freedom is reduced by $1$. Now we use this theorem in computing confidence intervals.</p>
+<p class="text-justify">\subsection{Estimating ${\sigma}^{2}$ when $\mu$ is unknown}
+The estimate $s_{n}^{2}$ must be used as $W_{n}$ depends on $\mu$ which is unknown. Theorem {thm:indepofsamplemeanandvar} tells us that $\frac{(n-1)s_{n}^{2}}{{\sigma}^{2}}\sim \chi^{2}_{n-1}$. Hence, by the same logic as before we get
+$$\begin{align*}
+\mathbf{P}\left\{   \frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)} \le {\sigma}^{2}\le \frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right\}&=\mathbf{P}\left\{ \chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right) \le \frac{(n-1)s_{n}^{2}}{{\sigma}^{2}} \le \chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)\right\} \\
+&=1-\alpha.
+\end{align*}$$
+ Thus, $\left[\frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)} ,\frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right]$ is a $(1-\alpha)$-confidence interval for ${\sigma}^{2}$.</p>
+<p class="text-justify">If $\mu$ is known, we could use the earlier confidence interval using $W_{n}$, or simply ignore the knowledge of $\mu$ and use the above confidence interval using $s_{n}^{2}$. What is the difference? The cost of ignoring the knowledge of $\mu$ is that the second confidence interval will be typically larger, although for large $n$ the difference is slight. On the other hand, if our knowledge of $\mu$ was inaccurate, then the first confidence interval is invalid (we have no idea what its level of confidence is!) which is more serious. In realistic situations it is unlikely that we will know one of the parameters but not the other - hence, most often one just uses the confidence interval based on $s_{n}^{2}$.</p>
+<p class="text-justify">\subsection{Estimating $\mu$ when ${\sigma}^{2}$ is unknown} The earlier confidence interval We look for a confidence interval $[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2}]$ cannot be used as we do not know the value of ${\sigma}$.</p>
+<p class="text-justify">A natural idea would be to use the estimate $s_{n}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ in place of ${\sigma}^{2}$. However, recall that the earlier confidence interval (in particular,  the cut-off values $z_{\alpha/2}$ in the CI)  was an outcome of the fact that
+$$
+\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}}\sim N(0,1).
+$$
+Is it true if ${\sigma}$ is replaced by $s_{n}$? Actually no, but we have a different distribution called <em> Student's $t$-distribution</em>.</p>
+<p class="text-justify"><div id="theorem-170"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 170 </div><div class="panel-body"> Let $Z\sim N(0,1)$ and $S^{2}\sim \chi^{2}_{n}$ be independent. Then, the density of $\frac{Z}{S/\sqrt{n}}$ is given by
+$$
+\frac{1}{\sqrt{n-1}\mbox{Beta}(\frac{1}{2},\frac{n-1}{2})}\frac{1}{\left(1+\frac{t^{2}}{n-1}\right)^{\frac{n}{2}}}
+$$
+for all $t\in \mathbb{R}$. This is known as <em> Student's $t$-distribution</em>.
+</div></div></div>
+The exact density of  $t$-distribution is not important to remember, so the above exercise is optional. The point is that it can be computed from the change of variable formula and that by numerical integration its CDF can be tabulated.</p>
+<p class="text-justify">How does this help us? From Theorem <a href="#theorem-169">169</a> we know that $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}}\sim N(0,1)$, $\frac{(n-1)s_{n}^{2}}{{\sigma}^{2}}\sim \chi^{2}_{n-1}$, and the two are independent. Take these random variables in the above exercise to conclude that $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n}}$ has $t_{n-1}$ distribution.</p>
+<p class="text-justify">The $t$-distribution is symmetric about zero (the density at $t$ and at $-t$ are the same). Further, as the number of degrees of freedom goes to infinity, the $t$-density converges to the standard normal density. What we need to know is that there are tables from which we can read off specific quantiles of the distribution. In particular, by $t_{n}(\alpha)$ we mean the $1-\alpha$ quantile of the $t$-distribution with $n$ degrees of freedom. Then of course, the $\alpha$ quantile is $-t_{n}(\alpha)$.</p>
+<p class="text-justify">Returning to the problem of the confidence interval, from the fact stated above, we see that (use $T_{n}$ to indicate a random variable having $t$-distribution with $n$ degrees of freedom).
+$$\begin{align*}
+& \mathbf{P}\left(\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right)\le \mu \le\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right) \right) \\
+&=
+\mathbf{P}\left(-t_{n-1}\left(\frac{\alpha}{2}\right)\le \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n}}\le t_{n-1}\left(\frac{\alpha}{2}\right)\right) \\
+&= \mathbf{P}\left(-t_{n-1}\left(\frac{\alpha}{2}\right)\le T_{n-1}\le t_{n-1}\left(\frac{\alpha}{2}\right)\right) \\
+&= 1-\alpha.
+\end{align*}$$
+Hence, our $(1-\alpha)$-confidence interval is $\left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right),\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right)\right]$.</p>
+<p class="text-justify"><div id="theorem-171"><div class="panel panel-success remark"> <div class="panel-heading">Remark 171 </div><div class="panel-body"> We remarked earlier that as $n\rightarrow \infty$, the $t_{n-1}$ density approaches the standard normal density. Hence, $t_{n-1}(\alpha)$ approaches $z_{\alpha}$ for any $\alpha$ (this can be seen by looking at the $t$-table for large degree of freedom). Therefore, when $n$ is large, we may as well use
+$$
+\left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alpha/2},\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alpha/2}\right].
+$$
+Strictly speaking the level of confidence is smaller than for the one with $t_{n-1}(\alpha/2)$. However for $n$ large the level of confidence is quite close to $1-\alpha$.
+</div></div></div></p>
+<p class="text-justify">
+</p>
+<div class="pull-right"><a href="chapter-32.html" class="btn btn-primary">Chapter 32. Confidence interval for the mean</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      FairCoin.main();
+    </script>
+
+  </body>
+</html>
+    

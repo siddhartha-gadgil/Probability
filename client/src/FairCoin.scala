@@ -33,7 +33,7 @@ object FairCoin {
     val coinDiv: Node =
       <div class="panel panel-primary">
       <div class="panel-heading">Is the coin fair?</div>
-      <div class="panel-body">
+      <div class="panel-body bg-success">
         <p>Try to figure out whether the coin is fair by tossing it several times.</p>{pV.map
         {(p) => <button class="btn btn-primary" onclick={() =>
         tossesV.update(_ :+ (rnd.nextDouble() < p))}>Toss the coin</button>}}
@@ -48,7 +48,7 @@ object FairCoin {
         {guessOptV.zip(fairR).map{
         case (guessOpt, fair) =>
           guessOpt.map((guess) =>
-            if (guess == fair) 
+            if (guess == fair)
               <div>That's correct!</div>
 
             else
@@ -75,9 +75,11 @@ object FairCoin {
 
 
 
-    val position = dom.document.querySelector("#theorem-2")
-    val div = document.createElement("div")
-    position.parentNode.insertBefore(div, position.nextSibling)
-    mount(div, coinDiv)
+    val positionOpt = Option(dom.document.querySelector("#theorem-2"))
+    positionOpt.foreach{(position)=>
+      val div = document.createElement("div")
+      position.parentNode.insertBefore(div, position.nextSibling)
+      mount(div, coinDiv)
+  }
   }
 }
