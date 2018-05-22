@@ -1,0 +1,1 @@
+Index.PACKAGES = {"probability" : [{"object" : "probability\/FairCoin$.html", "name" : "probability.FairCoin"}]};

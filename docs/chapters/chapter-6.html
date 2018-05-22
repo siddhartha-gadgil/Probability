@@ -1,0 +1,219 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+<div class="container">
+<h1 class="text-center bg-info">Chapter 6 : Basic rules of probability</h1>
+<p>&nbsp;</p>
+
+So far we have defined the notion of probability space and probability of an event. But most often, we do not calculate probabilities from the definition. This is like in integration, where one defined the integral of a function as a limit of Riemann sums, but that definition is used only to find integrals of $x^{n}$, $\sin(x)$ and a few such functions. Instead, integrals of complicated expressions such as $x\sin(x)+2\cos^{2}(x)\tan(x)$ are calculated by various rules, such as substitution rule, integration by parts etc. In probability we need some similar rules relating probabilities of various combinations of events to the individual probabilities.</p>
+<p class="text-justify"><div id="theorem-50"><div class="panel panel-primary proposition"> <div class="panel-heading">Proposition 50 </div><div class="panel-body"> Let $(\Omega,p_{\cdot})$ be a discrete probability space.
+<ol>
+<li> For any event $A$, we have $0\le \mathbf{P}(A)\le 1$. Also, $\mathbf{P}(\emptyset)=0$ and $\mathbf{P}(\Omega)=1$.
+</li>
+<li> <em> Finite additivity of probability:</em> If $A_{1},\ldots ,A_{n}$ are pairwise disjoint events, then $\mathbf{P}(A_{1}\cup \ldots \cup A_{n})=\mathbf{P}(A_{1})+\ldots +\mathbf{P}(A_{n})$.
+In particular, $\mathbf{P}(A^{c})=1-\mathbf{P}(A)$ for any event $A$.
+</li>
+<li> <em> Countable additivity of probability:</em> If $A_{1},A_{2},\ldots$ is a countable collection of pairwise disjoint events, then $\mathbf{P}(\cup A_{i})=\sum_{i}\mathbf{P}(A_{i})$.
+</ol>
+</div></div></div>
+All of these may seem obvious, and indeed they would be totally obvious if we stuck to finite sample spaces. But the sample space could be countable, and then probability of events may involve infinite sums which need special care in manipulation. Therefore we must give a proof. In writing a proof, and in many future contexts, it is useful to introduce the following notation.</p>
+<p class="text-justify"><strong>Notation:</strong> Let $A\subseteq \Omega$ be an event. Then, we define a function ${\mathbf 1}_{A}:\Omega\rightarrow \mathbb{R}$, called the <em> indicator function of $A$</em>,  as follows.
+$$
+{\mathbf 1}_{A}(\omega) = \begin{cases}
+1 & \mbox{ if }\omega\in A,\\
+0 & \mbox{ if }\omega\not\in A.
+\end{cases}
+$$
+Since a function from $\Omega$ to $\mathbb{R}$ is called a random variable, the indicator of any event is a random variable. All information about the event $A$ is in its indicator function (meaning, if we know the value of ${\mathbf 1}_{A}(\omega)$, we know whether or not $\omega$ belongs to $A$). For example, we can write $\mathbf{P}(A)=\sum_{\omega\in \Omega}{\mathbf 1}_{A}(\omega)p_{\omega}$.</p>
+<p class="text-justify">Now we prove the proposition.
+<div class="proof">
+<ol>
+<li> By definition of probability space $\mathbf{P}(\Omega)=1$ and $\mathbf{P}(\emptyset)=0$. If $A$ is any event, then ${\mathbf 1}_{\emptyset}(\omega)p_{\omega}\le {\mathbf 1}_{A}(\omega)p_{\omega}\le {\mathbf 1}_{\Omega}(\omega)p_{\omega}$. By Exercise <a href="#theorem-41">41</a>, we get
+$$
+\sum_{\omega\in \Omega}{\mathbf 1}_{\emptyset}(\omega)p_{\omega} \le \sum_{\omega\in \Omega}{\mathbf 1}_{A}(\omega)p_{\omega} \le \sum_{\omega\in \Omega}{\mathbf 1}_{\Omega}(\omega)p_{\omega}.
+$$
+As observed earlier, these sums are just $\mathbf{P}(\emptyset)$, $\mathbf{P}(A)$ and $\mathbf{P}(\Omega)$, respectively. Thus, $0\le \mathbf{P}(A)\le 1$.
+</li>
+<li> It suffices to prove it for two sets (why?). Let $A,B$ be two events such that $A\cap B=\emptyset$. Let $f(\omega)=p_{\omega}{\mathbf 1}_{A}(\omega)$ and $g(\omega)=p_{\omega}{\mathbf 1}_{B}(\omega)$ and $h(\omega)=p_{\omega}{\mathbf 1}_{A\cup B}(\omega)$. Then, the disjointness of $A$ and $B$ implies that $f(\omega)+g(\omega)=h(\omega)$ for all $\omega\in \Omega$. Thus, by Exercise <a href="#theorem-41">41</a>, we get
+$$
+\sum_{\omega\in \Omega}f(\omega)+\sum_{\omega\in \Omega}g(\omega) = \sum_{\omega\in \Omega}h(\omega).
+$$
+But the three sums here are precisely $\mathbf{P}(A)$, $\mathbf{P}(B)$ and $\mathbf{P}(A\cup B)$. Thus, we get $\mathbf{P}(A\cup B)=\mathbf{P}(A)+\mathbf{P}(B)$.
+</li>
+<li> This is similar to finite additivity but needs a more involved argument. We leave it as an exercise for the interested reader. \qedhere
+</ol>
+</div>
+<div id="theorem-51"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 51 </div><div class="panel-body"> Adapt the proof to prove that for a countable family of events $A_{k}$ in a common probability space (no disjointness assumed), we have
+$$
+\mathbf{P}(\cup_{k}A_{k})\le \sum_{k}\mathbf{P}(A_{k}).
+$$
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-52"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 52 (Limsup and liminf of sets)</div><div class="panel-body"> If $A_{k}$, $k\ge 1$, is a sequence of subsets of $\Omega$, we define
+$$\begin{equation*}
+\limsup A_{k}=\bigcap_{N=1}^{\infty}\bigcup_{k=N}^{\infty}A_{k}, \qquad \mbox{ and } \qquad  \liminf A_{k}=\bigcup_{N=1}^{\infty}\bigcap_{k=N}^{\infty}A_{k}.
+\end{equation*}$$
+In words, $\limsup A_{k}$ is the set of all $\omega$ that belong to infinitely many of the $A_{k}$s, and $\liminf A_{k}$ is the set of all $\omega$ that belong to all but finitely many of the $A_{k}$s.</p>
+<p class="text-justify">Two special cases are of increasing and decreasing sequences of events. This means $A_{1}\subseteq A_{2}\subseteq A_{3}\subseteq \ldots$ and $A_{1}\supseteq A_{2}\supseteq A_{3}\supseteq \ldots$. In these cases, the limsup and liminf are the same (so we refer to it as the limit of the sequence of sets). It is $\cup_{k}A_{k}$ in the case of increasing events and $\cap_{k}A_{k}$ in the case of decreasing events.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-53"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 53 </div><div class="panel-body"> Events below are all contained in a discrete probability space. Use countable additivity of probability to show that
+<ol>
+<li> If $A_{k}$ are increasing events with limit $A$, show that $\mathbf{P}(A)$ is the increasing limit of $\mathbf{P}(A_{k})$.
+</li>
+<li> If $A_{k}$ are decreasing events with limit $A$, show that $\mathbf{P}(A)$ is the decreasing limit of $\mathbf{P}(A_{k})$.</p>
+<p class="text-justify"></ol>
+</div></div></div>
+Now we re-write the basic rules of probability as follows.</p>
+<p class="text-justify"><strong>The basic rules of probability:</strong>
+<ol>
+<li> $\mathbf{P}(\emptyset)=0$, $\mathbf{P}(\Omega)=1$ and $0\le \mathbf{P}(A)\le 1$ for any event $A$.
+</li>
+<li> $\mathbf{P}\left(\bigcup\limits_{k}A_{k}\right)\le \sum\limits_{k} \mathbf{P}(A_{k})$ for any countable collection of events $A_{k}$.
+</li>
+<li> $\mathbf{P}\left(\bigcup\limits_{k}A_{k}\right)=\sum\limits_{k}\mathbf{P}(A_{k})$ if $A_{k}$ is a countable collection of pairwise disjoint events.
+</ol></p>
+<p class="text-justify">
+</p>
+<div class="pull-right"><a href="chapter-7.html" class="btn btn-primary">Chapter 7. Inclusion-exclusion formula</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      Illustrations.main();
+    </script>
+
+  </body>
+</html>
+    

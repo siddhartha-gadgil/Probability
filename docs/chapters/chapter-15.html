@@ -1,0 +1,203 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+<div class="container">
+<h1 class="text-center bg-info">Chapter 15 : Uncountable probability spaces - conceptual difficulties</h1>
+<p>&nbsp;</p>
+
+The following two ``random experiments'' are easy to imagine, but difficult to fit into the framework of probability spaces<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
+                                1
+                                 </a> </sup><span class="collapse small" id="footnote-1">This section should be omitted by everyone other than those who are keen to know what we meant by the conceptual difficulties of uncountable probability space</span> .
+<ol>
+<li> Toss a $p$-coin infinitely many times: Clearly the sample space is $\Omega=\{0,1\}^{\mathbb{N}}$. But what is $p_{\underline{\omega}}$ for any $\underline{\omega}\in \Omega$? The only reasonable answer is $p_{\underline{\omega}}=0$ for all $\omega$. But then how to define $\mathbf{P}(A)$ for any $A$?   For example, if $A=\{\underline{\omega}{\; : \;} \omega_{1}=0,\omega_{2}=0,\omega_{3}=1\}$, then everyone agrees that $\mathbf{P}(A)$ ``ought to be'' $q^{2}p$, but how does that come about? The basic problem is that $\Omega$ is uncountable, and probabilities of events are not got by summing probabilities of singletons.
+</li>
+<li> Draw a number at random from $[0,1]$: Again, it is clear that $\Omega=[0,1]$, but it also seems reasonable that $p_{x}=0$ for all $x$. Again, $\Omega$ is uncountable, and probabilities of events are not got by summing probabilities of singletons. It is ``clear'' that if $A=[0.1,0.4]$, then $\mathbf{P}(A)$ ``ought to be'' $0.3$, but it gets confusing when one tries to derive this from something more basic!
+</ol></p>
+<p class="text-justify"><strong>The resolution:</strong> Let $\Omega$ be uncountable. There is a class of <em> basic subsets</em> (usually not singletons) of $\Omega$ for which we take the probabilities as given. We also take the rules of probability, namely, countable additivity, as axioms. Then we use the rules to compute the probabilities of more complex events (subsets of $\Omega$) by expressing those events in terms of the basic sets using countable intersections, unions and complements and applying the rules of probability.</p>
+<p class="text-justify"><div id="theorem-84"><div class="panel panel-info example"> <div class="panel-heading">Example 84 </div><div class="panel-body"> In the example of infinite sequence of tosses, $\Omega=\{0,1\}^{\mathbb{N}}$. Any set of the form $A=\{\underline{\omega}{\; : \;} \omega_{1}=\epsilon_{1},\ldots ,\omega_{k}=\epsilon_{k}\}$ where $k\ge 1$ and $\epsilon_{i}\in \{0,1\}$ will be called a basic set and its probability is <u>defined</u> to be $\mathbf{P}(A)=\prod_{j=1}^{k}p^{\epsilon_{j}}q^{1-\epsilon_{j}}$ where we assume that $p > 0$. Now consider a more complex event, for example, $B=\{\underline{\omega} {\; : \;} \omega_{k}=1\mbox{ for some }k\}$. We can write $B=A_{1}\cup A_{2}\cup A_{3}\cup\ldots$ where $A_{k}=\{\underline{\omega}{\; : \;} \omega_{1}=0,\ldots ,\omega_{k-1}=0,\omega_{k}=1\}$. Since $A_{k}$ are pairwise disjoint, the rules of probability demand that $\mathbf{P}(B)$ should be $\sum_{k}\mathbf{P}(A_{k})=\sum_{k}q^{k-1}p$ which is in fact equal to $1$.
+</div></div></div>
+<div id="theorem-85"><div class="panel panel-info example"> <div class="panel-heading">Example 85 </div><div class="panel-body"> In the example of drawing a number at random from $[0,1]$, $\Omega=[0,1]$. Any interval $(a,b)$ with $0\le a < b\le 1$ is called a basic set and its probability is defined as $\mathbf{P}(a,b)=b-a$. Now consider a non-basic event $B=[a,b]$. We can write $B=A_{1}\cup A_{2}\cup A_{3}\ldots$ where $A_{k}=(a+(1/k),b-(1/k))$. Then $A_{k}$ is an increasing sequence of events and the rules of probability say that $\mathbf{P}(B)$ must be equal to $\lim_{k\rightarrow \infty}\mathbf{P}(A_{k})=\lim_{k\rightarrow \infty}(b-a-(2/k)) = b-a$. Another example could be $C=[0.1,0.2)\cup(0.3,0.7]$. Similarly argue that $\mathbf{P}(\{x\})=0$ for any $x\in [0,1]$. A more interesting one is $D=\mathbb Q \cap [0,1]$. Since it is a countable union of singletons, it must have zero probability! Even more interesting is the $1/3$-Cantor set. Although uncountable, it has zero probability!
+</div></div></div></p>
+<p class="text-justify"><strong>Consistency:</strong> Is this truly a solution to the question of uncountable spaces? Are we assured of never running into inconsistencies? Not always.
+<div id="theorem-86"><div class="panel panel-info example"> <div class="panel-heading">Example 86 </div><div class="panel-body"> Let $\Omega=[0,1]$ and let intervals $(a,b)$ be open sets with their probabilities defined as $\mathbf{P}(a,b)=\sqrt{b-a}$. This quickly leads to problems. For example, $\mathbf{P}(0,1)=1$ by definition. But $(0,1)=(0,0.5)\cup(0.5,1)\cup \{1/2\}$ from which the rules of probability would imply that $\mathbf{P}(0,1)$ must be at least $\mathbf{P}(0,1/2)+\mathbf{P}(1/2,1)=\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}=\sqrt{2}$ which is greater than $1$. Inconsistency!
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-87"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 87 </div><div class="panel-body"> Show that we run into inconsistencies if we define $\mathbf{P}(a,b)=(b-a)^{2}$ for $0\le a < b\le 1$.
+</div></div></div></p>
+<p class="text-justify">Thus, one cannot arbitrarily assign probabilities to basic events. However, if we use the notion of distribution function to assign probabilities to intervals, then no inconsistencies arise.
+<div id="theorem-88"><div class="panel panel-primary theorem"> <div class="panel-heading">Theorem 88 </div><div class="panel-body"> Let $\Omega=\mathbb{R}$ and let intervals of the form $(a,b]$ with $a < b$ be called basic sets. Let $F$ be any distribution function. <em> Define</em> the probabilities of basic sets as $\mathbf{P}\{(a,b]\}=F(b)-F(a)$. Then, applying the rules of probability to compute probabilities of more complex sets (got by taking countable intersections, unions and complements) will never lead to inconsistency.
+</div></div></div>
+Let $F$ be any CDF. Then, the above consistency theorem really asserts that there exists (a possibly uncountable) probability space and a random variable such that $F(t)=\mathbf{P}\{X\le t\}$ for all $t$. We say that $X$ has distribution $F$. However, it takes a lot of technicalities to define what uncountable probability spaces look like and what random variables mean in this more general setting, we shall never define them.</p>
+<p class="text-justify">The job of a probabilist consists in taking a CDF $F$ (then the probabilities of intervals are already given to us as $F(b)-F(a)$ etc.) and find probabilities of more general subsets of $\mathbb{R}$. Here are the working rules.  Instead we can use the following simple working rules to answer questions about the distribution of a random variable.
+<ol>
+<li> For an $a < b$, we set $\mathbf{P}\{a < X\le b\}:=F(b)-F(a)$.
+</li>
+<li> If $I_{j}=(a_{j},b_{j}]$ are countably many pairwise disjoint intervals, and $I=\bigcup_{j}I_{j}$, then we define $\mathbf{P}\{X\in I\}:=\sum_{j}F(b_{j})-F(a_{j})$.
+</li>
+<li> For a general set $A\subseteq \mathbb{R}$, here is a general scheme: Find countably many pairwise disjoint intervals $I_{j}=(a_{j},b_{j}]$ such that $A\subseteq \cup_{j}I_{j}$. Then we define $\mathbf{P}\{X\in A\}$ as the infimum (over all such coverings by intervals) of the quantity $\sum_{j}F(b_{j})-F(a_{j})$.
+</ol></p>
+<p class="text-justify"><em><u> All of probability in another line</em></u>: Take an (interesting) random variable $X$ with a given CDF $F$ and an (interesting) set $A\subseteq \mathbb{R}$. Find $\mathbf{P}\{X\in A\}$.</p>
+<p class="text-justify">\medskip
+There are loose threads here but they can be safely ignored for  this course. We just remark about them for those who are curious to know.</p>
+<p class="text-justify"><div id="theorem-89"><div class="panel panel-success remark"> <div class="panel-heading">Remark 89 </div><div class="panel-body"> The above method starts from a CDF $F$ and defines $\mathbf{P}\{X\in A\}$ for all subsets $A\subseteq \mathbb{R}$. However, for most choices of $F$,  the countable additivity property turns out to be  violated! However, the sets which do violate them rarely arise in practice and hence we ignore them for the present.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-90"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 90 </div><div class="panel-body"> Let $X$ be  a random variable with distribution $F$. Use the working rules to find the following probabilities.
+ <ol>
+ <li> Write $\mathbf{P}\{a < X < b\}$, $\mathbf{P}\{a\le X < b\}$, $\mathbf{P}\{a\le X\le b\}$ in terms of $F$.
+ </li>
+<li> Show that $\mathbf{P}\{X=a\}=F(a)-F(a-)$. In particular, this probability is zero unless $F$ has a jump at $a$.
+ </ol>
+ </div></div></div></p>
+<p class="text-justify">We now illustrate how to calculate the probabilities of rather non-trivial sets in a special case. It is not always possible to get an explicit answer as here.
+<div id="theorem-91"><div class="panel panel-info example"> <div class="panel-heading">Example 91 </div><div class="panel-body"> Let $F$ be the CDF defined in example <a href="#theorem-83">83</a>. We calculate $\mathbf{P}\{X\in A\}$ for two sets $A$.</p>
+<p class="text-justify"><strong>1</strong>. $A=\mathbb{Q}\cap [0,1]$.  Since $A$ is countable, we may write $A=\cup_{n}\{r_{n}\}$ and hence $A\subseteq \cup_{n}I_{n}$ where $I_{n}=(r_{n},r_{n}+\delta2^{-n}]$ for any fixed $\delta > 0$. Hence $\mathbf{P}\{X\in A\}\le \sum_{n}F(r_{n}+\delta 2^{-n})-F(r_{n}) \le 2\delta$. Since this is true for every $\delta > 0$, we must have $\mathbf{P}\{X\in A\}=0$. (We stuck to the letter of the recipe described earlier. It would have been simpler to say that any countable set is a countable union of singletons, and by the countable additivity of probability, must have probability zero. Here we used the fact that singletons have zero probability since $F$ is continuous).
+</div></div></div></p>
+<p class="text-justify"><strong>2</strong>. $A=\mbox{Cantor's set}$<sup> <a data-toggle="collapse" href="#footnote-2" aria-expanded="false" aria-controls="footnote-2">
+                                2
+                                 </a> </sup><span class="collapse small" id="footnote-2">To define the Cantor set, recall that any  $x\in [0,1]$ may be written in ternary expansion as $x=0.u_{1}u_{2}\ldots :=\sum_{n=1}^{\infty}u_{n}3^{-n}$ where $u_{n}\in \{0,1,2\}$. This expansion is unique except if $x$ is a rational number of the form $p/3^{m}$ for some integers $p,m$ (these are called triadic rationals). For triadic rationals, there are two possible ternary expansions, a terminating one and a non-terminating one (for example, $x=1/3$ can be written as $0.100\ldots$ or as $0.0222\ldots$). For definiteness, for triadic rationals we shall always take the non-terminating ternary expansion. With this preparation, the Cantor set is defined as the set of all $x$ which do not have the digit $1$ in their ternary expansion</span>  How to find $\mathbf{P}\{X\in A\}$? Let $A_{n}$ be the set of all $x\in [0,1]$ which do not have $1$ in the first $n$ digits of their ternary expansion. Then $A\subseteq A_{n}$. Further, it is not hard to see that $A_{n}=I_{1}\cup I_{2}\cup \ldots \cup I_{2^{n}}$ where each of the intervals $I_{j}$ has length equal to $3^{-n}$. Therefore, $\mathbf{P}\{X\in A\}\le \mathbf{P}\{X\in A_{n}\}= 2^{n}3^{-n}$ which goes to $0$ as $n\rightarrow \infty$. Hence, $\mathbf{P}\{X\in A\}=0$.
+}</p>
+<p class="text-justify">
+</p>
+<div class="pull-right"><a href="chapter-16.html" class="btn btn-primary">Chapter 16. Examples of continuous distributions</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      Illustrations.main();
+    </script>
+
+  </body>
+</html>
+    

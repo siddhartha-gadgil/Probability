@@ -1,0 +1,187 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+<div class="container">
+<h1 class="text-center bg-info">Chapter 36 : Testing for the difference between means of two normal populations</h1>
+<p>&nbsp;</p>
+
+Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu_{1},{\sigma}_{1}^{2})$ and let $Y_{1},\ldots ,Y_{m}$ be i.i.d. $N(\mu_{2},{\sigma}_{2}^{2})$. We shall consider the following  hypothesis testing problems.</p>
+<p class="text-justify"><ol>
+<li> One sided test for the difference in means. $H_{0}:\; \mu_{1}=\mu_{2}$ versus $H_{1}: \; \mu_{1} > \mu_{2}$.
+</li>
+<li> Two sided test for the mean.  $H_{0}:\; \mu_{1}=\mu_{2}$ versus $H_{1}: \; \mu_{1}\not=\mu_{2}$.
+</ol></p>
+<p class="text-justify">This kind of problem arises in many situations in comparing two different populations or the effect of two different treatments etc. Actual data sets of such questions can be found in the homework.
+<div id="theorem-178"><div class="panel panel-info example"> <div class="panel-heading">Example 178 </div><div class="panel-body"> Suppose a new drug to reduce blood pressure is introduced by a pharmaceutical company.  There is already an existing drug in the market which is working reasonably alright. But it is claimed by the company that the new drug is better. How to test this claim?</p>
+<p class="text-justify">We take a random sample of $n+m$ patients and break them into two groups of $n$ and of $m$ patients. The first group is administered the new drug while the second group is administered the old drug. Let $X_{1},\ldots ,X_{n}$ be the <em> decrease in blood pressures</em> in the first group. Let $Y_{1},\ldots ,Y_{m}$ be the <em> decrease</em> in blood pressures in the second group. The claim is that one average $X_{i}$s are larger than $Y_{i}$s.</p>
+<p class="text-justify">Note that it does not make sense to subtract $X_{i}-Y_{i}$ and reduce to a one sample test as in the previous section (here $X_{i}$ is a measurement on one person and $Y_{i}$ is a measurement on a completely different person! Even the number of persons in the two groups may differ). This is an example of a two-sample test as formulated above.
+</div></div></div>
+<div id="theorem-179"><div class="panel panel-info example"> <div class="panel-heading">Example 179 </div><div class="panel-body"> The same applies to many studies of comparision. If someone claims that Americans are taller than Indians on average, or if it is claimed that cycling a lot leads to increase in height, or if it is claimed that Chinese have higher IQ than Europeans, or if it is claimed that <em> Honda Activa</em> gives better mileage than <em> Suzuki Access</em>, etc., etc., the claims can be reduced to the two-sample testing problem as introduced above.
+</div></div></div></p>
+<p class="text-justify"><strong>BIG ASSUMPTION:</strong> We shall assume that ${\sigma}_{1}^{2}={\sigma}_{2}^{2}={\sigma}^{2}$ (yet unknown). This assumption is not made because it is natural or because it is often observed, but because it leads to mathematical simplification. Without this assumption, no exact level-$\alpha$ test has been found!</p>
+<p class="text-justify"><strong>The test:</strong> Let $\bar{X},\bar{Y}$ denote the sample means of $X$ and $Y$ and let $s_{X}, s_{Y}$ denote the corresponding sample standard deviations. Since ${\sigma}^{2}$ is the assumed to be the same for both populations, $s_{X}^{2}$ and $s_{Y}^{2}$ can be combined to define
+$$
+S^{2}:=\frac{(n-1)s_{X}^{2}+(m-1)s_{Y}^{2}}{m+n-2}
+$$
+which is a better estimate for ${\sigma}^{2}$ than just $s_{X}^{2}$ or $s_{Y}^{2}$ (this $S^{2}$ is better than simply taking $(s_{X}^{2}+s_{Y}^{2})/2$ because it gives greater weight to the larger sample).</p>
+<p class="text-justify">Now define $\mathcal T =\sqrt{\frac{1}{n}+\frac{1}{m}}\left(\frac{\bar{X}-\bar{Y}}{S}\right)$.  The following tests hav significance level $\alpha$.
+<ol>
+<li> For the one-sided test, accept the alternative if $\mathcal T > t_{n+m-2}(\alpha)$.
+</li>
+<li> For the one-sided test, accept the alternative if $\mathcal T > t_{n+m-2}(\alpha/2)$ or $\mathcal T < -t_{n+m-2}(\alpha/2)$.
+</ol></p>
+<p class="text-justify"><strong>The rationale behind the tests:</strong> If $\bar{X}$ is much larger than $\bar{Y}$ then the greater is the evidence that the true mean $\mu_{1}$ is greater than $\mu_{2}$. But again we need to standardize by dividing this by an estimate of ${\sigma}$, namely $S$. The resulting statistic $\mathcal T$ has a $t_{m+n-2}$ distribution as explained below.</p>
+<p class="text-justify"><strong>The significance level is $\alpha$:</strong> The question is where to draw the threshold. From the facts we know,
+$$\begin{align*}
+\bar{X}&\sim N(\mu_{1},{\sigma}_{1}^{2}/n), \\
+\bar{Y}&\sim N(\mu_{2},{\sigma}_{2}^{2}/m), \\
+\frac{(n-1)}{{\sigma}^{2}}s_{X}^{2}&\sim \chi_{n-1}^{2}, \\
+\frac{(m-1)}{{\sigma}^{2}}s_{Y}^{2}&\sim \chi_{m-1}^{2}
+\end{align*}$$
+and the four random variables are independent. From this, it follows that $(m+n-2)S^{2}$ has $\chi_{n+m-2}^{2}$ distribution. <em> Under the null hypothesis</em> $\frac{1}{{\sigma}}\sqrt{\frac{1}{n}+\frac{1}{m}}(\bar{X}-\bar{Y})$ has $N(0,1)$ distribution and is independent of $S$. Taking ratios, we see that $\mathcal T$ has $t_{m+n-2}$ distribution (under the null hypothesis).</p>
+<p class="text-justify">
+</p>
+<div class="pull-right"><a href="chapter-37.html" class="btn btn-primary">Chapter 37. Testing for the mean in absence of normality</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      Illustrations.main();
+    </script>
+
+  </body>
+</html>
+    

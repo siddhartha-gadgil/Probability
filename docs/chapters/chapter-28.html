@@ -1,0 +1,161 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+<div class="container">
+<h1 class="text-center bg-info">Chapter 28 : Introduction</h1>
+<p>&nbsp;</p>
+
+In statistics we are faced with data, which could be measurements in an experiment, responses in a survey etc. There will be some randomness, which may be inherent in the problem or due to errors in measurement etc. The problem in statistics is to make various kinds of inferences about the underlying distribution, from realizations of the random variables.  We shall consider a few basic types of problems encountered in statistics. We shall mostly deal with examples, but sufficiently many that the general ideas should become clear too. It may be remarked that we stay with the simplest ``textbook type problems'' but we shall also see some real data. Unfortunately we shall not touch upon the problems of current interest, which typically involve very huge data sets etc. Here are the kinds of problems we study.</p>
+<p class="text-justify"><strong>General setting:</strong> We shall have data (measurements perhaps), usually of the form $X_{1},\ldots ,X_{n}$ which are realizations of independent random variables  from a common distribution. The underlying distribution is not known. In the problems we consider, typically the distribution is known, except for the values of a few parameters. Thus, we may write the data as $X_{1},\ldots ,X_{n}$ i.i.d. $f_{\theta}(x)$ where $f_{\theta}(x)$ is a pdf or pmf for each value of the parameter(s) $\theta$. For example, the density could be of $N(\mu,{\sigma}^{2})$ (two unknown parameters $\mu$ and ${\sigma}^{2}$) or of $\mbox{Pois}(\lambda)$ (one unknown parameter $\lambda$).</p>
+<p class="text-justify"><strong>(1) Estimation:</strong> Here, the question is to guess the value of the unknown $\theta$ from the sample $X_{1},\ldots ,X_{n}$. For example, if $X_{i}$ are i.i.d. from $\mbox{Ber}(p)$ distribution ($p$ is unknown), then a reasonable guess for $\theta$ would be the sample mean $\bar{X}_{n}$ (an <em> estimator</em>). Is this the only one? Is it the ``best'' one? Such questions are addressed in estimation.</p>
+<p class="text-justify"><strong>(2) Confidence intervals:</strong> Here again the problem is of estimating the value of a parameter, but instead of giving one value as a guess, we instead give an interval and quantify  how sure we are that the interval will contain the unknown parameter. For example, a coin with unknown probability $p$ of turning up head, is tossed $n$ times. Then, a confidence interval for $p$ could be of the form \[\begin{aligned} \left[\bar{X}_{n}-\frac{3}{\sqrt{n}}\sqrt{\bar{X}_{n}(1-\bar{X}_{n})},\bar{X}_{n}+\frac{3}{\sqrt{n}}\sqrt{\bar{X}_{n}(1-\bar{X}_{n})}\right] \end{aligned}\] where $\bar{X}_{n}$ is the proportion of heads in $n$ tosses. The reason for such an interval will come later. It turns out that if $n$ is large, one can say that with probability $0.99$ (``confidence level''), this interval will contain the true value of the parameter.</p>
+<p class="text-justify"><strong>(3) Hypothesis testing:</strong> In this type of problem we are required to decide between two competing choices (``hypotheses''). For example, it is claimed that one batch of students is better than a second batch of students in mathematics. One way to check this is to give the same exam to students in both exams and record the scores. Based on the scores, we have to decide whether the first batch is better than the second (one hypothesis) or whether there is not much difference between the two (the other hypothesis). One can imagine that this can be done by comparing the sample means etc., but that will come later.</p>
+<p class="text-justify">A good analogy for testing problems is from law, where the judge has to decide whether an accused is guilty or not guilty. Evidence presented by lawyers take the role of data (but of course one does not really compute any probabilities quantitatively here!).</p>
+<p class="text-justify"><strong>(4) Regression:</strong> Consider two measurements, such as height and weight. It is reasonable to say that weight and height are positively correlated (if the height is larger, the weight tends to be larger too), but is there a more quantitative relationship? Can we predict the weight (roughly) from the height?  One could try to see if a linear function fits: $\mbox{wt.}=a\ \mbox{ht.}+b$ for some $a,b$. Or perhaps a more complicated fit such as $\mbox{wt.}=a\ \mbox{ht.}+b\ \mbox{ht.}^{2}+c$, etc. To see if this is a good fit, and to know what values of $a,b,c$ to take, we need data. Thus, the problem is that we have some data $(H_{i},W_{i})$, $i=1,2,\ldots ,n$, and based on this data we try to find the best linear fit (or the best quadratic fit) etc.</p>
+<p class="text-justify">As another example, consider the approximate law that the resistivity of a  material is proportional to the temperature. What is the constant of proportionality (for a given material). Here we have a law that says $R=aT$ where $a$ is not known. By taking many measurements at various temperatures we get data $(T_{i},R_{i})$, $i=1,2,\ldots ,n$. From this we must find the best possible $a$ (if all the data points were to lie on a line $y=ax$, there would be no problem. In reality they never will, and that is why the choice is an issue!).</p>
+<p class="text-justify">
+</p>
+<div class="pull-right"><a href="chapter-29.html" class="btn btn-primary">Chapter 29. Estimation problems</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      Illustrations.main();
+    </script>
+
+  </body>
+</html>
+    

@@ -1,0 +1,199 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+
+<div class="container-fluid">
+<div class="bg-primary">
+     <div class="banner">
+
+     <center><h2 style="padding-top: 15px;"> Probability and Statistics </h2></center>
+     <center><h4 style="padding-bottom: 15px;"> Notes by Manjunath Krishnapur </h4></center>
+   </div>
+ </div>
+ </div>
+ <div class="container">
+ <section>
+<p>&nbsp;</p>
+    
+<h1 class="text-center bg-info">Table of Contents</h1>
+<p>&nbsp;</p>
+<ol>
+<li><a href="chapter-1.html">What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">On infinite sums</a> </li>
+<li><a href="chapter-6.html">Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">Independence - a first look</a> </li>
+<li><a href="chapter-10.html">Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">Subtleties of conditional probability</a> </li>
+<li><a href="chapter-13.html">Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">General probability distributions</a> </li>
+<li><a href="chapter-15.html">Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">Simulation</a> </li>
+<li><a href="chapter-18.html">Joint distributions</a> </li>
+<li><a href="chapter-19.html">Change of variable formula</a> </li>
+<li><a href="chapter-20.html">Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">Mean and Variance</a> </li>
+<li><a href="chapter-22.html">Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">Central limit theorem</a> </li>
+<li><a href="chapter-26.html">Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">Entropy, Gibbs distribution</a> </li>
+<li><a href="chapter-28.html">Introduction</a> </li>
+<li><a href="chapter-29.html">Estimation problems</a> </li>
+<li><a href="chapter-30.html">Properties of estimates</a> </li>
+<li><a href="chapter-31.html">Confidence intervals</a> </li>
+<li><a href="chapter-32.html">Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">Tests for independence</a> </li>
+<li><a href="chapter-40.html">Regression and Linear regression</a> </li>
+</ol>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      Illustrations.main();
+    </script>
+
+  </body>
+</html>
+    

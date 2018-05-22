@@ -73,7 +73,7 @@ object TeXToHtml {
     |      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     |
     |        <ul class="nav navbar-nav navbar-right">
-    |
+    |          <li><a href="index.html">Table of Contents</a></li>
     |          <li class="dropdown">
     |            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
     |            <ul class="dropdown-menu">
@@ -103,14 +103,16 @@ object TeXToHtml {
 
   val banner: String =
     """
-      |<div class="container">
+      |<div class="container-fluid">
       |<div class="bg-primary">
       |     <div class="banner">
       |
-      |     <center><h2 style="margin-top: 2px;"> Probability and Statistics </h2></center>
-      |     <center><h4 style="margin-bottom: 2px;"> Notes by Manjunath Krishnapur </h4></center>
+      |     <center><h2 style="padding-top: 15px;"> Probability and Statistics </h2></center>
+      |     <center><h4 style="padding-bottom: 15px;"> Notes by Manjunath Krishnapur </h4></center>
       |   </div>
       | </div>
+      | </div>
+      | <div class="container">
       | <section>
       |<p>&nbsp;</p>
     """.stripMargin
@@ -118,11 +120,11 @@ object TeXToHtml {
   val foot: String =
     """
       |</div>
-      |<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      |<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
       | <script type="text/javascript" src='../js/bootstrap.min.js'></script>
       |<script type="text/javascript" src='../js/probability.js'></script>
       |<script type="text/javascript">
-      |      FairCoin.main();
+      |      Illustrations.main();
       |    </script>
       |
       |  </body>
@@ -353,7 +355,8 @@ object TeXToHtml {
       txt: String,
       head: String = "",
       counter: Int = 0,
-      secs: Map[Int, String] = Map()): (String, Map[Int, String]) =
+      secs: Map[Int, String] = Map(),
+      chapters: Map[Int, String] = Map()): (String, Map[Int, String], Map[Int, String]) =
     """(\\section\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
@@ -366,10 +369,11 @@ object TeXToHtml {
           m.after.toString,
           newHead,
           counter + 1,
-          secs + ((counter + 1) -> title)
+          secs + ((counter + 1) -> title),
+          chapters + (counter -> prev)
         )
       }
-      .getOrElse(head + txt -> secs)
+      .getOrElse((head + txt, secs, chapters + (counter -> txt)))
 
   def replacePara(txt: String): String =
     """(\\para\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
@@ -524,9 +528,37 @@ class TeXToHtml(header: String, text: String) {
           .map((n) => s"""<a href="#theorem-$n">$n</a>""")
           .getOrElse(m.group(0)))
 
-  lazy val (secReplaced: String, sections: Map[Int, String]) = recReplaceSection(refReplaced)
+  lazy val (secReplaced: String,
+    sections: Map[Int, String],
+    chapters: Map[Int, String]) = recReplaceSection(refReplaced)
 
-  lazy val allReplaced: String = recReplaceFootnotes(replaceUnderline(replaceBf(replaceBlanks(secReplaced))))
+  lazy val theoremChapters =
+    {
+      val regex = """(id="theorem-)([0-9]+)""".r
+      chapters.toVector.map{case (n, txt) =>
+        regex.findAllMatchIn(txt).map((m) =>
+          (m.group(2).toInt -> n)
+        ).toVector
+      }.flatten
+    }.toMap
+
+  def refChapters(txt: String) = {
+    """(href="#theorem-)([0-9]+)""".r
+    .replaceAllIn(txt,
+      (m) =>
+        {
+          val j = m.group(2).toInt
+          s"""href="chapter-${theoremChapters(j)}.html#theorem-j"""
+        })
+  }
+
+  lazy val allReplaced: String =
+    recReplaceFootnotes(replaceUnderline(replaceBf(replaceBlanks(secReplaced))))
+
+  lazy val chapReplaced =
+    chapters.filter(_._1 > 0).mapValues{(chapter) =>
+      recReplaceFootnotes(replaceUnderline(replaceBf(replaceBlanks(chapter))))
+    }
 
   lazy val sortedSections: Vector[(Int, String)] =
     sections.toVector.sortBy(_._1)
@@ -538,16 +570,77 @@ class TeXToHtml(header: String, text: String) {
       }
       .mkString("\n")
 
+  def chapterList(v: Vector[(Int, String)]): String =
+    v.map {
+        case (n, title) =>
+          s"""<li><a href="chapter-$n.html">$n. $title</a> </li>"""
+      }
+      .mkString("\n")
+
+  def tocList : String =
+    sortedSections.map {
+        case (n, title) =>
+          s"""<li><a href="chapter-$n.html">$title</a> </li>"""
+      }
+      .mkString("\n")
+
   lazy val newFile: String = header + """\begin{document}""" + defReplaced
 
   def replace(): Unit = write.over(wd / "repl.tex", newFile)
+
+  lazy val chapNav = nav(
+    chapterList(sortedSections.take(12)),
+    chapterList(sortedSections.slice(12, 27)),
+    chapterList(sortedSections.drop(27)))
 
   lazy val draftHtml: String = top + nav(
     sectionList(sortedSections.take(12)),
     sectionList(sortedSections.slice(12, 27)),
     sectionList(sortedSections.drop(27))) + banner + allReplaced + foot
 
-  def html(): Unit = write.over(pwd / "docs" / "draft" / "index.html", draftHtml)
+  def chapLink(n: Int): String =
+    sections.get(n).map{(t) =>
+      s"""<div class="pull-right"><a href="chapter-$n.html" class="btn btn-primary">Chapter $n. $t</a></div>"""
+    }.getOrElse("")
+
+  lazy val chapHtml = chapReplaced.map{case (n, txt) =>
+    (n,
+      s"""$top
+$chapNav
+<div class="container">
+<h1 class="text-center bg-info">Chapter $n : ${sections(n)}</h1>
+<p>&nbsp;</p>
+$txt
+</p>
+${chapLink(n + 1)}
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+$foot"""
+    )
+  }
+
+  lazy val tocHtml = s"""$top
+$chapNav
+$banner
+<h1 class="text-center bg-info">Table of Contents</h1>
+<p>&nbsp;</p>
+<ol>
+$tocList
+</ol>
+$foot"""
+
+
+  def html(): Unit = {
+    write.over(pwd / "docs" / "draft" / "index.html", draftHtml)
+    chapHtml.foreach{
+      case (n, html) =>
+        write.over(pwd / "docs" / "chapters" / s"chapter-$n.html", html)
+    }
+    write.over(pwd / "docs" / "chapters" / "index.html", tocHtml)
+  }
 }
 
 object TeXBuild extends App {
@@ -555,4 +648,5 @@ object TeXBuild extends App {
   converter.html()
   val js = read(resource/"out.js")
   write.over(pwd / "docs" / "js" / "probability.js", js)
+  println(converter.theoremChapters)
 }

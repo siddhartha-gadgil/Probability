@@ -1,0 +1,200 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+<div class="container">
+<h1 class="text-center bg-info">Chapter 30 : Properties of estimates</h1>
+<p>&nbsp;</p>
+
+We have seen that there may be several competing estimates that can be used to estimate a parameter. How can one choose between these estimates? In this section we present some properties that may be considered desirable in an estimator. However, having these properties does not lead to an unambiguous choice of one estimate as the best for a problem.</p>
+<p class="text-justify"><strong>The setting:</strong> Let $X_{1},\ldots ,X_{n}$ be i.i.d random variables with a common density $f_{\theta}(x)$. The parameter $\theta$ is unknown and the goal is to estimate it. Let $T_{n}$ be an estimator for $\theta$, this just means that $T_{n}$ is a function of $X_{1},\ldots ,X_{n}$ (in words, if we have the data at hand, we should be able to compute the value of $T_{n}$).</p>
+<p class="text-justify"><strong>Bias:</strong> Define the <em> bias</em> of the estimator as $\mbox{bias}_{T_{n}}(\theta):=\mathbf{E}_{\theta}[T_{n}]-\theta$. If $\mbox{Bias}_{T_{n}}(\theta)=0$ for all values of the parameter $\theta$ then we say that $T_{n}$ is  <em> unbiased</em> for $\theta$. Here we write $\theta$ in the subscript of $\mathbf{E}_{\theta}$ to remind ourself that in computing the expectation we use the density $f_{\theta}$. However we shall often omit the subscript for simplicity.</p>
+<p class="text-justify"><strong>Mean-squared error:</strong> The <em> mean squared error</em> of $T_{n}$ is defined as $\mbox{m.s.e.}_{T_{n}}(\theta)=\mathbf{E}_{\theta}[(T_{n}-\theta)^{2}]$. This is a function of $\theta$. Smaller it is, better our estimate.</p>
+<p class="text-justify">In computing mean squared error, it is useful to observe the formula
+$$
+\mbox{m.s.e.}_{T_{n}}(\theta) = \mbox{Var}_{T_{n}}(\theta) + \left(\mbox{Bias}_{T_{n}}(\theta)\right)^{2}.
+$$
+To prove this, consider and random variable $Y$ with mean $\mu$ and observe that for any real number $a$ we have
+$$\begin{align*}
+\mathbf{E}[(Y-a)^{2}] &=\mathbf{E}[(Y-\mu+\mu-a)^{2}] = \mathbf{E}[(Y-\mu)^{2}]+(\mu-a)^{2}+2(\mu-a)\mathbf{E}[Y-\mu] \\
+&= \mathbf{E}[(Y-\mu)^{2}]+(\mu-a)^{2} = \mbox{Var}(Y) + (\mu-a)^{2}.
+\end{align*}$$
+Use this identity with $T_{n}$ in place of $Y$ and $\theta$ in place of $a$.</p>
+<p class="text-justify"><div id="theorem-163"><div class="panel panel-success remark"> <div class="panel-heading">Remark 163 </div><div class="panel-body"> An analogy. Consider shooting with a rifle having a telescopic sight. A given target can be missed for two reasons. One, the marksman may be unskilled and shoot all over the place, sometimes a meter to the right of the target, sometimes a meter to the left, etc. In this case, the shots have a large variance. Another person may consistently hit a point 20 cm. to the right of the target. Perhaps the telescopic sight is not set right, and this caused the systematic error. This is the bias. Both bias and variance contribute to missing the target.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-164"><div class="panel panel-info example"> <div class="panel-heading">Example 164 </div><div class="panel-body"> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$. Let $V_{n}=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$ be an estimate for ${\sigma}^{2}$. By expanding the squares we get
+$$
+V_{n}=\bar{X}_{n}^{2}+\frac{1}{n}\sum_{k=1}^{n}X_{k}^{2} -\frac{2}{n}\bar{X}_{n}\sum_{k=1}^{n}X_{k} = \left(\frac{1}{n}\sum_{k=1}^{n}X_{k}^{2} \right)-\bar{X}_{n}^{2}.
+$$
+It is given that $\mathbf{E}[X_{k}]=\mu$ and $\mbox{Var}(X_{k})={\sigma}^{2}$. Hence $\mathbf{E}[X_{k}^{2}]=\mu^{2}+{\sigma}^{2}$. We have seen before that $\mbox{Var}(\bar{X}_{n})={\sigma}^{2}$ and $\mathbf{E}[\bar{X}_{n}]=\mu$.  Hence $\mathbf{E}[\bar{X}_{n}^{2}]=\mu^{2}+\frac{{\sigma}^{2}}{n}$. Putting all this together, we get
+$$
+\mathbf{E}\left[V_{n} \right] = \left( \frac{1}{n}\sum_{k=1}^{n}\mu^{2}+{\sigma}^{2} \right) - \left(\mu^{2}+\frac{{\sigma}^{2}}{n}\right)  = \frac{n-1}{n}{\sigma}^{2}.
+$$
+Thus, the bias of $V_{n}$ is $\frac{n-1}{n}{\sigma}^{2}-{\sigma}^{2}=-\frac{1}{n}{\sigma}^{2}$.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-165"><div class="panel panel-info example"> <div class="panel-heading">Example 165 </div><div class="panel-body"> For the same setting as the previous example, suppose $W_{n}=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-\mu)^{2}$. Then it is easy to see that $\mathbf{E}[W_{n}]={\sigma}^{2}$. Can we say that $W_{n}$ is an unbiased estimate for ${\sigma}^{2}$? There is a hitch!</p>
+<p class="text-justify">If the value of $\mu$ is unknown, then $W_{n}$ is <em> not</em> an estimate (cannot compute it using $X_{1},\ldots ,X_{n}$!). However if $\mu$ is known, then it is an unbiased estimate. For example, if we knew that $\mu=0$, then $W_{n}=\frac{1}{n}\sum_{k=1}^{n}X_{k}^{2}$ is an unbiased estimate for ${\sigma}^{2}$.</p>
+<p class="text-justify">When $\mu$ is unknown, we define $s_{n}^{2}=\frac{1}{n-1}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$. Clearly $s_{n}^{2}=\frac{n}{n-1}V_{n}$ and hence $\mathbf{E}[s_{n}^{2}]=\frac{n}{n-1}\mathbf{E}[V_{n}]= {\sigma}^{2}$. Thus, $s_{n}^{2}$ is an unbiased estimate for ${\sigma}^{2}$. Note that $s_{n}^{2}$ depends only on the data and hence it is an estimate, whether $\mu$ is known or unknown.
+</div></div></div>
+All the remarks in the above two examples apply for any distribution, i.e.,
+<ol>
+<li> The sample mean is unbiased for the population mean.
+</li>
+<li> The sample variance $s_{n}^{2}=\frac{1}{n-1}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$ is unbiased for the population variance. But $V_{n}=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$ is not, in fact $\mathbf{E}[V_{n}]=\frac{n-1}{n}{\sigma}^{2}$.
+</ol>
+ It appears that $s_{n}^{2}$ is better, but the following remark says that one should be cautious in making such a statement.
+<div id="theorem-166"><div class="panel panel-success remark"> <div class="panel-heading">Remark 166 </div><div class="panel-body"> In case of $N(\mu,{\sigma}^{2})$ data, it turns out that although $s_{n}^{2}$ is unbiased and $V_{n}$ is biased, the mean squared error of $V_{n}$ is smaller! Further $V_{n}$ is the maximum likelihood estimate of ${\sigma}^{2}$! Overall, unbiasedness is not so important as having smaller mean squared error, but for estimating variance (when the mean is not known), we always use $s_{n}^{2}$. The computation of the m.s.e is a bit tedious, so we skip it here.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-167"><div class="panel panel-info example"> <div class="panel-heading">Example 167 </div><div class="panel-body"> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mbox{Ber}(p)$. Then $\bar{X}_{n}$ is an estimate for $p$. It is unbiased since $\mathbf{E}[\bar{X}_{n}]=p$. Hence, the m.s.e of $\bar{X}_{n}$ is just the variance which is equal to $p(1-p)/n$.
+</div></div></div></p>
+<p class="text-justify"><strong>A puzzle:</strong> A coin $C_{1}$ has probability $p$ of turning up head and a coin $C_{2}$ has probability $2p$ of turning up head. All we know is that $0 < p < \frac{1}{2}$. You are given $20$ tosses. You can choose all tosses from $C_{1}$ or all tosses from $C_{2}$ or some tosses from each (the total is $20$). If the objective is to estimate $p$, what do you do?</p>
+<p class="text-justify"><strong>Solution:</strong> If we choose to have all $n=20$ tosses from $C_{1}$, then we get $X_{1},\ldots ,X_{n}$ that are i.i.d. $\mbox{Ber}(p)$. An estimate for $p$ is $\bar{X}_{n}$ which is unbiased and hence $\mbox{MSE}_{\bar{X}_{n}}(p)=\mbox{Var}(\bar{X}_{n})=p(1-p)/n$. On the other hand if we choose to have all $20$ tosses from $C_{2}$, then we get $Y_{1},\ldots ,Y_{n}$ that are i.i.d. $\mbox{Ber}(2p)$. The estimate for $p$ is now $\bar{Y}_{n}/2$ which is also unbiased and has $\mbox{MSE}_{\bar{Y}_{n}/2}(p)=\mbox{Var}(\bar{Y}_{n})=2p(1-2p)/4 = p(1-2p)/2$. It is not hard to see that for all $p < 1/2$, $\mbox{MSE}_{\bar{Y}_{n}/2}(p) < \mbox{MSE}_{\bar{X}_{n}}(p)$ and hence choosing $C_{2}$ is better, at least by mean-squared criterion! It can be checked that if we choose to have $k$ tosses from $C_{1}$ and the rest from $C_{2}$, the MSE of the corresponding estimate will be between the two MSEs found above and hence not better than $\bar{Y}_{n}/2$.</p>
+<p class="text-justify"><strong>Another puzzle:</strong> A factory produces light bulbs having an exponential distribution with mean $\mu$. Another factory produces light bulbs having an exponential distribution with mean $2\mu$. Your goal is to estimate $\mu$. You are allowed to choose a total of $50$ light bulbs (all from the first or all from the second or some from each factory). What do you do?</p>
+<p class="text-justify"><strong>Solution:</strong> If we pick all $n=50$ bulbs from the first factory, we see $X_{1},\ldots ,X_{n}$ i.i.d. $\mbox{Exp}(1/\mu)$. The estimate for $\mu$ is $\bar{X}_{n}$ which has $\mbox{MSE}_{\bar{X}_{n}}(\mu)=\mbox{Var}(\bar{X}_{n})=\mu^{2}/n$. If we choose  all bulbs from factory $2$ we get $Y_{1},\ldots ,Y_{n}$ i.i.d. $\mbox{Exp}(1/2\mu)$. The estimate for $\mu$ is $\bar{Y}_{n}/2$. But $\mbox{MSE}_{\bar{Y}_{n}/2}(\mu)=\mbox{Var}(\bar{Y}_{n}/2)=(2\mu)^{2}/4n=\mu^{2}/n$. The two mean-squared errors are exactly the same!</p>
+<p class="text-justify"><strong>Probabilistic thinking:</strong> Is there any calculation-free explanation why the answers to the two puzzles are as above? Yes, and it is illustrative of what may be called probabilistic thinking. Take the second puzzle. Why are the two estimates same by mean-squared error? Is one better by some other criterion?</p>
+<p class="text-justify">Recall that if $X\sim \mbox{Exp}(1/\mu)$ then $X/2\sim \mbox{Exp}(1/2\mu)$ and vice versa. Therefore, if we have data from $\mbox{Exp}(1/\mu)$ distribution, then we can divided all the numbers by $2$ and convert it into data from $\mbox{Exp}(1/2\mu)$ distribution. Conversely if we have data from $\mbox{Exp}(1/2\mu)$ distribution, then we can convert it into data from $\mbox{Exp}(1/\mu)$ distribution by multiplying each number by $2$. Hence there should be no advantage in choosing either factory. We leave it for you to think in analogous ways why in the first puzzle $C_{2}$ is better than $C_{1}$.</p>
+<p class="text-justify">
+</p>
+<div class="pull-right"><a href="chapter-31.html" class="btn btn-primary">Chapter 31. Confidence intervals</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      Illustrations.main();
+    </script>
+
+  </body>
+</html>
+    

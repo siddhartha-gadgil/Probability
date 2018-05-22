@@ -1,0 +1,252 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Probability Models and Stastics</title>
+<link rel="icon" href="../IIScLogo.jpg">
+
+<!-- Latest compiled and minified CSS  for Bootstrap -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<style type="text/css">
+   body { padding-top: 60px; }
+   .section {padding-top: 60px;}
+   #arxiv {
+     border-style: solid;
+     border-width: 1px;
+   }
+</style>
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } },
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$'], ['\\[', '\\]' ]],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">Probability and Statistics (notes by Manjunath Krishnapur)</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Table of Contents</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-1.html">1. What is statistics and what is probability?</a> </li>
+<li><a href="chapter-2.html">2. Discrete probability spaces</a> </li>
+<li><a href="chapter-3.html">3. Examples of discrete probability spaces</a> </li>
+<li><a href="chapter-4.html">4. Countable and uncountable</a> </li>
+<li><a href="chapter-5.html">5. On infinite sums</a> </li>
+<li><a href="chapter-6.html">6. Basic rules of probability</a> </li>
+<li><a href="chapter-7.html">7. Inclusion-exclusion formula</a> </li>
+<li><a href="chapter-8.html">8. Bonferroni's inequalities</a> </li>
+<li><a href="chapter-9.html">9. Independence - a first look</a> </li>
+<li><a href="chapter-10.html">10. Conditional probability and independence</a> </li>
+<li><a href="chapter-11.html">11. Independence of three or more events</a> </li>
+<li><a href="chapter-12.html">12. Subtleties of conditional probability</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-13.html">13. Discrete probability distributions</a> </li>
+<li><a href="chapter-14.html">14. General probability distributions</a> </li>
+<li><a href="chapter-15.html">15. Uncountable probability spaces - conceptual difficulties</a> </li>
+<li><a href="chapter-16.html">16. Examples of continuous distributions</a> </li>
+<li><a href="chapter-17.html">17. Simulation</a> </li>
+<li><a href="chapter-18.html">18. Joint distributions</a> </li>
+<li><a href="chapter-19.html">19. Change of variable formula</a> </li>
+<li><a href="chapter-20.html">20. Independence and conditioning of random variables</a> </li>
+<li><a href="chapter-21.html">21. Mean and Variance</a> </li>
+<li><a href="chapter-22.html">22. Makov's and Chebyshev's inequalities</a> </li>
+<li><a href="chapter-23.html">23. Weak law of large numbers</a> </li>
+<li><a href="chapter-24.html">24. Monte-Carlo integration</a> </li>
+<li><a href="chapter-25.html">25. Central limit theorem</a> </li>
+<li><a href="chapter-26.html">26. Poisson limit for rare events</a> </li>
+<li><a href="chapter-27.html">27. Entropy, Gibbs distribution</a> </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <li><a href="chapter-28.html">28. Introduction</a> </li>
+<li><a href="chapter-29.html">29. Estimation problems</a> </li>
+<li><a href="chapter-30.html">30. Properties of estimates</a> </li>
+<li><a href="chapter-31.html">31. Confidence intervals</a> </li>
+<li><a href="chapter-32.html">32. Confidence interval for the mean</a> </li>
+<li><a href="chapter-33.html">33. Actual confidence by simulation</a> </li>
+<li><a href="chapter-34.html">34. Hypothesis testing - first examples</a> </li>
+<li><a href="chapter-35.html">35. Testing for the mean of a normal population</a> </li>
+<li><a href="chapter-36.html">36. Testing for the difference between means of two normal populations</a> </li>
+<li><a href="chapter-37.html">37. Testing for the mean in absence of normality</a> </li>
+<li><a href="chapter-38.html">38. Chi-squared test for goodness of fit</a> </li>
+<li><a href="chapter-39.html">39. Tests for independence</a> </li>
+<li><a href="chapter-40.html">40. Regression and Linear regression</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+<div class="container">
+<h1 class="text-center bg-info">Chapter 3 : Examples of discrete probability spaces</h1>
+<p>&nbsp;</p>
+
+<div id="theorem-15"><div class="panel panel-info example"> <div class="panel-heading">Example 15 </div><div class="panel-body"> <strong>Toss $n$ coins</strong>. We saw this before, but assumed that the coins are fair. Now we do not. The sample space is
+$$
+\Omega=\{0,1\}^{n}=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{n}){\; : \;} \omega_{i}=0 \mbox{ or } 1 \mbox{ for each }i\le n\}.
+$$
+Further we assign $p_{\underline{\omega}}=\alpha_{\omega_{1}}^{(1)}\ldots \alpha_{\omega_{n}}^{(n)}$. Here $\alpha_{0}^{(j)}$ and $\alpha_{1}^{(j)}$ are supposed to indicate the probabilities that the $j^{\mbox{th}}$ coin falls tails up or heads up, respectively. Why did we take the product of $\alpha^{(j)}_{\cdot}$s and not some other combination? This is a non-mathematical question about what model is suited for the given real-life example. For now, the only justification is that empirically the above model seems to capture the real life situation accurately.</p>
+<p class="text-justify">In particular, if the $n$ coins are identical, we may write $p=\alpha_{1}^{(j)}$ (for any $j$) and the elementary probabilities become  $p_{\underline{\omega}}=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}$ where $q=1-p$.</p>
+<p class="text-justify">Fix $0\le k\le n$ and let $B_{k}=\{\underline{\omega}{\; : \;} \sum_{i=1}^{n}\omega_{i}=k\}$ be the event that we see exactly $k$ heads out of $n$ tosses. Then $\mathbf{P}(B_{k})=\binom{n}{k}p^{k}q^{n-k}$. If $A_{k}$ is the event that there are at least $k$ heads, then
+$\mathbf{P}(A_{k})=\sum\limits_{\ell=k}^{n}\binom{n}{\ell}p^{\ell}q^{n-\ell}$.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-16"><div class="panel panel-info example"> <div class="panel-heading">Example 16 </div><div class="panel-body"> <strong>Toss a coin $n$ times</strong>. Again
+$$\begin{align*}
+\Omega=\{0,1\}^{n}&=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{n}){\; : \;} \omega_{i}=0 \mbox{ or } 1 \mbox{ for each }i\le n\}, \\
+p_{\underline{\omega}}&=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}.
+\end{align*}$$
+This is the same probability space that we got for the tossing of $n$ identical looking coins. Implicit is the assumption that once a coin is tossed, for the next toss it is as good as a different coin but with the same $p$. It is possible to imagine a world where coins retain the memory of what happened before (or as explained before, we can make a ``coin'' that remembers previous tosses!), in which case this would not be a good model for the given situation. We don't believe that this is the case for coins in our world, and this can be verified empirically.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-17"><div class="panel panel-info example"> <div class="panel-heading">Example 17 </div><div class="panel-body"> <strong>Shuffle a deck of 52 cards</strong>. $\Omega=S_{52}$, the set of all permutations<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
+                                1
+                                 </a> </sup><span class="collapse small" id="footnote-1">We use the notation $[n]$ to denote the set $\{1,2,\ldots ,n\}$. A permutation of $[n]$ is a vector $(i_{1},i_{2},\ldots ,i_{n})$ where $i_{1},\ldots ,i_{n}$ are distinct elements of $[n]$, in other words, they are $1,2,\ldots ,n$ but in some order. Mathematically, we may define a permutation as a bijection $\pi:[n]\rightarrow [n]$. Indeed, for a bijection $\pi$, the numbers $\pi(1),\ldots ,\pi(n)$ are just $1,2,\ldots ,n$ in some order</span>  of $[52]$ and $p_{\pi}=\frac{1}{52!}$ for each $\pi\in S_{52}$.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-18"><div class="panel panel-info example"> <div class="panel-heading">Example 18 </div><div class="panel-body"> <strong>``Psychic'' guesses a deck of cards</strong>. The sample space is $\Omega=S_{52}\times S_{52}$ and $p_{(\pi,{\sigma})}=1/(52!)^{2}$ for each pair $(\pi,{\sigma})$ of permutations. In a pair $(\pi,{\sigma})$, the permutation $\pi$ denotes the actual order of  cards in the shuffled deck, and ${\sigma}$ denotes the order guessed by the psychic. If the guesses are purely random, then the probabilities are as we have written.</p>
+<p class="text-justify">An interesting random variable is the number of correct guesses. This is the function $X:\Omega\rightarrow \mathbb{R}$ defined by $X(\pi,{\sigma})=\sum_{i=1}^{52}{\mathbf 1}_{\pi_{i}={\sigma}_{i}}$. Correspondingly we have the events $A_{k}=\{(\pi,{\sigma}){\; : \;} X(\pi,{\sigma})\ge k\}$.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-19"><div class="panel panel-info example"> <div class="panel-heading">Example 19 </div><div class="panel-body"> <strong>Toss a coin till a head turns up</strong>. $\Omega=\{1,01,001,0001,\ldots \}\cup\{\bar{0}\}$. Let us write $0^{k}1=0\ldots01$ as a short form for $k$ zeros (tails) followed by $1$ and $\bar{0}$ stands for the sequence of all tails. Let $p\in [0,1]$. Then, we set $p_{0^{k}1}=q^{k}p$ for each $k\in \mathbb{N}$. We also set $p_{\bar{0}}=0$ if $p > 0$ and $p_{\bar{0}}=1$ if $p=0$. This is forced on us by the requirement that elementary probabilities add to $1$.</p>
+<p class="text-justify">Let $A=\{0^{k}1{\; : \;} k\ge n\}$ be the event that at least $n$ tails fall before a head turns up. Then $\mathbf{P}(A)=q^{n}p+q^{n+1}p+\ldots =q^{n}$.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-20"><div class="panel panel-info example"> <div class="panel-heading">Example 20 </div><div class="panel-body"> <strong>Place $r$ distinguishable balls in $m$ distinguishable urns at random</strong>. We saw this before (the words ``labelled'' and ``distinguishable'' mean the same thing here). The sample space is $\Omega=[m]^{r}=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{r}){\; : \;} 1\le \omega_{i}\le m\}$ and $p_{\underline{\omega}}=m^{-r}$ for every $\underline{\omega}\in \Omega$. Here $\omega_{i}$ indicates the urn number into which the $i^{\mbox{th}}$ ball goes.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-21"><div class="panel panel-info example"> <div class="panel-heading">Example 21 </div><div class="panel-body"> <strong>Place $r$ indistinguishable balls in $m$ distinguishable urns at random</strong>.
+Since the balls are indistinguishable, we can only count the number of balls in each urn. The sample space is
+$$
+ \Omega=\{(\ell_{1},\ldots ,\ell_{m}){\; : \;} \ell_{i}\ge 0, \; \ell_{1}+\ldots +\ell_{m}=r\}.
+$$
+We give two proposals for the elementary probabilities.
+<ol>
+<li> Let $p^{\mbox{MB}}_{(\ell_{1},\ldots ,\ell_{m})}=\frac{m!}{\ell_{1}!\ell_{2}!\ldots \ell_{m}!}\frac{1}{m^{r}}$. These are the probabilities that result if we place $r$ labelled balls in $m$ labelled urns, and then erase the labels on the balls.</p>
+<p class="text-justify"></li>
+<li> Let $p^{\mbox{BE}}_{(\ell_{1},\ldots ,\ell_{m})}=\frac{1}{\binom{m+r-1}{r-1}}$ for each $(\ell_{1},\ldots ,\ell_{m})\in \Omega$. Elementary probabilities are chosen so that all distinguishable configurations are equally likely.
+</ol>
+That these are legitimate probability spaces depend on two combinatorial facts.
+<div id="theorem-22"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 22 </div><div class="panel-body">
+<ol>
+<li> Let $(\ell_{1},\ldots ,\ell_{m})\in \Omega$. Show that $\#\{\underline{\omega}\in [m]^{r} {\; : \;} \sum_{j=1}^{r}{\mathbf 1}_{\omega_{j}=i}=\ell_{i} \mbox{ for each }i\in [m]\} = \frac{n!}{\ell_{1}!\ell_{2}!\ldots \ell_{m}!}$. Hence or directly, show that $\sum\limits_{\omega\in \Omega}p_{\omega}^{MB}=1$.
+</li>
+<li> Show that $\# \Omega = \binom{m+r-1}{r-1}$. Hence, $\sum\limits_{\omega\in \Omega}p_{\omega}^{BE}=1$.
+</ol></p>
+<p class="text-justify"></div></div></div></p>
+<p class="text-justify">The two models are clearly different. Which one captures reality? We can arbitrarily label the balls for our convenience, and then erase the labels in the end. This clearly yields elementary probabilities $p^{MB}$. Or to put it another way, pick the balls one by one and assign them randomly to one of the urns. This suggests that $p^{MB}$ is the ``right one''.</p>
+<p class="text-justify">This leaves open the question of whether there is a natural mechanism of assigning balls to urns so that the probabilities $p^{BE}$ shows up. No such mechanism has been found. But this probability space does occur in the physical world. If $r$ photons (``indistinguishable balls'') are to occupy $m$ energy levels (``urns''), then empirically it has been verified that the correct probability space is the second one!<sup> <a data-toggle="collapse" href="#footnote-2" aria-expanded="false" aria-controls="footnote-2">
+                                2
+                                 </a> </sup><span class="collapse small" id="footnote-2">The probabilities $p^{\mbox{MB}}$ and $p^{\mbox{BE}}$ are called Maxwell-Boltzmann statistics and Bose-Einstein statistics. There is a third kind, called Fermi-Dirac statistics which is obeyed by electrons. For general $m\ge r$,  the sample space is $\Omega_{\mbox{FD}}=\{(\ell_{1},\ldots ,\ell_{m}){\; : \;} \ell_{i}=0 \mbox{ or }1 \mbox{ and }\ell_{1}+\ldots +\ell_{m}=r\}$ with equal probabilities for each element. In words, all distinguishable configurations are equally likely, with the added constraint that at most one electron can occupy each energy level</span> 
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-23"><div class="panel panel-info example"> <div class="panel-heading">Example 23 </div><div class="panel-body"> <strong>Sampling with replacement from a population</strong>. Define $\Omega=\{\underline{\omega}\in [N]^{k}{\; : \;} \omega_{i}\in [N] \mbox{ for }1\le i\le k\}$ with $p_{\underline{\omega}}=1/N^{k}$ for each $\underline{\omega}\in \Omega$. Here $[N]$ is the population (so the size of the population is $N$) and the size of the sample is $k$. Often the language used is of a box with $N$ coupons from which $k$ are drawn with replacement.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-24"><div class="panel panel-info example"> <div class="panel-heading">Example 24 </div><div class="panel-body"> <strong>Sampling without replacement from a population</strong>. Now we take
+$$\begin{align*}
+\Omega=\left\{\underline{\omega}\in [N]^{k}{\; : \;} \omega_{i}\mbox{ are distinct elements of } [N]\right\}, \\
+p_{\underline{\omega}}=\frac{1}{N(N-1)\ldots (N-k+1)}  \mbox{ for each }\underline{\omega}\in \Omega.
+\end{align*}$$</p>
+<p class="text-justify">Fix $m  <  N$ and define the random variable $X(\underline{\omega})=\sum_{i=1}^{k}{\mathbf 1}_{\omega_{i}\le m}$. If the population $[N]$ contains a subset, say $[m]$, (could be the subset of people having a certain disease), then $X(\underline{\omega})$ counts the number of people in the sample who have the disease. Using $X$ one can define  events such as $A=\{\underline{\omega}{\; : \;} X(\underline{\omega})=\ell\}$ for some $\ell\le m$. If $\underline{\omega}\in A$, then $\ell$ of the $\omega_{i}$ must be in $[m]$ and the rest in $[N]\setminus [m]$. Hence $$\#A=\binom{k}{\ell}m(m-1)\ldots (m-\ell+1)(N-m)(N-m-1)\ldots (N-m-(k-\ell)+1).$$
+As the probabilities are equal for all sample points, we get
+$$\begin{align*}
+\mathbf{P}(A)&= \frac{\binom{k}{\ell}m(m-1)\ldots (m-\ell+1)(N-m)(N-m-1)\ldots (N-m-(k-\ell)+1)}{N(N-1)\ldots (N-k+1)} \\
+ &= \frac{1}{\binom{N}{k}}\binom{m}{\ell}\binom{N-m}{k-\ell}.
+\end{align*}$$
+This expression arises whenever the population is subdivided into two parts and we count the number of samples that fall in one of the sub-populations.
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-25"><div class="panel panel-info example"> <div class="panel-heading">Example 25 </div><div class="panel-body"><strong>Gibbs measures</strong>. Let $\Omega$ be a finite set and let ${\mathcal H}:\Omega\rightarrow \mathbb{R}$ be a function. Fix $\beta\ge 0$. Define $Z_{\beta}=\sum_{\omega}e^{-\beta {\mathcal H}(\omega)}$ and then set $p_{\omega}=\frac{1}{Z_{\beta}}e^{-\beta {\mathcal H}(\omega)}$. This is clearly a valid assignment of probabilities.</p>
+<p class="text-justify">This is a class of examples from statistical physics. In that context, $\Omega$ is the set of all possible states of a system and ${\mathcal H}(\omega)$ is the energy of the state $\omega$. In mechanics a system settles down to the state with the lowest possible energy, but if there are thermal fluctuations (meaning the ambient temperature is not absolute zero), then the system may also be found in other states, but higher energies are less and less likely. In the above assignment, for two states $\omega$ and $\omega'$, we see that $p_{\omega}/p_{\omega'}=e^{\beta ({\mathcal H}(\omega')-{\mathcal H}(\omega))}$ showing that higher energy states are less probable. When $\beta=0$, we get $p_{\omega}=1/|\Omega|$, the uniform distribution on $\Omega$. In statistical physics, $\beta$ is equated to $1/\kappa T$ where $T$ is the temperature and $\kappa$ is Boltzmann's constant.</p>
+<p class="text-justify">Different physical systems are defined by choosing $\Omega$ and ${\mathcal H}$ differently. Hence this provides a rich class of examples which are of great importance in probability.
+</div></div></div></p>
+<p class="text-justify">It may seem that probability is trivial, since the only problem is to find the sum of $p_{\omega}$ for $\omega$ belonging to event of interest. This is far from the case. The following example is an illustration.</p>
+<p class="text-justify"><div id="theorem-26"><div class="panel panel-info example"> <div class="panel-heading">Example 26 </div><div class="panel-body"><strong>Percolation</strong>. Fix $m,n$ and consider a rectangle in $\mathbb{Z}^{2}$, $R=\{(i,j)\in \mathbb{Z}^{2}{\; : \;} 0\le i\le n, \ 0\le j\le m\}$. Draw this on the plane along with the grid lines. We see $(m+1)n$ horizontal edges and $(n+1)m$ vertical edges. Let $E$ be the set of $N=(m+1)n+(n+1)m$ edges and let $\Omega$ be the set of all subsets of $E$. Then $|\Omega|=2^{N}$. Let $p_{\omega}=2^{-N}$ for each $\omega \in \Omega$. An interesting event is
+$$\begin{align*}
+A=\{\omega \in \Omega{\; : \;} & \mbox{ the subset of edges in }\omega \\
+ & \mbox{ connect  the top side of }R \mbox{ to the bottom side of }R\}.
+\end{align*}$$</p>
+<p class="text-justify">This may be thought of as follows. Imagine that each edge is a pipe through which water can flow. However each tube may be blocked or open. $\omega$ is the subset of pipes that are open. Now pour water at the top of the rectangle $R$. Will water trickle down to the bottom? The answer is yes if and only if $\omega$ belongs to $A$.</p>
+<p class="text-justify">Finding $\mathbf{P}(A)$ is a very difficult problem. When $n$ is large and $m=2 n$, it is expected that $\mathbf{P}(A)$ converges to a specific number, but proving it is an open problem as of today!<sup> <a data-toggle="collapse" href="#footnote-3" aria-expanded="false" aria-controls="footnote-3">
+                                3
+                                 </a> </sup><span class="collapse small" id="footnote-3">In a very similar problem on a triangular lattice, it was proved by Stanislav Smirnov (2001) for which he won a fields medal. Proof that computing probabilities is not always trivial</span> 
+</div></div></div></p>
+<p class="text-justify">We now give two non-examples.
+<div id="theorem-27"><div class="panel panel-info example"> <div class="panel-heading">Example 27 </div><div class="panel-body"><strong>A non-example - Pick a natural number uniformly at random</strong>. The sample space is clearly $\Omega=\mathbb{N}=\{1,2,3,\ldots\}$. The phrase ``uniformly at random'' suggests that the elementary probabilities should be the same for all elements. That is $p_{i}=p$ for all $i\in \mathbb{N}$ for some $p$. If $p=0$, then $\sum_{i\in \mathbb{N}}p_{i}=0$ whereas if $p > 0$, then $\sum_{i\in \mathbb{N}}p_{i}=\infty$. This means that there is no way to assign elementary probabilities so that each number has the same chance to be picked.</p>
+<p class="text-justify">This appears obvious, but many folklore puzzles and paradoxes in probability are based on the faulty assumption that it is possible to pick a natural number at random. For example, when asked a question like ``What is the probability that a random integer is odd?'', many people answer $1/2$. We want to emphasize that the probability space has to be defined first, and only then can probabilities of events be calculated. Thus, the question does not make sense to us and we do not have to answer it!<sup> <a data-toggle="collapse" href="#footnote-4" aria-expanded="false" aria-controls="footnote-4">
+                                4
+                                 </a> </sup><span class="collapse small" id="footnote-4">For those interested, there is one way to make sense of such questions. It is to consider a sequence of probability spaces $\Omega^{(n)}=\{1,2,\ldots ,n\}$ with elementary probabilities $p^{(n)}_{i}=1/n$ for each $i\in \Omega_{n}$. Then, for a subset $A\subseteq \mathbb{Z}$, we consider $\mathbf{P}_{n}(A\cap \Omega_{n})=\#(A\cap [n])/n$. If these probabilities converge to a limit $x$ as $n\rightarrow \infty$, then we could say that $A$ has asymptotic probability $x$. In this sense, the set of odd numbers does have  asymptotic probability $1/2$, the set of numbers divisible by $7$ has asymptotic probability $1/7$ and the set of prime numbers has asymptotic probability $0$. However, this notion of asymptotic probability has many shortcomings. Many subsets of natural numbers will not have an asymptotic probability, and even sets which do have asymptotic probability fail to satisfy basic rules of probability that we shall see later. Hence, we shall keep such examples out of our system</span> 
+</div></div></div></p>
+<p class="text-justify"><div id="theorem-28"><div class="panel panel-info example"> <div class="panel-heading">Example 28 </div><div class="panel-body"><strong>Another non-example - Throwing darts</strong>. A dart is thrown at a circular dart board. We assume that the dart does hit the board but were it hits is ``random'' in the same sense in which we say the a coin toss is random. Intuitively this appears to make sense. However our framework is not general enough to incorporate this example. Let us see why.</p>
+<p class="text-justify">The dart board can be considered to be the disk $\Omega=\{(x,y){\; : \;} x^{2}+y^{2}\le r^{2}\}$ of given radius $r$. This is an uncountable set. We cannot assign elementary probabilities $p_{(x,y)}$ for each $(x,y)\in \Omega$ in any reasonable way. In fact the only reasonable assignment would be to set $p_{(x,y)}=0$ for each $(x,y)$ but then what is $\mathbf{P}(A)$ for a subset $A$? Uncountable sums are not well defined.</p>
+<p class="text-justify">We need a branch of mathematics called <em> measure theory</em> to make proper sense of uncountable probability spaces. This will not be done in this course although we shall later say a bit about the difficulties involved. The same difficulty shows up in the following ``random experiments'' also.
+<ol>
+<li> <strong>Draw a number at random from the interval $[0,1]$</strong>. $\Omega=[0,1]$ which is uncountable.
+</li>
+<li> <strong>Toss a fair coin infinitely many times</strong>. $\Omega=\{0,1\}^{\mathbb{N}}:=\{\underline{\omega}=(\omega_{1},\omega_{2},\ldots ){\; : \;} \omega_{i}=0 \mbox{ or }1\}$. This is again an uncountable set.
+</ol>
+</div></div></div>
+<div id="theorem-29"><div class="panel panel-success remark"> <div class="panel-heading">Remark 29 </div><div class="panel-body"> In one sense, the first non-example is almost irredeemable but  the second non-example can be dealt with, except for technicalities beyond this course. We shall later give a set of working rules to work with such ``continuous probabilities''. Fully satisfactory development will have to wait for a course in measure theory.
+</div></div></div></p>
+<p class="text-justify">
+</p>
+<div class="pull-right"><a href="chapter-4.html" class="btn btn-primary">Chapter 4. Countable and uncountable</a></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script type="text/javascript" src='../js/probability.js'></script>
+<script type="text/javascript">
+      Illustrations.main();
+    </script>
+
+  </body>
+</html>
+    
