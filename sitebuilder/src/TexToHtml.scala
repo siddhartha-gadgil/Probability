@@ -124,7 +124,7 @@ object TeXToHtml {
       | <script type="text/javascript" src='../js/bootstrap.min.js'></script>
       |<script type="text/javascript" src='../js/probability.js'></script>
       |<script type="text/javascript">
-      |      FairCoin.main();
+      |      Illustrations.main();
       |    </script>
       |
       |  </body>

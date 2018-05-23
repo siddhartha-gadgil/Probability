@@ -3184,45 +3184,6 @@ function $m_Lprobability_FairCoin$() {
   return $n_Lprobability_FairCoin$
 }
 /** @constructor */
-function $c_Lprobability_Illustrations$() {
-  $c_O.call(this)
-}
-$c_Lprobability_Illustrations$.prototype = new $h_O();
-$c_Lprobability_Illustrations$.prototype.constructor = $c_Lprobability_Illustrations$;
-/** @constructor */
-function $h_Lprobability_Illustrations$() {
-  /*<skip>*/
-}
-$h_Lprobability_Illustrations$.prototype = $c_Lprobability_Illustrations$.prototype;
-$c_Lprobability_Illustrations$.prototype.main__V = (function() {
-  $m_Lprobability_FairCoin$().main__V()
-});
-$c_Lprobability_Illustrations$.prototype.$$js$exported$meth$main__O = (function() {
-  this.main__V()
-});
-$c_Lprobability_Illustrations$.prototype.init___ = (function() {
-  $c_O.prototype.init___.call(this);
-  $n_Lprobability_Illustrations$ = this;
-  return this
-});
-$c_Lprobability_Illustrations$.prototype.main = (function() {
-  return this.$$js$exported$meth$main__O()
-});
-var $d_Lprobability_Illustrations$ = new $TypeData().initClass({
-  Lprobability_Illustrations$: 0
-}, false, "probability.Illustrations$", {
-  Lprobability_Illustrations$: 1,
-  O: 1
-});
-$c_Lprobability_Illustrations$.prototype.$classData = $d_Lprobability_Illustrations$;
-var $n_Lprobability_Illustrations$ = (void 0);
-function $m_Lprobability_Illustrations$() {
-  if ((!$n_Lprobability_Illustrations$)) {
-    $n_Lprobability_Illustrations$ = new $c_Lprobability_Illustrations$().init___()
-  };
-  return $n_Lprobability_Illustrations$
-}
-/** @constructor */
 function $c_jl_Class() {
   $c_O.call(this);
   this.data$1 = null
@@ -21886,6 +21847,5 @@ var $d_s_xml_NodeBuffer = new $TypeData().initClass({
 });
 $c_s_xml_NodeBuffer.prototype.$classData = $d_s_xml_NodeBuffer;
 $e.FairCoin = $m_Lprobability_FairCoin$();
-$e.Illustrations = $m_Lprobability_Illustrations$();
 }).call(this);
 //# sourceMappingURL=out.js.map
