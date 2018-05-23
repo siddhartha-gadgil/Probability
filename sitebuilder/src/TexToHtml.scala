@@ -624,7 +624,7 @@ $foot"""
 
   lazy val tocHtml = s"""$top
 $chapNav
-$banner
+$banner 
 <h1 class="text-center bg-info">Table of Contents</h1>
 <p>&nbsp;</p>
 <ol>
