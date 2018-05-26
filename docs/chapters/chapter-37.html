@@ -130,6 +130,10 @@
 <div class="container">
 <h1 class="text-center bg-info">Chapter 37 : Testing for the mean in absence of normality</h1>
 <p>&nbsp;</p>
+
+
+
+ <p class="text-justify">
  Suppose $X_{1},\ldots ,X_{n}$ are i.i.d. $\mbox{Ber}(p)$. Consider the test
 $$
 H_{0}: \; p=p_{0} \;\;\; \mbox{ versus }\;\;\; H_{1}: \; p\not=p_{0}.
@@ -138,13 +142,18 @@ One can also consider the one-sided test. Just as in the confidence interval pro
  $$
 \left[\bar{X}_{n}-z_{\alpha/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}, \bar{X}_{n}+z_{\alpha/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}\right].
 $$
-Inverting this confidence interval, we see that a reasonable test is:</p>
-<p class="text-justify">Reject the alternative if $p_{0}$ belongs to the above CI. That is, accept the alternative if
+Inverting this confidence interval, we see that a reasonable test is:
+ </p>
+ <p>
+ Reject the alternative if $p_{0}$ belongs to the above CI. That is, accept the alternative if
 $$
 \bar{X}_{n}-z_{\alpha/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}\le p_{0}\le \bar{X}_{n}+z_{\alpha/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}
 $$
-This test has (approximately) significance level $\alpha$.</p>
-<p class="text-justify">\medskip
+This test has (approximately) significance level $\alpha$.
+ </p>
+           
+ <p class="text-justify">
+\medskip
 More generally, if we have data $X_{1},\ldots ,X_{n}$ from a population with mean $\mu$ and variance ${\sigma}^{2}$, then consider the test
 $$
 H_{0}: \; \mu=\mu_{0} \;\;\; \mbox{ versus }\;\;\; H_{1}: \; \mu\not=\mu_{0}.
@@ -153,9 +162,13 @@ A test with approximate significance level $\alpha$ is given by: Reject the alte
 $$
 \bar{X}_{n}-z_{\alpha/2}\frac{s_{n}}{\sqrt{n}}\le \mu_{0}\le \bar{X}_{n}+z_{\alpha/2}\frac{s_{n}}{\sqrt{n}}.
 $$
-Just as with confidence intervals, we can find the actual level of significance (if $n$ is not large enough) by simulating data on a computer.</p>
-<p class="text-justify">
-</p>
+Just as with confidence intervals, we can find the actual level of significance (if $n$ is not large enough) by simulating data on a computer.
+ </p>
+ <p>
+ 
+ </p>
+           
+
 <div class="pull-right"><a href="chapter-38.html" class="btn btn-primary">Chapter 38. Chi-squared test for goodness of fit</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

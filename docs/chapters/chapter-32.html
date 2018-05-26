@@ -131,13 +131,22 @@
 <h1 class="text-center bg-info">Chapter 32 : Confidence interval for the mean</h1>
 <p>&nbsp;</p>
 
-Now suppose $X_{1},\ldots ,X_{n}$ are i.i.d. random variables from some distribution with mean $\mu$ and variance ${\sigma}^{2}$, both unknown. How can we construct a confidence interval for $\mu$?</p>
-<p class="text-justify">In case of normal distribution, recall that the $(1-\alpha)$-CI that we gave was
+
+
+ <p class="text-justify">
+
+Now suppose $X_{1},\ldots ,X_{n}$ are i.i.d. random variables from some distribution with mean $\mu$ and variance ${\sigma}^{2}$, both unknown. How can we construct a confidence interval for $\mu$?
+ </p>
+ <p>
+ In case of normal distribution, recall that the $(1-\alpha)$-CI that we gave was
 $$
 \left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right),\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right)\right] or \left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alpha/2},\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alpha/2}\right]
 $$
- Is this a valid confidence interval in general? The answer is ``No'' for both. If $X_{i}$ are from some general distribution then the distributions of $\sqrt{n}(\bar{X}_{n}-\mu)/s_{n}$ and $\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ are very complicated to find. Even if $X_{i}$ come from binomial or exponential family, these distributions will depend on the parameters in a complex way (in particular, the distributions are not free from the parameters, which is important in constructing confidence intervals).</p>
-<p class="text-justify">But suppose $n$ is large. Then the sample variance is close to population variance and hence $s_{n}\approx {\sigma}
+ Is this a valid confidence interval in general? The answer is ``No'' for both. If $X_{i}$ are from some general distribution then the distributions of $\sqrt{n}(\bar{X}_{n}-\mu)/s_{n}$ and $\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ are very complicated to find. Even if $X_{i}$ come from binomial or exponential family, these distributions will depend on the parameters in a complex way (in particular, the distributions are not free from the parameters, which is important in constructing confidence intervals).
+ </p>
+           
+ <p class="text-justify">
+But suppose $n$ is large. Then the sample variance is close to population variance and hence $s_{n}\approx {\sigma}
 $. Further, by CLT, we know that $\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ has approximately    $N(0,1)$ distribution. Hence, we see that
 $$
 \mathbf{P}\left\{-z_{\alpha/2}\le  \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n}} \le z_{\alpha/2}\right\} \approx \Phi(z_{\alpha/2})-\Phi(-z_{\alpha/2}) =1-\alpha.
@@ -146,8 +155,11 @@ Consequently, we may say that
 $$
 \mathbf{P}\left\{ \bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alpha/2} \le \mu \le \bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alpha/2}\right\} \approx 1-\alpha.
 $$
-Thus, $\left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alpha/2}, \bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alpha/2} \right]$ is an approximate $(1-\alpha)$-confidence interval. Further, when $n$ is large, the difference between $V_{n}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ and $V_{n}:=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ is small (indeed, $s_{n}^{2}=(n/(n-1))V_{n}$). Hence it is also okay to use $\left[\bar{X}_{n}-\frac{\sqrt{V_{n}}}{\sqrt{n}}z_{\alpha/2}, \bar{X}_{n}+\frac{\sqrt{V_{n}}}{\sqrt{n}}z_{\alpha/2} \right]$ as an approximate $(1-\alpha)$-confidence interval.</p>
-<p class="text-justify"><div id="theorem-172"><div class="panel panel-info example"> <div class="panel-heading">Example 172 </div><div class="panel-body"> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mbox{Ber}(p)$. Consider the problem of finding a confidence interval for $p$. Since each $X_{i}$ is $0$ or $1$, observe that
+Thus, $\left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alpha/2}, \bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alpha/2} \right]$ is an approximate $(1-\alpha)$-confidence interval. Further, when $n$ is large, the difference between $V_{n}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ and $V_{n}:=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ is small (indeed, $s_{n}^{2}=(n/(n-1))V_{n}$). Hence it is also okay to use $\left[\bar{X}_{n}-\frac{\sqrt{V_{n}}}{\sqrt{n}}z_{\alpha/2}, \bar{X}_{n}+\frac{\sqrt{V_{n}}}{\sqrt{n}}z_{\alpha/2} \right]$ as an approximate $(1-\alpha)$-confidence interval.
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-172"><div class="panel panel-info example"> <div class="panel-heading">Example 172 </div><div class="panel-body"> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mbox{Ber}(p)$. Consider the problem of finding a confidence interval for $p$. Since each $X_{i}$ is $0$ or $1$, observe that
 $$
 \hat{s}_{n}^{2}= \frac{1}{n}\sum_{i=1}^{n}X_{i}^{2} - \bar{X}_{n}^{2} = \bar{X}_{n}-(\bar{X}_{n})^{2} = \bar{X}_{n}(1-\bar{X}_{n}).
 $$
@@ -155,9 +167,10 @@ $$
 Hence, an approximate $(1-\alpha)$-CI for $p$ is given by
 $$
 \left[\bar{X}_{n}-z_{\alpha/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}, \bar{X}_{n}+z_{\alpha/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}\right].
-$$</p>
-<p class="text-justify">
-</p>
+$$
+ </p>
+           
+
 <div class="pull-right"><a href="chapter-33.html" class="btn btn-primary">Chapter 33. Actual confidence by simulation</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

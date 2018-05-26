@@ -277,11 +277,12 @@ object TeXToHtml {
           else labels
         val newString =
           if (thmEnvs.keySet.contains(m.group(1)))
-            s"""<div id="theorem-$newCounter"><div class="panel panel-${thmEnvs(
+            s"""<p>&nbsp;</p>
+                <div id="theorem-$newCounter"><div class="panel panel-${thmEnvs(
               m.group(1))._2} ${m
               .group(1)}"> <div class="panel-heading">${thmEnvs(m.group(1))._1} $newCounter ${title
               .map((s) => "(" + s.drop(1).dropRight(1) + ")")
-              .getOrElse("")}</div><div class="panel-body">"""
+              .getOrElse("")}</div><div class="panel-body">""".stripMargin
           else if (mathEnvs.contains(m.group(1)))
 //            Regex.quoteReplacement(
             "$$" + m.group(0) //.replace("""\label""", """tag""")
@@ -346,10 +347,10 @@ object TeXToHtml {
       .findFirstMatchIn(txt)
       .map { (m) =>
         val newHead =
-          head + m.before + s"""<strong>$section.${counter + 1} ${m.group(2)}.</strong><p class="text-justify">"""
+          head + blockParas(m.before.toString) + s"""<strong>$section.${counter + 1} ${m.group(2)}.</strong>"""
         recReplaceSubSection(m.after.toString, newHead, counter + 1, section)
       }
-      .getOrElse(head + txt)
+      .getOrElse(head + blockParas(txt))
 
   def recReplaceSection(
       txt: String,
@@ -364,7 +365,7 @@ object TeXToHtml {
         val prev = recReplaceSubSection(m.before.toString, "", 0, counter)
         val newHead =
           s"""$head$prev</section>
-             <section><h2 id="section-${counter + 1}">${counter + 1}. $title.</h2><p class="text-justify">""".stripMargin
+             <section><h2 id="section-${counter + 1}">${counter + 1}. $title.</h2>""".stripMargin
         recReplaceSection(
           m.after.toString,
           newHead,
@@ -453,11 +454,11 @@ object TeXToHtml {
 
   def block(txt: String, head: String) : (String, String) = {
     blankLineReg.findFirstMatchIn(txt).map { (m) =>
-      if (doldolReg.findAllIn(head + m.before).size % 2 == 1)
+      if (doldolReg.findAllIn(head + m.before).size % 2 == 0)
         (head+ m.before, m.after.toString)
       else {
-        block(m.after.toString, head + m.before.toString + m.group(0))}
-    }.getOrElse(txt + head, "")
+        block(m.after.toString, head + m.before.toString + "\n")}
+    }.getOrElse(head + txt, "")
   }
 
   def blockParas(txt: String, head: String = ""): String = {
@@ -467,8 +468,11 @@ object TeXToHtml {
         val newHead =
           s"""
              |$head
-             | <p>
+             | <p class="text-justify">
              |${m.before}
+             | </p>
+             | <p>
+             | $blk
              | </p>
            """.stripMargin
         blockParas(rest, newHead)
@@ -577,11 +581,11 @@ class TeXToHtml(header: String, text: String) {
   }
 
   lazy val allReplaced: String =
-    recReplaceFootnotes(replaceUnderline(replaceBf(replaceBlanks(secReplaced))))
+    recReplaceFootnotes(replaceUnderline(replaceBf(secReplaced)))
 
   lazy val chapReplaced =
     chapters.filter(_._1 > 0).mapValues{(chapter) =>
-      recReplaceFootnotes(replaceUnderline(replaceBf(replaceBlanks(chapter))))
+      recReplaceFootnotes(replaceUnderline(replaceBf(chapter)))
     }
 
   lazy val sortedSections: Vector[(Int, String)] =
@@ -635,7 +639,7 @@ $chapNav
 <h1 class="text-center bg-info">Chapter $n : ${sections(n)}</h1>
 <p>&nbsp;</p>
 $txt
-</p>
+
 ${chapLink(n + 1)}
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -654,6 +658,8 @@ $banner
 <ol>
 $tocList
 </ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 $foot"""
 
 

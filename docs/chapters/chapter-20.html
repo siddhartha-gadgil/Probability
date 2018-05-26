@@ -131,11 +131,28 @@
 <h1 class="text-center bg-info">Chapter 20 : Independence and conditioning of random variables</h1>
 <p>&nbsp;</p>
 
-<div id="theorem-121"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 121 </div><div class="panel-body"> Let $\mathbf{X}=(X_{1},\ldots ,X_{m})$ be a random vector (this means that $X_{i}$ are random variables on a common probability space). We say that $X_{i}$ are <em> independent</em> if $F_{\mathbf{X}}(t_{1},\ldots ,t_{m})=F_{1}(t_{1})\ldots F_{m}(t_{m})$ for all $t_{1},\ldots ,t_{m}$.
+
+
+
+
+
+
+
+
+
+
+ <p class="text-justify">
+
+<p>&nbsp;</p>
+                <div id="theorem-121"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 121 </div><div class="panel-body"> Let $\mathbf{X}=(X_{1},\ldots ,X_{m})$ be a random vector (this means that $X_{i}$ are random variables on a common probability space). We say that $X_{i}$ are <em> independent</em> if $F_{\mathbf{X}}(t_{1},\ldots ,t_{m})=F_{1}(t_{1})\ldots F_{m}(t_{m})$ for all $t_{1},\ldots ,t_{m}$.
 </div></div></div>
-<div id="theorem-122"><div class="panel panel-success remark"> <div class="panel-heading">Remark 122 </div><div class="panel-body"> Recalling the definition of independence of events, the equality $F_{\mathbf{X}}(t_{1},\ldots ,t_{m})=F_{1}(t_{1})\ldots F_{m}(t_{m})$ is just saying that the events $\{X_{1}\le t_{1}\}, \ldots \{X_{m}\le t_{m}\}$ are independent. More generally, it is true that $X_{1},\ldots ,X_{m}$ are independent if and only if $\{X_{1}\in A_{1}\},\ldots ,\{X_{m}\in A_{m}\}$ are independent events for any $A_{1},\ldots, A_{m}\subseteq \mathbb{R}$.
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-123"><div class="panel panel-success remark"> <div class="panel-heading">Remark 123 </div><div class="panel-body"> In case $X_{1},\ldots ,X_{m}$ have a joint pmf or a joint pdf (which we denote by $f(t_{1},\ldots ,t_{m})$), the condition for independence is equivalent to
+<p>&nbsp;</p>
+                <div id="theorem-122"><div class="panel panel-success remark"> <div class="panel-heading">Remark 122 </div><div class="panel-body"> Recalling the definition of independence of events, the equality $F_{\mathbf{X}}(t_{1},\ldots ,t_{m})=F_{1}(t_{1})\ldots F_{m}(t_{m})$ is just saying that the events $\{X_{1}\le t_{1}\}, \ldots \{X_{m}\le t_{m}\}$ are independent. More generally, it is true that $X_{1},\ldots ,X_{m}$ are independent if and only if $\{X_{1}\in A_{1}\},\ldots ,\{X_{m}\in A_{m}\}$ are independent events for any $A_{1},\ldots, A_{m}\subseteq \mathbb{R}$.
+</div></div></div>
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-123"><div class="panel panel-success remark"> <div class="panel-heading">Remark 123 </div><div class="panel-body"> In case $X_{1},\ldots ,X_{m}$ have a joint pmf or a joint pdf (which we denote by $f(t_{1},\ldots ,t_{m})$), the condition for independence is equivalent to
 $$
 f(t_{1},\ldots ,t_{m})=f_{1}(t_{1})f_{2}(t_{2})\ldots f_{m}(t_{m})
 $$
@@ -147,15 +164,25 @@ f(t_{1},\ldots ,t_{m}) &= \frac{\partial^{m}}{\partial t_{1}\ldots \partial t_{m
  &=f_{1}(t_{1})\ldots f_{m}(t_{m}).
 \end{align*}$$
 </div></div></div>
-When we turn it around, this gives us a quicker way to check independence.</p>
-<p class="text-justify"><strong>Fact:</strong> Let $X_{1},\ldots ,X_{m}$ be random variables with joint pdf $f(t_{1},\ldots ,t_{m})$. Suppose we can write this pdf as $f(t_{1},\ldots ,t_{m})=cg_{1}(t_{1})g_{2}(t_{2})\ldots g_{m}(t_{m})$ where $c$ is a constant and $g_{i}$ are some functions of one-variable. Then,  $X_{1},\ldots ,X_{m}$ are independent. Further, the marginal density of $X_{k}$ is $c_{k}g_{k}(t)$ where $c_{k}=\frac{1}{\int_{-\infty}^{+\infty}g_{k}(s)ds}$. An analogous statement holds when $X_{1},\ldots ,X_{m}$ have a joint pmf instead of pdf.</p>
-<p class="text-justify"><div id="theorem-124"><div class="panel panel-info example"> <div class="panel-heading">Example 124 </div><div class="panel-body"> Let $\Omega=\{0,1\}^{n}$ with $p_{\underline{\omega}}=p^{\sum \omega_{k}}q^{n-\sum \omega_{k}}$. Define $X_{k}:\Omega\rightarrow \mathbb{R}$ by $X_{k}(\underline{\omega})=\omega_{k}$. In words, we are considering the probability space corresponding to $n$ tosses of a fair coin and $X_{k}$ is the result of the $k$th toss. We claim that $X_{1},\ldots ,X_{n}$ are independent. Indeed, the joint pmf of $X_{1},\ldots ,X_{n}$ is
+When we turn it around, this gives us a quicker way to check independence.
+ </p>
+           
+ <p class="text-justify">
+<strong>Fact:</strong> Let $X_{1},\ldots ,X_{m}$ be random variables with joint pdf $f(t_{1},\ldots ,t_{m})$. Suppose we can write this pdf as $f(t_{1},\ldots ,t_{m})=cg_{1}(t_{1})g_{2}(t_{2})\ldots g_{m}(t_{m})$ where $c$ is a constant and $g_{i}$ are some functions of one-variable. Then,  $X_{1},\ldots ,X_{m}$ are independent. Further, the marginal density of $X_{k}$ is $c_{k}g_{k}(t)$ where $c_{k}=\frac{1}{\int_{-\infty}^{+\infty}g_{k}(s)ds}$. An analogous statement holds when $X_{1},\ldots ,X_{m}$ have a joint pmf instead of pdf.
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-124"><div class="panel panel-info example"> <div class="panel-heading">Example 124 </div><div class="panel-body"> Let $\Omega=\{0,1\}^{n}$ with $p_{\underline{\omega}}=p^{\sum \omega_{k}}q^{n-\sum \omega_{k}}$. Define $X_{k}:\Omega\rightarrow \mathbb{R}$ by $X_{k}(\underline{\omega})=\omega_{k}$. In words, we are considering the probability space corresponding to $n$ tosses of a fair coin and $X_{k}$ is the result of the $k$th toss. We claim that $X_{1},\ldots ,X_{n}$ are independent. Indeed, the joint pmf of $X_{1},\ldots ,X_{n}$ is
 $$
 f(t_{1},\ldots ,t_{n})=p^{\sum t_{k}}q^{n-\sum t_{k}} \hspace{3mm} \mbox{ where }t_{i}=0\mbox{ or }1 \mbox{ for each }i\le n.
 $$
 Clearly $f(t_{1},\ldots ,t_{m})=g(t_{1})g(t_{2})\ldots g(t_{n})$ where $g(s)=p^{s}q^{1-s}$ for $s=0\mbox{ or }1$ (this is just a terse way of saying that $g(s)=p$ if $s=1$ and $g(s)=q$ if $s=0$). Hence $X_{1},\ldots ,X_{n}$ are independent and $X_{k}$ has pmf $g$ (i.e., $X_{k}\sim \mbox{Ber}(p)$).
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-125"><div class="panel panel-info example"> <div class="panel-heading">Example 125 </div><div class="panel-body"> Let $(X,Y)$ have the bivariate normal density
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-125"><div class="panel panel-info example"> <div class="panel-heading">Example 125 </div><div class="panel-body"> Let $(X,Y)$ have the bivariate normal density
 $$
 f(x,y)=\frac{\sqrt{ab-c^{2}}}{\sqrt{2\pi}}e^{-\frac{1}{2}(a(x-\mu_{1})^{2}+b(y-\mu_{2})^{2}+2c(x-\mu_{1})(y-\mu_{2}))}.
 $$
@@ -163,16 +190,33 @@ If $c=0$, we observe that
 $$
 f(x,y) = C_{0} e^{-\frac{a(x-\mu_{1})^{2}}{2}}e^{-\frac{b(y-\mu_{2})^{2}}{2}} \qquad (C_{0}\mbox{ is a constant, exact value unimportant})
 $$
-from which we deduce that $X$ and $Y$ are independent and $X\sim N(\mu_{1},\frac{1}{a})$ while $Y\sim N(\mu_{2},\frac{1}{b})$.</p>
-<p class="text-justify">Can you argue that if $c\not=0$, then $X$ and $Y$ are not independent?
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-126"><div class="panel panel-info example"> <div class="panel-heading">Example 126 </div><div class="panel-body"> Let $(X,Y)$ be a random vector with density $f(x,y)=\frac{1}{\pi}{\mathbf 1}_{x^{2}+y^{2}\le 1}$ (i.e., it equals $1$ if $x^{2}+y^{2}\le 1$ and equals  $0$ otherwise). This corresponds to picking a point at random from the disk of radius $1$ centered at $(0,0)$. We claim that $X$ and $Y$ are not independent. A quick way to see this is that if $I=[0.8,1]$, then $\mathbf{P}\{(X,Y)\in [0.8,1]\times [0.8,1]\}=0$ whereas $\mathbf{P}\{(X,Y)\in [0.8,1]\}\mathbf{P}\{(X,Y)\in [0.8,1]\}\not= 0$ (If $X,Y$ were independent, we must have had $\mathbf{P}\{(X,Y)\in [a,b]\times [c,d]\}=\mathbf{P}\{X\in [a,b]\}\mathbf{P}\{Y\in [c,d]\}$ for any $a < b$ and $c < d$).
-</div></div></div></p>
-<p class="text-justify">A very useful (and intuitively acceptable!) fact about independence is as follows.</p>
-<p class="text-justify"><strong>Fact:</strong> Suppose $X_{1},\ldots ,X_{n}$ are independent random variables. Let $k_{1} < k_{2} < \ldots  < k_{m}=n$. Let $Y_{1}=h_{1}(X_{1},\ldots ,X_{k_{1}})$, $Y_{2}=h_{2}(X_{k_{1}+{1}},\ldots ,X_{k_{2}}), \ldots Y_{m}=h_{m}(X_{k_{m-1}},\ldots ,X_{k_{m}})$. Then, $Y_{1},\ldots ,Y_{m}$ are also independent.</p>
-<p class="text-justify"><div id="theorem-127"><div class="panel panel-success remark"> <div class="panel-heading">Remark 127 </div><div class="panel-body"> In the previous section we defined independence of events and now we have defined independence of random variables. How are they related? We leave it to you to check that events $A_{1},\ldots ,A_{n}$ are independent (according the definition of the previous section) if and only if the random variables ${\mathbf 1}_{A_{1}},\ldots ,{\mathbf 1}_{A_{m}}$ are independent (according the definition of this section)
-</div></div></div></p>
-<p class="text-justify">{\color{magenta}
+from which we deduce that $X$ and $Y$ are independent and $X\sim N(\mu_{1},\frac{1}{a})$ while $Y\sim N(\mu_{2},\frac{1}{b})$.
+ </p>
+ <p>
+ Can you argue that if $c\not=0$, then $X$ and $Y$ are not independent?
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-126"><div class="panel panel-info example"> <div class="panel-heading">Example 126 </div><div class="panel-body"> Let $(X,Y)$ be a random vector with density $f(x,y)=\frac{1}{\pi}{\mathbf 1}_{x^{2}+y^{2}\le 1}$ (i.e., it equals $1$ if $x^{2}+y^{2}\le 1$ and equals  $0$ otherwise). This corresponds to picking a point at random from the disk of radius $1$ centered at $(0,0)$. We claim that $X$ and $Y$ are not independent. A quick way to see this is that if $I=[0.8,1]$, then $\mathbf{P}\{(X,Y)\in [0.8,1]\times [0.8,1]\}=0$ whereas $\mathbf{P}\{(X,Y)\in [0.8,1]\}\mathbf{P}\{(X,Y)\in [0.8,1]\}\not= 0$ (If $X,Y$ were independent, we must have had $\mathbf{P}\{(X,Y)\in [a,b]\times [c,d]\}=\mathbf{P}\{X\in [a,b]\}\mathbf{P}\{Y\in [c,d]\}$ for any $a < b$ and $c < d$).
+</div></div></div>
+ </p>
+ <p>
+ A very useful (and intuitively acceptable!) fact about independence is as follows.
+ </p>
+           
+ <p class="text-justify">
+<strong>Fact:</strong> Suppose $X_{1},\ldots ,X_{n}$ are independent random variables. Let $k_{1} < k_{2} < \ldots  < k_{m}=n$. Let $Y_{1}=h_{1}(X_{1},\ldots ,X_{k_{1}})$, $Y_{2}=h_{2}(X_{k_{1}+{1}},\ldots ,X_{k_{2}}), \ldots Y_{m}=h_{m}(X_{k_{m-1}},\ldots ,X_{k_{m}})$. Then, $Y_{1},\ldots ,Y_{m}$ are also independent.
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-127"><div class="panel panel-success remark"> <div class="panel-heading">Remark 127 </div><div class="panel-body"> In the previous section we defined independence of events and now we have defined independence of random variables. How are they related? We leave it to you to check that events $A_{1},\ldots ,A_{n}$ are independent (according the definition of the previous section) if and only if the random variables ${\mathbf 1}_{A_{1}},\ldots ,{\mathbf 1}_{A_{m}}$ are independent (according the definition of this section)
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+{\color{magenta}
 <strong>Conditioning on random variables:</strong><sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
                                 1
                                  </a> </sup><span class="collapse small" id="footnote-1">This part was not covered in class and may be safely omitted </span> 
@@ -180,26 +224,50 @@ Let $X_{1},\ldots ,X_{k+\ell}$ be random variables on a common probability space
 $$\begin{equation}\label{eq:conditionalpmf}
 h_{s_{1},\ldots ,s_{\ell}}(t_{1},\ldots,t_{k})=\mathbf{P}\{X_{1}= t_{1},\ldots ,X_{k}= t_{k}\left.\vphantom{\hbox{\Large (}}\right| X_{k+1}=s_{1},\ldots X_{m}=s_{\ell}\}=\frac{f(t_{1},\ldots ,t_{k},s_{1},\ldots ,s_{\ell})}{g(s_{1},\ldots ,s_{\ell})}.
 \end{equation}$$
-It is easy to see that $h_{s_{1},\ldots,s_{\ell}}(\cdot)$ is a pmf on $\mathbb{R}^{k}$. It is called the conditional pmf of $(X_{1},\ldots ,X_{k})$ given that $X_{k+1}=s_{1},\ldots X_{m}=s_{\ell}$.</p>
-<p class="text-justify">Its interpretation is as follows. Originally we had random observables $X_{1},\ldots ,X_{k}$ which had a certain joint pmf. Then we observe the values of the random variables $X_{k+1},\ldots ,X_{k+\ell}$, say they turn out to be $s_{1},\ldots ,s_{\ell}$, respectively. Then we update the distribution (or pmf) of $X_{1},\ldots ,X_{k}$ according to the above recipe. The conditional pmf is the new function $h_{s_{1},\ldots,s_{\ell}}(\cdot)$.</p>
-<p class="text-justify"><div id="theorem-128"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 128 </div><div class="panel-body"> Let $(X_{1},\ldots ,X_{n-1})$ be a random vector with multinomial distribution with parameters $r,n,p_{1},\ldots ,p_{n}$. Let $k < n-1$. Given that $X_{k+1}=s_{1},\ldots ,X_{n-1}=s_{n-k+1}$, show that the conditional distribution of $(X_{1},\ldots ,X_{k})$ is multinomial with parameters $r',n'$, $q_{1},\ldots ,q_{k+1}$ where $r'=r-(s_{1}+\ldots +s_{n-k+1})$, $n'=k+1$, $q_{j}=p_{j}/(p_{1}+\ldots +p_{k}+p_{n})$ for $j\le k$ and $q_{k+1}=p_{n}/(p_{1}+\ldots +p_{k}+p_{n})$.</p>
-<p class="text-justify">This looks complicated, but is utterly obvious if you think in terms of assigning $r$ balls into $n$ urns by putting each ball into the urns with probabilities $p_{1},\ldots ,p_{n}$ and letting $X_{j}$ denote the number of balls that end up in the $j^{\mbox{th}}$ urn.
-</div></div></div></p>
-<p class="text-justify"><strong>Conditional densities</strong> Now suppose $X_{1},\ldots ,X_{k+\ell}$ have joint density $f(t_{1},\ldots ,t_{k+\ell})$ and let $g(s_{1},\ldots ,s_{\ell})$ by the density of $(X_{k+1},\ldots ,X_{k+\ell})$. Then, we define the conditional density of $(X_{1},\ldots ,X_{k})$ given $X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}$ as
+It is easy to see that $h_{s_{1},\ldots,s_{\ell}}(\cdot)$ is a pmf on $\mathbb{R}^{k}$. It is called the conditional pmf of $(X_{1},\ldots ,X_{k})$ given that $X_{k+1}=s_{1},\ldots X_{m}=s_{\ell}$.
+ </p>
+ <p>
+ Its interpretation is as follows. Originally we had random observables $X_{1},\ldots ,X_{k}$ which had a certain joint pmf. Then we observe the values of the random variables $X_{k+1},\ldots ,X_{k+\ell}$, say they turn out to be $s_{1},\ldots ,s_{\ell}$, respectively. Then we update the distribution (or pmf) of $X_{1},\ldots ,X_{k}$ according to the above recipe. The conditional pmf is the new function $h_{s_{1},\ldots,s_{\ell}}(\cdot)$.
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-128"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 128 </div><div class="panel-body"> Let $(X_{1},\ldots ,X_{n-1})$ be a random vector with multinomial distribution with parameters $r,n,p_{1},\ldots ,p_{n}$. Let $k < n-1$. Given that $X_{k+1}=s_{1},\ldots ,X_{n-1}=s_{n-k+1}$, show that the conditional distribution of $(X_{1},\ldots ,X_{k})$ is multinomial with parameters $r',n'$, $q_{1},\ldots ,q_{k+1}$ where $r'=r-(s_{1}+\ldots +s_{n-k+1})$, $n'=k+1$, $q_{j}=p_{j}/(p_{1}+\ldots +p_{k}+p_{n})$ for $j\le k$ and $q_{k+1}=p_{n}/(p_{1}+\ldots +p_{k}+p_{n})$.
+ </p>
+ <p>
+ This looks complicated, but is utterly obvious if you think in terms of assigning $r$ balls into $n$ urns by putting each ball into the urns with probabilities $p_{1},\ldots ,p_{n}$ and letting $X_{j}$ denote the number of balls that end up in the $j^{\mbox{th}}$ urn.
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<strong>Conditional densities</strong> Now suppose $X_{1},\ldots ,X_{k+\ell}$ have joint density $f(t_{1},\ldots ,t_{k+\ell})$ and let $g(s_{1},\ldots ,s_{\ell})$ by the density of $(X_{k+1},\ldots ,X_{k+\ell})$. Then, we define the conditional density of $(X_{1},\ldots ,X_{k})$ given $X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}$ as
 $$\begin{equation}\label{eq:conditionalpdf}
 h_{s_{1},\ldots ,s_{\ell}}(t_{1},\ldots,t_{k})=\frac{f(t_{1},\ldots ,t_{k},s_{1},\ldots ,s_{\ell})}{g(s_{1},\ldots ,s_{\ell})}.
 \end{equation}$$
-This is well-defined whenever $g(s_{1},\ldots ,s_{\ell}) > 0$.</p>
-<p class="text-justify"><div id="theorem-129"><div class="panel panel-success remark"> <div class="panel-heading">Remark 129 </div><div class="panel-body"> Note the difference between \eqref{eq:conditionalpmf} and \eqref{eq:conditionalpdf}. In the latter we have left out the middle term because $\mathbf{P}\{X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}\}=0$. In \eqref{eq:conditionalpmf} the definition of pmf comes from the definition of conditional probability of events but in \eqref{eq:conditionalpdf} this is not so. We simply define the conditional density by analogy with the case of conditional pmf.  This is similar to the difference between interpretation of pmf ($f(t)$ is actually the probability of an event) and pdf ($f(t)$ is not the probability of an event but the density of probability near $t$).
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-130"><div class="panel panel-info example"> <div class="panel-heading">Example 130 </div><div class="panel-body"> Let $(X,Y)$ have bivariate normal density $f(x,y)=\frac{\sqrt{ab-c^{2}}}{2\pi}e^{-\frac{1}{2}(ax^{2}+by^{2}+2cxy)}$ (so we assume $a > 0,b > 0, ab-c^{2} > 0$). In the mid-term you showed that the marginal distribution of $Y$ is $N(0,\frac{a}{ab-c^{2}})$, that is it has density $g(y)=\frac{\sqrt{ab-c^{2}}}{\sqrt{2\pi a}}e^{-\frac{ab-c^{2}}{2a}y^{2}}$. Hence, the conditional density of $X$ given $Y=y$ is
+This is well-defined whenever $g(s_{1},\ldots ,s_{\ell}) > 0$.
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-129"><div class="panel panel-success remark"> <div class="panel-heading">Remark 129 </div><div class="panel-body"> Note the difference between \eqref{eq:conditionalpmf} and \eqref{eq:conditionalpdf}. In the latter we have left out the middle term because $\mathbf{P}\{X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}\}=0$. In \eqref{eq:conditionalpmf} the definition of pmf comes from the definition of conditional probability of events but in \eqref{eq:conditionalpdf} this is not so. We simply define the conditional density by analogy with the case of conditional pmf.  This is similar to the difference between interpretation of pmf ($f(t)$ is actually the probability of an event) and pdf ($f(t)$ is not the probability of an event but the density of probability near $t$).
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-130"><div class="panel panel-info example"> <div class="panel-heading">Example 130 </div><div class="panel-body"> Let $(X,Y)$ have bivariate normal density $f(x,y)=\frac{\sqrt{ab-c^{2}}}{2\pi}e^{-\frac{1}{2}(ax^{2}+by^{2}+2cxy)}$ (so we assume $a > 0,b > 0, ab-c^{2} > 0$). In the mid-term you showed that the marginal distribution of $Y$ is $N(0,\frac{a}{ab-c^{2}})$, that is it has density $g(y)=\frac{\sqrt{ab-c^{2}}}{\sqrt{2\pi a}}e^{-\frac{ab-c^{2}}{2a}y^{2}}$. Hence, the conditional density of $X$ given $Y=y$ is
 $$
 h_{y}(x)=\frac{f(x,y)}{g(y)} =\frac{\sqrt{a}}{\sqrt{2\pi}}e^{-\frac{a}{2}(x+\frac{c}{a}y)^{2}}.
 $$
-Thus the conditional distribution of $X$ given $Y=y$ is $N(-\frac{cy}{a},\frac{1}{a})$. Compare this with marginal (unconditional) distribution of $X$ which is $N(0,\frac{b}{ab-c^{2}})$.</p>
-<p class="text-justify">In the special case when $c=0$, we see that for any value of $y$, the conditional distribution of $X$ given $Y=y$ is the same as the unconditional distribution of $X$. What does this mean? It is just another way of saying that $X$ and $Y$ are independent! Indeed, when $c=0$, the joint density $f(x,y)$ splits into a product of two functions, one of $x$ alone and one of $y$ alone.
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-131"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 131 </div><div class="panel-body"> Let $(X,Y)$ have joint density $f(x,y)$. Let the marginal densities of $X$ and $Y$ be $g(x)$ and $h(y)$ respectively. Let $h_{x}(y)$ be the conditional density of $Y$ given $X=x$.
+Thus the conditional distribution of $X$ given $Y=y$ is $N(-\frac{cy}{a},\frac{1}{a})$. Compare this with marginal (unconditional) distribution of $X$ which is $N(0,\frac{b}{ab-c^{2}})$.
+ </p>
+ <p>
+ In the special case when $c=0$, we see that for any value of $y$, the conditional distribution of $X$ given $Y=y$ is the same as the unconditional distribution of $X$. What does this mean? It is just another way of saying that $X$ and $Y$ are independent! Indeed, when $c=0$, the joint density $f(x,y)$ splits into a product of two functions, one of $x$ alone and one of $y$ alone.
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-131"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 131 </div><div class="panel-body"> Let $(X,Y)$ have joint density $f(x,y)$. Let the marginal densities of $X$ and $Y$ be $g(x)$ and $h(y)$ respectively. Let $h_{x}(y)$ be the conditional density of $Y$ given $X=x$.
 <ol>
 <li> If $X$ and $Y$ are independent, show that for any $x$, we have $h_{x}(y)=h(y)$ for all $y$.
 </li>
@@ -207,9 +275,13 @@ Thus the conditional distribution of $X$ given $Y=y$ is $N(-\frac{cy}{a},\frac{1
 </ol>
 Analogous statements hold for the case of pmf.
 </div></div></div>
-}</p>
-<p class="text-justify">
-</p>
+}
+ </p>
+ <p>
+ 
+ </p>
+           
+
 <div class="pull-right"><a href="chapter-21.html" class="btn btn-primary">Chapter 21. Mean and Variance</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

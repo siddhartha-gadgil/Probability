@@ -131,20 +131,47 @@
 <h1 class="text-center bg-info">Chapter 17 : Simulation</h1>
 <p>&nbsp;</p>
 
-As we have emphasized, probability is applicable to many situations in the real world. As such one may conduct experiments to verify the extent to which theorems are actually valid. For this we need to be able to draw numbers at random from any given distribution.</p>
-<p class="text-justify">For example, take the case of Bernoulli($1/2$) distribution. One experiment that can give this is that of physically tossing a coin. This is not entirely satisfactory for several reasons. Firstly, are real coins fair? Secondly, what if we change slightly and want to generate from Ber($0.45$)? In this section, we describe how to draw random numbers from various distributions on a computer. We do not fully answer this question. Instead what we shall show is</p>
-<p class="text-justify"><em> If one can generate random numbers from Unif($[0,1]$) distribution, then one can draw random numbers from any other distribution.
- More precisely, suppose $U$ is a random variable with Unif($[0,1])$ distribution. We want to simulate random numbers from a given distribution $F$. Then, we shall find a function $\psi:[0,1]\rightarrow \mathbb{R</em>$ so that the random variable $X:=\psi(U)$ has the given distribution $F$.}</p>
-<p class="text-justify">The question of how to draw random numbers from Unif($[0,1]$) distribution is a very difficult one and we shall just make a few superficial remarks about that.</p>
-<p class="text-justify"><strong>Drawing random numbers from a discrete pmf:</strong> First start with an example.</p>
-<p class="text-justify"><div id="theorem-102"><div class="panel panel-info example"> <div class="panel-heading">Example 102 </div><div class="panel-body"> Suppose we want to draw random numbers from Ber($0.4$) distribution. Let $\psi:[0,1]\rightarrow \mathbb{R}$ be defined as $\psi(t)={\mathbf 1}_{t\le 0.4}$. Let $X=\psi(U)$, i.e., $X=1$ if $U\le 0.4$ and $X=0$ otherwise. Then
+
+
+
+
+
+
+
+
+
+ <p class="text-justify">
+
+As we have emphasized, probability is applicable to many situations in the real world. As such one may conduct experiments to verify the extent to which theorems are actually valid. For this we need to be able to draw numbers at random from any given distribution.
+ </p>
+ <p>
+ For example, take the case of Bernoulli($1/2$) distribution. One experiment that can give this is that of physically tossing a coin. This is not entirely satisfactory for several reasons. Firstly, are real coins fair? Secondly, what if we change slightly and want to generate from Ber($0.45$)? In this section, we describe how to draw random numbers from various distributions on a computer. We do not fully answer this question. Instead what we shall show is
+ </p>
+           
+ <p class="text-justify">
+<em> If one can generate random numbers from Unif($[0,1]$) distribution, then one can draw random numbers from any other distribution.
+ More precisely, suppose $U$ is a random variable with Unif($[0,1])$ distribution. We want to simulate random numbers from a given distribution $F$. Then, we shall find a function $\psi:[0,1]\rightarrow \mathbb{R</em>$ so that the random variable $X:=\psi(U)$ has the given distribution $F$.}
+ </p>
+ <p>
+ The question of how to draw random numbers from Unif($[0,1]$) distribution is a very difficult one and we shall just make a few superficial remarks about that.
+ </p>
+           
+ <p class="text-justify">
+<strong>Drawing random numbers from a discrete pmf:</strong> First start with an example.
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-102"><div class="panel panel-info example"> <div class="panel-heading">Example 102 </div><div class="panel-body"> Suppose we want to draw random numbers from Ber($0.4$) distribution. Let $\psi:[0,1]\rightarrow \mathbb{R}$ be defined as $\psi(t)={\mathbf 1}_{t\le 0.4}$. Let $X=\psi(U)$, i.e., $X=1$ if $U\le 0.4$ and $X=0$ otherwise. Then
 $$
 \mathbf{P}\{X=1\}=\mathbf{P}\{U\le 0.4\}=0.4, \qquad \mathbf{P}\{X=0\} = \mathbf{P}\{U > 0.4\}=0.6.
 $$
 Thus, $X$ has Ber($0.4$) distribution.
 </div></div></div>
-It is clear how to generalize this.</p>
-<p class="text-justify"><strong>General rule:</strong> Suppose we are given a pmf $f$
+It is clear how to generalize this.
+ </p>
+           
+ <p class="text-justify">
+<strong>General rule:</strong> Suppose we are given a pmf $f$
 $$
 \left(\begin{array}{cccc} t_{1} & t_{2} & t_{3} & \ldots \\ f(t_{1}) & f(t_{2}) & f(t_{3}) & \ldots \end{array} \right).
 $$
@@ -159,8 +186,11 @@ Then define $X=f(U)$. Clearly $X$ takes the values $t_{1},t_{2},\ldots$ and
 $$
 \mathbf{P}\{X=t_{k}\} = \mathbf{P}\left\{\sum_{j=1}^{k-1}f(t_{j}) < U\le \sum_{j=1}^{k}f(t_{j})\right\} = f(t_{k}).
 $$
-Thus $X$ has pmf $f$.</p>
-<p class="text-justify"><div id="theorem-103"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 103 </div><div class="panel-body"> Draw 100 random numbers from each of the following distributions and draw the histograms. Compare with the pmf.
+Thus $X$ has pmf $f$.
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-103"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 103 </div><div class="panel-body"> Draw 100 random numbers from each of the following distributions and draw the histograms. Compare with the pmf.
 <ol>
 <li> Bin($n,p$) for $n=10,20,40$ and $p=0.5, 0.3, 0.9$.
 </li>
@@ -170,9 +200,13 @@ Thus $X$ has pmf $f$.</p>
 </li>
 <li> Hypergeo($N_{1},N_{2},m$) with $N_{1}=100,N_{2}=50,m=20$, $N_{1}=1000,N_{2}=1000,m=40$.
 </ol>
-</div></div></div></p>
-<p class="text-justify"><strong>Drawing random numbers from a pdf:</strong> Clearly the procedure used for generating from a pmf is inapplicable here. First start with two  examples. As before $U$ is a Unif($[0,1]$) random variable.
-<div id="theorem-104"><div class="panel panel-info example"> <div class="panel-heading">Example 104 </div><div class="panel-body"> Suppose we want to draw from the Unif($[3,7]$) distribution. Set $X=4U+3$. Clearly
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<strong>Drawing random numbers from a pdf:</strong> Clearly the procedure used for generating from a pmf is inapplicable here. First start with two  examples. As before $U$ is a Unif($[0,1]$) random variable.
+<p>&nbsp;</p>
+                <div id="theorem-104"><div class="panel panel-info example"> <div class="panel-heading">Example 104 </div><div class="panel-body"> Suppose we want to draw from the Unif($[3,7]$) distribution. Set $X=4U+3$. Clearly
 $$
 \mathbf{P}\{X\le t\} = \mathbf{P}\{U\le \frac{t-3}{4}\} =\begin{cases}
 0 & \mbox{ if }t < 0 \\
@@ -182,7 +216,8 @@ $$
 $$
 This is precisely the CDF of Unif($[3,7]$) distribution.
 </div></div></div>
-<div id="theorem-105"><div class="panel panel-info example"> <div class="panel-heading">Example 105 </div><div class="panel-body"> Here let us do the opposite, just take some function of a uniform variable and see what CDF we get. Let $\psi(t)=t^{3}$ and let $X=\varphi(U)=U^{3}$. Then,
+<p>&nbsp;</p>
+                <div id="theorem-105"><div class="panel panel-info example"> <div class="panel-heading">Example 105 </div><div class="panel-body"> Here let us do the opposite, just take some function of a uniform variable and see what CDF we get. Let $\psi(t)=t^{3}$ and let $X=\varphi(U)=U^{3}$. Then,
 $$
 F(t):=\mathbf{P}\{X\le t\} = \mathbf{P}\{U\le t^{1/3}\} =\begin{cases}
 0 & \mbox{ if }t < 0 \\
@@ -199,8 +234,11 @@ f(t)=F'(t) = \begin{cases}
 $$
 The derivative does not exist at $0$ and $1$, but as remarked earlier, it does not matter if we change the value of the density at finitely many points (as the integral over any interval will remain the same). Anyway, we notice that the density is that of Beta($1/3,1$). Hence $X\sim \mbox{Beta}(1/3,1)$.
 </div></div></div>
-This gives us the idea that to generate random number from a CDF $F$, we should find a function $\psi:[0,1]\rightarrow \mathbb{R}$ such that $X:=\psi(U)$ has the distribution $F$. How to find the distribution of $X$?</p>
-<p class="text-justify"><div id="theorem-106"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 106 </div><div class="panel-body"> Let $\psi:(0,1)\rightarrow \mathbb{R}$ be a  strictly increasing function with $a=\psi(0+)$ and $b=\psi(1-)$. Let $X=\psi(U)$. Then $X$ has CDF
+This gives us the idea that to generate random number from a CDF $F$, we should find a function $\psi:[0,1]\rightarrow \mathbb{R}$ such that $X:=\psi(U)$ has the distribution $F$. How to find the distribution of $X$?
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-106"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 106 </div><div class="panel-body"> Let $\psi:(0,1)\rightarrow \mathbb{R}$ be a  strictly increasing function with $a=\psi(0+)$ and $b=\psi(1-)$. Let $X=\psi(U)$. Then $X$ has CDF
 $$
 F(t)=\begin{cases} 0 & \mbox{ if }t\le a \\ \psi^{-1}(t) & \mbox{ if }a < t < b \\ 1 & \mbox{ if }t\ge b. \end{cases}
 $$
@@ -214,17 +252,32 @@ $$
 F(t)=\mathbf{P}\{X\le t\} = \mathbf{P}\{U\le \psi^{-1}(t)\} = \begin{cases} 0 & \mbox{ if }t\le a \\ \psi^{-1}(t) & \mbox{ if }a < t < b \\ 1 & \mbox{ if }t\ge b. \end{cases}
 $$
 If $\psi$ is differentiable at and $\psi(u)\not=0$, then $\psi^{-1}$ is differentiable at $t=\psi(u)$ (and indeed, $(\psi^{-1})'(t)=\frac{1}{\psi'(u)}$). Thus we get the formula for the density.
-</div></p>
-<p class="text-justify">From this lemma, we immediately get the following rule for generating random numbers from a density.</p>
-<p class="text-justify"><strong>How to simulate from a CDF:</strong> Let $F$ be a CDF that is strictly increasing on an interval $[A,B]$ where $F(A)=0$ and $F(B)=1$ (it is allowed to take $A=-\infty$ and/or $B=+\infty$). Then define $\psi:(0,1)\rightarrow (A,B)$ as $\psi(u)=F^{-1}(u)$. Let $U\sim \mbox{Unif}([0,1])$ and let $X=\psi(U)$. Then $X$ has CDF equal to $F$.</p>
-<p class="text-justify">This follows from the lemma because $\psi$ is define as the inverse of $F$ and hence $F$ (restricted to $(A,B)$) is the inverse of $\psi$. Further, as the inverse of a strictly increasing function, the function $\psi$  is also strictly increasing.</p>
-<p class="text-justify"><div id="theorem-107"><div class="panel panel-info example"> <div class="panel-heading">Example 107 </div><div class="panel-body"> Consider the Exponential distribution with parameter $\lambda$ whose CDF is
+</div>
+ </p>
+           
+ <p class="text-justify">
+From this lemma, we immediately get the following rule for generating random numbers from a density.
+ </p>
+ <p>
+ <strong>How to simulate from a CDF:</strong> Let $F$ be a CDF that is strictly increasing on an interval $[A,B]$ where $F(A)=0$ and $F(B)=1$ (it is allowed to take $A=-\infty$ and/or $B=+\infty$). Then define $\psi:(0,1)\rightarrow (A,B)$ as $\psi(u)=F^{-1}(u)$. Let $U\sim \mbox{Unif}([0,1])$ and let $X=\psi(U)$. Then $X$ has CDF equal to $F$.
+ </p>
+           
+ <p class="text-justify">
+This follows from the lemma because $\psi$ is define as the inverse of $F$ and hence $F$ (restricted to $(A,B)$) is the inverse of $\psi$. Further, as the inverse of a strictly increasing function, the function $\psi$  is also strictly increasing.
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-107"><div class="panel panel-info example"> <div class="panel-heading">Example 107 </div><div class="panel-body"> Consider the Exponential distribution with parameter $\lambda$ whose CDF is
 $$
 F(t)=\begin{cases} 0 & \mbox{ if }t\le 0 \\ 1-e^{-\lambda t} \mbox{ if }t > 0 \end{cases}
 $$ Take $A=0$ and $B=+\infty$. Then $F$ is increasing on $(0,\infty)$ and its inverse is the function $\psi(u)=-\frac{1}{\lambda}\log(1-u)$. Thus to simulate a random number from Exp($\lambda$) distribution, we set $X=-\frac{1}{\lambda}\log(1-U)$.
-</div></div></div></p>
-<p class="text-justify">When the CDF is not explicitly available as a function we can still adopt the above procedure but only numerically. Consider an example.
-<div id="theorem-108"><div class="panel panel-info example"> <div class="panel-heading">Example 108 </div><div class="panel-body"> Suppose $F=\Phi$, the CDF of $N(0,1)$ distribution. Then we do not have an explicit form for either $\Phi$ or for its inverse $\Phi^{-1}$. With a computer we can do the following. Pick a large number of closely placed points, for example divide the interval $[-5,5]$ into $1000$ equal intervals of length $0.01$ each. Let the endpoints of these intervals be labelled $t_{0} < t_{1} < \ldots  < t_{1000}$. For each $i$, calculate $\Phi(t_{i})=\int_{-\infty}^{t_{i}}\frac{1}{\sqrt{2\pi}}e^{-x^{2}/2}dx$ using numerical methods for integration, say the numerical value obtained is $w_{i}$. This is done only once and create the table of values
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+When the CDF is not explicitly available as a function we can still adopt the above procedure but only numerically. Consider an example.
+<p>&nbsp;</p>
+                <div id="theorem-108"><div class="panel panel-info example"> <div class="panel-heading">Example 108 </div><div class="panel-body"> Suppose $F=\Phi$, the CDF of $N(0,1)$ distribution. Then we do not have an explicit form for either $\Phi$ or for its inverse $\Phi^{-1}$. With a computer we can do the following. Pick a large number of closely placed points, for example divide the interval $[-5,5]$ into $1000$ equal intervals of length $0.01$ each. Let the endpoints of these intervals be labelled $t_{0} < t_{1} < \ldots  < t_{1000}$. For each $i$, calculate $\Phi(t_{i})=\int_{-\infty}^{t_{i}}\frac{1}{\sqrt{2\pi}}e^{-x^{2}/2}dx$ using numerical methods for integration, say the numerical value obtained is $w_{i}$. This is done only once and create the table of values
 $$
 \begin{array}{cccccc}
 t_{0} & t_{1} & t_{2} & \ldots & \ldots & t_{1000} \\
@@ -232,8 +285,11 @@ w_{0} & w_{1} & w_{2} & \ldots & \ldots & w_{1000}
 \end{array}.
 $$
 Now draw a uniform random number $U$. Look up the table and find the value of $i$ for which $w_{i} < U < w_{i+1}$. Then set $X=t_{i}$. If it so happens that $U < w_{0}$, set $X=t_{0}=-5$ and if $U > w_{1000}$ set $X=t_{1000}=5$. But since $\Phi(-5) < 0.00001$ and $\Phi(5) > 0.99999$, it is highly unlikely that the last two cases will occur. The random variable $X$ has a distribution close to $N(0,1)$.
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-109"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 109 </div><div class="panel-body"> Give an explicit method to draw random numbers from the following densities.
+</div></div></div>
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-109"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 109 </div><div class="panel-body"> Give an explicit method to draw random numbers from the following densities.
 <ol>
 <li> Cauchy distribution with density $\frac{1}{\pi(1+x^{2})}$.
 </li>
@@ -241,12 +297,19 @@ Now draw a uniform random number $U$. Look up the table and find the value of $i
 </li>
 <li> Pareto($\alpha$) distribution which by definition has the density $$f(t)=\begin{cases} \alpha t^{-\alpha-1} & \mbox{ if }t\ge 1, \\ 0 & \mbox{ if }t < 1. \end{cases}$$
 </ol>
-</div></div></div></p>
-<p class="text-justify">We have described a general principle. When we do more computations with random variables and understand the relationships between different distributions, better tricks can be found.  For example, we shall see later that we can generate two $N(0,1)$ random numbers as follows: Pick two uniform random numbers $U,V$ and set $X=\sqrt{-2\log(1-U)}\cos(2\pi V)$ and $Y=\sqrt{-2\log(1-U)}\sin(2\pi V)$. Then it turns out that $X$ and $Y$ have exactly $N(0,1)$ distribution! As another example, suppose we need to generate from Gamma($3,1$) distribution, we can first generate three uniforms $U_{1},U_{2},U_{3}$ and set $\xi_{i}=-\log(1-U_{i})$ (so $\xi_{i}$ have exponential distribution) and then define $X=\xi_{1}+\xi_{2}+\xi_{3}$. It turns out that $X$ has Gamma($3,1$) distribution!</p>
-<p class="text-justify"><div id="theorem-110"><div class="panel panel-success remark"> <div class="panel-heading">Remark 110 </div><div class="panel-body"> We have conveniently skipped the question of how to draw random numbers from uniform distribution in the first place. This is a difficult topic and various results, proved and unproved, are used in generating such numbers. For example,
-</div></div></div></p>
-<p class="text-justify">
-</p>
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+We have described a general principle. When we do more computations with random variables and understand the relationships between different distributions, better tricks can be found.  For example, we shall see later that we can generate two $N(0,1)$ random numbers as follows: Pick two uniform random numbers $U,V$ and set $X=\sqrt{-2\log(1-U)}\cos(2\pi V)$ and $Y=\sqrt{-2\log(1-U)}\sin(2\pi V)$. Then it turns out that $X$ and $Y$ have exactly $N(0,1)$ distribution! As another example, suppose we need to generate from Gamma($3,1$) distribution, we can first generate three uniforms $U_{1},U_{2},U_{3}$ and set $\xi_{i}=-\log(1-U_{i})$ (so $\xi_{i}$ have exponential distribution) and then define $X=\xi_{1}+\xi_{2}+\xi_{3}$. It turns out that $X$ has Gamma($3,1$) distribution!
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-110"><div class="panel panel-success remark"> <div class="panel-heading">Remark 110 </div><div class="panel-body"> We have conveniently skipped the question of how to draw random numbers from uniform distribution in the first place. This is a difficult topic and various results, proved and unproved, are used in generating such numbers. For example,
+</div></div></div>
+ </p>
+           
+
 <div class="pull-right"><a href="chapter-18.html" class="btn btn-primary">Chapter 18. Joint distributions</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

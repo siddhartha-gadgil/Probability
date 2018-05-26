@@ -131,13 +131,25 @@
 <h1 class="text-center bg-info">Chapter 18 : Joint distributions</h1>
 <p>&nbsp;</p>
 
-In many situations we study several random variables at once. In such a case, knowing the individual distributions is not sufficient to answer all relevant questions. This is like saying that knowing $\mathbf{P}(A)$ and $\mathbf{P}(B)$ is insufficient to calculate $\mathbf{P}(A\cap B)$ or $\mathbf{P}(A\cup B)$ etc.</p>
-<p class="text-justify"><div id="theorem-111"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 111 (Joint distribution)</div><div class="panel-body"> Let $X_{1},X_{2},\ldots ,X_{m}$ be random variables on the same probability space. We call $\mathbf{X}=(X_{1},\ldots ,X_{m})$ a <em> random vector</em>, as it is just a vector of random variables. The CDF of $\mathbf{X}$, also called the joint CDF of $X_{1},\ldots,X_{m}$ is the function $F:\mathbb{R}^{m}\rightarrow \mathbb{R}$ defined as
+
+
+
+
+
+
+ <p class="text-justify">
+
+In many situations we study several random variables at once. In such a case, knowing the individual distributions is not sufficient to answer all relevant questions. This is like saying that knowing $\mathbf{P}(A)$ and $\mathbf{P}(B)$ is insufficient to calculate $\mathbf{P}(A\cap B)$ or $\mathbf{P}(A\cup B)$ etc.
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-111"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 111 (Joint distribution)</div><div class="panel-body"> Let $X_{1},X_{2},\ldots ,X_{m}$ be random variables on the same probability space. We call $\mathbf{X}=(X_{1},\ldots ,X_{m})$ a <em> random vector</em>, as it is just a vector of random variables. The CDF of $\mathbf{X}$, also called the joint CDF of $X_{1},\ldots,X_{m}$ is the function $F:\mathbb{R}^{m}\rightarrow \mathbb{R}$ defined as
 $$
 F(t_{1},\ldots ,t_{m})=\mathbf{P}\{X_{1}\le t_{1},\ldots ,X_{m}\le t_{m}\} = \mathbf{P}\left\{\bigcap_{i=1}^{m}\{X_{i}\le t_{i}\} \right\}.
 $$.
 </div></div></div>
-<div id="theorem-112"><div class="panel panel-info example"> <div class="panel-heading">Example 112 </div><div class="panel-body"> Consider two events $A$ and $B$ in the probability space and let $X={\mathbf 1}_{A}$ and $Y={\mathbf 1}_{B}$ be their indicator random variables. Their joint CDF is given by
+<p>&nbsp;</p>
+                <div id="theorem-112"><div class="panel panel-info example"> <div class="panel-heading">Example 112 </div><div class="panel-body"> Consider two events $A$ and $B$ in the probability space and let $X={\mathbf 1}_{A}$ and $Y={\mathbf 1}_{B}$ be their indicator random variables. Their joint CDF is given by
 $$
 F(s,t)=\begin{cases}
 0 & \mbox{ if }s <  0 \mbox{ or }t <  0 \\
@@ -147,8 +159,11 @@ F(s,t)=\begin{cases}
 \mathbf{P}(A\cap B) & \mbox{ if } s\ge1, t\ge 1
 \end{cases}
 $$
-</div></div></div></p>
-<p class="text-justify"><strong>Properties of joint CDFs:</strong> The following properties of the joint CDF $F:\mathbb{R}^{m}\rightarrow [0,1]$ are analogous to those of the 1-dimensional CDF and the proofs are similar.
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<strong>Properties of joint CDFs:</strong> The following properties of the joint CDF $F:\mathbb{R}^{m}\rightarrow [0,1]$ are analogous to those of the 1-dimensional CDF and the proofs are similar.
 <ol>
 <li> $F$ is increasing in each co-ordinate. That is, if $s_{1}\le t_{1},\ldots ,s_{m}\le t_{m}$, then $F(s_{1},\ldots,s_{m})\le F(t_{1},\ldots ,t_{m})$.
 </li>
@@ -158,10 +173,17 @@ $$
 </li>
 <li> $F$ is right continuous in each co-ordinate. That is $F(t_{1}+h_{1},\ldots ,t_{m}+h_{m})\rightarrow F(t_{1},\ldots ,t_{m})$ as $h_{i}\rightarrow 0+$.
 </ol>
-Conversely any function having these four properties is the joint CDF of some random variables.</p>
-<p class="text-justify">From the joint CDF, it is easy to recover the individual CDFs. Indeed, if $F:\mathbb{R}^{m}\rightarrow \mathbb{R}$ is the CDF of $\mathbf{X}=(X_{1},\ldots ,X_{m})$, then the CDF of $X_{1}$ is given by $F_{1}(t):=F(t,+\infty,\ldots,+\infty):=\lim F(t,s_{2},\ldots,s_{m})$ as $s_{i}\rightarrow +\infty$ for each $i=2,\ldots ,m$. This is true because if $A_{n}:=\{X_{1}\le t\}\cap\{X_{2}\le n\}\cap \ldots \cap\{X_{m}\le n\}$, then as $n\rightarrow \infty$, the events $A_{n}$ increase to the event $A=\{X_{1}\le t\}$. Hence $\mathbf{P}(A_{n})\rightarrow \mathbf{P}(A)$. But $\mathbf{P}(A_{n})=F(t,n,n,\ldots,n)$ and $\mathbf{P}(A)=F_{1}(t)$. Thus we see that $F_{1}(t):=F(t,+\infty,\ldots,+\infty)$.</p>
-<p class="text-justify">More generally, we can recover the joint CDF of any subset of $X_{1},\ldots ,X_{n}$, for example, the joint CDF of $X_{1},\ldots ,X_{k}$ is just $F(t_{1},\ldots ,t_{k},+\infty,\ldots ,+\infty)$.</p>
-<p class="text-justify"><strong>Joint pmf and pdf:</strong> Just like in the case of one random variable, we can consider the following two classes of random variables.
+Conversely any function having these four properties is the joint CDF of some random variables.
+ </p>
+ <p>
+ From the joint CDF, it is easy to recover the individual CDFs. Indeed, if $F:\mathbb{R}^{m}\rightarrow \mathbb{R}$ is the CDF of $\mathbf{X}=(X_{1},\ldots ,X_{m})$, then the CDF of $X_{1}$ is given by $F_{1}(t):=F(t,+\infty,\ldots,+\infty):=\lim F(t,s_{2},\ldots,s_{m})$ as $s_{i}\rightarrow +\infty$ for each $i=2,\ldots ,m$. This is true because if $A_{n}:=\{X_{1}\le t\}\cap\{X_{2}\le n\}\cap \ldots \cap\{X_{m}\le n\}$, then as $n\rightarrow \infty$, the events $A_{n}$ increase to the event $A=\{X_{1}\le t\}$. Hence $\mathbf{P}(A_{n})\rightarrow \mathbf{P}(A)$. But $\mathbf{P}(A_{n})=F(t,n,n,\ldots,n)$ and $\mathbf{P}(A)=F_{1}(t)$. Thus we see that $F_{1}(t):=F(t,+\infty,\ldots,+\infty)$.
+ </p>
+           
+ <p class="text-justify">
+More generally, we can recover the joint CDF of any subset of $X_{1},\ldots ,X_{n}$, for example, the joint CDF of $X_{1},\ldots ,X_{k}$ is just $F(t_{1},\ldots ,t_{k},+\infty,\ldots ,+\infty)$.
+ </p>
+ <p>
+ <strong>Joint pmf and pdf:</strong> Just like in the case of one random variable, we can consider the following two classes of random variables.
 <ol>
 <li> Distributions with a pmf. These are CDFs for which there exist points ${\bf t}_{1},{\bf t}_{2},\ldots $ in $\mathbb{R}^{m}$ and non-negative numbers $w_{i}$ such that $\sum_{i}w_{i}=1$ (often we write $f(t_{i})$ in place of $w_{i}$) and such that for every ${\bf t}\in \mathbb{R}^{m}$ we have
 $$ F({\bf t})=\sum_{i{\; : \;} {\bf t}_{i}\le {\bf t}} w_{i} $$
@@ -171,21 +193,31 @@ where ${\bf s}\le {\bf t}$ means that each co-ordinate of $s$ is less than or eq
 $$ F({\bf t})=\int\limits_{-\infty}^{t_{1}}\!\ldots \int\limits_{-\infty}^{t_{m}} f(u_{1},\ldots ,u_{m})du_{1}\ldots du_{m}. $$
 </ol>
 We give two examples, one of each kind.
-<div id="theorem-113"><div class="panel panel-info example"> <div class="panel-heading">Example 113 </div><div class="panel-body"> (Multinomial distribution). Fix parameters $r,m$ (two  positive integers) and $p_{1},\ldots ,p_{m}$ (positive numbers that add to $1$). The <em> multinomial pmf</em> with these parameters is given by
+<p>&nbsp;</p>
+                <div id="theorem-113"><div class="panel panel-info example"> <div class="panel-heading">Example 113 </div><div class="panel-body"> (Multinomial distribution). Fix parameters $r,m$ (two  positive integers) and $p_{1},\ldots ,p_{m}$ (positive numbers that add to $1$). The <em> multinomial pmf</em> with these parameters is given by
 $$
 f(k_{1},\ldots ,k_{m-1})=\frac{r!}{k_{1}!k_{2}!\ldots k_{m-1}!(r-\sum_{i=1}^{m-1}k_{i})!} p_{1}^{k_{1}}\ldots p_{m-1}^{k_{m-1}}p_{m}^{r-\sum_{i=1}^{m-1}k_{i}},
 $$
 if $k_{i}\ge 0$ are integers such that $k_{1}+\ldots +k_{m-1}\le r$. One situation where this distribution arises is when $r$ balls are randomly placed in $m$ bins, with each ball going into the $j$th bin with probability $p_{j}$, and we look at the random vector $(X_{1},\ldots ,X_{m-1})$ where $X_{k}$ is the number of balls that fell into the $k$th bin. This random vector has the multinomial pmf<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
                                 1
-                                 </a> </sup><span class="collapse small" id="footnote-1">In some books, the distribution of $(X_{1},\ldots ,X_{m})$ is called the multinomial distribution. This has the pmf $$g(k_{1},\ldots ,k_{m})\frac{r!}{k_{1}!k_{2}!\ldots k_{m-1}!k_{m}!} p_{1}^{k_{1}}\ldots p_{m-1}^{k_{m-1}}p_{m}^{k_{m}}$$ where $k_{i}$ are non-negative integers such that $k_{1}+\ldots +k_{m}=r$. We have chosen our convention so that the binomial distribution is a special case of the multinomial\dots</span> </p>
-<p class="text-justify">In this case, the marginal distribution of $X_{k}$ is $\mbox{Bin}(r,p_{k})$. More generally, $(X_{1},\ldots ,X_{\ell})$ has multinomial distribution with parameters $r,\ell,p_{1},\ldots ,p_{\ell},p_{0}$ where $p_{0}=1-(p_{1}+\ldots +p_{\ell})$. This is easy to prove, but even easier to see from the balls in bins interpretation (just think of the last $n-\ell$ bins as one).
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-114"><div class="panel panel-info example"> <div class="panel-heading">Example 114 </div><div class="panel-body"> (Bivariate normal distribution). This is the density on $\mathbb{R}^{2}$ given by
+                                 </a> </sup><span class="collapse small" id="footnote-1">In some books, the distribution of $(X_{1},\ldots ,X_{m})$ is called the multinomial distribution. This has the pmf $$g(k_{1},\ldots ,k_{m})\frac{r!}{k_{1}!k_{2}!\ldots k_{m-1}!k_{m}!} p_{1}^{k_{1}}\ldots p_{m-1}^{k_{m-1}}p_{m}^{k_{m}}$$ where $k_{i}$ are non-negative integers such that $k_{1}+\ldots +k_{m}=r$. We have chosen our convention so that the binomial distribution is a special case of the multinomial\dots</span> 
+ </p>
+           
+ <p class="text-justify">
+In this case, the marginal distribution of $X_{k}$ is $\mbox{Bin}(r,p_{k})$. More generally, $(X_{1},\ldots ,X_{\ell})$ has multinomial distribution with parameters $r,\ell,p_{1},\ldots ,p_{\ell},p_{0}$ where $p_{0}=1-(p_{1}+\ldots +p_{\ell})$. This is easy to prove, but even easier to see from the balls in bins interpretation (just think of the last $n-\ell$ bins as one).
+</div></div></div>
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-114"><div class="panel panel-info example"> <div class="panel-heading">Example 114 </div><div class="panel-body"> (Bivariate normal distribution). This is the density on $\mathbb{R}^{2}$ given by
 $$
 f(x,y)=\frac{\sqrt{ab-c^{2}}}{2\pi}e^{-\frac{1}{2}\left[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu) \right]},
 $$
-where $\mu,\nu,a,b,c$ are real parameters. We shall impose the conditions that $a > 0$, $b > 0$ and $ab-c^{2} > 0$ (otherwise the above does not give a density, as we shall see).</p>
-<p class="text-justify">The first thing is to check that this is indeed a density. We recall the one-dimensional Gaussian integral
+where $\mu,\nu,a,b,c$ are real parameters. We shall impose the conditions that $a > 0$, $b > 0$ and $ab-c^{2} > 0$ (otherwise the above does not give a density, as we shall see).
+ </p>
+           
+ <p class="text-justify">
+The first thing is to check that this is indeed a density. We recall the one-dimensional Gaussian integral
 $$\begin{equation}\label{eq:onedimgaussian}
 \int\limits_{-\infty}^{+\infty}e^{-\frac{\tau}{2}(x-a)^{2}}dx = \sqrt{2\pi}\frac{1}{\sqrt{\tau}} \mbox{ for any }\tau > 0 \mbox{ and any }a\in \mathbb{R}.
 \end{equation}$$
@@ -204,22 +236,31 @@ $$\begin{align*}
 &= \frac{\sqrt{2\pi}}{\sqrt{b}} \frac{\sqrt{2\pi}}{\sqrt{a-\frac{c^{2}}{b}}} = \frac{2\pi}{ab-c^{2}}.
 \end{align*}$$
 This completes the proof that $f(x,y)$ is indeed a density. Note that $b > 0$ and $ab-c^{2} > 0$ also implies that $a > 0$.
-</div></div></div></p>
-<p class="text-justify"><strong>Matrix form of writing the density:</strong> Let $\Sigma^{-1}=\left[\begin{array}{cc} a & c \\ c & b \end{array}\right]$. Then, $\det(\Sigma)=\frac{1}{\det(\Sigma^{-1})}=\frac{1}{ab-c^{2}}$. Hence, we may re-write the density above as (let $\mathbf{u}$ be the column vector with co-ordinates $x,y$)
+</div></div></div>
+ </p>
+ <p>
+ <strong>Matrix form of writing the density:</strong> Let $\Sigma^{-1}=\left[\begin{array}{cc} a & c \\ c & b \end{array}\right]$. Then, $\det(\Sigma)=\frac{1}{\det(\Sigma^{-1})}=\frac{1}{ab-c^{2}}$. Hence, we may re-write the density above as (let $\mathbf{u}$ be the column vector with co-ordinates $x,y$)
 $$
 f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)}} e^{-\frac{1}{2}\mathbf{u}^{t}\Sigma^{-1}\mathbf{u} }.
 $$
-This is precisely in the form in which we wrote for general $n$ in the example earlier. The conditions $a > 0,b > 0,ab-c^{2} > 0$ translate precisely to what is called positive-definiteness. One way to say it is that $\Sigma$ is a symmetric matrix and all its eigenvalues are strictly positive.</p>
-<p class="text-justify"><strong>Final form:</strong> We can now introduce an extra pair of parameters $\mu_{1},\mu_{2}$ and define a density
+This is precisely in the form in which we wrote for general $n$ in the example earlier. The conditions $a > 0,b > 0,ab-c^{2} > 0$ translate precisely to what is called positive-definiteness. One way to say it is that $\Sigma$ is a symmetric matrix and all its eigenvalues are strictly positive.
+ </p>
+           
+ <p class="text-justify">
+<strong>Final form:</strong> We can now introduce an extra pair of parameters $\mu_{1},\mu_{2}$ and define a density
 $$
 f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)}} e^{-\frac{1}{2}(\mathbf{u}-\mu)^{t}\Sigma^{-1}(\mathbf{u}-\mu) }.
 $$
-where $\mu$ is a column vector with co-ordinates $\mu_{1},\mu_{2}$. This is the full bi-variate normal density.</p>
-<p class="text-justify"><div id="theorem-115"><div class="panel panel-info example"> <div class="panel-heading">Example 115 </div><div class="panel-body"> (A class of examples). Let $f_{1},f_{2},\ldots ,f_{m}$ be one-variable densities. In other words, $f_{i}:\mathbb{R}\rightarrow \mathbb{R}_{+}$ and $\int_{-\infty}^{\infty}f_{i}(x)dx=1$. Then, we can make a multivariate density as follows. Define $f:\mathbb{R}^{m}\rightarrow \mathbb{R}_{+}^{m}$ by $f(x_{1},\ldots ,x_{m})=f_{1}(x_{1})\ldots f_{m}(x_{m})$. Then $f$ is a density.</p>
-<p class="text-justify">If $X_{i}$ are random variables on a common probability space and the joint density of $(X_{1},\ldots ,X_{m})$  if $f(x_{1},\ldots ,x_{m})$, then we say that $X_{i}$ are <em> independent random variables</em>. It is easy to see that the marginal density of $X_{i}$ if $f_{i}$. It is also the case that the joint CDF factors as $F_{X}(x_{1},\ldots ,x_{m})=F_{X_{1}}(x_{1})\ldots F_{X_{m}}(x_{m})$.
+where $\mu$ is a column vector with co-ordinates $\mu_{1},\mu_{2}$. This is the full bi-variate normal density.
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-115"><div class="panel panel-info example"> <div class="panel-heading">Example 115 </div><div class="panel-body"> (A class of examples). Let $f_{1},f_{2},\ldots ,f_{m}$ be one-variable densities. In other words, $f_{i}:\mathbb{R}\rightarrow \mathbb{R}_{+}$ and $\int_{-\infty}^{\infty}f_{i}(x)dx=1$. Then, we can make a multivariate density as follows. Define $f:\mathbb{R}^{m}\rightarrow \mathbb{R}_{+}^{m}$ by $f(x_{1},\ldots ,x_{m})=f_{1}(x_{1})\ldots f_{m}(x_{m})$. Then $f$ is a density.
+ </p>
+           If $X_{i}$ are random variables on a common probability space and the joint density of $(X_{1},\ldots ,X_{m})$  if $f(x_{1},\ldots ,x_{m})$, then we say that $X_{i}$ are <em> independent random variables</em>. It is easy to see that the marginal density of $X_{i}$ if $f_{i}$. It is also the case that the joint CDF factors as $F_{X}(x_{1},\ldots ,x_{m})=F_{X_{1}}(x_{1})\ldots F_{X_{m}}(x_{m})$.
 </div></div></div>
 
-</p>
+
 <div class="pull-right"><a href="chapter-19.html" class="btn btn-primary">Chapter 19. Change of variable formula</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

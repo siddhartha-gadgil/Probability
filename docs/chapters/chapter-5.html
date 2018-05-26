@@ -130,63 +130,150 @@
 <div class="container">
 <h1 class="text-center bg-info">Chapter 5 : On infinite sums</h1>
 <p>&nbsp;</p>
- There were some subtleties in the definition of probabilities which we address now. The definition of $\mathbf{P}(A)$ for an event $A$ and $\mathbf{E}[X]$ for a random variable $X$ involve infinite sums (when $\Omega$ is countably infinite). In fact, in the very definition of probability space, we had the condition that $\sum_{\omega}p_{\omega}=1$, but what is the meaning of this sum when $\Omega$ is infinite? In this section, we make precise the notion of infinite sums. In fact we shall give two methods of approach, it suffices to consider only the first.</p>
-<p class="text-justify"><strong>5.1 First approach.</strong><p class="text-justify"> Let $\Omega$ be a countable set, and let $f:\Omega\rightarrow \mathbb{R}$ be a function. We want to give a meaning to the infinite sum $\sum_{\omega\in \Omega}f(\omega)$. First we describe a natural attempt and then address the issues that it leaves open.</p>
-<p class="text-justify"><strong>The idea:</strong> By definition of countability, there is a bijection $\varphi:\mathbb{N}\rightarrow \Omega$ which allows us to list the elements of $\Omega$ as $\omega_{1}=\varphi(1),\omega_{2}=\varphi(2),\ldots$. Consider the partial sums $x_{n}=f(\omega_{1})+f(\omega_{2})+\ldots +f(\omega_{n})$. Since $f$ is non-negative, these numbers are non-decreasing, i.e., $x_{1}\le x_{2}\le x_{3}\le \ldots$. Hence, they converge to a finite number or to $+\infty$ (which is just another phrase for saying that the partial sums grow without bound). We would like to simply define the sum $\sum_{\omega\in \Omega}f(\omega)$ as the limit $L=\lim_{n\rightarrow \infty}(f(\omega_{1})+\ldots +f(\omega_{n})$, which may be finite or $+\infty$.</p>
-<p class="text-justify">The problem is that this may depend on the bijection $\Omega$ chosen. For example, if $\psi:\mathbb{N}\rightarrow \Omega$ is a different bijection, we would write the elements of $\Omega$ in a different sequence $\omega_{1}'=\psi(1),\omega_{2}'=\psi(2),\ldots$, the partial sums $y_{n}=f(\omega_{1}')+\ldots +f(\omega_{n}')$ and then define $\sum_{\omega\in \Omega}f(\omega)$ as the limit $L'=\lim_{n\rightarrow \infty}(f(\omega_{1}')+\ldots +f(\omega_{n}')$.</p>
-<p class="text-justify">Is it necessarily true that $L=L'$?</p>
-<p class="text-justify"><strong>Case I - Non-negative $f$:</strong> We claim that for any two bijections $\varphi$ and $\psi$ as above, the limits are the same (this means that the limits are $+\infty$ in both cases, or the same finite number in both cases). Indeed, fix any $n$ and recall that $x_{n}=f(\omega_{1})+\ldots +f(\omega_{n})$. Now, $\psi$ is surjective, hence there is some $m$ (possibly very large) such that $\{\omega_{1},\ldots,\omega_{n}\}\subseteq \{\omega_{1}',\ldots ,\omega_{m}'\}$. Now, we use the non-negativity of $f$ to observe that
+
+
+ <p class="text-justify">
+ There were some subtleties in the definition of probabilities which we address now. The definition of $\mathbf{P}(A)$ for an event $A$ and $\mathbf{E}[X]$ for a random variable $X$ involve infinite sums (when $\Omega$ is countably infinite). In fact, in the very definition of probability space, we had the condition that $\sum_{\omega}p_{\omega}=1$, but what is the meaning of this sum when $\Omega$ is infinite? In this section, we make precise the notion of infinite sums. In fact we shall give two methods of approach, it suffices to consider only the first.
+ </p>
+ <p>
+ 
+ </p>
+           <strong>5.1 First approach.</strong>
+
+
+
+
+
+
+
+
+
+ <p class="text-justify">
+ Let $\Omega$ be a countable set, and let $f:\Omega\rightarrow \mathbb{R}$ be a function. We want to give a meaning to the infinite sum $\sum_{\omega\in \Omega}f(\omega)$. First we describe a natural attempt and then address the issues that it leaves open.
+ </p>
+ <p>
+ <strong>The idea:</strong> By definition of countability, there is a bijection $\varphi:\mathbb{N}\rightarrow \Omega$ which allows us to list the elements of $\Omega$ as $\omega_{1}=\varphi(1),\omega_{2}=\varphi(2),\ldots$. Consider the partial sums $x_{n}=f(\omega_{1})+f(\omega_{2})+\ldots +f(\omega_{n})$. Since $f$ is non-negative, these numbers are non-decreasing, i.e., $x_{1}\le x_{2}\le x_{3}\le \ldots$. Hence, they converge to a finite number or to $+\infty$ (which is just another phrase for saying that the partial sums grow without bound). We would like to simply define the sum $\sum_{\omega\in \Omega}f(\omega)$ as the limit $L=\lim_{n\rightarrow \infty}(f(\omega_{1})+\ldots +f(\omega_{n})$, which may be finite or $+\infty$.
+ </p>
+           
+ <p class="text-justify">
+The problem is that this may depend on the bijection $\Omega$ chosen. For example, if $\psi:\mathbb{N}\rightarrow \Omega$ is a different bijection, we would write the elements of $\Omega$ in a different sequence $\omega_{1}'=\psi(1),\omega_{2}'=\psi(2),\ldots$, the partial sums $y_{n}=f(\omega_{1}')+\ldots +f(\omega_{n}')$ and then define $\sum_{\omega\in \Omega}f(\omega)$ as the limit $L'=\lim_{n\rightarrow \infty}(f(\omega_{1}')+\ldots +f(\omega_{n}')$.
+ </p>
+ <p>
+ Is it necessarily true that $L=L'$?
+ </p>
+           
+ <p class="text-justify">
+<strong>Case I - Non-negative $f$:</strong> We claim that for any two bijections $\varphi$ and $\psi$ as above, the limits are the same (this means that the limits are $+\infty$ in both cases, or the same finite number in both cases). Indeed, fix any $n$ and recall that $x_{n}=f(\omega_{1})+\ldots +f(\omega_{n})$. Now, $\psi$ is surjective, hence there is some $m$ (possibly very large) such that $\{\omega_{1},\ldots,\omega_{n}\}\subseteq \{\omega_{1}',\ldots ,\omega_{m}'\}$. Now, we use the non-negativity of $f$ to observe that
 $$
 f(\omega_{1})+\ldots +f(\omega_{n})\le f(\omega_{1}')+\ldots +f(\omega_{m}').
 $$
-This is the same as $x_{n}\le y_{m}$. Since $y_{k}$ are non-decreasing, it follows that $x_{n}\le y_{m}\le y_{m+1}\le y_{m+2}\ldots$, which implies that $x_{n}\le L'$. Now let $n\rightarrow \infty$ and conclude that $L\le L'$. Repeat the argument with the roles of $\varphi$ and $\psi$ reversed to conclude that $L'\le L$. Hence $L=L'$, as desired to show.</p>
-<p class="text-justify">In conclusion, for non-negative functions $f$, we can assign an unambiguous meaning to $\sum_{\omega}f(\omega)$ by setting it equal to $\lim_{n\rightarrow \infty}(f(\varphi(1)+\ldots +f(\varphi(n)))$, where $\varphi:\mathbb{N}\rightarrow \Omega$ is any bijection (the point being that the limit does not depend on the bijection chosen), and the limit here may be allowed to be $+\infty$ (in which case we say that the sum does not converge).</p>
-<p class="text-justify"><strong>Case II - General $f:\Omega\rightarrow \mathbb{R}$:</strong> The above argument fails if $f$ is allowed to take both positive and negative values (why?). In fact, the answers $L$ and $L'$ from different bijections may be completely different. An example is given later to illustrate this point. For now, here is how we deal with this problem.</p>
-<p class="text-justify">For a real number $x$ we introduce the notations, $x_{+}=x\vee 0$ and $x_{-}=(-x)\vee 0$. Then $x=x_{+}-x_{-}$ while $|x|=x_{+}+x_{-}$.  Define the non-negative functions $f_{+},f_{-}:\Omega\rightarrow \mathbb{R}_{+}$ by $f_{+}(\omega)=(f(\omega))_{+}$ and $f_{-}(\omega)=(f(\omega))_{-}$. Observe that $f_{+}(\omega)-f_{-}(\omega)=f(\omega)$ while $f_{+}(\omega)+f_{-}(\omega)=|f(\omega)|$, for all $\omega\in \Omega$.
-<div id="theorem-38"><div class="panel panel-info example"> <div class="panel-heading">Example 38 </div><div class="panel-body"> Let $\Omega=\{a,b,c,d\}$ and let $f(a)=1$, $f(b)=-1$, $f(c)=-3$, $f(4)=-0.3$. Then, $f_{+}(a)=1$ and $f_{+}(b)=f_{+}(c)=f_{+}(d)=0$ while $f_{-}(1)=0$ and $f_{-}(b)=1$, $f_{-}(c)=3$, $f_{-}(d)=0.3$.
-</div></div></div></p>
-<p class="text-justify">Since $f_{+}$ and $f_{-}$ are non-negative functions, we know how to define their sums. Let $S_{+}=\sum_{\omega}f_{+}(\omega)$ and $S_{-}=\sum_{\omega}f_{-}(\omega)$. Recall that one or both of $S_{+},S_{-}$ could be equal to $+\infty$, in which case we say that $\sum_{\omega}f(\omega)$ <em> does not converge absolutely</em> and do not assign it any value. If both $S_{+}$ and $S_{-}$ are finite, then we define $\sum_{\omega}f(\omega)= S_{+}-S_{-}$. In this case we say that $\sum f$ <em> converges absolutely</em>.</p>
-<p class="text-justify">This completes our definition of absolutely convergent sums. A few exercises to show that when working with absolutely convergent sums, the usual rules of addition remain valid. For example, we can add the numbers in any order.</p>
-<p class="text-justify"><div id="theorem-39"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 39 </div><div class="panel-body"> Show that $\sum_{\omega}f(\omega)$ converges absolutely if and only if $\sum_{\omega}|f(\omega)|$ is finite (since $|f(\omega)|$ is a non-negative function, this latter sum is always defined, and may equal $+\infty$).
-</div></div></div></p>
-<p class="text-justify">For non-negative $f$, we can find the sum by using any particular bijection and then taking limits of partial sums. What about general $f$?
-<div id="theorem-40"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 40 </div><div class="panel-body"> Let $f:\Omega \rightarrow \mathbb{R}$. Suppose $\sum_{\omega\in \Omega}f(\omega)$ be summable and let the sum be $S$. Then, for any bijection $\varphi:\mathbb{N}\rightarrow \Omega$, we have $\lim_{n\rightarrow \infty}(f(\varphi(1))+\ldots +f(\varphi(n)))=S$.</p>
-<p class="text-justify">Conversely, if $\lim_{n\rightarrow \infty}(f(\varphi(1))+\ldots +f(\varphi(n)))$ exists and is the same finite number for any bijection $\varphi:\mathbb{N}\rightarrow \mathbb{R}$, then $f$ must be absolutely summable and $\sum_{\omega\in \Omega}f(\omega)$ is equal to this common limit.
-</div></div></div></p>
-<p class="text-justify">The usual properties of summation without which life would not be worth living, are still valid.
-<div id="theorem-41"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 41 </div><div class="panel-body"> Let $f,g:\Omega\rightarrow \mathbb{R}_{+}$ and $a,b\in \mathbb{R}$. If $\sum f$ and $\sum g$ converge absolutely,  then  $\sum (af+bg)$ converges absolutely and $\sum (af+bg) = a\sum f +b\sum g$. Further, if $f(\omega)\le g(\omega)$ for all $\omega\in \Omega$, then $\sum f \le \sum g$.
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-42"><div class="panel panel-info example"> <div class="panel-heading">Example 42 </div><div class="panel-body"> This example will illustrate why we refuse to assign a value to $\sum_{\omega}f(\omega)$ in some cases. Let $\Omega=\mathbb{Z}$ and define $f(0)=0$ and $f(n)=1/n$ for $n\not=0$. At first one may like to say that $\sum_{n\in \mathbb{Z}}f(n)=0$, since we can cancel $f(n)$ and $f(-n)$ for each $n$. However, following our definitions
+This is the same as $x_{n}\le y_{m}$. Since $y_{k}$ are non-decreasing, it follows that $x_{n}\le y_{m}\le y_{m+1}\le y_{m+2}\ldots$, which implies that $x_{n}\le L'$. Now let $n\rightarrow \infty$ and conclude that $L\le L'$. Repeat the argument with the roles of $\varphi$ and $\psi$ reversed to conclude that $L'\le L$. Hence $L=L'$, as desired to show.
+ </p>
+ <p>
+ In conclusion, for non-negative functions $f$, we can assign an unambiguous meaning to $\sum_{\omega}f(\omega)$ by setting it equal to $\lim_{n\rightarrow \infty}(f(\varphi(1)+\ldots +f(\varphi(n)))$, where $\varphi:\mathbb{N}\rightarrow \Omega$ is any bijection (the point being that the limit does not depend on the bijection chosen), and the limit here may be allowed to be $+\infty$ (in which case we say that the sum does not converge).
+ </p>
+           
+ <p class="text-justify">
+<strong>Case II - General $f:\Omega\rightarrow \mathbb{R}$:</strong> The above argument fails if $f$ is allowed to take both positive and negative values (why?). In fact, the answers $L$ and $L'$ from different bijections may be completely different. An example is given later to illustrate this point. For now, here is how we deal with this problem.
+ </p>
+ <p>
+ For a real number $x$ we introduce the notations, $x_{+}=x\vee 0$ and $x_{-}=(-x)\vee 0$. Then $x=x_{+}-x_{-}$ while $|x|=x_{+}+x_{-}$.  Define the non-negative functions $f_{+},f_{-}:\Omega\rightarrow \mathbb{R}_{+}$ by $f_{+}(\omega)=(f(\omega))_{+}$ and $f_{-}(\omega)=(f(\omega))_{-}$. Observe that $f_{+}(\omega)-f_{-}(\omega)=f(\omega)$ while $f_{+}(\omega)+f_{-}(\omega)=|f(\omega)|$, for all $\omega\in \Omega$.
+<p>&nbsp;</p>
+                <div id="theorem-38"><div class="panel panel-info example"> <div class="panel-heading">Example 38 </div><div class="panel-body"> Let $\Omega=\{a,b,c,d\}$ and let $f(a)=1$, $f(b)=-1$, $f(c)=-3$, $f(4)=-0.3$. Then, $f_{+}(a)=1$ and $f_{+}(b)=f_{+}(c)=f_{+}(d)=0$ while $f_{-}(1)=0$ and $f_{-}(b)=1$, $f_{-}(c)=3$, $f_{-}(d)=0.3$.
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+Since $f_{+}$ and $f_{-}$ are non-negative functions, we know how to define their sums. Let $S_{+}=\sum_{\omega}f_{+}(\omega)$ and $S_{-}=\sum_{\omega}f_{-}(\omega)$. Recall that one or both of $S_{+},S_{-}$ could be equal to $+\infty$, in which case we say that $\sum_{\omega}f(\omega)$ <em> does not converge absolutely</em> and do not assign it any value. If both $S_{+}$ and $S_{-}$ are finite, then we define $\sum_{\omega}f(\omega)= S_{+}-S_{-}$. In this case we say that $\sum f$ <em> converges absolutely</em>.
+ </p>
+ <p>
+ This completes our definition of absolutely convergent sums. A few exercises to show that when working with absolutely convergent sums, the usual rules of addition remain valid. For example, we can add the numbers in any order.
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-39"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 39 </div><div class="panel-body"> Show that $\sum_{\omega}f(\omega)$ converges absolutely if and only if $\sum_{\omega}|f(\omega)|$ is finite (since $|f(\omega)|$ is a non-negative function, this latter sum is always defined, and may equal $+\infty$).
+</div></div></div>
+ </p>
+ <p>
+ For non-negative $f$, we can find the sum by using any particular bijection and then taking limits of partial sums. What about general $f$?
+<p>&nbsp;</p>
+                <div id="theorem-40"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 40 </div><div class="panel-body"> Let $f:\Omega \rightarrow \mathbb{R}$. Suppose $\sum_{\omega\in \Omega}f(\omega)$ be summable and let the sum be $S$. Then, for any bijection $\varphi:\mathbb{N}\rightarrow \Omega$, we have $\lim_{n\rightarrow \infty}(f(\varphi(1))+\ldots +f(\varphi(n)))=S$.
+ </p>
+           
+ <p class="text-justify">
+Conversely, if $\lim_{n\rightarrow \infty}(f(\varphi(1))+\ldots +f(\varphi(n)))$ exists and is the same finite number for any bijection $\varphi:\mathbb{N}\rightarrow \mathbb{R}$, then $f$ must be absolutely summable and $\sum_{\omega\in \Omega}f(\omega)$ is equal to this common limit.
+</div></div></div>
+ </p>
+ <p>
+ The usual properties of summation without which life would not be worth living, are still valid.
+<p>&nbsp;</p>
+                <div id="theorem-41"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 41 </div><div class="panel-body"> Let $f,g:\Omega\rightarrow \mathbb{R}_{+}$ and $a,b\in \mathbb{R}$. If $\sum f$ and $\sum g$ converge absolutely,  then  $\sum (af+bg)$ converges absolutely and $\sum (af+bg) = a\sum f +b\sum g$. Further, if $f(\omega)\le g(\omega)$ for all $\omega\in \Omega$, then $\sum f \le \sum g$.
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-42"><div class="panel panel-info example"> <div class="panel-heading">Example 42 </div><div class="panel-body"> This example will illustrate why we refuse to assign a value to $\sum_{\omega}f(\omega)$ in some cases. Let $\Omega=\mathbb{Z}$ and define $f(0)=0$ and $f(n)=1/n$ for $n\not=0$. At first one may like to say that $\sum_{n\in \mathbb{Z}}f(n)=0$, since we can cancel $f(n)$ and $f(-n)$ for each $n$. However, following our definitions
 $$
 f_{+}(n)=\begin{cases}\frac{1}{n} & \mbox{ if }n\ge 1\\ 0 &\mbox{ if }n\le 0, \end{cases} \qquad f_{-}(n)=\begin{cases}\frac{1}{n} & \mbox{ if }n\le -1\\ 0 &\mbox{ if }n\ge 0. \end{cases}
 $$
-Hence $S_{+}$ and $S_{-}$ are both $+\infty$ which means our definition does not assign any value to the sum $\sum_{\omega}f(\omega)$.</p>
-<p class="text-justify">Indeed, by ordering the numbers appropriately, we can get any value we like! For example, here is how to get $10$. We know that $1+\frac{1}{2}+\ldots +\frac{1}{n}$ grows without bound. Just keep adding these positive number till the sum exceeds $10$ for the first time. Then start adding the negative numbers $-1-\frac{1}{2}-\ldots -\frac{1}{m}$ till the sum comes below $10$. Then add the positive numbers $\frac{1}{n+1}+\frac{1}{n+2}+\ldots +\frac{1}{n'}$ till the sum exceeds $10$ again, and then negative numbers till the sum falls below $10$ again, etc. Using the fact that the individual terms in the series are going to zero, it is easy to see that the partial sums then converge to $10$. There is nothing special about $10$, we can get any number we want!
+Hence $S_{+}$ and $S_{-}$ are both $+\infty$ which means our definition does not assign any value to the sum $\sum_{\omega}f(\omega)$.
+ </p>
+ <p>
+ Indeed, by ordering the numbers appropriately, we can get any value we like! For example, here is how to get $10$. We know that $1+\frac{1}{2}+\ldots +\frac{1}{n}$ grows without bound. Just keep adding these positive number till the sum exceeds $10$ for the first time. Then start adding the negative numbers $-1-\frac{1}{2}-\ldots -\frac{1}{m}$ till the sum comes below $10$. Then add the positive numbers $\frac{1}{n+1}+\frac{1}{n+2}+\ldots +\frac{1}{n'}$ till the sum exceeds $10$ again, and then negative numbers till the sum falls below $10$ again, etc. Using the fact that the individual terms in the series are going to zero, it is easy to see that the partial sums then converge to $10$. There is nothing special about $10$, we can get any number we want!
 </div></div></div>
 One last remark on why we assumed $\Omega$ to be countable.
-<div id="theorem-43"><div class="panel panel-success remark"> <div class="panel-heading">Remark 43 </div><div class="panel-body"> What if $\Omega$ is uncountable? Take any $f:\Omega\rightarrow \mathbb{R}_{+}$. Define the sets $A_{n}=\{\omega{\; : \;} f(\omega)\ge 1/n\}$. For some $n$, if $A_{n}$ has infinitely many elements, then clearly the only reasonable value that we can assign to $\sum f(\omega)$ is $+\infty$ (since the sum over elements of $A_{n}$ itself is larger than any finite number). Therefore, for $\sum f(\omega)$ to be a finite number it is essential that $A_{n}$ is a finite set for each set.</p>
-<p class="text-justify">Now, a countable union of finite sets is countable (or finite). Therefore $A=\bigcup_{n}A_{n}$ is a countable set. But note that $A$ is also the set $\{\omega{\; : \;} f(\omega) > 0\}$ (since, if $f(\omega) > 0$ it must belong to some $A_{n}$). Consequently, even if the underlying set $\Omega$ is uncountable, our function will have to be equal to zero except on a countable subset of $\Omega$. In other words, we are reduced to the case of countable sums!
-</div></div></div></p>
-<p class="text-justify"><strong>5.2 Second approach.</strong><p class="text-justify"> In the first approach, we assumed that you are already familiar with the notion of limits and series and used them to define countable sums. In the second approach, we start from scratch and define infinite sums. The end result is exactly the same. For the purposes of this course, you may ignore the rest of the section.
-<div id="theorem-44"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 44 </div><div class="panel-body"> If $\Omega$ is a countable set and $f:\Omega \rightarrow \mathbb{R}_{+}$ is a non-negative function, then we <u>define</u>
+<p>&nbsp;</p>
+                <div id="theorem-43"><div class="panel panel-success remark"> <div class="panel-heading">Remark 43 </div><div class="panel-body"> What if $\Omega$ is uncountable? Take any $f:\Omega\rightarrow \mathbb{R}_{+}$. Define the sets $A_{n}=\{\omega{\; : \;} f(\omega)\ge 1/n\}$. For some $n$, if $A_{n}$ has infinitely many elements, then clearly the only reasonable value that we can assign to $\sum f(\omega)$ is $+\infty$ (since the sum over elements of $A_{n}$ itself is larger than any finite number). Therefore, for $\sum f(\omega)$ to be a finite number it is essential that $A_{n}$ is a finite set for each set.
+ </p>
+           
+ <p class="text-justify">
+Now, a countable union of finite sets is countable (or finite). Therefore $A=\bigcup_{n}A_{n}$ is a countable set. But note that $A$ is also the set $\{\omega{\; : \;} f(\omega) > 0\}$ (since, if $f(\omega) > 0$ it must belong to some $A_{n}$). Consequently, even if the underlying set $\Omega$ is uncountable, our function will have to be equal to zero except on a countable subset of $\Omega$. In other words, we are reduced to the case of countable sums!
+</div></div></div>
+ </p>
+ <p>
+ 
+ </p>
+           <strong>5.2 Second approach.</strong>
+
+
+ <p class="text-justify">
+ In the first approach, we assumed that you are already familiar with the notion of limits and series and used them to define countable sums. In the second approach, we start from scratch and define infinite sums. The end result is exactly the same. For the purposes of this course, you may ignore the rest of the section.
+<p>&nbsp;</p>
+                <div id="theorem-44"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 44 </div><div class="panel-body"> If $\Omega$ is a countable set and $f:\Omega \rightarrow \mathbb{R}_{+}$ is a non-negative function, then we <u>define</u>
 $$
 \sum\limits_{\omega}f(\omega) :=\sup\left\{\sum\limits_{\omega\in A}f(\omega) {\; : \;} A\subseteq \Omega \mbox{ is finite}\right\}
 $$
 where the supremum takes values in $\bar{\mathbb{R}}_{+}=\mathbb{R}_{+}\cup\{+\infty\}$. We say that $\sum f(\omega)$ converges if the supremum has a finite value.
 </div></div></div>
-<div id="theorem-45"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 45 </div><div class="panel-body"> Show that if $f,g:\Omega\rightarrow \mathbb{R}_{+}$ and $a,b\in \mathbb{R}_{+}$, then  $\sum (af+bg) = a\sum f +b\sum g$. Further, if $f(\omega)\le g(\omega)$ for all $\omega\in \Omega$, then $\sum f \le \sum g$.
-</div></div></div></p>
-<p class="text-justify">Next, we would like to remove the condition of non-negativity. For a real number $x$ we write $x_{+}=x\vee 0$ and $x_{-}=(-x)\vee 0$. Then $x=x_{+}-x_{-}$ while $|x|=x_{+}+x_{-}$.
-<div id="theorem-46"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 46 </div><div class="panel-body"> Now suppose $f:\Omega\rightarrow \mathbb{R}$ takes both positive and negative values. Then we first define the non-negative functions $f_{+},f_{-}:\Omega\rightarrow \mathbb{R}_{+}$ by $f_{+}(\omega)=(f(\omega))_{+}$ and $f_{-}(\omega)=(f(\omega))_{-}$ and set $S_{+}=\sum_{\omega}f_{+}(\omega)$ and $S_{-}=\sum_{\omega}f_{-}(\omega)$. If both $S_{+}$ and $S_{-}$ are finite, then we define $\sum_{\omega}f(\omega)= S_{+}-S_{-}$.
+<p>&nbsp;</p>
+                <div id="theorem-45"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 45 </div><div class="panel-body"> Show that if $f,g:\Omega\rightarrow \mathbb{R}_{+}$ and $a,b\in \mathbb{R}_{+}$, then  $\sum (af+bg) = a\sum f +b\sum g$. Further, if $f(\omega)\le g(\omega)$ for all $\omega\in \Omega$, then $\sum f \le \sum g$.
 </div></div></div>
-<div id="theorem-47"><div class="panel panel-success remark"> <div class="panel-heading">Remark 47 </div><div class="panel-body"> The condition that $S_{+}$ and $S_{-}$ are both finite is the same as the condition that $\sum_{\omega}|f(\omega)|$ is finite. If these happen,  we say that the sum $\sum f(\omega)$ <em> converges absolutely</em>.
+ </p>
+ <p>
+ Next, we would like to remove the condition of non-negativity. For a real number $x$ we write $x_{+}=x\vee 0$ and $x_{-}=(-x)\vee 0$. Then $x=x_{+}-x_{-}$ while $|x|=x_{+}+x_{-}$.
+<p>&nbsp;</p>
+                <div id="theorem-46"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 46 </div><div class="panel-body"> Now suppose $f:\Omega\rightarrow \mathbb{R}$ takes both positive and negative values. Then we first define the non-negative functions $f_{+},f_{-}:\Omega\rightarrow \mathbb{R}_{+}$ by $f_{+}(\omega)=(f(\omega))_{+}$ and $f_{-}(\omega)=(f(\omega))_{-}$ and set $S_{+}=\sum_{\omega}f_{+}(\omega)$ and $S_{-}=\sum_{\omega}f_{-}(\omega)$. If both $S_{+}$ and $S_{-}$ are finite, then we define $\sum_{\omega}f(\omega)= S_{+}-S_{-}$.
 </div></div></div>
-<div id="theorem-48"><div class="panel panel-success remark"> <div class="panel-heading">Remark 48 </div><div class="panel-body"> Sometimes it is convenient to set $\sum f(\omega)$ to $+\infty$ if  $S_{+}=\infty$ and $S_{-} < \infty$ and set $\sum f(\omega)$ to $-\infty$ if $S_{+} < \infty$ and $S_{-}=\infty$. But there is no reasonable value to assign if both the sums are infinite.
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-49"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 49 </div><div class="panel-body"> Show that the two approaches give the same answers.
-</div></div></div></p>
-<p class="text-justify">
-</p>
+<p>&nbsp;</p>
+                <div id="theorem-47"><div class="panel panel-success remark"> <div class="panel-heading">Remark 47 </div><div class="panel-body"> The condition that $S_{+}$ and $S_{-}$ are both finite is the same as the condition that $\sum_{\omega}|f(\omega)|$ is finite. If these happen,  we say that the sum $\sum f(\omega)$ <em> converges absolutely</em>.
+</div></div></div>
+<p>&nbsp;</p>
+                <div id="theorem-48"><div class="panel panel-success remark"> <div class="panel-heading">Remark 48 </div><div class="panel-body"> Sometimes it is convenient to set $\sum f(\omega)$ to $+\infty$ if  $S_{+}=\infty$ and $S_{-} < \infty$ and set $\sum f(\omega)$ to $-\infty$ if $S_{+} < \infty$ and $S_{-}=\infty$. But there is no reasonable value to assign if both the sums are infinite.
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-49"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 49 </div><div class="panel-body"> Show that the two approaches give the same answers.
+</div></div></div>
+ </p>
+ <p>
+ 
+ </p>
+           
+
 <div class="pull-right"><a href="chapter-6.html" class="btn btn-primary">Chapter 6. Basic rules of probability</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

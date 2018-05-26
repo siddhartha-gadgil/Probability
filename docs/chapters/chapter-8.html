@@ -131,9 +131,19 @@
 <h1 class="text-center bg-info">Chapter 8 : Bonferroni's inequalities</h1>
 <p>&nbsp;</p>
 
-Inclusion-exclusion formula is nice when we can calculate the probabilities of intersections of the events under consideration. Things are not always this nice, and sometimes that may be very difficult. Even if we could find them, summing them with signs according to the inclusion-exclusion formula may be difficult as the example <a href="#theorem-56">56</a> demonstrates. The <em> idea</em> behind the inclusion-exclusion formula can however be often used to compute <em> approximate values of probabilities</em>, which is very valuable in most applications. That is what we do next.</p>
-<p class="text-justify">We know that $\mathbf{P}(A_{1}\cup \ldots \cup A_{n})\le \mathbf{P}(A_{1})+\ldots +\mathbf{P}(A_{n})$ for any events $A_{1},\ldots ,A_{n}$. This is an extremely useful inequality, often called the <em> union bound</em>. Its usefulness is in the fact that there is no assumption made about the events $A_{i}$s (such as whether they are disjoint or not). The following inequalities generalize the union bound, and gives both upper and lower bounds for the probability of the union of a bunch of events.</p>
-<p class="text-justify"><div id="theorem-59"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 59 (Bonferroni's inequalities)</div><div class="panel-body"> Let $A_{1},\ldots, A_{n}$ be events in a probability space $(\Omega,p)$ and let $A=A_{1}\cup \ldots \cup A_{n}$. We have the following upper and lower bounds for  $\mathbf{P}(A)$.
+
+
+ <p class="text-justify">
+
+Inclusion-exclusion formula is nice when we can calculate the probabilities of intersections of the events under consideration. Things are not always this nice, and sometimes that may be very difficult. Even if we could find them, summing them with signs according to the inclusion-exclusion formula may be difficult as the example <a href="#theorem-56">56</a> demonstrates. The <em> idea</em> behind the inclusion-exclusion formula can however be often used to compute <em> approximate values of probabilities</em>, which is very valuable in most applications. That is what we do next.
+ </p>
+ <p>
+ We know that $\mathbf{P}(A_{1}\cup \ldots \cup A_{n})\le \mathbf{P}(A_{1})+\ldots +\mathbf{P}(A_{n})$ for any events $A_{1},\ldots ,A_{n}$. This is an extremely useful inequality, often called the <em> union bound</em>. Its usefulness is in the fact that there is no assumption made about the events $A_{i}$s (such as whether they are disjoint or not). The following inequalities generalize the union bound, and gives both upper and lower bounds for the probability of the union of a bunch of events.
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-59"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 59 (Bonferroni's inequalities)</div><div class="panel-body"> Let $A_{1},\ldots, A_{n}$ be events in a probability space $(\Omega,p)$ and let $A=A_{1}\cup \ldots \cup A_{n}$. We have the following upper and lower bounds for  $\mathbf{P}(A)$.
 $$\begin{align*}
 \mathbf{P}(A) &\le \sum_{k=1}^{m}(-1)^{k-1}S_{k}, \hspace{2mm} \mbox{ for any odd }m. \\
 \mathbf{P}(A) &\ge \sum_{k=1}^{m}(-1)^{k-1}S_{k}, \hspace{2mm} \mbox{ for any even }m.
@@ -147,18 +157,22 @@ which we know. When $m=2$, the inequality to be proved is
 $$
 \mathbf{P}(A)\ge \sum_{k}\mathbf{P}(A_{k})-\sum_{k < \ell}\mathbf{P}(A_{k}\cap A_{\ell})
 $$
-To see this, fix $\omega\in \Omega$ and count the contribution of $p_{\omega}$ to both sides. Like in the proof of the inclusion-exclusion formula, for $\omega \not\in A_{1}\cup\ldots \cup A_{n}$, the contribution to both sides is zero. On the other hand, if $\omega$ belongs to exactly $r$ of the sets for some $r\ge 1$, then it is counted once on the left side and $r-\binom{r}{2}$ times on the right side. Not that $r-\binom{r}{2} = \frac{1}{2}r(3-r)$ which is always non-positive (one if $r=1$, zero if $r=2$ and non-positive if $r\ge 3$). Hence we get $\mbox{LHS}\ge \mbox{RHS}$.</p>
-<p class="text-justify">Similarly, one can prove the other inequalities in the series. We leave it as an exercise. The key point is that $r-\binom{r}{2}+\ldots +(-1)^{k-1}\binom{r}{k}$ is non-negative if $k$ is odd and non-positive if $k$ is even (prove this). Here as always $\binom{x}{y}$ is interpreted as zero if $y > x$.
+To see this, fix $\omega\in \Omega$ and count the contribution of $p_{\omega}$ to both sides. Like in the proof of the inclusion-exclusion formula, for $\omega \not\in A_{1}\cup\ldots \cup A_{n}$, the contribution to both sides is zero. On the other hand, if $\omega$ belongs to exactly $r$ of the sets for some $r\ge 1$, then it is counted once on the left side and $r-\binom{r}{2}$ times on the right side. Not that $r-\binom{r}{2} = \frac{1}{2}r(3-r)$ which is always non-positive (one if $r=1$, zero if $r=2$ and non-positive if $r\ge 3$). Hence we get $\mbox{LHS}\ge \mbox{RHS}$.
+ </p>
+ <p>
+ Similarly, one can prove the other inequalities in the series. We leave it as an exercise. The key point is that $r-\binom{r}{2}+\ldots +(-1)^{k-1}\binom{r}{k}$ is non-negative if $k$ is odd and non-positive if $k$ is even (prove this). Here as always $\binom{x}{y}$ is interpreted as zero if $y > x$.
 </div>
 Here is an application of these inequalities.
-<div id="theorem-60"><div class="panel panel-info example"> <div class="panel-heading">Example 60 </div><div class="panel-body"> Return to Example <a href="#theorem-56">56</a>. We obtained an exact expression for the answer, but that is rather complicated. For example, what is the probability of having at least one empty urn when $n=40$ balls are placed at random in $r=10$ urns? It would be complicated to sum the series. Instead, we could use Bonferroni's inequalities to get the following bounds.
+<p>&nbsp;</p>
+                <div id="theorem-60"><div class="panel panel-info example"> <div class="panel-heading">Example 60 </div><div class="panel-body"> Return to Example <a href="#theorem-56">56</a>. We obtained an exact expression for the answer, but that is rather complicated. For example, what is the probability of having at least one empty urn when $n=40$ balls are placed at random in $r=10$ urns? It would be complicated to sum the series. Instead, we could use Bonferroni's inequalities to get the following bounds.
 $$
  r\left(1-\frac{1}{r}\right)^{n}-\binom{r}{2}\left(1-\frac{2}{r}\right)^{n}\le \mathbf{P}(A) \le r\left(1-\frac{1}{r}\right)^{n}.
 $$
 If we take $n=40$ and $r=10$, the bounds we get are $0.1418\le \mathbf{P}(A)\le 0.1478$. Thus, we get a pretty decent approximation to the probability. By experimenting with other numbers you can check that the approximations are good when $n$ is large compared to $r$ but not otherwise. Can you reason why?
-</div></div></div></p>
-<p class="text-justify">
-</p>
+</div></div></div>
+ </p>
+           
+
 <div class="pull-right"><a href="chapter-9.html" class="btn btn-primary">Chapter 9. Independence - a first look</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

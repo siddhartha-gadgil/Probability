@@ -131,9 +131,20 @@
 <h1 class="text-center bg-info">Chapter 7 : Inclusion-exclusion formula</h1>
 <p>&nbsp;</p>
 
-In general, there is no simple rule for $\mathbf{P}(A\cup B)$ in terms of $\mathbf{P}(A)$ and $\mathbf{P}(B)$. Indeed, consider the probability space $\Omega=\{0,1\}$ with $p_{0}=p_{1}=\frac{1}{2}$. If $A=\{0\}$ and $B=\{1\}$, then $\mathbf{P}(A)=\mathbf{P}(B)=\frac{1}{2}$ and $\mathbf{P}(A\cup B)=1$. However, if $A=B=\{0\}$, then $\mathbf{P}(A)=\mathbf{P}(B)=\frac{1}{2}$ as before, but $\mathbf{P}(A\cup B)=\frac{1}{2}$. This shows that $\mathbf{P}(A\cup B)$ cannot be determined from $\mathbf{P}(A)$ and $\mathbf{P}(B)$. Similarly for $\mathbf{P}(A\cap B)$ or other set constructions.</p>
-<p class="text-justify">However, it is easy to see that $\mathbf{P}(A\cup B)=\mathbf{P}(A)+\mathbf{P}(B)-\mathbf{P}(A\cap B)$. This formula is not entirely useless, because in special situations we shall later see that the probability of the intersection is easy to compute and hence we may compute the probability of the union. Generalizing this idea to more than two sets, we get the following surprisingly useful formula.
- <div id="theorem-54"><div class="panel panel-primary proposition"> <div class="panel-heading">Proposition 54 (Inclusion-Exclusion formula)</div><div class="panel-body">
+
+
+
+
+
+
+ <p class="text-justify">
+
+In general, there is no simple rule for $\mathbf{P}(A\cup B)$ in terms of $\mathbf{P}(A)$ and $\mathbf{P}(B)$. Indeed, consider the probability space $\Omega=\{0,1\}$ with $p_{0}=p_{1}=\frac{1}{2}$. If $A=\{0\}$ and $B=\{1\}$, then $\mathbf{P}(A)=\mathbf{P}(B)=\frac{1}{2}$ and $\mathbf{P}(A\cup B)=1$. However, if $A=B=\{0\}$, then $\mathbf{P}(A)=\mathbf{P}(B)=\frac{1}{2}$ as before, but $\mathbf{P}(A\cup B)=\frac{1}{2}$. This shows that $\mathbf{P}(A\cup B)$ cannot be determined from $\mathbf{P}(A)$ and $\mathbf{P}(B)$. Similarly for $\mathbf{P}(A\cap B)$ or other set constructions.
+ </p>
+ <p>
+ However, it is easy to see that $\mathbf{P}(A\cup B)=\mathbf{P}(A)+\mathbf{P}(B)-\mathbf{P}(A\cap B)$. This formula is not entirely useless, because in special situations we shall later see that the probability of the intersection is easy to compute and hence we may compute the probability of the union. Generalizing this idea to more than two sets, we get the following surprisingly useful formula.
+ <p>&nbsp;</p>
+                <div id="theorem-54"><div class="panel panel-primary proposition"> <div class="panel-heading">Proposition 54 (Inclusion-Exclusion formula)</div><div class="panel-body">
 Let $(\Omega,p)$ be a probability space and let $A_{1},\ldots ,A_{n}$ be events. Then,
 $$
 \mathbf{P}\left(\bigcup_{i=1}^{n}A_{i}\right) = S_{1}-S_{2}+S_{3}-\ldots +(-1)^{n-1}S_{n}
@@ -144,16 +155,26 @@ S_{k}=\sum\limits_{1\le i_{1} < i_{2} < \ldots  < i_{k}\le n}\mathbf{P}(A_{i_{1}
 $$
 </div></div></div>
 We give two proofs, but the difference  is only superficial. It is a good exercise to reason out why the two arguments are basically the same.
-<div class="proof"> For each $\omega\in \Omega$ we compute its contribution to the two sides. If $\omega\not\in \bigcup_{i=1}^{n}A_{i}$, then $p_{\omega}$ is not counted on either side.  Suppose $\omega\in \bigcup_{i=1}^{n}A_{i}$ so that $p_{\omega}$ is counted once on the left side. We count the number of times $p_{\omega}$ is counted on the right side by splitting into cases depending on the exact number of $A_{i}$s that contain $\omega$.</p>
-<p class="text-justify">Suppose $\omega$ belongs to exactly one of the $A_{i}$s. For simplicity let us suppose that $\omega\in A_{1}$ but $\omega\in A_{i}^{c}$ for $2\le i\le n$. Then $p_{\omega}$ is counted once in $S_{1}$ but not counted in $S_{2},\ldots ,S_{n}$.</p>
-<p class="text-justify">Suppose $\omega$ belongs to $A_{1}$ and $A_{2}$ but not any other $A_{i}$. Then $p_{\omega}$ is counted twice in $S_{1}$ (once for $\mathbf{P}(A_{1})$ and once for $\mathbf{P}(A_{2})$) and subtracted once in $S_{2}$ (in $\mathbf{P}(A_{1}\cap A_{2})$). Thus, it is effectively counted once on the right side. The same holds if $\omega$ belongs to $A_{i}$ and $A_{j}$ but not any other $A_{k}$s.</p>
-<p class="text-justify">If $\omega$ belongs to $A_{1},\ldots ,A_{k}$ but not any other $A_{i}$, then  on the right side, $p_{\omega}$ is added $k$ times in $S_{1}$, subtracted $\binom{k}{2}$ times in $S_{2}$, added $\binom{k}{3}$ times in $S_{k}$ and so on. Thus $p_{\omega}$ is effectively counted
+<div class="proof"> For each $\omega\in \Omega$ we compute its contribution to the two sides. If $\omega\not\in \bigcup_{i=1}^{n}A_{i}$, then $p_{\omega}$ is not counted on either side.  Suppose $\omega\in \bigcup_{i=1}^{n}A_{i}$ so that $p_{\omega}$ is counted once on the left side. We count the number of times $p_{\omega}$ is counted on the right side by splitting into cases depending on the exact number of $A_{i}$s that contain $\omega$.
+ </p>
+           
+ <p class="text-justify">
+Suppose $\omega$ belongs to exactly one of the $A_{i}$s. For simplicity let us suppose that $\omega\in A_{1}$ but $\omega\in A_{i}^{c}$ for $2\le i\le n$. Then $p_{\omega}$ is counted once in $S_{1}$ but not counted in $S_{2},\ldots ,S_{n}$.
+ </p>
+ <p>
+ Suppose $\omega$ belongs to $A_{1}$ and $A_{2}$ but not any other $A_{i}$. Then $p_{\omega}$ is counted twice in $S_{1}$ (once for $\mathbf{P}(A_{1})$ and once for $\mathbf{P}(A_{2})$) and subtracted once in $S_{2}$ (in $\mathbf{P}(A_{1}\cap A_{2})$). Thus, it is effectively counted once on the right side. The same holds if $\omega$ belongs to $A_{i}$ and $A_{j}$ but not any other $A_{k}$s.
+ </p>
+           
+ <p class="text-justify">
+If $\omega$ belongs to $A_{1},\ldots ,A_{k}$ but not any other $A_{i}$, then  on the right side, $p_{\omega}$ is added $k$ times in $S_{1}$, subtracted $\binom{k}{2}$ times in $S_{2}$, added $\binom{k}{3}$ times in $S_{k}$ and so on. Thus $p_{\omega}$ is effectively counted
 $$
 \binom{k}{1}-\binom{k}{2}+\binom{k}{3}-\ldots +(-1)^{k-1}\binom{k}{k}
 $$
 times. By the Binomial formula, this is just the expansion of  $1-(1-1)^{k}$ which is $1$.
-</div></p>
-<p class="text-justify"><div class="proof"> Use the definition to write both sides of the statement. Let $A=\cup_{i=1}^{n}A_{i}$.
+</div>
+ </p>
+ <p>
+ <div class="proof"> Use the definition to write both sides of the statement. Let $A=\cup_{i=1}^{n}A_{i}$.
 $$
 \mbox{LHS}= \sum\limits_{\omega\in A}p_{\omega} = \sum\limits_{\omega\in \Omega}{\mathbf 1}_{A}(\omega)p_{\omega}.
 $$
@@ -170,10 +191,16 @@ Hence, the right hand side is given by adding over $i_{1} < \ldots  < i_{k}$, mu
 &=& \sum\limits_{\omega \in \Omega}p_{\omega}{\mathbf 1}_{A}(\omega).
 \end{eqnarray*}
 because the quantity $\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j}}(\omega))$ equals $-1$ if $\omega$ belongs to at least one of the $A_{i}$s, and is zero otherwise. Thus the claim follows.
-</div></p>
-<p class="text-justify">As we remarked earlier,  it turns out that in many settings it is possible to compute the probabilities of intersections. We give an example now.
-<div id="theorem-55"><div class="panel panel-info example"> <div class="panel-heading">Example 55 </div><div class="panel-body"> Let $\Omega=S_{52}\times S_{52}$ with $p_{\omega}=\frac{1}{(52!)^{2}}$ for all $\omega \in \Omega$. Consider the event $A=\{(\pi,{\sigma}){\; : \;} \pi(i)\not={\sigma}(i) \ \forall i\}$. Informally, we imagine two shuffled decks of cards kept side by side (or perhaps one shuffled deck and another permutation denoting a  ``psychic's predictions'' for the order in which the cards occur). Then $A$ is the event that there are no matches (or correct guesses).</p>
-<p class="text-justify">Let $A_{i}=\{(\pi,{\sigma}){\; : \;} \pi(i)={\sigma}(i)\}$ so that $A^{c}=A_{1}\cup \ldots \cup A_{52}$. It is easy to see that $\mathbf{P}(A_{i_{1}}\cap A_{i_{2}}\ldots \cap A_{i_{k}})=\frac{1}{52(52-1)\ldots (52-k+1)}$ for any $i_{1} < i_{2} < \ldots  < i_{k}$ (why?). Therefore, by the inclusion-exclusion formula, we get
+</div>
+ </p>
+           
+ <p class="text-justify">
+As we remarked earlier,  it turns out that in many settings it is possible to compute the probabilities of intersections. We give an example now.
+<p>&nbsp;</p>
+                <div id="theorem-55"><div class="panel panel-info example"> <div class="panel-heading">Example 55 </div><div class="panel-body"> Let $\Omega=S_{52}\times S_{52}$ with $p_{\omega}=\frac{1}{(52!)^{2}}$ for all $\omega \in \Omega$. Consider the event $A=\{(\pi,{\sigma}){\; : \;} \pi(i)\not={\sigma}(i) \ \forall i\}$. Informally, we imagine two shuffled decks of cards kept side by side (or perhaps one shuffled deck and another permutation denoting a  ``psychic's predictions'' for the order in which the cards occur). Then $A$ is the event that there are no matches (or correct guesses).
+ </p>
+ <p>
+ Let $A_{i}=\{(\pi,{\sigma}){\; : \;} \pi(i)={\sigma}(i)\}$ so that $A^{c}=A_{1}\cup \ldots \cup A_{52}$. It is easy to see that $\mathbf{P}(A_{i_{1}}\cap A_{i_{2}}\ldots \cap A_{i_{k}})=\frac{1}{52(52-1)\ldots (52-k+1)}$ for any $i_{1} < i_{2} < \ldots  < i_{k}$ (why?). Therefore, by the inclusion-exclusion formula, we get
 $$\begin{align*}
 \mathbf{P}(A^{c}) &=  \binom{52}{1}\frac{1}{52}-\binom{52}{2}\frac{1}{(52)(51)} +  \ldots + (-1)^{51} \binom{52}{52}\frac{1}{(52)(51)\ldots (1)}\\
 &= 1-\frac{1}{2!}+\frac{1}{3!}-\frac{1}{4!}+\ldots -\frac{1}{52!} \\
@@ -181,14 +208,20 @@ $$\begin{align*}
 \end{align*}$$
 by the expansion $e^{-1}=1-\frac{1}{2!}+\frac{1}{3!}-\ldots $. Hence $\mathbf{P}(A)\approx e^{-1}\approx 0.3679$.
 </div></div></div>
-<div id="theorem-56"><div class="panel panel-info example"> <div class="panel-heading">Example 56 </div><div class="panel-body"> Place $n$ distinguishable balls in $r$ distinguishable urns at random. Let $A$ be the event that some urn is empty. The probability space is $\Omega=\{\underline{\omega}=(\omega_{1},\ldots,\omega_{n}){\; : \;} 1\le \omega_{i}\le r\}$ with $p_{\underline{\omega}}=r^{-n}$. Let $A_{\ell}=\{\underline{\omega}{\; : \;} \omega_{i}\not=\ell\}$ for $\ell=1,2\ldots ,r$. Then, $A=A_{1}\cup \ldots \cup A_{r-1}$ (as $A_{r}$ is empty, we could include it or not, makes no difference).</p>
-<p class="text-justify">It is easy to see that $\mathbf{P}(A_{i_{1}}\cap \ldots \cap A_{i_{k}})=(r-k)^{n}r^{-n}=(1-\frac{k}{r})^{n}$. We could use the inclusion-exclusion formula to write the expression
+<p>&nbsp;</p>
+                <div id="theorem-56"><div class="panel panel-info example"> <div class="panel-heading">Example 56 </div><div class="panel-body"> Place $n$ distinguishable balls in $r$ distinguishable urns at random. Let $A$ be the event that some urn is empty. The probability space is $\Omega=\{\underline{\omega}=(\omega_{1},\ldots,\omega_{n}){\; : \;} 1\le \omega_{i}\le r\}$ with $p_{\underline{\omega}}=r^{-n}$. Let $A_{\ell}=\{\underline{\omega}{\; : \;} \omega_{i}\not=\ell\}$ for $\ell=1,2\ldots ,r$. Then, $A=A_{1}\cup \ldots \cup A_{r-1}$ (as $A_{r}$ is empty, we could include it or not, makes no difference).
+ </p>
+           
+ <p class="text-justify">
+It is easy to see that $\mathbf{P}(A_{i_{1}}\cap \ldots \cap A_{i_{k}})=(r-k)^{n}r^{-n}=(1-\frac{k}{r})^{n}$. We could use the inclusion-exclusion formula to write the expression
 $$
 \mathbf{P}(A)=r\left(1-\frac{1}{r}\right)^{n}-\binom{r}{2}\left(1-\frac{2}{r}\right)^{n}+\ldots +(-1)^{r-2}\binom{r}{r-1}\left(1-\frac{r-1}{r}\right)^{n}.
 $$
 The last term is zero (since all urns cannot be empty). I don't know if this expression can be simplified any more.
-</div></div></div></p>
-<p class="text-justify">We mention two useful formulas that can be proved on lines similar to the inclusion-exclusion principle. If we say ``at least one of the events $A_{1}, A_{2},\ldots ,A_{n}$ occurs'', we are talking about the union, $A_{1}\cup A_{2}\cup \ldots \cup A_{n}$. What about ``at least $m$ of the events $A_{1}, A_{2},\ldots ,A_{n}$ occur'', how to express it with set operations. It is not hard to see that this set is precisely
+</div></div></div>
+ </p>
+ <p>
+ We mention two useful formulas that can be proved on lines similar to the inclusion-exclusion principle. If we say ``at least one of the events $A_{1}, A_{2},\ldots ,A_{n}$ occurs'', we are talking about the union, $A_{1}\cup A_{2}\cup \ldots \cup A_{n}$. What about ``at least $m$ of the events $A_{1}, A_{2},\ldots ,A_{n}$ occur'', how to express it with set operations. It is not hard to see that this set is precisely
 $$
 B_{m}=\bigcup_{ 1\le i_{1} < i_{2} < \ldots  < i_{m}\le n} (A_{i_{1}}\cap A_{i_{2}}\cap \ldots \cap A_{i_{m}}).
 $$
@@ -196,23 +229,31 @@ The event that ``exactly $m$ of the events $A_{1}, A_{2},\ldots ,A_{n}$ occur'' 
 $$
 C_{m}=B_{m}\setminus B_{m+1} = \bigcup_{\stackrel{S\subseteq [n]}{|S|=m}} \; \left(\bigcap_{i\in S}A_{i}\right)\bigcap \left( \bigcap_{i\not\in S}A_{i}^{c}\right).
 $$
-<div id="theorem-57"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 57 </div><div class="panel-body"> Let $A_{1},\ldots ,A_{n}$ be events in a probability space $(\Omega,p)$ and let $m\le n$. Let $B_{m}$ and $C_{m}$ be as above. Show that
+<p>&nbsp;</p>
+                <div id="theorem-57"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 57 </div><div class="panel-body"> Let $A_{1},\ldots ,A_{n}$ be events in a probability space $(\Omega,p)$ and let $m\le n$. Let $B_{m}$ and $C_{m}$ be as above. Show that
 $$\begin{align*}
 \mathbf{P}(B_{m}) &= \sum_{k=m}^{n}(-1)^{k-m}\binom{k-1}{k-m}S_{k} \\
 &= S_{m}-\binom{m}{1}S_{m+1}+\binom{m+1}{2}S_{m+2}-\binom{m+2}{3}S_{m+3}+\ldots  \\
 \mathbf{P}(C_{m}) &= \sum_{k=m}^{n}(-1)^{k-m}\binom{k}{m}S_{k} \\
 &= S_{m}-\binom{m+1}{1}S_{m+1}+\binom{m+2}{2}S_{m+2}-\binom{m+3}{3}S_{m+3}+\ldots  \\
 \end{align*}$$
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-58"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 58 </div><div class="panel-body"> Return to the setting of exercise <a href="#theorem-55">55</a> but with $n$ cards in a deck, so that $\Omega=S_{n}\times S_{n}$ and $p_{(\pi,{\sigma})}=\frac{1}{(n!)^{2}}$. Let $A_{m}$ be the event that there are exactly $m$ matches between the two decks.
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-58"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 58 </div><div class="panel-body"> Return to the setting of exercise <a href="#theorem-55">55</a> but with $n$ cards in a deck, so that $\Omega=S_{n}\times S_{n}$ and $p_{(\pi,{\sigma})}=\frac{1}{(n!)^{2}}$. Let $A_{m}$ be the event that there are exactly $m$ matches between the two decks.
 <ol>
 <li> For fixed $m\ge 0$, show that $\mathbf{P}(A_{m})\rightarrow e^{-1}\frac{1}{m!}$ as $n\rightarrow \infty$.
 </li>
 <li> Assume that the approximations above are valid for $n=52$ and $m\le 10$. Find the probability that there are at least $10$ matches.
-</ol></p>
-<p class="text-justify"></div></div></div></p>
-<p class="text-justify">
-</p>
+</ol>
+ </p>
+ <p>
+ </div></div></div>
+ </p>
+           
+
 <div class="pull-right"><a href="chapter-8.html" class="btn btn-primary">Chapter 8. Bonferroni's inequalities</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

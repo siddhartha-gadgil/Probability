@@ -131,8 +131,15 @@
 <h1 class="text-center bg-info">Chapter 23 : Weak law of large numbers</h1>
 <p>&nbsp;</p>
 
-Let $X_{1},X_{2},\ldots$ be i.i.d random variables (independent random variables each having the same marginal distribution). Assume that the second moment of $X_{1}$ is finite. Then, $\mu=\mathbf{E}[X_{1}]$ and ${\sigma}^{2}=\mbox{Var}(X_{1})$ are well-defined.</p>
-<p class="text-justify">Let $S_{n}=X_{1}+\ldots +X_{n}$ (partial sums) and $\bar{X}_{n}=\frac{S_{n}}{n}=\frac{X_{1}+\ldots +X_{n}}{n}$ (<em> sample mean</em>). Then, by the properties of expectation and variance, we have
+
+
+
+ <p class="text-justify">
+
+Let $X_{1},X_{2},\ldots$ be i.i.d random variables (independent random variables each having the same marginal distribution). Assume that the second moment of $X_{1}$ is finite. Then, $\mu=\mathbf{E}[X_{1}]$ and ${\sigma}^{2}=\mbox{Var}(X_{1})$ are well-defined.
+ </p>
+ <p>
+ Let $S_{n}=X_{1}+\ldots +X_{n}$ (partial sums) and $\bar{X}_{n}=\frac{S_{n}}{n}=\frac{X_{1}+\ldots +X_{n}}{n}$ (<em> sample mean</em>). Then, by the properties of expectation and variance, we have
 $$
 \mathbf{E}[S_{n}]=n\mu, \;\;
 \mbox{Var}(S_{n})=n{\sigma}_{1}^{2}, \qquad \mathbf{E}[\bar{X}_{n}]=\mu, \;\; \mbox{Var}(\bar{X}_{n})=\frac{{\sigma}^{2}}{n}.
@@ -141,19 +148,31 @@ In particular, $\mbox{s.d.}(\bar{X}_{n})={\sigma}/\sqrt{n}$ decreases with $n$. 
 $$
 \mathbf{P}\{|\bar{X}_{n}-\mu|\ge \delta\}\le \frac{{\sigma}^{2}}{\delta^{2}n}.
 $$
-This goes to zero as $n\rightarrow \infty$ (with $\delta > 0$ being fixed). This means that for large $n$ the sample mean is unlikely to be far from $\mu$ (sometimes called ``population mean''). This is consistent with our intuitive idea that if we toss a $p$-coin many times, we can get a better guess of what the value of $p$ is.</p>
-<p class="text-justify"><strong>Weak law of large numbers (Jacob Bernoulli):</strong>  With the above notations, for any $\delta > 0$, we have
+This goes to zero as $n\rightarrow \infty$ (with $\delta > 0$ being fixed). This means that for large $n$ the sample mean is unlikely to be far from $\mu$ (sometimes called ``population mean''). This is consistent with our intuitive idea that if we toss a $p$-coin many times, we can get a better guess of what the value of $p$ is.
+ </p>
+           
+ <p class="text-justify">
+<strong>Weak law of large numbers (Jacob Bernoulli):</strong>  With the above notations, for any $\delta > 0$, we have
 $$
 \mathbf{P}\{|\bar{X}_{n}-\mu|\ge \delta\}\le \frac{{\sigma}^{2}}{\delta^{2}n}\rightarrow 0 \;\; \mbox{ as }n\rightarrow \infty.
-$$</p>
-<p class="text-justify">\medskip
-This is very general, in that we only assume the existence of variance. If $X_{k}$ are assumed to have more moments, one can get better bounds. For example,  when $X_{k}$ are i.i.d. $\mbox{Ber}(p)$, we have the following theorem.</p>
-<p class="text-justify"><strong>Hoeffding's inequality:</strong> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mbox{Ber}(p)$. Then
+$$
+ </p>
+ <p>
+ \medskip
+This is very general, in that we only assume the existence of variance. If $X_{k}$ are assumed to have more moments, one can get better bounds. For example,  when $X_{k}$ are i.i.d. $\mbox{Ber}(p)$, we have the following theorem.
+ </p>
+           
+ <p class="text-justify">
+<strong>Hoeffding's inequality:</strong> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mbox{Ber}(p)$. Then
 $$
 \mathbf{P}\{|\bar{X}_{n}-p|\ge \delta\} \le 2e^{-n\delta^{2}/2}.
-$$</p>
-<p class="text-justify">
-</p>
+$$
+ </p>
+ <p>
+ 
+ </p>
+           
+
 <div class="pull-right"><a href="chapter-24.html" class="btn btn-primary">Chapter 24. Monte-Carlo integration</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

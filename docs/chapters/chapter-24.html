@@ -130,24 +130,56 @@
 <div class="container">
 <h1 class="text-center bg-info">Chapter 24 : Monte-Carlo integration</h1>
 <p>&nbsp;</p>
- In this section we give  a simple application of WLLN. Let $\varphi:[0,1]\rightarrow \mathbb{R}$ be a continuous function. We would like to compute $I=\int_{0}^{1}\varphi(x)dx$. Most often we cannot compute the integral explicitly and for an approximate value we resort to numerical methods. Here is an idea to use random numbers.</p>
-<p class="text-justify">Let $U_{1},U_{2},\ldots ,U_{n}$ be i.i.d. $\mbox{Unif}[0,1]$ random variables and let $X_{1}=\varphi(U_{1}),\ldots ,X_{n}=\varphi(U_{n})$. Then, $X_{k}$ are i.i.d. random variables with common mean and variance
+
+
+
+
+
+
+ <p class="text-justify">
+ In this section we give  a simple application of WLLN. Let $\varphi:[0,1]\rightarrow \mathbb{R}$ be a continuous function. We would like to compute $I=\int_{0}^{1}\varphi(x)dx$. Most often we cannot compute the integral explicitly and for an approximate value we resort to numerical methods. Here is an idea to use random numbers.
+ </p>
+ <p>
+ Let $U_{1},U_{2},\ldots ,U_{n}$ be i.i.d. $\mbox{Unif}[0,1]$ random variables and let $X_{1}=\varphi(U_{1}),\ldots ,X_{n}=\varphi(U_{n})$. Then, $X_{k}$ are i.i.d. random variables with common mean and variance
 $$
 \mu=\int\limits_{0}^{1}\varphi(x)dx = I, \qquad {\sigma}^{2}:=\mbox{Var}(X_{1})=\int\limits_{0}^{1}(\varphi(x)-I)^{2}dx.
 $$
-This gives the following method of finding $I$. Fix a large number $N$ appropriately and pick $N$ uniform random numbers $U_{k}$, $1\le k\le N$. Then define $\hat{I}_{N}:=\frac{1}{N}\sum_{k=1}^{N}\varphi(U_{k})$. Present $\hat{I}_{N}$ as an approximate value of $I$.</p>
-<p class="text-justify">In what sense is this an approximation of $I$ and why? Indeed, by WLLN $\mathbf{P}\{|\hat{I}_{n}-I|\ge \delta \}\rightarrow 0$ and hence we expect $\hat{I}_{n}$ to be close to $I$. How large should $n$ be? For this, we fix two numbers $\epsilon=0.01$ and $\delta=0.001$ (you may change the numbers). By Chebyshev's inequality, observe that $\mathbf{P}\{|\hat{I}_{n}-I|\ge \delta \}\rightarrow {\sigma}^{2}/N\delta^{2}$.</p>
-<p class="text-justify">First find $N$ so that ${\sigma}^{2}/N\delta^{2} < \epsilon$, i.e., $N=\lceil \frac{{\sigma}^{2}}{\delta^{2}}\rceil$. Then, the random variable $\hat{I}_{N}$ is within $\delta$ of $I$ with probability greater than $1-\epsilon$. This is a probabilistic method, hence there is a possibility of large error, but with a small probability. Observe that $N$ grows proportional to <em> square</em> of $1/\delta$. To increase the accuracy by $10$, you must increase the number of samples by a factor of $100$.</p>
-<p class="text-justify">One last point. To find $N$ we need ${\sigma}^{2}$ which involves computing another integral involving $\varphi$ which we do not know how to compute!  Here we do not need the exact value of the integral. For example,  if our functions satisfies $-M\le \varphi(x)\le M$ for all $x\in [0,1]$, then also $-M\le I\le M$ and hence $(\varphi(x)-\I)^{2}\le 4M^{2}$. This means that ${\sigma}^{2}\le 4M^{2}$. Therefore, if we take $N=\lceil \frac{4M^{2}}{\delta^{2}}\rceil$ then the value of $N$ is larger than required for the desired accuracy. We can work with this $N$. Note that the dependence of  of $N$ on $\delta$ does not change.</p>
-<p class="text-justify"><div id="theorem-139"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 139 </div><div class="panel-body"> We know that $\int_{0}^{1}\frac{1}{1+x^{2}}dx=\frac{\pi}{4}$. Based on this, devise a method to find an approximate value of $\pi$. Use any software you like to implement your method and see how many sample you need to get an approximation to $1$, $2$ and $3$ decimal places consistently (consistently means with a large enough probability, say $0.9$).
-</div></div></div></p>
-<p class="text-justify"><div id="theorem-140"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 140 </div><div class="panel-body"> Devise a method to approximate $e$ and $\pi$ (there are many possible integrals).
-</div></div></div></p>
-<p class="text-justify">This method can be used to evaluate integrals over any interval. For instance, how would you find $\int_{a}^{b}\varphi(t) dt$ or $\int_{0}^{\infty}\varphi(t) e^{-t}dt$ or $\int_{-\infty}^{\infty}\varphi(t)e^{-t^{2}}dt$ where  $\varphi$ is a function on the appropriate interval? It can also be used to evaluate multiple integrals (and consequently to find the areas and volumes of sets). The only condition is that it should be possible to evaluate the given function $\varphi$ at a point $x$ on the computer. To illustrate, consider the problem of finding the area of a region $\{(x,y){\; : \;} 0\le x,y, \le1, \ 2x^{3}y^{2}\ge 1, \ x^{2}+2y^{2}\le 2.3 \}$. It is complicated to work with such regions analytically, but given a point $(x,y)$, it is easy to check on a computer whether all the constraints given are satisfied.</p>
-<p class="text-justify">As a last remark, how do Monte-Carlo methods compare with the usual numerical methods? In the latter, usually a number $N$ and a set of points $x_{1},\ldots ,x_{N}$ are fixed along with some weights $w_{1},\ldots ,w_{N}$ that sum to $1$. Then one presents $\tilde{I}:=\sum_{k=1}^{N}w_{k}\varphi(x_{k})$ as the approximate value of $I$. Lagrange's method, Gauss quadrature etc are of this type. Under certain assumptions on $\varphi$, the accuracy of these integrals can be like $1/N$ as opposed to $1/\sqrt{N}$ in Monte-Carlo. But when those assumptions are not satisfied, $\tilde{I}$ can be way off $I$. One may regard this as a game of strategy as follows.</p>
-<p class="text-justify">I present a function $\varphi$ (say bounded between $-1$ and $1$)  and you are expected to give an approximation to $\varphi$. Quadrature methods do a good job generically, but if I knew the procedure you use, then I can give a function for which your result is entirely wrong (for example, I pick a function $\varphi$ which vanishes at each of the quadrature points!). However, with Monte-Carlo methods, even if I know the procedure, there is no way to prevent you from getting an approximation of accuracy $1/\sqrt{N}$. This is because neither of us know where the points $U_{k}$ will fall!</p>
-<p class="text-justify">
-</p>
+This gives the following method of finding $I$. Fix a large number $N$ appropriately and pick $N$ uniform random numbers $U_{k}$, $1\le k\le N$. Then define $\hat{I}_{N}:=\frac{1}{N}\sum_{k=1}^{N}\varphi(U_{k})$. Present $\hat{I}_{N}$ as an approximate value of $I$.
+ </p>
+           
+ <p class="text-justify">
+In what sense is this an approximation of $I$ and why? Indeed, by WLLN $\mathbf{P}\{|\hat{I}_{n}-I|\ge \delta \}\rightarrow 0$ and hence we expect $\hat{I}_{n}$ to be close to $I$. How large should $n$ be? For this, we fix two numbers $\epsilon=0.01$ and $\delta=0.001$ (you may change the numbers). By Chebyshev's inequality, observe that $\mathbf{P}\{|\hat{I}_{n}-I|\ge \delta \}\rightarrow {\sigma}^{2}/N\delta^{2}$.
+ </p>
+ <p>
+ First find $N$ so that ${\sigma}^{2}/N\delta^{2} < \epsilon$, i.e., $N=\lceil \frac{{\sigma}^{2}}{\delta^{2}}\rceil$. Then, the random variable $\hat{I}_{N}$ is within $\delta$ of $I$ with probability greater than $1-\epsilon$. This is a probabilistic method, hence there is a possibility of large error, but with a small probability. Observe that $N$ grows proportional to <em> square</em> of $1/\delta$. To increase the accuracy by $10$, you must increase the number of samples by a factor of $100$.
+ </p>
+           
+ <p class="text-justify">
+One last point. To find $N$ we need ${\sigma}^{2}$ which involves computing another integral involving $\varphi$ which we do not know how to compute!  Here we do not need the exact value of the integral. For example,  if our functions satisfies $-M\le \varphi(x)\le M$ for all $x\in [0,1]$, then also $-M\le I\le M$ and hence $(\varphi(x)-\I)^{2}\le 4M^{2}$. This means that ${\sigma}^{2}\le 4M^{2}$. Therefore, if we take $N=\lceil \frac{4M^{2}}{\delta^{2}}\rceil$ then the value of $N$ is larger than required for the desired accuracy. We can work with this $N$. Note that the dependence of  of $N$ on $\delta$ does not change.
+ </p>
+ <p>
+ <p>&nbsp;</p>
+                <div id="theorem-139"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 139 </div><div class="panel-body"> We know that $\int_{0}^{1}\frac{1}{1+x^{2}}dx=\frac{\pi}{4}$. Based on this, devise a method to find an approximate value of $\pi$. Use any software you like to implement your method and see how many sample you need to get an approximation to $1$, $2$ and $3$ decimal places consistently (consistently means with a large enough probability, say $0.9$).
+</div></div></div>
+ </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-140"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 140 </div><div class="panel-body"> Devise a method to approximate $e$ and $\pi$ (there are many possible integrals).
+</div></div></div>
+ </p>
+ <p>
+ This method can be used to evaluate integrals over any interval. For instance, how would you find $\int_{a}^{b}\varphi(t) dt$ or $\int_{0}^{\infty}\varphi(t) e^{-t}dt$ or $\int_{-\infty}^{\infty}\varphi(t)e^{-t^{2}}dt$ where  $\varphi$ is a function on the appropriate interval? It can also be used to evaluate multiple integrals (and consequently to find the areas and volumes of sets). The only condition is that it should be possible to evaluate the given function $\varphi$ at a point $x$ on the computer. To illustrate, consider the problem of finding the area of a region $\{(x,y){\; : \;} 0\le x,y, \le1, \ 2x^{3}y^{2}\ge 1, \ x^{2}+2y^{2}\le 2.3 \}$. It is complicated to work with such regions analytically, but given a point $(x,y)$, it is easy to check on a computer whether all the constraints given are satisfied.
+ </p>
+           
+ <p class="text-justify">
+As a last remark, how do Monte-Carlo methods compare with the usual numerical methods? In the latter, usually a number $N$ and a set of points $x_{1},\ldots ,x_{N}$ are fixed along with some weights $w_{1},\ldots ,w_{N}$ that sum to $1$. Then one presents $\tilde{I}:=\sum_{k=1}^{N}w_{k}\varphi(x_{k})$ as the approximate value of $I$. Lagrange's method, Gauss quadrature etc are of this type. Under certain assumptions on $\varphi$, the accuracy of these integrals can be like $1/N$ as opposed to $1/\sqrt{N}$ in Monte-Carlo. But when those assumptions are not satisfied, $\tilde{I}$ can be way off $I$. One may regard this as a game of strategy as follows.
+ </p>
+ <p>
+ I present a function $\varphi$ (say bounded between $-1$ and $1$)  and you are expected to give an approximation to $\varphi$. Quadrature methods do a good job generically, but if I knew the procedure you use, then I can give a function for which your result is entirely wrong (for example, I pick a function $\varphi$ which vanishes at each of the quadrature points!). However, with Monte-Carlo methods, even if I know the procedure, there is no way to prevent you from getting an approximation of accuracy $1/\sqrt{N}$. This is because neither of us know where the points $U_{k}$ will fall!
+ </p>
+           
+
 <div class="pull-right"><a href="chapter-25.html" class="btn btn-primary">Chapter 25. Central limit theorem</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

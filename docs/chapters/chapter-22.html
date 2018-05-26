@@ -131,17 +131,29 @@
 <h1 class="text-center bg-info">Chapter 22 : Makov's and Chebyshev's inequalities</h1>
 <p>&nbsp;</p>
 
+
+
+
+ <p class="text-justify">
+
 Let $X$ be a non-negative integer valued random variable with pmf $f(k)$, $k=0,1,2,\ldots$.  Fix any number $m$, say $m=10$. Then
 $$
 \mathbf{E}[X]=\sum_{k=1}^{\infty}k f(k) \ge \sum_{k=10}^{\infty}kf(k)\ge \sum_{k=10}^{\infty}10f(k) = 10 \mathbf{P}\{X\ge 10\}.
 $$
-More generally $m\mathbf{P}\{X\ge m\}\le \mathbf{E}[X]$. This shows that if the expected value is finite This idea is captured in general by the following inequality.</p>
-<p class="text-justify"><strong>Markov's inequality:</strong> Let $X$ be a non-negative random variable with finite expectation. Then, for any $t > 0$, we have $\mathbf{P}\{X\ge t\}\le \frac{1}{t}\mathbf{E}[X]$.</p>
-<p class="text-justify"><div class="proof"> Fix $t > 0$ and let $Y=X{\mathbf 1}_{X <  t}$ and $Z=X{\mathbf 1}_{X\ge t}$ so that $X=Y+Z$. Both $Y$ and $Z$ are non-negative random variable and hence $\mathbf{E}[X]=\mathbf{E}[Y]+\mathbf{E}[Z]\ge \mathbf{E}[Z]$. On the other hand, $Z\ge t {\mathbf 1}_{X\ge t}$ (why?). Therefore $\mathbf{E}[Z]\ge t\mathbf{E}[{\mathbf 1}_{X\ge t}]=t\mathbf{P}\{X\ge t\}$.
+More generally $m\mathbf{P}\{X\ge m\}\le \mathbf{E}[X]$. This shows that if the expected value is finite This idea is captured in general by the following inequality.
+ </p>
+ <p>
+ <strong>Markov's inequality:</strong> Let $X$ be a non-negative random variable with finite expectation. Then, for any $t > 0$, we have $\mathbf{P}\{X\ge t\}\le \frac{1}{t}\mathbf{E}[X]$.
+ </p>
+           
+ <p class="text-justify">
+<div class="proof"> Fix $t > 0$ and let $Y=X{\mathbf 1}_{X <  t}$ and $Z=X{\mathbf 1}_{X\ge t}$ so that $X=Y+Z$. Both $Y$ and $Z$ are non-negative random variable and hence $\mathbf{E}[X]=\mathbf{E}[Y]+\mathbf{E}[Z]\ge \mathbf{E}[Z]$. On the other hand, $Z\ge t {\mathbf 1}_{X\ge t}$ (why?). Therefore $\mathbf{E}[Z]\ge t\mathbf{E}[{\mathbf 1}_{X\ge t}]=t\mathbf{P}\{X\ge t\}$.
  Putting these together we get $\mathbf{E}[X]\ge t\mathbf{P}\{X\ge t\}$ as desired to show.
 </div>
-Markov's inequality is simple but surprisingly useful. Firstly, one can apply it to functions of our random variable and get many inequalities. Here are some.</p>
-<p class="text-justify"><strong>Variants of Markov's inequality:</strong>
+Markov's inequality is simple but surprisingly useful. Firstly, one can apply it to functions of our random variable and get many inequalities. Here are some.
+ </p>
+ <p>
+ <strong>Variants of Markov's inequality:</strong>
 <ol>
 <li> If $X$ is a non-negative random variable with finite $p^{\mbox{th}}$ moment, then $\mathbf{P}\{X\ge t\}\le t^{-p}\mathbf{E}[X^{p}]$ for any $t > 0$.
 </li>
@@ -149,15 +161,21 @@ Markov's inequality is simple but surprisingly useful. Firstly, one can apply it
 </li>
 <li> IF $X$ is a random variable with finite exponential moments, then $\mathbf{P}(X > t)\le e^{-\lambda t}\mathbf{E}[e^{\lambda X}]$ for any $\lambda > 0$.
 </ol>
-Thus, if we only know that $X$ has finite mean, the tail probability $\mathbf{P}(X > t)$ must decay at least as fast as $1/t$. But if we knew that the second moment was finite we could assert that the decay must be at least as fast as $1/t^{2}$, which is better. If $\mathbf{E}[e^{\lambda X}] < \infty$, then we get much faster decay of the tail, like $e^{-\lambda t}$.</p>
-<p class="text-justify">Chebyshev's inequality captures again the intuitive notion that variance measures the spread of the distribution about the mean. The smaller the variance, lesser the spread. An alternate way to write Chebyshev's inequality is
+Thus, if we only know that $X$ has finite mean, the tail probability $\mathbf{P}(X > t)$ must decay at least as fast as $1/t$. But if we knew that the second moment was finite we could assert that the decay must be at least as fast as $1/t^{2}$, which is better. If $\mathbf{E}[e^{\lambda X}] < \infty$, then we get much faster decay of the tail, like $e^{-\lambda t}$.
+ </p>
+           
+ <p class="text-justify">
+Chebyshev's inequality captures again the intuitive notion that variance measures the spread of the distribution about the mean. The smaller the variance, lesser the spread. An alternate way to write Chebyshev's inequality is
 $$
 \mathbf{P}(|X-\mu| > r\sigma)\le \frac{1}{r^{2}}
 $$
-where ${\sigma}=\mbox{s.d.}(X)$. This measures the deviations in multiples of the standard deviation. This is a very general inequality. In specific cases we can get better bounds than $1/r^{2}$ (just like Markov inequality can be improved using higher moments, when they exist).</p>
-<p class="text-justify">One more useful inequality we have already seen is the Cauchy-Schwarz inequality: $(\mathbf{E}[XY])^{2}\le \mathbf{E}[X^{2}]\mathbf{E}[Y^{2}]$ or $(\mbox{\textrm Cov}(X,Y))^{2}\le \mbox{Var}(X)\mbox{Var}(Y)$.</p>
-<p class="text-justify">
-</p>
+where ${\sigma}=\mbox{s.d.}(X)$. This measures the deviations in multiples of the standard deviation. This is a very general inequality. In specific cases we can get better bounds than $1/r^{2}$ (just like Markov inequality can be improved using higher moments, when they exist).
+ </p>
+ <p>
+ One more useful inequality we have already seen is the Cauchy-Schwarz inequality: $(\mathbf{E}[XY])^{2}\le \mathbf{E}[X^{2}]\mathbf{E}[Y^{2}]$ or $(\mbox{\textrm Cov}(X,Y))^{2}\le \mbox{Var}(X)\mbox{Var}(Y)$.
+ </p>
+           
+
 <div class="pull-right"><a href="chapter-23.html" class="btn btn-primary">Chapter 23. Weak law of large numbers</a></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
