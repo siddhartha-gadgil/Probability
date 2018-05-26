@@ -346,7 +346,7 @@ object TeXToHtml {
       .findFirstMatchIn(txt)
       .map { (m) =>
         val newHead =
-          m.before + s"""<strong>$section.${counter + 1} ${m.group(2)}.</strong><p class="text-justify">"""
+          head + m.before + s"""<strong>$section.${counter + 1} ${m.group(2)}.</strong><p class="text-justify">"""
         recReplaceSubSection(m.after.toString, newHead, counter + 1, section)
       }
       .getOrElse(head + txt)
@@ -449,6 +449,30 @@ object TeXToHtml {
 //    println(txt)
 //    if (opens != closes) scala.io.StdIn.readLine()
     opens == closes
+  }
+
+  def block(txt: String, head: String) : (String, String) = {
+    blankLineReg.findFirstMatchIn(txt).map { (m) =>
+      if (doldolReg.findAllIn(head + m.before).size % 2 == 1)
+        (head+ m.before, m.after.toString)
+      else {
+        block(m.after.toString, head + m.before.toString + m.group(0))}
+    }.getOrElse(txt + head, "")
+  }
+
+  def blockParas(txt: String, head: String = ""): String = {
+    blankLineReg.findFirstMatchIn(txt).map{
+      (m) =>
+        val (blk, rest) = block(m.after.toString, "")
+        val newHead =
+          s"""
+             |$head
+             | <p>
+             |${m.before}
+             | </p>
+           """.stripMargin
+        blockParas(rest, newHead)
+    }.getOrElse(head + txt)
   }
 
   def footnote(txt: String, head: String): (String, String) = {
