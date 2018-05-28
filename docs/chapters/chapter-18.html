@@ -141,7 +141,8 @@
 
 In many situations we study several random variables at once. In such a case, knowing the individual distributions is not sufficient to answer all relevant questions. This is like saying that knowing $\mathbf{P}(A)$ and $\mathbf{P}(B)$ is insufficient to calculate $\mathbf{P}(A\cap B)$ or $\mathbf{P}(A\cup B)$ etc.
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-111"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 111 (Joint distribution)</div><div class="panel-body"> Let $X_{1},X_{2},\ldots ,X_{m}$ be random variables on the same probability space. We call $\mathbf{X}=(X_{1},\ldots ,X_{m})$ a <em> random vector</em>, as it is just a vector of random variables. The CDF of $\mathbf{X}$, also called the joint CDF of $X_{1},\ldots,X_{m}$ is the function $F:\mathbb{R}^{m}\rightarrow \mathbb{R}$ defined as
 $$
@@ -163,7 +164,7 @@ $$
  </p>
            
  <p class="text-justify">
-<strong>Properties of joint CDFs:</strong> The following properties of the joint CDF $F:\mathbb{R}^{m}\rightarrow [0,1]$ are analogous to those of the 1-dimensional CDF and the proofs are similar.
+<strong>Properties of joint CDF :</strong> The following properties of the joint CDF $F:\mathbb{R}^{m}\rightarrow [0,1]$ are analogous to those of the 1-dimensional CDF and the proofs are similar.
 <ol>
 <li> $F$ is increasing in each co-ordinate. That is, if $s_{1}\le t_{1},\ldots ,s_{m}\le t_{m}$, then $F(s_{1},\ldots,s_{m})\le F(t_{1},\ldots ,t_{m})$.
 </li>
@@ -175,15 +176,17 @@ $$
 </ol>
 Conversely any function having these four properties is the joint CDF of some random variables.
  </p>
- <p>
+<p class="text-justify">
+          
  From the joint CDF, it is easy to recover the individual CDFs. Indeed, if $F:\mathbb{R}^{m}\rightarrow \mathbb{R}$ is the CDF of $\mathbf{X}=(X_{1},\ldots ,X_{m})$, then the CDF of $X_{1}$ is given by $F_{1}(t):=F(t,+\infty,\ldots,+\infty):=\lim F(t,s_{2},\ldots,s_{m})$ as $s_{i}\rightarrow +\infty$ for each $i=2,\ldots ,m$. This is true because if $A_{n}:=\{X_{1}\le t\}\cap\{X_{2}\le n\}\cap \ldots \cap\{X_{m}\le n\}$, then as $n\rightarrow \infty$, the events $A_{n}$ increase to the event $A=\{X_{1}\le t\}$. Hence $\mathbf{P}(A_{n})\rightarrow \mathbf{P}(A)$. But $\mathbf{P}(A_{n})=F(t,n,n,\ldots,n)$ and $\mathbf{P}(A)=F_{1}(t)$. Thus we see that $F_{1}(t):=F(t,+\infty,\ldots,+\infty)$.
  </p>
            
  <p class="text-justify">
 More generally, we can recover the joint CDF of any subset of $X_{1},\ldots ,X_{n}$, for example, the joint CDF of $X_{1},\ldots ,X_{k}$ is just $F(t_{1},\ldots ,t_{k},+\infty,\ldots ,+\infty)$.
  </p>
- <p>
- <strong>Joint pmf and pdf:</strong> Just like in the case of one random variable, we can consider the following two classes of random variables.
+<p class="text-justify">
+          
+ <strong>Joint pmf and pd :</strong> Just like in the case of one random variable, we can consider the following two classes of random variables.
 <ol>
 <li> Distributions with a pmf. These are CDFs for which there exist points ${\bf t}_{1},{\bf t}_{2},\ldots $ in $\mathbb{R}^{m}$ and non-negative numbers $w_{i}$ such that $\sum_{i}w_{i}=1$ (often we write $f(t_{i})$ in place of $w_{i}$) and such that for every ${\bf t}\in \mathbb{R}^{m}$ we have
 $$ F({\bf t})=\sum_{i{\; : \;} {\bf t}_{i}\le {\bf t}} w_{i} $$
@@ -207,7 +210,8 @@ if $k_{i}\ge 0$ are integers such that $k_{1}+\ldots +k_{m-1}\le r$. One situati
 In this case, the marginal distribution of $X_{k}$ is $\mbox{Bin}(r,p_{k})$. More generally, $(X_{1},\ldots ,X_{\ell})$ has multinomial distribution with parameters $r,\ell,p_{1},\ldots ,p_{\ell},p_{0}$ where $p_{0}=1-(p_{1}+\ldots +p_{\ell})$. This is easy to prove, but even easier to see from the balls in bins interpretation (just think of the last $n-\ell$ bins as one).
 </div></div></div>
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-114"><div class="panel panel-info example"> <div class="panel-heading">Example 114 </div><div class="panel-body"> (Bivariate normal distribution). This is the density on $\mathbb{R}^{2}$ given by
 $$
@@ -238,8 +242,9 @@ $$\begin{align*}
 This completes the proof that $f(x,y)$ is indeed a density. Note that $b > 0$ and $ab-c^{2} > 0$ also implies that $a > 0$.
 </div></div></div>
  </p>
- <p>
- <strong>Matrix form of writing the density:</strong> Let $\Sigma^{-1}=\left[\begin{array}{cc} a & c \\ c & b \end{array}\right]$. Then, $\det(\Sigma)=\frac{1}{\det(\Sigma^{-1})}=\frac{1}{ab-c^{2}}$. Hence, we may re-write the density above as (let $\mathbf{u}$ be the column vector with co-ordinates $x,y$)
+<p class="text-justify">
+          
+ <strong>Matrix form of writing the densit :</strong> Let $\Sigma^{-1}=\left[\begin{array}{cc} a & c \\ c & b \end{array}\right]$. Then, $\det(\Sigma)=\frac{1}{\det(\Sigma^{-1})}=\frac{1}{ab-c^{2}}$. Hence, we may re-write the density above as (let $\mathbf{u}$ be the column vector with co-ordinates $x,y$)
 $$
 f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)}} e^{-\frac{1}{2}\mathbf{u}^{t}\Sigma^{-1}\mathbf{u} }.
 $$
@@ -247,13 +252,14 @@ This is precisely in the form in which we wrote for general $n$ in the example e
  </p>
            
  <p class="text-justify">
-<strong>Final form:</strong> We can now introduce an extra pair of parameters $\mu_{1},\mu_{2}$ and define a density
+<strong>Final for :</strong> We can now introduce an extra pair of parameters $\mu_{1},\mu_{2}$ and define a density
 $$
 f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)}} e^{-\frac{1}{2}(\mathbf{u}-\mu)^{t}\Sigma^{-1}(\mathbf{u}-\mu) }.
 $$
 where $\mu$ is a column vector with co-ordinates $\mu_{1},\mu_{2}$. This is the full bi-variate normal density.
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-115"><div class="panel panel-info example"> <div class="panel-heading">Example 115 </div><div class="panel-body"> (A class of examples). Let $f_{1},f_{2},\ldots ,f_{m}$ be one-variable densities. In other words, $f_{i}:\mathbb{R}\rightarrow \mathbb{R}_{+}$ and $\int_{-\infty}^{\infty}f_{i}(x)dx=1$. Then, we can make a multivariate density as follows. Define $f:\mathbb{R}^{m}\rightarrow \mathbb{R}_{+}^{m}$ by $f(x_{1},\ldots ,x_{m})=f_{1}(x_{1})\ldots f_{m}(x_{m})$. Then $f$ is a density.
  </p>

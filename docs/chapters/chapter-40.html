@@ -151,7 +151,7 @@ Instead, we fix a class of functions, for example the collection of all linear f
 In short, multiple linear regression along with non-linear transformations of the individual variables, the class of functions $f$ is greatly extended.
  </div></div></div>
 
-<strong>Finding the best linear fit:</strong> We need a criterion for deciding the ``best''. A basic one is the <em> method of least squares</em> which recommends finding $\alpha,\beta$ such that the error sum of squares $R^{2}:=\sum_{k=1}^{n}(Y_{k}-\alpha-\beta X_{k})^{2}$ is minimized.
+<strong>Finding the best linear fi :</strong> We need a criterion for deciding the ``best''. A basic one is the <em> method of least squares</em> which recommends finding $\alpha,\beta$ such that the error sum of squares $R^{2}:=\sum_{k=1}^{n}(Y_{k}-\alpha-\beta X_{k})^{2}$ is minimized.
 
 For fixed $X_{i},Y_{i}$ this is a simple problem in calculus. We get
 $$
@@ -175,7 +175,7 @@ $$
 $$
 Another way to write it is $\hat{\beta}=\frac{s_{Y}}{s_{X}}r_{X,Y}$ where $r_{X,Y}$ is the sample correlation coefficient.
 
-<strong>A motivation for the least squares criterion:</strong> Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alpha+\beta X_{i}+\epsilon_{i}$ where $\epsilon_{i}$ are i.i.d. $N(0,{\sigma}^{2})$ ``errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alpha+\beta X_{i},{\sigma}^{2})$ random variables. Now we can extimate $\alpha,\beta$ by the maximum likelihood method.
+<strong>A motivation for the least squares criterio :</strong> Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alpha+\beta X_{i}+\epsilon_{i}$ where $\epsilon_{i}$ are i.i.d. $N(0,{\sigma}^{2})$ ``errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alpha+\beta X_{i},{\sigma}^{2})$ random variables. Now we can extimate $\alpha,\beta$ by the maximum likelihood method.
 
 <p>&nbsp;</p>
                 <div id="theorem-183"><div class="panel panel-info example"> <div class="panel-heading">Example 183 ([Hubble's 1929 experiment on the recession velocity of nebulae and their distance to earth)</div><div class="panel-body"> Hubble collected the following data that I took from \href{http://lib.stat.cmu.edu/DASL/Datafiles/Hubble.html}{this website}. Here $X$ is the number of megaparsecs from the nebula to earth and $Y$ is the observed recession velocity in $10^{3}$km/s.

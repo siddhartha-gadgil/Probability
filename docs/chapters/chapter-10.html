@@ -151,7 +151,8 @@
 </div></div></div>
 What do these notions mean intuitively? In real life, we keep updating probabilities based on information that we get. For example, when playing cards, the chance that a randomly chosen card is an ace is $1/13$, but having drawn a card, the probability for the next card may not be the same - if the first card was seen to be an ace, then the chance of the second being an ace falls to $3/51$. This updated probability is called a conditional probability. Independence of two events $A$ and $B$ means that knowing whether or not $A$ occured does not change the chance of occurrence of $B$. In other words, the conditional probability of $A$ given $B$ is the same as the unconditional (original) probability of $A$.
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-64"><div class="panel panel-info example"> <div class="panel-heading">Example 64 </div><div class="panel-body"> Let $\Omega=\{(i,j){\; : \;} 1\le i,j\le 6\}$ with $p_{(i,j)}=\frac{1}{36}$. This is the probability space corresponding to a throw of two fair dice. Let $A=\{(i,j){\; : \;} i\mbox{ is odd}\}$ and $B=\{(i,j){\; : \;} j \mbox{ is }1\mbox{ or }6\}$ and $C=\{(i,j){\; : \;} i+j=4\}$. Then $A\cap B=\{(i,j){\; : \;} i=1,3,\mbox{ or }5, \mbox{ and }j=1\mbox{ or }6\}$. Then, it is easy to see that
 $$
@@ -168,7 +169,8 @@ Thus, $\mathbf{P}(A\cap C)\not=\mathbf{P}(A)\mathbf{P}(C)$ and hence $A$ and $C$
 This agrees with the intuitive understanding of independence, since $A$ is an event that depends only on the first toss and $B$ is an event that depends only on the second toss. Therefore, $A$ and $B$ ought to be independent. However, $C$ depends on both tosses, and hence cannot be expected to be independent of $A$. Indeed, it is easy to see that $\mathbf{P}(C \ \pmb{\big|} \  A)=\frac{1}{9}$.
 </div></div></div>
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-65"><div class="panel panel-info example"> <div class="panel-heading">Example 65 </div><div class="panel-body"> Let $\Omega=S_{52}$ with $p_{\pi}=\frac{1}{52!}$. Define the events
 $$
@@ -181,8 +183,9 @@ Then both $\mathbf{P}(A)=\mathbf{P}(B)=\frac{1}{13}$. However, $\mathbf{P}(B\ \p
 In words, $A$ (respectively $B$) could be the event that the first (respectively second) card is an ace. Then $\mathbf{P}(B)=4/52$ to start with. When we see the first card, we update the probability. If the first card was not an ace, we update it to $\mathbf{P}(B\ \pmb{\big|} \  A^{c})$ and if the first card was an ace, we update it to  $\mathbf{P}(B\ \pmb{\big|} \  A)$.
 </div></div></div>
  </p>
- <p>
- <strong>Caution:</strong> Independence should not be confused with disjointness! If $A$ and $B$ are disjoint, $\mathbf{P}(A\cap B)=0$ and hence $A$ and $B$ can be independent if and only if one of $\mathbf{P}(A)$ or $\mathbf{P}(B)$ equals $0$. Intuitively, if $A$ and $B$ are disjoint, then knowing that $A$ occurred gives us a lot of information about $B$ (that it did not occur!), so independence is not to be expected.
+<p class="text-justify">
+          
+ <strong>Cautio :</strong> Independence should not be confused with disjointness! If $A$ and $B$ are disjoint, $\mathbf{P}(A\cap B)=0$ and hence $A$ and $B$ can be independent if and only if one of $\mathbf{P}(A)$ or $\mathbf{P}(B)$ equals $0$. Intuitively, if $A$ and $B$ are disjoint, then knowing that $A$ occurred gives us a lot of information about $B$ (that it did not occur!), so independence is not to be expected.
  </p>
            
  <p class="text-justify">
@@ -197,8 +200,9 @@ In words, $A$ (respectively $B$) could be the event that the first (respectively
 </ol>
 </div></div></div>
  </p>
- <p>
- <strong>Total probability rule and Bayes' rule:</strong> Let $A_{1},\ldots ,A_{n}$ be pairwise disjoint and mutually exhaustive events in a probability space. Assume $\mathbf{P}(A_{i}) > 0$ for all $i$. This means that $A_{i}\cap A_{j}=\emptyset$ for any $i\not= j$ and $A_{1}\cup A_{2}\cup \ldots \cup A_{n}=\Omega$. We also refer to such a collection of events as a partition of the sample space.
+<p class="text-justify">
+          
+ <strong>Total probability rule and Bayes' rul :</strong> Let $A_{1},\ldots ,A_{n}$ be pairwise disjoint and mutually exhaustive events in a probability space. Assume $\mathbf{P}(A_{i}) > 0$ for all $i$. This means that $A_{i}\cap A_{j}=\emptyset$ for any $i\not= j$ and $A_{1}\cup A_{2}\cup \ldots \cup A_{n}=\Omega$. We also refer to such a collection of events as a partition of the sample space.
  </p>
            
  <p class="text-justify">
@@ -229,7 +233,8 @@ where we used the total probability rule to get the denominator. \qedhere
                 <div id="theorem-67"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 67 </div><div class="panel-body"> Suppose $A_{i}$ are events such that $\mathbf{P}(A_{1}\cap \ldots \cap A_{n}) > 0$. Then show that $$\mathbf{P}(A_{1}\cap \ldots \cap A_{n})=\mathbf{P}(A_{1})\mathbf{P}(A_{2}\ \pmb{\big|} \  A_{1})\mathbf{P}(A_{3}\ \pmb{\big|} \  A_{1}\cap A_{2})\ldots \mathbf{P}(A_{n}\ \pmb{\big|} \  A_{1}\cap \ldots \cap A_{n-1}).$$
 </div></div></div>
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-68"><div class="panel panel-info example"> <div class="panel-heading">Example 68 </div><div class="panel-body"> Consider a rare disease $X$ that affects one in a million people. A medical test is used to test for the presence of the disease. The test is 99\% accurate in the sense that if a person has no disease, the chance that the test shows positive is 1\% and if the person has disease, the chance that the test shows negative is also 1\%.
  </p>
@@ -237,7 +242,8 @@ where we used the total probability rule to get the denominator. \qedhere
  <p class="text-justify">
 Suppose a person is tested for the disease and the test result is positive. What is the chance that the person has the disease $X$?
  </p>
- <p>
+<p class="text-justify">
+          
  Let $A$ be the event that the person has the disease $X$. Let $B$ be the event that the test shows positive. The given data may be summarized as follows.
 <ol>
 <li> $\mathbf{P}(A)=10^{-6}$. Of course $\mathbf{P}(A^{c})=1-10^{-6}$.
@@ -256,14 +262,16 @@ A calculation-free understanding of this surprising looking phenomenon can be ac
 </div></div></div>
 The surprise here comes from not taking into account the relative sizes of the sub-populations with and without the disease. Here is another manifestation of exactly the same fallacious reasoning.
  </p>
- <p>
- <strong>Question:</strong> A person $X$ is introverted,  very systematic in thinking and somewhat absent-minded. You are told that he is a doctor or a mathematician. What would be your guess - doctor or mathematician?
+<p class="text-justify">
+          
+ <strong>Questio :</strong> A person $X$ is introverted,  very systematic in thinking and somewhat absent-minded. You are told that he is a doctor or a mathematician. What would be your guess - doctor or mathematician?
  </p>
            
  <p class="text-justify">
 As we saw in class, most people answer ``mathematician''. Even accepting the stereotype that a mathematician is more likely to have all these qualities than a doctor, this answer ignores the fact that there are perhaps a hundred times more doctors in the world than mathematicians! In fact, the situation is identical to the one in the example above, and the mistake is in confusing $\mathbf{P}(A\big| B)$ and $\mathbf{P}(B\big| A)$.
  </p>
- <p>
+<p class="text-justify">
+          
  
  </p>
            

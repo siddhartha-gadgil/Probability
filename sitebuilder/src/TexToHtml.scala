@@ -452,26 +452,31 @@ object TeXToHtml {
     opens == closes
   }
 
-  def block(txt: String, head: String) : (String, String) = {
+  def block(txt: String, head: String, secHead: String) : (String, String) = {
     blankLineReg.findFirstMatchIn(txt).map { (m) =>
-      if (doldolReg.findAllIn(head + m.before).size % 2 == 0)
+      if (doldolReg.findAllIn(secHead + head + m.before).size % 2 == 0)
         (head+ m.before, m.after.toString)
       else {
-        block(m.after.toString, head + m.before.toString + "\n")}
+        println(
+          s"not inserting paras,\n Between:\n${secHead + head + m.before}\n\n DolDol: ${doldolReg.findAllIn(secHead + head + m.before).size}\n and \n${m.after}")
+        block(m.after.toString, head + m.before.toString + "\n", secHead)}
     }.getOrElse(head + txt, "")
   }
 
   def blockParas(txt: String, head: String = ""): String = {
     blankLineReg.findFirstMatchIn(txt).map{
       (m) =>
-        val (blk, rest) = block(m.after.toString, "")
+        val (blk, rest) = block(m.after.toString, "", head + m.before.toString)
+        val break = if (doldolReg.findAllIn(m.before.toString).size % 2 == 0)
+          """</p>
+            |<p class="text-justify">
+          """.stripMargin else ""
         val newHead =
           s"""
              |$head
              | <p class="text-justify">
              |${m.before}
-             | </p>
-             | <p>
+             | $break
              | $blk
              | </p>
            """.stripMargin
@@ -479,12 +484,12 @@ object TeXToHtml {
     }.getOrElse(head + txt)
   }
 
-  def footnote(txt: String, head: String): (String, String) = {
+  def inBraces(txt: String, head: String): (String, String) = {
     """([^\\])(\})""".r.findFirstMatchIn(txt).map { (m) =>
       if (bracesMatched(head + m.before))
         (head+ m.before, m.after.toString)
       else {
-        footnote(m.after.toString, head + m.before.toString + m.group(0))}
+        inBraces(m.after.toString, head + m.before.toString + m.group(0))}
     }.getOrElse(throw new Exception("Unclosed brace for footnote"))
   }
 
@@ -495,14 +500,40 @@ object TeXToHtml {
     """\\footnote\{""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
-        val (note, rest) = footnote(m.after.toString, "")
-        println("Footnote found")
-        println(m.after.toString.take(50))
+        val (note, rest) = inBraces(m.after.toString, "")
+//        println("Footnote found")
+//        println(m.after.toString.take(50))
         val newHead =
           head + m.before + s"""<sup> <a data-toggle="collapse" href="#footnote-${counter + 1}" aria-expanded="false" aria-controls="footnote-${counter + 1}">
                                 ${counter + 1}
                                  </a> </sup><span class="collapse small" id="footnote-${counter + 1}">$note</span> """.stripMargin
         recReplaceFootnotes(rest, newHead, counter + 1)
+      }
+      .getOrElse(head + txt)
+
+  def recReplacePara(txt: String,
+                          head: String = ""
+                         ): String =
+    """\\para\{""".r
+      .findFirstMatchIn(txt)
+      .map { (m) =>
+        val (header, rest) = inBraces(m.after.toString, "")
+        val newHead =
+          head + m.before + s"<strong>$header :</strong>"
+        recReplacePara(rest, newHead)
+      }
+      .getOrElse(head + txt)
+
+  def recReplaceParag(txt: String,
+                     head: String = ""
+                    ): String =
+    """\\para\{""".r
+      .findFirstMatchIn(txt)
+      .map { (m) =>
+        val (header, rest) = inBraces(m.after.toString, "")
+        val newHead =
+          head + m.before + s"<strong>$header :</strong>"
+        recReplaceParag(rest, newHead)
       }
       .getOrElse(head + txt)
 }
@@ -542,7 +573,7 @@ class TeXToHtml(header: String, text: String) {
   lazy val baseReplaced: String =
     replaceEnds(
       replaceTiny(
-        replaceEm(replacePara(replaceParag(replaceItems(defReplaced))))))
+        replaceEm(recReplacePara(replaceParag(replaceItems(defReplaced))))))
 
 
   lazy val (begReplaced: String, labels: Map[String, Int]) = rplBegins(baseReplaced)

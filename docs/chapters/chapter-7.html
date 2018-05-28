@@ -141,7 +141,8 @@
 
 In general, there is no simple rule for $\mathbf{P}(A\cup B)$ in terms of $\mathbf{P}(A)$ and $\mathbf{P}(B)$. Indeed, consider the probability space $\Omega=\{0,1\}$ with $p_{0}=p_{1}=\frac{1}{2}$. If $A=\{0\}$ and $B=\{1\}$, then $\mathbf{P}(A)=\mathbf{P}(B)=\frac{1}{2}$ and $\mathbf{P}(A\cup B)=1$. However, if $A=B=\{0\}$, then $\mathbf{P}(A)=\mathbf{P}(B)=\frac{1}{2}$ as before, but $\mathbf{P}(A\cup B)=\frac{1}{2}$. This shows that $\mathbf{P}(A\cup B)$ cannot be determined from $\mathbf{P}(A)$ and $\mathbf{P}(B)$. Similarly for $\mathbf{P}(A\cap B)$ or other set constructions.
  </p>
- <p>
+<p class="text-justify">
+          
  However, it is easy to see that $\mathbf{P}(A\cup B)=\mathbf{P}(A)+\mathbf{P}(B)-\mathbf{P}(A\cap B)$. This formula is not entirely useless, because in special situations we shall later see that the probability of the intersection is easy to compute and hence we may compute the probability of the union. Generalizing this idea to more than two sets, we get the following surprisingly useful formula.
  <p>&nbsp;</p>
                 <div id="theorem-54"><div class="panel panel-primary proposition"> <div class="panel-heading">Proposition 54 (Inclusion-Exclusion formula)</div><div class="panel-body">
@@ -161,7 +162,8 @@ We give two proofs, but the difference  is only superficial. It is a good exerci
  <p class="text-justify">
 Suppose $\omega$ belongs to exactly one of the $A_{i}$s. For simplicity let us suppose that $\omega\in A_{1}$ but $\omega\in A_{i}^{c}$ for $2\le i\le n$. Then $p_{\omega}$ is counted once in $S_{1}$ but not counted in $S_{2},\ldots ,S_{n}$.
  </p>
- <p>
+<p class="text-justify">
+          
  Suppose $\omega$ belongs to $A_{1}$ and $A_{2}$ but not any other $A_{i}$. Then $p_{\omega}$ is counted twice in $S_{1}$ (once for $\mathbf{P}(A_{1})$ and once for $\mathbf{P}(A_{2})$) and subtracted once in $S_{2}$ (in $\mathbf{P}(A_{1}\cap A_{2})$). Thus, it is effectively counted once on the right side. The same holds if $\omega$ belongs to $A_{i}$ and $A_{j}$ but not any other $A_{k}$s.
  </p>
            
@@ -173,7 +175,8 @@ $$
 times. By the Binomial formula, this is just the expansion of  $1-(1-1)^{k}$ which is $1$.
 </div>
  </p>
- <p>
+<p class="text-justify">
+          
  <div class="proof"> Use the definition to write both sides of the statement. Let $A=\cup_{i=1}^{n}A_{i}$.
 $$
 \mbox{LHS}= \sum\limits_{\omega\in A}p_{\omega} = \sum\limits_{\omega\in \Omega}{\mathbf 1}_{A}(\omega)p_{\omega}.
@@ -199,7 +202,8 @@ As we remarked earlier,  it turns out that in many settings it is possible to co
 <p>&nbsp;</p>
                 <div id="theorem-55"><div class="panel panel-info example"> <div class="panel-heading">Example 55 </div><div class="panel-body"> Let $\Omega=S_{52}\times S_{52}$ with $p_{\omega}=\frac{1}{(52!)^{2}}$ for all $\omega \in \Omega$. Consider the event $A=\{(\pi,{\sigma}){\; : \;} \pi(i)\not={\sigma}(i) \ \forall i\}$. Informally, we imagine two shuffled decks of cards kept side by side (or perhaps one shuffled deck and another permutation denoting a  ``psychic's predictions'' for the order in which the cards occur). Then $A$ is the event that there are no matches (or correct guesses).
  </p>
- <p>
+<p class="text-justify">
+          
  Let $A_{i}=\{(\pi,{\sigma}){\; : \;} \pi(i)={\sigma}(i)\}$ so that $A^{c}=A_{1}\cup \ldots \cup A_{52}$. It is easy to see that $\mathbf{P}(A_{i_{1}}\cap A_{i_{2}}\ldots \cap A_{i_{k}})=\frac{1}{52(52-1)\ldots (52-k+1)}$ for any $i_{1} < i_{2} < \ldots  < i_{k}$ (why?). Therefore, by the inclusion-exclusion formula, we get
 $$\begin{align*}
 \mathbf{P}(A^{c}) &=  \binom{52}{1}\frac{1}{52}-\binom{52}{2}\frac{1}{(52)(51)} +  \ldots + (-1)^{51} \binom{52}{52}\frac{1}{(52)(51)\ldots (1)}\\
@@ -220,7 +224,8 @@ $$
 The last term is zero (since all urns cannot be empty). I don't know if this expression can be simplified any more.
 </div></div></div>
  </p>
- <p>
+<p class="text-justify">
+          
  We mention two useful formulas that can be proved on lines similar to the inclusion-exclusion principle. If we say ``at least one of the events $A_{1}, A_{2},\ldots ,A_{n}$ occurs'', we are talking about the union, $A_{1}\cup A_{2}\cup \ldots \cup A_{n}$. What about ``at least $m$ of the events $A_{1}, A_{2},\ldots ,A_{n}$ occur'', how to express it with set operations. It is not hard to see that this set is precisely
 $$
 B_{m}=\bigcup_{ 1\le i_{1} < i_{2} < \ldots  < i_{m}\le n} (A_{i_{1}}\cap A_{i_{2}}\cap \ldots \cap A_{i_{m}}).
@@ -249,7 +254,8 @@ $$\begin{align*}
 <li> Assume that the approximations above are valid for $n=52$ and $m\le 10$. Find the probability that there are at least $10$ matches.
 </ol>
  </p>
- <p>
+<p class="text-justify">
+          
  </div></div></div>
  </p>
            

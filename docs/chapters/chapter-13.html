@@ -145,7 +145,8 @@
 
 Let $(\Omega,p)$ be a probability space and $X:\Omega\rightarrow \mathbb{R}$ be a random variable. We define two objects associated to $X$.
  </p>
- <p>
+<p class="text-justify">
+          
  <strong>Probability mass function (pmf)</strong>. The range of $X$ is a countable subset of $\mathbb{R}$, denote it by $\mbox{Range}(X)=\{t_{1},t_{2},\ldots\}$. Then, define $f_{X}:\mathbb{R}\rightarrow [0,1]$ as the function
 $$
 f_{X}(t)=\begin{cases}
@@ -160,7 +161,8 @@ One obvious property is that $\sum_{t\in \mathbb{R}}f_{X}(t)=1$. Conversely, any
 <strong>Cumulative distribution function (CDF)</strong>. Define $F_{X}:\mathbb{R}\rightarrow [0,1]$ by
 $$F_{X}(t)=\mathbf{P}\{\omega{\; : \;} X(\omega)\le t\}.$$
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-74"><div class="panel panel-info example"> <div class="panel-heading">Example 74 </div><div class="panel-body"> Let $\Omega=\{(i,j){\; : \;} 1\le i,j\le 6\}$ with $p_{(i,j)}=\frac{1}{36}$ for all $(i,j)\in \Omega$. Let $X:\Omega \rightarrow \mathbb{R}$ be the random variable defined by $X(i,j)=i+j$. Then, $\mbox{Range}(X)=\{2,3,\ldots ,12\}$. The pmf and CDF of $X$ are given by
 $$
@@ -199,8 +201,9 @@ $$
  <p class="text-justify">
 A picture of the pmf and CDF for a Binomial distribution are shown in Figure ref{fig:pdfandcdfofbinomial}.
  </p>
- <p>
- <strong>Basic properties of a CDF:</strong> The following observations are easy to make.
+<p class="text-justify">
+          
+ <strong>Basic properties of a CD :</strong> The following observations are easy to make.
 <ol>
 <li> $F$ is an increasing function on $\mathbb{R}$.
 </li>
@@ -216,7 +219,8 @@ Since $F(t)$ is the probability of a certain event, these statements can be prov
  <p class="text-justify">
 <div class="proof"> Let $t < s$. Define two events, $A=\{\omega {\; : \;} X(\omega)\le t\}$ and $B=\{\omega{\; : \;} X(\omega)\le s\}$. Clearly $A\subseteq B$ and hence $F(t)=\mathbf{P}(A)\le \mathbf{P}(B)=F(s)$. This proves the first property.
  </p>
- <p>
+<p class="text-justify">
+          
  To prove the second property, let $A_{n}=\{\omega {\; : \;} X(\omega)\le n\}$ for $n\ge 1$. Then, $A_{n}$ are increasing in $n$ and $\bigcup_{n=1}^{\infty}A_{n}=\Omega$. Hence, $F(n)=\mathbf{P}(A_{n})\rightarrow \mathbf{P}(\Omega)=1$ as $n\rightarrow \infty$. Since $F$ is increasing, it follows that $\lim_{t\rightarrow +\infty}F(t)=1$. Similarly one can prove that $\lim_{t\rightarrow -\infty}F(t)=0$.
  </p>
            
@@ -228,14 +232,16 @@ Right continuity of $F$ is also proved the same way, by considering the events $
 It is easy to see that one can recover the pmf from the CDF and vice versa. For example, given the pmf $f$, we can write the CDF as $F(t)=\sum_{u:u\le t}f(u)$. Conversely, given the CDF, by looking at the locations of the jumps and the sizes of the jumps, we can recover the pmf.
 </div></div></div>
  </p>
- <p>
+<p class="text-justify">
+          
  The point is that probabilistic questions about $X$ can be answered by knowing its CDF $F_{X}$. Therefore, in a sense, the probability space becomes irrelevant. For example, the expected value of a random variable can be computed using its CDF only. Hence, we shall often make statements like ``$X$ is a random variable with pmf $f$'' or ``$X$ is a random variable with CDF $F$'', without bothering to indicate the probability space.
  </p>
            
  <p class="text-justify">
 Some distributions (i.e., CDF or the associated pmf) occur frequently enough to merit a name.
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-76"><div class="panel panel-info example"> <div class="panel-heading">Example 76 </div><div class="panel-body"> Let $f$ and $F$ be the pmf, CDF pair
 $$
@@ -249,7 +255,8 @@ A random variable $X$ having this pmf (or equivalently the CDF) is said to have 
 <p>&nbsp;</p>
                 <div id="theorem-77"><div class="panel panel-info example"> <div class="panel-heading">Example 77 </div><div class="panel-body">  Fix $n\ge 1$ and $p\in [0,1]$. The pmf defined by $f(k)=\binom{n}{k}p^{k}q^{n-k}$ for $0\le k\le n$ is called the <em> Binomial  distribution</em> with parameters $n$ and $p$ and is denoted Bin($n,p$). The CDF is as usual defined by $F(t)=\sum_{u:\mathbf{u}\le t}f(u)$, but it does not have any particularly nice expression.
  </p>
- <p>
+<p class="text-justify">
+          
  For example, if $\Omega=\{0,1\}^{n}$ with $p_{\underline{\omega}}=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}$, and $X(\underline{\omega})=\omega_{1}+\ldots +\omega_{n}$, then $X\sim \mbox{Bin}(n,p)$. In words, the number of heads in $n$ tosses of a $p$-coin has $\mbox{Bin}(n,p)$ distribution.
 </div></div></div>
  </p>
@@ -266,7 +273,8 @@ $$
 For example, the number of tosses of a $p$-coin till the first head turns up, is a random variable with $\mbox{Geo}(p)$ distribution.
 </div></div></div>
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-79"><div class="panel panel-info example"> <div class="panel-heading">Example 79 </div><div class="panel-body"> Fix $\lambda > 0$ and define the pmf $f(k)=e^{-\lambda}\frac{\lambda^{k}}{k!}$. This is called the <em> Poisson  distribution</em> with parameter $\lambda$ and is denoted Pois($\lambda$).
  </p>
@@ -275,7 +283,8 @@ For example, the number of tosses of a $p$-coin till the first head turns up, is
 In the problem of a psychic (randomly) guessing the cards in a deck, we have seen that the number of matches (correct guesses) had an <em> approximately</em> Pois($1$) distribution.
 </div></div></div>
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-80"><div class="panel panel-info example"> <div class="panel-heading">Example 80 </div><div class="panel-body"> Fix positive integers $b,w$ and $m\le b+w$. Define the pmf  $f(k)=\frac{\binom{b}{k}\binom{w}{m-k}}{\binom{b+w}{m}}$ where the binomial coefficient $\binom{x}{y}$ is interpreted to be zero if $y > x$ (thus $f(k) > 0$ only for $\max\{m-w,0\}\le k\le b$). This is called the <em> Hypergeometric distribution</em> with parameters $b,w,m$ and we shall denote it by  Hypergeo($b,w,m$).
  </p>
@@ -284,7 +293,8 @@ In the problem of a psychic (randomly) guessing the cards in a deck, we have see
 Consider a population with $b$ men and $w$ women. The number of men in a random sample (without replacement) of size $m$, is a random variable with the Hypergeo($b,w,m$) distribution.
 </div></div></div>
  </p>
- <p>
+<p class="text-justify">
+          
  <strong>Computing expectations from the pmf</strong> Let $X$ be a random variable on $(\Omega,p)$ with pmf $f$. Then we claim that
 $$
 \mathbf{E}[X] = \sum_{t\in \mathbb{R}}tf(t).

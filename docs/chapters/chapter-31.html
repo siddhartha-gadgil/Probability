@@ -146,12 +146,13 @@
 
  So far, in estimating of an unknown parameter, we give a single number as our guess for the known parameter. It would be better to give an interval and say with what confidence we expect the true parameter to lie within it.  As a very simple example, suppose we have one random variable $X$ with $N(\mu,1)$ distribution. How do we estimate $\mu$? Suppose the observed value of $X$ is $2.7$. Going by any method, the guess for $\mu$ would be $2.7$ itself. But of course $\mu$ is not equal to $X$, so we would like to give an interval in which $\mu$ lies. How about $[X-1,X+1]$? Or $[X-2,X+2]$? Using normal tables, we see that $\mathbf{P}(X-1 < \mu < X+1)=\mathbf{P}(-1 < (X-\mu) < 1)=\mathbf{P}(-1 < Z < 1) \approx 0.68$ and similarly $\mathbf{P}(X-2 < \mu < X+2)\approx 0.95$. Thus, by making the interval longer we can be more confident that the true parameter lies within. But the accuracy of our statement goes down (if you want to know the average height of people in India, and the answer you give is ``between 100cm and 200cm'', it is very probably correct, but of little use!). The probability with which our CI contains the unknown parameter is called the level of confidence. Usually we fix the level of confidence, say as $0.90$ and find an interval <em> as short as possible</em> but subject to the condition that it should have a confidence level of $0.90$.
  </p>
- <p>
+<p class="text-justify">
+          
  In this section we consider the problem of confidence intervals in Normal population. In the next we see a few other examples.
  </p>
            
  <p class="text-justify">
-<strong>The setting:</strong> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$ random variables. We consider four situations.
+<strong>The settin :</strong> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$ random variables. We consider four situations.
 <ol>
 <li> Confidence interval for $\mu$ when ${\sigma}^{2}$ is known.
 </li>
@@ -162,7 +163,8 @@
 <li> Confidence interval for ${\sigma}^{2}$ when $\mu$ is unknown.
 </ol>
  </p>
- <p>
+<p class="text-justify">
+          
  A starting point in finding a confidence interval for a parameter is to first start with an estimate for the parameter. For example, in finding a CI for $\mu$, we may start with $\bar{X}_{n}$ and enlarge it to an interval $[\bar{X}_{n}-a,\bar{X}_{n}+a]$. Similarly, in finding a CI for ${\sigma}^{2}$ we use the estimate $s_{n}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ if $\mu$ is unknown and $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ if the value of $\mu$ is known.
  </p>
            
@@ -185,7 +187,8 @@ $$
 $$
  where $Z\sim N(0,1)$. Fix any $0 < \alpha < 1$ and denote by $z_{\alpha}$ the number such that $\mathbf{P}(Z > z_{\alpha})=\alpha$ (in other words, $z_{\alpha}$ is the $(1-\alpha)$-quantile of the standard normal distribution). For example, from normal tables we find that $z_{0.05}\approx1.65$ and $z_{0.005}\approx 2.58$ etc.
  </p>
- <p>
+<p class="text-justify">
+          
  If we set $a=z_{\alpha/2}{\sigma}/\sqrt{n}$, we get
 $$
 \mathbf{P}\left(\left[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2}\right]\ni \mu\right)=1-\alpha.
@@ -206,14 +209,16 @@ $$\begin{align*}
 \end{align*}$$
 Differentiate w.r.t $t$ to see that the density of $Z_{1}^{2}$ is $h(t)=\frac{1}{\sqrt{\pi}}e^{-t/2}t^{-1/2}\sqrt{(1/2)}$, which is just the $\mbox{Gamma}(\frac{1}{2},\frac{1}{2})$ density.
  </p>
- <p>
+<p class="text-justify">
+          
  Now, each $Z_{k}^{2}$ has the same $\mbox{Gamma}(\frac{1}{2},\frac{1}{2})$ density, and they are independent. Earlier we have seen that when we add independent Gamma random variables with the same scale parameter, the sum has a Gamma distribution with the same scale but whose shape parameter is the sum of the shape parameters of the individual summands. Therefore, $Z_{1}^{2}+\ldots +Z_{n}^{2}$ has $\mbox{Gamma}(n/2,1/2)$ distribution. This completes the solution to the exercise.
  </p>
            
  <p class="text-justify">
 \medskip
  </p>
- <p>
+<p class="text-justify">
+          
  In statistics, the distribution $\mbox{Gamma}(1/2,1/2)$ is usually called the <em> chi-squared distribution with $n$ degrees of freedom</em>. Let $\chi_{n}^{2}\left(\alpha\right)$ denote the $1-\alpha$ quantile of this distribution. Similarly, $\chi_{n}^{2}\left(1-\alpha\right)$ is the $\alpha$ quantile (i.e., the probability for the chi-squared random variable to fall below $\chi_{n}^{2}\left(1-\alpha\right)$ is exactly $\alpha$).
  </p>
            
@@ -228,8 +233,9 @@ $$\begin{align*}
 \end{align*}$$
  Thus, $\left[\frac{ns_{n}^{2}}{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)},\frac{ns_{n}^{2}}{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right]$ is a $(1-\alpha)$-confidence interval for ${\sigma}^{2}$.
  </p>
- <p>
- <strong>An important result:</strong> Before going to the next two confidence interval problems, let us try to understand the two examples already covered. In both cases, we came up with a random variable ($\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ and $W_{n}/{\sigma}^{2}$, respectively) which involved the data and the unknown parameter  whose distributions we knew (standard normal and $\chi^{2}_{n}$, respectively) and these distributions do not depend on any parameters. This is generally the key step in any confidence interval problem. For the next two problems, we cannot use the same two random variables as above as they depend on the other unknown parameter too (i.e.,  $\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ uses ${\sigma}$ which will be unknown and $W_{n}/{\sigma}^{2}$ uses $\mu$ which will be unknown). Hence, we need a new result that we state without proof.
+<p class="text-justify">
+          
+ <strong>An important resul :</strong> Before going to the next two confidence interval problems, let us try to understand the two examples already covered. In both cases, we came up with a random variable ($\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ and $W_{n}/{\sigma}^{2}$, respectively) which involved the data and the unknown parameter  whose distributions we knew (standard normal and $\chi^{2}_{n}$, respectively) and these distributions do not depend on any parameters. This is generally the key step in any confidence interval problem. For the next two problems, we cannot use the same two random variables as above as they depend on the other unknown parameter too (i.e.,  $\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ uses ${\sigma}$ which will be unknown and $W_{n}/{\sigma}^{2}$ uses $\mu$ which will be unknown). Hence, we need a new result that we state without proof.
  </p>
            
  <p class="text-justify">
@@ -242,7 +248,8 @@ and the two are independent.
 </div></div></div>
 This is not too hard to prove (a muscle-flexing exercise in change of variable formula) but we skip the proof. Note two important features. First, the surprising independence of the sample mean and the sample variance. Second, the sample variance (appropriately scaled) has $\chi^{2}$ distribution, just like $W_{n}$ in the previous example, but the degree of freedom is reduced by $1$. Now we use this theorem in computing confidence intervals.
  </p>
- <p>
+<p class="text-justify">
+          
  \subsection{Estimating ${\sigma}^{2}$ when $\mu$ is unknown}
 The estimate $s_{n}^{2}$ must be used as $W_{n}$ depends on $\mu$ which is unknown. Theorem {thm:indepofsamplemeanandvar} tells us that $\frac{(n-1)s_{n}^{2}}{{\sigma}^{2}}\sim \chi^{2}_{n-1}$. Hence, by the same logic as before we get
 $$\begin{align*}
@@ -255,7 +262,8 @@ $$\begin{align*}
  <p class="text-justify">
 If $\mu$ is known, we could use the earlier confidence interval using $W_{n}$, or simply ignore the knowledge of $\mu$ and use the above confidence interval using $s_{n}^{2}$. What is the difference? The cost of ignoring the knowledge of $\mu$ is that the second confidence interval will be typically larger, although for large $n$ the difference is slight. On the other hand, if our knowledge of $\mu$ was inaccurate, then the first confidence interval is invalid (we have no idea what its level of confidence is!) which is more serious. In realistic situations it is unlikely that we will know one of the parameters but not the other - hence, most often one just uses the confidence interval based on $s_{n}^{2}$.
  </p>
- <p>
+<p class="text-justify">
+          
  \subsection{Estimating $\mu$ when ${\sigma}^{2}$ is unknown} The earlier confidence interval We look for a confidence interval $[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2}]$ cannot be used as we do not know the value of ${\sigma}$.
  </p>
            
@@ -266,7 +274,8 @@ $$
 $$
 Is it true if ${\sigma}$ is replaced by $s_{n}$? Actually no, but we have a different distribution called <em> Student's $t$-distribution</em>.
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-170"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 170 </div><div class="panel-body"> Let $Z\sim N(0,1)$ and $S^{2}\sim \chi^{2}_{n}$ be independent. Then, the density of $\frac{Z}{S/\sqrt{n}}$ is given by
 $$
@@ -280,7 +289,8 @@ The exact density of  $t$-distribution is not important to remember, so the abov
  <p class="text-justify">
 How does this help us? From Theorem <a href="#theorem-169">169</a> we know that $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}}\sim N(0,1)$, $\frac{(n-1)s_{n}^{2}}{{\sigma}^{2}}\sim \chi^{2}_{n-1}$, and the two are independent. Take these random variables in the above exercise to conclude that $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n}}$ has $t_{n-1}$ distribution.
  </p>
- <p>
+<p class="text-justify">
+          
  The $t$-distribution is symmetric about zero (the density at $t$ and at $-t$ are the same). Further, as the number of degrees of freedom goes to infinity, the $t$-density converges to the standard normal density. What we need to know is that there are tables from which we can read off specific quantiles of the distribution. In particular, by $t_{n}(\alpha)$ we mean the $1-\alpha$ quantile of the $t$-distribution with $n$ degrees of freedom. Then of course, the $\alpha$ quantile is $-t_{n}(\alpha)$.
  </p>
            
@@ -295,7 +305,8 @@ $$\begin{align*}
 \end{align*}$$
 Hence, our $(1-\alpha)$-confidence interval is $\left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right),\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right)\right]$.
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-171"><div class="panel panel-success remark"> <div class="panel-heading">Remark 171 </div><div class="panel-body"> We remarked earlier that as $n\rightarrow \infty$, the $t_{n-1}$ density approaches the standard normal density. Hence, $t_{n-1}(\alpha)$ approaches $z_{\alpha}$ for any $\alpha$ (this can be seen by looking at the $t$-table for large degree of freedom). Therefore, when $n$ is large, we may as well use
 $$

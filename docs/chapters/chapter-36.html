@@ -140,7 +140,8 @@
 
 Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu_{1},{\sigma}_{1}^{2})$ and let $Y_{1},\ldots ,Y_{m}$ be i.i.d. $N(\mu_{2},{\sigma}_{2}^{2})$. We shall consider the following  hypothesis testing problems.
  </p>
- <p>
+<p class="text-justify">
+          
  <ol>
 <li> One sided test for the difference in means. $H_{0}:\; \mu_{1}=\mu_{2}$ versus $H_{1}: \; \mu_{1} > \mu_{2}$.
 </li>
@@ -153,7 +154,8 @@ This kind of problem arises in many situations in comparing two different popula
 <p>&nbsp;</p>
                 <div id="theorem-178"><div class="panel panel-info example"> <div class="panel-heading">Example 178 </div><div class="panel-body"> Suppose a new drug to reduce blood pressure is introduced by a pharmaceutical company.  There is already an existing drug in the market which is working reasonably alright. But it is claimed by the company that the new drug is better. How to test this claim?
  </p>
- <p>
+<p class="text-justify">
+          
  We take a random sample of $n+m$ patients and break them into two groups of $n$ and of $m$ patients. The first group is administered the new drug while the second group is administered the old drug. Let $X_{1},\ldots ,X_{n}$ be the <em> decrease in blood pressures</em> in the first group. Let $Y_{1},\ldots ,Y_{m}$ be the <em> decrease</em> in blood pressures in the second group. The claim is that one average $X_{i}$s are larger than $Y_{i}$s.
  </p>
            
@@ -164,18 +166,20 @@ Note that it does not make sense to subtract $X_{i}-Y_{i}$ and reduce to a one s
                 <div id="theorem-179"><div class="panel panel-info example"> <div class="panel-heading">Example 179 </div><div class="panel-body"> The same applies to many studies of comparision. If someone claims that Americans are taller than Indians on average, or if it is claimed that cycling a lot leads to increase in height, or if it is claimed that Chinese have higher IQ than Europeans, or if it is claimed that <em> Honda Activa</em> gives better mileage than <em> Suzuki Access</em>, etc., etc., the claims can be reduced to the two-sample testing problem as introduced above.
 </div></div></div>
  </p>
- <p>
+<p class="text-justify">
+          
  <strong>BIG ASSUMPTION:</strong> We shall assume that ${\sigma}_{1}^{2}={\sigma}_{2}^{2}={\sigma}^{2}$ (yet unknown). This assumption is not made because it is natural or because it is often observed, but because it leads to mathematical simplification. Without this assumption, no exact level-$\alpha$ test has been found!
  </p>
            
  <p class="text-justify">
-<strong>The test:</strong> Let $\bar{X},\bar{Y}$ denote the sample means of $X$ and $Y$ and let $s_{X}, s_{Y}$ denote the corresponding sample standard deviations. Since ${\sigma}^{2}$ is the assumed to be the same for both populations, $s_{X}^{2}$ and $s_{Y}^{2}$ can be combined to define
+<strong>The tes :</strong> Let $\bar{X},\bar{Y}$ denote the sample means of $X$ and $Y$ and let $s_{X}, s_{Y}$ denote the corresponding sample standard deviations. Since ${\sigma}^{2}$ is the assumed to be the same for both populations, $s_{X}^{2}$ and $s_{Y}^{2}$ can be combined to define
 $$
 S^{2}:=\frac{(n-1)s_{X}^{2}+(m-1)s_{Y}^{2}}{m+n-2}
 $$
 which is a better estimate for ${\sigma}^{2}$ than just $s_{X}^{2}$ or $s_{Y}^{2}$ (this $S^{2}$ is better than simply taking $(s_{X}^{2}+s_{Y}^{2})/2$ because it gives greater weight to the larger sample).
  </p>
- <p>
+<p class="text-justify">
+          
  Now define $\mathcal T =\sqrt{\frac{1}{n}+\frac{1}{m}}\left(\frac{\bar{X}-\bar{Y}}{S}\right)$.  The following tests hav significance level $\alpha$.
 <ol>
 <li> For the one-sided test, accept the alternative if $\mathcal T > t_{n+m-2}(\alpha)$.
@@ -185,10 +189,11 @@ which is a better estimate for ${\sigma}^{2}$ than just $s_{X}^{2}$ or $s_{Y}^{2
  </p>
            
  <p class="text-justify">
-<strong>The rationale behind the tests:</strong> If $\bar{X}$ is much larger than $\bar{Y}$ then the greater is the evidence that the true mean $\mu_{1}$ is greater than $\mu_{2}$. But again we need to standardize by dividing this by an estimate of ${\sigma}$, namely $S$. The resulting statistic $\mathcal T$ has a $t_{m+n-2}$ distribution as explained below.
+<strong>The rationale behind the test :</strong> If $\bar{X}$ is much larger than $\bar{Y}$ then the greater is the evidence that the true mean $\mu_{1}$ is greater than $\mu_{2}$. But again we need to standardize by dividing this by an estimate of ${\sigma}$, namely $S$. The resulting statistic $\mathcal T$ has a $t_{m+n-2}$ distribution as explained below.
  </p>
- <p>
- <strong>The significance level is $\alpha$:</strong> The question is where to draw the threshold. From the facts we know,
+<p class="text-justify">
+          
+ <strong>The significance level is $\alpha :</strong> The question is where to draw the threshold. From the facts we know,
 $$\begin{align*}
 \bar{X}&\sim N(\mu_{1},{\sigma}_{1}^{2}/n), \\
 \bar{Y}&\sim N(\mu_{2},{\sigma}_{2}^{2}/m), \\

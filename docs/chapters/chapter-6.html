@@ -140,7 +140,8 @@
 
 So far we have defined the notion of probability space and probability of an event. But most often, we do not calculate probabilities from the definition. This is like in integration, where one defined the integral of a function as a limit of Riemann sums, but that definition is used only to find integrals of $x^{n}$, $\sin(x)$ and a few such functions. Instead, integrals of complicated expressions such as $x\sin(x)+2\cos^{2}(x)\tan(x)$ are calculated by various rules, such as substitution rule, integration by parts etc. In probability we need some similar rules relating probabilities of various combinations of events to the individual probabilities.
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-50"><div class="panel panel-primary proposition"> <div class="panel-heading">Proposition 50 </div><div class="panel-body"> Let $(\Omega,p_{\cdot})$ be a discrete probability space.
 <ol>
@@ -156,7 +157,7 @@ All of these may seem obvious, and indeed they would be totally obvious if we st
  </p>
            
  <p class="text-justify">
-<strong>Notation:</strong> Let $A\subseteq \Omega$ be an event. Then, we define a function ${\mathbf 1}_{A}:\Omega\rightarrow \mathbb{R}$, called the <em> indicator function of $A$</em>,  as follows.
+<strong>Notatio :</strong> Let $A\subseteq \Omega$ be an event. Then, we define a function ${\mathbf 1}_{A}:\Omega\rightarrow \mathbb{R}$, called the <em> indicator function of $A$</em>,  as follows.
 $$
 {\mathbf 1}_{A}(\omega) = \begin{cases}
 1 & \mbox{ if }\omega\in A,\\
@@ -165,7 +166,8 @@ $$
 $$
 Since a function from $\Omega$ to $\mathbb{R}$ is called a random variable, the indicator of any event is a random variable. All information about the event $A$ is in its indicator function (meaning, if we know the value of ${\mathbf 1}_{A}(\omega)$, we know whether or not $\omega$ belongs to $A$). For example, we can write $\mathbf{P}(A)=\sum_{\omega\in \Omega}{\mathbf 1}_{A}(\omega)p_{\omega}$.
  </p>
- <p>
+<p class="text-justify">
+          
  Now we prove the proposition.
 <div class="proof">
 <ol>
@@ -200,7 +202,8 @@ $$\begin{equation*}
 \end{equation*}$$
 In words, $\limsup A_{k}$ is the set of all $\omega$ that belong to infinitely many of the $A_{k}$s, and $\liminf A_{k}$ is the set of all $\omega$ that belong to all but finitely many of the $A_{k}$s.
  </p>
- <p>
+<p class="text-justify">
+          
  Two special cases are of increasing and decreasing sequences of events. This means $A_{1}\subseteq A_{2}\subseteq A_{3}\subseteq \ldots$ and $A_{1}\supseteq A_{2}\supseteq A_{3}\supseteq \ldots$. In these cases, the limsup and liminf are the same (so we refer to it as the limit of the sequence of sets). It is $\cup_{k}A_{k}$ in the case of increasing events and $\cap_{k}A_{k}$ in the case of decreasing events.
 </div></div></div>
  </p>
@@ -213,14 +216,15 @@ In words, $\limsup A_{k}$ is the set of all $\omega$ that belong to infinitely m
 </li>
 <li> If $A_{k}$ are decreasing events with limit $A$, show that $\mathbf{P}(A)$ is the decreasing limit of $\mathbf{P}(A_{k})$.
  </p>
- <p>
+<p class="text-justify">
+          
  </ol>
 </div></div></div>
 Now we re-write the basic rules of probability as follows.
  </p>
            
  <p class="text-justify">
-<strong>The basic rules of probability:</strong>
+<strong>The basic rules of probabilit :</strong>
 <ol>
 <li> $\mathbf{P}(\emptyset)=0$, $\mathbf{P}(\Omega)=1$ and $0\le \mathbf{P}(A)\le 1$ for any event $A$.
 </li>
@@ -229,7 +233,8 @@ Now we re-write the basic rules of probability as follows.
 <li> $\mathbf{P}\left(\bigcup\limits_{k}A_{k}\right)=\sum\limits_{k}\mathbf{P}(A_{k})$ if $A_{k}$ is a countable collection of pairwise disjoint events.
 </ol>
  </p>
- <p>
+<p class="text-justify">
+          
  
  </p>
            

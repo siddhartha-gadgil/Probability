@@ -140,7 +140,8 @@
 
  Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$. We shall consider the following  hypothesis testing problems.
  </p>
- <p>
+<p class="text-justify">
+          
  <ol>
 <li> One sided test for the mean. $H_{0}:\; \mu=\mu_{0}$ versus $H_{1}: \; \mu > \mu_{0}$.
 </li>
@@ -156,27 +157,30 @@ This kind of problem arises in many situations in comparing the effect of a trea
 <p>&nbsp;</p>
                 <div id="theorem-176"><div class="panel panel-info example"> <div class="panel-heading">Example 176 </div><div class="panel-body"> The same applies to test the efficacy of a fertilizer to increase yield, a proposed drug to decrease weight, a particular educational method to improve a skill, or a particular course such as the current <em> probability and statistics course</em> in increasing subject knowledge. To make a policy decision on such  matters, we can conduct an experiment as in the above example.
  </p>
- <p>
+<p class="text-justify">
+          
  For example, a bunch of students are tested on probability and statistics and their scores are noted. Then they are subjected to the course for a semester. They are tested again after the course (for the same marks, and at the same level of difficulty) and the scores are again noted. Take differences of the scores before and after, and test whether the mean of these differences is positive (or negative, depending on how you take the difference). This is a  one-sided tests for the mean. Note that in these examples, we are taking the null hypothesis to be that there is no effect. In other words, the burden of proof is on the new drug or fertilizer or the instructor of the course.
 </div></div></div>
  </p>
            
  <p class="text-justify">
-<strong>The test:</strong> Now we present the test. We shall use the statistic $\mathcal T:=\frac{\sqrt{n}(\bar{X}-\mu_{0})}{s}$ where $\bar{X}$ and $s$ are the sample mean and sample standard deviation.
+<strong>The tes :</strong> Now we present the test. We shall use the statistic $\mathcal T:=\frac{\sqrt{n}(\bar{X}-\mu_{0})}{s}$ where $\bar{X}$ and $s$ are the sample mean and sample standard deviation.
 <ol>
 <li> In the one-sided test, we accept the alternative hypothesis if $\mathcal T > t_{n-1}(\alpha)$.
 </li>
 <li> In the two sided-test, accept the alternative hypothesis if $\mathcal T > t_{n-1}(\alpha/2)$ or $\mathcal T < -t_{n-1}(\alpha/2)$.
 </ol>
  </p>
- <p>
- <strong>The rationale behind the tests:</strong> If $\bar{X}$ is much larger than $\mu_{0}$ then the greater is the evidence that the true mean $\mu$ is greater than $\mu_{0}$. However, the magnitude depends on the standard deviation and hence we divide by $s$ (if we knew ${\sigma}$ we would divide by that). Another way to see that this is reasonable is that $\mathcal T$ does not depend on the units in which you measure $X_{i}$s (whether $X_{i}$ are measured in meters or centimeters, the value of $\mathcal T$ does not change).
+<p class="text-justify">
+          
+ <strong>The rationale behind the test :</strong> If $\bar{X}$ is much larger than $\mu_{0}$ then the greater is the evidence that the true mean $\mu$ is greater than $\mu_{0}$. However, the magnitude depends on the standard deviation and hence we divide by $s$ (if we knew ${\sigma}$ we would divide by that). Another way to see that this is reasonable is that $\mathcal T$ does not depend on the units in which you measure $X_{i}$s (whether $X_{i}$ are measured in meters or centimeters, the value of $\mathcal T$ does not change).
  </p>
            
  <p class="text-justify">
-<strong>The significance level is $\alpha$:</strong> The question is where to draw the threshold. We have seen before that <em> under the null hypothesis</em>  $\mathcal T$ has a $t_{n-1}$ distribution. Recall that this is because, if the null hypothesis is true, then  $\frac{\sqrt{n}(\bar{X}-\mu_{0})}{{\sigma}}\sim N(0,1)$, $(n-1)s^{2}/{\sigma}^{2} \sim \chi^{2}_{n-1}$ and the two are independent.  Thus, the given tests have significance level $\alpha$ for the two problems.
+<strong>The significance level is $\alpha :</strong> The question is where to draw the threshold. We have seen before that <em> under the null hypothesis</em>  $\mathcal T$ has a $t_{n-1}$ distribution. Recall that this is because, if the null hypothesis is true, then  $\frac{\sqrt{n}(\bar{X}-\mu_{0})}{{\sigma}}\sim N(0,1)$, $(n-1)s^{2}/{\sigma}^{2} \sim \chi^{2}_{n-1}$ and the two are independent.  Thus, the given tests have significance level $\alpha$ for the two problems.
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-177"><div class="panel panel-success remark"> <div class="panel-heading">Remark 177 </div><div class="panel-body"> Earlier we considered the problem of constructing a $(1-\alpha)$-CI for $\mu$ when ${\sigma}^{2}$ is unknown. The two sided test abovecan be simply stated as follows: Accept the alternative at level $\alpha$ if the corresponding $(1-\alpha)$-CI does not contain $\mu_{0}$. Conversely, if we had dealt with testing problems first, we could define a confidence interval as the set of all those $\mu_{0}$ for which the corresponding test rejects the alternative.
  </p>
@@ -185,7 +189,8 @@ This kind of problem arises in many situations in comparing the effect of a trea
 Thus, confidence intervals and testing are closely related. This is true in some greater generality. For example, we did not construct confidence interval for $\mu$, but you should do so and check that it is closely related to the one-sided tests above.
 </div></div></div>
  </p>
- <p>
+<p class="text-justify">
+          
  
  </p>
            

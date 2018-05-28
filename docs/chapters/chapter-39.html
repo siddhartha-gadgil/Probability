@@ -142,7 +142,8 @@
 
 Suppose we have a bivariate sample $(X_{1},Y_{1}),(X_{2},Y_{2}),\ldots ,(X_{n},Y_{n})$ i.i.d. from a joint density (or joint pmf) $f(x,y)$. The question is to decide whether $X_{i}$ is independent of $Y_{i}$.
  </p>
- <p>
+<p class="text-justify">
+          
  <p>&nbsp;</p>
                 <div id="theorem-180"><div class="panel panel-info example"> <div class="panel-heading">Example 180 </div><div class="panel-body"> There are many situations in which such a problem arises. For example, suppose a bunch of students are given two exams, one testing mathematical skills and another testing verbal skills. The underlying goal may be to investigate whether the human brain has distinct centers for verbal and quantitative thinking.
 </div></div></div>
@@ -163,9 +164,10 @@ Here the total sample is of $n$ persons and $n_{i,j}$ denote the numbers in each
  </p>
            
  <p class="text-justify">
-<strong>Testing independence in bivariate normal:</strong> We shall not discuss this problem in detail but instead quickly give some indicators and move on. Here we have $(X_{i},Y_{i})$ i.i.d bivariate normal random variables with $\mathbf{E}[X]=\mu_{1}$, $\mathbf{E}[Y]=\mu_{2}$, $\mbox{Var}(X)={\sigma}_{1}^{2}$, $\mbox{Var}(Y)={\sigma}_{2}^{2}$ and $\mbox{Corr}(X,Y)=\rho$. The testing problem is $H_{0}: \; \rho=0$ versus $H_{1}: \; \rho\not=0$. (Remember that if $(X,Y)$ is bivariate normal, then $X$ and $Y$ are independent if and only if $X$ and $Y$ are uncorrelated.
+<strong>Testing independence in bivariate norma :</strong> We shall not discuss this problem in detail but instead quickly give some indicators and move on. Here we have $(X_{i},Y_{i})$ i.i.d bivariate normal random variables with $\mathbf{E}[X]=\mu_{1}$, $\mathbf{E}[Y]=\mu_{2}$, $\mbox{Var}(X)={\sigma}_{1}^{2}$, $\mbox{Var}(Y)={\sigma}_{2}^{2}$ and $\mbox{Corr}(X,Y)=\rho$. The testing problem is $H_{0}: \; \rho=0$ versus $H_{1}: \; \rho\not=0$. (Remember that if $(X,Y)$ is bivariate normal, then $X$ and $Y$ are independent if and only if $X$ and $Y$ are uncorrelated.
  </p>
- <p>
+<p class="text-justify">
+          
  The natural statistic to consider is the sample correlation coefficient (<em> Pearson's $r$ statistic</em>)
 $$
 r_{n}:=\frac{s_{X,Y}}{s_{X}.s_{Y}}
@@ -174,17 +176,19 @@ where $s_{X}^{2},s_{Y}^{2}$ are the sample variances of $X$ and $Y$ and $s_{X,Y}
  </p>
            
  <p class="text-justify">
-<strong>Fisher:</strong> Under the null hypothesis, $r_{n}^{2}$ has $\mbox{Beta}(\frac{1}{2}, \frac{n-2}{2})$ distribution.
+<strong>Fishe :</strong> Under the null hypothesis, $r_{n}^{2}$ has $\mbox{Beta}(\frac{1}{2}, \frac{n-2}{2})$ distribution.
  </p>
- <p>
+<p class="text-justify">
+          
  \medskip
  </p>
            
  <p class="text-justify">
 Using this result, we can draw the threshold for rejection using the Beta distribution (of course the explicit threshold can only be computed numerically). If the assumption of normality of the data is not satisfied, then this test is invalid. However, for large $n$ as usual we can obtain an asymptotically level-$\alpha$ test.
  </p>
- <p>
- <strong>Testing for independence in contingency tables:</strong>
+<p class="text-justify">
+          
+ <strong>Testing for independence in contingency table :</strong>
 Here the measurements $X$ and $Y$ take values in $\{x_{1},\ldots ,x_{k}\}$ and $\{y_{1},\ldots ,y_{\ell}\}$, respectively. These $x_{i},y_{j}$ are categories, not numerical values (such as ``smoking'' and ``non-smoking''). Let the total number of samples be $n$ and let $N_{i,j}$ be the number of samples with values $(x_{i},y_{j})$. Let $N_{i\cdot}=\sum_{j}N_{i,j}$ and let $N_{\cdot j}=\sum_{i}N_{i,j}$.
  </p>
            
@@ -195,7 +199,8 @@ H_{0}&: \; X \mbox{ and } Y \mbox{ are independent} \\
 H_{1}&: \; X \mbox{ and } Y \mbox{ are not independent}.
 \end{align*}$$
  </p>
- <p>
+<p class="text-justify">
+          
  Let $\mu(i,j)=\mathbf{P}\{X=x_{i},Y=y_{j}\}$ be the joint pmf of $(X,Y)$ and let $p(i)$, $q(j)$ be the marginal pmfs of $X$ and $Y$ respectively. From the sample, our estimates for these probabilities would be $\hat{\mu}(i,j)=N_{i,j}/n$ and $\hat{p}(i)=N_{i\cdot}/n$ and $\hat{q}(j)=N_{\cdot j}/n$ (which are consistent in the sense that $\sum_{j}\hat{\mu}(i,j)=\hat{p}(i)$ etc).
  </p>
            
@@ -206,14 +211,16 @@ T=\sum_{i=1}^{k}\sum_{j=1}^{\ell}\frac{(N_{i,j}-n\hat{p}(i)\hat{q}(j))^{2}}{n\ha
 $$
 Note that this is in the usual form of a $\chi^{2}$ statistic (sum of $(\mbox{observed}-\mbox{expected})^{2}/\mbox{expected}$).
  </p>
- <p>
+<p class="text-justify">
+          
  The number of terms is $k\ell$. We lose one d.f. as usual but in addition we estimate $(k-1)$ parameters $p(i)$ (the last one $p(k)$ can be got from the others) and $(\ell-1)$ parameters $q(j)$. Consequently, the total degress of freedom is $k\ell-1-(k-1)-(\ell-1)=(k-1)(\ell-1)$.
  </p>
            
  <p class="text-justify">
 Hence, we reject the null hypothesis if $T > \chi_{(k-1)(\ell-1)}^{2}(\alpha)$ to get (an approximately) level $\alpha$ test.
  </p>
- <p>
+<p class="text-justify">
+          
  
  </p>
            

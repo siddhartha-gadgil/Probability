@@ -138,7 +138,8 @@
 
 Let $X_{1},X_{2},\ldots$ be i.i.d random variables (independent random variables each having the same marginal distribution). Assume that the second moment of $X_{1}$ is finite. Then, $\mu=\mathbf{E}[X_{1}]$ and ${\sigma}^{2}=\mbox{Var}(X_{1})$ are well-defined.
  </p>
- <p>
+<p class="text-justify">
+          
  Let $S_{n}=X_{1}+\ldots +X_{n}$ (partial sums) and $\bar{X}_{n}=\frac{S_{n}}{n}=\frac{X_{1}+\ldots +X_{n}}{n}$ (<em> sample mean</em>). Then, by the properties of expectation and variance, we have
 $$
 \mathbf{E}[S_{n}]=n\mu, \;\;
@@ -152,23 +153,25 @@ This goes to zero as $n\rightarrow \infty$ (with $\delta > 0$ being fixed). This
  </p>
            
  <p class="text-justify">
-<strong>Weak law of large numbers (Jacob Bernoulli):</strong>  With the above notations, for any $\delta > 0$, we have
+<strong>Weak law of large numbers (Jacob Bernoulli :</strong>  With the above notations, for any $\delta > 0$, we have
 $$
 \mathbf{P}\{|\bar{X}_{n}-\mu|\ge \delta\}\le \frac{{\sigma}^{2}}{\delta^{2}n}\rightarrow 0 \;\; \mbox{ as }n\rightarrow \infty.
 $$
  </p>
- <p>
+<p class="text-justify">
+          
  \medskip
 This is very general, in that we only assume the existence of variance. If $X_{k}$ are assumed to have more moments, one can get better bounds. For example,  when $X_{k}$ are i.i.d. $\mbox{Ber}(p)$, we have the following theorem.
  </p>
            
  <p class="text-justify">
-<strong>Hoeffding's inequality:</strong> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mbox{Ber}(p)$. Then
+<strong>Hoeffding's inequalit :</strong> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mbox{Ber}(p)$. Then
 $$
 \mathbf{P}\{|\bar{X}_{n}-p|\ge \delta\} \le 2e^{-n\delta^{2}/2}.
 $$
  </p>
- <p>
+<p class="text-justify">
+          
  
  </p>
            
