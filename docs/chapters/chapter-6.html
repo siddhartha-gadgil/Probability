@@ -171,13 +171,13 @@ Since a function from $\Omega$ to $\mathbb{R}$ is called a random variable, the 
  Now we prove the proposition.
 <div class="proof">
 <ol>
-<li> By definition of probability space $\mathbf{P}(\Omega)=1$ and $\mathbf{P}(\emptyset)=0$. If $A$ is any event, then ${\mathbf 1}_{\emptyset}(\omega)p_{\omega}\le {\mathbf 1}_{A}(\omega)p_{\omega}\le {\mathbf 1}_{\Omega}(\omega)p_{\omega}$. By Exercise <a href="chapter-5.html#theorem-j">41</a>, we get
+<li> By definition of probability space $\mathbf{P}(\Omega)=1$ and $\mathbf{P}(\emptyset)=0$. If $A$ is any event, then ${\mathbf 1}_{\emptyset}(\omega)p_{\omega}\le {\mathbf 1}_{A}(\omega)p_{\omega}\le {\mathbf 1}_{\Omega}(\omega)p_{\omega}$. By Exercise <a href="chapter-5.html#theorem-41">41</a>, we get
 $$
 \sum_{\omega\in \Omega}{\mathbf 1}_{\emptyset}(\omega)p_{\omega} \le \sum_{\omega\in \Omega}{\mathbf 1}_{A}(\omega)p_{\omega} \le \sum_{\omega\in \Omega}{\mathbf 1}_{\Omega}(\omega)p_{\omega}.
 $$
 As observed earlier, these sums are just $\mathbf{P}(\emptyset)$, $\mathbf{P}(A)$ and $\mathbf{P}(\Omega)$, respectively. Thus, $0\le \mathbf{P}(A)\le 1$.
 </li>
-<li> It suffices to prove it for two sets (why?). Let $A,B$ be two events such that $A\cap B=\emptyset$. Let $f(\omega)=p_{\omega}{\mathbf 1}_{A}(\omega)$ and $g(\omega)=p_{\omega}{\mathbf 1}_{B}(\omega)$ and $h(\omega)=p_{\omega}{\mathbf 1}_{A\cup B}(\omega)$. Then, the disjointness of $A$ and $B$ implies that $f(\omega)+g(\omega)=h(\omega)$ for all $\omega\in \Omega$. Thus, by Exercise <a href="chapter-5.html#theorem-j">41</a>, we get
+<li> It suffices to prove it for two sets (why?). Let $A,B$ be two events such that $A\cap B=\emptyset$. Let $f(\omega)=p_{\omega}{\mathbf 1}_{A}(\omega)$ and $g(\omega)=p_{\omega}{\mathbf 1}_{B}(\omega)$ and $h(\omega)=p_{\omega}{\mathbf 1}_{A\cup B}(\omega)$. Then, the disjointness of $A$ and $B$ implies that $f(\omega)+g(\omega)=h(\omega)$ for all $\omega\in \Omega$. Thus, by Exercise <a href="chapter-5.html#theorem-41">41</a>, we get
 $$
 \sum_{\omega\in \Omega}f(\omega)+\sum_{\omega\in \Omega}g(\omega) = \sum_{\omega\in \Omega}h(\omega).
 $$
@@ -247,8 +247,9 @@ Now we re-write the basic rules of probability as follows.
 <p>&nbsp;</p>
 
 </div>
-<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
- <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/popper.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="text/javascript" src='../js/probability.js'></script>
 <script type="text/javascript">
       Illustrations.main();

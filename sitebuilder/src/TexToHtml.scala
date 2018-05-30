@@ -120,8 +120,9 @@ object TeXToHtml {
   val foot: String =
     """
       |</div>
-      |<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
-      | <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+      |<script src="../js/jquery-3.2.1.min.js"></script>
+      |<script src="../js/popper.js"></script>
+      |<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       |<script type="text/javascript" src='../js/probability.js'></script>
       |<script type="text/javascript">
       |      Illustrations.main();
@@ -632,7 +633,7 @@ class TeXToHtml(header: String, text: String) {
           val j = m.group(2).toInt
           println()
           println(s"reference $j in ${theoremChapters(j)}")
-          s"""href="chapter-${theoremChapters(j)}.html#theorem-j"""
+          s"""href="chapter-${theoremChapters(j)}.html#theorem-$j"""
         })
   }
 
