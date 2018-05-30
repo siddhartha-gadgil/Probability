@@ -153,16 +153,16 @@ In what sense is this an approximation of $I$ and why? Indeed, by WLLN $\mathbf{
  </p>
 <p class="text-justify">
           
- First find $N$ so that ${\sigma}^{2}/N\delta^{2} < \epsilon$, i.e., $N=\lceil \frac{{\sigma}^{2}}{\delta^{2}}\rceil$. Then, the random variable $\hat{I}_{N}$ is within $\delta$ of $I$ with probability greater than $1-\epsilon$. This is a probabilistic method, hence there is a possibility of large error, but with a small probability. Observe that $N$ grows proportional to <em> square</em> of $1/\delta$. To increase the accuracy by $10$, you must increase the number of samples by a factor of $100$.
+ First find $N$ so that ${\sigma}^{2}/N\delta^{2} < \epsilon$, i.e., $N=\lceil \frac{{\sigma}^{2} }{\delta^{2} }\rceil$. Then, the random variable $\hat{I}_{N}$ is within $\delta$ of $I$ with probability greater than $1-\epsilon$. This is a probabilistic method, hence there is a possibility of large error, but with a small probability. Observe that $N$ grows proportional to <em> square</em> of $1/\delta$. To increase the accuracy by $10$, you must increase the number of samples by a factor of $100$.
  </p>
            
  <p class="text-justify">
-One last point. To find $N$ we need ${\sigma}^{2}$ which involves computing another integral involving $\varphi$ which we do not know how to compute!  Here we do not need the exact value of the integral. For example,  if our functions satisfies $-M\le \varphi(x)\le M$ for all $x\in [0,1]$, then also $-M\le I\le M$ and hence $(\varphi(x)-\I)^{2}\le 4M^{2}$. This means that ${\sigma}^{2}\le 4M^{2}$. Therefore, if we take $N=\lceil \frac{4M^{2}}{\delta^{2}}\rceil$ then the value of $N$ is larger than required for the desired accuracy. We can work with this $N$. Note that the dependence of  of $N$ on $\delta$ does not change.
+One last point. To find $N$ we need ${\sigma}^{2}$ which involves computing another integral involving $\varphi$ which we do not know how to compute!  Here we do not need the exact value of the integral. For example,  if our functions satisfies $-M\le \varphi(x)\le M$ for all $x\in [0,1]$, then also $-M\le I\le M$ and hence $(\varphi(x)-\I)^{2}\le 4M^{2}$. This means that ${\sigma}^{2}\le 4M^{2}$. Therefore, if we take $N=\lceil \frac{4M^{2} }{\delta^{2} }\rceil$ then the value of $N$ is larger than required for the desired accuracy. We can work with this $N$. Note that the dependence of  of $N$ on $\delta$ does not change.
  </p>
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-139"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 139 </div><div class="panel-body"> We know that $\int_{0}^{1}\frac{1}{1+x^{2}}dx=\frac{\pi}{4}$. Based on this, devise a method to find an approximate value of $\pi$. Use any software you like to implement your method and see how many sample you need to get an approximation to $1$, $2$ and $3$ decimal places consistently (consistently means with a large enough probability, say $0.9$).
+                <div id="theorem-139"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 139 </div><div class="panel-body"> We know that $\int_{0}^{1}\frac{1}{1+x^{2} }dx=\frac{\pi}{4}$. Based on this, devise a method to find an approximate value of $\pi$. Use any software you like to implement your method and see how many sample you need to get an approximation to $1$, $2$ and $3$ decimal places consistently (consistently means with a large enough probability, say $0.9$).
 </div></div></div>
  </p>
            
@@ -173,7 +173,7 @@ One last point. To find $N$ we need ${\sigma}^{2}$ which involves computing anot
  </p>
 <p class="text-justify">
           
- This method can be used to evaluate integrals over any interval. For instance, how would you find $\int_{a}^{b}\varphi(t) dt$ or $\int_{0}^{\infty}\varphi(t) e^{-t}dt$ or $\int_{-\infty}^{\infty}\varphi(t)e^{-t^{2}}dt$ where  $\varphi$ is a function on the appropriate interval? It can also be used to evaluate multiple integrals (and consequently to find the areas and volumes of sets). The only condition is that it should be possible to evaluate the given function $\varphi$ at a point $x$ on the computer. To illustrate, consider the problem of finding the area of a region $\{(x,y){\; : \;} 0\le x,y, \le1, \ 2x^{3}y^{2}\ge 1, \ x^{2}+2y^{2}\le 2.3 \}$. It is complicated to work with such regions analytically, but given a point $(x,y)$, it is easy to check on a computer whether all the constraints given are satisfied.
+ This method can be used to evaluate integrals over any interval. For instance, how would you find $\int_{a}^{b}\varphi(t) dt$ or $\int_{0}^{\infty}\varphi(t) e^{-t}dt$ or $\int_{-\infty}^{\infty}\varphi(t)e^{-t^{2} }dt$ where  $\varphi$ is a function on the appropriate interval? It can also be used to evaluate multiple integrals (and consequently to find the areas and volumes of sets). The only condition is that it should be possible to evaluate the given function $\varphi$ at a point $x$ on the computer. To illustrate, consider the problem of finding the area of a region $\{(x,y){\; : \;} 0\le x,y, \le1, \ 2x^{3}y^{2}\ge 1, \ x^{2}+2y^{2}\le 2.3 \}$. It is complicated to work with such regions analytically, but given a point $(x,y)$, it is easy to check on a computer whether all the constraints given are satisfied.
  </p>
            
  <p class="text-justify">

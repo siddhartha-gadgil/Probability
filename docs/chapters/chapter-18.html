@@ -164,7 +164,7 @@ $$
  </p>
            
  <p class="text-justify">
-<strong>Properties of joint CDF :</strong> The following properties of the joint CDF $F:\mathbb{R}^{m}\rightarrow [0,1]$ are analogous to those of the 1-dimensional CDF and the proofs are similar.
+<strong>Properties of joint CDFs :</strong> The following properties of the joint CDF $F:\mathbb{R}^{m}\rightarrow [0,1]$ are analogous to those of the 1-dimensional CDF and the proofs are similar.
 <ol>
 <li> $F$ is increasing in each co-ordinate. That is, if $s_{1}\le t_{1},\ldots ,s_{m}\le t_{m}$, then $F(s_{1},\ldots,s_{m})\le F(t_{1},\ldots ,t_{m})$.
 </li>
@@ -186,24 +186,24 @@ More generally, we can recover the joint CDF of any subset of $X_{1},\ldots ,X_{
  </p>
 <p class="text-justify">
           
- <strong>Joint pmf and pd :</strong> Just like in the case of one random variable, we can consider the following two classes of random variables.
+ <strong>Joint pmf and pdf :</strong> Just like in the case of one random variable, we can consider the following two classes of random variables.
 <ol>
 <li> Distributions with a pmf. These are CDFs for which there exist points ${\bf t}_{1},{\bf t}_{2},\ldots $ in $\mathbb{R}^{m}$ and non-negative numbers $w_{i}$ such that $\sum_{i}w_{i}=1$ (often we write $f(t_{i})$ in place of $w_{i}$) and such that for every ${\bf t}\in \mathbb{R}^{m}$ we have
 $$ F({\bf t})=\sum_{i{\; : \;} {\bf t}_{i}\le {\bf t}} w_{i} $$
 where ${\bf s}\le {\bf t}$ means that each co-ordinate of $s$ is less than or equal to the corresponding co-ordinate of ${\bf t}$.
 </li>
 <li> Distributions with a pdf. These are CDFs for which there is a non-negative function (may assume piecewise continuous for convenience) $f:\mathbb{R}^{m}\rightarrow \mathbb{R}_{+}$ such that for every ${\bf t}\in \mathbb{R}^{m}$ we have
-$$ F({\bf t})=\int\limits_{-\infty}^{t_{1}}\!\ldots \int\limits_{-\infty}^{t_{m}} f(u_{1},\ldots ,u_{m})du_{1}\ldots du_{m}. $$
+$$ F({\bf t})=\int\limits_{-\infty}^{t_{1} }\!\ldots \int\limits_{-\infty}^{t_{m} } f(u_{1},\ldots ,u_{m})du_{1}\ldots du_{m}. $$
 </ol>
 We give two examples, one of each kind.
 <p>&nbsp;</p>
                 <div id="theorem-113"><div class="panel panel-info example"> <div class="panel-heading">Example 113 </div><div class="panel-body"> (Multinomial distribution). Fix parameters $r,m$ (two  positive integers) and $p_{1},\ldots ,p_{m}$ (positive numbers that add to $1$). The <em> multinomial pmf</em> with these parameters is given by
 $$
-f(k_{1},\ldots ,k_{m-1})=\frac{r!}{k_{1}!k_{2}!\ldots k_{m-1}!(r-\sum_{i=1}^{m-1}k_{i})!} p_{1}^{k_{1}}\ldots p_{m-1}^{k_{m-1}}p_{m}^{r-\sum_{i=1}^{m-1}k_{i}},
+f(k_{1},\ldots ,k_{m-1})=\frac{r!}{k_{1}!k_{2}!\ldots k_{m-1}!(r-\sum_{i=1}^{m-1}k_{i})!} p_{1}^{k_{1} }\ldots p_{m-1}^{k_{m-1} }p_{m}^{r-\sum_{i=1}^{m-1}k_{i} },
 $$
 if $k_{i}\ge 0$ are integers such that $k_{1}+\ldots +k_{m-1}\le r$. One situation where this distribution arises is when $r$ balls are randomly placed in $m$ bins, with each ball going into the $j$th bin with probability $p_{j}$, and we look at the random vector $(X_{1},\ldots ,X_{m-1})$ where $X_{k}$ is the number of balls that fell into the $k$th bin. This random vector has the multinomial pmf<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
                                 1
-                                 </a> </sup><span class="collapse small" id="footnote-1">In some books, the distribution of $(X_{1},\ldots ,X_{m})$ is called the multinomial distribution. This has the pmf $$g(k_{1},\ldots ,k_{m})\frac{r!}{k_{1}!k_{2}!\ldots k_{m-1}!k_{m}!} p_{1}^{k_{1}}\ldots p_{m-1}^{k_{m-1}}p_{m}^{k_{m}}$$ where $k_{i}$ are non-negative integers such that $k_{1}+\ldots +k_{m}=r$. We have chosen our convention so that the binomial distribution is a special case of the multinomial\dots</span> 
+                                 </a> </sup><span class="collapse small" id="footnote-1">In some books, the distribution of $(X_{1},\ldots ,X_{m})$ is called the multinomial distribution. This has the pmf $$g(k_{1},\ldots ,k_{m})\frac{r!}{k_{1}!k_{2}!\ldots k_{m-1}!k_{m}!} p_{1}^{k_{1} }\ldots p_{m-1}^{k_{m-1} }p_{m}^{k_{m} }$$ where $k_{i}$ are non-negative integers such that $k_{1}+\ldots +k_{m}=r$. We have chosen our convention so that the binomial distribution is a special case of the multinomial\dots </span> 
  </p>
            
  <p class="text-justify">
@@ -215,7 +215,7 @@ In this case, the marginal distribution of $X_{k}$ is $\mbox{Bin}(r,p_{k})$. Mor
  <p>&nbsp;</p>
                 <div id="theorem-114"><div class="panel panel-info example"> <div class="panel-heading">Example 114 </div><div class="panel-body"> (Bivariate normal distribution). This is the density on $\mathbb{R}^{2}$ given by
 $$
-f(x,y)=\frac{\sqrt{ab-c^{2}}}{2\pi}e^{-\frac{1}{2}\left[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu) \right]},
+f(x,y)=\frac{\sqrt{ab-c^{2} }}{2\pi}e^{-\frac{1}{2}\left[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu) \right]},
 $$
 where $\mu,\nu,a,b,c$ are real parameters. We shall impose the conditions that $a > 0$, $b > 0$ and $ab-c^{2} > 0$ (otherwise the above does not give a density, as we shall see).
  </p>
@@ -223,38 +223,38 @@ where $\mu,\nu,a,b,c$ are real parameters. We shall impose the conditions that $
  <p class="text-justify">
 The first thing is to check that this is indeed a density. We recall the one-dimensional Gaussian integral
 $$\begin{equation}\label{eq:onedimgaussian}
-\int\limits_{-\infty}^{+\infty}e^{-\frac{\tau}{2}(x-a)^{2}}dx = \sqrt{2\pi}\frac{1}{\sqrt{\tau}} \mbox{ for any }\tau > 0 \mbox{ and any }a\in \mathbb{R}.
+\int\limits_{-\infty}^{+\infty}e^{-\frac{\tau}{2}(x-a)^{2} }dx = \sqrt{2\pi}\frac{1}{\sqrt{\tau} } \mbox{ for any }\tau > 0 \mbox{ and any }a\in \mathbb{R}.
 \end{equation}$$
 We shall take $\mu=\nu=0$ (how do you compute the integral  if they are not?). Then, the exponent in the density has the form
 $$
-ax^{2}+by^{2}+2cxy = b\left(y+\frac{c}{b}\right)^{2}+\left(a-\frac{c^{2}}{b}\right)x^{2}.
+ax^{2}+by^{2}+2cxy = b\left(y+\frac{c}{b}\right)^{2}+\left(a-\frac{c^{2} }{b}\right)x^{2}.
 $$
 Therefore,
 $$\begin{align*}
-\int\limits_{-\infty}^{\infty}e^{-\frac{1}{2}\left[ax^{2}+by^{2}+2cxy \right]} dy &= e^{-\frac{1}{2}(a-\frac{c^{2}}{b})x^{2}} \int\limits_{-\infty}^{\infty}e^{-\frac{b}{2}(y+\frac{c}{b})^{2}} \\
-&= e^{-\frac{1}{2}(a-\frac{c^{2}}{b})x^{2}}\frac{\sqrt{2\pi}}{\sqrt{b}}
+\int\limits_{-\infty}^{\infty}e^{-\frac{1}{2}\left[ax^{2}+by^{2}+2cxy \right]} dy &= e^{-\frac{1}{2}(a-\frac{c^{2} }{b})x^{2} } \int\limits_{-\infty}^{\infty}e^{-\frac{b}{2}(y+\frac{c}{b})^{2} } \\
+&= e^{-\frac{1}{2}(a-\frac{c^{2} }{b})x^{2} }\frac{\sqrt{2\pi} }{\sqrt{b} }
 \end{align*}$$
-by \eqref{eq:onedimgaussian} but ony if $b > 0$. Now we integrate over $x$ and use \eqref{eq:onedimgaussian} again (and the fact that $a-\frac{c^{2}}{b} > 0$) to get
+by \eqref{eq:onedimgaussian} but ony if $b > 0$. Now we integrate over $x$ and use \eqref{eq:onedimgaussian} again (and the fact that $a-\frac{c^{2} }{b} > 0$) to get
 $$\begin{align*}
-\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}e^{-\frac{1}{2}\left[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu) \right]}dydx &= \frac{\sqrt{2\pi}}{\sqrt{b}} \int\limits_{-\infty}^{\infty} e^{-\frac{1}{2}(a-\frac{c^{2}}{b})x^{2}}dx \\
-&= \frac{\sqrt{2\pi}}{\sqrt{b}} \frac{\sqrt{2\pi}}{\sqrt{a-\frac{c^{2}}{b}}} = \frac{2\pi}{ab-c^{2}}.
+\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}e^{-\frac{1}{2}\left[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu) \right]}dydx &= \frac{\sqrt{2\pi} }{\sqrt{b} } \int\limits_{-\infty}^{\infty} e^{-\frac{1}{2}(a-\frac{c^{2} }{b})x^{2} }dx \\
+&= \frac{\sqrt{2\pi} }{\sqrt{b} } \frac{\sqrt{2\pi} }{\sqrt{a-\frac{c^{2} }{b} }} = \frac{2\pi}{ab-c^{2} }.
 \end{align*}$$
 This completes the proof that $f(x,y)$ is indeed a density. Note that $b > 0$ and $ab-c^{2} > 0$ also implies that $a > 0$.
 </div></div></div>
  </p>
 <p class="text-justify">
           
- <strong>Matrix form of writing the densit :</strong> Let $\Sigma^{-1}=\left[\begin{array}{cc} a & c \\ c & b \end{array}\right]$. Then, $\det(\Sigma)=\frac{1}{\det(\Sigma^{-1})}=\frac{1}{ab-c^{2}}$. Hence, we may re-write the density above as (let $\mathbf{u}$ be the column vector with co-ordinates $x,y$)
+ <strong>Matrix form of writing the density :</strong> Let $\Sigma^{-1}=\left[\begin{array}{cc} a & c \\ c & b \end{array}\right]$. Then, $\det(\Sigma)=\frac{1}{\det(\Sigma^{-1})}=\frac{1}{ab-c^{2} }$. Hence, we may re-write the density above as (let $\mathbf{u}$ be the column vector with co-ordinates $x,y$)
 $$
-f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)}} e^{-\frac{1}{2}\mathbf{u}^{t}\Sigma^{-1}\mathbf{u} }.
+f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)} } e^{-\frac{1}{2}\mathbf{u}^{t}\Sigma^{-1}\mathbf{u} }.
 $$
 This is precisely in the form in which we wrote for general $n$ in the example earlier. The conditions $a > 0,b > 0,ab-c^{2} > 0$ translate precisely to what is called positive-definiteness. One way to say it is that $\Sigma$ is a symmetric matrix and all its eigenvalues are strictly positive.
  </p>
            
  <p class="text-justify">
-<strong>Final for :</strong> We can now introduce an extra pair of parameters $\mu_{1},\mu_{2}$ and define a density
+<strong>Final form :</strong> We can now introduce an extra pair of parameters $\mu_{1},\mu_{2}$ and define a density
 $$
-f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)}} e^{-\frac{1}{2}(\mathbf{u}-\mu)^{t}\Sigma^{-1}(\mathbf{u}-\mu) }.
+f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)} } e^{-\frac{1}{2}(\mathbf{u}-\mu)^{t}\Sigma^{-1}(\mathbf{u}-\mu) }.
 $$
 where $\mu$ is a column vector with co-ordinates $\mu_{1},\mu_{2}$. This is the full bi-variate normal density.
  </p>
@@ -263,7 +263,7 @@ where $\mu$ is a column vector with co-ordinates $\mu_{1},\mu_{2}$. This is the 
  <p>&nbsp;</p>
                 <div id="theorem-115"><div class="panel panel-info example"> <div class="panel-heading">Example 115 </div><div class="panel-body"> (A class of examples). Let $f_{1},f_{2},\ldots ,f_{m}$ be one-variable densities. In other words, $f_{i}:\mathbb{R}\rightarrow \mathbb{R}_{+}$ and $\int_{-\infty}^{\infty}f_{i}(x)dx=1$. Then, we can make a multivariate density as follows. Define $f:\mathbb{R}^{m}\rightarrow \mathbb{R}_{+}^{m}$ by $f(x_{1},\ldots ,x_{m})=f_{1}(x_{1})\ldots f_{m}(x_{m})$. Then $f$ is a density.
  </p>
-           If $X_{i}$ are random variables on a common probability space and the joint density of $(X_{1},\ldots ,X_{m})$  if $f(x_{1},\ldots ,x_{m})$, then we say that $X_{i}$ are <em> independent random variables</em>. It is easy to see that the marginal density of $X_{i}$ if $f_{i}$. It is also the case that the joint CDF factors as $F_{X}(x_{1},\ldots ,x_{m})=F_{X_{1}}(x_{1})\ldots F_{X_{m}}(x_{m})$.
+           If $X_{i}$ are random variables on a common probability space and the joint density of $(X_{1},\ldots ,X_{m})$  if $f(x_{1},\ldots ,x_{m})$, then we say that $X_{i}$ are <em> independent random variables</em>. It is easy to see that the marginal density of $X_{i}$ if $f_{i}$. It is also the case that the joint CDF factors as $F_{X}(x_{1},\ldots ,x_{m})=F_{X_{1} }(x_{1})\ldots F_{X_{m} }(x_{m})$.
 </div></div></div>
 
 

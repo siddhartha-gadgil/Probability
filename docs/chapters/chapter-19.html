@@ -150,11 +150,11 @@ Let $\mathbf{X}=(X_{1},\ldots ,X_{m})$ be a random vector with density $f(t_{1},
  </p>
            
  <p class="text-justify">
-<strong>Questio :</strong> What is the joint density of $Y_{1},\ldots ,Y_{m}$?
+<strong>Question :</strong> What is the joint density of $Y_{1},\ldots ,Y_{m}$?
  </p>
 <p class="text-justify">
           
- <strong>The change of variable formul :</strong> In the setting described above,  the joint density of $Y_{1},\ldots ,Y_{m}$ is given by
+ <strong>The change of variable formula :</strong> In the setting described above,  the joint density of $Y_{1},\ldots ,Y_{m}$ is given by
 $$
 g(\mathbf{y})=f\left(T^{-1}\mathbf{y}\right)\ \pmb{\big|} \  J[T^{-1}](\mathbf{y})\ \pmb{\big|} \ 
 $$
@@ -162,7 +162,7 @@ where $J[T^{-1}](\mathbf{y})$ is the Jacobian determinant of the function $T^{-1
  </p>
            
  <p class="text-justify">
-<strong>Justificatio :</strong> We shall not prove this formula, but give a imprecise but convincing justification that can be made into a proof. There are two factors on the right.  The first one, $f(T^{-1}\mathbf{y})$ is easy to understand - if $\mathbf{Y}$ is to be close to $\mathbf{y}$, then $\mathbf{X}$ must be close to $T^{-1}\mathbf{y}$. The second factor involving the Jacobian determinant comes from the volume change. Let us explain with analogy with mass density which is a more familiar quantity.
+<strong>Justification :</strong> We shall not prove this formula, but give a imprecise but convincing justification that can be made into a proof. There are two factors on the right.  The first one, $f(T^{-1}\mathbf{y})$ is easy to understand - if $\mathbf{Y}$ is to be close to $\mathbf{y}$, then $\mathbf{X}$ must be close to $T^{-1}\mathbf{y}$. The second factor involving the Jacobian determinant comes from the volume change. Let us explain with analogy with mass density which is a more familiar quantity.
  </p>
 <p class="text-justify">
           
@@ -191,7 +191,7 @@ The differentiability of $T$ means that in a small neighbourhood of $\mathbf{y}$
  </p>
 <p class="text-justify">
           
- <strong>Enlarging the applicability of the change of variable formul :</strong> The change of variable formula is applicable in greater generality than we stated above.
+ <strong>Enlarging the applicability of the change of variable formula :</strong> The change of variable formula is applicable in greater generality than we stated above.
 <ol>
 <li> Firstly, $T$ does not have to be defined on all of $\mathbb{R}^{m}$. It is sufficient if it is defined on the range of $\mathbf{X}$ (i.e., if $f(t_{1},\ldots ,t_{m})=0$ for $(t_{1},\ldots ,t_{m})=\mathbb{R}^{m}\setminus A$, then it is enough if $T$ is defined on $A$.
 </li>
@@ -208,26 +208,26 @@ The differentiability of $T$ means that in a small neighbourhood of $\mathbf{y}$
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-116"><div class="panel panel-info example"> <div class="panel-heading">Example 116 </div><div class="panel-body"> Let $X_{1},X_{2}$ be independent Exp($\lambda$) random variables. Let $T(x_{1},x_{2})=(x_{1}+x_{2},\frac{x_{1}}{x_{1}+x_{2}})$. This is well-defined on $\mathbb{R}_{+}^{2}$ (and note that $\mathbf{P}\{(X_{1},X_{2})\in \mathbb{R}_{+}^{2}\}=1$) and its range is $\mathbb{R}_{+}\times (0,1)$. The inverse function is $T^{-1}(y_{1},y_{2})=(y_{1}y_{2},y_{1}(1-y_{2}))$. Its Jacobian determinant is
+                <div id="theorem-116"><div class="panel panel-info example"> <div class="panel-heading">Example 116 </div><div class="panel-body"> Let $X_{1},X_{2}$ be independent Exp($\lambda$) random variables. Let $T(x_{1},x_{2})=(x_{1}+x_{2},\frac{x_{1} }{x_{1}+x_{2} })$. This is well-defined on $\mathbb{R}_{+}^{2}$ (and note that $\mathbf{P}\{(X_{1},X_{2})\in \mathbb{R}_{+}^{2}\}=1$) and its range is $\mathbb{R}_{+}\times (0,1)$. The inverse function is $T^{-1}(y_{1},y_{2})=(y_{1}y_{2},y_{1}(1-y_{2}))$. Its Jacobian determinant is
 $$
 J[T^{-1}](y_{1},y_{2})=\det\left[\begin{array}{cc}y_{2} & y_{1}\\ 1-y_{2} & -y_{1} \end{array}\right]=-y_{1}.
 $$
 $(X_{1},X_{2})$ has density $f(x_{1},x_{2})=\lambda^{2}e^{-\lambda(x_{1}+x_{2})}$ for $x_{1},x_{2} > 0$ (henceforth it will be a convention that the density is zero except where we specify it).
-Hence, the random variables $Y_{1}=X_{1}+X_{2}$ and $Y_{2}=\frac{X_{1}}{X_{1}+X_{2}}$ have joint density
+Hence, the random variables $Y_{1}=X_{1}+X_{2}$ and $Y_{2}=\frac{X_{1} }{X_{1}+X_{2} }$ have joint density
 $$
-g(y_{1},y_{2})=f(y_{1}y_{2},y_{1}(1-y_{2}))|J[T^{-1}](y_{1},y_{2})| = \lambda^{2}e^{-\lambda(y_{1}y_{2}+y_{1}(1-y_{2}))}y_{1}=\lambda^{2}y_{1}e^{-\lambda y_{1}}
+g(y_{1},y_{2})=f(y_{1}y_{2},y_{1}(1-y_{2}))|J[T^{-1}](y_{1},y_{2})| = \lambda^{2}e^{-\lambda(y_{1}y_{2}+y_{1}(1-y_{2}))}y_{1}=\lambda^{2}y_{1}e^{-\lambda y_{1} }
 $$
 for $y_{1} > 0$ and $y_{2}\in (0,1)$.
  </p>
            
  <p class="text-justify">
-In particular, we see that $Y_{1}=X_{1}+X_{2}$ has density $h_{1}(t)=\int_{0}^{1}\lambda^{2}te^{-\lambda t}ds = \lambda^{2}te^{-\lambda t}$ (for $t > 0$)  which means that $Y_{1}\sim \mbox{Gamma}(2,\lambda)$. Similarly, $Y_{2}=\frac{X_{1}}{X_{1}+X_{2}}$ has density $h_{2}(s)=\int_{0}^{\infty} \lambda^{2}t e^{-\lambda t}dt =1$ (for $s\in (0,1)$) which means that $Y_{2}$ has $\mbox{Unif}(0,1)$ distribution. In fact, $Y_{1}$ and $Y_{2}$ are also independent since $g(u,v)=h_{1}(u)h_{2}(v)$.
+In particular, we see that $Y_{1}=X_{1}+X_{2}$ has density $h_{1}(t)=\int_{0}^{1}\lambda^{2}te^{-\lambda t}ds = \lambda^{2}te^{-\lambda t}$ (for $t > 0$)  which means that $Y_{1}\sim \mbox{Gamma}(2,\lambda)$. Similarly, $Y_{2}=\frac{X_{1} }{X_{1}+X_{2} }$ has density $h_{2}(s)=\int_{0}^{\infty} \lambda^{2}t e^{-\lambda t}dt =1$ (for $s\in (0,1)$) which means that $Y_{2}$ has $\mbox{Unif}(0,1)$ distribution. In fact, $Y_{1}$ and $Y_{2}$ are also independent since $g(u,v)=h_{1}(u)h_{2}(v)$.
 </div></div></div>
  </p>
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-117"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 117 </div><div class="panel-body"> Let $X_{1}\sim \mbox{Gamma}(\nu_{1},\lambda)$ and $X_{2}\sim \mbox{Gamma}(\nu_{2},\lambda)$ (note that the shape parameter is the same) and assume that they are independent. Find the joint distribution of $X_{1}+X_{2}$ and $\frac{X_{1}}{X_{1}+X_{2}}$.
+                <div id="theorem-117"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 117 </div><div class="panel-body"> Let $X_{1}\sim \mbox{Gamma}(\nu_{1},\lambda)$ and $X_{2}\sim \mbox{Gamma}(\nu_{2},\lambda)$ (note that the shape parameter is the same) and assume that they are independent. Find the joint distribution of $X_{1}+X_{2}$ and $\frac{X_{1} }{X_{1}+X_{2} }$.
 </div></div></div>
  </p>
            
@@ -244,14 +244,14 @@ In particular, we see that $Y_{1}=X_{1}+X_{2}$ has density $h_{1}(t)=\int_{0}^{1
 Let us emphasize the point that if our interest is only in $Y_{1}$, then we have a lot of freedom in choosing the auxiliary variable. The only condition is that from $Y_{1}$ and $Y_{2}$ we should be able to recover $X_{1}$ and $X_{2}$. Let us repeat the same using $Y_{1}=X_{1}+X_{2}$ and $Y_{2}=X_{2}$. Then, $T(x_{1},x_{2})=(x_{1}+x_{2},x_{2})$ maps $\mathbb{R}_{+}^{2}$ onto $Q:=\{(y_{1},y_{2}){\; : \;} y_{1} > y_{2} > 0\}$ in a one-one manner. The inverse function is $T^{-1}(y_{1},y_{2})=(y_{1}-y_{2},y_{2})$. It is easy to see that $JT^{-1}(y_{1},y_{2})=1$ (check!). Hence,  by the change of variable formula, the density of $(Y_{1},Y_{2})$ is given by
 $$\begin{align*}
 g(y_{1},y_{2}) &= f(y_{1}-y_{2},y_{2})\cdot 1 \\
-&= \lambda^{2}e^{-\lambda(y_{1}-y_{2})}e^{-\lambda y_{2}} \hspace{2mm}(\mbox{if }y_{1} > y_{2} > 0) \\
-&= \lambda^{2}e^{-\lambda y_{1}}{\mathbf 1}_{y_{1} > y_{2} > 0}.
+&= \lambda^{2}e^{-\lambda(y_{1}-y_{2})}e^{-\lambda y_{2} } \hspace{2mm}(\mbox{if }y_{1} > y_{2} > 0) \\
+&= \lambda^{2}e^{-\lambda y_{1} }{\mathbf 1}_{y_{1} > y_{2} > 0}.
 \end{align*}$$
 To get the density of $Y_{1}$, we integrate out the second variable. The density of $Y_{1}$ is
 $$\begin{align*}
-h(u) &= \int\limits_{-\infty}^{\infty}\lambda^{2}e^{-\lambda y_{1}}{\mathbf 1}_{y_{1} > y_{2} > 0} dy_{2} \\
-&= \lambda^{2}e^{-\lambda y_{1}}\int\limits_{0}^{y_{1}}dy_{2} \\
-&= \lambda^{2}y_{1}e^{-\lambda y_{1}}
+h(u) &= \int\limits_{-\infty}^{\infty}\lambda^{2}e^{-\lambda y_{1} }{\mathbf 1}_{y_{1} > y_{2} > 0} dy_{2} \\
+&= \lambda^{2}e^{-\lambda y_{1} }\int\limits_{0}^{y_{1} }dy_{2} \\
+&= \lambda^{2}y_{1}e^{-\lambda y_{1} }
 \end{align*}$$
 which agrees with what we found before.
 </div></div></div>
@@ -265,7 +265,7 @@ f(r,\theta)=\frac{1}{2\pi}\lambda e^{-\lambda r} \hspace{2mm}\mbox{ for }r > 0,\
 $$
 Define the transformation $T:\mathbb{R}_{+}\times (0,2\pi)\rightarrow \mathbb{R}^{2}$ by $T(r,\theta)=(\sqrt{r}\cos\theta,\sqrt{r}\sin \theta)$. The image of $T$ consists of all $(x,y)\in \mathbb{R}^{2}$ with $y\not=0$. The inverse is $T^{-1}(x,y)=(x^{2}+y^{2},\arctan(y/x))$ where $\arctan(y/x)$ is defined so as to take values in $(0,\pi)$ when $y > 0$ and to take values in $(\pi,2\pi)$ when $y < 0$. Thus
 $$
-JT^{-1}(x,y) = \det\left[\begin{array}{cc} 2x & 2y \\ \frac{-y}{x^{2}+y^{2}} & \frac{x}{x^{2}+y^{2}} \end{array} \right]
+JT^{-1}(x,y) = \det\left[\begin{array}{cc} 2x & 2y \\ \frac{-y}{x^{2}+y^{2} } & \frac{x}{x^{2}+y^{2} } \end{array} \right]
 =2.
 $$
 Therefore, $(X,Y)$ has joint density

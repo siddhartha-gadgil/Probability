@@ -136,7 +136,7 @@
  <p class="text-justify">
 
 Suppose we have a candidate confidence interval whose confidence we do not know. For example, let us take the confidence interval $$
-\left[\bar{X}_{n}-z_{\alpha/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}, \bar{X}_{n}+z_{\alpha/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}\right].
+\left[\bar{X}_{n}-z_{\alpha/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n} }, \bar{X}_{n}+z_{\alpha/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n} }\right].
 $$ for the parameter $p$ of i.i.d. $\mbox{Ber}(p)$ samples. We saw that for large $n$ this has approximately $(1-\alpha)$ confidence. But how large is large? One way to check this is by simulation. We explain how.
  </p>
 <p class="text-justify">
@@ -146,13 +146,13 @@ $$ for the parameter $p$ of i.i.d. $\mbox{Ber}(p)$ samples. We saw that for larg
            
  <p class="text-justify">
 This was about checking the validity of a confidence interval that was specified. In a real situation, it may be that we can only get $n=20$ samples. Then what can we do? If we have an idea of the approximate value of $p$, we can first simulate $\mbox{Ber}(p)$ random numbers on a computer. We compute the sample mean each time, and repeat  $10000$ times to get so many values of the sample mean. Note that the histogram of these $10000$ values tells us (approximately) the actual distribution of $\bar{X}_{n}$. Then we can find $t$ (numerically) such that $[\bar{X}_{n}-t,\bar{X}_{n}+t]$ contains the true value of $p$ in $(1-\alpha)$-proportion of the $10000$ trials. Then, $[\bar{X}_{n}-t,\bar{X}_{n}+t]$ is a $(1-\alpha)$-CI for $p$. Alternately, we may try a CI of the form $$
-\left[\bar{X}_{n}-t\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}, \bar{X}_{n}+t\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}\right].
+\left[\bar{X}_{n}-t\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n} }, \bar{X}_{n}+t\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n} }\right].
 $$
 where we choose $t$ numerically to get $(1-\alpha)$ confidence.
  </p>
 <p class="text-justify">
           
- <strong>Summar :</strong> The gist of this discussion is this. In the neatly worked out examples of the previous sections, we got explicit confidence intervals. But we assumed that we knew the data came from $N(\mu,{\sigma}^{2})$ distribution. What if that is not quite right? What if it is not any of the nicely studied distributions? The results also become invalid in such cases. For large $n$, using law of large numbers and CLT we could overcome this issue. But for small $n$? The point is that using simulations we can calculate probabilities, distributions, etc, numerically and approximately. That is often better, since it is more robust to assumptions.
+ <strong>Summary :</strong> The gist of this discussion is this. In the neatly worked out examples of the previous sections, we got explicit confidence intervals. But we assumed that we knew the data came from $N(\mu,{\sigma}^{2})$ distribution. What if that is not quite right? What if it is not any of the nicely studied distributions? The results also become invalid in such cases. For large $n$, using law of large numbers and CLT we could overcome this issue. But for small $n$? The point is that using simulations we can calculate probabilities, distributions, etc, numerically and approximately. That is often better, since it is more robust to assumptions.
  </p>
            
 

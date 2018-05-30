@@ -159,7 +159,7 @@ As we have emphasized, probability is applicable to many situations in the real 
  </p>
            
  <p class="text-justify">
-<strong>Drawing random numbers from a discrete pm :</strong> First start with an example.
+<strong>Drawing random numbers from a discrete pmf :</strong> First start with an example.
  </p>
 <p class="text-justify">
           
@@ -174,7 +174,7 @@ It is clear how to generalize this.
  </p>
            
  <p class="text-justify">
-<strong>General rul :</strong> Suppose we are given a pmf $f$
+<strong>General rule :</strong> Suppose we are given a pmf $f$
 $$
 \left(\begin{array}{cccc} t_{1} & t_{2} & t_{3} & \ldots \\ f(t_{1}) & f(t_{2}) & f(t_{3}) & \ldots \end{array} \right).
 $$
@@ -208,7 +208,7 @@ Thus $X$ has pmf $f$.
  </p>
            
  <p class="text-justify">
-<strong>Drawing random numbers from a pd :</strong> Clearly the procedure used for generating from a pmf is inapplicable here. First start with two  examples. As before $U$ is a Unif($[0,1]$) random variable.
+<strong>Drawing random numbers from a pdf :</strong> Clearly the procedure used for generating from a pmf is inapplicable here. First start with two  examples. As before $U$ is a Unif($[0,1]$) random variable.
 <p>&nbsp;</p>
                 <div id="theorem-104"><div class="panel panel-info example"> <div class="panel-heading">Example 104 </div><div class="panel-body"> Suppose we want to draw from the Unif($[3,7]$) distribution. Set $X=4U+3$. Clearly
 $$
@@ -265,7 +265,7 @@ From this lemma, we immediately get the following rule for generating random num
  </p>
 <p class="text-justify">
           
- <strong>How to simulate from a CD :</strong> Let $F$ be a CDF that is strictly increasing on an interval $[A,B]$ where $F(A)=0$ and $F(B)=1$ (it is allowed to take $A=-\infty$ and/or $B=+\infty$). Then define $\psi:(0,1)\rightarrow (A,B)$ as $\psi(u)=F^{-1}(u)$. Let $U\sim \mbox{Unif}([0,1])$ and let $X=\psi(U)$. Then $X$ has CDF equal to $F$.
+ <strong>How to simulate from a CDF :</strong> Let $F$ be a CDF that is strictly increasing on an interval $[A,B]$ where $F(A)=0$ and $F(B)=1$ (it is allowed to take $A=-\infty$ and/or $B=+\infty$). Then define $\psi:(0,1)\rightarrow (A,B)$ as $\psi(u)=F^{-1}(u)$. Let $U\sim \mbox{Unif}([0,1])$ and let $X=\psi(U)$. Then $X$ has CDF equal to $F$.
  </p>
            
  <p class="text-justify">
@@ -284,7 +284,7 @@ $$ Take $A=0$ and $B=+\infty$. Then $F$ is increasing on $(0,\infty)$ and its in
  <p class="text-justify">
 When the CDF is not explicitly available as a function we can still adopt the above procedure but only numerically. Consider an example.
 <p>&nbsp;</p>
-                <div id="theorem-108"><div class="panel panel-info example"> <div class="panel-heading">Example 108 </div><div class="panel-body"> Suppose $F=\Phi$, the CDF of $N(0,1)$ distribution. Then we do not have an explicit form for either $\Phi$ or for its inverse $\Phi^{-1}$. With a computer we can do the following. Pick a large number of closely placed points, for example divide the interval $[-5,5]$ into $1000$ equal intervals of length $0.01$ each. Let the endpoints of these intervals be labelled $t_{0} < t_{1} < \ldots  < t_{1000}$. For each $i$, calculate $\Phi(t_{i})=\int_{-\infty}^{t_{i}}\frac{1}{\sqrt{2\pi}}e^{-x^{2}/2}dx$ using numerical methods for integration, say the numerical value obtained is $w_{i}$. This is done only once and create the table of values
+                <div id="theorem-108"><div class="panel panel-info example"> <div class="panel-heading">Example 108 </div><div class="panel-body"> Suppose $F=\Phi$, the CDF of $N(0,1)$ distribution. Then we do not have an explicit form for either $\Phi$ or for its inverse $\Phi^{-1}$. With a computer we can do the following. Pick a large number of closely placed points, for example divide the interval $[-5,5]$ into $1000$ equal intervals of length $0.01$ each. Let the endpoints of these intervals be labelled $t_{0} < t_{1} < \ldots  < t_{1000}$. For each $i$, calculate $\Phi(t_{i})=\int_{-\infty}^{t_{i} }\frac{1}{\sqrt{2\pi} }e^{-x^{2}/2}dx$ using numerical methods for integration, say the numerical value obtained is $w_{i}$. This is done only once and create the table of values
 $$
 \begin{array}{cccccc}
 t_{0} & t_{1} & t_{2} & \ldots & \ldots & t_{1000} \\
@@ -301,7 +301,7 @@ Now draw a uniform random number $U$. Look up the table and find the value of $i
 <ol>
 <li> Cauchy distribution with density $\frac{1}{\pi(1+x^{2})}$.
 </li>
-<li> Beta($\frac{1}{2},\frac{1}{2}$) density $\frac{1}{\pi}\frac{1}{\sqrt{x(1-x)}}$ on $[0,1]$ (and zero elsewhere).
+<li> Beta($\frac{1}{2},\frac{1}{2}$) density $\frac{1}{\pi}\frac{1}{\sqrt{x(1-x)} }$ on $[0,1]$ (and zero elsewhere).
 </li>
 <li> Pareto($\alpha$) distribution which by definition has the density $$f(t)=\begin{cases} \alpha t^{-\alpha-1} & \mbox{ if }t\ge 1, \\ 0 & \mbox{ if }t < 1. \end{cases}$$
 </ol>

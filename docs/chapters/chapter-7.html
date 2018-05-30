@@ -152,7 +152,7 @@ $$
 $$
 where
 $$
-S_{k}=\sum\limits_{1\le i_{1} < i_{2} < \ldots  < i_{k}\le n}\mathbf{P}(A_{i_{1}}\cap A_{i_{2}}\cap \ldots \cap A_{i_{k}}).
+S_{k}=\sum\limits_{1\le i_{1} < i_{2} < \ldots  < i_{k}\le n}\mathbf{P}(A_{i_{1} }\cap A_{i_{2} }\cap \ldots \cap A_{i_{k} }).
 $$
 </div></div></div>
 We give two proofs, but the difference  is only superficial. It is a good exercise to reason out why the two arguments are basically the same.
@@ -183,28 +183,28 @@ $$
 $$
 Now we compute the right side. For any $i_{1} < i_{2} < \ldots  < i_{k}$, we write
 $$
-\mathbf{P}\left(A_{i_{1}}\cap \ldots \cap A_{i_{k}}\right) =\sum\limits_{\omega\in \Omega}p_{\omega}{\mathbf 1}_{A_{i_{1}}\cap \ldots \cap A_{i_{k}}}(\omega)= \sum\limits_{\omega\in \Omega}p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell}}}(\omega).
+\mathbf{P}\left(A_{i_{1} }\cap \ldots \cap A_{i_{k} }\right) =\sum\limits_{\omega\in \Omega}p_{\omega}{\mathbf 1}_{A_{i_{1} }\cap \ldots \cap A_{i_{k} }}(\omega)= \sum\limits_{\omega\in \Omega}p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega).
 $$
 Hence, the right hand side is given by adding over $i_{1} < \ldots  < i_{k}$, multiplying by $(-1)^{k-1}$ and then summing over $k$ from $1$ to $n$.
 \begin{eqnarray*}
-\mbox{RHS} &=& \sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n} \; \sum\limits_{\omega\in \Omega} \;p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell}}}(\omega) \\
-&=& \sum\limits_{\omega \in \Omega}\sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n} p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell}}}(\omega) \\
-&=& -\sum\limits_{\omega \in \Omega}p_{\omega}\sum\limits_{k=1}^{n}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n}\prod\limits_{\ell=1}^{k}(-{\mathbf 1}_{A_{i_{\ell}}}(\omega)) \\
-&=& -\sum\limits_{\omega \in \Omega}p_{\omega} \left(\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j}}(\omega)) \; - \; 1\right) \\
+\mbox{RHS} &=& \sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n} \; \sum\limits_{\omega\in \Omega} \;p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega) \\
+&=& \sum\limits_{\omega \in \Omega}\sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n} p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega) \\
+&=& -\sum\limits_{\omega \in \Omega}p_{\omega}\sum\limits_{k=1}^{n}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n}\prod\limits_{\ell=1}^{k}(-{\mathbf 1}_{A_{i_{\ell} }}(\omega)) \\
+&=& -\sum\limits_{\omega \in \Omega}p_{\omega} \left(\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j} }(\omega)) \; - \; 1\right) \\
 &=& \sum\limits_{\omega \in \Omega}p_{\omega}{\mathbf 1}_{A}(\omega).
 \end{eqnarray*}
-because the quantity $\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j}}(\omega))$ equals $-1$ if $\omega$ belongs to at least one of the $A_{i}$s, and is zero otherwise. Thus the claim follows.
+because the quantity $\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j} }(\omega))$ equals $-1$ if $\omega$ belongs to at least one of the $A_{i}$s, and is zero otherwise. Thus the claim follows.
 </div>
  </p>
            
  <p class="text-justify">
 As we remarked earlier,  it turns out that in many settings it is possible to compute the probabilities of intersections. We give an example now.
 <p>&nbsp;</p>
-                <div id="theorem-55"><div class="panel panel-info example"> <div class="panel-heading">Example 55 </div><div class="panel-body"> Let $\Omega=S_{52}\times S_{52}$ with $p_{\omega}=\frac{1}{(52!)^{2}}$ for all $\omega \in \Omega$. Consider the event $A=\{(\pi,{\sigma}){\; : \;} \pi(i)\not={\sigma}(i) \ \forall i\}$. Informally, we imagine two shuffled decks of cards kept side by side (or perhaps one shuffled deck and another permutation denoting a  ``psychic's predictions'' for the order in which the cards occur). Then $A$ is the event that there are no matches (or correct guesses).
+                <div id="theorem-55"><div class="panel panel-info example"> <div class="panel-heading">Example 55 </div><div class="panel-body"> Let $\Omega=S_{52}\times S_{52}$ with $p_{\omega}=\frac{1}{(52!)^{2} }$ for all $\omega \in \Omega$. Consider the event $A=\{(\pi,{\sigma}){\; : \;} \pi(i)\not={\sigma}(i) \ \forall i\}$. Informally, we imagine two shuffled decks of cards kept side by side (or perhaps one shuffled deck and another permutation denoting a  ``psychic's predictions'' for the order in which the cards occur). Then $A$ is the event that there are no matches (or correct guesses).
  </p>
 <p class="text-justify">
           
- Let $A_{i}=\{(\pi,{\sigma}){\; : \;} \pi(i)={\sigma}(i)\}$ so that $A^{c}=A_{1}\cup \ldots \cup A_{52}$. It is easy to see that $\mathbf{P}(A_{i_{1}}\cap A_{i_{2}}\ldots \cap A_{i_{k}})=\frac{1}{52(52-1)\ldots (52-k+1)}$ for any $i_{1} < i_{2} < \ldots  < i_{k}$ (why?). Therefore, by the inclusion-exclusion formula, we get
+ Let $A_{i}=\{(\pi,{\sigma}){\; : \;} \pi(i)={\sigma}(i)\}$ so that $A^{c}=A_{1}\cup \ldots \cup A_{52}$. It is easy to see that $\mathbf{P}(A_{i_{1} }\cap A_{i_{2} }\ldots \cap A_{i_{k} })=\frac{1}{52(52-1)\ldots (52-k+1)}$ for any $i_{1} < i_{2} < \ldots  < i_{k}$ (why?). Therefore, by the inclusion-exclusion formula, we get
 $$\begin{align*}
 \mathbf{P}(A^{c}) &=  \binom{52}{1}\frac{1}{52}-\binom{52}{2}\frac{1}{(52)(51)} +  \ldots + (-1)^{51} \binom{52}{52}\frac{1}{(52)(51)\ldots (1)}\\
 &= 1-\frac{1}{2!}+\frac{1}{3!}-\frac{1}{4!}+\ldots -\frac{1}{52!} \\
@@ -217,7 +217,7 @@ by the expansion $e^{-1}=1-\frac{1}{2!}+\frac{1}{3!}-\ldots $. Hence $\mathbf{P}
  </p>
            
  <p class="text-justify">
-It is easy to see that $\mathbf{P}(A_{i_{1}}\cap \ldots \cap A_{i_{k}})=(r-k)^{n}r^{-n}=(1-\frac{k}{r})^{n}$. We could use the inclusion-exclusion formula to write the expression
+It is easy to see that $\mathbf{P}(A_{i_{1} }\cap \ldots \cap A_{i_{k} })=(r-k)^{n}r^{-n}=(1-\frac{k}{r})^{n}$. We could use the inclusion-exclusion formula to write the expression
 $$
 \mathbf{P}(A)=r\left(1-\frac{1}{r}\right)^{n}-\binom{r}{2}\left(1-\frac{2}{r}\right)^{n}+\ldots +(-1)^{r-2}\binom{r}{r-1}\left(1-\frac{r-1}{r}\right)^{n}.
 $$
@@ -228,11 +228,11 @@ The last term is zero (since all urns cannot be empty). I don't know if this exp
           
  We mention two useful formulas that can be proved on lines similar to the inclusion-exclusion principle. If we say ``at least one of the events $A_{1}, A_{2},\ldots ,A_{n}$ occurs'', we are talking about the union, $A_{1}\cup A_{2}\cup \ldots \cup A_{n}$. What about ``at least $m$ of the events $A_{1}, A_{2},\ldots ,A_{n}$ occur'', how to express it with set operations. It is not hard to see that this set is precisely
 $$
-B_{m}=\bigcup_{ 1\le i_{1} < i_{2} < \ldots  < i_{m}\le n} (A_{i_{1}}\cap A_{i_{2}}\cap \ldots \cap A_{i_{m}}).
+B_{m}=\bigcup_{ 1\le i_{1} < i_{2} < \ldots  < i_{m}\le n} (A_{i_{1} }\cap A_{i_{2} }\cap \ldots \cap A_{i_{m} }).
 $$
 The event that ``exactly $m$ of the events $A_{1}, A_{2},\ldots ,A_{n}$ occur'' can be written as
 $$
-C_{m}=B_{m}\setminus B_{m+1} = \bigcup_{\stackrel{S\subseteq [n]}{|S|=m}} \; \left(\bigcap_{i\in S}A_{i}\right)\bigcap \left( \bigcap_{i\not\in S}A_{i}^{c}\right).
+C_{m}=B_{m}\setminus B_{m+1} = \bigcup_{\stackrel{S\subseteq [n]}{|S|=m} } \; \left(\bigcap_{i\in S}A_{i}\right)\bigcap \left( \bigcap_{i\not\in S}A_{i}^{c}\right).
 $$
 <p>&nbsp;</p>
                 <div id="theorem-57"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 57 </div><div class="panel-body"> Let $A_{1},\ldots ,A_{n}$ be events in a probability space $(\Omega,p)$ and let $m\le n$. Let $B_{m}$ and $C_{m}$ be as above. Show that
@@ -247,7 +247,7 @@ $$\begin{align*}
            
  <p class="text-justify">
 <p>&nbsp;</p>
-                <div id="theorem-58"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 58 </div><div class="panel-body"> Return to the setting of exercise <a href="#theorem-55">55</a> but with $n$ cards in a deck, so that $\Omega=S_{n}\times S_{n}$ and $p_{(\pi,{\sigma})}=\frac{1}{(n!)^{2}}$. Let $A_{m}$ be the event that there are exactly $m$ matches between the two decks.
+                <div id="theorem-58"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 58 </div><div class="panel-body"> Return to the setting of exercise <a href="chapter-7.html#theorem-j">55</a> but with $n$ cards in a deck, so that $\Omega=S_{n}\times S_{n}$ and $p_{(\pi,{\sigma})}=\frac{1}{(n!)^{2} }$. Let $A_{m}$ be the event that there are exactly $m$ matches between the two decks.
 <ol>
 <li> For fixed $m\ge 0$, show that $\mathbf{P}(A_{m})\rightarrow e^{-1}\frac{1}{m!}$ as $n\rightarrow \infty$.
 </li>

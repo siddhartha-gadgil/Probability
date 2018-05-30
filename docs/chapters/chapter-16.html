@@ -177,7 +177,7 @@ $$
            
  <p class="text-justify">
 <p>&nbsp;</p>
-                <div id="theorem-93"><div class="panel panel-info example"> <div class="panel-heading">Example 93 </div><div class="panel-body"> <strong>Uniform distribution on the interval $[a,b] :</strong>, denoted Unif($[a,b]$) where $a < b$ is the distribution with density and distribution given by
+                <div id="theorem-93"><div class="panel panel-info example"> <div class="panel-heading">Example 93 </div><div class="panel-body"> <strong>Uniform distribution on the interval $[a,b]$ :</strong>, denoted Unif($[a,b]$) where $a < b$ is the distribution with density and distribution given by
 $$
 \mbox{PDF:}\; f(t) = \begin{cases}\frac{1}{b-a} & \mbox{if } t\in(a,b) \\ 0 & \mbox{otherwise} \end{cases}\qquad
 \mbox{CDF:}\; F(t) = \begin{cases}0 & \mbox{if } t\le a \\ \frac{t-a}{b-a} & \mbox{if }t\in (a,b) \\ 1 & \mbox{if }t\ge b.\end{cases}
@@ -190,28 +190,28 @@ $$
            
  <p class="text-justify">
 <p>&nbsp;</p>
-                <div id="theorem-94"><div class="panel panel-info example"> <div class="panel-heading">Example 94 </div><div class="panel-body"> <strong>Exponential distribution with parameter $\lambda :</strong>, denoted Exp($\lambda$) where $\lambda > 0$ is the distribution with density and distribution given by
+                <div id="theorem-94"><div class="panel panel-info example"> <div class="panel-heading">Example 94 </div><div class="panel-body"> <strong>Exponential distribution with parameter $\lambda$ :</strong>, denoted Exp($\lambda$) where $\lambda > 0$ is the distribution with density and distribution given by
 $$
 \mbox{PDF:}\; f(t) = \begin{cases}\lambda e^{-\lambda t}& \mbox{if } t > 0 \\ 0 & \mbox{otherwise} \end{cases}\qquad
 \mbox{CDF:}\; F(t) = \begin{cases}0 & \mbox{if } t\le 0 \\ 1-e^{-\lambda t} & \mbox{if }t > 0.\end{cases}
 $$
 </div></div></div>
 <p>&nbsp;</p>
-                <div id="theorem-95"><div class="panel panel-info example"> <div class="panel-heading">Example 95 </div><div class="panel-body"> <strong>Normal distribution with parameters $\mu,{\sigma}^{2} :</strong>, denoted N($\mu,{\sigma}^{2}$) where $\mu\in \mathbb{R}$ and ${\sigma}^{2} > 0$ is the distribution with density and distribution given by
+                <div id="theorem-95"><div class="panel panel-info example"> <div class="panel-heading">Example 95 </div><div class="panel-body"> <strong>Normal distribution with parameters $\mu,{\sigma}^{2}$ :</strong>, denoted N($\mu,{\sigma}^{2}$) where $\mu\in \mathbb{R}$ and ${\sigma}^{2} > 0$ is the distribution with density and distribution given by
 $$
-\mbox{PDF:}\; \varphi_{\mu,{\sigma}^{2}}(t) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2{\sigma}^{2}}(t-\mu)^{2}}\qquad
-\mbox{CDF:}\; \Phi_{\mu,{\sigma}^{2}}(t) = \int\limits_{-\infty}^{t}\varphi_{\mu,{\sigma}^{2}}(u)du.
+\mbox{PDF:}\; \varphi_{\mu,{\sigma}^{2} }(t) = \frac{1}{\sqrt{2\pi} }e^{-\frac{1}{2{\sigma}^{2} }(t-\mu)^{2} }\qquad
+\mbox{CDF:}\; \Phi_{\mu,{\sigma}^{2} }(t) = \int\limits_{-\infty}^{t}\varphi_{\mu,{\sigma}^{2} }(u)du.
 $$
-There is no closed form expression for the CDF. It is standard notation to write $\varphi$ and $\Phi$ to denote the normal density and CDF when $\mu=0$ and ${\sigma}^{2}=1$. N($0,1$) is called the standard normal distribution. By a change of variable one can check that $\Phi_{\mu,{\sigma}^{2}}(t)=\Phi(\frac{t-\mu}{{\sigma}})$.
+There is no closed form expression for the CDF. It is standard notation to write $\varphi$ and $\Phi$ to denote the normal density and CDF when $\mu=0$ and ${\sigma}^{2}=1$. N($0,1$) is called the standard normal distribution. By a change of variable one can check that $\Phi_{\mu,{\sigma}^{2} }(t)=\Phi(\frac{t-\mu}{{\sigma}})$.
  </p>
 <p class="text-justify">
           
- We said that the normal CDF has no simple expression, but is it even clear that it is a CDF?! In other words, is the proposed density a true pdf? Clearly $\varphi(t)=\frac{1}{\sqrt{2\pi}}e^{-t^{2}/2}$ is non-negative. We need to check that its integral is $1$.
+ We said that the normal CDF has no simple expression, but is it even clear that it is a CDF?! In other words, is the proposed density a true pdf? Clearly $\varphi(t)=\frac{1}{\sqrt{2\pi} }e^{-t^{2}/2}$ is non-negative. We need to check that its integral is $1$.
  </p>
            
  <p class="text-justify">
 <p>&nbsp;</p>
-                <div id="theorem-96"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 96 </div><div class="panel-body"> Fix $\mu\in \mathbb{R}$ and ${\sigma} > 0$ and let $\varphi(t)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2{\sigma}^{2}}(t-\mu)^{2}}$. Then, $\int\limits_{-\infty}^{\infty}\varphi(t) dt =1$.
+                <div id="theorem-96"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 96 </div><div class="panel-body"> Fix $\mu\in \mathbb{R}$ and ${\sigma} > 0$ and let $\varphi(t)=\frac{1}{\sqrt{2\pi} }e^{-\frac{1}{2{\sigma}^{2} }(t-\mu)^{2} }$. Then, $\int\limits_{-\infty}^{\infty}\varphi(t) dt =1$.
 </div></div></div>
  </p>
 <p class="text-justify">
@@ -228,7 +228,7 @@ since $\frac{d}{dr}e^{-r^{2}/2}=-re^{-r^{2}/2}$. Thus $I^{2}=1$ and hence $I=1$.
 </div>
 </div></div></div>
 <p>&nbsp;</p>
-                <div id="theorem-97"><div class="panel panel-info example"> <div class="panel-heading">Example 97 </div><div class="panel-body"> <strong>Gamma distribution with shape parameter $\nu$ and scaler parameter $\lambda :</strong>, where $\nu > 0$ and $\lambda > 0$, denoted Gamma($\nu,\lambda$) is the distribution with density and distribution given by -
+                <div id="theorem-97"><div class="panel panel-info example"> <div class="panel-heading">Example 97 </div><div class="panel-body"> <strong>Gamma distribution with shape parameter $\nu$ and scaler parameter $\lambda$ :</strong>, where $\nu > 0$ and $\lambda > 0$, denoted Gamma($\nu,\lambda$) is the distribution with density and distribution given by -
 $$
 \mbox{PDF:}\; f(t) = \begin{cases}\frac{1}{\Gamma(\nu)}\lambda^{\nu} t^{\nu-1}e^{-\lambda t}& \mbox{if } t > 0 \\ 0 & \mbox{otherwise} \end{cases}\qquad
 \mbox{CDF:}\; F(t) = \begin{cases}0 & \mbox{if } t\le 0 \\ \int_{0}^{t}f(u)du & \mbox{if }t > 0.\end{cases}
@@ -243,7 +243,7 @@ Thus, $\int_{0}^{\infty} f(t)dt=1$.
  <p class="text-justify">
 When $\nu=1$, we get back the exponential distribution. Thus, the Gamma family subsumes the exponential distributions.   For positive integer values of $\nu$, one can actually write an expression for the CDF of Gamma($\nu,\lambda$)  as (this is a homework problem)
 $$
-F_{\nu,\lambda}(t)=1-e^{-\lambda t}\sum\limits_{k=0}^{\nu-1}\frac{(\lambda t)^{k}}{k!}.
+F_{\nu,\lambda}(t)=1-e^{-\lambda t}\sum\limits_{k=0}^{\nu-1}\frac{(\lambda t)^{k} }{k!}.
 $$
 Once the expression is given, it is easy to check it by induction (and integration by parts). A curious observation is that the right hand side is exactly $\mathbf{P}(N\ge \nu)$ where $N\sim \mbox{Pois}(\lambda t)$. This is in fact indicating a deep connection between Poisson distribution and the Gamma distributions. The function $\Gamma(\nu)$, also known as Euler's Gamma function, is an interesting and important  one and occurs all over mathematics.
 <sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
@@ -260,28 +260,29 @@ by substituting $x=y^{2}/2$. The last integral was computed above in the context
  </p>
 <p class="text-justify">
           
- <strong>Stirling's approximation:</strong> $\frac{\Gamma(\nu+1)}{\nu^{\nu+\frac{1}{2}}e^{-\nu}\sqrt{2\pi}}\rightarrow 1$ as $\nu\rightarrow \infty$.
+ <strong>Stirling's approximation:</strong> $\frac{\Gamma(\nu+1)}{\nu^{\nu+\frac{1}{2} }e^{-\nu}\sqrt{2\pi} }\rightarrow 1$ as $\nu\rightarrow \infty$.
  </p>
            
  <p class="text-justify">
-<strong>A small digressio :</strong> It was Euler's  idea to observe that $n!=\int_{0}^{\infty}x^{n}e^{-x}dx$ and that on the right side $n$ could be replaced by  any real number greater than $-1$. But this was his second approach to defining the Gamma function. His first approach was as follows. Fix a positive integer $n$. Then for any $\ell\ge 1$ (also a positive integer), we may write
+<strong>A small digression :</strong> It was Euler's  idea to observe that $n!=\int_{0}^{\infty}x^{n}e^{-x}dx$ and that on the right side $n$ could be replaced by  any real number greater than $-1$. But this was his second approach to defining the Gamma function. His first approach was as follows. Fix a positive integer $n$. Then for any $\ell\ge 1$ (also a positive integer), we may write
 \[\begin{aligned}
-n!=\frac{(n+\ell)!}{(n+1)(n+2)\ldots (n+\ell)} = \frac{\ell!(\ell+1)\ldots (\ell+n)}{(n+1)\ldots (n+\ell)} = \frac{\ell! \ \ell^{n}}{(n+1)\ldots (n+\ell)}\cdot\frac{(\ell+1)\ldots (\ell+n)}{\ell^{n}}
+n!=\frac{(n+\ell)!}{(n+1)(n+2)\ldots (n+\ell)} = \frac{\ell!(\ell+1)\ldots (\ell+n)}{(n+1)\ldots (n+\ell)} = \frac{\ell! \ \ell^{n} }{(n+1)\ldots (n+\ell)}\cdot\frac{(\ell+1)\ldots (\ell+n)}{\ell^{n} }
 \end{aligned}\]
 The second factor approaches $1$ as $\ell\rightarrow \infty$. Hence,
 \[\begin{aligned}
-n!=\lim_{\ell\rightarrow \infty}\frac{\ell! \ \ell^{n}}{(n+1)\ldots (n+\ell)}.
+n!=\lim_{\ell\rightarrow \infty}\frac{\ell! \ \ell^{n} }{(n+1)\ldots (n+\ell)}.
 \end{aligned}\]
 Euler then showed (by a rather simple argument that we skip) that the limit on the right exists if we replace $n$ by any complex number other than $\{-1,-2,-3,\ldots \}$ (negative integers are a problem as they make the denominator zero). Thus, he extended the factorial function to all complex numbers except negative integers! It is a fun exercise to check that this agrees with the definition by the integral given earlier. In other words, for $\nu > -1$, we have
 \[\begin{aligned}
-\lim_{\ell\rightarrow \infty}\frac{\ell! \ \ell^{\nu}}{(\nu+1)\ldots (\nu+\ell)}=\int_{0}^{\infty}x^{\nu}e^{-x}dx.
-\end{aligned}\]</span> 
+\lim_{\ell\rightarrow \infty}\frac{\ell! \ \ell^{\nu} }{(\nu+1)\ldots (\nu+\ell)}=\int_{0}^{\infty}x^{\nu}e^{-x}dx.
+\end{aligned}\]
+</span> 
 </div></div></div>
  </p>
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-98"><div class="panel panel-info example"> <div class="panel-heading">Example 98 </div><div class="panel-body"> <strong>Beta distribution :</strong> Let $\alpha,\beta > 0$. The Beta distribution with parameters $\alpha,\beta$, denoted Beta($\alpha,\beta$), is the distribution with density and distribution given by -
+                <div id="theorem-98"><div class="panel panel-info example"> <div class="panel-heading">Example 98 </div><div class="panel-body"> <strong>Beta distributions :</strong> Let $\alpha,\beta > 0$. The Beta distribution with parameters $\alpha,\beta$, denoted Beta($\alpha,\beta$), is the distribution with density and distribution given by -
 \[\begin{aligned}
 \mbox{PDF:}\; f(t) = \begin{cases}\frac{1}{B(\alpha,\beta)}t^{\alpha-1}(1-t)^{\beta-1}& \mbox{if } t\in(0,1) \\ 0 & \mbox{otherwise} \end{cases}\qquad
 \mbox{CDF:}\; F(t) = \begin{cases}0 & \mbox{if } t\le 0 \\ \int_{0}^{t}f(u)du & \mbox{if }t\in(0,1) \\
@@ -313,7 +314,7 @@ by the recursion property of the Gamma function. Thus we have proved the proposi
 </div>
 </div></div></div>
 <p>&nbsp;</p>
-                <div id="theorem-100"><div class="panel panel-info example"> <div class="panel-heading">Example 100 </div><div class="panel-body"> <strong>The standard Cauchy distributio :</strong>  is the distribution with density and distribution given by
+                <div id="theorem-100"><div class="panel panel-info example"> <div class="panel-heading">Example 100 </div><div class="panel-body"> <strong>The standard Cauchy distribution :</strong>  is the distribution with density and distribution given by
 $$
 \mbox{PDF:}\; f(t) = \frac{1}{\pi(1+t^{2})}\qquad
 \mbox{CDF:}\; F(t) = \frac{1}{2}+\frac{1}{\pi}\tan^{-1}t.

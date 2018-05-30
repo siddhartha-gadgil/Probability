@@ -151,11 +151,11 @@ Instead, we fix a class of functions, for example the collection of all linear f
 In short, multiple linear regression along with non-linear transformations of the individual variables, the class of functions $f$ is greatly extended.
  </div></div></div>
 
-<strong>Finding the best linear fi :</strong> We need a criterion for deciding the ``best''. A basic one is the <em> method of least squares</em> which recommends finding $\alpha,\beta$ such that the error sum of squares $R^{2}:=\sum_{k=1}^{n}(Y_{k}-\alpha-\beta X_{k})^{2}$ is minimized.
+<strong>Finding the best linear fit :</strong> We need a criterion for deciding the ``best''. A basic one is the <em> method of least squares</em> which recommends finding $\alpha,\beta$ such that the error sum of squares $R^{2}:=\sum_{k=1}^{n}(Y_{k}-\alpha-\beta X_{k})^{2}$ is minimized.
 
 For fixed $X_{i},Y_{i}$ this is a simple problem in calculus. We get
 $$
-\hat{\beta}=\frac{\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})(Y_{k}-\bar{Y}_{n})}{\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}}=\frac{s_{X,Y}}{s_{X}^{2}},  \qquad \hat{\alpha}=\bar{Y}_{n}-\hat{\beta}\bar{X}_{n}
+\hat{\beta}=\frac{\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})(Y_{k}-\bar{Y}_{n})}{\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2} }=\frac{s_{X,Y} }{s_{X}^{2} },  \qquad \hat{\alpha}=\bar{Y}_{n}-\hat{\beta}\bar{X}_{n}
 $$
 where $s_{X,Y}$ is the sample covariance of $X,Y$ and $s_{X}$ is the sample variance of $X$.
 
@@ -165,17 +165,17 @@ For a given choice of $\beta$, we know that the choice of $\alpha$ which minimiz
 $$\sum_{k=1}^{n}\left((Y_{k}-\bar{Y})-\beta(X_{k}-\bar{X})\right)^{2}$$
 and then we simply set $\hat{\alpha}=\bar{Y}-\beta\bar{X}$. Let<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
                                 1
-                                 </a> </sup><span class="collapse small" id="footnote-1">We are dividing by $X_{k}-\bar{X}$. What if it is zero for some $k$? But note that in the expression $\sum \left((Y_{k}-\bar{Y})-\beta(X_{k}-\bar{X})\right)^{2}$, all such terms do not involve $\beta$ and hence can be safely left out of the summation. We leave the details for you to work out (the expressions at the end should involve all $X_{k},Y_{k}$).</span>  $Z_{k}=\frac{Y_{k}-\bar{Y}}{X_{k}-\bar{X}}$ and $w_{k}=(X_{k}-\bar{X})^{2}/s_{X}^{2}$. Then,
+                                 </a> </sup><span class="collapse small" id="footnote-1">We are dividing by $X_{k}-\bar{X}$. What if it is zero for some $k$? But note that in the expression $\sum \left((Y_{k}-\bar{Y})-\beta(X_{k}-\bar{X})\right)^{2}$, all such terms do not involve $\beta$ and hence can be safely left out of the summation. We leave the details for you to work out (the expressions at the end should involve all $X_{k},Y_{k}$). </span>  $Z_{k}=\frac{Y_{k}-\bar{Y} }{X_{k}-\bar{X} }$ and $w_{k}=(X_{k}-\bar{X})^{2}/s_{X}^{2}$. Then,
 $$
 \sum_{k=1}^{n}\left((Y_{k}-\bar{Y})-\beta(X_{k}-\bar{X})\right)^{2}=s_{X}^{2}\sum_{k=1}^{n}w_{k}\left(Z_{k}-\beta \right)^{2}.
 $$
 Since $w_{k}$ are non-negative numbers that add to $1$, we can intepret it as a probability mass function and hence we see that the minimizing $\beta$ is given by the expectation with respect to this mass function. In other words,
 $$
-\hat{\beta}=\sum_{k=1}^{n}w_{k}Z_{k} = \frac{s_{X,Y}}{s_{X}^{2}}.
+\hat{\beta}=\sum_{k=1}^{n}w_{k}Z_{k} = \frac{s_{X,Y} }{s_{X}^{2} }.
 $$
-Another way to write it is $\hat{\beta}=\frac{s_{Y}}{s_{X}}r_{X,Y}$ where $r_{X,Y}$ is the sample correlation coefficient.
+Another way to write it is $\hat{\beta}=\frac{s_{Y} }{s_{X} }r_{X,Y}$ where $r_{X,Y}$ is the sample correlation coefficient.
 
-<strong>A motivation for the least squares criterio :</strong> Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alpha+\beta X_{i}+\epsilon_{i}$ where $\epsilon_{i}$ are i.i.d. $N(0,{\sigma}^{2})$ ``errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alpha+\beta X_{i},{\sigma}^{2})$ random variables. Now we can extimate $\alpha,\beta$ by the maximum likelihood method.
+<strong>A motivation for the least squares criterion :</strong> Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alpha+\beta X_{i}+\epsilon_{i}$ where $\epsilon_{i}$ are i.i.d. $N(0,{\sigma}^{2})$ ``errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alpha+\beta X_{i},{\sigma}^{2})$ random variables. Now we can extimate $\alpha,\beta$ by the maximum likelihood method.
 
 <p>&nbsp;</p>
                 <div id="theorem-183"><div class="panel panel-info example"> <div class="panel-heading">Example 183 ([Hubble's 1929 experiment on the recession velocity of nebulae and their distance to earth)</div><div class="panel-body"> Hubble collected the following data that I took from \href{http://lib.stat.cmu.edu/DASL/Datafiles/Hubble.html}{this website}. Here $X$ is the number of megaparsecs from the nebula to earth and $Y$ is the observed recession velocity in $10^{3}$km/s.
@@ -200,7 +200,7 @@ We fit two straight lines to this data.
 </li>
 <li> Fit the line $Y=bX$. In this case we get $\hat{b}$ by minimizing $\sum_{i}(Y_{i}-bX_{i})^{2}$. This is slightly different from before, but the same methods (calculus or the alternate argument we gave) work to give
 $$
-\hat{b}=\frac{\sum_{i=1}^{n}Y_{i}X_{i}}{\sum_{i=1}^{n}X_{i}^{2}}= 0.42394.
+\hat{b}=\frac{\sum_{i=1}^{n}Y_{i}X_{i} }{\sum_{i=1}^{n}X_{i}^{2} }= 0.42394.
 $$
 The residual sum of squares $\sum_{i=1}^{n}(Y_{i}-bX_{i})^{2}$ turns out to be $1.2064$.
 </ol>
@@ -243,21 +243,21 @@ We compute that $\bar{X}=4.5$, $\bar{W}=-5.25$, $\mbox{std}(X)=2.45$, $\mbox{std
 
 <strong>How good is the fit?</strong> For the same data $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$, suppose we have two candidates \; (a) \; $Y=f(X)$ and \; (b) \; $Y=g(X)$. How to decide which is better? Or how to say if a fit is good at all?
 
-By the least-squares criterion, the answer is  the one with smaller residual sum of squares $SS:=\sum_{k=1}^{n}(Y_{k}-f(X_{k}))^{2}$. Usually one presents a closely related quantity $R^{2}=1-\frac{SS}{SS_{0}}$ (where $\mbox{SS}_{0}=\sum_{k=1}^{n}(Y_{k}-\bar{Y})^{2}=(n-1)s_{Y}^{2}$). Since $SS_{0}$ is (a multiple of) the total variance in $Y$, $R^{2}$ measures how much of it is ``explained'' by a particular fit. Note that $0\le R^{2}\le 1$. And higher (i.e., closer to $1$) the $R^{2}$ is, the better the fit.
+By the least-squares criterion, the answer is  the one with smaller residual sum of squares $SS:=\sum_{k=1}^{n}(Y_{k}-f(X_{k}))^{2}$. Usually one presents a closely related quantity $R^{2}=1-\frac{SS}{SS_{0} }$ (where $\mbox{SS}_{0}=\sum_{k=1}^{n}(Y_{k}-\bar{Y})^{2}=(n-1)s_{Y}^{2}$). Since $SS_{0}$ is (a multiple of) the total variance in $Y$, $R^{2}$ measures how much of it is ``explained'' by a particular fit. Note that $0\le R^{2}\le 1$. And higher (i.e., closer to $1$) the $R^{2}$ is, the better the fit.
 
 Thus, the first naive answer to the above question is to compute $R^{2}$ in the two situations (fitting by $f$ and fitting by $g$) and see which is higher. But a more nuanced approach is preferable. Consider the same data and three situations.
 <ol>
 <li> Fit a constant function. This means, choose  $\alpha$  to minimize $\sum_{k=1}^{n}(Y_{k}-\alpha)^{2}$. The solution is $\hat{\alpha}=\bar{Y}$ and the residual sum of squares is $\mbox{SS}_{0}$ itself. Then, $R_{0}^{2}=0$.
 </li>
-<li> Fit a linear function. Then $\alpha,\beta$ are chosen as discussed earlier and the residual sum of squares is $\mbox{SS}_{1}=\sum_{k=1}^{n}(Y_{k}-\hat{\alpha}-\hat{\beta}X_{k})^{2}$. Then, $R_{1}^{2}=1-\frac{SS_{1}}{SS_{0}}$.
+<li> Fit a linear function. Then $\alpha,\beta$ are chosen as discussed earlier and the residual sum of squares is $\mbox{SS}_{1}=\sum_{k=1}^{n}(Y_{k}-\hat{\alpha}-\hat{\beta}X_{k})^{2}$. Then, $R_{1}^{2}=1-\frac{SS_{1} }{SS_{0} }$.
 </li>
-<li> Fit a quadratic function. The the residual sum of squares is $\mbox{SS}_{2}=\sum_{k=1}^{n}(Y_{k}-\hat{\alpha}-\hat{\beta}X_{k}-\hat{\gamma}X_{k}^{2})^{2}$ where  $\hat{\alpha},\hat{\beta},\hat{\gamma}$ are chosen so as to minimize $\sum_{k=1}^{n}(Y_{k}-\alpha-\beta X_{k}-\gamma X_{k}^{2})^{2}$. Then $R_{2}^{2}=1-\frac{SS_{2}}{SS_{0}}$.
+<li> Fit a quadratic function. The the residual sum of squares is $\mbox{SS}_{2}=\sum_{k=1}^{n}(Y_{k}-\hat{\alpha}-\hat{\beta}X_{k}-\hat{\gamma}X_{k}^{2})^{2}$ where  $\hat{\alpha},\hat{\beta},\hat{\gamma}$ are chosen so as to minimize $\sum_{k=1}^{n}(Y_{k}-\alpha-\beta X_{k}-\gamma X_{k}^{2})^{2}$. Then $R_{2}^{2}=1-\frac{SS_{2} }{SS_{0} }$.
 </ol>
 Obviously we will have $R_{2}^{2}\ge R_{1}^{2}\ge R_{0}^{2}$ (since linear functions include constants and quadratic functions include linear ones). Does that mean that the third is better? If that were the conclusion, then we can continue to introduce more parameters as that will always reduce the residual sum of squares! But that comes at the cost of making the model more complicated (and having too many parameters means that it will fit the current data well, but not future data!). When to stop adding more parameters?
 
 Qualitatively,  a new parameter is desirable  if it leads to a  <em> significant increase</em> of the $R^{2}$. The question is, how big an increase is significant. For this, one introduces the notion of <em> adjusted</em> $R^{2}$, which is defined as follows:
 
-If the model has $p$ parameters, then define $\bar{SS}=SS/(n-1-p)$. In particular, $\bar{SS}_{0}=\frac{SS_{0}}{n-1}=s_{Y}^{2}$.  Then define the adjusted $R^{2}$ as $\bar{R}^{2}=1-\frac{\bar{SS}}{\bar{SS}_{0}}$.
+If the model has $p$ parameters, then define $\bar{SS}=SS/(n-1-p)$. In particular, $\bar{SS}_{0}=\frac{SS_{0} }{n-1}=s_{Y}^{2}$.  Then define the adjusted $R^{2}$ as $\bar{R}^{2}=1-\frac{\bar{SS} }{\bar{SS}_{0} }$.
 
 In particular, $\bar{R}_{0}^{2}=R_{0}^{2}$ as before. But $R_{1}^{2}=1-\frac{SS_{1}/(n-2)}{SS_{0}/(n-1)}$. Note that $\bar{R}^{2}$ does not necessarily increase upon adding an extra parameter. If we want a polynomial fit, then a rule of thumb is to keep adding more powers as long as $\bar{R}^{2}$ continues to increase and stop the moment it decreases.
 <p>&nbsp;</p>

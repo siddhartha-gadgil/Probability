@@ -172,15 +172,15 @@ Note that it does not make sense to subtract $X_{i}-Y_{i}$ and reduce to a one s
  </p>
            
  <p class="text-justify">
-<strong>The tes :</strong> Let $\bar{X},\bar{Y}$ denote the sample means of $X$ and $Y$ and let $s_{X}, s_{Y}$ denote the corresponding sample standard deviations. Since ${\sigma}^{2}$ is the assumed to be the same for both populations, $s_{X}^{2}$ and $s_{Y}^{2}$ can be combined to define
+<strong>The test :</strong> Let $\bar{X},\bar{Y}$ denote the sample means of $X$ and $Y$ and let $s_{X}, s_{Y}$ denote the corresponding sample standard deviations. Since ${\sigma}^{2}$ is the assumed to be the same for both populations, $s_{X}^{2}$ and $s_{Y}^{2}$ can be combined to define
 $$
-S^{2}:=\frac{(n-1)s_{X}^{2}+(m-1)s_{Y}^{2}}{m+n-2}
+S^{2}:=\frac{(n-1)s_{X}^{2}+(m-1)s_{Y}^{2} }{m+n-2}
 $$
 which is a better estimate for ${\sigma}^{2}$ than just $s_{X}^{2}$ or $s_{Y}^{2}$ (this $S^{2}$ is better than simply taking $(s_{X}^{2}+s_{Y}^{2})/2$ because it gives greater weight to the larger sample).
  </p>
 <p class="text-justify">
           
- Now define $\mathcal T =\sqrt{\frac{1}{n}+\frac{1}{m}}\left(\frac{\bar{X}-\bar{Y}}{S}\right)$.  The following tests hav significance level $\alpha$.
+ Now define $\mathcal T =\sqrt{\frac{1}{n}+\frac{1}{m} }\left(\frac{\bar{X}-\bar{Y} }{S}\right)$.  The following tests hav significance level $\alpha$.
 <ol>
 <li> For the one-sided test, accept the alternative if $\mathcal T > t_{n+m-2}(\alpha)$.
 </li>
@@ -189,18 +189,18 @@ which is a better estimate for ${\sigma}^{2}$ than just $s_{X}^{2}$ or $s_{Y}^{2
  </p>
            
  <p class="text-justify">
-<strong>The rationale behind the test :</strong> If $\bar{X}$ is much larger than $\bar{Y}$ then the greater is the evidence that the true mean $\mu_{1}$ is greater than $\mu_{2}$. But again we need to standardize by dividing this by an estimate of ${\sigma}$, namely $S$. The resulting statistic $\mathcal T$ has a $t_{m+n-2}$ distribution as explained below.
+<strong>The rationale behind the tests :</strong> If $\bar{X}$ is much larger than $\bar{Y}$ then the greater is the evidence that the true mean $\mu_{1}$ is greater than $\mu_{2}$. But again we need to standardize by dividing this by an estimate of ${\sigma}$, namely $S$. The resulting statistic $\mathcal T$ has a $t_{m+n-2}$ distribution as explained below.
  </p>
 <p class="text-justify">
           
- <strong>The significance level is $\alpha :</strong> The question is where to draw the threshold. From the facts we know,
+ <strong>The significance level is $\alpha$ :</strong> The question is where to draw the threshold. From the facts we know,
 $$\begin{align*}
 \bar{X}&\sim N(\mu_{1},{\sigma}_{1}^{2}/n), \\
 \bar{Y}&\sim N(\mu_{2},{\sigma}_{2}^{2}/m), \\
-\frac{(n-1)}{{\sigma}^{2}}s_{X}^{2}&\sim \chi_{n-1}^{2}, \\
-\frac{(m-1)}{{\sigma}^{2}}s_{Y}^{2}&\sim \chi_{m-1}^{2}
+\frac{(n-1)}{{\sigma}^{2} }s_{X}^{2}&\sim \chi_{n-1}^{2}, \\
+\frac{(m-1)}{{\sigma}^{2} }s_{Y}^{2}&\sim \chi_{m-1}^{2}
 \end{align*}$$
-and the four random variables are independent. From this, it follows that $(m+n-2)S^{2}$ has $\chi_{n+m-2}^{2}$ distribution. <em> Under the null hypothesis</em> $\frac{1}{{\sigma}}\sqrt{\frac{1}{n}+\frac{1}{m}}(\bar{X}-\bar{Y})$ has $N(0,1)$ distribution and is independent of $S$. Taking ratios, we see that $\mathcal T$ has $t_{m+n-2}$ distribution (under the null hypothesis).
+and the four random variables are independent. From this, it follows that $(m+n-2)S^{2}$ has $\chi_{n+m-2}^{2}$ distribution. <em> Under the null hypothesis</em> $\frac{1}{{\sigma}}\sqrt{\frac{1}{n}+\frac{1}{m} }(\bar{X}-\bar{Y})$ has $N(0,1)$ distribution and is independent of $S$. Taking ratios, we see that $\mathcal T$ has $t_{m+n-2}$ distribution (under the null hypothesis).
  </p>
            
 

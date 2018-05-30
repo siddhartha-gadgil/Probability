@@ -144,7 +144,7 @@ More generally $m\mathbf{P}\{X\ge m\}\le \mathbf{E}[X]$. This shows that if the 
  </p>
 <p class="text-justify">
           
- <strong>Markov's inequalit :</strong> Let $X$ be a non-negative random variable with finite expectation. Then, for any $t > 0$, we have $\mathbf{P}\{X\ge t\}\le \frac{1}{t}\mathbf{E}[X]$.
+ <strong>Markov's inequality :</strong> Let $X$ be a non-negative random variable with finite expectation. Then, for any $t > 0$, we have $\mathbf{P}\{X\ge t\}\le \frac{1}{t}\mathbf{E}[X]$.
  </p>
            
  <p class="text-justify">
@@ -155,11 +155,11 @@ Markov's inequality is simple but surprisingly useful. Firstly, one can apply it
  </p>
 <p class="text-justify">
           
- <strong>Variants of Markov's inequalit :</strong>
+ <strong>Variants of Markov's inequality :</strong>
 <ol>
-<li> If $X$ is a non-negative random variable with finite $p^{\mbox{th}}$ moment, then $\mathbf{P}\{X\ge t\}\le t^{-p}\mathbf{E}[X^{p}]$ for any $t > 0$.
+<li> If $X$ is a non-negative random variable with finite $p^{\mbox{th} }$ moment, then $\mathbf{P}\{X\ge t\}\le t^{-p}\mathbf{E}[X^{p}]$ for any $t > 0$.
 </li>
-<li> If $X$ is a random variable with finite second moment, then $\mathbf{E}[|X-\mu|\ge t]\le \frac{1}{t^{2}}\mbox{Var}(X)$. [<em> Chebyshev's inequality</em>]
+<li> If $X$ is a random variable with finite second moment, then $\mathbf{E}[|X-\mu|\ge t]\le \frac{1}{t^{2} }\mbox{Var}(X)$. [<em> Chebyshev's inequality</em>]
 </li>
 <li> IF $X$ is a random variable with finite exponential moments, then $\mathbf{P}(X > t)\le e^{-\lambda t}\mathbf{E}[e^{\lambda X}]$ for any $\lambda > 0$.
 </ol>
@@ -169,7 +169,7 @@ Thus, if we only know that $X$ has finite mean, the tail probability $\mathbf{P}
  <p class="text-justify">
 Chebyshev's inequality captures again the intuitive notion that variance measures the spread of the distribution about the mean. The smaller the variance, lesser the spread. An alternate way to write Chebyshev's inequality is
 $$
-\mathbf{P}(|X-\mu| > r\sigma)\le \frac{1}{r^{2}}
+\mathbf{P}(|X-\mu| > r\sigma)\le \frac{1}{r^{2} }
 $$
 where ${\sigma}=\mbox{s.d.}(X)$. This measures the deviations in multiples of the standard deviation. This is a very general inequality. In specific cases we can get better bounds than $1/r^{2}$ (just like Markov inequality can be improved using higher moments, when they exist).
  </p>

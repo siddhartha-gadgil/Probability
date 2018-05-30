@@ -173,6 +173,7 @@ object TeXToHtml {
     .replace("\\vspace{4mm}", "")
     .replace("\\vspace{2mm}", "")
     .replace("""\"{o}""", "&ouml;")
+    .replace("}}", "} }")
 
   val begReg: Regex = """\\begin\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
@@ -457,8 +458,8 @@ object TeXToHtml {
       if (doldolReg.findAllIn(secHead + head + m.before).size % 2 == 0)
         (head+ m.before, m.after.toString)
       else {
-        println(
-          s"not inserting paras,\n Between:\n${secHead + head + m.before}\n\n DolDol: ${doldolReg.findAllIn(secHead + head + m.before).size}\n and \n${m.after}")
+//        println(
+//          s"not inserting paras,\n Between:\n${secHead + head + m.before}\n\n DolDol: ${doldolReg.findAllIn(secHead + head + m.before).size}\n and \n${m.after}")
         block(m.after.toString, head + m.before.toString + "\n", secHead)}
     }.getOrElse(head + txt, "")
   }
@@ -486,8 +487,16 @@ object TeXToHtml {
 
   def inBraces(txt: String, head: String): (String, String) = {
     """([^\\])(\})""".r.findFirstMatchIn(txt).map { (m) =>
-      if (bracesMatched(head + m.before))
-        (head+ m.before, m.after.toString)
+      if (bracesMatched(head + m.before + m.group(1))) {
+//        println("Brace end")
+//        println(m.group(0))
+//        println(m.group(1))
+//        println(m.group(2))
+//        println(head + m.before)
+//
+//        println()
+        (head + m.before.toString + m.group(1).toString, m.after.toString)
+      }
       else {
         inBraces(m.after.toString, head + m.before.toString + m.group(0))}
     }.getOrElse(throw new Exception("Unclosed brace for footnote"))
@@ -607,6 +616,8 @@ class TeXToHtml(header: String, text: String) {
       (m) =>
         {
           val j = m.group(2).toInt
+          println()
+          println(s"reference $j in ${theoremChapters(j)}")
           s"""href="chapter-${theoremChapters(j)}.html#theorem-j"""
         })
   }
@@ -616,7 +627,7 @@ class TeXToHtml(header: String, text: String) {
 
   lazy val chapReplaced =
     chapters.filter(_._1 > 0).mapValues{(chapter) =>
-      recReplaceFootnotes(replaceUnderline(replaceBf(chapter)))
+      recReplaceFootnotes(replaceUnderline(replaceBf(refChapters(chapter))))
     }
 
   lazy val sortedSections: Vector[(Int, String)] =
@@ -709,5 +720,5 @@ object TeXBuild extends App {
   converter.html()
   val js = read(resource/"out.js")
   write.over(pwd / "docs" / "js" / "probability.js", js)
-  println(converter.theoremChapters)
+  println(converter.theoremChapters.toVector.sortBy(_._1))
 }

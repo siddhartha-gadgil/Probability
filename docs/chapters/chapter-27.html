@@ -141,7 +141,7 @@
 
 In this section we talk about entropy, a concept of fundamental importance in physics, mathematics and information theory.<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
                                 1
-                                 </a> </sup><span class="collapse small" id="footnote-1">This section was not covered in class and may be safely omitte</span> 
+                                 </a> </sup><span class="collapse small" id="footnote-1">This section was not covered in class and may be safely omitted</span> 
 <p>&nbsp;</p>
                 <div id="theorem-145"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 145 </div><div class="panel-body"> Let $X$ be a random variable that takes values in ${\mathcal A}=\{a_{1},\ldots ,a_{k}\}$ such that $\mathbf{P}(X=a_{i})=p_{i}$. The entropy of $X$ is defined as
 $$
@@ -193,7 +193,7 @@ Entropy is a measure of the randomness. For example, among the $\mbox{Ber}(p)$ d
  </p>
            
  <p class="text-justify">
-<strong>Gibbs measure :</strong> Let ${\mathcal A}$ be a countable set and let ${\mathcal H}:{\mathcal A}\rightarrow \mathbb{R}$ be a given function. For any $E\in \mathbb{R}$, consider the set of ${\mathcal P}_{E}$ of all probability mass functions on $\Omega$ under which ${\mathcal H}$ has expected value $E$. In other words,
+<strong>Gibbs measures :</strong> Let ${\mathcal A}$ be a countable set and let ${\mathcal H}:{\mathcal A}\rightarrow \mathbb{R}$ be a given function. For any $E\in \mathbb{R}$, consider the set of ${\mathcal P}_{E}$ of all probability mass functions on $\Omega$ under which ${\mathcal H}$ has expected value $E$. In other words,
 $$
 {\mathcal P}_{E}:=\{{\bf p}=\left(p_{i}\right)_{i\in {\mathcal A}}{\; : \;} \sum_{i\in {\mathcal A}} p(i){\mathcal H}(i)=E\}.
 $$
@@ -201,10 +201,10 @@ ${\mathcal P}_{E}$ is non-empty if and only if ${\mathcal H}_{\min}\le E\le {\ma
 <p>&nbsp;</p>
                 <div id="theorem-151"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 151 </div><div class="panel-body"> Assume that ${\mathcal H}_{\min}\le E\le {\mathcal H}_{\max}$. Then, there is a unique pmf in ${\mathcal P}_{E}$ with maximal entropy and it is given by
 $$
-p_{\beta}(i)=\frac{1}{Z_{\beta}}e^{-\beta {\mathcal H}(i)}
+p_{\beta}(i)=\frac{1}{Z_{\beta} }e^{-\beta {\mathcal H}(i)}
 $$
 where $Z_{\beta}=\sum\limits_{i\in {\mathcal A}}e^{-\beta {\mathcal H}(i)}$ and the value of $\beta$ is chosen to satisfy
-$\frac{1}{Z_{\beta}}\frac{\partial Z_{\beta}}{\partial \beta}=E$.
+$\frac{1}{Z_{\beta} }\frac{\partial Z_{\beta} }{\partial \beta}=E$.
 </div></div></div>
 This minimizing pmf is called the <em> Boltzmann-Gibbs</em> distribution. An analogous theorem holds for densities.
  </p>
@@ -217,7 +217,7 @@ This minimizing pmf is called the <em> Boltzmann-Gibbs</em> distribution. An ana
            
  <p class="text-justify">
 <p>&nbsp;</p>
-                <div id="theorem-153"><div class="panel panel-info example"> <div class="panel-heading">Example 153 </div><div class="panel-body"> Let ${\mathcal A}=\{0,1,2,\ldots\}$ and let ${\mathcal H}(i)=i$ for all $i$. Fix any $E > 0$. The Boltzmann-Gibbs distribution is given by $p_{\beta}(i)=\frac{1}{Z_{\beta}}e^{-\beta i}$. This is just the Geometric distribution with parameter chosen to have mean $E$.
+                <div id="theorem-153"><div class="panel panel-info example"> <div class="panel-heading">Example 153 </div><div class="panel-body"> Let ${\mathcal A}=\{0,1,2,\ldots\}$ and let ${\mathcal H}(i)=i$ for all $i$. Fix any $E > 0$. The Boltzmann-Gibbs distribution is given by $p_{\beta}(i)=\frac{1}{Z_{\beta} }e^{-\beta i}$. This is just the Geometric distribution with parameter chosen to have mean $E$.
 </div></div></div>
  </p>
 <p class="text-justify">

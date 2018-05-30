@@ -142,7 +142,7 @@
 <p>&nbsp;</p>
                 <div id="theorem-7"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 7 </div><div class="panel-body"> Let $\Omega$ be a finite or countable<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
                                 1
-                                 </a> </sup><span class="collapse small" id="footnote-1">For those unfamiliar with countable sets, it will be explained in some detail later</span>  set. Let $p:\Omega\rightarrow [0,1]$ be a function such that $\sum_{\omega\in \Omega}p_{\omega}=1$. Then $(\Omega,p)$ is called a <em> discrete probability space</em>. $\Omega$ is called the <em> sample space</em> and $p_{\omega}$ are called <em> elementary probabilities</em>.
+                                 </a> </sup><span class="collapse small" id="footnote-1">For those unfamiliar with countable sets, it will be explained in some detail later.</span>  set. Let $p:\Omega\rightarrow [0,1]$ be a function such that $\sum_{\omega\in \Omega}p_{\omega}=1$. Then $(\Omega,p)$ is called a <em> discrete probability space</em>. $\Omega$ is called the <em> sample space</em> and $p_{\omega}$ are called <em> elementary probabilities</em>.
 <ul>
 <li> Any subset $A\subseteq \Omega$ is called an <em> event</em>. For an event $A$ we define its <em> probability</em> as $\mathbf{P}(A)=\sum_{\omega\in A}p_{\omega}$.
 </li>
@@ -152,7 +152,7 @@
  </p>
 <p class="text-justify">
           
- <em><u> All of probability in one line</em></u>: Take an (interesting) probability space $(\Omega, p)$ and an (interesting) event $A\subseteq \Omega$. Find $\mathbf{P}(A)$.
+ <em><u> All of probability in one line</em> </u>: Take an (interesting) probability space $(\Omega, p)$ and an (interesting) event $A\subseteq \Omega$. Find $\mathbf{P}(A)$.
  </p>
            
  <p class="text-justify">
@@ -175,10 +175,10 @@ Let $p_{\underline{\omega}}=2^{-n}$ for each $\underline{\omega}\in \Omega$. Sin
  </p>
 <p class="text-justify">
           
- There are $2^{\#\Omega}=2^{2^{n}}$ events. One example is $A_{k}=\{\underline{\omega}{\; : \;} \underline{\omega}\in \Omega \mbox{ and } \omega_{1}+\ldots +\omega_{n}=k
+ There are $2^{\#\Omega}=2^{2^{n} }$ events. One example is $A_{k}=\{\underline{\omega}{\; : \;} \underline{\omega}\in \Omega \mbox{ and } \omega_{1}+\ldots +\omega_{n}=k
 \}$ where $k$ is some fixed integer. In words, $A_{k}$ consists of those $n$-tuples of zeros and ones that have a total of $k$ many ones. Since there are $\binom{n}{k}$ ways to choose where to place these ones, we see that $\#A_{k}=\binom{n}{k}$. Consequently,
 $$
-\mathbf{P}\{A_{k}\}=\sum_{\underline{\omega}\in A_{k}}p_{\underline{\omega}} = \frac{\# A_{k}}{2^{n}}=\begin{cases} \binom{n}{k}2^{-n} &\mbox{ if }0\le k\le n, \\ 0 & \mbox{ otherwise}. \end{cases}
+\mathbf{P}\{A_{k}\}=\sum_{\underline{\omega}\in A_{k} }p_{\underline{\omega}} = \frac{\# A_{k} }{2^{n} }=\begin{cases} \binom{n}{k}2^{-n} &\mbox{ if }0\le k\le n, \\ 0 & \mbox{ otherwise}. \end{cases}
 $$
 It will be convenient to adopt the notation that $\binom{a}{b}=0$ if $a,b$ are positive integers and if $b > a$ or if $b < 0$. Then we can simply write $\mathbf{P}\{A_{k}\}=\binom{n}{k}2^{-n}$ without having to split the values of $k$ into cases.
 </div></div></div>
@@ -195,17 +195,17 @@ $$\Omega=\{\underline{\omega}{\; : \;} \underline{\omega}=(\omega_{1},\ldots ,\o
  </p>
            
  <p class="text-justify">
-Of course, there are $2^{m^{r}}$ many events, which is quite large even for small numbers like $m=3$ and $r=4$. Some interesting events are $A=\{\underline{\omega} {\; : \;} \omega_{r}=1\}$, $B=\{\underline{\omega}{\; : \;} \omega_{i}\not=1 \mbox{ for all }i\}$, $C=\{\underline{\omega}{\; : \;} \omega_{i}\not=\omega_{j} \mbox{ if } i\not= j\}$. The reason why these are interesting will be explained later. Because of equal elementary probabilities, the probability of an event $S$ is just $\#S/m^{r}$.
+Of course, there are $2^{m^{r} }$ many events, which is quite large even for small numbers like $m=3$ and $r=4$. Some interesting events are $A=\{\underline{\omega} {\; : \;} \omega_{r}=1\}$, $B=\{\underline{\omega}{\; : \;} \omega_{i}\not=1 \mbox{ for all }i\}$, $C=\{\underline{\omega}{\; : \;} \omega_{i}\not=\omega_{j} \mbox{ if } i\not= j\}$. The reason why these are interesting will be explained later. Because of equal elementary probabilities, the probability of an event $S$ is just $\#S/m^{r}$.
 <ul>
-<li> Counting $A$: We have $m$ choices for each of  $\omega_{1},\ldots ,\omega_{r-1}$. There is only one choice for $\omega_{r}$. Hence $\#A=m^{r-1}$. Thus, $\mathbf{P}(A)=\frac{m^{r-1}}{m^{r}} = \frac{1}{m}$.
+<li> Counting $A$: We have $m$ choices for each of  $\omega_{1},\ldots ,\omega_{r-1}$. There is only one choice for $\omega_{r}$. Hence $\#A=m^{r-1}$. Thus, $\mathbf{P}(A)=\frac{m^{r-1} }{m^{r} } = \frac{1}{m}$.
 </li>
-<li> Counting $B$: We have $m-1$ choices for each $\omega_{i}$ (since $\omega_{i}$ cannot be $1$). Hence $\#B=(m-1)^{r}$ and thus $\mathbf{P}(B)=\frac{(m-1)^{r}}{m^{r}}=(1-\frac{1}{m})^{r}$.
+<li> Counting $B$: We have $m-1$ choices for each $\omega_{i}$ (since $\omega_{i}$ cannot be $1$). Hence $\#B=(m-1)^{r}$ and thus $\mathbf{P}(B)=\frac{(m-1)^{r} }{m^{r} }=(1-\frac{1}{m})^{r}$.
 </li>
 <li> Counting $C$: We must choose a distinct value for each $\omega_{1},\ldots ,\omega_{r}$. This is impossible if $m < r$. If $m\ge r$, then $\omega_{1}$ can be chosen as any of $m$ values. After $\omega_{1}$ is chosen, there are $(m-1)$ possible values for $\omega_{2}$, and then $(m-2)$ values for $\omega_{3}$ etc., all the way till $\omega_{r}$ which has $(m-r+1)$ choices. Thus, $\#C=m(m-1)\ldots (m-r+1)$. Note that we get the same answer if we choose $\omega_{i}$ in a different order (it would be strange if we did not!).
  </p>
 <p class="text-justify">
           
- Thus, $\mathbf{P}(C)=\frac{m(m-1)\ldots (m-r+1)}{m^{r}}$. Note that this formula is also valid for $m < r$ since one of the factors on the right side is zero.
+ Thus, $\mathbf{P}(C)=\frac{m(m-1)\ldots (m-r+1)}{m^{r} }$. Note that this formula is also valid for $m < r$ since one of the factors on the right side is zero.
 </ul>
  </p>
            
@@ -234,7 +234,7 @@ Of course, there are $2^{m^{r}}$ many events, which is quite large even for smal
           
  In a given physical situation, we choose one out of all possible probability spaces that we think captures best the chance happenings in the situation. The chosen probability space is then called a <em> model</em> or a <em> probability model</em> for the given situation. Once the model has been chosen, calculation of probabilities of events therein is a mathematical problem. Whether the model really captures the given situation, or whether the model is inadequate and over-simplified is a non-mathematical question. Nevertheless that is an important question, and can be answered by observing the real life situation and comparing the outcomes with predictions made using the model<sup> <a data-toggle="collapse" href="#footnote-2" aria-expanded="false" aria-controls="footnote-2">
                                 2
-                                 </a> </sup><span class="collapse small" id="footnote-2">Roughly speaking we may divide the course into two parts according to these two issues. In the probability part of the course, we shall take many such models for granted and learn how to calculate or approximately calculate probabilities. In the statistics part of the course we shall see some methods by which we can arrive at such models, or test the validity of a proposed model</span> .
+                                 </a> </sup><span class="collapse small" id="footnote-2">Roughly speaking we may divide the course into two parts according to these two issues. In the probability part of the course, we shall take many such models for granted and learn how to calculate or approximately calculate probabilities. In the statistics part of the course we shall see some methods by which we can arrive at such models, or test the validity of a proposed model.</span> .
  </p>
            
  <p class="text-justify">
@@ -243,11 +243,11 @@ Now we describe several ``random experiments'' (a non-mathematical term to indic
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-12"><div class="panel panel-info example"> <div class="panel-heading">Example 12 </div><div class="panel-body"> <strong>Physical situatio :</strong> Toss a coin. Randomness enters because we believe that the coin may turn up head or tail and that it is inherently unpredictable.
+                <div id="theorem-12"><div class="panel panel-info example"> <div class="panel-heading">Example 12 </div><div class="panel-body"> <strong>Physical situation :</strong> Toss a coin. Randomness enters because we believe that the coin may turn up head or tail and that it is inherently unpredictable.
  </p>
            
  <p class="text-justify">
-<strong>The corresponding probability mode :</strong> Since there are two outcomes, the sample space $\Omega=\{0,1\}$ (where we use $1$ for heads and $2$ for tails) is a clear choice. What about elementary probabilities? Under the equal chance hypothesis, we may take $p_{0}=p_{1}=\frac{1}{2}$. Then we have a probability model for the coin toss.
+<strong>The corresponding probability model :</strong> Since there are two outcomes, the sample space $\Omega=\{0,1\}$ (where we use $1$ for heads and $2$ for tails) is a clear choice. What about elementary probabilities? Under the equal chance hypothesis, we may take $p_{0}=p_{1}=\frac{1}{2}$. Then we have a probability model for the coin toss.
  </p>
 <p class="text-justify">
           
@@ -264,11 +264,11 @@ Which model is correct? If the coin looks very symmetrical, then the two sides a
  </p>
            
  <p class="text-justify">
-Thus we see that example <a href="#theorem-9">9</a> is a good model for a physical coin toss. What physical situations are captured by the probability spaces in example <a href="#theorem-10">10</a> and example <a href="#theorem-11">11</a>?
+Thus we see that example <a href="chapter-2.html#theorem-j">9</a> is a good model for a physical coin toss. What physical situations are captured by the probability spaces in example <a href="chapter-2.html#theorem-j">10</a> and example <a href="chapter-2.html#theorem-j">11</a>?
  </p>
 <p class="text-justify">
           
- <strong>Example <a href="#theorem-10">10</a>} This probability space can be a model for tossing $n$ fair coins. It is clear in what sense, so we omit details for you to fill in.
+ <strong>Example <a href="chapter-2.html#theorem-j">10</a>  :</strong> This probability space can be a model for tossing $n$ fair coins. It is clear in what sense, so we omit details for you to fill in.
  </p>
            
  <p class="text-justify">
@@ -276,17 +276,17 @@ The same probability space can also be a model for the tossing of the same coin 
  </p>
 <p class="text-justify">
           
- \para{Example <a href="#theorem-11">11</a>} There are several situations that can be captured by this probability space. We list some.
+ <strong>Example <a href="chapter-2.html#theorem-j">11</a>  :</strong> There are several situations that can be captured by this probability space. We list some.
 <ul>
-<li> There are $r$ labelled balls and $m$ labelled bins. One by one, we put the balls into bins ``at random''. Then, by letting $\omega_{ :</strong>$ be the bin-number into which the $i^{\mbox{th}}$ ball goes, we can capture the full configuration by the vector $\underline{\omega}=(\omega_{1},\ldots ,\omega_{n})$. If each ball is placed completely at random then the probabilities are $m^{-r}$ for each configuration $\underline{\omega}$.
+<li> There are $r$ labelled balls and $m$ labelled bins. One by one, we put the balls into bins ``at random''. Then, by letting $\omega_{i}$ be the bin-number into which the $i^{\mbox{th} }$ ball goes, we can capture the full configuration by the vector $\underline{\omega}=(\omega_{1},\ldots ,\omega_{n})$. If each ball is placed completely at random then the probabilities are $m^{-r}$ for each configuration $\underline{\omega}$.
  </p>
            
  <p class="text-justify">
 In that example, $A$ is the event that the last ball ends up in the first bin, $B$ is the event that the first bin is empty and $C$ is the event that no bin contains more than one ball.
 </li>
-<li> If $m=6$, then this may also be the model for throwing a fair die $r$ times. Then $\omega_{i}$ is the outcome on the $i^{\mbox{th}}$ throw. Of course, it also models throwing $r$ different (and distinguishable) fair dice.
+<li> If $m=6$, then this may also be the model for throwing a fair die $r$ times. Then $\omega_{i}$ is the outcome on the $i^{\mbox{th} }$ throw. Of course, it also models throwing $r$ different (and distinguishable) fair dice.
 </li>
-<li> If $m=2$ and $r=n$, this is same as Example <a href="#theorem-10">10</a>, and thus models the tossing of $n$ fair coins (or a fair coin $n$ times).
+<li> If $m=2$ and $r=n$, this is same as Example <a href="chapter-2.html#theorem-j">10</a>, and thus models the tossing of $n$ fair coins (or a fair coin $n$ times).
 </li>
 <li> Let $m=365$. Omitting the possibility of leap years, this is a model for choosing $r$ people at random and noting their birthdays (which can be in any of $365$ ``bins''). If we assume that all days are equally likely as a birthday (is this really true?), then the same probability space is a model for this physical situation. In this example, $C$ is the event that no two people have the same birthday.
 </ul>
@@ -295,11 +295,11 @@ In that example, $A$ is the event that the last ball ends up in the first bin, $
           
  The next example is more involved and interesting.
 <p>&nbsp;</p>
-                <div id="theorem-13"><div class="panel panel-info example"> <div class="panel-heading">Example 13 </div><div class="panel-body"> <strong>Real-life situatio :</strong> Imagine a man-woman pair. Their first child is random, for example, the sex of the child, or the height to which the child will ultimately grow, etc cannot be predicted with certainty. How to make a probability model that captures the situation?
+                <div id="theorem-13"><div class="panel panel-info example"> <div class="panel-heading">Example 13 </div><div class="panel-body"> <strong>Real-life situation :</strong> Imagine a man-woman pair. Their first child is random, for example, the sex of the child, or the height to which the child will ultimately grow, etc cannot be predicted with certainty. How to make a probability model that captures the situation?
  </p>
            
  <p class="text-justify">
-<strong>A  possible probability mode :</strong> Let there be $n$ genes in each human, and each of the genes can take two possible values (Mendel's ``factors''), which we denote as $0$ or $1$. Then, let $\Omega=\{0,1\}^{n}=\{\mathbf{x}=(x_{1},\ldots ,x_{n}){\; : \;} x_{i}=0 \mbox{ or }1\}$. In this sense, each human being can be encoded as a vector in $\{0,1\}^{n}$.
+<strong>A  possible probability model :</strong> Let there be $n$ genes in each human, and each of the genes can take two possible values (Mendel's ``factors''), which we denote as $0$ or $1$. Then, let $\Omega=\{0,1\}^{n}=\{\mathbf{x}=(x_{1},\ldots ,x_{n}){\; : \;} x_{i}=0 \mbox{ or }1\}$. In this sense, each human being can be encoded as a vector in $\{0,1\}^{n}$.
  </p>
 <p class="text-justify">
           

@@ -153,11 +153,11 @@
 $$
 \Omega=\{0,1\}^{n}=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{n}){\; : \;} \omega_{i}=0 \mbox{ or } 1 \mbox{ for each }i\le n\}.
 $$
-Further we assign $p_{\underline{\omega}}=\alpha_{\omega_{1}}^{(1)}\ldots \alpha_{\omega_{n}}^{(n)}$. Here $\alpha_{0}^{(j)}$ and $\alpha_{1}^{(j)}$ are supposed to indicate the probabilities that the $j^{\mbox{th}}$ coin falls tails up or heads up, respectively. Why did we take the product of $\alpha^{(j)}_{\cdot}$s and not some other combination? This is a non-mathematical question about what model is suited for the given real-life example. For now, the only justification is that empirically the above model seems to capture the real life situation accurately.
+Further we assign $p_{\underline{\omega}}=\alpha_{\omega_{1} }^{(1)}\ldots \alpha_{\omega_{n} }^{(n)}$. Here $\alpha_{0}^{(j)}$ and $\alpha_{1}^{(j)}$ are supposed to indicate the probabilities that the $j^{\mbox{th} }$ coin falls tails up or heads up, respectively. Why did we take the product of $\alpha^{(j)}_{\cdot}$s and not some other combination? This is a non-mathematical question about what model is suited for the given real-life example. For now, the only justification is that empirically the above model seems to capture the real life situation accurately.
  </p>
 <p class="text-justify">
           
- In particular, if the $n$ coins are identical, we may write $p=\alpha_{1}^{(j)}$ (for any $j$) and the elementary probabilities become  $p_{\underline{\omega}}=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}$ where $q=1-p$.
+ In particular, if the $n$ coins are identical, we may write $p=\alpha_{1}^{(j)}$ (for any $j$) and the elementary probabilities become  $p_{\underline{\omega}}=p^{\sum_{i}\omega_{i} }q^{n-\sum_{i}\omega_{i} }$ where $q=1-p$.
  </p>
            
  <p class="text-justify">
@@ -171,7 +171,7 @@ $\mathbf{P}(A_{k})=\sum\limits_{\ell=k}^{n}\binom{n}{\ell}p^{\ell}q^{n-\ell}$.
                 <div id="theorem-16"><div class="panel panel-info example"> <div class="panel-heading">Example 16 </div><div class="panel-body"> <strong>Toss a coin $n$ times</strong>. Again
 $$\begin{align*}
 \Omega=\{0,1\}^{n}&=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{n}){\; : \;} \omega_{i}=0 \mbox{ or } 1 \mbox{ for each }i\le n\}, \\
-p_{\underline{\omega}}&=p^{\sum_{i}\omega_{i}}q^{n-\sum_{i}\omega_{i}}.
+p_{\underline{\omega}}&=p^{\sum_{i}\omega_{i} }q^{n-\sum_{i}\omega_{i} }.
 \end{align*}$$
 This is the same probability space that we got for the tossing of $n$ identical looking coins. Implicit is the assumption that once a coin is tossed, for the next toss it is as good as a different coin but with the same $p$. It is possible to imagine a world where coins retain the memory of what happened before (or as explained before, we can make a ``coin'' that remembers previous tosses!), in which case this would not be a good model for the given situation. We don't believe that this is the case for coins in our world, and this can be verified empirically.
 </div></div></div>
@@ -181,7 +181,7 @@ This is the same probability space that we got for the tossing of $n$ identical 
 <p>&nbsp;</p>
                 <div id="theorem-17"><div class="panel panel-info example"> <div class="panel-heading">Example 17 </div><div class="panel-body"> <strong>Shuffle a deck of 52 cards</strong>. $\Omega=S_{52}$, the set of all permutations<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
                                 1
-                                 </a> </sup><span class="collapse small" id="footnote-1">We use the notation $[n]$ to denote the set $\{1,2,\ldots ,n\}$. A permutation of $[n]$ is a vector $(i_{1},i_{2},\ldots ,i_{n})$ where $i_{1},\ldots ,i_{n}$ are distinct elements of $[n]$, in other words, they are $1,2,\ldots ,n$ but in some order. Mathematically, we may define a permutation as a bijection $\pi:[n]\rightarrow [n]$. Indeed, for a bijection $\pi$, the numbers $\pi(1),\ldots ,\pi(n)$ are just $1,2,\ldots ,n$ in some order</span>  of $[52]$ and $p_{\pi}=\frac{1}{52!}$ for each $\pi\in S_{52}$.
+                                 </a> </sup><span class="collapse small" id="footnote-1">We use the notation $[n]$ to denote the set $\{1,2,\ldots ,n\}$. A permutation of $[n]$ is a vector $(i_{1},i_{2},\ldots ,i_{n})$ where $i_{1},\ldots ,i_{n}$ are distinct elements of $[n]$, in other words, they are $1,2,\ldots ,n$ but in some order. Mathematically, we may define a permutation as a bijection $\pi:[n]\rightarrow [n]$. Indeed, for a bijection $\pi$, the numbers $\pi(1),\ldots ,\pi(n)$ are just $1,2,\ldots ,n$ in some order.</span>  of $[52]$ and $p_{\pi}=\frac{1}{52!}$ for each $\pi\in S_{52}$.
 </div></div></div>
  </p>
 <p class="text-justify">
@@ -191,13 +191,13 @@ This is the same probability space that we got for the tossing of $n$ identical 
  </p>
            
  <p class="text-justify">
-An interesting random variable is the number of correct guesses. This is the function $X:\Omega\rightarrow \mathbb{R}$ defined by $X(\pi,{\sigma})=\sum_{i=1}^{52}{\mathbf 1}_{\pi_{i}={\sigma}_{i}}$. Correspondingly we have the events $A_{k}=\{(\pi,{\sigma}){\; : \;} X(\pi,{\sigma})\ge k\}$.
+An interesting random variable is the number of correct guesses. This is the function $X:\Omega\rightarrow \mathbb{R}$ defined by $X(\pi,{\sigma})=\sum_{i=1}^{52}{\mathbf 1}_{\pi_{i}={\sigma}_{i} }$. Correspondingly we have the events $A_{k}=\{(\pi,{\sigma}){\; : \;} X(\pi,{\sigma})\ge k\}$.
 </div></div></div>
  </p>
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-19"><div class="panel panel-info example"> <div class="panel-heading">Example 19 </div><div class="panel-body"> <strong>Toss a coin till a head turns up</strong>. $\Omega=\{1,01,001,0001,\ldots \}\cup\{\bar{0}\}$. Let us write $0^{k}1=0\ldots01$ as a short form for $k$ zeros (tails) followed by $1$ and $\bar{0}$ stands for the sequence of all tails. Let $p\in [0,1]$. Then, we set $p_{0^{k}1}=q^{k}p$ for each $k\in \mathbb{N}$. We also set $p_{\bar{0}}=0$ if $p > 0$ and $p_{\bar{0}}=1$ if $p=0$. This is forced on us by the requirement that elementary probabilities add to $1$.
+                <div id="theorem-19"><div class="panel panel-info example"> <div class="panel-heading">Example 19 </div><div class="panel-body"> <strong>Toss a coin till a head turns up</strong>. $\Omega=\{1,01,001,0001,\ldots \}\cup\{\bar{0}\}$. Let us write $0^{k}1=0\ldots01$ as a short form for $k$ zeros (tails) followed by $1$ and $\bar{0}$ stands for the sequence of all tails. Let $p\in [0,1]$. Then, we set $p_{0^{k}1}=q^{k}p$ for each $k\in \mathbb{N}$. We also set $p_{\bar{0} }=0$ if $p > 0$ and $p_{\bar{0} }=1$ if $p=0$. This is forced on us by the requirement that elementary probabilities add to $1$.
  </p>
            
  <p class="text-justify">
@@ -207,7 +207,7 @@ Let $A=\{0^{k}1{\; : \;} k\ge n\}$ be the event that at least $n$ tails fall bef
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-20"><div class="panel panel-info example"> <div class="panel-heading">Example 20 </div><div class="panel-body"> <strong>Place $r$ distinguishable balls in $m$ distinguishable urns at random</strong>. We saw this before (the words ``labelled'' and ``distinguishable'' mean the same thing here). The sample space is $\Omega=[m]^{r}=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{r}){\; : \;} 1\le \omega_{i}\le m\}$ and $p_{\underline{\omega}}=m^{-r}$ for every $\underline{\omega}\in \Omega$. Here $\omega_{i}$ indicates the urn number into which the $i^{\mbox{th}}$ ball goes.
+                <div id="theorem-20"><div class="panel panel-info example"> <div class="panel-heading">Example 20 </div><div class="panel-body"> <strong>Place $r$ distinguishable balls in $m$ distinguishable urns at random</strong>. We saw this before (the words ``labelled'' and ``distinguishable'' mean the same thing here). The sample space is $\Omega=[m]^{r}=\{\underline{\omega}=(\omega_{1},\ldots ,\omega_{r}){\; : \;} 1\le \omega_{i}\le m\}$ and $p_{\underline{\omega}}=m^{-r}$ for every $\underline{\omega}\in \Omega$. Here $\omega_{i}$ indicates the urn number into which the $i^{\mbox{th} }$ ball goes.
 </div></div></div>
  </p>
            
@@ -220,12 +220,12 @@ $$
 $$
 We give two proposals for the elementary probabilities.
 <ol>
-<li> Let $p^{\mbox{MB}}_{(\ell_{1},\ldots ,\ell_{m})}=\frac{m!}{\ell_{1}!\ell_{2}!\ldots \ell_{m}!}\frac{1}{m^{r}}$. These are the probabilities that result if we place $r$ labelled balls in $m$ labelled urns, and then erase the labels on the balls.
+<li> Let $p^{\mbox{MB} }_{(\ell_{1},\ldots ,\ell_{m})}=\frac{m!}{\ell_{1}!\ell_{2}!\ldots \ell_{m}!}\frac{1}{m^{r} }$. These are the probabilities that result if we place $r$ labelled balls in $m$ labelled urns, and then erase the labels on the balls.
  </p>
 <p class="text-justify">
           
  </li>
-<li> Let $p^{\mbox{BE}}_{(\ell_{1},\ldots ,\ell_{m})}=\frac{1}{\binom{m+r-1}{r-1}}$ for each $(\ell_{1},\ldots ,\ell_{m})\in \Omega$. Elementary probabilities are chosen so that all distinguishable configurations are equally likely.
+<li> Let $p^{\mbox{BE} }_{(\ell_{1},\ldots ,\ell_{m})}=\frac{1}{\binom{m+r-1}{r-1} }$ for each $(\ell_{1},\ldots ,\ell_{m})\in \Omega$. Elementary probabilities are chosen so that all distinguishable configurations are equally likely.
 </ol>
 That these are legitimate probability spaces depend on two combinatorial facts.
 <p>&nbsp;</p>
@@ -248,7 +248,7 @@ That these are legitimate probability spaces depend on two combinatorial facts.
  <p class="text-justify">
 This leaves open the question of whether there is a natural mechanism of assigning balls to urns so that the probabilities $p^{BE}$ shows up. No such mechanism has been found. But this probability space does occur in the physical world. If $r$ photons (``indistinguishable balls'') are to occupy $m$ energy levels (``urns''), then empirically it has been verified that the correct probability space is the second one!<sup> <a data-toggle="collapse" href="#footnote-2" aria-expanded="false" aria-controls="footnote-2">
                                 2
-                                 </a> </sup><span class="collapse small" id="footnote-2">The probabilities $p^{\mbox{MB}}$ and $p^{\mbox{BE}}$ are called Maxwell-Boltzmann statistics and Bose-Einstein statistics. There is a third kind, called Fermi-Dirac statistics which is obeyed by electrons. For general $m\ge r$,  the sample space is $\Omega_{\mbox{FD}}=\{(\ell_{1},\ldots ,\ell_{m}){\; : \;} \ell_{i}=0 \mbox{ or }1 \mbox{ and }\ell_{1}+\ldots +\ell_{m}=r\}$ with equal probabilities for each element. In words, all distinguishable configurations are equally likely, with the added constraint that at most one electron can occupy each energy level</span> 
+                                 </a> </sup><span class="collapse small" id="footnote-2">The probabilities $p^{\mbox{MB} }$ and $p^{\mbox{BE} }$ are called Maxwell-Boltzmann statistics and Bose-Einstein statistics. There is a third kind, called Fermi-Dirac statistics which is obeyed by electrons. For general $m\ge r$,  the sample space is $\Omega_{\mbox{FD} }=\{(\ell_{1},\ldots ,\ell_{m}){\; : \;} \ell_{i}=0 \mbox{ or }1 \mbox{ and }\ell_{1}+\ldots +\ell_{m}=r\}$ with equal probabilities for each element. In words, all distinguishable configurations are equally likely, with the added constraint that at most one electron can occupy each energy level.</span> 
 </div></div></div>
  </p>
 <p class="text-justify">
@@ -272,7 +272,7 @@ p_{\underline{\omega}}=\frac{1}{N(N-1)\ldots (N-k+1)}  \mbox{ for each }\underli
 As the probabilities are equal for all sample points, we get
 $$\begin{align*}
 \mathbf{P}(A)&= \frac{\binom{k}{\ell}m(m-1)\ldots (m-\ell+1)(N-m)(N-m-1)\ldots (N-m-(k-\ell)+1)}{N(N-1)\ldots (N-k+1)} \\
- &= \frac{1}{\binom{N}{k}}\binom{m}{\ell}\binom{N-m}{k-\ell}.
+ &= \frac{1}{\binom{N}{k} }\binom{m}{\ell}\binom{N-m}{k-\ell}.
 \end{align*}$$
 This expression arises whenever the population is subdivided into two parts and we count the number of samples that fall in one of the sub-populations.
 </div></div></div>
@@ -280,7 +280,7 @@ This expression arises whenever the population is subdivided into two parts and 
            
  <p class="text-justify">
 <p>&nbsp;</p>
-                <div id="theorem-25"><div class="panel panel-info example"> <div class="panel-heading">Example 25 </div><div class="panel-body"><strong>Gibbs measures</strong>. Let $\Omega$ be a finite set and let ${\mathcal H}:\Omega\rightarrow \mathbb{R}$ be a function. Fix $\beta\ge 0$. Define $Z_{\beta}=\sum_{\omega}e^{-\beta {\mathcal H}(\omega)}$ and then set $p_{\omega}=\frac{1}{Z_{\beta}}e^{-\beta {\mathcal H}(\omega)}$. This is clearly a valid assignment of probabilities.
+                <div id="theorem-25"><div class="panel panel-info example"> <div class="panel-heading">Example 25 </div><div class="panel-body"><strong>Gibbs measures</strong>. Let $\Omega$ be a finite set and let ${\mathcal H}:\Omega\rightarrow \mathbb{R}$ be a function. Fix $\beta\ge 0$. Define $Z_{\beta}=\sum_{\omega}e^{-\beta {\mathcal H}(\omega)}$ and then set $p_{\omega}=\frac{1}{Z_{\beta} }e^{-\beta {\mathcal H}(\omega)}$. This is clearly a valid assignment of probabilities.
  </p>
 <p class="text-justify">
           
@@ -312,7 +312,7 @@ A=\{\omega \in \Omega{\; : \;} & \mbox{ the subset of edges in }\omega \\
  <p class="text-justify">
 Finding $\mathbf{P}(A)$ is a very difficult problem. When $n$ is large and $m=2 n$, it is expected that $\mathbf{P}(A)$ converges to a specific number, but proving it is an open problem as of today!<sup> <a data-toggle="collapse" href="#footnote-3" aria-expanded="false" aria-controls="footnote-3">
                                 3
-                                 </a> </sup><span class="collapse small" id="footnote-3">In a very similar problem on a triangular lattice, it was proved by Stanislav Smirnov (2001) for which he won a fields medal. Proof that computing probabilities is not always trivial</span> 
+                                 </a> </sup><span class="collapse small" id="footnote-3">In a very similar problem on a triangular lattice, it was proved by Stanislav Smirnov (2001) for which he won a fields medal. Proof that computing probabilities is not always trivial!</span> 
 </div></div></div>
  </p>
 <p class="text-justify">
@@ -325,7 +325,7 @@ Finding $\mathbf{P}(A)$ is a very difficult problem. When $n$ is large and $m=2 
  <p class="text-justify">
 This appears obvious, but many folklore puzzles and paradoxes in probability are based on the faulty assumption that it is possible to pick a natural number at random. For example, when asked a question like ``What is the probability that a random integer is odd?'', many people answer $1/2$. We want to emphasize that the probability space has to be defined first, and only then can probabilities of events be calculated. Thus, the question does not make sense to us and we do not have to answer it!<sup> <a data-toggle="collapse" href="#footnote-4" aria-expanded="false" aria-controls="footnote-4">
                                 4
-                                 </a> </sup><span class="collapse small" id="footnote-4">For those interested, there is one way to make sense of such questions. It is to consider a sequence of probability spaces $\Omega^{(n)}=\{1,2,\ldots ,n\}$ with elementary probabilities $p^{(n)}_{i}=1/n$ for each $i\in \Omega_{n}$. Then, for a subset $A\subseteq \mathbb{Z}$, we consider $\mathbf{P}_{n}(A\cap \Omega_{n})=\#(A\cap [n])/n$. If these probabilities converge to a limit $x$ as $n\rightarrow \infty$, then we could say that $A$ has asymptotic probability $x$. In this sense, the set of odd numbers does have  asymptotic probability $1/2$, the set of numbers divisible by $7$ has asymptotic probability $1/7$ and the set of prime numbers has asymptotic probability $0$. However, this notion of asymptotic probability has many shortcomings. Many subsets of natural numbers will not have an asymptotic probability, and even sets which do have asymptotic probability fail to satisfy basic rules of probability that we shall see later. Hence, we shall keep such examples out of our system</span> 
+                                 </a> </sup><span class="collapse small" id="footnote-4">For those interested, there is one way to make sense of such questions. It is to consider a sequence of probability spaces $\Omega^{(n)}=\{1,2,\ldots ,n\}$ with elementary probabilities $p^{(n)}_{i}=1/n$ for each $i\in \Omega_{n}$. Then, for a subset $A\subseteq \mathbb{Z}$, we consider $\mathbf{P}_{n}(A\cap \Omega_{n})=\#(A\cap [n])/n$. If these probabilities converge to a limit $x$ as $n\rightarrow \infty$, then we could say that $A$ has asymptotic probability $x$. In this sense, the set of odd numbers does have  asymptotic probability $1/2$, the set of numbers divisible by $7$ has asymptotic probability $1/7$ and the set of prime numbers has asymptotic probability $0$. However, this notion of asymptotic probability has many shortcomings. Many subsets of natural numbers will not have an asymptotic probability, and even sets which do have asymptotic probability fail to satisfy basic rules of probability that we shall see later. Hence, we shall keep such examples out of our system.</span> 
 </div></div></div>
  </p>
 <p class="text-justify">

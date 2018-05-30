@@ -174,7 +174,7 @@ $$\begin{align*}
 \mbox{Type-I error:} & \; H_{0} \mbox{ is true but our rule concludes }H_{1}. \\
 \mbox{Type-II error:} & \; H_{1} \mbox{ is true but our rule concludes }H_{0}.
 \end{align*}$$
-The probability of type-I error is called the <em> significance level</em> of the test and usually denote by $\alpha$. That is, $\alpha=\mathbf{P}_{H_{0}}\{\mbox{the test accepts }H_{1}\}$ where we write $\mathbf{P}_{H_{0}}$ to mean that the probability is calculated under the assumption that $H_{0}$ is true. Similarly one define the <em> power</em> of the test as $\beta=\mathbf{P}_{H_{1}}\{\mbox{the test accepts }H_{1}\}$. Note that $\beta$ is the probability of not making type-II error, and hence we would like it to be close to $1$. Given two tests with the same level of significance, the one with higher power is better. Ideally we would like both to be small, but that is not always achievable.
+The probability of type-I error is called the <em> significance level</em> of the test and usually denote by $\alpha$. That is, $\alpha=\mathbf{P}_{H_{0} }\{\mbox{the test accepts }H_{1}\}$ where we write $\mathbf{P}_{H_{0} }$ to mean that the probability is calculated under the assumption that $H_{0}$ is true. Similarly one define the <em> power</em> of the test as $\beta=\mathbf{P}_{H_{1} }\{\mbox{the test accepts }H_{1}\}$. Note that $\beta$ is the probability of not making type-II error, and hence we would like it to be close to $1$. Given two tests with the same level of significance, the one with higher power is better. Ideally we would like both to be small, but that is not always achievable.
  </p>
 <p class="text-justify">
           
@@ -188,17 +188,17 @@ To use analogy with law, when a person is convicted, there are two hypotheses, o
           
  In our example of card-guessing, assuming random guessing, we have calculated the distribution of $X$ long ago. Let $p_{k}=\mathbf{P}\{X=k\}$ for $k=0,1,\ldots ,52$.  Now consider a test of the form ``Accept $H_{1}$ if $X\ge k_{0}$ and reject otherwise''. Its level of significance is
 $$
-\mathbf{P}_{H_{0}}\{\mbox{accept }H_{1}\} = \mathbf{P}_{H_{0}}\{X\ge k_{0}\} = \sum_{i=k_{0}}^{52}p_{i}.
+\mathbf{P}_{H_{0} }\{\mbox{accept }H_{1}\} = \mathbf{P}_{H_{0} }\{X\ge k_{0}\} = \sum_{i=k_{0} }^{52}p_{i}.
 $$
 For $k_{0}=0$, the right side is $1$ while for $k_{0}=52$ it is $1/52!$ which is tiny. As we increase $k_{0}$ there is a first time where it becomes less than or equal to $\alpha$. We take that $k_{0}$ to be the threshold for cut-off.
  </p>
            
  <p class="text-justify">
-In the same example of card-guessing, let $\alpha=0.01$. Let us also assume that Poisson approximation holds. This means that $p_{j}\approx e^{-1}/j! $ for each $j$. Then, we are looking for the smallest $k_{0}$ such that $\sum_{j=k_{0}}^{\infty}e^{-1}/j! \le 0.01$. For $k_{0}=4$, this sum is about $0.019$ while for $k_{0}=5$ this sum is $0.004$. Hence, we take $k_{0}=5$. In other words, accept $H_{1}$ if $X\ge 5$ and reject if $X < 5$. If we took $\alpha=0.0001$ we would get $k_{0}=7$ and so on.
+In the same example of card-guessing, let $\alpha=0.01$. Let us also assume that Poisson approximation holds. This means that $p_{j}\approx e^{-1}/j! $ for each $j$. Then, we are looking for the smallest $k_{0}$ such that $\sum_{j=k_{0} }^{\infty}e^{-1}/j! \le 0.01$. For $k_{0}=4$, this sum is about $0.019$ while for $k_{0}=5$ this sum is $0.004$. Hence, we take $k_{0}=5$. In other words, accept $H_{1}$ if $X\ge 5$ and reject if $X < 5$. If we took $\alpha=0.0001$ we would get $k_{0}=7$ and so on.
  </p>
 <p class="text-justify">
           
- <strong>Strength of evidenc :</strong> Rather than merely say that we accepted $H_{1}$ or rejected it would be better to say how strong the evidence is in favour of the alternative hypothesis. This is captured by the <em> $p$-value</em>, a central concept of decision making. It is defined as <em> the probability that data drawn from the null hypothesis would show closer agreement with the alternative hypothesis than the data we have at hand</em> (read it five times!).
+ <strong>Strength of evidence :</strong> Rather than merely say that we accepted $H_{1}$ or rejected it would be better to say how strong the evidence is in favour of the alternative hypothesis. This is captured by the <em> $p$-value</em>, a central concept of decision making. It is defined as <em> the probability that data drawn from the null hypothesis would show closer agreement with the alternative hypothesis than the data we have at hand</em> (read it five times!).
  </p>
            
  <p class="text-justify">
@@ -206,7 +206,7 @@ Before we compute it in our example, let us return to the analogy with law. Supp
  </p>
 <p class="text-justify">
           
- Now we return to our example. Suppose the observed value is $X_{\mbox{obs}}=4$. Then the $p$-value is $\mathbf{P}\{X\ge 4\}=p_{4}+\ldots +p_{52}\approx 0.019$. If the observed value was $X_{\mbox{obs}}=6$, then the $p$-value would be $p_{6}+\ldots +p_{52}\approx 0.00059$. Note that the computation of $p$-value does not depend on the level of significance. It just depends on the given hypotheses and the chosen test.
+ Now we return to our example. Suppose the observed value is $X_{\mbox{obs} }=4$. Then the $p$-value is $\mathbf{P}\{X\ge 4\}=p_{4}+\ldots +p_{52}\approx 0.019$. If the observed value was $X_{\mbox{obs} }=6$, then the $p$-value would be $p_{6}+\ldots +p_{52}\approx 0.00059$. Note that the computation of $p$-value does not depend on the level of significance. It just depends on the given hypotheses and the chosen test.
  </p>
            
 

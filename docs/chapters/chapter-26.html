@@ -147,17 +147,17 @@ Let $X_{k}\sim \mbox{Ber}(p)$ be independent random variables. Central limit the
 <p>&nbsp;</p>
                 <div id="theorem-142"><div class="panel panel-primary theorem"> <div class="panel-heading">Theorem 142 </div><div class="panel-body"> Let $\lambda > 0$ be fixed and let $X_{n,1},\ldots ,X_{n,n}$ be i.i.d. $\mbox{Ber}(\lambda/n)$. Let $S_{n}=X_{n,1}+\ldots +X_{n,n}$. Then, for every $k\ge 0$
 $$
-\mathbf{P}\{S_{n}=k\}\rightarrow e^{-\lambda}\frac{\lambda^{k}}{k!}.
+\mathbf{P}\{S_{n}=k\}\rightarrow e^{-\lambda}\frac{\lambda^{k} }{k!}.
 $$
 </div></div></div>
 <div class="proof"> Fix $k$ and observe that
 $$\begin{align*}
 \mathbf{P}\{S_{n}=k\} &= \binom{n}{k}\left(\frac{\lambda}{n}\right)^{k}\left(1-\frac{\lambda}{n}\right)^{n-k} \\
- &= \frac{n(n-1)\ldots (n-k+1)}{k!}\frac{\lambda^{k}}{n^{k}}\left(1-\frac{\lambda}{n}\right)^{n-k}.
+ &= \frac{n(n-1)\ldots (n-k+1)}{k!}\frac{\lambda^{k} }{n^{k} }\left(1-\frac{\lambda}{n}\right)^{n-k}.
  \end{align*}$$
-Note that $\frac{n(n-1)\ldots(n-k+1)}{n^{k}}\rightarrow 1$ as $n\rightarrow \infty$ (since $k$ is fixed). Also, $(1-\frac{\lambda}{n})^{n-k}\rightarrow e^{-\lambda}$ (if not clear, note that $(1-\frac{\lambda}{n})^{n}\rightarrow e^{-\lambda}$ and $(1-\frac{\lambda}{n})^{-k}\rightarrow 1$). Hence, the right hand side above converges to $e^{-\lambda}\frac{\lambda^{k}}{k!}$ which is what we wanted to show.
+Note that $\frac{n(n-1)\ldots(n-k+1)}{n^{k} }\rightarrow 1$ as $n\rightarrow \infty$ (since $k$ is fixed). Also, $(1-\frac{\lambda}{n})^{n-k}\rightarrow e^{-\lambda}$ (if not clear, note that $(1-\frac{\lambda}{n})^{n}\rightarrow e^{-\lambda}$ and $(1-\frac{\lambda}{n})^{-k}\rightarrow 1$). Hence, the right hand side above converges to $e^{-\lambda}\frac{\lambda^{k} }{k!}$ which is what we wanted to show.
 </div>
-What is the meaning of this? Bernoulli random variables may be thought of as indicators of events, i.e., think of $X_{n,1}$ as ${\mathbf 1}_{A_{1}}$ etc. The theorem considers $n$ events which are independent and each of them is ``rare'' (since the probability of it occurring is $\lambda/n$ which becomes small as $n$ increases). The number of events increases but the chance of each events decreases in such a way that the expected number of events that occur stays constant. Then, the total number of events that actually occur has an approximately Poisson distribution.
+What is the meaning of this? Bernoulli random variables may be thought of as indicators of events, i.e., think of $X_{n,1}$ as ${\mathbf 1}_{A_{1} }$ etc. The theorem considers $n$ events which are independent and each of them is ``rare'' (since the probability of it occurring is $\lambda/n$ which becomes small as $n$ increases). The number of events increases but the chance of each events decreases in such a way that the expected number of events that occur stays constant. Then, the total number of events that actually occur has an approximately Poisson distribution.
 <p>&nbsp;</p>
                 <div id="theorem-143"><div class="panel panel-info example"> <div class="panel-heading">Example 143 </div><div class="panel-body"> (A physical example). A large amount of custard is made in the hostel mess to serve $100$ students. The cook adds $300$ raisins and mixes the custard so that on an average they get $3$ raisins per student. But the number of raisins that a given student gets is random and the above theorem says that it has approximately $\mbox{Pois}(3)$ distribution. How so? Let $X_{k}$ be the indicator of the event that the $k$th raisin ends up in your cup. Since there are $100$ cups, the chance of this happening is $1/100$. The number of raisins in your cup is precisely $X_{1}+X_{2}+\ldots +X_{300}$. Appy the theorem (take $n=100$ and $\lambda=3$).
 </div></div></div>

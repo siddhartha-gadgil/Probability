@@ -152,7 +152,7 @@
  </p>
            
  <p class="text-justify">
-<strong>The settin :</strong> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$ random variables. We consider four situations.
+<strong>The setting :</strong> Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$ random variables. We consider four situations.
 <ol>
 <li> Confidence interval for $\mu$ when ${\sigma}^{2}$ is known.
 </li>
@@ -171,7 +171,7 @@
  <p class="text-justify">
 \subsection{Estimating $\mu$ when ${\sigma}^{2}$ is known} We look for a confidence interval of the form $I_{n}=[\bar{X}_{n}-a,\bar{X}_{n}+a]$. Then,
 $$
-\mathbf{P}\left(I_{n}\ni \mu\right) = \mathbf{P}\left(-a\le \bar{X}_{n}-\mu\le a\right) =\mathbf{P}\left(-\frac{a\sqrt{n}}{{\sigma}}\le \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}} \le \frac{a\sqrt{n}}{{\sigma}}\right)
+\mathbf{P}\left(I_{n}\ni \mu\right) = \mathbf{P}\left(-a\le \bar{X}_{n}-\mu\le a\right) =\mathbf{P}\left(-\frac{a\sqrt{n} }{{\sigma}}\le \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}} \le \frac{a\sqrt{n} }{{\sigma}}\right)
 $$
 Now we use two facts about normal distribution that we have seen before.
 <ol>
@@ -183,7 +183,7 @@ Consequently, $\bar{X}_{n}\sim N(0,{\sigma}^{2}/n)$ and $\frac{\sqrt{n}(\bar{X}_
 Therefore,
 $$
  \mathbf{P}\left(I_{n}\ni \mu\right)
- = \mathbf{P}(-\frac{a\sqrt{n}}{{\sigma}}\le Z\le -\frac{a\sqrt{n}}{{\sigma}})
+ = \mathbf{P}(-\frac{a\sqrt{n} }{{\sigma}}\le Z\le -\frac{a\sqrt{n} }{{\sigma}})
 $$
  where $Z\sim N(0,1)$. Fix any $0 < \alpha < 1$ and denote by $z_{\alpha}$ the number such that $\mathbf{P}(Z > z_{\alpha})=\alpha$ (in other words, $z_{\alpha}$ is the $(1-\alpha)$-quantile of the standard normal distribution). For example, from normal tables we find that $z_{0.05}\approx1.65$ and $z_{0.005}\approx 2.58$ etc.
  </p>
@@ -191,7 +191,7 @@ $$
           
  If we set $a=z_{\alpha/2}{\sigma}/\sqrt{n}$, we get
 $$
-\mathbf{P}\left(\left[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2}\right]\ni \mu\right)=1-\alpha.
+\mathbf{P}\left(\left[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2}\right]\ni \mu\right)=1-\alpha.
 $$
 This is our confidence interval.
  </p>
@@ -205,9 +205,9 @@ Since $\mu$ is known, we use $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ to
 <strong>Solution:</strong> For $t > 0$ we have
 $$\begin{align*}
 \mathbf{P}\{Z_{1}^{2}\le t\} &= \mathbf{P}\{-\sqrt{t}\le Z_{1}\le \sqrt{t}\}
-= 2\int\limits_{0}^{\sqrt{t}}\frac{1}{\sqrt{2\pi}}e^{-u^{2}/2}du = \frac{1}{\sqrt{2\pi}}\int\limits_{0}^{t}e^{-s/2}s^{-1/2}ds.
+= 2\int\limits_{0}^{\sqrt{t} }\frac{1}{\sqrt{2\pi} }e^{-u^{2}/2}du = \frac{1}{\sqrt{2\pi} }\int\limits_{0}^{t}e^{-s/2}s^{-1/2}ds.
 \end{align*}$$
-Differentiate w.r.t $t$ to see that the density of $Z_{1}^{2}$ is $h(t)=\frac{1}{\sqrt{\pi}}e^{-t/2}t^{-1/2}\sqrt{(1/2)}$, which is just the $\mbox{Gamma}(\frac{1}{2},\frac{1}{2})$ density.
+Differentiate w.r.t $t$ to see that the density of $Z_{1}^{2}$ is $h(t)=\frac{1}{\sqrt{\pi} }e^{-t/2}t^{-1/2}\sqrt{(1/2)}$, which is just the $\mbox{Gamma}(\frac{1}{2},\frac{1}{2})$ density.
  </p>
 <p class="text-justify">
           
@@ -225,24 +225,24 @@ Differentiate w.r.t $t$ to see that the density of $Z_{1}^{2}$ is $h(t)=\frac{1}
  <p class="text-justify">
 When $X_{i}$ are i.i.d. $N(\mu,{\sigma}^{2})$, we know that $(X_{i}-\mu)/{\sigma}$ are i.i.d. $N(0,1)$. Hence, by the above fact, we see that
 $$
- \frac{nW_{n}}{{\sigma}^{2}}=\sum_{i=1}^{n}\left(\frac{X_{i}-\mu}{{\sigma}}\right)^{2}
+ \frac{nW_{n} }{{\sigma}^{2} }=\sum_{i=1}^{n}\left(\frac{X_{i}-\mu}{{\sigma}}\right)^{2}
 $$
 has chi-squared distribution with $n$ degrees of freedom. Hence
 $$\begin{align*}
-\mathbf{P}\left\{   \frac{nW_{n}}{\chi_{n}^{2}\left(\frac{\alpha}{2}\right)} \le {\sigma}^{2}\le \frac{nW_{n}}{\chi_{n}^{2}\left(1-\frac{\alpha}{2}\right)}\right\}&=\mathbf{P}\left\{ \chi_{n}^{2}\left(1-\frac{\alpha}{2}\right) \le \frac{nW_{n}}{{\sigma}^{2}} \le \chi_{n}^{2}\left(\frac{\alpha}{2}\right)\right\}=1-\alpha.
+\mathbf{P}\left\{   \frac{nW_{n} }{\chi_{n}^{2}\left(\frac{\alpha}{2}\right)} \le {\sigma}^{2}\le \frac{nW_{n} }{\chi_{n}^{2}\left(1-\frac{\alpha}{2}\right)}\right\}&=\mathbf{P}\left\{ \chi_{n}^{2}\left(1-\frac{\alpha}{2}\right) \le \frac{nW_{n} }{{\sigma}^{2} } \le \chi_{n}^{2}\left(\frac{\alpha}{2}\right)\right\}=1-\alpha.
 \end{align*}$$
- Thus, $\left[\frac{ns_{n}^{2}}{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)},\frac{ns_{n}^{2}}{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right]$ is a $(1-\alpha)$-confidence interval for ${\sigma}^{2}$.
+ Thus, $\left[\frac{ns_{n}^{2} }{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)},\frac{ns_{n}^{2} }{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right]$ is a $(1-\alpha)$-confidence interval for ${\sigma}^{2}$.
  </p>
 <p class="text-justify">
           
- <strong>An important resul :</strong> Before going to the next two confidence interval problems, let us try to understand the two examples already covered. In both cases, we came up with a random variable ($\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ and $W_{n}/{\sigma}^{2}$, respectively) which involved the data and the unknown parameter  whose distributions we knew (standard normal and $\chi^{2}_{n}$, respectively) and these distributions do not depend on any parameters. This is generally the key step in any confidence interval problem. For the next two problems, we cannot use the same two random variables as above as they depend on the other unknown parameter too (i.e.,  $\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ uses ${\sigma}$ which will be unknown and $W_{n}/{\sigma}^{2}$ uses $\mu$ which will be unknown). Hence, we need a new result that we state without proof.
+ <strong>An important result :</strong> Before going to the next two confidence interval problems, let us try to understand the two examples already covered. In both cases, we came up with a random variable ($\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ and $W_{n}/{\sigma}^{2}$, respectively) which involved the data and the unknown parameter  whose distributions we knew (standard normal and $\chi^{2}_{n}$, respectively) and these distributions do not depend on any parameters. This is generally the key step in any confidence interval problem. For the next two problems, we cannot use the same two random variables as above as they depend on the other unknown parameter too (i.e.,  $\sqrt{n}(\bar{X}_{n}-\mu)/{\sigma}$ uses ${\sigma}$ which will be unknown and $W_{n}/{\sigma}^{2}$ uses $\mu$ which will be unknown). Hence, we need a new result that we state without proof.
  </p>
            
  <p class="text-justify">
 <p>&nbsp;</p>
                 <div id="theorem-169"><div class="panel panel-primary theorem"> <div class="panel-heading">Theorem 169 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(\mu,{\sigma}^{2})$ random variables. Let $\bar{Z}_{n}$ and $s_{n}^{2}$ be the sample mean and the sample variance, respectively. Then,
 $$
-\bar{Z}_{n}\sim N(\mu,\frac{{\sigma}^{2}}{n}), \;\;  \frac{(n-1)s_{n}^{2}}{{\sigma}^{2}}\sim \chi^{2}_{n-1},
+\bar{Z}_{n}\sim N(\mu,\frac{{\sigma}^{2} }{n}), \;\;  \frac{(n-1)s_{n}^{2} }{{\sigma}^{2} }\sim \chi^{2}_{n-1},
 $$
 and the two are independent.
 </div></div></div>
@@ -251,12 +251,12 @@ This is not too hard to prove (a muscle-flexing exercise in change of variable f
 <p class="text-justify">
           
  \subsection{Estimating ${\sigma}^{2}$ when $\mu$ is unknown}
-The estimate $s_{n}^{2}$ must be used as $W_{n}$ depends on $\mu$ which is unknown. Theorem {thm:indepofsamplemeanandvar} tells us that $\frac{(n-1)s_{n}^{2}}{{\sigma}^{2}}\sim \chi^{2}_{n-1}$. Hence, by the same logic as before we get
+The estimate $s_{n}^{2}$ must be used as $W_{n}$ depends on $\mu$ which is unknown. Theorem {thm:indepofsamplemeanandvar} tells us that $\frac{(n-1)s_{n}^{2} }{{\sigma}^{2} }\sim \chi^{2}_{n-1}$. Hence, by the same logic as before we get
 $$\begin{align*}
-\mathbf{P}\left\{   \frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)} \le {\sigma}^{2}\le \frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right\}&=\mathbf{P}\left\{ \chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right) \le \frac{(n-1)s_{n}^{2}}{{\sigma}^{2}} \le \chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)\right\} \\
+\mathbf{P}\left\{   \frac{(n-1)s_{n}^{2} }{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)} \le {\sigma}^{2}\le \frac{(n-1)s_{n}^{2} }{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right\}&=\mathbf{P}\left\{ \chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right) \le \frac{(n-1)s_{n}^{2} }{{\sigma}^{2} } \le \chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)\right\} \\
 &=1-\alpha.
 \end{align*}$$
- Thus, $\left[\frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)} ,\frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right]$ is a $(1-\alpha)$-confidence interval for ${\sigma}^{2}$.
+ Thus, $\left[\frac{(n-1)s_{n}^{2} }{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)} ,\frac{(n-1)s_{n}^{2} }{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right]$ is a $(1-\alpha)$-confidence interval for ${\sigma}^{2}$.
  </p>
            
  <p class="text-justify">
@@ -264,7 +264,7 @@ If $\mu$ is known, we could use the earlier confidence interval using $W_{n}$, o
  </p>
 <p class="text-justify">
           
- \subsection{Estimating $\mu$ when ${\sigma}^{2}$ is unknown} The earlier confidence interval We look for a confidence interval $[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n}}z_{\alpha/2}]$ cannot be used as we do not know the value of ${\sigma}$.
+ \subsection{Estimating $\mu$ when ${\sigma}^{2}$ is unknown} The earlier confidence interval We look for a confidence interval $[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2}]$ cannot be used as we do not know the value of ${\sigma}$.
  </p>
            
  <p class="text-justify">
@@ -277,9 +277,9 @@ Is it true if ${\sigma}$ is replaced by $s_{n}$? Actually no, but we have a diff
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-170"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 170 </div><div class="panel-body"> Let $Z\sim N(0,1)$ and $S^{2}\sim \chi^{2}_{n}$ be independent. Then, the density of $\frac{Z}{S/\sqrt{n}}$ is given by
+                <div id="theorem-170"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 170 </div><div class="panel-body"> Let $Z\sim N(0,1)$ and $S^{2}\sim \chi^{2}_{n}$ be independent. Then, the density of $\frac{Z}{S/\sqrt{n} }$ is given by
 $$
-\frac{1}{\sqrt{n-1}\mbox{Beta}(\frac{1}{2},\frac{n-1}{2})}\frac{1}{\left(1+\frac{t^{2}}{n-1}\right)^{\frac{n}{2}}}
+\frac{1}{\sqrt{n-1}\mbox{Beta}(\frac{1}{2},\frac{n-1}{2})}\frac{1}{\left(1+\frac{t^{2} }{n-1}\right)^{\frac{n}{2} }}
 $$
 for all $t\in \mathbb{R}$. This is known as <em> Student's $t$-distribution</em>.
 </div></div></div>
@@ -287,7 +287,7 @@ The exact density of  $t$-distribution is not important to remember, so the abov
  </p>
            
  <p class="text-justify">
-How does this help us? From Theorem <a href="#theorem-169">169</a> we know that $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}}\sim N(0,1)$, $\frac{(n-1)s_{n}^{2}}{{\sigma}^{2}}\sim \chi^{2}_{n-1}$, and the two are independent. Take these random variables in the above exercise to conclude that $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n}}$ has $t_{n-1}$ distribution.
+How does this help us? From Theorem <a href="chapter-31.html#theorem-j">169</a> we know that $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}}\sim N(0,1)$, $\frac{(n-1)s_{n}^{2} }{{\sigma}^{2} }\sim \chi^{2}_{n-1}$, and the two are independent. Take these random variables in the above exercise to conclude that $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n} }$ has $t_{n-1}$ distribution.
  </p>
 <p class="text-justify">
           
@@ -297,20 +297,20 @@ How does this help us? From Theorem <a href="#theorem-169">169</a> we know that 
  <p class="text-justify">
 Returning to the problem of the confidence interval, from the fact stated above, we see that (use $T_{n}$ to indicate a random variable having $t$-distribution with $n$ degrees of freedom).
 $$\begin{align*}
-& \mathbf{P}\left(\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right)\le \mu \le\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right) \right) \\
+& \mathbf{P}\left(\bar{X}_{n}-\frac{s_{n} }{\sqrt{n} }t_{n-1}\left(\frac{\alpha}{2}\right)\le \mu \le\bar{X}_{n}+\frac{s_{n} }{\sqrt{n} }t_{n-1}\left(\frac{\alpha}{2}\right) \right) \\
 &=
-\mathbf{P}\left(-t_{n-1}\left(\frac{\alpha}{2}\right)\le \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n}}\le t_{n-1}\left(\frac{\alpha}{2}\right)\right) \\
+\mathbf{P}\left(-t_{n-1}\left(\frac{\alpha}{2}\right)\le \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n} }\le t_{n-1}\left(\frac{\alpha}{2}\right)\right) \\
 &= \mathbf{P}\left(-t_{n-1}\left(\frac{\alpha}{2}\right)\le T_{n-1}\le t_{n-1}\left(\frac{\alpha}{2}\right)\right) \\
 &= 1-\alpha.
 \end{align*}$$
-Hence, our $(1-\alpha)$-confidence interval is $\left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right),\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}t_{n-1}\left(\frac{\alpha}{2}\right)\right]$.
+Hence, our $(1-\alpha)$-confidence interval is $\left[\bar{X}_{n}-\frac{s_{n} }{\sqrt{n} }t_{n-1}\left(\frac{\alpha}{2}\right),\bar{X}_{n}+\frac{s_{n} }{\sqrt{n} }t_{n-1}\left(\frac{\alpha}{2}\right)\right]$.
  </p>
 <p class="text-justify">
           
  <p>&nbsp;</p>
                 <div id="theorem-171"><div class="panel panel-success remark"> <div class="panel-heading">Remark 171 </div><div class="panel-body"> We remarked earlier that as $n\rightarrow \infty$, the $t_{n-1}$ density approaches the standard normal density. Hence, $t_{n-1}(\alpha)$ approaches $z_{\alpha}$ for any $\alpha$ (this can be seen by looking at the $t$-table for large degree of freedom). Therefore, when $n$ is large, we may as well use
 $$
-\left[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alpha/2},\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alpha/2}\right].
+\left[\bar{X}_{n}-\frac{s_{n} }{\sqrt{n} }z_{\alpha/2},\bar{X}_{n}+\frac{s_{n} }{\sqrt{n} }z_{\alpha/2}\right].
 $$
 Strictly speaking the level of confidence is smaller than for the one with $t_{n-1}(\alpha/2)$. However for $n$ large the level of confidence is quite close to $1-\alpha$.
 </div></div></div>
