@@ -33,7 +33,7 @@ object FairCoin {
     val coinDiv: Node =
       <div class="panel panel-primary">
       <div class="panel-heading">Is the coin fair?</div>
-      <div class="panel-body bg-success">
+      <div class="panel-body bg-info">
         <p>Try to figure out whether the coin is fair by tossing it several times.</p>{pV.map
         {(p) => <button class="btn btn-primary" onclick={() =>
         tossesV.update(_ :+ (rnd.nextDouble() < p))}>Toss the coin</button>}}
