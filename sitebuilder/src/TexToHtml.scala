@@ -545,6 +545,20 @@ object TeXToHtml {
         recReplaceParag(rest, newHead)
       }
       .getOrElse(head + txt)
+
+  def recReplaceEm(txt: String,
+                      head: String = ""
+                     ): String =
+    """\{\\em """.r
+      .findFirstMatchIn(txt)
+      .map { (m) =>
+        println("found m")
+        val (header, rest) = inBraces(m.after.toString, "")
+        val newHead =
+          head + m.before + s"<em>$header</em>"
+        recReplaceEm(rest, newHead)
+      }
+      .getOrElse(head + txt)
 }
 
 class TeXToHtml(header: String, text: String) {
@@ -582,7 +596,7 @@ class TeXToHtml(header: String, text: String) {
   lazy val baseReplaced: String =
     replaceEnds(
       replaceTiny(
-        replaceEm(recReplacePara(replaceParag(replaceItems(defReplaced))))))
+        recReplaceEm(recReplacePara(replaceParag(replaceItems(defReplaced))))))
 
 
   lazy val (begReplaced: String, labels: Map[String, Int]) = rplBegins(baseReplaced)

@@ -157,7 +157,7 @@ In such questions, there is an unknown parameter $\mu$ (there could be more than
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-155"><div class="panel panel-info example"> <div class="panel-heading">Example 155 </div><div class="panel-body">Let $X_{1},\ldots ,X_{n}$ be i.i.d. random variables with Exponential density $f_{\mu}(x)=\frac{1}{\mu}e^{-x/\mu}$ (fro $x > 0$) where the value of $\mu > 0$ is unknown. How to  <em> estimate</em> it using the data $X=(X_{1},\ldots ,X_{n})$?
+                <div id="theorem-155"><div class="panel panel-info example"> <div class="panel-heading">Example 155 </div><div class="panel-body">Let $X_{1},\ldots ,X_{n}$ be i.i.d. random variables with Exponential density $f_{\mu}(x)=\frac{1}{\mu}e^{-x/\mu}$ (fro $x > 0$) where the value of $\mu > 0$ is unknown. How to  <em>estimate</em> it using the data $X=(X_{1},\ldots ,X_{n})$?
  </p>
            
  <p class="text-justify">
@@ -165,11 +165,11 @@ This is the framework in which we would study the second example above, namely t
  </p>
 <p class="text-justify">
           
- <strong>Method of moments :</strong> We observe that $\mu=\mathbf{E}_{\mu}[X_{1}]$, the mean of the distribution (also called <em> population mean</em>). Hence it seems reasonable to take the sample mean $\bar{X}_{n}$ as an estimate. On second thought, we realize that $\mathbf{E}_{\mu}[X_{1}^{2}]=2\mu^{2}$ and hence $\mu=\sqrt{\frac{1}{2}\mathbf{E}_{\mu}[X_{1}^{2}]}$. Therefore it also seems reasonable to take the corresponding sample quantity, $T_{n}:=\sqrt{\frac{1}{2n}(X_{1}^{2}+\ldots +X_{n}^{2})}$ as an estimate for $\mu$. One can go further and write $\mu$ in various ways as $\mu=\sqrt{\mbox{Var}_{\mu}(X_{1})}$, $\mu=\sqrt[3]{\frac{1}{6}\mathbf{E}_{\mu}[X_{1}^{3}]}$ etc. Each such expression motivates an estimate, just by substituting sample moments for population moments.
+ <strong>Method of moments :</strong> We observe that $\mu=\mathbf{E}_{\mu}[X_{1}]$, the mean of the distribution (also called <em>population mean</em>). Hence it seems reasonable to take the sample mean $\bar{X}_{n}$ as an estimate. On second thought, we realize that $\mathbf{E}_{\mu}[X_{1}^{2}]=2\mu^{2}$ and hence $\mu=\sqrt{\frac{1}{2}\mathbf{E}_{\mu}[X_{1}^{2}]}$. Therefore it also seems reasonable to take the corresponding sample quantity, $T_{n}:=\sqrt{\frac{1}{2n}(X_{1}^{2}+\ldots +X_{n}^{2})}$ as an estimate for $\mu$. One can go further and write $\mu$ in various ways as $\mu=\sqrt{\mbox{Var}_{\mu}(X_{1})}$, $\mu=\sqrt[3]{\frac{1}{6}\mathbf{E}_{\mu}[X_{1}^{3}]}$ etc. Each such expression motivates an estimate, just by substituting sample moments for population moments.
  </p>
            
  <p class="text-justify">
-This is called estimating by the <em> method of moments</em> because we are equating the sample moments to population moments to obtain the estimate.
+This is called estimating by the <em>method of moments</em> because we are equating the sample moments to population moments to obtain the estimate.
  </p>
 <p class="text-justify">
           
@@ -185,7 +185,7 @@ Two points: This is the joint density of $X_{1},\ldots ,X_{n}$, evaluated at the
  </p>
 <p class="text-justify">
           
- When $\mu$ is the actual value, then $L_{X}(\mu)$ is the ``likelihood'' of seeing the data that we have actually observed. The <em> maximum likelihood estimate</em> is that value of $\mu$ that maximizes the likelihood function. In our case, by differentiating and setting equal to zero we get,
+ When $\mu$ is the actual value, then $L_{X}(\mu)$ is the ``likelihood'' of seeing the data that we have actually observed. The <em>maximum likelihood estimate</em> is that value of $\mu$ that maximizes the likelihood function. In our case, by differentiating and setting equal to zero we get,
 $$
 0 =\frac{d}{d\mu}L_{X}(\mu) = -n\mu^{-n-1}e^{-\frac{1}{\mu}\sum_{i=1}^{n}X_{i} }+\mu^{-n}\left(\frac{1}{\mu^{2} }\sum_{i=1}^{n}X_{i}\right)e^{-\frac{1}{\mu}\sum_{i=1}^{n}X_{i} }
 $$
@@ -196,11 +196,11 @@ which is satisfied when $\mu=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\bar{X}_{n}$. To dis
  <p class="text-justify">
 Let us see the same methods at work in two more examples.
 <p>&nbsp;</p>
-                <div id="theorem-156"><div class="panel panel-info example"> <div class="panel-heading">Example 156 </div><div class="panel-body"> Let $X_{1},\ldots ,X_{n}$ be i.i.d. Ber($p$) random variables where the value of $p$ is unknown. How to  <em> estimate</em> it using the data $X=(X_{1},\ldots ,X_{n})$?
+                <div id="theorem-156"><div class="panel panel-info example"> <div class="panel-heading">Example 156 </div><div class="panel-body"> Let $X_{1},\ldots ,X_{n}$ be i.i.d. Ber($p$) random variables where the value of $p$ is unknown. How to  <em>estimate</em> it using the data $X=(X_{1},\ldots ,X_{n})$?
  </p>
 <p class="text-justify">
           
- <strong>Method of moments :</strong> We observe that $p=\mathbf{E}_{p}[X_{1}]$, the mean of the distribution (also called <em> population mean</em>). Hence, a method of moments estimator would be   the sample mean $\bar{X}_{n}$. In this case, $\mathbf{E}_{p}[X_{1}^{2}]=p$ again but we don't get any new estimate because $X_{k}^{2}=X_{k}$ (as $X_{k}$ is $0$ or $1$)
+ <strong>Method of moments :</strong> We observe that $p=\mathbf{E}_{p}[X_{1}]$, the mean of the distribution (also called <em>population mean</em>). Hence, a method of moments estimator would be   the sample mean $\bar{X}_{n}$. In this case, $\mathbf{E}_{p}[X_{1}^{2}]=p$ again but we don't get any new estimate because $X_{k}^{2}=X_{k}$ (as $X_{k}$ is $0$ or $1$)
  </p>
            
  <p class="text-justify">
@@ -208,7 +208,7 @@ Let us see the same methods at work in two more examples.
 $$
 L_{X}(p) := p^{\sum_{i=1}^{n}x_{i} }(1-p)^{n-\sum_{i=1}^{n}x_{i} } = p^{n\bar{X}_{n} }(1-p)^{n(1-\bar{X}_{n})}.
 $$
-We need to find the value of $p$ that maximizes $L_{X}(p)$. Here is a trick that almost always simplifies calculations (try it in the previous example too!). Instead of maximizing $L_{X}(p)$, maximize $\ell_{X}(p)=\log L_{X}(p)$ (called the <em> log-likelihood function</em>). Since ``$\log$'' is an increasing function, the maximizer will remain the same. In our case,
+We need to find the value of $p$ that maximizes $L_{X}(p)$. Here is a trick that almost always simplifies calculations (try it in the previous example too!). Instead of maximizing $L_{X}(p)$, maximize $\ell_{X}(p)=\log L_{X}(p)$ (called the <em>log-likelihood function</em>). Since ``$\log$'' is an increasing function, the maximizer will remain the same. In our case,
 $$
 \ell_{X}(p)=\bar{X}_{n}\log p + n(1-\bar{X}_{n})\log (1-p).
 $$

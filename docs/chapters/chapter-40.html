@@ -146,12 +146,12 @@ Instead, we fix a class of functions, for example the collection of all linear f
 </li>
 <li> Secondly, we may sometimes transform the variables so that the relationship becomes linear. For example, if $Y=ae^{bX}$, then $\log(Y)=a'+b'X$ where $a'=\log(a)$ and $b'=\log(b)$ and hence in terms of the new variables $X$ and $\log(Y)$, we have a linear relationship.
 </li>
-<li> Lastly, as a slight extension of linear regression,  one can study <em> multiple linear regression</em>, where one   has several independent variables $X^{(1)},\ldots, X^{(p)}$ and try to fit a linear  function $Y=\beta_{1}X^{(1)}+\ldots +\beta_{p}X^{(p)}$. Once that is done, it increases the scope of curve fitting even more. For example, if we have two variable $X,Y$, then we can take $X^{(1)}=1$, $X^{(2)}=X$, $X^{(3)}=X^{2}$. Then, linear regression of $Y$ against $X^{(1)},X^{(2)},X^{(3)}$ is tantamount to fitting a quadratic polynomial curve for $X,Y$.
+<li> Lastly, as a slight extension of linear regression,  one can study <em>multiple linear regression</em>, where one   has several independent variables $X^{(1)},\ldots, X^{(p)}$ and try to fit a linear  function $Y=\beta_{1}X^{(1)}+\ldots +\beta_{p}X^{(p)}$. Once that is done, it increases the scope of curve fitting even more. For example, if we have two variable $X,Y$, then we can take $X^{(1)}=1$, $X^{(2)}=X$, $X^{(3)}=X^{2}$. Then, linear regression of $Y$ against $X^{(1)},X^{(2)},X^{(3)}$ is tantamount to fitting a quadratic polynomial curve for $X,Y$.
 </ol>
 In short, multiple linear regression along with non-linear transformations of the individual variables, the class of functions $f$ is greatly extended.
  </div></div></div>
 
-<strong>Finding the best linear fit :</strong> We need a criterion for deciding the ``best''. A basic one is the <em> method of least squares</em> which recommends finding $\alpha,\beta$ such that the error sum of squares $R^{2}:=\sum_{k=1}^{n}(Y_{k}-\alpha-\beta X_{k})^{2}$ is minimized.
+<strong>Finding the best linear fit :</strong> We need a criterion for deciding the ``best''. A basic one is the <em>method of least squares</em> which recommends finding $\alpha,\beta$ such that the error sum of squares $R^{2}:=\sum_{k=1}^{n}(Y_{k}-\alpha-\beta X_{k})^{2}$ is minimized.
 
 For fixed $X_{i},Y_{i}$ this is a simple problem in calculus. We get
 $$
@@ -196,7 +196,7 @@ Y & -0.03 & 0.65 & 0.15 & 0.5 & 0.92 & 0.45 & 0.5 & 0.5 & 0.96 & 0.5 & 0.85 & 0.
 \]
 We fit two straight lines to this data.
 <ol>
-<li> Fit the line $Y=\alpha+\beta X$. The least squares estimators (as derived earlier) turn out to be $\hat{\alpha}=-0.04078$ and $\hat{\beta}=0.45416$.  If $Z_{i}=\alpha+\beta X_{i}$ are the predicted values of $Y_{i}$s, then one can see that the <em> residual sum of squares</em> is $\sum_{i}(Y_{i}-Z_{i})^{2}=1.1934$.
+<li> Fit the line $Y=\alpha+\beta X$. The least squares estimators (as derived earlier) turn out to be $\hat{\alpha}=-0.04078$ and $\hat{\beta}=0.45416$.  If $Z_{i}=\alpha+\beta X_{i}$ are the predicted values of $Y_{i}$s, then one can see that the <em>residual sum of squares</em> is $\sum_{i}(Y_{i}-Z_{i})^{2}=1.1934$.
 </li>
 <li> Fit the line $Y=bX$. In this case we get $\hat{b}$ by minimizing $\sum_{i}(Y_{i}-bX_{i})^{2}$. This is slightly different from before, but the same methods (calculus or the alternate argument we gave) work to give
 $$
@@ -255,7 +255,7 @@ Thus, the first naive answer to the above question is to compute $R^{2}$ in the 
 </ol>
 Obviously we will have $R_{2}^{2}\ge R_{1}^{2}\ge R_{0}^{2}$ (since linear functions include constants and quadratic functions include linear ones). Does that mean that the third is better? If that were the conclusion, then we can continue to introduce more parameters as that will always reduce the residual sum of squares! But that comes at the cost of making the model more complicated (and having too many parameters means that it will fit the current data well, but not future data!). When to stop adding more parameters?
 
-Qualitatively,  a new parameter is desirable  if it leads to a  <em> significant increase</em> of the $R^{2}$. The question is, how big an increase is significant. For this, one introduces the notion of <em> adjusted</em> $R^{2}$, which is defined as follows:
+Qualitatively,  a new parameter is desirable  if it leads to a  <em>significant increase</em> of the $R^{2}$. The question is, how big an increase is significant. For this, one introduces the notion of <em>adjusted</em> $R^{2}$, which is defined as follows:
 
 If the model has $p$ parameters, then define $\bar{SS}=SS/(n-1-p)$. In particular, $\bar{SS}_{0}=\frac{SS_{0} }{n-1}=s_{Y}^{2}$.  Then define the adjusted $R^{2}$ as $\bar{R}^{2}=1-\frac{\bar{SS} }{\bar{SS}_{0} }$.
 
