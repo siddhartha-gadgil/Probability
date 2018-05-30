@@ -173,7 +173,7 @@ This is called estimating by the <em>method of moments</em> because we are equat
  </p>
 <p class="text-justify">
           
- We can also use other features of the distribution, such as quantiles (we may call this  the ``method of quantiles''). In other words, obtain estimates by equating the sample quantiles to population quantiles. For example, the median of $X_{1}$ is $\mu\log 2$, hence a reasonable estimate for $\mu$ is $M_{n}/\log 2$, where $M_{n}$ is a sample median. Alternately, the $25\%$ quantile of $\mbox{Exponential}(1/\mu)$ distribution is $\mu\log(4/3)$ and hence another estimate for $\mu$ is $Q_{n}/\log(4/3)$ where $Q_{n}$ is a $25\%$ sample quantile.
+ We can also use other features of the distribution, such as quantiles (we may call this  the ''method of quantiles''). In other words, obtain estimates by equating the sample quantiles to population quantiles. For example, the median of $X_{1}$ is $\mu\log 2$, hence a reasonable estimate for $\mu$ is $M_{n}/\log 2$, where $M_{n}$ is a sample median. Alternately, the $25\%$ quantile of $\mbox{Exponential}(1/\mu)$ distribution is $\mu\log(4/3)$ and hence another estimate for $\mu$ is $Q_{n}/\log(4/3)$ where $Q_{n}$ is a $25\%$ sample quantile.
  </p>
            
  <p class="text-justify">
@@ -185,7 +185,7 @@ Two points: This is the joint density of $X_{1},\ldots ,X_{n}$, evaluated at the
  </p>
 <p class="text-justify">
           
- When $\mu$ is the actual value, then $L_{X}(\mu)$ is the ``likelihood'' of seeing the data that we have actually observed. The <em>maximum likelihood estimate</em> is that value of $\mu$ that maximizes the likelihood function. In our case, by differentiating and setting equal to zero we get,
+ When $\mu$ is the actual value, then $L_{X}(\mu)$ is the ''likelihood'' of seeing the data that we have actually observed. The <em>maximum likelihood estimate</em> is that value of $\mu$ that maximizes the likelihood function. In our case, by differentiating and setting equal to zero we get,
 $$
 0 =\frac{d}{d\mu}L_{X}(\mu) = -n\mu^{-n-1}e^{-\frac{1}{\mu}\sum_{i=1}^{n}X_{i} }+\mu^{-n}\left(\frac{1}{\mu^{2} }\sum_{i=1}^{n}X_{i}\right)e^{-\frac{1}{\mu}\sum_{i=1}^{n}X_{i} }
 $$
@@ -208,7 +208,7 @@ Let us see the same methods at work in two more examples.
 $$
 L_{X}(p) := p^{\sum_{i=1}^{n}x_{i} }(1-p)^{n-\sum_{i=1}^{n}x_{i} } = p^{n\bar{X}_{n} }(1-p)^{n(1-\bar{X}_{n})}.
 $$
-We need to find the value of $p$ that maximizes $L_{X}(p)$. Here is a trick that almost always simplifies calculations (try it in the previous example too!). Instead of maximizing $L_{X}(p)$, maximize $\ell_{X}(p)=\log L_{X}(p)$ (called the <em>log-likelihood function</em>). Since ``$\log$'' is an increasing function, the maximizer will remain the same. In our case,
+We need to find the value of $p$ that maximizes $L_{X}(p)$. Here is a trick that almost always simplifies calculations (try it in the previous example too!). Instead of maximizing $L_{X}(p)$, maximize $\ell_{X}(p)=\log L_{X}(p)$ (called the <em>log-likelihood function</em>). Since ''$\log$'' is an increasing function, the maximizer will remain the same. In our case,
 $$
 \ell_{X}(p)=\bar{X}_{n}\log p + n(1-\bar{X}_{n})\log (1-p).
 $$

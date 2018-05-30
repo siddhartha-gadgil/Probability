@@ -135,7 +135,7 @@ Let $(X_{i},Y_{i})$ be i.i.d random variables. For example, we could pick people
 
 In other words, we assume that there is an underlying relationship $Y=f(X)$ for an unknown function $f$ which we want to find. From a random sample $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$  we try to guess the function $f$.
 
-If we allow all possible functions, it is easy to find one that fits all the data points, i.e., there exists a function $f:\mathbb{R}\rightarrow \mathbb{R}$ (in fact we may take $f$ to be a polynomials of degree $n$) such that $f(X_{i})=Y_{i}$ for each $i\le n$ (this is true only if we assume that all $X_{i}$ are distinct which happens if $X$ has a continuous distribution). This is not a good predictor, because the next data point $(U,V)$ will fall way off the curve. We have found a function that ``predicts'' well all the data we have, but not for a future observation!
+If we allow all possible functions, it is easy to find one that fits all the data points, i.e., there exists a function $f:\mathbb{R}\rightarrow \mathbb{R}$ (in fact we may take $f$ to be a polynomials of degree $n$) such that $f(X_{i})=Y_{i}$ for each $i\le n$ (this is true only if we assume that all $X_{i}$ are distinct which happens if $X$ has a continuous distribution). This is not a good predictor, because the next data point $(U,V)$ will fall way off the curve. We have found a function that ''predicts'' well all the data we have, but not for a future observation!
 
 Instead, we fix a class of functions, for example the collection of all linear functions $y=mx+c$ where $m,c\in \mathbb{R}$ and within this class, find the best fitting function.
 
@@ -151,7 +151,7 @@ Instead, we fix a class of functions, for example the collection of all linear f
 In short, multiple linear regression along with non-linear transformations of the individual variables, the class of functions $f$ is greatly extended.
  </div></div></div>
 
-<strong>Finding the best linear fit :</strong> We need a criterion for deciding the ``best''. A basic one is the <em>method of least squares</em> which recommends finding $\alpha,\beta$ such that the error sum of squares $R^{2}:=\sum_{k=1}^{n}(Y_{k}-\alpha-\beta X_{k})^{2}$ is minimized.
+<strong>Finding the best linear fit :</strong> We need a criterion for deciding the ''best''. A basic one is the <em>method of least squares</em> which recommends finding $\alpha,\beta$ such that the error sum of squares $R^{2}:=\sum_{k=1}^{n}(Y_{k}-\alpha-\beta X_{k})^{2}$ is minimized.
 
 For fixed $X_{i},Y_{i}$ this is a simple problem in calculus. We get
 $$
@@ -175,7 +175,7 @@ $$
 $$
 Another way to write it is $\hat{\beta}=\frac{s_{Y} }{s_{X} }r_{X,Y}$ where $r_{X,Y}$ is the sample correlation coefficient.
 
-<strong>A motivation for the least squares criterion :</strong> Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alpha+\beta X_{i}+\epsilon_{i}$ where $\epsilon_{i}$ are i.i.d. $N(0,{\sigma}^{2})$ ``errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alpha+\beta X_{i},{\sigma}^{2})$ random variables. Now we can extimate $\alpha,\beta$ by the maximum likelihood method.
+<strong>A motivation for the least squares criterion :</strong> Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alpha+\beta X_{i}+\epsilon_{i}$ where $\epsilon_{i}$ are i.i.d. $N(0,{\sigma}^{2})$ ''errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alpha+\beta X_{i},{\sigma}^{2})$ random variables. Now we can extimate $\alpha,\beta$ by the maximum likelihood method.
 
 <p>&nbsp;</p>
                 <div id="theorem-183"><div class="panel panel-info example"> <div class="panel-heading">Example 183 ([Hubble's 1929 experiment on the recession velocity of nebulae and their distance to earth)</div><div class="panel-body"> Hubble collected the following data that I took from \href{http://lib.stat.cmu.edu/DASL/Datafiles/Hubble.html}{this website}. Here $X$ is the number of megaparsecs from the nebula to earth and $Y$ is the observed recession velocity in $10^{3}$km/s.
@@ -243,7 +243,7 @@ We compute that $\bar{X}=4.5$, $\bar{W}=-5.25$, $\mbox{std}(X)=2.45$, $\mbox{std
 
 <strong>How good is the fit?</strong> For the same data $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$, suppose we have two candidates \; (a) \; $Y=f(X)$ and \; (b) \; $Y=g(X)$. How to decide which is better? Or how to say if a fit is good at all?
 
-By the least-squares criterion, the answer is  the one with smaller residual sum of squares $SS:=\sum_{k=1}^{n}(Y_{k}-f(X_{k}))^{2}$. Usually one presents a closely related quantity $R^{2}=1-\frac{SS}{SS_{0} }$ (where $\mbox{SS}_{0}=\sum_{k=1}^{n}(Y_{k}-\bar{Y})^{2}=(n-1)s_{Y}^{2}$). Since $SS_{0}$ is (a multiple of) the total variance in $Y$, $R^{2}$ measures how much of it is ``explained'' by a particular fit. Note that $0\le R^{2}\le 1$. And higher (i.e., closer to $1$) the $R^{2}$ is, the better the fit.
+By the least-squares criterion, the answer is  the one with smaller residual sum of squares $SS:=\sum_{k=1}^{n}(Y_{k}-f(X_{k}))^{2}$. Usually one presents a closely related quantity $R^{2}=1-\frac{SS}{SS_{0} }$ (where $\mbox{SS}_{0}=\sum_{k=1}^{n}(Y_{k}-\bar{Y})^{2}=(n-1)s_{Y}^{2}$). Since $SS_{0}$ is (a multiple of) the total variance in $Y$, $R^{2}$ measures how much of it is ''explained'' by a particular fit. Note that $0\le R^{2}\le 1$. And higher (i.e., closer to $1$) the $R^{2}$ is, the better the fit.
 
 Thus, the first naive answer to the above question is to compute $R^{2}$ in the two situations (fitting by $f$ and fitting by $g$) and see which is higher. But a more nuanced approach is preferable. Consider the same data and three situations.
 <ol>

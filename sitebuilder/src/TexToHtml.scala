@@ -175,6 +175,7 @@ object TeXToHtml {
     .replace("\\vspace{2mm}", "")
     .replace("""\"{o}""", "&ouml;")
     .replace("}}", "} }")
+    .replace("""``""", "''")
 
   val begReg: Regex = """\\begin\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
