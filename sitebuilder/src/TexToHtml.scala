@@ -554,11 +554,25 @@ object TeXToHtml {
     """\{\\em """.r
       .findFirstMatchIn(txt)
       .map { (m) =>
-        println("found m")
+        println("found em")
         val (header, rest) = inBraces(m.after.toString, "")
         val newHead =
           head + m.before + s"<em>$header</em>"
         recReplaceEm(rest, newHead)
+      }
+      .getOrElse(head + txt)
+
+  def recReplaceMagenta(txt: String,
+                   head: String = ""
+                  ): String =
+    """\{\\color\{magenta\}""".r
+      .findFirstMatchIn(txt)
+      .map { (m) =>
+        println("found magenta")
+        val (header, rest) = inBraces(m.after.toString, "")
+        val newHead =
+          head + m.before + header
+        recReplaceMagenta(rest, newHead)
       }
       .getOrElse(head + txt)
 }
@@ -598,7 +612,8 @@ class TeXToHtml(header: String, text: String) {
   lazy val baseReplaced: String =
     replaceEnds(
       replaceTiny(
-        recReplaceEm(recReplacePara(replaceParag(replaceItems(defReplaced))))))
+        recReplaceMagenta(
+        recReplaceEm(recReplacePara(replaceParag(replaceItems(defReplaced)))))))
 
 
   lazy val (begReplaced: String, labels: Map[String, Int]) = rplBegins(baseReplaced)
