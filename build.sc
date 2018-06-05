@@ -1,13 +1,46 @@
 import mill._, scalalib._, scalajslib._, define.Task
 import ammonite.ops._
 
+trait MetalsModule extends ScalaModule{
+  import java.io._
+
+  def metalsBuildInfo = T{
+    def targDeps : Agg[eval.PathRef] = resolveDeps(transitiveIvyDeps, false)()
+
+    Map[String, String](
+      "sources" -> allSourceFiles().map(_.path).mkString(java.io.File.pathSeparator),
+      "unmanagedSourceDirectories" -> "",
+      "managedSourceDirectories" -> "",
+      "scalacOptions" -> scalacOptions().mkString(" "),
+      "classDirectory" -> compile().classes.path.toString,
+      "dependencyClasspath" ->
+        (targDeps  ++
+          Task.traverse(moduleDeps)(_.sources)().flatten
+        ).map(_.path).mkString(java.io.File.pathSeparator),
+      "scalaVersion" -> scalaVersion(),
+      "sourceJars" ->
+        resolveDeps(transitiveIvyDeps, true)().map(_.path).mkString(java.io.File.pathSeparator)
+      )
+  }
+
+  def metalsConfig() = T.command{
+      def outFile = pwd / ".metals" / "buildinfo" / RelPath(artifactName().toString) / "main.properties"
+      def info = metalsBuildInfo()
+      def output = info.map{
+        case (k, v) => s"$k=$v"
+      }.mkString("\n")
+      write.over(outFile, output)
+      output
+    }
+}
+
 object probability extends Module{
-  object jvm extends ScalaModule{
+  object jvm extends MetalsModule{
     def scalaVersion = "2.12.4"
     def millSourcePath = super.millSourcePath / up
   }
 
-  object js extends ScalaJSModule {
+  object js extends ScalaJSModule with MetalsModule {
     def scalaVersion = "2.12.4"
     def scalaJSVersion = "0.6.22"
     def millSourcePath = super.millSourcePath / up
@@ -16,7 +49,7 @@ object probability extends Module{
   }
 }
 
-object sitebuilder extends ScalaModule{
+object sitebuilder extends MetalsModule{
   def scalaVersion = "2.12.4"
 
   def moduleDeps = Seq(probability.jvm)
@@ -32,7 +65,7 @@ object sitebuilder extends ScalaModule{
   }
 }
 
-object client extends ScalaJSModule {
+object client extends ScalaJSModule with MetalsModule{
   def scalaVersion = "2.12.4"
   def scalaJSVersion = "0.6.22"
   def moduleDeps : Seq[ScalaJSModule] = Seq(probability.js)
