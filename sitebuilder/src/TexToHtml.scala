@@ -392,7 +392,7 @@ object TeXToHtml {
         txt,
         (m) => s"<strong>${Regex.quoteReplacement(m.group(2))}</strong>")
 
-  val bfReg1: Regex = "(\\{\\\\bf )([^\\}]+)\\}".r
+  val bfReg1: Regex = "(\\{\\\\bf)([^\\}]+)\\}".r
 
   val bfReg2: Regex = "(\\{\\\\bf\\{)([^\\}]+)\\}\\}".r
 
@@ -406,15 +406,16 @@ object TeXToHtml {
           Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
         else s"\\{\\\\bf ${m.group(2)}\\}"
     )
-    bfReg2.replaceAllIn(
-      step,
-      (m) =>
-        if (dolReg
-              .findAllIn(m.before + " ")
-              .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0)
-          Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
-        else s"\\{\\\\bf ${m.group(2)}\\}"
-    )
+//    bfReg2.replaceAllIn(
+//      step,
+//      (m) =>
+//        if (dolReg
+//              .findAllIn(m.before + " ")
+//              .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0)
+//          Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
+//        else s"\\{\\\\bf ${m.group(2)}\\}"
+//    )
+    step
   }
 
   val emReg: Regex = "(\\{\\\\em)([ \\\\])([^\\}]+)\\}".r
@@ -552,7 +553,7 @@ object TeXToHtml {
   def recReplaceEm(txt: String,
                       head: String = ""
                      ): String =
-    """\{\\em """.r
+    """\{\\em""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
         println("found em")

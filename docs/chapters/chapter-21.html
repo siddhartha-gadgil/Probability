@@ -151,14 +151,14 @@
 
 Let $X$ be a random variable with distribution $F$. We shall assume that it has pmf or pdf denoted by $f$.
 <p>&nbsp;</p>
-                <div id="theorem-132"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 132 </div><div class="panel-body"> The <em>expected value</em> (also called <em>mean</em>) of $X$ is defined as the quantity $\mathbf{E}[X]=\sum_{t}tf(t)$ if $f$ is a pmf and $\mathbf{E}[X]=\int_{-\infty}^{+\infty} t f(t)dt$ if $f$ is a pdf (provided the sum or the integral converges absolutely). </div></div></div>
+                <div id="theorem-132"><div class="panel panel-primary definition"> <div class="panel-heading">Definition 132 </div><div class="panel-body"> The <em> expected value</em> (also called <em> mean</em>) of $X$ is defined as the quantity $\mathbf{E}[X]=\sum_{t}tf(t)$ if $f$ is a pmf and $\mathbf{E}[X]=\int_{-\infty}^{+\infty} t f(t)dt$ if $f$ is a pdf (provided the sum or the integral converges absolutely). </div></div></div>
 Note that this agrees with the definition we gave earlier for random variables with pmf. it is possible to define expect value for distributions without pmf or pdf, but we shall not do it here.
  </p>
 <p class="text-justify">
           
  <strong>Properties of expectation :</strong> Let $X,Y$ be random variables both having pmf $f,g$ or  pdf $f,g$, respectively.
 <ol>
-<li> Then, $\mathbf{E}[aX+bY]=a\mathbf{E}[X]+b\mathbf{E}[Y]$ for any $a,b\in \mathbb{R}$. In particular, for a constant random variable (i.e., $X=a$ with probability $1$ for some $a$, $\mathbf{E}[X]=a$). This is called <em>linearity</em> of expectation.
+<li> Then, $\mathbf{E}[aX+bY]=a\mathbf{E}[X]+b\mathbf{E}[Y]$ for any $a,b\in \mathbb{R}$. In particular, for a constant random variable (i.e., $X=a$ with probability $1$ for some $a$, $\mathbf{E}[X]=a$). This is called <em> linearity</em> of expectation.
 </li>
 <li> If $X\ge Y$ (meaning, $X(\omega)\ge Y(\omega)$ for all $\omega$), then $\mathbf{E}[X]\ge \mathbf{E}[Y]$
 </li>
@@ -196,17 +196,17 @@ Expectation is a very important quantity. Using it, we can define several other 
  </p>
 <p class="text-justify">
           
- <strong>Quantiles :</strong> Let us assume that the CDF $F$ of $X$ is strictly increasing and continuous. Then $F^{-1}(t)$ is well defined for every $t\in (0,1)$. For each $t\in (0,1)$, the number $Q_{t}=F^{-1}(t)$ is called the $t$-quantile. For example, the $1/2$-quantile, also called <em>median</em> is the number $x$ such that $F(x)=\frac{1}{2}$ (unique when the CDF is strictly increasing and continuous). Similarly one defines $1/4$-quantile and $3/4$-quantile and these are sometimes called quartiles.<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
+ <strong>Quantiles :</strong> Let us assume that the CDF $F$ of $X$ is strictly increasing and continuous. Then $F^{-1}(t)$ is well defined for every $t\in (0,1)$. For each $t\in (0,1)$, the number $Q_{t}=F^{-1}(t)$ is called the $t$-quantile. For example, the $1/2$-quantile, also called <em> median</em> is the number $x$ such that $F(x)=\frac{1}{2}$ (unique when the CDF is strictly increasing and continuous). Similarly one defines $1/4$-quantile and $3/4$-quantile and these are sometimes called quartiles.<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
                                 1
                                  </a> </sup><span class="collapse small" id="footnote-1">Another familiar quantity is the percentile, frequently used in reporting performance in competitive exams. For each $x$, the $x$-percentile is nothing but $F(x)$. For exam scores, it  tells the proportion of exam-takers who scored less than or equal to $x$.</span> 
  </p>
            
  <p class="text-justify">
-<strong>Moments :</strong> The quantity $\mathbf{E}[X^{k}]$ (if it exists) is called the $k^{\mbox{th} }$ <em>moment</em> of $X$.
+<strong>Moments :</strong> The quantity $\mathbf{E}[X^{k}]$ (if it exists) is called the $k^{\mbox{th} }$ <em> moment</em> of $X$.
  </p>
 <p class="text-justify">
           
- <strong>Variance :</strong> Let $\mu=\mathbf{E}[X]$ and define ${\sigma}^{2}:=\mathbf{E}\left[ (X-\mu)^{2}\right]$. This is called the <em>variance</em> of $X$, also denoted by $\mbox{Var}(X)$. It can be written in other forms. For example,
+ <strong>Variance :</strong> Let $\mu=\mathbf{E}[X]$ and define ${\sigma}^{2}:=\mathbf{E}\left[ (X-\mu)^{2}\right]$. This is called the <em> variance</em> of $X$, also denoted by $\mbox{Var}(X)$. It can be written in other forms. For example,
 $$\begin{align*}
 {\sigma}^{2} &= \mathbf{E}[X^{2}+\mu^{2}-2\mu X] \qquad (\mbox{by expanding the square})\\
  &= \mathbf{E}[X^{2}]+\mu^{2} - 2\mu \mathbf{E}[X] \qquad (\mbox{by property (1) above})\\
@@ -224,15 +224,15 @@ That is $\mbox{Var}(X)=\mathbf{E}[X^{2}]-(\mathbf{E}[X])^{2}$.
  </p>
            
  <p class="text-justify">
-<strong>Coefficient of variation :</strong> The coefficient of variation of $X$ is defined as $\mbox{c.v.}(X)=\frac{\mbox{s.d.}(X)}{|{\bf E}[X]|}$.
+<strong>Coefficient of variation :</strong> The coefficient of variation of $X$ is defined as $\mbox{c.v.}(X)=\frac{\mbox{s.d.}(X)}{|{\bf  E}[X]|}$.
  </p>
 <p class="text-justify">
           
- <strong>Covariance :</strong> Let $X,Y$ be random variables on a common probability space. The <em>covariance</em> of $X$ and $Y$ is defined as $\mbox{Cov}(X,Y)=\mathbf{E}[(X-\mathbf{E}[X])(Y-\mathbf{E}[Y])]$. It can also be written as $\mbox{Cov}(X,Y)=\mathbf{E}[XY]-\mathbf{E}[X]\mathbf{E}[Y]$.
+ <strong>Covariance :</strong> Let $X,Y$ be random variables on a common probability space. The <em> covariance</em> of $X$ and $Y$ is defined as $\mbox{Cov}(X,Y)=\mathbf{E}[(X-\mathbf{E}[X])(Y-\mathbf{E}[Y])]$. It can also be written as $\mbox{Cov}(X,Y)=\mathbf{E}[XY]-\mathbf{E}[X]\mathbf{E}[Y]$.
  </p>
            
  <p class="text-justify">
-<strong>Correlation :</strong> Let $X,Y$ be random variables on a common probability space. Their <em>correlation</em> is defined as $\mbox{Corr}(X,Y)=\frac{\mbox{Cov}(X,Y)}{\sqrt{\mbox{Var}(X)}\sqrt{\mbox{Var}(Y)} }$.
+<strong>Correlation :</strong> Let $X,Y$ be random variables on a common probability space. Their <em> correlation</em> is defined as $\mbox{Corr}(X,Y)=\frac{\mbox{Cov}(X,Y)}{\sqrt{\mbox{Var}(X)}\sqrt{\mbox{Var}(Y)} }$.
  </p>
 <p class="text-justify">
           

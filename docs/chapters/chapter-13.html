@@ -248,13 +248,13 @@ Some distributions (i.e., CDF or the associated pmf) occur frequently enough to 
 $$
 f(t)=\begin{cases}p & \mbox{ if }t=1, \\ q & \mbox{ if }t=0, \end{cases} \qquad F_{X}(t)=\begin{cases} 1 &\mbox{ if } t\ge 1, \\ q & \mbox{ if }t\in [0,1), \\ 0 & \mbox{ if }t <  0. \end{cases}
 $$
-A random variable $X$ having this pmf (or equivalently the CDF) is said to have <em>Bernoulli distribution</em> with parameter $p$ and  write $X\sim \mbox{Ber}(p)$. For example, if $\Omega=\{1,2,\ldots ,10\}$ with $p_{i}=1/10$, and $X(\omega)={\mathbf 1}_{\omega\le 3}$, then $X\sim \mbox{Ber}(0.3)$. Any random variable taking only the values $0$ and $1$, has Bernoulli distribution.
+A random variable $X$ having this pmf (or equivalently the CDF) is said to have <em> Bernoulli distribution</em> with parameter $p$ and  write $X\sim \mbox{Ber}(p)$. For example, if $\Omega=\{1,2,\ldots ,10\}$ with $p_{i}=1/10$, and $X(\omega)={\mathbf 1}_{\omega\le 3}$, then $X\sim \mbox{Ber}(0.3)$. Any random variable taking only the values $0$ and $1$, has Bernoulli distribution.
 </div></div></div>
  </p>
            
  <p class="text-justify">
 <p>&nbsp;</p>
-                <div id="theorem-77"><div class="panel panel-info example"> <div class="panel-heading">Example 77 </div><div class="panel-body">  Fix $n\ge 1$ and $p\in [0,1]$. The pmf defined by $f(k)=\binom{n}{k}p^{k}q^{n-k}$ for $0\le k\le n$ is called the <em>Binomial  distribution</em> with parameters $n$ and $p$ and is denoted Bin($n,p$). The CDF is as usual defined by $F(t)=\sum_{u:\mathbf{u}\le t}f(u)$, but it does not have any particularly nice expression.
+                <div id="theorem-77"><div class="panel panel-info example"> <div class="panel-heading">Example 77 </div><div class="panel-body">  Fix $n\ge 1$ and $p\in [0,1]$. The pmf defined by $f(k)=\binom{n}{k}p^{k}q^{n-k}$ for $0\le k\le n$ is called the <em> Binomial  distribution</em> with parameters $n$ and $p$ and is denoted Bin($n,p$). The CDF is as usual defined by $F(t)=\sum_{u:\mathbf{u}\le t}f(u)$, but it does not have any particularly nice expression.
  </p>
 <p class="text-justify">
           
@@ -264,7 +264,7 @@ A random variable $X$ having this pmf (or equivalently the CDF) is said to have 
            
  <p class="text-justify">
 <p>&nbsp;</p>
-                <div id="theorem-78"><div class="panel panel-info example"> <div class="panel-heading">Example 78 </div><div class="panel-body"> Fix $p\in (0,1]$ and let $f(k)=q^{k-1}p$ for $k\in \mathbb{N}_{+}$. This is called the <em>Geometric  distribution</em> with parameter $p$ and is denoted Geo($p$). The CDF is
+                <div id="theorem-78"><div class="panel panel-info example"> <div class="panel-heading">Example 78 </div><div class="panel-body"> Fix $p\in (0,1]$ and let $f(k)=q^{k-1}p$ for $k\in \mathbb{N}_{+}$. This is called the <em> Geometric  distribution</em> with parameter $p$ and is denoted Geo($p$). The CDF is
 $$
 F(t) = \begin{cases}
 0 & \mbox{ if } t < 1, \\
@@ -277,17 +277,17 @@ For example, the number of tosses of a $p$-coin till the first head turns up, is
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-79"><div class="panel panel-info example"> <div class="panel-heading">Example 79 </div><div class="panel-body"> Fix $\lambda > 0$ and define the pmf $f(k)=e^{-\lambda}\frac{\lambda^{k} }{k!}$. This is called the <em>Poisson  distribution</em> with parameter $\lambda$ and is denoted Pois($\lambda$).
+                <div id="theorem-79"><div class="panel panel-info example"> <div class="panel-heading">Example 79 </div><div class="panel-body"> Fix $\lambda > 0$ and define the pmf $f(k)=e^{-\lambda}\frac{\lambda^{k} }{k!}$. This is called the <em> Poisson  distribution</em> with parameter $\lambda$ and is denoted Pois($\lambda$).
  </p>
            
  <p class="text-justify">
-In the problem of a psychic (randomly) guessing the cards in a deck, we have seen that the number of matches (correct guesses) had an <em>approximately</em> Pois($1$) distribution.
+In the problem of a psychic (randomly) guessing the cards in a deck, we have seen that the number of matches (correct guesses) had an <em> approximately</em> Pois($1$) distribution.
 </div></div></div>
  </p>
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-80"><div class="panel panel-info example"> <div class="panel-heading">Example 80 </div><div class="panel-body"> Fix positive integers $b,w$ and $m\le b+w$. Define the pmf  $f(k)=\frac{\binom{b}{k}\binom{w}{m-k} }{\binom{b+w}{m} }$ where the binomial coefficient $\binom{x}{y}$ is interpreted to be zero if $y > x$ (thus $f(k) > 0$ only for $\max\{m-w,0\}\le k\le b$). This is called the <em>Hypergeometric distribution</em> with parameters $b,w,m$ and we shall denote it by  Hypergeo($b,w,m$).
+                <div id="theorem-80"><div class="panel panel-info example"> <div class="panel-heading">Example 80 </div><div class="panel-body"> Fix positive integers $b,w$ and $m\le b+w$. Define the pmf  $f(k)=\frac{\binom{b}{k}\binom{w}{m-k} }{\binom{b+w}{m} }$ where the binomial coefficient $\binom{x}{y}$ is interpreted to be zero if $y > x$ (thus $f(k) > 0$ only for $\max\{m-w,0\}\le k\le b$). This is called the <em> Hypergeometric distribution</em> with parameters $b,w,m$ and we shall denote it by  Hypergeo($b,w,m$).
  </p>
            
  <p class="text-justify">

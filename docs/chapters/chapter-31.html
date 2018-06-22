@@ -145,7 +145,7 @@
 
  <p class="text-justify">
 
- So far, in estimating of an unknown parameter, we give a single number as our guess for the known parameter. It would be better to give an interval and say with what confidence we expect the true parameter to lie within it.  As a very simple example, suppose we have one random variable $X$ with $N(\mu,1)$ distribution. How do we estimate $\mu$? Suppose the observed value of $X$ is $2.7$. Going by any method, the guess for $\mu$ would be $2.7$ itself. But of course $\mu$ is not equal to $X$, so we would like to give an interval in which $\mu$ lies. How about $[X-1,X+1]$? Or $[X-2,X+2]$? Using normal tables, we see that $\mathbf{P}(X-1 < \mu < X+1)=\mathbf{P}(-1 < (X-\mu) < 1)=\mathbf{P}(-1 < Z < 1) \approx 0.68$ and similarly $\mathbf{P}(X-2 < \mu < X+2)\approx 0.95$. Thus, by making the interval longer we can be more confident that the true parameter lies within. But the accuracy of our statement goes down (if you want to know the average height of people in India, and the answer you give is ''between 100cm and 200cm'', it is very probably correct, but of little use!). The probability with which our CI contains the unknown parameter is called the level of confidence. Usually we fix the level of confidence, say as $0.90$ and find an interval <em>as short as possible</em> but subject to the condition that it should have a confidence level of $0.90$.
+ So far, in estimating of an unknown parameter, we give a single number as our guess for the known parameter. It would be better to give an interval and say with what confidence we expect the true parameter to lie within it.  As a very simple example, suppose we have one random variable $X$ with $N(\mu,1)$ distribution. How do we estimate $\mu$? Suppose the observed value of $X$ is $2.7$. Going by any method, the guess for $\mu$ would be $2.7$ itself. But of course $\mu$ is not equal to $X$, so we would like to give an interval in which $\mu$ lies. How about $[X-1,X+1]$? Or $[X-2,X+2]$? Using normal tables, we see that $\mathbf{P}(X-1 < \mu < X+1)=\mathbf{P}(-1 < (X-\mu) < 1)=\mathbf{P}(-1 < Z < 1) \approx 0.68$ and similarly $\mathbf{P}(X-2 < \mu < X+2)\approx 0.95$. Thus, by making the interval longer we can be more confident that the true parameter lies within. But the accuracy of our statement goes down (if you want to know the average height of people in India, and the answer you give is ''between 100cm and 200cm'', it is very probably correct, but of little use!). The probability with which our CI contains the unknown parameter is called the level of confidence. Usually we fix the level of confidence, say as $0.90$ and find an interval <em> as short as possible</em> but subject to the condition that it should have a confidence level of $0.90$.
  </p>
 <p class="text-justify">
           
@@ -203,7 +203,7 @@ Since $\mu$ is known, we use $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ to
 <p>&nbsp;</p>
                 <div id="theorem-168"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 168 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(0,1)$ random variables. Then, $Z_{1}^{2}+\ldots +Z_{n}^{2}\sim \mbox{Gamma}(n/2,1/2)$.
 </div></div></div>
-<strong>Solution:</strong> For $t > 0$ we have
+<strong> Solution:</strong> For $t > 0$ we have
 $$\begin{align*}
 \mathbf{P}\{Z_{1}^{2}\le t\} &= \mathbf{P}\{-\sqrt{t}\le Z_{1}\le \sqrt{t}\}
 = 2\int\limits_{0}^{\sqrt{t} }\frac{1}{\sqrt{2\pi} }e^{-u^{2}/2}du = \frac{1}{\sqrt{2\pi} }\int\limits_{0}^{t}e^{-s/2}s^{-1/2}ds.
@@ -220,7 +220,7 @@ Differentiate w.r.t $t$ to see that the density of $Z_{1}^{2}$ is $h(t)=\frac{1}
  </p>
 <p class="text-justify">
           
- In statistics, the distribution $\mbox{Gamma}(1/2,1/2)$ is usually called the <em>chi-squared distribution with $n$ degrees of freedom</em>. Let $\chi_{n}^{2}\left(\alpha\right)$ denote the $1-\alpha$ quantile of this distribution. Similarly, $\chi_{n}^{2}\left(1-\alpha\right)$ is the $\alpha$ quantile (i.e., the probability for the chi-squared random variable to fall below $\chi_{n}^{2}\left(1-\alpha\right)$ is exactly $\alpha$).
+ In statistics, the distribution $\mbox{Gamma}(1/2,1/2)$ is usually called the <em> chi-squared distribution with $n$ degrees of freedom</em>. Let $\chi_{n}^{2}\left(\alpha\right)$ denote the $1-\alpha$ quantile of this distribution. Similarly, $\chi_{n}^{2}\left(1-\alpha\right)$ is the $\alpha$ quantile (i.e., the probability for the chi-squared random variable to fall below $\chi_{n}^{2}\left(1-\alpha\right)$ is exactly $\alpha$).
  </p>
            
  <p class="text-justify">
@@ -273,7 +273,7 @@ A natural idea would be to use the estimate $s_{n}^{2}=\frac{1}{n-1}\sum_{i=1}^{
 $$
 \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}}\sim N(0,1).
 $$
-Is it true if ${\sigma}$ is replaced by $s_{n}$? Actually no, but we have a different distribution called <em>Student's $t$-distribution</em>.
+Is it true if ${\sigma}$ is replaced by $s_{n}$? Actually no, but we have a different distribution called <em> Student's $t$-distribution</em>.
  </p>
 <p class="text-justify">
           
@@ -282,7 +282,7 @@ Is it true if ${\sigma}$ is replaced by $s_{n}$? Actually no, but we have a diff
 $$
 \frac{1}{\sqrt{n-1}\mbox{Beta}(\frac{1}{2},\frac{n-1}{2})}\frac{1}{\left(1+\frac{t^{2} }{n-1}\right)^{\frac{n}{2} }}
 $$
-for all $t\in \mathbb{R}$. This is known as <em>Student's $t$-distribution</em>.
+for all $t\in \mathbb{R}$. This is known as <em> Student's $t$-distribution</em>.
 </div></div></div>
 The exact density of  $t$-distribution is not important to remember, so the above exercise is optional. The point is that it can be computed from the change of variable formula and that by numerical integration its CDF can be tabulated.
  </p>

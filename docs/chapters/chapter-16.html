@@ -150,7 +150,7 @@ $$
 $$
 Then, $F$ is a CDF. Indeed, we have seen that it is the CDF of a discrete random variable. A special feature of this CDF is that it increases only in jumps (in more precise language, if $F$ is continuous on an interval $[s,t]$, then $F(s)=F(t)$).
 </li>
-<li> (CDFs with pdf). Let $f:\mathbb{R}\rightarrow\mathbb{R}_{+}$ be a  function (convenient to assume that it is a piece-wise continuous function) such that $\int_{-\infty}^{+\infty}f(u)du=1$. Such a function is called a <em>probability density function</em> or pdf for short.  Then,  define $F:\mathbb{R}\rightarrow \mathbb{R}$ by
+<li> (CDFs with pdf). Let $f:\mathbb{R}\rightarrow\mathbb{R}_{+}$ be a  function (convenient to assume that it is a piece-wise continuous function) such that $\int_{-\infty}^{+\infty}f(u)du=1$. Such a function is called a <em> probability density function</em> or pdf for short.  Then,  define $F:\mathbb{R}\rightarrow \mathbb{R}$ by
 \[\begin{aligned}
 F(t) :=\int_{-\infty}^{t}f(u) du.
 \end{aligned}\]
@@ -249,7 +249,7 @@ $$
 Once the expression is given, it is easy to check it by induction (and integration by parts). A curious observation is that the right hand side is exactly $\mathbf{P}(N\ge \nu)$ where $N\sim \mbox{Pois}(\lambda t)$. This is in fact indicating a deep connection between Poisson distribution and the Gamma distributions. The function $\Gamma(\nu)$, also known as Euler's Gamma function, is an interesting and important  one and occurs all over mathematics.
 <sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
                                 1
-                                 </a> </sup><span class="collapse small" id="footnote-1"><strong>The Gamma function:</strong> The function $\Gamma:(0,\infty)\rightarrow \mathbb{R}$ defined by $\Gamma(\nu)=\int_{0}^{\infty}e^{-t}t^{\nu-1}dt$ is a very important function that often occurs in mathematics and physics. There is no simpler expression for it, although one can find it explicitly for special values of $\nu$. One of its most important properties is that $\Gamma(\nu+1)=\nu\Gamma(\nu)$. To see this, consider
+                                 </a> </sup><span class="collapse small" id="footnote-1"><strong> The Gamma function:</strong> The function $\Gamma:(0,\infty)\rightarrow \mathbb{R}$ defined by $\Gamma(\nu)=\int_{0}^{\infty}e^{-t}t^{\nu-1}dt$ is a very important function that often occurs in mathematics and physics. There is no simpler expression for it, although one can find it explicitly for special values of $\nu$. One of its most important properties is that $\Gamma(\nu+1)=\nu\Gamma(\nu)$. To see this, consider
 $$
 \Gamma(\nu+1)=\int_{0}^{\infty}e^{-t}t^{\nu}dt = -e^{-t}t^{\nu}\left.\vphantom{\hbox{\Large (}}\right|_{0}^{\infty}+\nu\int_{0}^{\infty}e^{-t}t^{\nu-1}dt = \nu \Gamma(\nu).
 $$
@@ -261,7 +261,7 @@ by substituting $x=y^{2}/2$. The last integral was computed above in the context
  </p>
 <p class="text-justify">
           
- <strong>Stirling's approximation:</strong> $\frac{\Gamma(\nu+1)}{\nu^{\nu+\frac{1}{2} }e^{-\nu}\sqrt{2\pi} }\rightarrow 1$ as $\nu\rightarrow \infty$.
+ <strong> Stirling's approximation:</strong> $\frac{\Gamma(\nu+1)}{\nu^{\nu+\frac{1}{2} }e^{-\nu}\sqrt{2\pi} }\rightarrow 1$ as $\nu\rightarrow \infty$.
  </p>
            
  <p class="text-justify">
@@ -297,7 +297,7 @@ Here $B(\alpha,\beta):=\int_{0}^{1}t^{\alpha-1}(1-t)^{\beta-1}dt$. Again, for sp
  </p>
            
  <p class="text-justify">
-Now for any other <em>positive integer</em> value of $\alpha$ and real $\beta > 0$ we can integrate by parts and get
+Now for any other <em> positive integer</em> value of $\alpha$ and real $\beta > 0$ we can integrate by parts and get
 $$\begin{align*}
 B(\alpha,\beta)&=\int_{0}^{1}t^{\alpha-1}(1-t)^{\beta-1}dt \\
 &= -\frac{1}{\beta}t^{\alpha-1}(1-t)^{\beta}\left.\vphantom{\hbox{\Large (}}\right|_{0}^{1} + \frac{\alpha-1}{\beta}\int_{0}^{1}t^{\alpha-2}(1-t)^{\beta}dt \\
@@ -329,7 +329,7 @@ $$
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-101"><div class="panel panel-success remark"> <div class="panel-heading">Remark 101 </div><div class="panel-body"> Does every CDF come from a pdf? Not necessarily. For example any CDF that is not continuous (for example, CDFs of discrete distributions such as Binomial, Poisson, Geometric etc.). In fact even continuous CDFs may not have densities (there is a good example manufactured out of the $1/3$-Cantor set, but that would take us out of the topic now). However, suppose $F$ is a <em>continuous</em> CDF and suppose $F$ is differentiable except at finitely many points and that the derivative is a continuous function. Then $f(t):=F'(t)$ defines a pdf which by the fundamental theorm of Calculus satisfies $F(t)=\int_{-\infty}^{t}f(u)du$.
+                <div id="theorem-101"><div class="panel panel-success remark"> <div class="panel-heading">Remark 101 </div><div class="panel-body"> Does every CDF come from a pdf? Not necessarily. For example any CDF that is not continuous (for example, CDFs of discrete distributions such as Binomial, Poisson, Geometric etc.). In fact even continuous CDFs may not have densities (there is a good example manufactured out of the $1/3$-Cantor set, but that would take us out of the topic now). However, suppose $F$ is a <em> continuous</em> CDF and suppose $F$ is differentiable except at finitely many points and that the derivative is a continuous function. Then $f(t):=F'(t)$ defines a pdf which by the fundamental theorm of Calculus satisfies $F(t)=\int_{-\infty}^{t}f(u)du$.
 </div></div></div>
  </p>
            
