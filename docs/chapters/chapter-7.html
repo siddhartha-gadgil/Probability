@@ -187,13 +187,13 @@ $$
 \mathbf{P}\left(A_{i_{1} }\cap \ldots \cap A_{i_{k} }\right) =\sum\limits_{\omega\in \Omega}p_{\omega}{\mathbf 1}_{A_{i_{1} }\cap \ldots \cap A_{i_{k} }}(\omega)= \sum\limits_{\omega\in \Omega}p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega).
 $$
 Hence, the right hand side is given by adding over $i_{1} < \ldots  < i_{k}$, multiplying by $(-1)^{k-1}$ and then summing over $k$ from $1$ to $n$.
-\begin{eqnarray*}
+$$\begin{eqnarray*}
 \mbox{RHS} &=& \sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n} \; \sum\limits_{\omega\in \Omega} \;p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega) \\
 &=& \sum\limits_{\omega \in \Omega}\sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n} p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega) \\
 &=& -\sum\limits_{\omega \in \Omega}p_{\omega}\sum\limits_{k=1}^{n}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n}\prod\limits_{\ell=1}^{k}(-{\mathbf 1}_{A_{i_{\ell} }}(\omega)) \\
 &=& -\sum\limits_{\omega \in \Omega}p_{\omega} \left(\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j} }(\omega)) \; - \; 1\right) \\
 &=& \sum\limits_{\omega \in \Omega}p_{\omega}{\mathbf 1}_{A}(\omega).
-\end{eqnarray*}
+\end{eqnarray*}$$
 because the quantity $\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j} }(\omega))$ equals $-1$ if $\omega$ belongs to at least one of the $A_{i}$s, and is zero otherwise. Thus the claim follows.
 </div>
  </p>

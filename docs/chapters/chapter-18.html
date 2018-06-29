@@ -235,7 +235,7 @@ $$\begin{align*}
 \int\limits_{-\infty}^{\infty}e^{-\frac{1}{2}\left[ax^{2}+by^{2}+2cxy \right]} dy &= e^{-\frac{1}{2}(a-\frac{c^{2} }{b})x^{2} } \int\limits_{-\infty}^{\infty}e^{-\frac{b}{2}(y+\frac{c}{b})^{2} } \\
 &= e^{-\frac{1}{2}(a-\frac{c^{2} }{b})x^{2} }\frac{\sqrt{2\pi} }{\sqrt{b} }
 \end{align*}$$
-by \eqref{eq:onedimgaussian} but ony if $b > 0$. Now we integrate over $x$ and use \eqref{eq:onedimgaussian} again (and the fact that $a-\frac{c^{2} }{b} > 0$) to get
+by \eqrefeq:onedimgaussian but ony if $b > 0$. Now we integrate over $x$ and use \eqrefeq:onedimgaussian again (and the fact that $a-\frac{c^{2} }{b} > 0$) to get
 $$\begin{align*}
 \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}e^{-\frac{1}{2}\left[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu) \right]}dydx &= \frac{\sqrt{2\pi} }{\sqrt{b} } \int\limits_{-\infty}^{\infty} e^{-\frac{1}{2}(a-\frac{c^{2} }{b})x^{2} }dx \\
 &= \frac{\sqrt{2\pi} }{\sqrt{b} } \frac{\sqrt{2\pi} }{\sqrt{a-\frac{c^{2} }{b} }} = \frac{2\pi}{ab-c^{2} }.

@@ -170,7 +170,7 @@
  </p>
            
  <p class="text-justify">
-\subsection{Estimating $\mu$ when ${\sigma}^{2}$ is known} We look for a confidence interval of the form $I_{n}=[\bar{X}_{n}-a,\bar{X}_{n}+a]$. Then,
+\subsectionEstimating $\mu$ when ${\sigma}^{2}$ is known We look for a confidence interval of the form $I_{n}=[\bar{X}_{n}-a,\bar{X}_{n}+a]$. Then,
 $$
 \mathbf{P}\left(I_{n}\ni \mu\right) = \mathbf{P}\left(-a\le \bar{X}_{n}-\mu\le a\right) =\mathbf{P}\left(-\frac{a\sqrt{n} }{{\sigma}}\le \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}} \le \frac{a\sqrt{n} }{{\sigma}}\right)
 $$
@@ -198,7 +198,7 @@ This is our confidence interval.
  </p>
            
  <p class="text-justify">
-\subsection{Estimating ${\sigma}^{2}$ when $\mu$ is known}
+\subsectionEstimating ${\sigma}^{2}$ when $\mu$ is known
 Since $\mu$ is known, we use $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ to estimate ${\sigma}^{2}$. Here is an exercise.
 <p>&nbsp;</p>
                 <div id="theorem-168"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 168 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(0,1)$ random variables. Then, $Z_{1}^{2}+\ldots +Z_{n}^{2}\sim \mbox{Gamma}(n/2,1/2)$.
@@ -216,7 +216,7 @@ Differentiate w.r.t $t$ to see that the density of $Z_{1}^{2}$ is $h(t)=\frac{1}
  </p>
            
  <p class="text-justify">
-\medskip
+<p></p>
  </p>
 <p class="text-justify">
           
@@ -251,8 +251,8 @@ This is not too hard to prove (a muscle-flexing exercise in change of variable f
  </p>
 <p class="text-justify">
           
- \subsection{Estimating ${\sigma}^{2}$ when $\mu$ is unknown}
-The estimate $s_{n}^{2}$ must be used as $W_{n}$ depends on $\mu$ which is unknown. Theorem {thm:indepofsamplemeanandvar} tells us that $\frac{(n-1)s_{n}^{2} }{{\sigma}^{2} }\sim \chi^{2}_{n-1}$. Hence, by the same logic as before we get
+ \subsectionEstimating ${\sigma}^{2}$ when $\mu$ is unknown
+The estimate $s_{n}^{2}$ must be used as $W_{n}$ depends on $\mu$ which is unknown. Theorem thm:indepofsamplemeanandvar tells us that $\frac{(n-1)s_{n}^{2} }{{\sigma}^{2} }\sim \chi^{2}_{n-1}$. Hence, by the same logic as before we get
 $$\begin{align*}
 \mathbf{P}\left\{   \frac{(n-1)s_{n}^{2} }{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)} \le {\sigma}^{2}\le \frac{(n-1)s_{n}^{2} }{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right\}&=\mathbf{P}\left\{ \chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right) \le \frac{(n-1)s_{n}^{2} }{{\sigma}^{2} } \le \chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)\right\} \\
 &=1-\alpha.
@@ -265,7 +265,7 @@ If $\mu$ is known, we could use the earlier confidence interval using $W_{n}$, o
  </p>
 <p class="text-justify">
           
- \subsection{Estimating $\mu$ when ${\sigma}^{2}$ is unknown} The earlier confidence interval We look for a confidence interval $[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2}]$ cannot be used as we do not know the value of ${\sigma}$.
+ \subsectionEstimating $\mu$ when ${\sigma}^{2}$ is unknown The earlier confidence interval We look for a confidence interval $[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2}]$ cannot be used as we do not know the value of ${\sigma}$.
  </p>
            
  <p class="text-justify">

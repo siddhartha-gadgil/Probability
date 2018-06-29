@@ -176,7 +176,7 @@ object TeXToHtml {
     .replace("\\vspace{2mm}", "")
     .replace("""\"{o}""", "&ouml;")
     .replace("}}", "} }")
-    .replace("""``""", "''")
+    .replace("""``""", "''").replace("\\medskip", "<p></p>")
 
   val begReg: Regex = """\\begin\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
@@ -220,7 +220,9 @@ object TeXToHtml {
     "align*",
     "align",
     "equation*",
-    "equation"
+    "equation",
+    "eqnarray",
+    "eqnarray*"
   )
 
   val divEnvs = Set("proof")
@@ -321,28 +323,6 @@ object TeXToHtml {
         else Regex.quoteReplacement(m.group(0))
     )
 
-  def replaceBlanks(txt: String): String =
-    blankLineReg.replaceAllIn(
-      txt,
-      (m) =>
-        if (doldolReg.findAllIn(m.before).size % 2 == 1) {
-          print(m.before.toString.drop(m.before.toString.length - 25))
-          println(m.after.toString.take(25)); m.group(0)
-        } else "</p>\n<p class=\"text-justify\">"
-    )
-
-  def replaceSec(txt: String): String =
-    """(\\section\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
-      .replaceAllIn(
-        txt,
-        (m) => s"""<h2>${m.group(2)}</h2><p class="text-justify">""")
-
-  def replaceSubSec(txt: String): String =
-    """(\\subsection\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
-      .replaceAllIn(
-        txt,
-        (m) => s"""<strong>${m.group(2)} .</strong><p class="text-justify">""")
-
   def recReplaceSubSection(txt: String,
                            head: String,
                            counter: Int,
@@ -351,7 +331,7 @@ object TeXToHtml {
       .findFirstMatchIn(txt)
       .map { (m) =>
         val newHead =
-          head + blockParas(m.before.toString) + s"""<strong>$section.${counter + 1} ${m.group(2)}.</strong>"""
+          head + blockParas(m.before.toString) + s"""<h3>$section.${counter + 1} ${m.group(2)}.</h3>"""
         recReplaceSubSection(m.after.toString, newHead, counter + 1, section)
       }
       .getOrElse(head + blockParas(txt))
@@ -406,6 +386,7 @@ object TeXToHtml {
           Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
         else s"\\{\\\\bf ${m.group(2)}\\}"
     )
+
 //    bfReg2.replaceAllIn(
 //      step,
 //      (m) =>
@@ -417,8 +398,21 @@ object TeXToHtml {
 //    )
     step
   }
+  
+  def purge(r: Regex)(txt: String): String =
+    r.replaceAllIn(
+      txt,
+      (m) =>
+        if (dolReg
+          .findAllIn(m.before + " ")
+          .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0
+          && """\\\[""".r.findAllIn(m.before).size == """\\\]""".r.findAllIn(m.before).size
+        )
+          ""
+        else m.group(0).toString
+    )
 
-  val emReg: Regex = "(\\{\\\\em)([ \\\\])([^\\}]+)\\}".r
+  val emReg: Regex = "(\\{\\\\em[^a-zA-Z])([ \\\\])([^\\}]+)\\}".r
 
   def replaceEm(txt: String): String =
     emReg.replaceAllIn(
@@ -553,11 +547,11 @@ object TeXToHtml {
   def recReplaceEm(txt: String,
                       head: String = ""
                      ): String =
-    """\{\\em""".r
+    """\{\\em[^a-zA-Z]""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
-        println("found em")
-        val (header, rest) = inBraces(m.after.toString, "")
+//        println("found em")
+        val (header, rest) = inBraces(m.group(0).toString.takeRight(1) + m.after.toString, "")
         val newHead =
           head + m.before + s"<em>$header</em>"
         recReplaceEm(rest, newHead)
@@ -570,7 +564,7 @@ object TeXToHtml {
     """\{\\color\{magenta\}""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
-        println("found magenta")
+//        println("found magenta")
         val (header, rest) = inBraces(m.after.toString, "")
         val newHead =
           head + m.before + header
@@ -656,11 +650,11 @@ class TeXToHtml(header: String, text: String) {
   }
 
   lazy val allReplaced: String =
-    recReplaceFootnotes(replaceUnderline(replaceBf(secReplaced)))
+    purge("""[\{\}]""".r)(recReplaceFootnotes(replaceUnderline(replaceBf(secReplaced))))
 
   lazy val chapReplaced =
     chapters.filter(_._1 > 0).mapValues{(chapter) =>
-      recReplaceFootnotes(replaceUnderline(replaceBf(refChapters(chapter))))
+      purge("""[\{\}]""".r)(recReplaceFootnotes(replaceUnderline(replaceBf(refChapters(chapter)))))
     }
 
   lazy val sortedSections: Vector[(Int, String)] =

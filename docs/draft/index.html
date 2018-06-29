@@ -190,7 +190,7 @@ Instead of cricket, they could spend their time on the more interesting question
  </p>
            
  <p class="text-justify">
-The logic is this. Roughly one may say that <em> surprise</em> is just the name for our reaction to an event that we <em> \'{a} priori</em> thought to have low chance of occurring. Thus, we approach the experiment with the belief that the psychic is just guessing at random, and if the results are such that under that random-guess-hypothesis they have very small probability, then we are willing to be surprised, that is willing to discard our preconception and accept that she is a psychic.
+The logic is this. Roughly one may say that <em> surprise</em> is just the name for our reaction to an event that we <em> \'a priori</em> thought to have low chance of occurring. Thus, we approach the experiment with the belief that the psychic is just guessing at random, and if the results are such that under that random-guess-hypothesis they have very small probability, then we are willing to be surprised, that is willing to discard our preconception and accept that she is a psychic.
  </p>
 <p class="text-justify">
           
@@ -205,7 +205,7 @@ $$
  </p>
            
  <p class="text-justify">
-<strong>{Summary:</strong> } There are many situations in real life where one is required to make decisions under uncertainty. A general template for the answer could be to fix a small number that we allow as the probability of error, and deduce thresholds based on it. This brings us to the question of computing probabilities in various situations.
+<strong>Summary:</strong>  There are many situations in real life where one is required to make decisions under uncertainty. A general template for the answer could be to fix a small number that we allow as the probability of error, and deduce thresholds based on it. This brings us to the question of computing probabilities in various situations.
  </p>
 <p class="text-justify">
           
@@ -268,7 +268,7 @@ This is the mathematical side of the picture. It is easy to make up any number o
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-9"><div class="panel panel-info example"> <div class="panel-heading">Example 9 </div><div class="panel-body"> $\Omega=\{0,1\}$. Fix a number $0\le p \le 1$ and let $p_{1}=p$ and $p_{0}=1-p$. The sample space is the same as before, but the probability space is different for each value of $p$. Again there are only four events, and their probabilities are $\mathbf{P}\<em>ptyset\}=0$, $\mathbf{P</em>\{0\}=1-p$, $\mathbf{P}\{1\}=p$ and $\mathbf{P}\{0,1\}=1$.
+                <div id="theorem-9"><div class="panel panel-info example"> <div class="panel-heading">Example 9 </div><div class="panel-body"> $\Omega=\{0,1\}$. Fix a number $0\le p \le 1$ and let $p_{1}=p$ and $p_{0}=1-p$. The sample space is the same as before, but the probability space is different for each value of $p$. Again there are only four events, and their probabilities are $\mathbf{P}\{\emptyset\}=0$, $\mathbf{P}\{0\}=1-p$, $\mathbf{P}\{1\}=p$ and $\mathbf{P}\{0,1\}=1$.
 </div></div></div>
  </p>
            
@@ -320,7 +320,7 @@ Of course, there are $2^{m^{r} }$ many events, which is quite large even for sma
           
  
  </p>
-           <strong>2.1 Probability in the real world.</strong>
+           <h3>2.1 Probability in the real world.</h3>
 
 
 
@@ -781,7 +781,7 @@ The injectivity of $f$ and $g$ is used in checking that these are the only possi
           
  
  </p>
-           <strong>5.1 First approach.</strong>
+           <h3>5.1 First approach.</h3>
 
 
 
@@ -887,7 +887,7 @@ Now, a countable union of finite sets is countable (or finite). Therefore $A=\bi
           
  
  </p>
-           <strong>5.2 Second approach.</strong>
+           <h3>5.2 Second approach.</h3>
 
 
  <p class="text-justify">
@@ -968,9 +968,9 @@ Since a function from $\Omega$ to $\mathbb{R}$ is called a random variable, the 
  Now we prove the proposition.
 <div class="proof">
 <ol>
-<li> By definition of probability space $\mathbf{P}(\Omega)=1$ and $\mathbf{P}(\emptyset)=0$. If $A$ is any event, then ${\mathbf 1}_<em>ptyset</em>(\omega)p_{\omega}\le {\mathbf 1}_{A}(\omega)p_{\omega}\le {\mathbf 1}_{\Omega}(\omega)p_{\omega}$. By Exercise <a href="#theorem-41">41</a>, we get
+<li> By definition of probability space $\mathbf{P}(\Omega)=1$ and $\mathbf{P}(\emptyset)=0$. If $A$ is any event, then ${\mathbf 1}_{\emptyset}(\omega)p_{\omega}\le {\mathbf 1}_{A}(\omega)p_{\omega}\le {\mathbf 1}_{\Omega}(\omega)p_{\omega}$. By Exercise <a href="#theorem-41">41</a>, we get
 $$
-\sum_{\omega\in \Omega}{\mathbf 1}_<em>ptyset</em>(\omega)p_{\omega} \le \sum_{\omega\in \Omega}{\mathbf 1}_{A}(\omega)p_{\omega} \le \sum_{\omega\in \Omega}{\mathbf 1}_{\Omega}(\omega)p_{\omega}.
+\sum_{\omega\in \Omega}{\mathbf 1}_{\emptyset}(\omega)p_{\omega} \le \sum_{\omega\in \Omega}{\mathbf 1}_{A}(\omega)p_{\omega} \le \sum_{\omega\in \Omega}{\mathbf 1}_{\Omega}(\omega)p_{\omega}.
 $$
 As observed earlier, these sums are just $\mathbf{P}(\emptyset)$, $\mathbf{P}(A)$ and $\mathbf{P}(\Omega)$, respectively. Thus, $0\le \mathbf{P}(A)\le 1$.
 </li>
@@ -1091,13 +1091,13 @@ $$
 \mathbf{P}\left(A_{i_{1} }\cap \ldots \cap A_{i_{k} }\right) =\sum\limits_{\omega\in \Omega}p_{\omega}{\mathbf 1}_{A_{i_{1} }\cap \ldots \cap A_{i_{k} }}(\omega)= \sum\limits_{\omega\in \Omega}p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega).
 $$
 Hence, the right hand side is given by adding over $i_{1} < \ldots  < i_{k}$, multiplying by $(-1)^{k-1}$ and then summing over $k$ from $1$ to $n$.
-\begin{eqnarray*}
+$$\begin{eqnarray*}
 \mbox{RHS} &=& \sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n} \; \sum\limits_{\omega\in \Omega} \;p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega) \\
 &=& \sum\limits_{\omega \in \Omega}\sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n} p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega) \\
 &=& -\sum\limits_{\omega \in \Omega}p_{\omega}\sum\limits_{k=1}^{n}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n}\prod\limits_{\ell=1}^{k}(-{\mathbf 1}_{A_{i_{\ell} }}(\omega)) \\
 &=& -\sum\limits_{\omega \in \Omega}p_{\omega} \left(\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j} }(\omega)) \; - \; 1\right) \\
 &=& \sum\limits_{\omega \in \Omega}p_{\omega}{\mathbf 1}_{A}(\omega).
-\end{eqnarray*}
+\end{eqnarray*}$$
 because the quantity $\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j} }(\omega))$ equals $-1$ if $\omega$ belongs to at least one of the $A_{i}$s, and is zero otherwise. Thus the claim follows.
 </div>
  </p>
@@ -1532,7 +1532,7 @@ $$
  </p>
            
  <p class="text-justify">
-A picture of the pmf and CDF for a Binomial distribution are shown in Figure ref{fig:pdfandcdfofbinomial}.
+A picture of the pmf and CDF for a Binomial distribution are shown in Figure reffig:pdfandcdfofbinomial.
  </p>
 <p class="text-justify">
           
@@ -1754,7 +1754,7 @@ The job of a probabilist consists in taking a CDF $F$ (then the probabilities of
  </p>
            
  <p class="text-justify">
-\medskip
+<p></p>
 There are loose threads here but they can be safely ignored for  this course. We just remark about them for those who are curious to know.
  </p>
 <p class="text-justify">
@@ -2286,7 +2286,7 @@ $$\begin{align*}
 \int\limits_{-\infty}^{\infty}e^{-\frac{1}{2}\left[ax^{2}+by^{2}+2cxy \right]} dy &= e^{-\frac{1}{2}(a-\frac{c^{2} }{b})x^{2} } \int\limits_{-\infty}^{\infty}e^{-\frac{b}{2}(y+\frac{c}{b})^{2} } \\
 &= e^{-\frac{1}{2}(a-\frac{c^{2} }{b})x^{2} }\frac{\sqrt{2\pi} }{\sqrt{b} }
 \end{align*}$$
-by \eqref{eq:onedimgaussian} but ony if $b > 0$. Now we integrate over $x$ and use \eqref{eq:onedimgaussian} again (and the fact that $a-\frac{c^{2} }{b} > 0$) to get
+by \eqrefeq:onedimgaussian but ony if $b > 0$. Now we integrate over $x$ and use \eqrefeq:onedimgaussian again (and the fact that $a-\frac{c^{2} }{b} > 0$) to get
 $$\begin{align*}
 \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}e^{-\frac{1}{2}\left[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu) \right]}dydx &= \frac{\sqrt{2\pi} }{\sqrt{b} } \int\limits_{-\infty}^{\infty} e^{-\frac{1}{2}(a-\frac{c^{2} }{b})x^{2} }dx \\
 &= \frac{\sqrt{2\pi} }{\sqrt{b} } \frac{\sqrt{2\pi} }{\sqrt{a-\frac{c^{2} }{b} }} = \frac{2\pi}{ab-c^{2} }.
@@ -2592,7 +2592,7 @@ This is well-defined whenever $g(s_{1},\ldots ,s_{\ell}) > 0$.
 <p class="text-justify">
           
  <p>&nbsp;</p>
-                <div id="theorem-129"><div class="panel panel-success remark"> <div class="panel-heading">Remark 129 </div><div class="panel-body"> Note the difference between \eqref{eq:conditionalpmf} and \eqref{eq:conditionalpdf}. In the latter we have left out the middle term because $\mathbf{P}\{X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}\}=0$. In \eqref{eq:conditionalpmf} the definition of pmf comes from the definition of conditional probability of events but in \eqref{eq:conditionalpdf} this is not so. We simply define the conditional density by analogy with the case of conditional pmf.  This is similar to the difference between interpretation of pmf ($f(t)$ is actually the probability of an event) and pdf ($f(t)$ is not the probability of an event but the density of probability near $t$).
+                <div id="theorem-129"><div class="panel panel-success remark"> <div class="panel-heading">Remark 129 </div><div class="panel-body"> Note the difference between \eqrefeq:conditionalpmf and \eqrefeq:conditionalpdf. In the latter we have left out the middle term because $\mathbf{P}\{X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}\}=0$. In \eqrefeq:conditionalpmf the definition of pmf comes from the definition of conditional probability of events but in \eqrefeq:conditionalpdf this is not so. We simply define the conditional density by analogy with the case of conditional pmf.  This is similar to the difference between interpretation of pmf ($f(t)$ is actually the probability of an event) and pdf ($f(t)$ is not the probability of an event but the density of probability near $t$).
 </div></div></div>
  </p>
            
@@ -2924,7 +2924,7 @@ $$
  </p>
 <p class="text-justify">
           
- \medskip
+ <p></p>
 This is very general, in that we only assume the existence of variance. If $X_{k}$ are assumed to have more moments, one can get better bounds. For example,  when $X_{k}$ are i.i.d. $\mbox{Ber}(p)$, we have the following theorem.
  </p>
            
@@ -3018,7 +3018,7 @@ $$
  </p>
 <p class="text-justify">
           
- \medskip
+ <p></p>
 What is remarkable about this? The end result does not depend on the distribution of $X_{i}$s at all! Only the mean and variance of the distribution were used! As this is one of the most important theorems in all of probability theory, we restate it in several forms, all equivalent to the above.
  </p>
            
@@ -3596,7 +3596,7 @@ Recall that if $X\sim \mbox{Exp}(1/\mu)$ then $X/2\sim \mbox{Exp}(1/2\mu)$ and v
  </p>
            
  <p class="text-justify">
-\subsection{Estimating $\mu$ when ${\sigma}^{2}$ is known} We look for a confidence interval of the form $I_{n}=[\bar{X}_{n}-a,\bar{X}_{n}+a]$. Then,
+\subsectionEstimating $\mu$ when ${\sigma}^{2}$ is known We look for a confidence interval of the form $I_{n}=[\bar{X}_{n}-a,\bar{X}_{n}+a]$. Then,
 $$
 \mathbf{P}\left(I_{n}\ni \mu\right) = \mathbf{P}\left(-a\le \bar{X}_{n}-\mu\le a\right) =\mathbf{P}\left(-\frac{a\sqrt{n} }{{\sigma}}\le \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{{\sigma}} \le \frac{a\sqrt{n} }{{\sigma}}\right)
 $$
@@ -3624,7 +3624,7 @@ This is our confidence interval.
  </p>
            
  <p class="text-justify">
-\subsection{Estimating ${\sigma}^{2}$ when $\mu$ is known}
+\subsectionEstimating ${\sigma}^{2}$ when $\mu$ is known
 Since $\mu$ is known, we use $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ to estimate ${\sigma}^{2}$. Here is an exercise.
 <p>&nbsp;</p>
                 <div id="theorem-168"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 168 </div><div class="panel-body"> Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(0,1)$ random variables. Then, $Z_{1}^{2}+\ldots +Z_{n}^{2}\sim \mbox{Gamma}(n/2,1/2)$.
@@ -3642,7 +3642,7 @@ Differentiate w.r.t $t$ to see that the density of $Z_{1}^{2}$ is $h(t)=\frac{1}
  </p>
            
  <p class="text-justify">
-\medskip
+<p></p>
  </p>
 <p class="text-justify">
           
@@ -3677,8 +3677,8 @@ This is not too hard to prove (a muscle-flexing exercise in change of variable f
  </p>
 <p class="text-justify">
           
- \subsection{Estimating ${\sigma}^{2}$ when $\mu$ is unknown}
-The estimate $s_{n}^{2}$ must be used as $W_{n}$ depends on $\mu$ which is unknown. Theorem {thm:indepofsamplemeanandvar} tells us that $\frac{(n-1)s_{n}^{2} }{{\sigma}^{2} }\sim \chi^{2}_{n-1}$. Hence, by the same logic as before we get
+ \subsectionEstimating ${\sigma}^{2}$ when $\mu$ is unknown
+The estimate $s_{n}^{2}$ must be used as $W_{n}$ depends on $\mu$ which is unknown. Theorem thm:indepofsamplemeanandvar tells us that $\frac{(n-1)s_{n}^{2} }{{\sigma}^{2} }\sim \chi^{2}_{n-1}$. Hence, by the same logic as before we get
 $$\begin{align*}
 \mathbf{P}\left\{   \frac{(n-1)s_{n}^{2} }{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)} \le {\sigma}^{2}\le \frac{(n-1)s_{n}^{2} }{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\right\}&=\mathbf{P}\left\{ \chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right) \le \frac{(n-1)s_{n}^{2} }{{\sigma}^{2} } \le \chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)\right\} \\
 &=1-\alpha.
@@ -3691,7 +3691,7 @@ If $\mu$ is known, we could use the earlier confidence interval using $W_{n}$, o
  </p>
 <p class="text-justify">
           
- \subsection{Estimating $\mu$ when ${\sigma}^{2}$ is unknown} The earlier confidence interval We look for a confidence interval $[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2}]$ cannot be used as we do not know the value of ${\sigma}$.
+ \subsectionEstimating $\mu$ when ${\sigma}^{2}$ is unknown The earlier confidence interval We look for a confidence interval $[\bar{X}_{n}-\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2},\bar{X}_{n}+\frac{{\sigma}}{\sqrt{n} }z_{\alpha/2}]$ cannot be used as we do not know the value of ${\sigma}$.
  </p>
            
  <p class="text-justify">
@@ -3828,7 +3828,7 @@ Earlier in the course we discussed the problem of how to test whether a ''psychi
  </p>
            
  <p class="text-justify">
-\medskip
+<p></p>
 One hypotheses (we call it the <em> null hypothesis</em> and denote it by $H_{0}$) is that the psychic is guessing randomly. The <em> alternate hypothesis</em> (denoted $H_{1}$) is that his/her guesses are better than random guessing (in itself this does not imply existence of psychic powers. It could be that he/she has managed to see some of the cards etc.). Can we decide between the two hypotheses based on $X$?
 </div></div></div>
  </p>
@@ -4050,7 +4050,7 @@ This test has (approximately) significance level $\alpha$.
  </p>
            
  <p class="text-justify">
-\medskip
+<p></p>
 More generally, if we have data $X_{1},\ldots ,X_{n}$ from a population with mean $\mu$ and variance ${\sigma}^{2}$, then consider the test
 $$
 H_{0}: \; \mu=\mu_{0} \;\;\; \mbox{ versus }\;\;\; H_{1}: \; \mu\not=\mu_{0}.
@@ -4100,7 +4100,7 @@ If the desired level of significance is $\alpha$, then the Pearson $\chi^{2}$-te
  </p>
            
  <p class="text-justify">
-<strong>Fitting the Poisson distribution :</strong> We consider the famous data collected by Rutherford, Chadwick and Ellis on the number of radioactive disintegrations. For details see the book of Feller's book (section VI.7) or \href{http://galton.uchicago.edu/ lalley/Courses/312/PoissonProcesses.pdf}{this website}.
+<strong>Fitting the Poisson distribution :</strong> We consider the famous data collected by Rutherford, Chadwick and Ellis on the number of radioactive disintegrations. For details see the book of Feller's book (section VI.7) or \hrefhttp://galton.uchicago.edu/ lalley/Courses/312/PoissonProcesses.pdfthis website.
  </p>
 <p class="text-justify">
           
@@ -4164,7 +4164,7 @@ In our case we estimated one parameter, $\lambda$ hence the d.f. of the $\chi^{2
  </p>
            
  <p class="text-justify">
-\medskip
+<p></p>
 How does this help? Suppose $X_{1},\ldots ,X_{n}$ are i.i.d. random variables taking $k$ values (does not matter what the values are, say $t_{1},t_{2},\ldots ,t_{k}$) with probabilities $p_{1},\ldots ,p_{k}$. Then, let $W_{i}$ be the number of $X_{i}$s whose value is $t_{i}$. Clearly, $(W_{1},\ldots ,W_{k})$ has a multinomial distribution.  Therefore, for large $n$, the random variable $T_{n}$ defined above (which is in fact the $\chi^{2}$-statistic of Pearson) has approximately $\chi_{k-1}^{2}$ distribution. This explains the test.
  </p>
 <p class="text-justify">
@@ -4230,7 +4230,7 @@ where $s_{X}^{2},s_{Y}^{2}$ are the sample variances of $X$ and $Y$ and $s_{X,Y}
  </p>
 <p class="text-justify">
           
- \medskip
+ <p></p>
  </p>
            
  <p class="text-justify">
@@ -4322,7 +4322,7 @@ Another way to write it is $\hat{\beta}=\frac{s_{Y} }{s_{X} }r_{X,Y}$ where $r_{
 <strong>A motivation for the least squares criterion :</strong> Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alpha+\beta X_{i}+\epsilon_{i}$ where $\epsilon_{i}$ are i.i.d. $N(0,{\sigma}^{2})$ ''errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alpha+\beta X_{i},{\sigma}^{2})$ random variables. Now we can extimate $\alpha,\beta$ by the maximum likelihood method.
 
 <p>&nbsp;</p>
-                <div id="theorem-183"><div class="panel panel-info example"> <div class="panel-heading">Example 183 ([Hubble's 1929 experiment on the recession velocity of nebulae and their distance to earth)</div><div class="panel-body"> Hubble collected the following data that I took from \href{http://lib.stat.cmu.edu/DASL/Datafiles/Hubble.html}{this website}. Here $X$ is the number of megaparsecs from the nebula to earth and $Y$ is the observed recession velocity in $10^{3}$km/s.
+                <div id="theorem-183"><div class="panel panel-info example"> <div class="panel-heading">Example 183 ([Hubble's 1929 experiment on the recession velocity of nebulae and their distance to earth)</div><div class="panel-body"> Hubble collected the following data that I took from \hrefhttp://lib.stat.cmu.edu/DASL/Datafiles/Hubble.htmlthis website. Here $X$ is the number of megaparsecs from the nebula to earth and $Y$ is the observed recession velocity in $10^{3}$km/s.
 \[
 \begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
@@ -4350,11 +4350,11 @@ The residual sum of squares $\sum_{i=1}^{n}(Y_{i}-bX_{i})^{2}$ turns out to be $
 </ol>
 The residual sum of squares is smaller in the first, thus one may naively think that it is a better fit. However, note that the reduction is due to an extra parameter. Purely statistically, introducing extra parametrs will always reduce the residual sum of squares for obvious reasons. But the question is whether the extra parameter is worth the reduction. More precisely, if we fit the data too closely, then the next data point to be discovered (which may be nebula that is $10$ megaparsecs away)  may fall way off the curve.
 
-More importantly, in this example, physics tells us  that the line must pass through zero (that is, there is no recession velocity when two objects are very close). Therefore it is the second line that we consider, not the first. This gives the Hubble constant to be $423$ km./s./megaparsec (the currently accepted values appear to be about $70$, with data going up to distances of hundreds of megaparsecs...see  \href{https://www.cfa.harvard.edu/ dfabricant/huchra/hubble.plot.dat}{this data}!).
+More importantly, in this example, physics tells us  that the line must pass through zero (that is, there is no recession velocity when two objects are very close). Therefore it is the second line that we consider, not the first. This gives the Hubble constant to be $423$ km./s./megaparsec (the currently accepted values appear to be about $70$, with data going up to distances of hundreds of megaparsecs...see  \hrefhttps://www.cfa.harvard.edu/ dfabricant/huchra/hubble.plot.datthis data!).
 </div></div></div>
 
 <p>&nbsp;</p>
-                <div id="theorem-184"><div class="panel panel-info example"> <div class="panel-heading">Example 184 </div><div class="panel-body"> I have taken this example from the \href{http://ces.iisc.ernet.in/hpg/nvjoshi/statspunedatabook/databook.html}{ wonderful compilation of data sets} by A. P. Gore, S. A. Paranjpe, M. B. Kulkarni. In this example, $Y$ denotes the number of frogs of age $X$ (in some delimited population).
+                <div id="theorem-184"><div class="panel panel-info example"> <div class="panel-heading">Example 184 </div><div class="panel-body"> I have taken this example from the \hrefhttp://ces.iisc.ernet.in/hpg/nvjoshi/statspunedatabook/databook.html wonderful compilation of data sets by A. P. Gore, S. A. Paranjpe, M. B. Kulkarni. In this example, $Y$ denotes the number of frogs of age $X$ (in some delimited population).
 \[
 \begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline

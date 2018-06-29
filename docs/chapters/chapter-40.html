@@ -179,7 +179,7 @@ Another way to write it is $\hat{\beta}=\frac{s_{Y} }{s_{X} }r_{X,Y}$ where $r_{
 <strong>A motivation for the least squares criterion :</strong> Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alpha+\beta X_{i}+\epsilon_{i}$ where $\epsilon_{i}$ are i.i.d. $N(0,{\sigma}^{2})$ ''errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alpha+\beta X_{i},{\sigma}^{2})$ random variables. Now we can extimate $\alpha,\beta$ by the maximum likelihood method.
 
 <p>&nbsp;</p>
-                <div id="theorem-183"><div class="panel panel-info example"> <div class="panel-heading">Example 183 ([Hubble's 1929 experiment on the recession velocity of nebulae and their distance to earth)</div><div class="panel-body"> Hubble collected the following data that I took from \href{http://lib.stat.cmu.edu/DASL/Datafiles/Hubble.html}{this website}. Here $X$ is the number of megaparsecs from the nebula to earth and $Y$ is the observed recession velocity in $10^{3}$km/s.
+                <div id="theorem-183"><div class="panel panel-info example"> <div class="panel-heading">Example 183 ([Hubble's 1929 experiment on the recession velocity of nebulae and their distance to earth)</div><div class="panel-body"> Hubble collected the following data that I took from \hrefhttp://lib.stat.cmu.edu/DASL/Datafiles/Hubble.htmlthis website. Here $X$ is the number of megaparsecs from the nebula to earth and $Y$ is the observed recession velocity in $10^{3}$km/s.
 \[
 \begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
@@ -207,11 +207,11 @@ The residual sum of squares $\sum_{i=1}^{n}(Y_{i}-bX_{i})^{2}$ turns out to be $
 </ol>
 The residual sum of squares is smaller in the first, thus one may naively think that it is a better fit. However, note that the reduction is due to an extra parameter. Purely statistically, introducing extra parametrs will always reduce the residual sum of squares for obvious reasons. But the question is whether the extra parameter is worth the reduction. More precisely, if we fit the data too closely, then the next data point to be discovered (which may be nebula that is $10$ megaparsecs away)  may fall way off the curve.
 
-More importantly, in this example, physics tells us  that the line must pass through zero (that is, there is no recession velocity when two objects are very close). Therefore it is the second line that we consider, not the first. This gives the Hubble constant to be $423$ km./s./megaparsec (the currently accepted values appear to be about $70$, with data going up to distances of hundreds of megaparsecs...see  \href{https://www.cfa.harvard.edu/ dfabricant/huchra/hubble.plot.dat}{this data}!).
+More importantly, in this example, physics tells us  that the line must pass through zero (that is, there is no recession velocity when two objects are very close). Therefore it is the second line that we consider, not the first. This gives the Hubble constant to be $423$ km./s./megaparsec (the currently accepted values appear to be about $70$, with data going up to distances of hundreds of megaparsecs...see  \hrefhttps://www.cfa.harvard.edu/ dfabricant/huchra/hubble.plot.datthis data!).
 </div></div></div>
 
 <p>&nbsp;</p>
-                <div id="theorem-184"><div class="panel panel-info example"> <div class="panel-heading">Example 184 </div><div class="panel-body"> I have taken this example from the \href{http://ces.iisc.ernet.in/hpg/nvjoshi/statspunedatabook/databook.html}{ wonderful compilation of data sets} by A. P. Gore, S. A. Paranjpe, M. B. Kulkarni. In this example, $Y$ denotes the number of frogs of age $X$ (in some delimited population).
+                <div id="theorem-184"><div class="panel panel-info example"> <div class="panel-heading">Example 184 </div><div class="panel-body"> I have taken this example from the \hrefhttp://ces.iisc.ernet.in/hpg/nvjoshi/statspunedatabook/databook.html wonderful compilation of data sets by A. P. Gore, S. A. Paranjpe, M. B. Kulkarni. In this example, $Y$ denotes the number of frogs of age $X$ (in some delimited population).
 \[
 \begin{array}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
 \hline
