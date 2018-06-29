@@ -398,7 +398,7 @@ object TeXToHtml {
 //    )
     step
   }
-  
+
   def purge(r: Regex)(txt: String): String =
     r.replaceAllIn(
       txt,
@@ -603,7 +603,7 @@ class TeXToHtml(header: String, text: String) {
     if (next == txt) next else recDefReplace(next)
   }
 
-  lazy val defReplaced: String = recDefReplace(text).replace("""\noindent""", "")
+  lazy val defReplaced: String = recDefReplace(text).replace("""\noindent""", "").replace("\\textrm", "")
 
   lazy val baseReplaced: String =
     replaceEnds(
@@ -721,7 +721,7 @@ $foot"""
 
   lazy val tocHtml = s"""$top
 $chapNav
-$banner 
+$banner
 <h1 class="text-center bg-info">Table of Contents</h1>
 <p>&nbsp;</p>
 <ol>
