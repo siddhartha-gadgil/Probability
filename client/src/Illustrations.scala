@@ -10,5 +10,6 @@ object Illustrations{
   @JSExport
   def main() : Unit = {
     FairCoin.main()
+    Birthdays.main()
   }
 }
