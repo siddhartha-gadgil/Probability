@@ -2862,7 +2862,9 @@ function $c_Lprobability_Birthdays$() {
   this.rnd$1 = null;
   this.numV$1 = null;
   this.birthdaysV$1 = null;
-  this.dupsR$1 = null
+  this.dupsR$1 = null;
+  this.months$1 = null;
+  this.probClass$1 = null
 }
 $c_Lprobability_Birthdays$.prototype = new $h_O();
 $c_Lprobability_Birthdays$.prototype.constructor = $c_Lprobability_Birthdays$;
@@ -2891,11 +2893,85 @@ $c_Lprobability_Birthdays$.prototype.randomBirthdays__I__V = (function(n) {
 $c_Lprobability_Birthdays$.prototype.dupsR__Lmhtml_Rx = (function() {
   return this.dupsR$1
 });
+$c_Lprobability_Birthdays$.prototype.months__sci_Vector = (function() {
+  return this.months$1
+});
+$c_Lprobability_Birthdays$.prototype.monthDay__I__sci_Vector__T2 = (function(n, m) {
+  var _$this = this;
+  _monthDay: while (true) {
+    var x1 = $as_T2(m.head__O());
+    if ((x1 !== null)) {
+      var mon = $as_T(x1.$$und1__O());
+      var days = x1.$$und2$mcI$sp__I();
+      var x$3 = new $c_T2().init___O__O(mon, days)
+    } else {
+      var x$3;
+      throw new $c_s_MatchError().init___O(x1)
+    };
+    var mon$2 = $as_T(x$3.$$und1__O());
+    var days$2 = x$3.$$und2$mcI$sp__I();
+    if ((n < days$2)) {
+      return new $c_T2().init___O__O(mon$2, ((n + 1) | 0))
+    } else {
+      var temp$n = ((n - days$2) | 0);
+      var temp$m = m.tail__sci_Vector();
+      n = temp$n;
+      m = temp$m;
+      continue _monthDay
+    }
+  }
+});
+$c_Lprobability_Birthdays$.prototype.date__I__T = (function(n) {
+  var x1 = this.monthDay__I__sci_Vector__T2(n, this.months__sci_Vector());
+  if ((x1 !== null)) {
+    var mon = $as_T(x1.$$und1__O());
+    var day = x1.$$und2$mcI$sp__I();
+    var x$4 = new $c_T2().init___O__O(mon, day)
+  } else {
+    var x$4;
+    throw new $c_s_MatchError().init___O(x1)
+  };
+  var mon$2 = $as_T(x$4.$$und1__O());
+  var day$2 = x$4.$$und2$mcI$sp__I();
+  return new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["", " ", " "])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([mon$2, day$2]))
+});
+$c_Lprobability_Birthdays$.prototype.distSeq__I__sci_Vector = (function(n) {
+  return $as_sc_TraversableOnce($m_sr_RichInt$().until$extension0__I__I__sci_Range($m_s_Predef$().intWrapper__I__I(0), n).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x$5$2) {
+      var x$5 = $uI(x$5$2);
+      return $this.$$anonfun$distSeq$1__p1__I__I(x$5)
+    })
+  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).toVector__sci_Vector()
+});
+$c_Lprobability_Birthdays$.prototype.allSeq__I__sci_Vector = (function(n) {
+  return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().fill__I__F0__sc_GenTraversable(n, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this) {
+    return (function() {
+      return $this.$$anonfun$allSeq$1__p1__I()
+    })
+  })(this))))
+});
+$c_Lprobability_Birthdays$.prototype.probDistinct__I__D = (function(n) {
+  return $uD($as_sc_TraversableOnce($as_sc_TraversableLike(this.distSeq__I__sci_Vector(n).zip__sc_GenIterable__scg_CanBuildFrom__O(this.allSeq__I__sci_Vector(n), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x0$1$2) {
+      var x0$1 = $as_T2(x0$1$2);
+      return $this.$$anonfun$probDistinct$1__p1__T2__D(x0$1)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).fold__O__F2__O(1.0, new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function(this$2) {
+    return (function(x$6$2, x$7$2) {
+      var x$6 = $uD(x$6$2);
+      var x$7 = $uD(x$7$2);
+      return this$2.$$anonfun$probDistinct$2__p1__D__D__D(x$6, x$7)
+    })
+  })(this))))
+});
+$c_Lprobability_Birthdays$.prototype.probClass__Lmhtml_Var = (function() {
+  return this.probClass$1
+});
 $c_Lprobability_Birthdays$.prototype.main__V = (function() {
   var $$md = $m_s_xml_Null$();
   $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel panel-primary"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$22 = $$md;
-  var jsx$21 = $m_s_xml_TopScope$();
+  var jsx$48 = $$md;
+  var jsx$47 = $m_s_xml_TopScope$();
   var $$buf = new $c_s_xml_NodeBuffer().init___();
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
   var $$md$2 = $m_s_xml_Null$();
@@ -2907,9 +2983,9 @@ $c_Lprobability_Birthdays$.prototype.main__V = (function() {
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$2, jsx$1, false, $$buf$2));
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
   var $$md$3 = $m_s_xml_Null$();
-  $$md$3 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-body bg-info"), $$md$3, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$20 = $$md$3;
-  var jsx$19 = $m_s_xml_TopScope$();
+  $$md$3 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-body"), $$md$3, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$46 = $$md$3;
+  var jsx$45 = $m_s_xml_TopScope$();
   var $$buf$3 = new $c_s_xml_NodeBuffer().init___();
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
   var jsx$4 = $m_s_xml_Null$();
@@ -2918,8 +2994,8 @@ $c_Lprobability_Birthdays$.prototype.main__V = (function() {
   $$buf$4.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("We randomly choose birthdays of different persons. How likely do you think it is that two persons have the same birthday?"));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", jsx$4, jsx$3, false, $$buf$4));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  var jsx$10 = $m_s_xml_Null$();
-  var jsx$9 = $m_s_xml_TopScope$();
+  var jsx$8 = $m_s_xml_Null$();
+  var jsx$7 = $m_s_xml_TopScope$();
   var $$buf$5 = new $c_s_xml_NodeBuffer().init___();
   $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
   var jsx$6 = $m_s_xml_Null$();
@@ -2939,15 +3015,7 @@ $c_Lprobability_Birthdays$.prototype.main__V = (function() {
   $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("min", new $c_s_xml_Text().init___T("0"), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("type", new $c_s_xml_Text().init___T("number"), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "input", $$md$4, $m_s_xml_TopScope$(), true, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
-  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
-  var jsx$8 = $m_s_xml_Null$();
-  var jsx$7 = $m_s_xml_TopScope$();
-  var $$buf$7 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("("));
-  $$buf$7.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.numV__Lmhtml_Var(), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().intElementEmbeddable__s_xml_XmlElementEmbeddable()));
-  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(") "));
-  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "span", jsx$8, jsx$7, false, $$buf$7));
-  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n          "));
   $$buf$5.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.numV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
     return (function(num$2) {
       var num = $uI(num$2);
@@ -2955,58 +3023,190 @@ $c_Lprobability_Birthdays$.prototype.main__V = (function() {
     })
   })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().nodeElementEmbeddable__s_xml_XmlElementEmbeddable()));
   $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$10, jsx$9, false, $$buf$5));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$8, jsx$7, false, $$buf$5));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  var jsx$12 = $m_s_xml_Null$();
-  var jsx$11 = $m_s_xml_TopScope$();
-  var $$buf$8 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$8.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" Birthdays:"));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "h4", jsx$12, jsx$11, false, $$buf$8));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
   var $$md$5 = $m_s_xml_Null$();
-  $$md$5 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("list-inline bg-light"), $$md$5, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$14 = $$md$5;
+  $$md$5 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel panel-info"), $$md$5, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$16 = $$md$5;
+  var jsx$15 = $m_s_xml_TopScope$();
+  var $$buf$7 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var $$md$6 = $m_s_xml_Null$();
+  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-heading"), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$10 = $$md$6;
+  var jsx$9 = $m_s_xml_TopScope$();
+  var $$buf$8 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$8.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Random birthdays"));
+  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$10, jsx$9, false, $$buf$8));
+  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var $$md$7 = $m_s_xml_Null$();
+  $$md$7 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-body"), $$md$7, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$14 = $$md$7;
   var jsx$13 = $m_s_xml_TopScope$();
   var $$buf$9 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
-  $$buf$9.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.birthdaysV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
+  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n              "));
+  var $$md$8 = $m_s_xml_Null$();
+  $$md$8 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("list-inline"), $$md$8, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$12 = $$md$8;
+  var jsx$11 = $m_s_xml_TopScope$();
+  var $$buf$10 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                "));
+  $$buf$10.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.birthdaysV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
     return (function(bdys$2) {
       var bdys = $as_sci_Vector(bdys$2);
       return this$3.$$anonfun$main$4__p1__sci_Vector__sci_Vector(bdys)
     })
   })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable()));
-  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "ul", jsx$14, jsx$13, false, $$buf$9));
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n              "));
+  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "ul", jsx$12, jsx$11, false, $$buf$10));
+  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n            "));
+  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$14, jsx$13, false, $$buf$9));
+  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$16, jsx$15, false, $$buf$7));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  var jsx$16 = $m_s_xml_Null$();
-  var jsx$15 = $m_s_xml_TopScope$();
-  var $$buf$10 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" Birthdays of more than one person:"));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "h4", jsx$16, jsx$15, false, $$buf$10));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  var $$md$6 = $m_s_xml_Null$();
-  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("list-inline"), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$18 = $$md$6;
-  var jsx$17 = $m_s_xml_TopScope$();
+  var $$md$9 = $m_s_xml_Null$();
+  $$md$9 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel panel-info"), $$md$9, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$24 = $$md$9;
+  var jsx$23 = $m_s_xml_TopScope$();
   var $$buf$11 = new $c_s_xml_NodeBuffer().init___();
   $$buf$11.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
-  $$buf$11.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.dupsR__Lmhtml_Rx().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
+  var $$md$10 = $m_s_xml_Null$();
+  $$md$10 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-heading"), $$md$10, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$18 = $$md$10;
+  var jsx$17 = $m_s_xml_TopScope$();
+  var $$buf$12 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$12.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Birthdays of more than one person"));
+  $$buf$11.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$18, jsx$17, false, $$buf$12));
+  $$buf$11.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var $$md$11 = $m_s_xml_Null$();
+  $$md$11 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-body"), $$md$11, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$22 = $$md$11;
+  var jsx$21 = $m_s_xml_TopScope$();
+  var $$buf$13 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$13.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n              "));
+  var $$md$12 = $m_s_xml_Null$();
+  $$md$12 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("list-inline"), $$md$12, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$20 = $$md$12;
+  var jsx$19 = $m_s_xml_TopScope$();
+  var $$buf$14 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$14.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                "));
+  $$buf$14.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.dupsR__Lmhtml_Rx().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
     return (function(bdys$3$2) {
       var bdys$3 = $as_sci_Vector(bdys$3$2);
-      return this$4.$$anonfun$main$6__p1__sci_Vector__sci_Vector(bdys$3)
+      return this$4.$$anonfun$main$7__p1__sci_Vector__sci_Vector(bdys$3)
     })
   })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$14.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n              "));
+  $$buf$13.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "ul", jsx$20, jsx$19, false, $$buf$14));
+  $$buf$13.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n            "));
+  $$buf$11.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$22, jsx$21, false, $$buf$13));
   $$buf$11.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "ul", jsx$18, jsx$17, false, $$buf$11));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n        "));
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$20, jsx$19, false, $$buf$3));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$24, jsx$23, false, $$buf$11));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n          "));
+  var $$md$13 = $m_s_xml_Null$();
+  $$md$13 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$5) {
+    return (function() {
+      this$5.$$anonfun$main$9__p1__V()
+    })
+  })(this)), $$md$13, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$13 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel panel-warning"), $$md$13, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$44 = $$md$13;
+  var jsx$43 = $m_s_xml_TopScope$();
+  var $$buf$15 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var $$md$14 = $m_s_xml_Null$();
+  $$md$14 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-heading"), $$md$14, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$26 = $$md$14;
+  var jsx$25 = $m_s_xml_TopScope$();
+  var $$buf$16 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$16.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Probability of the event (click to expand)"));
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$26, jsx$25, false, $$buf$16));
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var $$md$15 = $m_s_xml_Null$();
+  $$md$15 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-body"), $$md$15, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$42 = $$md$15;
+  var jsx$41 = $m_s_xml_TopScope$();
+  var $$buf$17 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$17.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n              "));
+  var $$md$16 = $m_s_xml_Null$();
+  $$md$16 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", this.probClass__Lmhtml_Var(), $$md$16, $m_s_xml_XmlAttributeEmbeddable$().rxAttributeEmbeddable__s_xml_XmlAttributeEmbeddable__s_xml_XmlAttributeEmbeddable($m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable()));
+  var jsx$40 = $$md$16;
+  var jsx$39 = $m_s_xml_TopScope$();
+  var $$buf$18 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                "));
+  var jsx$30 = $m_s_xml_Null$();
+  var jsx$29 = $m_s_xml_TopScope$();
+  var $$buf$19 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$19.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                  "));
+  var jsx$28 = $m_s_xml_Null$();
+  var jsx$27 = $m_s_xml_TopScope$();
+  var $$buf$20 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$20.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Number of sequences of distinct brithdays: "));
+  $$buf$19.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "h4", jsx$28, jsx$27, false, $$buf$20));
+  $$buf$19.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                  "));
+  $$buf$19.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.numV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$6) {
+    return (function(n$2) {
+      var n = $uI(n$2);
+      return this$6.$$anonfun$main$11__p1__I__T(n)
+    })
+  })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().stringElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$19.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                "));
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "li", jsx$30, jsx$29, false, $$buf$19));
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                "));
+  var jsx$34 = $m_s_xml_Null$();
+  var jsx$33 = $m_s_xml_TopScope$();
+  var $$buf$21 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$21.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                  "));
+  var jsx$32 = $m_s_xml_Null$();
+  var jsx$31 = $m_s_xml_TopScope$();
+  var $$buf$22 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$22.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Number of sequences of birthdays:"));
+  $$buf$21.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "h4", jsx$32, jsx$31, false, $$buf$22));
+  $$buf$21.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                  "));
+  $$buf$21.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.numV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7) {
+    return (function(n$3$2) {
+      var n$3 = $uI(n$3$2);
+      return this$7.$$anonfun$main$12__p1__I__T(n$3)
+    })
+  })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().stringElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$21.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                "));
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "li", jsx$34, jsx$33, false, $$buf$21));
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                "));
+  var jsx$38 = $m_s_xml_Null$();
+  var jsx$37 = $m_s_xml_TopScope$();
+  var $$buf$23 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$23.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                  "));
+  var jsx$36 = $m_s_xml_Null$();
+  var jsx$35 = $m_s_xml_TopScope$();
+  var $$buf$24 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$24.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Probability of birthdays being all distinct:"));
+  $$buf$23.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "h4", jsx$36, jsx$35, false, $$buf$24));
+  $$buf$23.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                  "));
+  $$buf$23.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.numV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$8) {
+    return (function(n$4$2) {
+      var n$4 = $uI(n$4$2);
+      return this$8.$$anonfun$main$13__p1__I__D(n$4)
+    })
+  })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().doubleElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$23.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n                "));
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "li", jsx$38, jsx$37, false, $$buf$23));
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n              "));
+  $$buf$17.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "ul", jsx$40, jsx$39, false, $$buf$18));
+  $$buf$17.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n            "));
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$42, jsx$41, false, $$buf$17));
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$44, jsx$43, false, $$buf$15));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n\n        "));
+  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$46, jsx$45, false, $$buf$3));
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
-  var bdyDiv = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$22, jsx$21, false, $$buf);
+  var bdyDiv = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$48, jsx$47, false, $$buf);
   var positionOpt = $m_s_Option$().apply__O__s_Option($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().querySelector("#theorem-14"));
-  positionOpt.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5, bdyDiv) {
+  positionOpt.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$9, bdyDiv) {
     return (function(position$2) {
       var position = position$2;
-      return new $c_Lmhtml_Cancelable().init___F0(this$5.$$anonfun$main$8__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0(bdyDiv, position))
+      return new $c_Lmhtml_Cancelable().init___F0(this$9.$$anonfun$main$14__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0(bdyDiv, position))
     })
   })(this, bdyDiv)))
 });
@@ -3041,6 +3241,25 @@ $c_Lprobability_Birthdays$.prototype.$$anonfun$dupsR$1__p1__sci_Vector__sci_Vect
     })
   })(this, fs)))).sorted__s_math_Ordering__O($m_s_math_Ordering$Int$())).distinct__O())
 });
+$c_Lprobability_Birthdays$.prototype.$$anonfun$distSeq$1__p1__I__I = (function(x$5) {
+  return ((365 - x$5) | 0)
+});
+$c_Lprobability_Birthdays$.prototype.$$anonfun$allSeq$1__p1__I = (function() {
+  return 365
+});
+$c_Lprobability_Birthdays$.prototype.$$anonfun$probDistinct$1__p1__T2__D = (function(x0$1) {
+  var x1 = x0$1;
+  if ((x1 !== null)) {
+    var a = x1.$$und1$mcI$sp__I();
+    var b = x1.$$und2$mcI$sp__I();
+    return (a / b)
+  } else {
+    throw new $c_s_MatchError().init___O(x1)
+  }
+});
+$c_Lprobability_Birthdays$.prototype.$$anonfun$probDistinct$2__p1__D__D__D = (function(x$6, x$7) {
+  return (x$6 * x$7)
+});
 $c_Lprobability_Birthdays$.prototype.$$anonfun$main$1__p1__sjs_js_Dynamic__V = (function(e) {
   $m_Lprobability_Birthdays$().numV__Lmhtml_Var().$$colon$eq__O__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T(e.target.value))).toInt__I())
 });
@@ -3062,37 +3281,75 @@ $c_Lprobability_Birthdays$.prototype.$$anonfun$main$2__p1__I__s_xml_Elem = (func
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n              Choose random birthdays\n            "));
   return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$2, jsx$1, false, $$buf)
 });
-$c_Lprobability_Birthdays$.prototype.$$anonfun$main$5__p1__I__s_xml_Elem = (function(d) {
-  var jsx$2 = $m_s_xml_Null$();
-  var jsx$1 = $m_s_xml_TopScope$();
-  var $$buf = new $c_s_xml_NodeBuffer().init___();
-  $$buf.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(d, $m_s_xml_XmlElementEmbeddable$().intElementEmbeddable__s_xml_XmlElementEmbeddable());
-  return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "li", jsx$2, jsx$1, false, $$buf)
+$c_Lprobability_Birthdays$.prototype.$$anonfun$main$6__p1__I__I__Z = (function(d$1, x$8) {
+  return (x$8 === d$1)
+});
+$c_Lprobability_Birthdays$.prototype.$$anonfun$main$5__p1__sci_Vector__I__s_xml_Elem = (function(bdys$1, d) {
+  if (($as_sc_SeqLike(bdys$1.filter__F1__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, d) {
+    return (function(x$8$2) {
+      var x$8 = $uI(x$8$2);
+      return $this.$$anonfun$main$6__p1__I__I__Z(d, x$8)
+    })
+  })(this, d)))).size__I() > 1)) {
+    var $$md = $m_s_xml_Null$();
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("bg-primary"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    var jsx$2 = $$md;
+    var jsx$1 = $m_s_xml_TopScope$();
+    var $$buf = new $c_s_xml_NodeBuffer().init___();
+    $$buf.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer($m_Lprobability_Birthdays$().date__I__T(d), $m_s_xml_XmlElementEmbeddable$().stringElementEmbeddable__s_xml_XmlElementEmbeddable());
+    return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "li", jsx$2, jsx$1, false, $$buf)
+  } else {
+    var jsx$4 = $m_s_xml_Null$();
+    var jsx$3 = $m_s_xml_TopScope$();
+    var $$buf$2 = new $c_s_xml_NodeBuffer().init___();
+    $$buf$2.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer($m_Lprobability_Birthdays$().date__I__T(d), $m_s_xml_XmlElementEmbeddable$().stringElementEmbeddable__s_xml_XmlElementEmbeddable());
+    return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "li", jsx$4, jsx$3, false, $$buf$2)
+  }
 });
 $c_Lprobability_Birthdays$.prototype.$$anonfun$main$4__p1__sci_Vector__sci_Vector = (function(bdys) {
-  return $as_sci_Vector(bdys.map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+  return $as_sci_Vector(bdys.map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, bdys) {
     return (function(d$2) {
       var d = $uI(d$2);
-      return $this.$$anonfun$main$5__p1__I__s_xml_Elem(d)
+      return $this.$$anonfun$main$5__p1__sci_Vector__I__s_xml_Elem(bdys, d)
     })
-  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+  })(this, bdys)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
 });
-$c_Lprobability_Birthdays$.prototype.$$anonfun$main$7__p1__I__s_xml_Elem = (function(d) {
+$c_Lprobability_Birthdays$.prototype.$$anonfun$main$8__p1__I__s_xml_Elem = (function(d) {
   var jsx$2 = $m_s_xml_Null$();
   var jsx$1 = $m_s_xml_TopScope$();
   var $$buf = new $c_s_xml_NodeBuffer().init___();
-  $$buf.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(d, $m_s_xml_XmlElementEmbeddable$().intElementEmbeddable__s_xml_XmlElementEmbeddable());
+  $$buf.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer($m_Lprobability_Birthdays$().date__I__T(d), $m_s_xml_XmlElementEmbeddable$().stringElementEmbeddable__s_xml_XmlElementEmbeddable());
   return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "li", jsx$2, jsx$1, false, $$buf)
 });
-$c_Lprobability_Birthdays$.prototype.$$anonfun$main$6__p1__sci_Vector__sci_Vector = (function(bdys) {
+$c_Lprobability_Birthdays$.prototype.$$anonfun$main$7__p1__sci_Vector__sci_Vector = (function(bdys) {
   return $as_sci_Vector(bdys.map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(d$2) {
       var d = $uI(d$2);
-      return $this.$$anonfun$main$7__p1__I__s_xml_Elem(d)
+      return $this.$$anonfun$main$8__p1__I__s_xml_Elem(d)
     })
   })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
 });
-$c_Lprobability_Birthdays$.prototype.$$anonfun$main$8__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0 = (function(bdyDiv$1, position) {
+$c_Lprobability_Birthdays$.prototype.$$anonfun$main$10__p1__T__T = (function(s) {
+  return ($m_sjsr_RuntimeString$().contains__T__jl_CharSequence__Z(s, "show") ? "collapse" : "collapse show")
+});
+$c_Lprobability_Birthdays$.prototype.$$anonfun$main$9__p1__V = (function() {
+  $m_Lprobability_Birthdays$().probClass__Lmhtml_Var().update__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(s$2) {
+      var s = $as_T(s$2);
+      return $this.$$anonfun$main$10__p1__T__T(s)
+    })
+  })(this)))
+});
+$c_Lprobability_Birthdays$.prototype.$$anonfun$main$11__p1__I__T = (function(n) {
+  return $m_Lprobability_Birthdays$().distSeq__I__sci_Vector(n).mkString__T__T(" \u00d7 ")
+});
+$c_Lprobability_Birthdays$.prototype.$$anonfun$main$12__p1__I__T = (function(n) {
+  return $m_Lprobability_Birthdays$().allSeq__I__sci_Vector(n).mkString__T__T(" \u00d7 ")
+});
+$c_Lprobability_Birthdays$.prototype.$$anonfun$main$13__p1__I__D = (function(n) {
+  return $m_Lprobability_Birthdays$().probDistinct__I__D(n)
+});
+$c_Lprobability_Birthdays$.prototype.$$anonfun$main$14__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0 = (function(bdyDiv$1, position) {
   var div = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("div");
   position.parentNode.insertBefore(div, position.nextSibling);
   return $m_Lmhtml_mount$().apply__Lorg_scalajs_dom_raw_Node__s_xml_Node__F0(div, bdyDiv$1)
@@ -3109,6 +3366,8 @@ $c_Lprobability_Birthdays$.prototype.init___ = (function() {
       return $this.$$anonfun$dupsR$1__p1__sci_Vector__sci_Vector(bds)
     })
   })(this)));
+  this.months$1 = $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Jan"), 31), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Feb"), 28), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Mar"), 31), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Apr"), 30), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("May"), 31), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Jun"), 30), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Jul"), 31), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Aug"), 31), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Sep"), 30), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Oct"), 31), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Nov"), 30), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O("Dec"), 31)])));
+  this.probClass$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var("collapse");
   return this
 });
 var $d_Lprobability_Birthdays$ = new $TypeData().initClass({
@@ -4440,6 +4699,39 @@ function $f_s_PartialFunction__$$init$__V($thiz) {
   /*<skip>*/
 }
 /** @constructor */
+function $c_s_Predef$ArrowAssoc$() {
+  $c_O.call(this)
+}
+$c_s_Predef$ArrowAssoc$.prototype = new $h_O();
+$c_s_Predef$ArrowAssoc$.prototype.constructor = $c_s_Predef$ArrowAssoc$;
+/** @constructor */
+function $h_s_Predef$ArrowAssoc$() {
+  /*<skip>*/
+}
+$h_s_Predef$ArrowAssoc$.prototype = $c_s_Predef$ArrowAssoc$.prototype;
+$c_s_Predef$ArrowAssoc$.prototype.$$minus$greater$extension__O__O__T2 = (function($$this, y) {
+  return new $c_T2().init___O__O($$this, y)
+});
+$c_s_Predef$ArrowAssoc$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_s_Predef$ArrowAssoc$ = this;
+  return this
+});
+var $d_s_Predef$ArrowAssoc$ = new $TypeData().initClass({
+  s_Predef$ArrowAssoc$: 0
+}, false, "scala.Predef$ArrowAssoc$", {
+  s_Predef$ArrowAssoc$: 1,
+  O: 1
+});
+$c_s_Predef$ArrowAssoc$.prototype.$classData = $d_s_Predef$ArrowAssoc$;
+var $n_s_Predef$ArrowAssoc$ = (void 0);
+function $m_s_Predef$ArrowAssoc$() {
+  if ((!$n_s_Predef$ArrowAssoc$)) {
+    $n_s_Predef$ArrowAssoc$ = new $c_s_Predef$ArrowAssoc$().init___()
+  };
+  return $n_s_Predef$ArrowAssoc$
+}
+/** @constructor */
 function $c_s_Predef$any2stringadd$() {
   $c_O.call(this)
 }
@@ -5164,6 +5456,9 @@ $c_s_xml_XmlAttributeEmbeddable$.prototype.function0AttributeEmbeddable__s_xml_X
 $c_s_xml_XmlAttributeEmbeddable$.prototype.function1AttributeEmbeddable__s_xml_XmlAttributeEmbeddable = (function() {
   return null
 });
+$c_s_xml_XmlAttributeEmbeddable$.prototype.rxAttributeEmbeddable__s_xml_XmlAttributeEmbeddable__s_xml_XmlAttributeEmbeddable = (function(evidence$3) {
+  return null
+});
 $c_s_xml_XmlAttributeEmbeddable$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
   $n_s_xml_XmlAttributeEmbeddable$ = this;
@@ -5198,6 +5493,9 @@ $c_s_xml_XmlElementEmbeddable$.prototype.intElementEmbeddable__s_xml_XmlElementE
   return null
 });
 $c_s_xml_XmlElementEmbeddable$.prototype.doubleElementEmbeddable__s_xml_XmlElementEmbeddable = (function() {
+  return null
+});
+$c_s_xml_XmlElementEmbeddable$.prototype.stringElementEmbeddable__s_xml_XmlElementEmbeddable = (function() {
   return null
 });
 $c_s_xml_XmlElementEmbeddable$.prototype.nodeElementEmbeddable__s_xml_XmlElementEmbeddable = (function() {
@@ -5364,6 +5662,9 @@ function $f_sc_TraversableOnce__foldLeft__O__F2__O($thiz, z, op) {
     })
   })($thiz, op, result)));
   return result.elem$1
+}
+function $f_sc_TraversableOnce__fold__O__F2__O($thiz, z, op) {
+  return $thiz.foldLeft__O__F2__O(z, op)
 }
 function $f_sc_TraversableOnce__toList__sci_List($thiz) {
   return $as_sci_List($thiz.to__scg_CanBuildFrom__O($m_sci_List$().canBuildFrom__scg_CanBuildFrom()))
@@ -7331,6 +7632,9 @@ $c_sjsr_RuntimeString$.prototype.hashCode__T__I = (function(thiz) {
   };
   return res
 });
+$c_sjsr_RuntimeString$.prototype.contains__T__jl_CharSequence__Z = (function(thiz, s) {
+  return ($m_sjsr_RuntimeString$().indexOf__T__T__I(thiz, $objectToString(s)) !== (-1))
+});
 $c_sjsr_RuntimeString$.prototype.indexOf__T__I__I = (function(thiz, ch) {
   return $m_sjsr_RuntimeString$().indexOf__T__T__I(thiz, this.fromCodePoint__p1__I__T(ch))
 });
@@ -8702,6 +9006,16 @@ $h_scg_GenTraversableFactory.prototype = $c_scg_GenTraversableFactory.prototype;
 $c_scg_GenTraversableFactory.prototype.ReusableCBF__scg_GenTraversableFactory$GenericCanBuildFrom = (function() {
   return this.ReusableCBFInstance$2
 });
+$c_scg_GenTraversableFactory.prototype.fill__I__F0__sc_GenTraversable = (function(n, elem) {
+  var b = this.newBuilder__scm_Builder();
+  b.sizeHint__I__V(n);
+  var i = 0;
+  while ((i < n)) {
+    b.$$plus$eq__O__scm_Builder(elem.apply__O());
+    i = ((i + 1) | 0)
+  };
+  return $as_sc_GenTraversable(b.result__O())
+});
 $c_scg_GenTraversableFactory.prototype.init___ = (function() {
   $c_scg_GenericCompanion.prototype.init___.call(this);
   this.ReusableCBFInstance$2 = new $c_scg_GenTraversableFactory$$anon$1().init___scg_GenTraversableFactory(this);
@@ -9908,6 +10222,9 @@ $c_s_Predef$.prototype.require__Z__V = (function(requirement) {
   if ((!requirement)) {
     throw new $c_jl_IllegalArgumentException().init___T("requirement failed")
   }
+});
+$c_s_Predef$.prototype.ArrowAssoc__O__O = (function(self) {
+  return self
 });
 $c_s_Predef$.prototype.any2stringadd__O__O = (function(self) {
   return self
@@ -11930,6 +12247,12 @@ $c_sc_AbstractIterator.prototype.size__I = (function() {
 });
 $c_sc_AbstractIterator.prototype.foldLeft__O__F2__O = (function(z, op) {
   return $f_sc_TraversableOnce__foldLeft__O__F2__O(this, z, op)
+});
+$c_sc_AbstractIterator.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_sc_AbstractIterator.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
 });
 $c_sc_AbstractIterator.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
   return $f_sc_TraversableOnce__to__scg_CanBuildFrom__O(this, cbf)
@@ -15024,11 +15347,17 @@ $c_T2.prototype.equals__O__Z = (function(x$1) {
 $c_T2.prototype.$$und1$mcZ$sp__Z = (function() {
   return $uZ(this.$$und1__O())
 });
+$c_T2.prototype.$$und1$mcI$sp__I = (function() {
+  return $uI(this.$$und1__O())
+});
 $c_T2.prototype.$$und2$mcZ$sp__Z = (function() {
   return $uZ(this.$$und2__O())
 });
 $c_T2.prototype.$$und2$mcD$sp__D = (function() {
   return $uD(this.$$und2__O())
+});
+$c_T2.prototype.$$und2$mcI$sp__I = (function() {
+  return $uI(this.$$und2__O())
 });
 $c_T2.prototype.init___O__O = (function(_1, _2) {
   this.$$und1$f = _1;
@@ -17842,6 +18171,9 @@ $h_sci_IndexedSeq$.prototype = $c_sci_IndexedSeq$.prototype;
 $c_sci_IndexedSeq$.prototype.newBuilder__scm_Builder = (function() {
   return $m_sci_Vector$().newBuilder__scm_Builder()
 });
+$c_sci_IndexedSeq$.prototype.canBuildFrom__scg_CanBuildFrom = (function() {
+  return this.ReusableCBF__scg_GenTraversableFactory$GenericCanBuildFrom()
+});
 $c_sci_IndexedSeq$.prototype.init___ = (function() {
   $c_scg_IndexedSeqFactory.prototype.init___.call(this);
   $n_sci_IndexedSeq$ = this;
@@ -19930,6 +20262,15 @@ function $f_sc_IterableLike__copyToArray__O__I__I__V($thiz, xs, start, len) {
     i = ((i + 1) | 0)
   }
 }
+function $f_sc_IterableLike__zip__sc_GenIterable__scg_CanBuildFrom__O($thiz, that, bf) {
+  var b = bf.apply__O__scm_Builder($thiz.repr__O());
+  var these = $thiz.iterator__sc_Iterator();
+  var those = that.iterator__sc_Iterator();
+  while ((these.hasNext__Z() && those.hasNext__Z())) {
+    b.$$plus$eq__O__scm_Builder(new $c_T2().init___O__O(these.next__O(), those.next__O()))
+  };
+  return b.result__O()
+}
 function $f_sc_IterableLike__sameElements__sc_GenIterable__Z($thiz, that) {
   var these = $thiz.iterator__sc_Iterator();
   var those = that.iterator__sc_Iterator();
@@ -20579,6 +20920,9 @@ $c_sc_AbstractTraversable.prototype.$$div$colon__O__F2__O = (function(z, op) {
 $c_sc_AbstractTraversable.prototype.foldLeft__O__F2__O = (function(z, op) {
   return $f_sc_TraversableOnce__foldLeft__O__F2__O(this, z, op)
 });
+$c_sc_AbstractTraversable.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
 $c_sc_AbstractTraversable.prototype.toList__sci_List = (function() {
   return $f_sc_TraversableOnce__toList__sci_List(this)
 });
@@ -21157,6 +21501,9 @@ $c_sc_AbstractIterable.prototype.drop__I__O = (function(n) {
 $c_sc_AbstractIterable.prototype.copyToArray__O__I__I__V = (function(xs, start, len) {
   $f_sc_IterableLike__copyToArray__O__I__I__V(this, xs, start, len)
 });
+$c_sc_AbstractIterable.prototype.zip__sc_GenIterable__scg_CanBuildFrom__O = (function(that, bf) {
+  return $f_sc_IterableLike__zip__sc_GenIterable__scg_CanBuildFrom__O(this, that, bf)
+});
 $c_sc_AbstractIterable.prototype.sameElements__sc_GenIterable__Z = (function(that) {
   return $f_sc_IterableLike__sameElements__sc_GenIterable__Z(this, that)
 });
@@ -21320,6 +21667,12 @@ $c_sci_StringOps.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 });
 $c_sci_StringOps.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
+});
+$c_sci_StringOps.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_sci_StringOps.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
 });
 $c_sci_StringOps.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
@@ -21635,6 +21988,12 @@ $c_scm_ArrayOps$ofBoolean.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 $c_scm_ArrayOps$ofBoolean.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
 });
+$c_scm_ArrayOps$ofBoolean.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_scm_ArrayOps$ofBoolean.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
+});
 $c_scm_ArrayOps$ofBoolean.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
 });
@@ -21900,6 +22259,12 @@ $c_scm_ArrayOps$ofByte.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 });
 $c_scm_ArrayOps$ofByte.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
+});
+$c_scm_ArrayOps$ofByte.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_scm_ArrayOps$ofByte.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
 });
 $c_scm_ArrayOps$ofByte.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
@@ -22167,6 +22532,12 @@ $c_scm_ArrayOps$ofChar.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 $c_scm_ArrayOps$ofChar.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
 });
+$c_scm_ArrayOps$ofChar.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_scm_ArrayOps$ofChar.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
+});
 $c_scm_ArrayOps$ofChar.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
 });
@@ -22432,6 +22803,12 @@ $c_scm_ArrayOps$ofDouble.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 });
 $c_scm_ArrayOps$ofDouble.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
+});
+$c_scm_ArrayOps$ofDouble.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_scm_ArrayOps$ofDouble.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
 });
 $c_scm_ArrayOps$ofDouble.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
@@ -22699,6 +23076,12 @@ $c_scm_ArrayOps$ofFloat.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 $c_scm_ArrayOps$ofFloat.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
 });
+$c_scm_ArrayOps$ofFloat.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_scm_ArrayOps$ofFloat.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
+});
 $c_scm_ArrayOps$ofFloat.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
 });
@@ -22964,6 +23347,12 @@ $c_scm_ArrayOps$ofInt.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 });
 $c_scm_ArrayOps$ofInt.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
+});
+$c_scm_ArrayOps$ofInt.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_scm_ArrayOps$ofInt.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
 });
 $c_scm_ArrayOps$ofInt.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
@@ -23231,6 +23620,12 @@ $c_scm_ArrayOps$ofLong.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 $c_scm_ArrayOps$ofLong.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
 });
+$c_scm_ArrayOps$ofLong.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_scm_ArrayOps$ofLong.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
+});
 $c_scm_ArrayOps$ofLong.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
 });
@@ -23496,6 +23891,12 @@ $c_scm_ArrayOps$ofRef.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 });
 $c_scm_ArrayOps$ofRef.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
+});
+$c_scm_ArrayOps$ofRef.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_scm_ArrayOps$ofRef.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
 });
 $c_scm_ArrayOps$ofRef.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
@@ -23766,6 +24167,12 @@ $c_scm_ArrayOps$ofShort.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 $c_scm_ArrayOps$ofShort.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
 });
+$c_scm_ArrayOps$ofShort.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_scm_ArrayOps$ofShort.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
+});
 $c_scm_ArrayOps$ofShort.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
 });
@@ -24031,6 +24438,12 @@ $c_scm_ArrayOps$ofUnit.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 });
 $c_scm_ArrayOps$ofUnit.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
+});
+$c_scm_ArrayOps$ofUnit.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_scm_ArrayOps$ofUnit.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
 });
 $c_scm_ArrayOps$ofUnit.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
@@ -24359,6 +24772,12 @@ $c_sjs_js_ArrayOps.prototype.to__scg_CanBuildFrom__O = (function(cbf) {
 });
 $c_sjs_js_ArrayOps.prototype.stringPrefix__T = (function() {
   return $f_sc_TraversableLike__stringPrefix__T(this)
+});
+$c_sjs_js_ArrayOps.prototype.fold__O__F2__O = (function(z, op) {
+  return $f_sc_TraversableOnce__fold__O__F2__O(this, z, op)
+});
+$c_sjs_js_ArrayOps.prototype.toVector__sci_Vector = (function() {
+  return $f_sc_TraversableOnce__toVector__sci_Vector(this)
 });
 $c_sjs_js_ArrayOps.prototype.mkString__T__T__T__T = (function(start, sep, end) {
   return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
@@ -30570,6 +30989,9 @@ $c_sci_Vector.prototype.dirty$und$eq__Z__V = (function(x$1) {
 });
 $c_sci_Vector.prototype.length__I = (function() {
   return ((this.endIndex__I() - this.startIndex__I()) | 0)
+});
+$c_sci_Vector.prototype.toVector__sci_Vector = (function() {
+  return this
 });
 $c_sci_Vector.prototype.lengthCompare__I__I = (function(len) {
   return ((this.length__I() - len) | 0)

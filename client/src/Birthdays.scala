@@ -27,11 +27,44 @@ object Birthdays {
       bds.filter((n) => fs(n) > 1).sorted.distinct
   }
 
+  val months : Vector[(String, Int)]= Vector(
+    "Jan" -> 31,
+    "Feb" -> 28,
+    "Mar" -> 31,
+    "Apr" -> 30,
+    "May" -> 31,
+    "Jun" -> 30,
+    "Jul" -> 31,
+    "Aug" -> 31,
+    "Sep" -> 30,
+    "Oct" -> 31,
+    "Nov" -> 30,
+    "Dec" -> 31
+   )
+
+  def monthDay(n: Int, m: Vector[(String, Int)]): (String, Int) = {
+    val (mon, days) = m.head
+    if (n < days) (mon, n + 1) else monthDay(n - days, m.tail)
+  }
+
+  def date(n: Int) = {
+    val (mon, day) = monthDay(n, months)
+    s"$mon $day "
+  }
+
+  def distSeq(n: Int): Vector[Int] = (0 until n).map(365 - _).toVector
+
+  def allSeq(n: Int) : Vector[Int] = Vector.fill(n)(365)
+
+  def probDistinct(n: Int) = distSeq(n).zip(allSeq(n)).map{case (a, b) => a.toDouble/ b.toDouble}.fold(1.0)(_ * _)
+
+  val probClass : Var[String] = Var("collapse")
+
   def main(): Unit = {
     val bdyDiv: Node =
       <div class="panel panel-primary">
         <div class="panel-heading">Birthday Paradox</div>
-        <div class="panel-body bg-info">
+        <div class="panel-body">
           <p>We randomly choose birthdays of different persons. How likely do you think it is that two persons have the same birthday?</p>
           <div>
             <label>Number of persons:</label>
@@ -39,7 +72,7 @@ object Birthdays {
           (e: js.Dynamic) =>
             numV := e.target.value.asInstanceOf[String].toInt
           }/>
-            <span>({numV}) </span>
+
           {(numV).map{(num) =>
             <button class="btn btn-primary" type="button" onclick={
             () => randomBirthdays(num)}>
@@ -47,14 +80,50 @@ object Birthdays {
             </button>
           }}
           </div>
-          <h4> Birthdays:</h4>
-          <ul class="list-inline bg-light">
-            {birthdaysV.map((bdys) => bdys.map((d) => <li>{d}</li>))}
-          </ul>
-          <h4> Birthdays of more than one person:</h4>
-          <ul class="list-inline">
-            {dupsR.map((bdys) => bdys.map((d) => <li>{d}</li>))}
-          </ul>
+          <p></p>
+          <div class="panel panel-info">
+            <div class="panel-heading">Random birthdays</div>
+            <div class="panel-body">
+              <ul class="list-inline">
+                {birthdaysV.map((bdys) => bdys.map(
+                (d) => if (bdys.filter(_ == d).size >1)
+                  <li class="bg-primary">{date(d)}</li>
+                else <li>{date(d)}</li>))}
+              </ul>
+
+            </div>
+          </div>
+          <div class="panel panel-info">
+            <div class="panel-heading">Birthdays of more than one person</div>
+            <div class="panel-body">
+              <ul class="list-inline">
+                {dupsR.map((bdys) => bdys.map((d) => <li>{date(d)}</li>))}
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="panel panel-warning" onclick = {() => probClass.update((s) => if (s.contains("show")) "collapse" else "collapse show")}>
+            <div class="panel-heading">Probability of the event (click to expand)</div>
+            <div class="panel-body">
+              <ul class={probClass}>
+                <li>
+                  <h4>Number of sequences of distinct brithdays: </h4>
+                  {numV.map((n) => distSeq(n).mkString(" \u00D7 "))}
+                </li>
+                <li>
+                  <h4>Number of sequences of birthdays:</h4>
+                  {numV.map((n) => allSeq(n).mkString(" \u00D7 "))}
+                </li>
+                <li>
+                  <h4>Probability of birthdays being all distinct:</h4>
+                  {numV.map((n) => probDistinct(n))}
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
 
         </div>
       </div>
