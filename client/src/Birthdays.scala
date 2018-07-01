@@ -58,7 +58,13 @@ object Birthdays {
 
   def probDistinct(n: Int) = distSeq(n).zip(allSeq(n)).map{case (a, b) => a.toDouble/ b.toDouble}.fold(1.0)(_ * _)
 
-  val probClass : Var[String] = Var("collapse")
+  val showProb : Var[Boolean] = Var(false)
+
+  val probClass : Rx[String] =
+    showProb.map((b) => if (b) "collapse show" else "collapse")
+
+  val iconClass =
+    showProb.map((b) => if (b) "glyphicon glyphicon-minus" else "glyphicon glyphicon-plus")
 
   def main(): Unit = {
     val bdyDiv: Node =
@@ -103,19 +109,19 @@ object Birthdays {
             </div>
           </div>
 
-          <p>Probability of distinct birthdays:
+          <h4>Probability of distinct birthdays:
           <button class="btn btn-primary" type="button" onclick={
-          () => probClass.update((s) => if (s.contains("show")) "collapse" else "collapse show")}>
-             <span class="glyphicon glyphicon-plus"></span>
+          () => showProb.update((b) => !b)}>
+             <span class={iconClass}></span>
           </button>
-          </p>
-
-          <div class="panel panel-warning {probClass}">
+          </h4>
+          <div class={probClass}>
+          <div class="panel panel-warning">
             <div class="panel-heading">Probability of the event:
 
              </div>
             <div class="panel-body">
-              <ul class={probClass}>
+              <ul>
                 <li>
                   <h4>Number of sequences of distinct brithdays: </h4>
                   {numV.map((n) => distSeq(n).mkString(" \u00D7 "))}
@@ -132,7 +138,7 @@ object Birthdays {
 
             </div>
           </div>
-
+          </div>
 
         </div>
       </div>

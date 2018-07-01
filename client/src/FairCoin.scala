@@ -33,7 +33,7 @@ object FairCoin {
     val coinDiv: Node =
       <div class="panel panel-primary">
       <div class="panel-heading">Is the coin fair?</div>
-      <div class="panel-body bg-info">
+      <div class="panel-body">
         <p>Try to figure out whether the coin is fair by tossing it several times.</p>{pV.map
         {(p) => <button class="btn btn-primary" onclick={() =>
         tossesV.update(_ :+ (rnd.nextDouble() < p))}>Toss the coin</button>}}
@@ -75,10 +75,11 @@ object FairCoin {
 
 
 
-    val positionOpt = Option(dom.document.querySelector("#theorem-2"))
+    val positionOpt = Option(dom.document.querySelector("#fair-coin"))
     positionOpt.foreach{(position)=>
       val div = document.createElement("div")
-      position.parentNode.insertBefore(div, position.nextSibling)
+      // position.parentNode.insertBefore(div, position.nextSibling)
+      position.appendChild(div)
       mount(div, coinDiv)
   }
   }
