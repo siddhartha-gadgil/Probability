@@ -83,4 +83,11 @@ object client extends ScalaJSModule with MetalsModule{
     ivy"in.nvilla::monadic-html::0.4.0-RC1"
   )
 
+  def pack(): define.Command[PathRef] = T.command {
+    def js = fastOpt()
+    cp.over(js.path, pwd/ "docs" / "js" / "probability.js")
+    js
+  }
+
+
 }
