@@ -103,8 +103,17 @@ object Birthdays {
             </div>
           </div>
 
-          <div class="panel panel-warning" onclick = {() => probClass.update((s) => if (s.contains("show")) "collapse" else "collapse show")}>
-            <div class="panel-heading">Probability of the event (click to expand)</div>
+          <p>Probability of distinct birthdays:
+          <button class="btn btn-primary" type="button" onclick={
+          () => probClass.update((s) => if (s.contains("show")) "collapse" else "collapse show")}>
+             <span class="glyphicon glyphicon-plus"></span>
+          </button>
+          </p>
+
+          <div class="panel panel-warning {probClass}">
+            <div class="panel-heading">Probability of the event:
+
+             </div>
             <div class="panel-body">
               <ul class={probClass}>
                 <li>
@@ -129,10 +138,11 @@ object Birthdays {
       </div>
 
 
-    val positionOpt = Option(dom.document.querySelector("#theorem-14"))
+    val positionOpt = Option(dom.document.querySelector("#birthdays"))
     positionOpt.foreach { (position) =>
       val div = document.createElement("div")
-      position.parentNode.insertBefore(div, position.nextSibling)
+      // position.parentNode.insertBefore(div, position.nextSibling)
+      position.appendChild(div)
       mount(div, bdyDiv)
     }
   }

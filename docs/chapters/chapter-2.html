@@ -228,6 +228,7 @@ Of course, there are $2^{m^{r} }$ many events, which is quite large even for sma
 
 
 
+
  <p class="text-justify">
  In real life, there are often situations where there are several possible outcomes but which one will occur is unpredictable in some way. For example, when we toss a coin, we may get heads or tails. In such cases we use words such as <em> probability or chance</em>, <em> event or happening</em>, <em> randomness</em> etc.  What is the relationship between the intuitive and mathematical meanings of words such as probability or chance?
  </p>
@@ -294,21 +295,25 @@ In that example, $A$ is the event that the last ball ends up in the first bin, $
  </p>
 <p class="text-justify">
           
- The next example is more involved and interesting.
+ <div id="birthdays"></div> 
+ </p>
+           
+ <p class="text-justify">
+The next example is more involved and interesting.
 <p>&nbsp;</p>
                 <div id="theorem-13"><div class="panel panel-info example"> <div class="panel-heading">Example 13 </div><div class="panel-body"> <strong>Real-life situation :</strong> Imagine a man-woman pair. Their first child is random, for example, the sex of the child, or the height to which the child will ultimately grow, etc cannot be predicted with certainty. How to make a probability model that captures the situation?
  </p>
+<p class="text-justify">
+          
+ <strong>A  possible probability model :</strong> Let there be $n$ genes in each human, and each of the genes can take two possible values (Mendel's ''factors''), which we denote as $0$ or $1$. Then, let $\Omega=\{0,1\}^{n}=\{\mathbf{x}=(x_{1},\ldots ,x_{n}){\; : \;} x_{i}=0 \mbox{ or }1\}$. In this sense, each human being can be encoded as a vector in $\{0,1\}^{n}$.
+ </p>
            
  <p class="text-justify">
-<strong>A  possible probability model :</strong> Let there be $n$ genes in each human, and each of the genes can take two possible values (Mendel's ''factors''), which we denote as $0$ or $1$. Then, let $\Omega=\{0,1\}^{n}=\{\mathbf{x}=(x_{1},\ldots ,x_{n}){\; : \;} x_{i}=0 \mbox{ or }1\}$. In this sense, each human being can be encoded as a vector in $\{0,1\}^{n}$.
+To assign probabilities, one must know the parents. Let the two parents have gene sequences ${\bf  a}=(a_{1},\ldots,a_{n})$ and ${\bf  b}=(b_{1},\ldots ,b_{n})$. Then the possible offsprings gene sequences are in the set $\Omega_{0}:=\{\mathbf{x}\in \{0,1\}^{n}{\; : \;} x_{i}=a_{i} \mbox{ or }b_{i}, \; \mbox{ for each }i\le n\}$. Let $L:=\#\{i{\; : \;} a_{i}\not=b_{i}\}$.
  </p>
 <p class="text-justify">
           
- To assign probabilities, one must know the parents. Let the two parents have gene sequences ${\bf  a}=(a_{1},\ldots,a_{n})$ and ${\bf  b}=(b_{1},\ldots ,b_{n})$. Then the possible offsprings gene sequences are in the set $\Omega_{0}:=\{\mathbf{x}\in \{0,1\}^{n}{\; : \;} x_{i}=a_{i} \mbox{ or }b_{i}, \; \mbox{ for each }i\le n\}$. Let $L:=\#\{i{\; : \;} a_{i}\not=b_{i}\}$.
- </p>
-           
- <p class="text-justify">
-One possible assignment of probabilities is that each of these offsprings is equally likely. In that case we can capture the situation in the following probability models.
+ One possible assignment of probabilities is that each of these offsprings is equally likely. In that case we can capture the situation in the following probability models.
 <ol>
 <li> Let $\Omega_{0}$ be the sample space and let $p_{\mathbf{x}}=2^{-L}$ for each $\mathbf{x} \in \Omega_{0}$.
 </li>
@@ -316,19 +321,23 @@ One possible assignment of probabilities is that each of these offsprings is equ
 </ol>
 The second one has the advantage that if we change the parent pair, we don't have to change the sample space, only the elementary probabilities. What are some interesting events? Hypothetically, the susceptibility to a disease $X$ could be determined by the first ten genes, say the person is likely to get the disease if there are at-most four $1$s among the first ten. This would correspond to the event that $A=\{\mathbf{x}\in \Omega_{0}{\; : \;} x_{0}+\ldots+x_{10}\le 4\}$. (Caution: As far as I know, reading the genetic sequence to infer about the phenotype is still an impractical task in general).
  </p>
+           
+ <p class="text-justify">
+<strong>Reasonable model?</strong> There are many simplifications involved here. Firstly, genes are somewhat ill-defined concepts, better defined are nucleotides in the DNA (and even then there are two copies of each gene). Secondly, there are many ''errors'' in real DNA, even the total number of genes can change, there can be big chunks missing, a whole extra chromosome etc. Thirdly, the assumption that all possible gene-sequences in $\Omega_{0}$ are equally likely is incorrect - if two genes are physically close to each other in a chromosome, then they are likely to both come from the father or both from the mother. Lastly, if our interest originally was to guess the eventual height of the child or its intelligence, then it is not clear that these are determined by the genes alone (environmental factors such as availability of food etc. also matter). Finally, in case of the problem that Solomon faced, the information about genes of the parents was not available, the model as written would be use.
+ </p>
 <p class="text-justify">
           
- <strong>Reasonable model?</strong> There are many simplifications involved here. Firstly, genes are somewhat ill-defined concepts, better defined are nucleotides in the DNA (and even then there are two copies of each gene). Secondly, there are many ''errors'' in real DNA, even the total number of genes can change, there can be big chunks missing, a whole extra chromosome etc. Thirdly, the assumption that all possible gene-sequences in $\Omega_{0}$ are equally likely is incorrect - if two genes are physically close to each other in a chromosome, then they are likely to both come from the father or both from the mother. Lastly, if our interest originally was to guess the eventual height of the child or its intelligence, then it is not clear that these are determined by the genes alone (environmental factors such as availability of food etc. also matter). Finally, in case of the problem that Solomon faced, the information about genes of the parents was not available, the model as written would be use.
+ </div></div></div>
  </p>
            
  <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-14"><div class="panel panel-success remark"> <div class="panel-heading">Remark 14 </div><div class="panel-body"> We have discussed at length the reasonability of the model in this example to indicate the enormous effort needed to find a sufficiently  accurate but also reasonably simple probability model for a real-world situation. Henceforth, we shall omit such caveats and simply switch back-and-forth between a real-world situation and a reasonable-looking probability model as if there is no difference between the two. However, thinking about the appropriateness of the chosen models is much encouraged.
 </div></div></div>
  </p>
 <p class="text-justify">
           
- <p>&nbsp;</p>
-                <div id="theorem-14"><div class="panel panel-success remark"> <div class="panel-heading">Remark 14 </div><div class="panel-body"> We have discussed at length the reasonability of the model in this example to indicate the enormous effort needed to find a sufficiently  accurate but also reasonably simple probability model for a real-world situation. Henceforth, we shall omit such caveats and simply switch back-and-forth between a real-world situation and a reasonable-looking probability model as if there is no difference between the two. However, thinking about the appropriateness of the chosen models is much encouraged.
-</div></div></div>
+ 
  </p>
            
 

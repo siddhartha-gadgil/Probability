@@ -157,6 +157,7 @@
 
 
 
+
  <p class="text-justify">
 
 Sometimes statistics is described as <em> the art or science of decision making in the face of uncertainty</em>.  Here are some examples to illustrate what it means.
@@ -185,16 +186,20 @@ Instead of cricket, they could spend their time on the more interesting question
  </p>
 <p class="text-justify">
           
- <p>&nbsp;</p>
-                <div id="theorem-3"><div class="panel panel-info example"> <div class="panel-heading">Example 3 </div><div class="panel-body"> A psychic claims to have divine visions unavailable to most of us. You are assigned the task of testing her claims. You take a standard deck of cards, shuffle it well and keep it face down on the table. The psychic writes down the list of cards in some order - whatever her vision tells her about how the deck is ordered. Then you count the number of correct guesses. If the number is 1 or 2, perhaps you can dismiss her claims. If it is 45, perhaps you ought to be take her seriously. Again, where to draw the line?
+ <div id="fair-coin"></div> 
  </p>
            
  <p class="text-justify">
-The logic is this. Roughly one may say that <em> surprise</em> is just the name for our reaction to an event that we <em> \'a priori</em> thought to have low chance of occurring. Thus, we approach the experiment with the belief that the psychic is just guessing at random, and if the results are such that under that random-guess-hypothesis they have very small probability, then we are willing to be surprised, that is willing to discard our preconception and accept that she is a psychic.
+<p>&nbsp;</p>
+                <div id="theorem-3"><div class="panel panel-info example"> <div class="panel-heading">Example 3 </div><div class="panel-body"> A psychic claims to have divine visions unavailable to most of us. You are assigned the task of testing her claims. You take a standard deck of cards, shuffle it well and keep it face down on the table. The psychic writes down the list of cards in some order - whatever her vision tells her about how the deck is ordered. Then you count the number of correct guesses. If the number is 1 or 2, perhaps you can dismiss her claims. If it is 45, perhaps you ought to be take her seriously. Again, where to draw the line?
  </p>
 <p class="text-justify">
           
- How low a probability is surprising? In the context of psychics, let us say, $1/10000$. Once we fix that, we must find a number $m\le 52$ such that by pure guessing, the probability to get more than $m$ correct guesses is less that $1/10000$. Then we tell the psychic that if she gets more than $m$ correct guesses, we accept her claim, and otherwise, reject her claim.  This raises the simple (and you can do it yourself)
+ The logic is this. Roughly one may say that <em> surprise</em> is just the name for our reaction to an event that we <em> \'a priori</em> thought to have low chance of occurring. Thus, we approach the experiment with the belief that the psychic is just guessing at random, and if the results are such that under that random-guess-hypothesis they have very small probability, then we are willing to be surprised, that is willing to discard our preconception and accept that she is a psychic.
+ </p>
+           
+ <p class="text-justify">
+How low a probability is surprising? In the context of psychics, let us say, $1/10000$. Once we fix that, we must find a number $m\le 52$ such that by pure guessing, the probability to get more than $m$ correct guesses is less that $1/10000$. Then we tell the psychic that if she gets more than $m$ correct guesses, we accept her claim, and otherwise, reject her claim.  This raises the simple (and you can do it yourself)
 <p>&nbsp;</p>
                 <div id="theorem-4"><div class="panel panel-danger question"> <div class="panel-heading">Question 4 </div><div class="panel-body"> For a deck of $52$ cards, find the number $m$ such that
 $$
@@ -203,35 +208,39 @@ $$
 </div></div></div>
 </div></div></div>
  </p>
+<p class="text-justify">
+          
+ <strong>Summary:</strong>  There are many situations in real life where one is required to make decisions under uncertainty. A general template for the answer could be to fix a small number that we allow as the probability of error, and deduce thresholds based on it. This brings us to the question of computing probabilities in various situations.
+ </p>
            
  <p class="text-justify">
-<strong>Summary:</strong>  There are many situations in real life where one is required to make decisions under uncertainty. A general template for the answer could be to fix a small number that we allow as the probability of error, and deduce thresholds based on it. This brings us to the question of computing probabilities in various situations.
+<strong> Probability:</strong> Probability theory is a branch of pure mathematics, and forms the theoretical basis of statistics. In itself, probability theory has some basic objects and their relations (like real numbers, addition etc for analysis) and it makes no pretense of saying anything about the real world. Axioms are given and theorems are then deduced about these objects, just as in any other part of mathematics.
  </p>
 <p class="text-justify">
           
- <strong> Probability:</strong> Probability theory is a branch of pure mathematics, and forms the theoretical basis of statistics. In itself, probability theory has some basic objects and their relations (like real numbers, addition etc for analysis) and it makes no pretense of saying anything about the real world. Axioms are given and theorems are then deduced about these objects, just as in any other part of mathematics.
+ But a very important aspect of probability is that it is <em> applicable</em>. In other words, there are many real-world situations in which it is reasonable to take a model in probability and it turns out to reasonably replicate features of  the real-world situation.
  </p>
            
  <p class="text-justify">
-But a very important aspect of probability is that it is <em> applicable</em>. In other words, there are many real-world situations in which it is reasonable to take a model in probability and it turns out to reasonably replicate features of  the real-world situation.
+In the example above, to compute the probability one must make the assumption that the deck of cards was completely shuffled. In other words, all possible 52! orders of the 52 cards are assumed to be equally likely. Whether this assumption is reasonable or not depends on how well the card was shuffled, whether the psychic was able to get a peek at the cards, whether some insider is informing the psychic of the cards etc. All these are non-mathematical questions, and must be decided on other basis.
  </p>
 <p class="text-justify">
           
- In the example above, to compute the probability one must make the assumption that the deck of cards was completely shuffled. In other words, all possible 52! orders of the 52 cards are assumed to be equally likely. Whether this assumption is reasonable or not depends on how well the card was shuffled, whether the psychic was able to get a peek at the cards, whether some insider is informing the psychic of the cards etc. All these are non-mathematical questions, and must be decided on other basis.
- </p>
-           
- <p class="text-justify">
-<strong>However... :</strong> Probability and statistics are very relevant in many situations that do not involve any uncertainty on the face of it. Here are some examples.
+ <strong>However... :</strong> Probability and statistics are very relevant in many situations that do not involve any uncertainty on the face of it. Here are some examples.
 <p>&nbsp;</p>
                 <div id="theorem-5"><div class="panel panel-info example"> <div class="panel-heading">Example 5 </div><div class="panel-body"> <em> Compression of data</em>. Large files in a computer can be compressed to a .zip format and uncompressed when necessary. How is it possible to compress data like this? To give a very simple analogy, consider a long English word like <em> invertebrate</em>. If we take a novel and replace every occurrence of this word with ''zqz'', then  it is certainly possible to recover the original novel (since ''zqz'' does not occur anywhere else). But the reduction in size by replacing the 12-letter word by the 3-letter word is not much, since the word <em> invertebrate</em> does not occur often. Instead, if we replace the 4-letter word ''then'' by ''zqz'', then the total reduction obtained may be much higher, as the word ''then'' occurs quite often.
  </p>
-<p class="text-justify">
-          
- This suggests the following optimal way to represent words in English. The 26 most frequent words will be represented by single letters. The next $26\times 26$ most frequent words will be represented by two letter words, the next $26\times 26\times 26$ most frequent words by three-letter words, etc. Assuming there are no errors in transcription, this is a good way to reduce the size of any text document! Now, this involves knowing what the frequencies of occurrences of various words in actual texts are. Such statistics of usage of words are therefore clearly relevant (and they could be different for biology textbooks as compared to 19th century novels).
+           
+ <p class="text-justify">
+This suggests the following optimal way to represent words in English. The 26 most frequent words will be represented by single letters. The next $26\times 26$ most frequent words will be represented by two letter words, the next $26\times 26\times 26$ most frequent words by three-letter words, etc. Assuming there are no errors in transcription, this is a good way to reduce the size of any text document! Now, this involves knowing what the frequencies of occurrences of various words in actual texts are. Such statistics of usage of words are therefore clearly relevant (and they could be different for biology textbooks as compared to 19th century novels).
 </div></div></div>
 <p>&nbsp;</p>
                 <div id="theorem-6"><div class="panel panel-info example"> <div class="panel-heading">Example 6 </div><div class="panel-body"> Search algorithms such as Google, use many randomized procedures. This cannot be explained right now, but let us give a simple reason to say why introducing randomness is a good idea in many situations. In the game of <em> rock-paper-scissors</em>, two people simultaneously shout one of the three words, rock, paper or scissors. The rule is that scissors beats paper, paper beats rock and rock beats scissors (if they both call the same word, they must repeat). In a game like this, although there is complete symmetry in the three items, it would be silly to have a fixed strategy. In other words, if you decide to always say rock, thinking that it doesn't matter which you choose, then your opponent can use that knowledge to always choose paper and thus win! In many games where the opponent gets to know your strategy (but not your move), the best strategy would involve  randomly choosing your move.
 </div></div></div>
+ </p>
+<p class="text-justify">
+          
+ 
  </p>
            </section>
              <section><h2 id="section-2">2. Discrete probability spaces.</h2>
@@ -331,6 +340,7 @@ Of course, there are $2^{m^{r} }$ many events, which is quite large even for sma
 
 
 
+
  <p class="text-justify">
  In real life, there are often situations where there are several possible outcomes but which one will occur is unpredictable in some way. For example, when we toss a coin, we may get heads or tails. In such cases we use words such as <em> probability or chance</em>, <em> event or happening</em>, <em> randomness</em> etc.  What is the relationship between the intuitive and mathematical meanings of words such as probability or chance?
  </p>
@@ -397,21 +407,25 @@ In that example, $A$ is the event that the last ball ends up in the first bin, $
  </p>
 <p class="text-justify">
           
- The next example is more involved and interesting.
+ <div id="birthdays"></div> 
+ </p>
+           
+ <p class="text-justify">
+The next example is more involved and interesting.
 <p>&nbsp;</p>
                 <div id="theorem-13"><div class="panel panel-info example"> <div class="panel-heading">Example 13 </div><div class="panel-body"> <strong>Real-life situation :</strong> Imagine a man-woman pair. Their first child is random, for example, the sex of the child, or the height to which the child will ultimately grow, etc cannot be predicted with certainty. How to make a probability model that captures the situation?
  </p>
+<p class="text-justify">
+          
+ <strong>A  possible probability model :</strong> Let there be $n$ genes in each human, and each of the genes can take two possible values (Mendel's ''factors''), which we denote as $0$ or $1$. Then, let $\Omega=\{0,1\}^{n}=\{\mathbf{x}=(x_{1},\ldots ,x_{n}){\; : \;} x_{i}=0 \mbox{ or }1\}$. In this sense, each human being can be encoded as a vector in $\{0,1\}^{n}$.
+ </p>
            
  <p class="text-justify">
-<strong>A  possible probability model :</strong> Let there be $n$ genes in each human, and each of the genes can take two possible values (Mendel's ''factors''), which we denote as $0$ or $1$. Then, let $\Omega=\{0,1\}^{n}=\{\mathbf{x}=(x_{1},\ldots ,x_{n}){\; : \;} x_{i}=0 \mbox{ or }1\}$. In this sense, each human being can be encoded as a vector in $\{0,1\}^{n}$.
+To assign probabilities, one must know the parents. Let the two parents have gene sequences ${\bf  a}=(a_{1},\ldots,a_{n})$ and ${\bf  b}=(b_{1},\ldots ,b_{n})$. Then the possible offsprings gene sequences are in the set $\Omega_{0}:=\{\mathbf{x}\in \{0,1\}^{n}{\; : \;} x_{i}=a_{i} \mbox{ or }b_{i}, \; \mbox{ for each }i\le n\}$. Let $L:=\#\{i{\; : \;} a_{i}\not=b_{i}\}$.
  </p>
 <p class="text-justify">
           
- To assign probabilities, one must know the parents. Let the two parents have gene sequences ${\bf  a}=(a_{1},\ldots,a_{n})$ and ${\bf  b}=(b_{1},\ldots ,b_{n})$. Then the possible offsprings gene sequences are in the set $\Omega_{0}:=\{\mathbf{x}\in \{0,1\}^{n}{\; : \;} x_{i}=a_{i} \mbox{ or }b_{i}, \; \mbox{ for each }i\le n\}$. Let $L:=\#\{i{\; : \;} a_{i}\not=b_{i}\}$.
- </p>
-           
- <p class="text-justify">
-One possible assignment of probabilities is that each of these offsprings is equally likely. In that case we can capture the situation in the following probability models.
+ One possible assignment of probabilities is that each of these offsprings is equally likely. In that case we can capture the situation in the following probability models.
 <ol>
 <li> Let $\Omega_{0}$ be the sample space and let $p_{\mathbf{x}}=2^{-L}$ for each $\mathbf{x} \in \Omega_{0}$.
 </li>
@@ -419,19 +433,23 @@ One possible assignment of probabilities is that each of these offsprings is equ
 </ol>
 The second one has the advantage that if we change the parent pair, we don't have to change the sample space, only the elementary probabilities. What are some interesting events? Hypothetically, the susceptibility to a disease $X$ could be determined by the first ten genes, say the person is likely to get the disease if there are at-most four $1$s among the first ten. This would correspond to the event that $A=\{\mathbf{x}\in \Omega_{0}{\; : \;} x_{0}+\ldots+x_{10}\le 4\}$. (Caution: As far as I know, reading the genetic sequence to infer about the phenotype is still an impractical task in general).
  </p>
+           
+ <p class="text-justify">
+<strong>Reasonable model?</strong> There are many simplifications involved here. Firstly, genes are somewhat ill-defined concepts, better defined are nucleotides in the DNA (and even then there are two copies of each gene). Secondly, there are many ''errors'' in real DNA, even the total number of genes can change, there can be big chunks missing, a whole extra chromosome etc. Thirdly, the assumption that all possible gene-sequences in $\Omega_{0}$ are equally likely is incorrect - if two genes are physically close to each other in a chromosome, then they are likely to both come from the father or both from the mother. Lastly, if our interest originally was to guess the eventual height of the child or its intelligence, then it is not clear that these are determined by the genes alone (environmental factors such as availability of food etc. also matter). Finally, in case of the problem that Solomon faced, the information about genes of the parents was not available, the model as written would be use.
+ </p>
 <p class="text-justify">
           
- <strong>Reasonable model?</strong> There are many simplifications involved here. Firstly, genes are somewhat ill-defined concepts, better defined are nucleotides in the DNA (and even then there are two copies of each gene). Secondly, there are many ''errors'' in real DNA, even the total number of genes can change, there can be big chunks missing, a whole extra chromosome etc. Thirdly, the assumption that all possible gene-sequences in $\Omega_{0}$ are equally likely is incorrect - if two genes are physically close to each other in a chromosome, then they are likely to both come from the father or both from the mother. Lastly, if our interest originally was to guess the eventual height of the child or its intelligence, then it is not clear that these are determined by the genes alone (environmental factors such as availability of food etc. also matter). Finally, in case of the problem that Solomon faced, the information about genes of the parents was not available, the model as written would be use.
+ </div></div></div>
  </p>
            
  <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-14"><div class="panel panel-success remark"> <div class="panel-heading">Remark 14 </div><div class="panel-body"> We have discussed at length the reasonability of the model in this example to indicate the enormous effort needed to find a sufficiently  accurate but also reasonably simple probability model for a real-world situation. Henceforth, we shall omit such caveats and simply switch back-and-forth between a real-world situation and a reasonable-looking probability model as if there is no difference between the two. However, thinking about the appropriateness of the chosen models is much encouraged.
 </div></div></div>
  </p>
 <p class="text-justify">
           
- <p>&nbsp;</p>
-                <div id="theorem-14"><div class="panel panel-success remark"> <div class="panel-heading">Remark 14 </div><div class="panel-body"> We have discussed at length the reasonability of the model in this example to indicate the enormous effort needed to find a sufficiently  accurate but also reasonably simple probability model for a real-world situation. Henceforth, we shall omit such caveats and simply switch back-and-forth between a real-world situation and a reasonable-looking probability model as if there is no difference between the two. However, thinking about the appropriateness of the chosen models is much encouraged.
-</div></div></div>
+ 
  </p>
            </section>
              <section><h2 id="section-3">3. Examples of discrete probability spaces.</h2>

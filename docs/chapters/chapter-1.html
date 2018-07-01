@@ -139,6 +139,7 @@
 
 
 
+
  <p class="text-justify">
 
 Sometimes statistics is described as <em> the art or science of decision making in the face of uncertainty</em>.  Here are some examples to illustrate what it means.
@@ -167,16 +168,20 @@ Instead of cricket, they could spend their time on the more interesting question
  </p>
 <p class="text-justify">
           
- <p>&nbsp;</p>
-                <div id="theorem-3"><div class="panel panel-info example"> <div class="panel-heading">Example 3 </div><div class="panel-body"> A psychic claims to have divine visions unavailable to most of us. You are assigned the task of testing her claims. You take a standard deck of cards, shuffle it well and keep it face down on the table. The psychic writes down the list of cards in some order - whatever her vision tells her about how the deck is ordered. Then you count the number of correct guesses. If the number is 1 or 2, perhaps you can dismiss her claims. If it is 45, perhaps you ought to be take her seriously. Again, where to draw the line?
+ <div id="fair-coin"></div> 
  </p>
            
  <p class="text-justify">
-The logic is this. Roughly one may say that <em> surprise</em> is just the name for our reaction to an event that we <em> \'a priori</em> thought to have low chance of occurring. Thus, we approach the experiment with the belief that the psychic is just guessing at random, and if the results are such that under that random-guess-hypothesis they have very small probability, then we are willing to be surprised, that is willing to discard our preconception and accept that she is a psychic.
+<p>&nbsp;</p>
+                <div id="theorem-3"><div class="panel panel-info example"> <div class="panel-heading">Example 3 </div><div class="panel-body"> A psychic claims to have divine visions unavailable to most of us. You are assigned the task of testing her claims. You take a standard deck of cards, shuffle it well and keep it face down on the table. The psychic writes down the list of cards in some order - whatever her vision tells her about how the deck is ordered. Then you count the number of correct guesses. If the number is 1 or 2, perhaps you can dismiss her claims. If it is 45, perhaps you ought to be take her seriously. Again, where to draw the line?
  </p>
 <p class="text-justify">
           
- How low a probability is surprising? In the context of psychics, let us say, $1/10000$. Once we fix that, we must find a number $m\le 52$ such that by pure guessing, the probability to get more than $m$ correct guesses is less that $1/10000$. Then we tell the psychic that if she gets more than $m$ correct guesses, we accept her claim, and otherwise, reject her claim.  This raises the simple (and you can do it yourself)
+ The logic is this. Roughly one may say that <em> surprise</em> is just the name for our reaction to an event that we <em> \'a priori</em> thought to have low chance of occurring. Thus, we approach the experiment with the belief that the psychic is just guessing at random, and if the results are such that under that random-guess-hypothesis they have very small probability, then we are willing to be surprised, that is willing to discard our preconception and accept that she is a psychic.
+ </p>
+           
+ <p class="text-justify">
+How low a probability is surprising? In the context of psychics, let us say, $1/10000$. Once we fix that, we must find a number $m\le 52$ such that by pure guessing, the probability to get more than $m$ correct guesses is less that $1/10000$. Then we tell the psychic that if she gets more than $m$ correct guesses, we accept her claim, and otherwise, reject her claim.  This raises the simple (and you can do it yourself)
 <p>&nbsp;</p>
                 <div id="theorem-4"><div class="panel panel-danger question"> <div class="panel-heading">Question 4 </div><div class="panel-body"> For a deck of $52$ cards, find the number $m$ such that
 $$
@@ -185,35 +190,39 @@ $$
 </div></div></div>
 </div></div></div>
  </p>
+<p class="text-justify">
+          
+ <strong>Summary:</strong>  There are many situations in real life where one is required to make decisions under uncertainty. A general template for the answer could be to fix a small number that we allow as the probability of error, and deduce thresholds based on it. This brings us to the question of computing probabilities in various situations.
+ </p>
            
  <p class="text-justify">
-<strong>Summary:</strong>  There are many situations in real life where one is required to make decisions under uncertainty. A general template for the answer could be to fix a small number that we allow as the probability of error, and deduce thresholds based on it. This brings us to the question of computing probabilities in various situations.
+<strong> Probability:</strong> Probability theory is a branch of pure mathematics, and forms the theoretical basis of statistics. In itself, probability theory has some basic objects and their relations (like real numbers, addition etc for analysis) and it makes no pretense of saying anything about the real world. Axioms are given and theorems are then deduced about these objects, just as in any other part of mathematics.
  </p>
 <p class="text-justify">
           
- <strong> Probability:</strong> Probability theory is a branch of pure mathematics, and forms the theoretical basis of statistics. In itself, probability theory has some basic objects and their relations (like real numbers, addition etc for analysis) and it makes no pretense of saying anything about the real world. Axioms are given and theorems are then deduced about these objects, just as in any other part of mathematics.
+ But a very important aspect of probability is that it is <em> applicable</em>. In other words, there are many real-world situations in which it is reasonable to take a model in probability and it turns out to reasonably replicate features of  the real-world situation.
  </p>
            
  <p class="text-justify">
-But a very important aspect of probability is that it is <em> applicable</em>. In other words, there are many real-world situations in which it is reasonable to take a model in probability and it turns out to reasonably replicate features of  the real-world situation.
+In the example above, to compute the probability one must make the assumption that the deck of cards was completely shuffled. In other words, all possible 52! orders of the 52 cards are assumed to be equally likely. Whether this assumption is reasonable or not depends on how well the card was shuffled, whether the psychic was able to get a peek at the cards, whether some insider is informing the psychic of the cards etc. All these are non-mathematical questions, and must be decided on other basis.
  </p>
 <p class="text-justify">
           
- In the example above, to compute the probability one must make the assumption that the deck of cards was completely shuffled. In other words, all possible 52! orders of the 52 cards are assumed to be equally likely. Whether this assumption is reasonable or not depends on how well the card was shuffled, whether the psychic was able to get a peek at the cards, whether some insider is informing the psychic of the cards etc. All these are non-mathematical questions, and must be decided on other basis.
- </p>
-           
- <p class="text-justify">
-<strong>However... :</strong> Probability and statistics are very relevant in many situations that do not involve any uncertainty on the face of it. Here are some examples.
+ <strong>However... :</strong> Probability and statistics are very relevant in many situations that do not involve any uncertainty on the face of it. Here are some examples.
 <p>&nbsp;</p>
                 <div id="theorem-5"><div class="panel panel-info example"> <div class="panel-heading">Example 5 </div><div class="panel-body"> <em> Compression of data</em>. Large files in a computer can be compressed to a .zip format and uncompressed when necessary. How is it possible to compress data like this? To give a very simple analogy, consider a long English word like <em> invertebrate</em>. If we take a novel and replace every occurrence of this word with ''zqz'', then  it is certainly possible to recover the original novel (since ''zqz'' does not occur anywhere else). But the reduction in size by replacing the 12-letter word by the 3-letter word is not much, since the word <em> invertebrate</em> does not occur often. Instead, if we replace the 4-letter word ''then'' by ''zqz'', then the total reduction obtained may be much higher, as the word ''then'' occurs quite often.
  </p>
-<p class="text-justify">
-          
- This suggests the following optimal way to represent words in English. The 26 most frequent words will be represented by single letters. The next $26\times 26$ most frequent words will be represented by two letter words, the next $26\times 26\times 26$ most frequent words by three-letter words, etc. Assuming there are no errors in transcription, this is a good way to reduce the size of any text document! Now, this involves knowing what the frequencies of occurrences of various words in actual texts are. Such statistics of usage of words are therefore clearly relevant (and they could be different for biology textbooks as compared to 19th century novels).
+           
+ <p class="text-justify">
+This suggests the following optimal way to represent words in English. The 26 most frequent words will be represented by single letters. The next $26\times 26$ most frequent words will be represented by two letter words, the next $26\times 26\times 26$ most frequent words by three-letter words, etc. Assuming there are no errors in transcription, this is a good way to reduce the size of any text document! Now, this involves knowing what the frequencies of occurrences of various words in actual texts are. Such statistics of usage of words are therefore clearly relevant (and they could be different for biology textbooks as compared to 19th century novels).
 </div></div></div>
 <p>&nbsp;</p>
                 <div id="theorem-6"><div class="panel panel-info example"> <div class="panel-heading">Example 6 </div><div class="panel-body"> Search algorithms such as Google, use many randomized procedures. This cannot be explained right now, but let us give a simple reason to say why introducing randomness is a good idea in many situations. In the game of <em> rock-paper-scissors</em>, two people simultaneously shout one of the three words, rock, paper or scissors. The rule is that scissors beats paper, paper beats rock and rock beats scissors (if they both call the same word, they must repeat). In a game like this, although there is complete symmetry in the three items, it would be silly to have a fixed strategy. In other words, if you decide to always say rock, thinking that it doesn't matter which you choose, then your opponent can use that knowledge to always choose paper and thus win! In many games where the opponent gets to know your strategy (but not your move), the best strategy would involve  randomly choosing your move.
 </div></div></div>
+ </p>
+<p class="text-justify">
+          
+ 
  </p>
            
 

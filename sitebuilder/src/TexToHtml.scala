@@ -142,7 +142,8 @@ object TeXToHtml {
     "(\\\\renewcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
 
   def trimLine(l: String): String =
-    if (l.startsWith("%")) ""
+    if (l.startsWith("%"))
+      if (l.trim.endsWith("</div>")) l.drop(1) else ""
     else
       """[^\\]%""".r
         .findFirstMatchIn(l)
@@ -170,6 +171,8 @@ object TeXToHtml {
     .head
     .replace("<", " < ")
     .replace(">", " > ")
+    .replace(" >  < /div >", "></div>")
+    .replace("< div", "<div")
     .replace("~", " ")
     .replace("\\newpage", "")
     .replace("\\vspace{4mm}", "")
