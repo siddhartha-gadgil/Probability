@@ -74,7 +74,7 @@ object Site {
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav" id="left-nav">
-            <li><a href={s"${relDocsPath}index.html"}>Docs Home</a></li>
+            <li><a href={s"${relDocsPath}index.html"}>Home</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 Assignments<span class="caret"></span></a>
@@ -138,14 +138,16 @@ object Site {
         tm.mkString("\n"))
     } yield (m.group(1).toInt, m.group(2).toInt, m.group(3).toInt)
 
+  val months = Vector("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+
   case class Assignment(name: String,
                   content: String,
                   optDate: Option[(Int, Int, Int)],
                   optTitle: Option[String]) {
-    lazy val title = optTitle.getOrElse(name)
+    val title = optTitle.getOrElse(name)
 
-    lazy val dateString =
-      optDate.map { case (y, m, d) => s"$y-$m-$d-" }.getOrElse("")
+    val dateString =
+      optDate.map { case (y, m, d) => s"${months(m-1)} $d, $y" }.getOrElse("")
 
     val target = pwd / "docs" / "assignments" / s"$name.html"
 
@@ -153,8 +155,15 @@ object Site {
 
     val date: (Int, Int, Int) = optDate.getOrElse((0, 0, 0))
 
+    val assContent =
+      s"""
+      <h2 class="text-center"> $title </h2>
+      <h4 class="text-center"> due by $dateString </h4>
+      $content
+      """
+
     def output: String =
-      page(content, "../")
+      page(assContent.toString, "../")
 
     def save = write.over(target, output)
   }
@@ -201,23 +210,13 @@ val home =
   <section>
   <div class="col-md-9">
 
-      <h1>UM 102: Analysis and Linear Algebra II </h1>
+      <h1> MA 261: Probability Models </h1>
     <div id="desc" class="section">
       <h3> Course Syllabus </h3>
         <p>
-          Linear Algebra continued: Inner products and Orthogonality; Determinants; Eigenvalues and
-          Eigenvectors; Diagonalisation of Symmetric matrices. Multivariable calculus: Functions on $R^n$
-        </p>
-        <p>
-          Partial and Total derivatives; Chain rule; Maxima, minima and saddles; Lagrange multipliers;
-          Integration in $R^n$, change of variables, Fubini's theorem; Gradient, Divergence and Curl; Line
-          and Surface integrals in $R^2$
-          and $R^3$
-          ; Stokes, Green's and Divergence theorems.
-        </p>
-        <p>
-          Introduction to Ordinary Differential Equations; Linear ODEs and Canonical forms for linear
-          transformations.
+          Sample spaces, events, probability, discrete and continuous random variables,
+          Conditioning and independence, Bayes’  formula, moments and moment generating function, characteristic function,
+          laws of large numbers, central limit theorem, Markov chains, Poisson processes.
         </p>
     </div>
     <div class="section" id ="Assignments">
@@ -234,13 +233,8 @@ val home =
     <div id="refs" class="section">
       <h3>Suggested books</h3>
       <ol>
-        <li> T. M. Apostol, Calculus, Volume II, 2nd. Edition, Wiley Wiley India, 2007.</li>
-        <li> Kalyan Mukherjea, Differential Calculas in Normed Linear Spaces (Texts and Readings in Mathematics), Hindustan Book Agency, 2007. </li>
-        <li> M. Spivak, Calculus on Manifolds. </li>
-        <li> G. Strang, Linear Algebra And Its Applications, 4th Edition, Brooks/Cole, 2006</li>
-        <li> M. Artin, Algebra, Prentice Hall of India, 1994. </li>
-        <li> M. Hirsch, S. Smale, R. L. Devaney, Differential Equations, Dynamical Systems, and an
-        Introduction to Chaos, 2nd Edition, Academic Press, 2004. </li>
+        <li> Ross, S.M. , Introduction to Probability Models ,Academic Press 1993.</li>
+        <li> Taylor, H.M., and Karlin, S., An Introduction to Stochastic Modelling ,Academic Press, 1994. </li>
       </ol>
     </div>
     <div id ="details" class="section">
@@ -249,30 +243,15 @@ val home =
         <li><strong>Instructor:</strong> <a href="http://math.iisc.ac.in/~gadgil" target="_blank"> Siddhartha Gadgil</a></li>
         <li><strong>E-mail:</strong> <a href="mailto:siddhartha.gadgil@gmail.com" target="_blank"> siddhartha.gadgil@gmail.com</a>.</li>
         <li> <strong>Office:</strong> N-15, Department of Mathematics. </li>
-        <li><strong>Timing: </strong>
-          <ul>
-            <li><strong>Lectures:</strong> Mon-Wed-Fri: 9:30 a.m. to 10:30 a.m.</li>
-            <li> <strong>Tutorials:</strong> Mon: 12:00 noon - 1:00 p.m. </li>
-          </ul>
-        </li>
-        <li><strong>Lecture Venue: </strong> Undergraduate main lecture hall</li>
+        <li><strong>Lecture Timings: </strong> to be announced</li>
+        <li><strong>Lecture Venue: </strong> to be announced</li>
         <li><strong> Teaching Assistants: </strong>
           <ul>
             <li>
-              <a href="mailto:abusufian@iisc.ac.in" target="_blank"> Abu Sufian</a> (group <strong>A</strong>); <strong>office:</strong> N-07.
+              <a href="mailto:srikanths@iisc.ac.in" target="_blank"> Srikanth Srimala</a>
             </li>
             <li>
-              <a href="mailto:anindyab@iisc.ac.in" target="_blank"> Anindya Biswas</a> (group <strong>B</strong>); <strong>office:</strong> R-22;
-              <strong>office hours:</strong> Fri 9:00 pm to 10:00 pm.
-            </li>
-            <li>
-              <a href="mailto:tejag@iisc.ac.in" target="_blank"> G. V. K. Teja</a> (group <strong>C</strong>); <strong>office:</strong> R-21.
-            </li>
-            <li>
-              <a href="mailto:prateekv@iisc.ac.in" target="_blank"> Prateek Vishwakarma</a> (group <strong>D</strong>); <strong>office:</strong> R-24.
-            </li>
-            <li>
-              <a href="mailto:amarsarkar@iisc.ac.in" target="_blank"> Amardeep Sarkar </a> (co-ordinator); <strong>office:</strong> L-12.
+              <a href="mailto:somnathp@iisc.ac.in" target="_blank"> Somnath Pradhan</a>
             </li>
 
           </ul>
