@@ -1,0 +1,1 @@
+rsync -avz docs/ math.iisc.ac.in:~/public_html/MA261/
