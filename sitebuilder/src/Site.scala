@@ -42,14 +42,6 @@ object Site {
        |    <!-- Bootstrap -->
        |    <link href="${relDocsPath}css/bootstrap.min.css" rel="stylesheet">
        |   <link href="${relDocsPath}css/katex.min.css" rel="stylesheet">
-       |   <link href="${relDocsPath}css/main.css" rel="stylesheet">
-       |
-       |
-       |    <link rel="stylesheet" href="${relDocsPath}css/zenburn.css">
-       |    <script src="${relDocsPath}js/highlight.pack.js"></script>
-       |    <script>hljs.initHighlightingOnLoad();</script>
-       |
-       |   <script src="${relDocsPath}js/ace.js"></script>
        |   <script src="${relDocsPath}js/katex.min.js"></script>
        |
        |    $mathjax

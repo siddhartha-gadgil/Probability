@@ -646,8 +646,8 @@ class TeXToHtml(header: String, text: String) {
       (m) =>
         {
           val j = m.group(2).toInt
-          println()
-          println(s"reference $j in ${theoremChapters(j)}")
+          // println()
+          // println(s"reference $j in ${theoremChapters(j)}")
           s"""href="chapter-${theoremChapters(j)}.html#theorem-$j"""
         })
   }
@@ -745,10 +745,15 @@ $foot"""
   }
 }
 
-object TeXBuild extends App {
+object SiteBuild extends App {
+  println("Converting notes")
   import TeXToHtml._
   converter.html()
   val js = read(resource/"out.js")
   write.over(pwd / "docs" / "js" / "probability.js", js)
-  println(converter.theoremChapters.toVector.sortBy(_._1))
+  // println(converter.theoremChapters.toVector.sortBy(_._1))
+  import Site._
+  println("making static site")
+  mkHome()
+  mkAss()
 }
