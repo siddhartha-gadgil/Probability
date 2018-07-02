@@ -739,9 +739,9 @@ $foot"""
     write.over(pwd / "docs" / "draft" / "index.html", draftHtml)
     chapHtml.foreach{
       case (n, html) =>
-        write.over(pwd / "docs" / "chapters" / s"chapter-$n.html", html)
+        write.over(pwd / "docs" / "notes" / s"chapter-$n.html", html)
     }
-    write.over(pwd / "docs" / "chapters" / "index.html", tocHtml)
+    write.over(pwd / "docs" / "notes" / "index.html", tocHtml)
   }
 }
 
