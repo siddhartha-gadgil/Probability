@@ -42,6 +42,7 @@ object Site {
        |
        |    <!-- Bootstrap -->
        |    <link href="${relDocsPath}css/bootstrap.min.css" rel="stylesheet">
+       | <link href="${relDocsPath}css/extras.css" rel="stylesheet">
        |   <link href="${relDocsPath}css/katex.min.css" rel="stylesheet">
        |   <script src="${relDocsPath}js/katex.min.js"></script>
        |
@@ -199,6 +200,9 @@ object Site {
        |</html>
    """.stripMargin
 
+val assList = allAss.map((ass) =>
+  <li> <a href={ass.url("")}> {ass.title}</a>, due by {ass.dateString}.</li>)
+
 val home =
   <section>
   <div class="col-md-9">
@@ -216,11 +220,7 @@ val home =
       <h3> <a href="assign-all.html">Assignments</a> </h3>
       <p>Assignments will be posted roughly once a week.</p>
       <ul>
-        {allAss.map((ass) =>
-        <li>
-          <a href={ass.url("")}> {ass.title}</a>, due by {ass.dateString}.
-        </li>)
-      }
+        {assList}
       </ul>
     </div>
     <div id="refs" class="section">
@@ -267,11 +267,20 @@ val home =
 
   </section>
 
+  val assignAll =
+    <section>
+      <h2> Assignments </h2>
+      <ul>
+        {assList}
+      </ul>
+    </section>
+
   def mkAss() = {
     allAss.foreach { (ass) =>
       pprint.log(s"saving assignment ${ass.name} due on ${ass.dateString}")
       write.over(ass.target, ass.output)
     }
+    write.over(pwd / "docs" / "assign-all.html", page(assignAll.toString, ""))
   }
 
 
