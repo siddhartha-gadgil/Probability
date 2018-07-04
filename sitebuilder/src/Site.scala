@@ -4,6 +4,7 @@ import ammonite.ops
 import ops._
 
 import scala.xml.Elem
+import scala.util.Try
 
 object Site {
 
@@ -171,7 +172,7 @@ object Site {
   def assDir = pwd / "sitebuilder" / "resources" / "assignments"
 
   def allAss: Seq[Assignment] =
-    ls(assDir).map(getAss).sortBy(_.date).reverse
+    Try(ls(assDir).map(getAss).sortBy(_.date).reverse).getOrElse(Seq())
 
   def assList(relDocsPath: String): Seq[Elem] =
       allAss.map(
