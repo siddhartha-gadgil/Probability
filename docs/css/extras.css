@@ -1,0 +1,57 @@
+
+.navbar-default .navbar-nav > li.dropdown:hover > a,
+.navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+.navbar-default .navbar-nav > li.dropdown:hover > a:focus {
+    background-color: rgb(231, 231, 231);
+    color: rgb(85, 85, 85);
+}
+li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.banner {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 25px;
+}
+
+.dropdown-menu > li > a {
+  color: #0f0f0f;
+}
+
+a {
+  color: #3498db;
+}
+
+a:hover,
+a:focus {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/*.navbar-nav > li > a {padding-top:8px !important; padding-bottom:3px !important;}
+.navbar {min-height:32px !important}
+
+.navbar-toggle {
+     padding: 0 0;
+     margin-top: 7px;
+     margin-bottom: 0;
+}*/
+
+body {
+    padding-top: 20px;
+  }
+  @media (max-width: 980px) {
+    body {
+      padding-top: 0;
+    }
+  }

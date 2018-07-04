@@ -18,15 +18,8 @@ object TeXToHtml {
       |
       |<!-- Latest compiled and minified CSS  for Bootstrap -->
       |<link rel="stylesheet" href="../css/bootstrap.min.css">
+      |<link rel="stylesheet" href="../css/extras.css">
       |
-      |<style type="text/css">
-      |   body { padding-top: 60px; }
-      |   .section {padding-top: 60px;}
-      |   #arxiv {
-      |     border-style: solid;
-      |     border-width: 1px;
-      |   }
-      |</style>
       |
       |
       |  <!-- mathjax config similar to math.stackexchange -->
@@ -108,8 +101,8 @@ object TeXToHtml {
       |<div class="bg-primary">
       |     <div class="banner">
       |
-      |     <center><h2 style="padding-top: 15px;"> Probability and Statistics </h2></center>
-      |     <center><h4 style="padding-bottom: 15px;"> Notes by Manjunath Krishnapur </h4></center>
+      |     <center><h2> Probability and Statistics </h2></center>
+      |     <center><h4> Notes by Manjunath Krishnapur </h4></center>
       |   </div>
       | </div>
       | </div>
@@ -706,10 +699,13 @@ class TeXToHtml(header: String, text: String) {
   lazy val chapHtml = chapReplaced.map{case (n, txt) =>
     (n,
       s"""$top
+<div class="container-fluid">
+<div class="banner">
+<h1 class="text-center bg-primary">Chapter $n : ${sections(n)}</h1>
+</div>
+</div>
 $chapNav
 <div class="container">
-<h1 class="text-center bg-info">Chapter $n : ${sections(n)}</h1>
-<p>&nbsp;</p>
 $txt
 
 ${chapLink(n + 1)}
@@ -723,9 +719,9 @@ $foot"""
   }
 
   lazy val tocHtml = s"""$top
-$chapNav
 $banner
-<h1 class="text-center bg-info">Table of Contents</h1>
+$chapNav
+<h1 class="text-center bg-primary">Table of Contents</h1>
 <p>&nbsp;</p>
 <ol>
 $tocList
@@ -746,14 +742,14 @@ $foot"""
 }
 
 object SiteBuild extends App {
-  println("Converting notes")
+  pprint.log("Converting notes")
   import TeXToHtml._
   converter.html()
   val js = read(resource/"out.js")
   write.over(pwd / "docs" / "js" / "probability.js", js)
-  // println(converter.theoremChapters.toVector.sortBy(_._1))
+  // pprint.log(converter.theoremChapters.toVector.sortBy(_._1))
   import Site._
-  println("making static site")
+  pprint.log("making static site")
   mkHome()
   mkAss()
 }
