@@ -11,5 +11,6 @@ object Illustrations{
   def main() : Unit = {
     FairCoin.main()
     Birthdays.main()
+    Percolation.main()
   }
 }

@@ -461,6 +461,7 @@ The second one has the advantage that if we change the parent pair, we don't hav
 
 
 
+
  <p class="text-justify">
 
 <p>&nbsp;</p>
@@ -632,29 +633,33 @@ Finding $\mathbf{P}(A)$ is a very difficult problem. When $n$ is large and $m=2 
  </p>
 <p class="text-justify">
           
- We now give two non-examples.
-<p>&nbsp;</p>
-                <div id="theorem-27"><div class="panel panel-info example"> <div class="panel-heading">Example 27 </div><div class="panel-body"><strong>A non-example - Pick a natural number uniformly at random</strong>. The sample space is clearly $\Omega=\mathbb{N}=\{1,2,3,\ldots\}$. The phrase ''uniformly at random'' suggests that the elementary probabilities should be the same for all elements. That is $p_{i}=p$ for all $i\in \mathbb{N}$ for some $p$. If $p=0$, then $\sum_{i\in \mathbb{N}}p_{i}=0$ whereas if $p > 0$, then $\sum_{i\in \mathbb{N}}p_{i}=\infty$. This means that there is no way to assign elementary probabilities so that each number has the same chance to be picked.
+ <div id="percolation"></div> 
  </p>
            
  <p class="text-justify">
-This appears obvious, but many folklore puzzles and paradoxes in probability are based on the faulty assumption that it is possible to pick a natural number at random. For example, when asked a question like ''What is the probability that a random integer is odd?'', many people answer $1/2$. We want to emphasize that the probability space has to be defined first, and only then can probabilities of events be calculated. Thus, the question does not make sense to us and we do not have to answer it!<sup> <a data-toggle="collapse" href="#footnote-6" aria-expanded="false" aria-controls="footnote-6">
+We now give two non-examples.
+<p>&nbsp;</p>
+                <div id="theorem-27"><div class="panel panel-info example"> <div class="panel-heading">Example 27 </div><div class="panel-body"><strong>A non-example - Pick a natural number uniformly at random</strong>. The sample space is clearly $\Omega=\mathbb{N}=\{1,2,3,\ldots\}$. The phrase ''uniformly at random'' suggests that the elementary probabilities should be the same for all elements. That is $p_{i}=p$ for all $i\in \mathbb{N}$ for some $p$. If $p=0$, then $\sum_{i\in \mathbb{N}}p_{i}=0$ whereas if $p > 0$, then $\sum_{i\in \mathbb{N}}p_{i}=\infty$. This means that there is no way to assign elementary probabilities so that each number has the same chance to be picked.
+ </p>
+<p class="text-justify">
+          
+ This appears obvious, but many folklore puzzles and paradoxes in probability are based on the faulty assumption that it is possible to pick a natural number at random. For example, when asked a question like ''What is the probability that a random integer is odd?'', many people answer $1/2$. We want to emphasize that the probability space has to be defined first, and only then can probabilities of events be calculated. Thus, the question does not make sense to us and we do not have to answer it!<sup> <a data-toggle="collapse" href="#footnote-6" aria-expanded="false" aria-controls="footnote-6">
                                 6
                                  </a> </sup><span class="collapse small" id="footnote-6">For those interested, there is one way to make sense of such questions. It is to consider a sequence of probability spaces $\Omega^{(n)}=\{1,2,\ldots ,n\}$ with elementary probabilities $p^{(n)}_{i}=1/n$ for each $i\in \Omega_{n}$. Then, for a subset $A\subseteq \mathbb{Z}$, we consider $\mathbf{P}_{n}(A\cap \Omega_{n})=\#(A\cap [n])/n$. If these probabilities converge to a limit $x$ as $n\rightarrow \infty$, then we could say that $A$ has asymptotic probability $x$. In this sense, the set of odd numbers does have  asymptotic probability $1/2$, the set of numbers divisible by $7$ has asymptotic probability $1/7$ and the set of prime numbers has asymptotic probability $0$. However, this notion of asymptotic probability has many shortcomings. Many subsets of natural numbers will not have an asymptotic probability, and even sets which do have asymptotic probability fail to satisfy basic rules of probability that we shall see later. Hence, we shall keep such examples out of our system.</span> 
 </div></div></div>
  </p>
+           
+ <p class="text-justify">
+<p>&nbsp;</p>
+                <div id="theorem-28"><div class="panel panel-info example"> <div class="panel-heading">Example 28 </div><div class="panel-body"><strong>Another non-example - Throwing darts</strong>. A dart is thrown at a circular dart board. We assume that the dart does hit the board but were it hits is ''random'' in the same sense in which we say the a coin toss is random. Intuitively this appears to make sense. However our framework is not general enough to incorporate this example. Let us see why.
+ </p>
 <p class="text-justify">
           
- <p>&nbsp;</p>
-                <div id="theorem-28"><div class="panel panel-info example"> <div class="panel-heading">Example 28 </div><div class="panel-body"><strong>Another non-example - Throwing darts</strong>. A dart is thrown at a circular dart board. We assume that the dart does hit the board but were it hits is ''random'' in the same sense in which we say the a coin toss is random. Intuitively this appears to make sense. However our framework is not general enough to incorporate this example. Let us see why.
+ The dart board can be considered to be the disk $\Omega=\{(x,y){\; : \;} x^{2}+y^{2}\le r^{2}\}$ of given radius $r$. This is an uncountable set. We cannot assign elementary probabilities $p_{(x,y)}$ for each $(x,y)\in \Omega$ in any reasonable way. In fact the only reasonable assignment would be to set $p_{(x,y)}=0$ for each $(x,y)$ but then what is $\mathbf{P}(A)$ for a subset $A$? Uncountable sums are not well defined.
  </p>
            
  <p class="text-justify">
-The dart board can be considered to be the disk $\Omega=\{(x,y){\; : \;} x^{2}+y^{2}\le r^{2}\}$ of given radius $r$. This is an uncountable set. We cannot assign elementary probabilities $p_{(x,y)}$ for each $(x,y)\in \Omega$ in any reasonable way. In fact the only reasonable assignment would be to set $p_{(x,y)}=0$ for each $(x,y)$ but then what is $\mathbf{P}(A)$ for a subset $A$? Uncountable sums are not well defined.
- </p>
-<p class="text-justify">
-          
- We need a branch of mathematics called <em> measure theory</em> to make proper sense of uncountable probability spaces. This will not be done in this course although we shall later say a bit about the difficulties involved. The same difficulty shows up in the following ''random experiments'' also.
+We need a branch of mathematics called <em> measure theory</em> to make proper sense of uncountable probability spaces. This will not be done in this course although we shall later say a bit about the difficulties involved. The same difficulty shows up in the following ''random experiments'' also.
 <ol>
 <li> <strong>Draw a number at random from the interval $[0,1]$</strong>. $\Omega=[0,1]$ which is uncountable.
 </li>
@@ -664,6 +669,10 @@ The dart board can be considered to be the disk $\Omega=\{(x,y){\; : \;} x^{2}+y
 <p>&nbsp;</p>
                 <div id="theorem-29"><div class="panel panel-success remark"> <div class="panel-heading">Remark 29 </div><div class="panel-body"> In one sense, the first non-example is almost irredeemable but  the second non-example can be dealt with, except for technicalities beyond this course. We shall later give a set of working rules to work with such ''continuous probabilities''. Fully satisfactory development will have to wait for a course in measure theory.
 </div></div></div>
+ </p>
+<p class="text-justify">
+          
+ 
  </p>
            </section>
              <section><h2 id="section-4">4. Countable and uncountable.</h2>

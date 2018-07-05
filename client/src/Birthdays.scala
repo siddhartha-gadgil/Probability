@@ -4,7 +4,6 @@ import org.scalajs.dom
 import org.scalajs.dom._
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 import scala.util.Random
 
 object Birthdays {
@@ -21,7 +20,7 @@ object Birthdays {
   def randomBirthdays(n: Int): Unit =
     birthdaysV := (1 to n).toVector.map((_) => rnd.nextInt(365))
 
-  val dupsR = birthdaysV.map {
+  val dupsR: Rx[Vector[Int]] = birthdaysV.map {
     (bds) =>
       val fs = bds.groupBy(identity).mapValues(_.size)
       bds.filter((n) => fs(n) > 1).sorted.distinct
@@ -47,7 +46,7 @@ object Birthdays {
     if (n < days) (mon, n + 1) else monthDay(n - days, m.tail)
   }
 
-  def date(n: Int) = {
+  def date(n: Int): String = {
     val (mon, day) = monthDay(n, months)
     s"$mon $day "
   }
@@ -56,14 +55,14 @@ object Birthdays {
 
   def allSeq(n: Int) : Vector[Int] = Vector.fill(n)(365)
 
-  def probDistinct(n: Int) = distSeq(n).zip(allSeq(n)).map{case (a, b) => a.toDouble/ b.toDouble}.fold(1.0)(_ * _)
+  def probDistinct(n: Int): Double = distSeq(n).zip(allSeq(n)).map{case (a, b) => a.toDouble/ b.toDouble}.fold(1.0)(_ * _)
 
   val showProb : Var[Boolean] = Var(false)
 
   val probClass : Rx[String] =
     showProb.map((b) => if (b) "collapse show" else "collapse")
 
-  val iconClass =
+  val iconClass: Rx[String] =
     showProb.map((b) => if (b) "glyphicon glyphicon-minus" else "glyphicon glyphicon-plus")
 
   def main(): Unit = {
@@ -79,7 +78,7 @@ object Birthdays {
             numV := e.target.value.asInstanceOf[String].toInt
           }/>
 
-          {(numV).map{(num) =>
+          {numV.map{ (num) =>
             <button class="btn btn-primary" type="button" onclick={
             () => randomBirthdays(num)}>
               Choose random birthdays
@@ -92,7 +91,7 @@ object Birthdays {
             <div class="panel-body">
               <ul class="list-inline">
                 {birthdaysV.map((bdys) => bdys.map(
-                (d) => if (bdys.filter(_ == d).size >1)
+                (d) => if (bdys.count(_ == d) >1)
                   <li class="bg-primary">{date(d)}</li>
                 else <li>{date(d)}</li>))}
               </ul>
