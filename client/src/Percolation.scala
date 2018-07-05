@@ -30,14 +30,62 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
     } yield
       <line x1={(x1 * xscale).toInt.toString} y1={(y1 * yscale).toInt.toString} x2={(x2 * xscale).toInt.toString} y2={(y2 * yscale).toInt.toString} stroke="black" stroke-width="1" xmlns="http://www.w3.org/2000/svg"></line>
 
-  val allLines: immutable.IndexedSeq[Elem] = gridLines ++ edgeLines.toSeq
 
-  val view =
-      // <div width="400" height="200">
+  def neighbours(i: Int, j: Int) =
+    Set(
+      (i, j) ->  (i, j + 1),
+      (i - 1, j) -> (i, j),
+      (i, j) -> (i, j + 1),
+      (i, j -1) -> (i, j)
+    ).intersect(edges).flatMap{
+      case (p, q) => Set(p, q)
+    } - (i -> j)
+
+  @annotation.tailrec
+  final def findPath(
+    source: Set[Vector[(Int, Int)]],
+    target: Set[(Int, Int)]
+  ) : Option[Vector[(Int, Int)]] = {
+    val pathOpt = source.find((p) =>
+      target.contains(p.last))
+    if (pathOpt.nonEmpty) pathOpt
+    else {
+        val endPoints = source.map(_.last)
+        val adjPoints = endPoints.flatMap{case (i, j) => neighbours(i, j)}
+        val support = source.flatMap((p) => p.toSet)
+        val newPoints = adjPoints -- support
+        if (newPoints.isEmpty) None
+        else {
+          val newPaths =
+            newPoints.flatMap{case (i, j) =>
+              source.find((path) => neighbours(i, j).contains(path.last))
+            }
+          findPath(newPaths, target)
+        }
+      }
+  }
+
+  lazy val topToBottom =
+    findPath(
+      (0 to n).map((i) => Vector(i -> 0)).toSet,
+      (0 to n).map((i) => (i -> m)).toSet
+    )
+
+  lazy val greenLines: Seq[Elem] =
+    topToBottom.map{
+      (v) =>
+      for {
+    ((x1, y1), (x2, y2)) <- v.zip(v.tail)
+      } yield
+        <line x1={(x1 * xscale).toInt.toString} y1={(y1 * yscale).toInt.toString} x2={(x2 * xscale).toInt.toString} y2={(y2 * yscale).toInt.toString} stroke="green" stroke-width="2" xmlns="http://www.w3.org/2000/svg"></line>
+      }.getOrElse(Seq())
+
+  lazy val allLines: immutable.IndexedSeq[Elem] = gridLines ++ edgeLines.toSeq ++ greenLines
+
+  lazy val view =
       <svg viewBox="0 0 400 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
         {allLines}
       </svg>
-    // </div>
 }
 
 object Percolation {
@@ -68,10 +116,10 @@ object Percolation {
 
   val percolation: Var[Percolation] = Var(random(10, 10))
 
-  val percView = percolation.map(_.view)
+  lazy val percView = percolation.map(_.view)
 
   def main() : Unit = {
-    val percDiv: Node =
+    lazy val percDiv: Node =
       <div class="panel panel-primary">
         <div class="panel-heading">Percolation</div>
         <div class="panel-body">
@@ -104,7 +152,6 @@ object Percolation {
     val positionOpt = Option(dom.document.querySelector("#percolation"))
     positionOpt.foreach { (position) =>
       val div = document.createElement("div")
-      // position.parentNode.insertBefore(div, position.nextSibling)
       position.appendChild(div)
       mount(div, percDiv)
     }
