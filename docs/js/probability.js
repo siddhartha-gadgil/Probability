@@ -9719,7 +9719,7 @@ $c_Lprobability_Percolation$.prototype.main__V = (function() {
   var jsx$6 = $m_s_xml_Null$();
   var jsx$5 = $m_s_xml_TopScope$();
   var $$buf$6 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("number of columns (n):"));
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Number of columns (n):"));
   $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "label", jsx$6, jsx$5, false, $$buf$6));
   $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
   var $$md$4 = $m_s_xml_Null$();
@@ -9738,7 +9738,7 @@ $c_Lprobability_Percolation$.prototype.main__V = (function() {
   var jsx$8 = $m_s_xml_Null$();
   var jsx$7 = $m_s_xml_TopScope$();
   var $$buf$7 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("number of rows (m)"));
+  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Number of rows (m)"));
   $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "label", jsx$8, jsx$7, false, $$buf$7));
   $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
   var $$md$5 = $m_s_xml_Null$();
@@ -9755,6 +9755,8 @@ $c_Lprobability_Percolation$.prototype.main__V = (function() {
   $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "input", $$md$5, $m_s_xml_TopScope$(), true, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
   $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n            "));
   $$buf$5.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.percView__Lmhtml_Rx(), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().nodeElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
   $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
   $$buf$5.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.nV__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.mV__Lmhtml_Var()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
     return (function(x0$1$2) {
@@ -13259,24 +13261,30 @@ $c_Lprobability_Percolation.prototype.equals__O__Z = (function(x$1) {
   }
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$gridLines$1__p1__I__s_xml_Elem = (function(i) {
+  var $$tmpscope = $m_s_xml_TopScope$();
+  $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
+  var $$scope = $$tmpscope;
   var $$md = $m_s_xml_Null$();
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-width", new $c_s_xml_Text().init___T("1"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("grey"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-dasharray", new $c_s_xml_Text().init___T("1 1"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("lightgrey"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", $objectToString($doubleToInt((i * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", $objectToString($doubleToInt((this.n__I() * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", $objectToString($doubleToInt((i * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", new $c_s_xml_Text().init___T("0"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md, $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))
+  return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md, $$scope, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$gridLines$2__p1__I__s_xml_Elem = (function(j) {
+  var $$tmpscope = $m_s_xml_TopScope$();
+  $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
+  var $$scope = $$tmpscope;
   var $$md = $m_s_xml_Null$();
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-width", new $c_s_xml_Text().init___T("1"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("grey"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-dasharray", new $c_s_xml_Text().init___T("1 1"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("lightgrey"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", $objectToString($doubleToInt((this.m__I() * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", $objectToString($doubleToInt((j * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", $objectToString($doubleToInt((j * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", new $c_s_xml_Text().init___T("0"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", $objectToString($doubleToInt((j * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md, $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))
+  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", $objectToString($doubleToInt((j * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md, $$scope, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$edgeLines$1__p1__T2__Z = (function(check$ifrefutable$1) {
   var x1 = check$ifrefutable$1;
@@ -13300,14 +13308,17 @@ $c_Lprobability_Percolation.prototype.$$anonfun$edgeLines$2__p1__T2__s_xml_Elem 
       if ((p3 !== null)) {
         var x2 = p3.$$und1$mcI$sp__I();
         var y2 = p3.$$und2$mcI$sp__I();
+        var $$tmpscope = $m_s_xml_TopScope$();
+        $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
+        var $$scope = $$tmpscope;
         var $$md = $m_s_xml_Null$();
-        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-width", new $c_s_xml_Text().init___T("2"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-width", new $c_s_xml_Text().init___T("1"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("black"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", $objectToString($doubleToInt((y2 * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", $objectToString($doubleToInt((x2 * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", $objectToString($doubleToInt((y1 * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", $objectToString($doubleToInt((x1$2 * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-        return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md, $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))
+        return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md, $$scope, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))
       }
     }
   };
@@ -13319,8 +13330,8 @@ $c_Lprobability_Percolation.prototype.init___I__I__sci_Set = (function(n, m, edg
   this.edges$1 = edges;
   $c_O.prototype.init___.call(this);
   $f_s_Product__$$init$__V(this);
-  this.xmax$1 = 200;
-  this.ymax$1 = 200;
+  this.xmax$1 = 100;
+  this.ymax$1 = 100;
   this.xscale$1 = (this.xmax__I() / n);
   this.yscale$1 = (this.ymax__I() / m);
   this.gridLines$1 = $as_sci_IndexedSeq($as_sc_TraversableLike($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), m).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
@@ -13346,27 +13357,19 @@ $c_Lprobability_Percolation.prototype.init___I__I__sci_Set = (function(n, m, edg
     })
   })(this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
   this.allLines$1 = $as_sci_IndexedSeq(this.gridLines__sci_IndexedSeq().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.edgeLines__sci_Set().toSeq__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
-  var $$md = $m_s_xml_Null$();
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("200"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("200"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$3 = $$md;
-  var jsx$2 = $m_s_xml_TopScope$();
-  var $$buf = new $c_s_xml_NodeBuffer().init___();
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n    "));
   var $$tmpscope = $m_s_xml_TopScope$();
   $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
   var $$scope = $$tmpscope;
-  var $$md$2 = $m_s_xml_Null$();
-  $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("200"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("200"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$1 = $$md$2;
-  var $$buf$2 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
-  $$buf$2.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.allLines__sci_IndexedSeq(), $m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable());
-  $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n    "));
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "svg", jsx$1, $$scope, false, $$buf$2));
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n    "));
-  this.view$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$3, jsx$2, false, $$buf);
+  var $$md = $m_s_xml_Null$();
+  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("600"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("600"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("viewBox", new $c_s_xml_Text().init___T("0 0 100 100"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$1 = $$md;
+  var $$buf = new $c_s_xml_NodeBuffer().init___();
+  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+  $$buf.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.allLines__sci_IndexedSeq(), $m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable());
+  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  this.view$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "svg", jsx$1, $$scope, false, $$buf);
   return this
 });
 function $is_Lprobability_Percolation(obj) {
