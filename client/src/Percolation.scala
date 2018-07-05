@@ -33,7 +33,7 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
 
   def neighbours(i: Int, j: Int) =
     Set(
-      (i, j) ->  (i, j + 1),
+      (i, j) ->  (i + 1, j),
       (i - 1, j) -> (i, j),
       (i, j) -> (i, j + 1),
       (i, j -1) -> (i, j)
@@ -58,34 +58,46 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
         else {
           val newPaths =
             newPoints.flatMap{case (i, j) =>
-              source.find((path) => neighbours(i, j).contains(path.last))
+              source.find((path) => neighbours(i, j).contains(path.last)).map((v) => v :+ (i -> j))
             }
           findPath(newPaths, target)
         }
       }
   }
 
-  // val topToBottom =
-  //   findPath(
-  //     (0 to n).map((i) => Vector(i -> 0)).toSet,
-  //     (0 to n).map((i) => (i -> m)).toSet
-  //   )
-  //
-  // val greenLines: Seq[Elem] =
-  //   topToBottom.map{
-  //     (v) =>
-  //     for {
-  //   ((x1, y1), (x2, y2)) <- v.zip(v.tail)
-  //     } yield
-  //       <line x1={(x1 * xscale).toInt.toString} y1={(y1 * yscale).toInt.toString} x2={(x2 * xscale).toInt.toString} y2={(y2 * yscale).toInt.toString} stroke="green" stroke-width="2" xmlns="http://www.w3.org/2000/svg"></line>
-  //     }.getOrElse(Seq())
+  val top = (0 to n).map((i) => Vector(i -> 0)).toSet
 
-  val allLines: immutable.IndexedSeq[Elem] = gridLines ++ edgeLines.toSeq //++ greenLines
+  val bottom = (0 to n).map((i) => (i -> m)).toSet
+
+  val topToBottom =
+    findPath(
+      top,
+      bottom
+    )
+
+  val blueLines: Seq[Elem] =
+    topToBottom.map{
+      (v) =>
+      for {
+    ((x1, y1), (x2, y2)) <- v.zip(v.tail)
+      } yield
+        <line x1={(x1 * xscale).toInt.toString} y1={(y1 * yscale).toInt.toString} x2={(x2 * xscale).toInt.toString} y2={(y2 * yscale).toInt.toString} stroke="blue" stroke-width="2" xmlns="http://www.w3.org/2000/svg"></line>
+      }.getOrElse(Seq())
+
+  val allLines: immutable.IndexedSeq[Elem] = gridLines ++ edgeLines.toSeq ++ blueLines
+
+  val connected =
+    if (topToBottom.isEmpty) <p>No path from top to bottom</p>
+    else <p>The blue path connects the top to the bottom</p>
 
   val view =
+      <div>
       <svg viewBox="0 0 400 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
         {allLines}
       </svg>
+      <p></p>
+      {connected}
+      </div>
 }
 
 object Percolation {
@@ -123,7 +135,7 @@ object Percolation {
       <div class="panel panel-primary">
         <div class="panel-heading">Percolation</div>
         <div class="panel-body">
-          <p>See if the top and bottom are connected</p>
+          <p><strong>Event:</strong> the top and bottom are connected</p>
           <div>
             <label>Number of columns (n):</label>
             <input type="number" min="0" max ="100" value ="10" oninput={
