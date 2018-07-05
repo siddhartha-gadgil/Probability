@@ -10,18 +10,18 @@ import scala.collection.immutable
 import scala.xml.{Elem, Node}
 
 case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
-  val xmax = 100
-  val ymax = 100
+  val xmax = 400
+  val ymax = 400
 
   val xscale = xmax.toDouble / n
   val yscale = ymax.toDouble / m
 
   val gridLines =
     (0 to m).map { (i) =>
-      <line x1="0" y1={(i * yscale).toInt.toString} x2={(n * xscale).toInt.toString} y2={(i * yscale).toInt.toString} stroke="lightgrey" stroke-dasharray="1 1" xmlns="http://www.w3.org/2000/svg"></line>
+      <line x1="0" y1={(i * yscale).toInt.toString} x2={(n * xscale).toInt.toString} y2={(i * yscale).toInt.toString} stroke="grey" stroke-dasharray="1 1" xmlns="http://www.w3.org/2000/svg"></line>
     } ++
       ((0 to n).map { (j) =>
-        <line x1={(j * xscale).toInt.toString} y1="0" x2={(j * xscale).toInt.toString} y2={(m * yscale).toInt.toString} stroke="lightgrey" stroke-dasharray="1 1" xmlns="http://www.w3.org/2000/svg"></line>
+        <line x1={(j * xscale).toInt.toString} y1="0" x2={(j * xscale).toInt.toString} y2={(m * yscale).toInt.toString} stroke="grey" stroke-dasharray="1 1" xmlns="http://www.w3.org/2000/svg"></line>
       })
 
   val edgeLines =
@@ -34,7 +34,7 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
 
   val view =
       // <div width="400" height="200">
-      <svg viewBox="0 0 100 100" width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 400 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
         {allLines}
       </svg>
     // </div>
@@ -87,15 +87,15 @@ object Percolation {
           (e: js.Dynamic) =>
             mV := e.target.value.asInstanceOf[String].toInt
           }/>
-
+          {nV.zip(mV).map{ case (n, m) =>
+          <button class="btn btn-default" type="button" onclick={
+          () => percolation := random(n, m)}>
+            New random percolation
+          </button>
+        }}
+        <p></p>
             {percView}
-            <p></p>
-            {nV.zip(mV).map{ case (n, m) =>
-            <button class="btn btn-primary" type="button" onclick={
-            () => percolation := random(n, m)}>
-              New random percolation
-            </button>
-          }}
+
           </div>
 
         </div>
