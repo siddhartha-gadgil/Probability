@@ -12,5 +12,6 @@ object Illustrations{
     FairCoin.main()
     Birthdays.main()
     Percolation.main()
+    CoinTosses.main()
   }
 }
