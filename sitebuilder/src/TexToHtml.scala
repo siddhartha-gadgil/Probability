@@ -752,4 +752,5 @@ object SiteBuild extends App {
   pprint.log("making static site")
   mkHome()
   mkAss()
+  mkIllus()
 }

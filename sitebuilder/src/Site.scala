@@ -76,6 +76,13 @@ object Site {
                 {assList(relDocsPath)}
               </ul>
             </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Illustrations<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                {illusList(relDocsPath)}
+              </ul>
+            </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li> <a href={s"${relDocsPath}notes/index.html"} target="_blank">Notes</a></li>
@@ -99,7 +106,7 @@ object Site {
        |<script type="text/javascript" src="${relDocsPath}js/bootstrap.min.js"></script>
        |<script type="text/javascript" src="${relDocsPath}js/probability.js"></script>
        |<script>
-       |  provingground.main()
+       |  Illustrations.main()
        |</script>
    """.stripMargin
 
@@ -181,6 +188,17 @@ object Site {
           <li><a href={s"${ass.url(relDocsPath)}"}>{ass.title}</a></li>
       )
 
+  val allIllus =
+    Vector("Fair Coin?" -> "fair-coin",
+      "Repeated Tosses" -> "coin-tosses",
+      "Birthday Paradox" -> "birthdays",
+      "Percolation" -> "percolation")
+
+  def illusList(relDocsPath: String) =
+    allIllus.map{
+      case (name, tag) =>
+        <li><a href={s"${relDocsPath}illustrations/$tag.html"}>{name}</a></li>
+    }
 
   def page(s: String,
            relDocsPath: String): String =
@@ -212,7 +230,7 @@ val home =
       <h3> Course Syllabus </h3>
         <p>
           Sample spaces, events, probability, discrete and continuous random variables,
-          Conditioning and independence, Bayes’  formula, moments and moment generating function, characteristic function,
+          Conditioning and independence, Bayes  formula, moments and moment generating function, characteristic function,
           laws of large numbers, central limit theorem, Markov chains, Poisson processes.
         </p>
     </div>
@@ -281,6 +299,16 @@ val home =
       write.over(ass.target, ass.output)
     }
     write.over(pwd / "docs" / "assign-all.html", page(assignAll.toString, ""))
+  }
+
+  def mkIllus() = {
+    allIllus.foreach { case (name, tag) =>
+      pprint.log(s"writing illustration $name")
+      write.over(
+        pwd / "docs" / "illustrations" / s"$tag.html",
+        page(s"""<div id="$tag"></div>""", "../")
+        )
+    }
   }
 
 
