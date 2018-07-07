@@ -3902,7 +3902,7 @@ function $h_Lprobability_Svg$() {
   /*<skip>*/
 }
 $h_Lprobability_Svg$.prototype = $c_Lprobability_Svg$.prototype;
-$c_Lprobability_Svg$.prototype.polyLine__sc_Seq__I__sc_Seq = (function(points, ymax) {
+$c_Lprobability_Svg$.prototype.polyLine__sc_Seq__I__T__sc_Seq = (function(points, ymax, colour) {
   var flipped = $as_sc_Seq(points.map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, ymax) {
     return (function(x0$1$2) {
       var x0$1 = $as_T2(x0$1$2);
@@ -3914,12 +3914,12 @@ $c_Lprobability_Svg$.prototype.polyLine__sc_Seq__I__sc_Seq = (function(points, y
       var check$ifrefutable$1 = $as_T2(check$ifrefutable$1$2);
       return this$2.$$anonfun$polyLine$2__p1__T2__Z(check$ifrefutable$1)
     })
-  })(this))).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
+  })(this))).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3, colour) {
     return (function(x$1$2) {
       var x$1 = $as_T2(x$1$2);
-      return this$3.$$anonfun$polyLine$3__p1__T2__s_xml_Elem(x$1)
+      return this$3.$$anonfun$polyLine$3__p1__T__T2__s_xml_Elem(colour, x$1)
     })
-  })(this)), $m_sc_Seq$().canBuildFrom__scg_CanBuildFrom()))
+  })(this, colour)), $m_sc_Seq$().canBuildFrom__scg_CanBuildFrom()))
 });
 $c_Lprobability_Svg$.prototype.$$anonfun$polyLine$1__p1__I__T2__T2 = (function(ymax$1, x0$1) {
   var x1 = x0$1;
@@ -3942,7 +3942,7 @@ $c_Lprobability_Svg$.prototype.$$anonfun$polyLine$2__p1__T2__Z = (function(check
   };
   return false
 });
-$c_Lprobability_Svg$.prototype.$$anonfun$polyLine$3__p1__T2__s_xml_Elem = (function(x$1) {
+$c_Lprobability_Svg$.prototype.$$anonfun$polyLine$3__p1__T__T2__s_xml_Elem = (function(colour$1, x$1) {
   var x1 = x$1;
   if ((x1 !== null)) {
     var p2 = $as_T2(x1.$$und1__O());
@@ -3958,7 +3958,7 @@ $c_Lprobability_Svg$.prototype.$$anonfun$polyLine$3__p1__T2__s_xml_Elem = (funct
         var $$scope = $$tmpscope;
         var $$md = $m_s_xml_Null$();
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-width", new $c_s_xml_Text().init___T("1"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("black"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", colour$1, $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", $objectToString($doubleToInt(y2)), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", $objectToString($doubleToInt(x2)), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", $objectToString($doubleToInt(y1)), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
@@ -9922,7 +9922,9 @@ function $m_Lmhtml_RxImpureOps$() {
 function $c_Lprobability_CoinTosses$() {
   $c_O.call(this);
   this.rnd$1 = null;
-  this.tossesV$1 = null
+  this.colours$1 = null;
+  this.tossesV$1 = null;
+  this.fmla$1 = null
 }
 $c_Lprobability_CoinTosses$.prototype = new $h_O();
 $c_Lprobability_CoinTosses$.prototype.constructor = $c_Lprobability_CoinTosses$;
@@ -9942,14 +9944,28 @@ $c_Lprobability_CoinTosses$.prototype.random__I__Lprobability_CoinTosses = (func
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).toVector__sci_Vector())
 });
+$c_Lprobability_CoinTosses$.prototype.colours__sci_Vector = (function() {
+  return this.colours$1
+});
 $c_Lprobability_CoinTosses$.prototype.tossesV__Lmhtml_Var = (function() {
   return this.tossesV$1
+});
+$c_Lprobability_CoinTosses$.prototype.fmla__T = (function() {
+  return this.fmla$1
+});
+$c_Lprobability_CoinTosses$.prototype.retoss__V = (function() {
+  this.tossesV__Lmhtml_Var().$$colon$eq__O__V(this.colours__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(colour$2) {
+      var colour = $as_T(colour$2);
+      return $this.$$anonfun$retoss$1__p1__T__T2(colour)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
 });
 $c_Lprobability_CoinTosses$.prototype.main__V = (function() {
   var $$md = $m_s_xml_Null$();
   $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel panel-primary"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$6 = $$md;
-  var jsx$5 = $m_s_xml_TopScope$();
+  var jsx$29 = $$md;
+  var jsx$28 = $m_s_xml_TopScope$();
   var $$buf = new $c_s_xml_NodeBuffer().init___();
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
   var $$md$2 = $m_s_xml_Null$();
@@ -9957,40 +9973,295 @@ $c_Lprobability_CoinTosses$.prototype.main__V = (function() {
   var jsx$2 = $$md$2;
   var jsx$1 = $m_s_xml_TopScope$();
   var $$buf$2 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Heads in repeated tosses"));
+  $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Repeated tosses of a fair coin"));
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$2, jsx$1, false, $$buf$2));
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
   var $$md$3 = $m_s_xml_Null$();
   $$md$3 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-body"), $$md$3, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$4 = $$md$3;
-  var jsx$3 = $m_s_xml_TopScope$();
+  var jsx$27 = $$md$3;
+  var jsx$26 = $m_s_xml_TopScope$();
   var $$buf$3 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      Plot of heads\n        "));
-  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.tossesV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
-    return (function(x$4$2) {
-      var x$4 = $as_Lprobability_CoinTosses(x$4$2);
-      return $this.$$anonfun$main$1__p1__Lprobability_CoinTosses__s_xml_Elem(x$4)
-    })
-  })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().nodeElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      We illustrate the behaviour when repeatedly tossing a coin. Suppose "));
+  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer($objectToString(this.colours__sci_Vector().size__I()), $m_s_xml_XmlElementEmbeddable$().stringElementEmbeddable__s_xml_XmlElementEmbeddable());
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      coins are tossed several times. We shall see some associated figures, with the coins represented by different colours.\n      "));
+  var jsx$4 = $m_s_xml_Null$();
+  var jsx$3 = $m_s_xml_TopScope$();
+  var $$buf$4 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$4.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" Number of heads"));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "h3", jsx$4, jsx$3, false, $$buf$4));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$4, jsx$3, false, $$buf$3));
+  var jsx$6 = $m_s_xml_Null$();
+  var jsx$5 = $m_s_xml_TopScope$();
+  var $$buf$5 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("In the first figure we see the number of heads in the first $n$ tosses. The black line corresponds to half the tosses resulting in heads."));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", jsx$6, jsx$5, false, $$buf$5));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$tmpscope = $m_s_xml_TopScope$();
+  $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
+  var $$scope = $$tmpscope;
+  var $$md$4 = $m_s_xml_Null$();
+  $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("800"), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("viewBox", new $c_s_xml_Text().init___T("0 0 400 400"), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$7 = $$md$4;
+  var $$buf$6 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$md$5 = $m_s_xml_Null$();
+  $$md$5 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("fill", new $c_s_xml_Text().init___T("none"), $$md$5, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$5 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("grey"), $$md$5, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$5 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md$5, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$5 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("400"), $$md$5, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "rect", $$md$5, $$scope, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$tmpscope$2 = $$scope;
+  $$tmpscope$2 = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope$2);
+  var $$scope$2 = $$tmpscope$2;
+  var $$md$6 = $m_s_xml_Null$();
+  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("black"), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", new $c_s_xml_Text().init___T("200"), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", new $c_s_xml_Text().init___T("400"), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", new $c_s_xml_Text().init___T("400"), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", new $c_s_xml_Text().init___T("0"), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md$6, $$scope$2, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+  $$buf$6.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.tossesV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(tossVec$2) {
+      var tossVec = $as_sci_Vector(tossVec$2);
+      return $this.$$anonfun$main$1__p1__sci_Vector__sci_Vector(tossVec)
+    })
+  })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "svg", jsx$7, $$scope, false, $$buf$6));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$md$7 = $m_s_xml_Null$();
+  $$md$7 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$2) {
+    return (function() {
+      this$2.$$anonfun$main$3__p1__V()
+    })
+  })(this)), $$md$7, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$7 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-primary"), $$md$7, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$9 = $$md$7;
+  var jsx$8 = $m_s_xml_TopScope$();
+  var $$buf$7 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" New tosses "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$9, jsx$8, false, $$buf$7));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n      "));
+  var jsx$11 = $m_s_xml_Null$();
+  var jsx$10 = $m_s_xml_TopScope$();
+  var $$buf$8 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$8.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" Proportion of  heads "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "h3", jsx$11, jsx$10, false, $$buf$8));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var jsx$13 = $m_s_xml_Null$();
+  var jsx$12 = $m_s_xml_TopScope$();
+  var $$buf$9 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Next, we look at the proportion of tosses that are heads.\n      The black line corresponds to half the tosses resulting in heads."));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", jsx$13, jsx$12, false, $$buf$9));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$tmpscope$3 = $m_s_xml_TopScope$();
+  $$tmpscope$3 = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope$3);
+  var $$scope$3 = $$tmpscope$3;
+  var $$md$8 = $m_s_xml_Null$();
+  $$md$8 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md$8, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$8 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("800"), $$md$8, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$8 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("viewBox", new $c_s_xml_Text().init___T("0 0 400 400"), $$md$8, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$14 = $$md$8;
+  var $$buf$10 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$md$9 = $m_s_xml_Null$();
+  $$md$9 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("fill", new $c_s_xml_Text().init___T("none"), $$md$9, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$9 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("grey"), $$md$9, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$9 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md$9, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$9 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("400"), $$md$9, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "rect", $$md$9, $$scope$3, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$tmpscope$4 = $$scope$3;
+  $$tmpscope$4 = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope$4);
+  var $$scope$4 = $$tmpscope$4;
+  var $$md$10 = $m_s_xml_Null$();
+  $$md$10 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("black"), $$md$10, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$10 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", new $c_s_xml_Text().init___T("200"), $$md$10, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$10 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", new $c_s_xml_Text().init___T("200"), $$md$10, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$10 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", new $c_s_xml_Text().init___T("400"), $$md$10, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$10 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", new $c_s_xml_Text().init___T("0"), $$md$10, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md$10, $$scope$4, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+  $$buf$10.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.tossesV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
+    return (function(tossVec$3$2) {
+      var tossVec$3 = $as_sci_Vector(tossVec$3$2);
+      return this$3.$$anonfun$main$4__p1__sci_Vector__sci_Vector(tossVec$3)
+    })
+  })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "svg", jsx$14, $$scope$3, false, $$buf$10));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$md$11 = $m_s_xml_Null$();
+  $$md$11 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$4) {
+    return (function() {
+      this$4.$$anonfun$main$6__p1__V()
+    })
+  })(this)), $$md$11, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$11 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-primary"), $$md$11, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$16 = $$md$11;
+  var jsx$15 = $m_s_xml_TopScope$();
+  var $$buf$11 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$11.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" New tosses "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$16, jsx$15, false, $$buf$11));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n      "));
+  var jsx$18 = $m_s_xml_Null$();
+  var jsx$17 = $m_s_xml_TopScope$();
+  var $$buf$12 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$12.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" Normalized proportion of  heads "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "h3", jsx$18, jsx$17, false, $$buf$12));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var jsx$22 = $m_s_xml_Null$();
+  var jsx$21 = $m_s_xml_TopScope$();
+  var $$buf$13 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$13.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Finally, we look at the "));
+  var jsx$20 = $m_s_xml_Null$();
+  var jsx$19 = $m_s_xml_TopScope$();
+  var $$buf$14 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$14.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("normalized"));
+  $$buf$13.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "em", jsx$20, jsx$19, false, $$buf$14));
+  $$buf$13.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" proportion of tosses that are heads, given by\n        "));
+  $$buf$13.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.fmla__T(), $m_s_xml_XmlElementEmbeddable$().stringElementEmbeddable__s_xml_XmlElementEmbeddable());
+  $$buf$13.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(".\n      The black line corresponds to half the tosses resulting in heads."));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", jsx$22, jsx$21, false, $$buf$13));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$tmpscope$5 = $m_s_xml_TopScope$();
+  $$tmpscope$5 = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope$5);
+  var $$scope$5 = $$tmpscope$5;
+  var $$md$12 = $m_s_xml_Null$();
+  $$md$12 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md$12, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$12 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("800"), $$md$12, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$12 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("viewBox", new $c_s_xml_Text().init___T("0 0 400 400"), $$md$12, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$23 = $$md$12;
+  var $$buf$15 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$md$13 = $m_s_xml_Null$();
+  $$md$13 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("fill", new $c_s_xml_Text().init___T("none"), $$md$13, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$13 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("grey"), $$md$13, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$13 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md$13, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$13 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("400"), $$md$13, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "rect", $$md$13, $$scope$5, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$tmpscope$6 = $$scope$5;
+  $$tmpscope$6 = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope$6);
+  var $$scope$6 = $$tmpscope$6;
+  var $$md$14 = $m_s_xml_Null$();
+  $$md$14 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("black"), $$md$14, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$14 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", new $c_s_xml_Text().init___T("200"), $$md$14, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$14 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", new $c_s_xml_Text().init___T("200"), $$md$14, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$14 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", new $c_s_xml_Text().init___T("400"), $$md$14, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$14 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", new $c_s_xml_Text().init___T("0"), $$md$14, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md$14, $$scope$6, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+  $$buf$15.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.tossesV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
+    return (function(tossVec$4$2) {
+      var tossVec$4 = $as_sci_Vector(tossVec$4$2);
+      return this$5.$$anonfun$main$7__p1__sci_Vector__sci_Vector(tossVec$4)
+    })
+  })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "svg", jsx$23, $$scope$5, false, $$buf$15));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var $$md$15 = $m_s_xml_Null$();
+  $$md$15 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$6) {
+    return (function() {
+      this$6.$$anonfun$main$9__p1__V()
+    })
+  })(this)), $$md$15, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$15 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-primary"), $$md$15, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$25 = $$md$15;
+  var jsx$24 = $m_s_xml_TopScope$();
+  var $$buf$16 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$16.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" New tosses "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$25, jsx$24, false, $$buf$16));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$27, jsx$26, false, $$buf$3));
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n    "));
-  var coinDiv = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$6, jsx$5, false, $$buf);
+  var coinDiv = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$29, jsx$28, false, $$buf);
   var positionOpt = $m_s_Option$().apply__O__s_Option($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().querySelector("#coin-tosses"));
-  positionOpt.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2, coinDiv) {
+  positionOpt.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7, coinDiv) {
     return (function(position$2) {
       var position = position$2;
-      return new $c_Lmhtml_Cancelable().init___F0(this$2.$$anonfun$main$2__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0(coinDiv, position))
+      return new $c_Lmhtml_Cancelable().init___F0(this$7.$$anonfun$main$10__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0(coinDiv, position))
     })
   })(this, coinDiv)))
 });
 $c_Lprobability_CoinTosses$.prototype.$$anonfun$random$1__p1__I__Z = (function(x$3) {
   return ($m_Lprobability_CoinTosses$().rnd__s_util_Random().nextDouble__D() > 0.5)
 });
-$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$1__p1__Lprobability_CoinTosses__s_xml_Elem = (function(x$4) {
-  return x$4.sumView__s_xml_Elem()
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$tossesV$1__p1__T__T2 = (function(colour) {
+  return new $c_T2().init___O__O(colour, $m_Lprobability_CoinTosses$().random__I__Lprobability_CoinTosses(400))
 });
-$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$2__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0 = (function(coinDiv$1, position) {
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$retoss$1__p1__T__T2 = (function(colour) {
+  return new $c_T2().init___O__O(colour, $m_Lprobability_CoinTosses$().random__I__Lprobability_CoinTosses(400))
+});
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$2__p1__T2__sc_Seq = (function(x0$6) {
+  var x1 = x0$6;
+  if ((x1 !== null)) {
+    var colour = $as_T(x1.$$und1__O());
+    var tosses = $as_Lprobability_CoinTosses(x1.$$und2__O());
+    return tosses.sumLines__T__sc_Seq(colour)
+  } else {
+    throw new $c_s_MatchError().init___O(x1)
+  }
+});
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$1__p1__sci_Vector__sci_Vector = (function(tossVec) {
+  return $as_sci_Vector(tossVec.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x0$6$2) {
+      var x0$6 = $as_T2(x0$6$2);
+      return $this.$$anonfun$main$2__p1__T2__sc_Seq(x0$6)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+});
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$3__p1__V = (function() {
+  $m_Lprobability_CoinTosses$().retoss__V()
+});
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$5__p1__T2__sc_Seq = (function(x0$7) {
+  var x1 = x0$7;
+  if ((x1 !== null)) {
+    var colour = $as_T(x1.$$und1__O());
+    var tosses = $as_Lprobability_CoinTosses(x1.$$und2__O());
+    return tosses.proportionLines__T__sc_Seq(colour)
+  } else {
+    throw new $c_s_MatchError().init___O(x1)
+  }
+});
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$4__p1__sci_Vector__sci_Vector = (function(tossVec) {
+  return $as_sci_Vector(tossVec.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x0$7$2) {
+      var x0$7 = $as_T2(x0$7$2);
+      return $this.$$anonfun$main$5__p1__T2__sc_Seq(x0$7)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+});
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$6__p1__V = (function() {
+  $m_Lprobability_CoinTosses$().retoss__V()
+});
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$8__p1__T2__sc_Seq = (function(x0$8) {
+  var x1 = x0$8;
+  if ((x1 !== null)) {
+    var colour = $as_T(x1.$$und1__O());
+    var tosses = $as_Lprobability_CoinTosses(x1.$$und2__O());
+    return tosses.normalizedLines__T__sc_Seq(colour)
+  } else {
+    throw new $c_s_MatchError().init___O(x1)
+  }
+});
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$7__p1__sci_Vector__sci_Vector = (function(tossVec) {
+  return $as_sci_Vector(tossVec.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x0$8$2) {
+      var x0$8 = $as_T2(x0$8$2);
+      return $this.$$anonfun$main$8__p1__T2__sc_Seq(x0$8)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+});
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$9__p1__V = (function() {
+  $m_Lprobability_CoinTosses$().retoss__V()
+});
+$c_Lprobability_CoinTosses$.prototype.$$anonfun$main$10__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0 = (function(coinDiv$1, position) {
   var div = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("div");
   position.appendChild(div);
   return $m_Lmhtml_mount$().apply__Lorg_scalajs_dom_raw_Node__s_xml_Node__F0(div, coinDiv$1)
@@ -9999,7 +10270,14 @@ $c_Lprobability_CoinTosses$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
   $n_Lprobability_CoinTosses$ = this;
   this.rnd$1 = new $c_s_util_Random().init___();
-  this.tossesV$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.random__I__Lprobability_CoinTosses(100));
+  this.colours$1 = $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["blue", "cyan", "green", "yellow", "orange", "red"])));
+  this.tossesV$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.colours__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(colour$2) {
+      var colour = $as_T(colour$2);
+      return $this.$$anonfun$tossesV$1__p1__T__T2(colour)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
+  this.fmla$1 = "$\\frac{X - n}{\\sqrt{n}}$";
   return this
 });
 var $d_Lprobability_CoinTosses$ = new $TypeData().initClass({
@@ -13550,9 +13828,7 @@ function $c_Lprobability_CoinTosses() {
   this.partialSums$1 = null;
   this.indexedPartialSums$1 = null;
   this.proportions$1 = null;
-  this.normalized$1 = null;
-  this.sumLines$1 = null;
-  this.sumView$1 = null
+  this.normalized$1 = null
 }
 $c_Lprobability_CoinTosses.prototype = new $h_O();
 $c_Lprobability_CoinTosses.prototype.constructor = $c_Lprobability_CoinTosses;
@@ -13579,6 +13855,9 @@ $c_Lprobability_CoinTosses.prototype.xscale__D = (function() {
 $c_Lprobability_CoinTosses.prototype.yscale__D = (function() {
   return this.yscale$1
 });
+$c_Lprobability_CoinTosses.prototype.pscale__D = (function() {
+  return this.pscale$1
+});
 $c_Lprobability_CoinTosses.prototype.zeroOne__sci_Vector = (function() {
   return this.zeroOne$1
 });
@@ -13588,11 +13867,35 @@ $c_Lprobability_CoinTosses.prototype.partialSums__sci_Vector = (function() {
 $c_Lprobability_CoinTosses.prototype.indexedPartialSums__sci_Vector = (function() {
   return this.indexedPartialSums$1
 });
-$c_Lprobability_CoinTosses.prototype.sumLines__sc_Seq = (function() {
-  return this.sumLines$1
+$c_Lprobability_CoinTosses.prototype.proportions__sci_Vector = (function() {
+  return this.proportions$1
 });
-$c_Lprobability_CoinTosses.prototype.sumView__s_xml_Elem = (function() {
-  return this.sumView$1
+$c_Lprobability_CoinTosses.prototype.normalized__sci_Vector = (function() {
+  return this.normalized$1
+});
+$c_Lprobability_CoinTosses.prototype.sumLines__T__sc_Seq = (function(colour) {
+  return $m_Lprobability_Svg$().polyLine__sc_Seq__I__T__sc_Seq($as_sc_Seq(this.indexedPartialSums__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x0$3$2) {
+      var x0$3 = $as_T2(x0$3$2);
+      return $this.$$anonfun$sumLines$1__p1__T2__T2(x0$3)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())), this.ymax__I(), colour)
+});
+$c_Lprobability_CoinTosses.prototype.proportionLines__T__sc_Seq = (function(colour) {
+  return $m_Lprobability_Svg$().polyLine__sc_Seq__I__T__sc_Seq($as_sc_Seq(this.proportions__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x0$4$2) {
+      var x0$4 = $as_T2(x0$4$2);
+      return $this.$$anonfun$proportionLines$1__p1__T2__T2(x0$4)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())), this.ymax__I(), colour)
+});
+$c_Lprobability_CoinTosses.prototype.normalizedLines__T__sc_Seq = (function(colour) {
+  return $m_Lprobability_Svg$().polyLine__sc_Seq__I__T__sc_Seq($as_sc_Seq(this.normalized__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x0$5$2) {
+      var x0$5 = $as_T2(x0$5$2);
+      return $this.$$anonfun$normalizedLines$1__p1__T2__T2(x0$5)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())), this.ymax__I(), colour)
 });
 $c_Lprobability_CoinTosses.prototype.productPrefix__T = (function() {
   return "CoinTosses"
@@ -13649,22 +13952,22 @@ $c_Lprobability_CoinTosses.prototype.$$anonfun$zeroOne$1__p1__Z__I = (function(b
 $c_Lprobability_CoinTosses.prototype.$$anonfun$partialSums$1__p1__I__I__I = (function(x$1, x$2) {
   return ((x$1 + x$2) | 0)
 });
-$c_Lprobability_CoinTosses.prototype.$$anonfun$proportions$1__p1__T2__D = (function(x0$1) {
+$c_Lprobability_CoinTosses.prototype.$$anonfun$proportions$1__p1__T2__T2 = (function(x0$1) {
   var x1 = x0$1;
   if ((x1 !== null)) {
     var x = x1.$$und1$mcI$sp__I();
     var n = x1.$$und2$mcI$sp__I();
-    return (x / n)
+    return $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(n), (x / n))
   } else {
     throw new $c_s_MatchError().init___O(x1)
   }
 });
-$c_Lprobability_CoinTosses.prototype.$$anonfun$normalized$1__p1__T2__D = (function(x0$2) {
+$c_Lprobability_CoinTosses.prototype.$$anonfun$normalized$1__p1__T2__T2 = (function(x0$2) {
   var x1 = x0$2;
   if ((x1 !== null)) {
     var x = x1.$$und1$mcI$sp__I();
     var n = x1.$$und2$mcI$sp__I();
-    return ((x - (n / 2)) / $m_s_math_package$().sqrt__D__D(n))
+    return $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(n), ((x - (n / 2)) / $m_s_math_package$().sqrt__D__D(n)))
   } else {
     throw new $c_s_MatchError().init___O(x1)
   }
@@ -13672,9 +13975,29 @@ $c_Lprobability_CoinTosses.prototype.$$anonfun$normalized$1__p1__T2__D = (functi
 $c_Lprobability_CoinTosses.prototype.$$anonfun$sumLines$1__p1__T2__T2 = (function(x0$3) {
   var x1 = x0$3;
   if ((x1 !== null)) {
-    var y = x1.$$und1$mcI$sp__I();
-    var x = x1.$$und2$mcI$sp__I();
-    return new $c_s_Tuple2$mcDD$sp().init___D__D((x * this.xscale__D()), (y * this.yscale__D()))
+    var s = x1.$$und1$mcI$sp__I();
+    var n = x1.$$und2$mcI$sp__I();
+    return new $c_s_Tuple2$mcDD$sp().init___D__D((n * this.xscale__D()), (s * this.yscale__D()))
+  } else {
+    throw new $c_s_MatchError().init___O(x1)
+  }
+});
+$c_Lprobability_CoinTosses.prototype.$$anonfun$proportionLines$1__p1__T2__T2 = (function(x0$4) {
+  var x1 = x0$4;
+  if ((x1 !== null)) {
+    var n = x1.$$und1$mcI$sp__I();
+    var p = x1.$$und2$mcD$sp__D();
+    return new $c_s_Tuple2$mcDD$sp().init___D__D((n * this.xscale__D()), (p * this.pscale__D()))
+  } else {
+    throw new $c_s_MatchError().init___O(x1)
+  }
+});
+$c_Lprobability_CoinTosses.prototype.$$anonfun$normalizedLines$1__p1__T2__T2 = (function(x0$5) {
+  var x1 = x0$5;
+  if ((x1 !== null)) {
+    var n = x1.$$und1$mcI$sp__I();
+    var x = x1.$$und2$mcD$sp__D();
+    return new $c_s_Tuple2$mcDD$sp().init___D__D((n * this.xscale__D()), (((x + 4) / 8) * this.pscale__D()))
   } else {
     throw new $c_s_MatchError().init___O(x1)
   }
@@ -13706,41 +14029,15 @@ $c_Lprobability_CoinTosses.prototype.init___sci_Vector = (function(tosses) {
   this.proportions$1 = $as_sci_Vector(this.indexedPartialSums__sci_Vector().tail__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
     return (function(x0$1$2) {
       var x0$1 = $as_T2(x0$1$2);
-      return this$3.$$anonfun$proportions$1__p1__T2__D(x0$1)
+      return this$3.$$anonfun$proportions$1__p1__T2__T2(x0$1)
     })
   })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
   this.normalized$1 = $as_sci_Vector(this.indexedPartialSums__sci_Vector().tail__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
     return (function(x0$2$2) {
       var x0$2 = $as_T2(x0$2$2);
-      return this$4.$$anonfun$normalized$1__p1__T2__D(x0$2)
+      return this$4.$$anonfun$normalized$1__p1__T2__T2(x0$2)
     })
   })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
-  this.sumLines$1 = $m_Lprobability_Svg$().polyLine__sc_Seq__I__sc_Seq($as_sc_Seq(this.indexedPartialSums__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
-    return (function(x0$3$2) {
-      var x0$3 = $as_T2(x0$3$2);
-      return this$5.$$anonfun$sumLines$1__p1__T2__T2(x0$3)
-    })
-  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())), this.ymax__I());
-  var $$tmpscope = $m_s_xml_TopScope$();
-  $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
-  var $$scope = $$tmpscope;
-  var $$md = $m_s_xml_Null$();
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("800"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("viewBox", new $c_s_xml_Text().init___T("0 0 400 400"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$1 = $$md;
-  var $$buf = new $c_s_xml_NodeBuffer().init___();
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
-  var $$md$2 = $m_s_xml_Null$();
-  $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("fill", new $c_s_xml_Text().init___T("none"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("grey"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("400"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "rect", $$md$2, $$scope, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  $$buf.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.sumLines__sc_Seq(), $m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable());
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
-  this.sumView$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "svg", jsx$1, $$scope, false, $$buf);
   return this
 });
 function $is_Lprobability_CoinTosses(obj) {
