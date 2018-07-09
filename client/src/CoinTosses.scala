@@ -77,6 +77,8 @@ object CoinTosses {
 
   val fmla = """$\frac{X - n}{\sqrt{n}}$"""
 
+  val fmlaK = Katex("""\frac{X - n}{\sqrt{n}}""")
+
   def retoss() : Unit = {
     tossesV :=
       {for {

@@ -3892,6 +3892,41 @@ function $m_Lprobability_Illustrations$() {
   return $n_Lprobability_Illustrations$
 }
 /** @constructor */
+function $c_Lprobability_Katex$() {
+  $c_O.call(this)
+}
+$c_Lprobability_Katex$.prototype = new $h_O();
+$c_Lprobability_Katex$.prototype.constructor = $c_Lprobability_Katex$;
+/** @constructor */
+function $h_Lprobability_Katex$() {
+  /*<skip>*/
+}
+$h_Lprobability_Katex$.prototype = $c_Lprobability_Katex$.prototype;
+$c_Lprobability_Katex$.prototype.apply__T__Lorg_scalajs_dom_raw_Element = (function(s) {
+  var span = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("SPAN");
+  $m_sjs_js_Dynamic$().global__sjs_js_Dynamic().katex.render($m_sjs_js_Any$().fromString__T__sjs_js_Any(s), span);
+  return span
+});
+$c_Lprobability_Katex$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lprobability_Katex$ = this;
+  return this
+});
+var $d_Lprobability_Katex$ = new $TypeData().initClass({
+  Lprobability_Katex$: 0
+}, false, "probability.Katex$", {
+  Lprobability_Katex$: 1,
+  O: 1
+});
+$c_Lprobability_Katex$.prototype.$classData = $d_Lprobability_Katex$;
+var $n_Lprobability_Katex$ = (void 0);
+function $m_Lprobability_Katex$() {
+  if ((!$n_Lprobability_Katex$)) {
+    $n_Lprobability_Katex$ = new $c_Lprobability_Katex$().init___()
+  };
+  return $n_Lprobability_Katex$
+}
+/** @constructor */
 function $c_Lprobability_Svg$() {
   $c_O.call(this)
 }
@@ -9924,7 +9959,8 @@ function $c_Lprobability_CoinTosses$() {
   this.rnd$1 = null;
   this.colours$1 = null;
   this.tossesV$1 = null;
-  this.fmla$1 = null
+  this.fmla$1 = null;
+  this.fmlaK$1 = null
 }
 $c_Lprobability_CoinTosses$.prototype = new $h_O();
 $c_Lprobability_CoinTosses$.prototype.constructor = $c_Lprobability_CoinTosses$;
@@ -10278,6 +10314,7 @@ $c_Lprobability_CoinTosses$.prototype.init___ = (function() {
     })
   })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
   this.fmla$1 = "$\\frac{X - n}{\\sqrt{n}}$";
+  this.fmlaK$1 = $m_Lprobability_Katex$().apply__T__Lorg_scalajs_dom_raw_Element("\\frac{X - n}{\\sqrt{n}}");
   return this
 });
 var $d_Lprobability_CoinTosses$ = new $TypeData().initClass({
