@@ -14115,6 +14115,8 @@ function $c_Lprobability_Percolation() {
   this.top$1 = null;
   this.bottom$1 = null;
   this.topToBottom$1 = null;
+  this.left$1 = null;
+  this.right$1 = null;
   this.blueLines$1 = null;
   this.allLines$1 = null;
   this.connected$1 = null;
@@ -14154,15 +14156,18 @@ $c_Lprobability_Percolation.prototype.gridLines__sci_IndexedSeq = (function() {
 $c_Lprobability_Percolation.prototype.edgeLines__sci_Set = (function() {
   return this.edgeLines$1
 });
+$c_Lprobability_Percolation.prototype.adjacent__I__I__sci_Set = (function(i, j) {
+  return $as_sci_Set($m_s_Predef$().Set__sci_Set$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), new $c_s_Tuple2$mcII$sp().init___I__I(((i + 1) | 0), j)), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(((i - 1) | 0), j)), new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), new $c_s_Tuple2$mcII$sp().init___I__I(i, ((j + 1) | 0))), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, ((j - 1) | 0))), new $c_s_Tuple2$mcII$sp().init___I__I(i, j))])))
+});
 $c_Lprobability_Percolation.prototype.neighbours__I__I__sci_Set = (function(i, j) {
-  return $as_sci_Set($as_sc_SetLike($as_sc_TraversableLike($as_sc_GenSetLike($m_s_Predef$().Set__sci_Set$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), new $c_s_Tuple2$mcII$sp().init___I__I(((i + 1) | 0), j)), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(((i - 1) | 0), j)), new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), new $c_s_Tuple2$mcII$sp().init___I__I(i, ((j + 1) | 0))), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, ((j - 1) | 0))), new $c_s_Tuple2$mcII$sp().init___I__I(i, j))]))).intersect__sc_GenSet__O(this.edges__sci_Set())).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+  return $as_sci_Set($as_sc_SetLike($as_sc_TraversableLike(this.adjacent__I__I__sci_Set(i, j).intersect__sc_GenSet__O(this.edges__sci_Set())).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(x0$1$2) {
       var x0$1 = $as_T2(x0$1$2);
       return $this.$$anonfun$neighbours$1__p1__T2__sci_Set(x0$1)
     })
   })(this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom())).$$minus__O__sc_Set($m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i), j)))
 });
-$c_Lprobability_Percolation.prototype.findPath__sci_Set__sci_Set__s_Option = (function(source, target) {
+$c_Lprobability_Percolation.prototype.findPath__sci_Set__sci_Set__F2__s_Option = (function(source, target, nbrs) {
   var _$this = this;
   _findPath: while (true) {
     var pathOpt = source.find__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, target) {
@@ -14180,12 +14185,12 @@ $c_Lprobability_Percolation.prototype.findPath__sci_Set__sci_Set__s_Option = (fu
           return this$2.$$anonfun$findPath$2__p1__sci_Vector__T2(x$2)
         })
       })(_$this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
-      var adjPoints = $as_sci_Set(endPoints.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
+      var adjPoints = $as_sci_Set(endPoints.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3, nbrs) {
         return (function(x0$2$2) {
           var x0$2 = $as_T2(x0$2$2);
-          return this$3.$$anonfun$findPath$3__p1__T2__sci_Set(x0$2)
+          return this$3.$$anonfun$findPath$3__p1__F2__T2__sci_Set(nbrs, x0$2)
         })
-      })(_$this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
+      })(_$this, nbrs)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
       var support = $as_sci_Set(source.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
         return (function(p$3$2) {
           var p$3 = $as_sci_Vector(p$3$2);
@@ -14196,17 +14201,29 @@ $c_Lprobability_Percolation.prototype.findPath__sci_Set__sci_Set__s_Option = (fu
       if (newPoints.isEmpty__Z()) {
         return $m_s_None$()
       } else {
-        var newPaths = $as_sci_Set(newPoints.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5, source) {
+        var newPaths = $as_sci_Set(newPoints.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5, source, nbrs) {
           return (function(x0$3$2) {
             var x0$3 = $as_T2(x0$3$2);
-            return this$5.$$anonfun$findPath$5__p1__sci_Set__T2__sc_Iterable(source, x0$3)
+            return this$5.$$anonfun$findPath$5__p1__sci_Set__F2__T2__sc_Iterable(source, nbrs, x0$3)
           })
-        })(_$this, source)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
-        source = newPaths;
+        })(_$this, source, nbrs)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
+        var temp$source = newPaths;
+        var temp$nbrs = _$this.findPath$default$3__F2();
+        source = temp$source;
+        nbrs = temp$nbrs;
         continue _findPath
       }
     }
   }
+});
+$c_Lprobability_Percolation.prototype.findPath$default$3__F2 = (function() {
+  return new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function($this) {
+    return (function(i$2, j$2) {
+      var i = $uI(i$2);
+      var j = $uI(j$2);
+      return $this.$$anonfun$findPath$default$3$1__p1__I__I__sci_Set(i, j)
+    })
+  })(this))
 });
 $c_Lprobability_Percolation.prototype.top__sci_Set = (function() {
   return this.top$1
@@ -14375,12 +14392,12 @@ $c_Lprobability_Percolation.prototype.$$anonfun$findPath$1__p1__sci_Set__sci_Vec
 $c_Lprobability_Percolation.prototype.$$anonfun$findPath$2__p1__sci_Vector__T2 = (function(x$2) {
   return $as_T2(x$2.last__O())
 });
-$c_Lprobability_Percolation.prototype.$$anonfun$findPath$3__p1__T2__sci_Set = (function(x0$2) {
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$3__p1__F2__T2__sci_Set = (function(nbrs$1, x0$2) {
   var x1 = x0$2;
   if ((x1 !== null)) {
     var i = x1.$$und1$mcI$sp__I();
     var j = x1.$$und2$mcI$sp__I();
-    return this.neighbours__I__I__sci_Set(i, j)
+    return $as_sci_Set(nbrs$1.apply__O__O__O(i, j))
   } else {
     throw new $c_s_MatchError().init___O(x1)
   }
@@ -14388,23 +14405,23 @@ $c_Lprobability_Percolation.prototype.$$anonfun$findPath$3__p1__T2__sci_Set = (f
 $c_Lprobability_Percolation.prototype.$$anonfun$findPath$4__p1__sci_Vector__sci_Set = (function(p) {
   return p.toSet__sci_Set()
 });
-$c_Lprobability_Percolation.prototype.$$anonfun$findPath$6__p1__I__I__sci_Vector__Z = (function(i$1, j$1, path) {
-  return this.neighbours__I__I__sci_Set(i$1, j$1).contains__O__Z(path.last__O())
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$6__p1__F2__I__I__sci_Vector__Z = (function(nbrs$1, i$1, j$1, path) {
+  return $as_sc_SetLike(nbrs$1.apply__O__O__O(i$1, j$1)).contains__O__Z(path.last__O())
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$findPath$7__p1__I__I__sci_Vector__sci_Vector = (function(i$1, j$1, v) {
   return $as_sci_Vector(v.$$colon$plus__O__scg_CanBuildFrom__O($m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i$1), j$1), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
 });
-$c_Lprobability_Percolation.prototype.$$anonfun$findPath$5__p1__sci_Set__T2__sc_Iterable = (function(source$1, x0$3) {
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$5__p1__sci_Set__F2__T2__sc_Iterable = (function(source$1, nbrs$1, x0$3) {
   var x1 = x0$3;
   if ((x1 !== null)) {
     var i = x1.$$und1$mcI$sp__I();
     var j = x1.$$und2$mcI$sp__I();
-    return $m_s_Option$().option2Iterable__s_Option__sc_Iterable(source$1.find__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, i, j) {
+    return $m_s_Option$().option2Iterable__s_Option__sc_Iterable(source$1.find__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, nbrs$1, i, j) {
       return (function(path$2) {
         var path = $as_sci_Vector(path$2);
-        return $this.$$anonfun$findPath$6__p1__I__I__sci_Vector__Z(i, j, path)
+        return $this.$$anonfun$findPath$6__p1__F2__I__I__sci_Vector__Z(nbrs$1, i, j, path)
       })
-    })(this, i, j))).map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2, i, j) {
+    })(this, nbrs$1, i, j))).map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2, i, j) {
       return (function(v$2) {
         var v = $as_sci_Vector(v$2);
         return this$2.$$anonfun$findPath$7__p1__I__I__sci_Vector__sci_Vector(i, j, v)
@@ -14414,11 +14431,20 @@ $c_Lprobability_Percolation.prototype.$$anonfun$findPath$5__p1__sci_Set__T2__sc_
     throw new $c_s_MatchError().init___O(x1)
   }
 });
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$default$3$1__p1__I__I__sci_Set = (function(i, j) {
+  return this.neighbours__I__I__sci_Set(i, j)
+});
 $c_Lprobability_Percolation.prototype.$$anonfun$top$1__p1__I__sci_Vector = (function(i) {
   return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i), 0)])))
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$bottom$1__p1__I__T2 = (function(i) {
   return $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i), this.m__I())
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$left$1__p1__I__sci_Vector = (function(i) {
+  return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(0), i)])))
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$right$1__p1__I__T2 = (function(i) {
+  return $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(((this.n__I() - 1) | 0)), i)
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$blueLines$2__p1__T2__Z = (function(check$ifrefutable$2) {
   var x1 = check$ifrefutable$2;
@@ -14518,15 +14544,27 @@ $c_Lprobability_Percolation.prototype.init___I__I__sci_Set = (function(n, m, edg
       return this$6.$$anonfun$bottom$1__p1__I__T2(i$4)
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).toSet__sci_Set();
-  this.topToBottom$1 = this.findPath__sci_Set__sci_Set__s_Option(this.top__sci_Set(), this.bottom__sci_Set());
-  this.blueLines$1 = $as_sc_Seq(this.topToBottom__s_Option().map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7) {
+  this.topToBottom$1 = this.findPath__sci_Set__sci_Set__F2__s_Option(this.top__sci_Set(), this.bottom__sci_Set(), this.findPath$default$3__F2());
+  this.left$1 = $as_sc_TraversableOnce($m_sr_RichInt$().until$extension0__I__I__sci_Range($m_s_Predef$().intWrapper__I__I(0), m).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7) {
+    return (function(i$5$2) {
+      var i$5 = $uI(i$5$2);
+      return this$7.$$anonfun$left$1__p1__I__sci_Vector(i$5)
+    })
+  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).toSet__sci_Set();
+  this.right$1 = $as_sc_TraversableOnce($m_sr_RichInt$().until$extension0__I__I__sci_Range($m_s_Predef$().intWrapper__I__I(0), m).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$8) {
+    return (function(i$6$2) {
+      var i$6 = $uI(i$6$2);
+      return this$8.$$anonfun$right$1__p1__I__T2(i$6)
+    })
+  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).toSet__sci_Set();
+  this.blueLines$1 = $as_sc_Seq(this.topToBottom__s_Option().map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$9) {
     return (function(v$2) {
       var v = $as_sci_Vector(v$2);
-      return this$7.$$anonfun$blueLines$1__p1__sci_Vector__sci_Vector(v)
+      return this$9.$$anonfun$blueLines$1__p1__sci_Vector__sci_Vector(v)
     })
-  })(this))).getOrElse__F0__O(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$8) {
+  })(this))).getOrElse__F0__O(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$10) {
     return (function() {
-      return this$8.$$anonfun$blueLines$4__p1__sc_Seq()
+      return this$10.$$anonfun$blueLines$4__p1__sc_Seq()
     })
   })(this))));
   this.allLines$1 = $as_sci_IndexedSeq($as_sc_TraversableLike(this.gridLines__sci_IndexedSeq().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.edgeLines__sci_Set().toSeq__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.blueLines__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
@@ -14565,6 +14603,8 @@ $c_Lprobability_Percolation.prototype.init___I__I__sci_Set = (function(n, m, edg
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(this.connected__s_xml_Elem());
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(edges.toString__T(), $m_s_xml_XmlElementEmbeddable$().stringElementEmbeddable__s_xml_XmlElementEmbeddable());
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
   this.view$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$8, jsx$7, false, $$buf$3);
   return this
@@ -18362,18 +18402,6 @@ function $f_sc_GenSetLike__liftedTree1$1__psc_GenSetLike__sc_GenSet__Z($thiz, x2
 }
 function $f_sc_GenSetLike__$$init$__V($thiz) {
   /*<skip>*/
-}
-function $is_sc_GenSetLike(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.sc_GenSetLike)))
-}
-function $as_sc_GenSetLike(obj) {
-  return (($is_sc_GenSetLike(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.GenSetLike"))
-}
-function $isArrayOf_sc_GenSetLike(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sc_GenSetLike)))
-}
-function $asArrayOf_sc_GenSetLike(obj, depth) {
-  return (($isArrayOf_sc_GenSetLike(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.GenSetLike;", depth))
 }
 function $f_sc_TraversableLike__repr__O($thiz) {
   return $thiz
@@ -35859,9 +35887,6 @@ $c_scm_AbstractSet.prototype.empty__sc_GenSet = (function() {
 });
 $c_scm_AbstractSet.prototype.apply__O__Z = (function(elem) {
   return $f_sc_GenSetLike__apply__O__Z(this, elem)
-});
-$c_scm_AbstractSet.prototype.intersect__sc_GenSet__O = (function(that) {
-  return $f_sc_GenSetLike__intersect__sc_GenSet__O(this, that)
 });
 $c_scm_AbstractSet.prototype.subsetOf__sc_GenSet__Z = (function(that) {
   return $f_sc_GenSetLike__subsetOf__sc_GenSet__Z(this, that)
