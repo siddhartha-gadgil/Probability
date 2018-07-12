@@ -55,7 +55,7 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
    (adjacent(i, j).filterNot{(e) => edges.contains(dualEdge(e))}.flatMap{
      case (p, q) => Set(p, q)
    } - (i -> j)).filter{
-     case (x, y) => 0 <= y && y < m
+     case (x, y) => 0 <= y && y < m && 0 <= x && x <= n + 1
    }
  }
 
@@ -72,12 +72,14 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
         val endPoints = source.map(_.last)
         val adjPoints = endPoints.flatMap{case (i, j) => nbrs(i, j)}
         val support = source.flatMap((p) => p.toSet)
+        assert(support.intersect(target).isEmpty, s"point in support but not endpoint")
         val newPoints = adjPoints -- support
         if (newPoints.isEmpty) None else {
           val newPaths =
             newPoints.flatMap{case (i, j) =>
               source.find((path) => nbrs(i, j).contains(path.last)).map((v) => v :+ (i -> j))
             }
+          assert(newPaths.map(_.last) == newPoints, s"Missing link: source: $source \nNew points: $newPoints")
           findPath(newPaths, target, nbrs)
         }
       }
@@ -108,19 +110,19 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
         <line x1={(x1 * xscale).toInt.toString} y1={(y1 * yscale).toInt.toString} x2={(x2 * xscale).toInt.toString} y2={(y2 * yscale).toInt.toString} stroke="blue" stroke-width="2" xmlns="http://www.w3.org/2000/svg"></line>
       }.getOrElse(Seq())
 
-//  val redLines: Seq[Elem] =
-//    leftToRight.map{
-//      (v) =>
-//        for {
-//          ((x1, y1), (x2, y2)) <- v.zip(v.tail)
-//        } yield
-//          <line x1={((x1 - 0.5) * xscale).toInt.toString} y1={((y1 + 0.5) * yscale).toInt.toString} x2={((x2 - 0.5) * xscale).toInt.toString} y2={((y2 + 0.5) * yscale).toInt.toString} stroke="red" stroke-width="2" xmlns="http://www.w3.org/2000/svg"></line>
-//    }.getOrElse(Seq())
+ val redLines: Seq[Elem] =
+   leftToRight.map{
+     (v) =>
+       for {
+         ((x1, y1), (x2, y2)) <- v.zip(v.tail)
+       } yield
+         <line x1={((x1 - 0.5) * xscale).toInt.toString} y1={((y1 + 0.5) * yscale).toInt.toString} x2={((x2 - 0.5) * xscale).toInt.toString} y2={((y2 + 0.5) * yscale).toInt.toString} stroke="red" stroke-width="2" xmlns="http://www.w3.org/2000/svg"></line>
+   }.getOrElse(Seq())
 
-  lazy val allLines: immutable.IndexedSeq[Elem] = gridLines ++ edgeLines.toSeq ++ blueLines //++ redLines
+  lazy val allLines: immutable.IndexedSeq[Elem] = gridLines ++ edgeLines.toSeq ++ blueLines ++ redLines
 
   lazy val connected =
-    if (topToBottom.isEmpty) <p>No path from top to bottom</p>
+    if (topToBottom.isEmpty) <p>No path from top to bottom: nothing crosses the red line.</p>
     else <p>The blue path connects the top to the bottom</p>
 
   lazy val view =
@@ -130,7 +132,6 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
       </svg>
       <p></p>
       {connected}
-        {edges.toString()}
       </div>
 }
 

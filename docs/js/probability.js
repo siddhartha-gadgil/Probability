@@ -10455,9 +10455,9 @@ $c_Lprobability_Percolation$.prototype.main__V = (function() {
   $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "input", $$md$5, $m_s_xml_TopScope$(), true, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
   $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
   $$buf$6.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.nV__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.mV__Lmhtml_Var()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
-    return (function(x0$4$2) {
-      var x0$4 = $as_T2(x0$4$2);
-      return this$3.$$anonfun$main$3__p1__T2__s_xml_Elem(x0$4)
+    return (function(x0$6$2) {
+      var x0$6 = $as_T2(x0$6$2);
+      return this$3.$$anonfun$main$3__p1__T2__s_xml_Elem(x0$6)
     })
   })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().nodeElementEmbeddable__s_xml_XmlElementEmbeddable()));
   $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
@@ -10481,8 +10481,8 @@ $c_Lprobability_Percolation$.prototype.main__V = (function() {
 $c_Lprobability_Percolation$.prototype.$$anonfun$random$2__p1__I__Z = (function(j) {
   return ($m_Lprobability_Percolation$().rnd__s_util_Random().nextDouble__D() > 0.5)
 });
-$c_Lprobability_Percolation$.prototype.$$anonfun$random$3__p1__I__I__T2 = (function(i$2, j) {
-  return new $c_T2().init___O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i$2, j), new $c_s_Tuple2$mcII$sp().init___I__I(((i$2 + 1) | 0), j))
+$c_Lprobability_Percolation$.prototype.$$anonfun$random$3__p1__I__I__T2 = (function(i$3, j) {
+  return new $c_T2().init___O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i$3, j), new $c_s_Tuple2$mcII$sp().init___I__I(((i$3 + 1) | 0), j))
 });
 $c_Lprobability_Percolation$.prototype.$$anonfun$random$1__p1__I__I__sci_IndexedSeq = (function(m$1, i) {
   return $as_sci_IndexedSeq($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), m$1).withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
@@ -10500,8 +10500,8 @@ $c_Lprobability_Percolation$.prototype.$$anonfun$random$1__p1__I__I__sci_Indexed
 $c_Lprobability_Percolation$.prototype.$$anonfun$random$5__p1__I__Z = (function(j) {
   return ($m_Lprobability_Percolation$().rnd__s_util_Random().nextDouble__D() > 0.5)
 });
-$c_Lprobability_Percolation$.prototype.$$anonfun$random$6__p1__I__I__T2 = (function(i$3, j) {
-  return new $c_T2().init___O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i$3, j), new $c_s_Tuple2$mcII$sp().init___I__I(i$3, ((j + 1) | 0)))
+$c_Lprobability_Percolation$.prototype.$$anonfun$random$6__p1__I__I__T2 = (function(i$4, j) {
+  return new $c_T2().init___O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i$4, j), new $c_s_Tuple2$mcII$sp().init___I__I(i$4, ((j + 1) | 0)))
 });
 $c_Lprobability_Percolation$.prototype.$$anonfun$random$4__p1__I__I__sci_IndexedSeq = (function(m$1, i) {
   return $as_sci_IndexedSeq($m_sr_RichInt$().until$extension0__I__I__sci_Range($m_s_Predef$().intWrapper__I__I(0), m$1).withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
@@ -10516,8 +10516,8 @@ $c_Lprobability_Percolation$.prototype.$$anonfun$random$4__p1__I__I__sci_Indexed
     })
   })(this, i)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()))
 });
-$c_Lprobability_Percolation$.prototype.$$anonfun$percView$1__p1__Lprobability_Percolation__s_xml_Elem = (function(x$4) {
-  return x$4.view__s_xml_Elem()
+$c_Lprobability_Percolation$.prototype.$$anonfun$percView$1__p1__Lprobability_Percolation__s_xml_Elem = (function(x$6) {
+  return x$6.view__s_xml_Elem()
 });
 $c_Lprobability_Percolation$.prototype.$$anonfun$main$1__p1__sjs_js_Dynamic__V = (function(e) {
   $m_Lprobability_Percolation$().nV__Lmhtml_Var().$$colon$eq__O__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T(e.target.value))).toInt__I())
@@ -10528,8 +10528,8 @@ $c_Lprobability_Percolation$.prototype.$$anonfun$main$2__p1__sjs_js_Dynamic__V =
 $c_Lprobability_Percolation$.prototype.$$anonfun$main$4__p1__I__I__V = (function(n$1, m$2) {
   $m_Lprobability_Percolation$().percolation__Lmhtml_Var().$$colon$eq__O__V($m_Lprobability_Percolation$().random__I__I__Lprobability_Percolation(n$1, m$2))
 });
-$c_Lprobability_Percolation$.prototype.$$anonfun$main$3__p1__T2__s_xml_Elem = (function(x0$4) {
-  var x1 = x0$4;
+$c_Lprobability_Percolation$.prototype.$$anonfun$main$3__p1__T2__s_xml_Elem = (function(x0$6) {
+  var x1 = x0$6;
   if ((x1 !== null)) {
     var n = x1.$$und1$mcI$sp__I();
     var m = x1.$$und2$mcI$sp__I();
@@ -10563,9 +10563,9 @@ $c_Lprobability_Percolation$.prototype.init___ = (function() {
   this.mV$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(10);
   this.percolation$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.random__I__I__Lprobability_Percolation(10, 10));
   this.percView$1 = this.percolation__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
-    return (function(x$4$2) {
-      var x$4 = $as_Lprobability_Percolation(x$4$2);
-      return $this.$$anonfun$percView$1__p1__Lprobability_Percolation__s_xml_Elem(x$4)
+    return (function(x$6$2) {
+      var x$6 = $as_Lprobability_Percolation(x$6$2);
+      return $this.$$anonfun$percView$1__p1__Lprobability_Percolation__s_xml_Elem(x$6)
     })
   })(this)));
   return this
@@ -11325,6 +11325,11 @@ $c_s_Predef$.prototype.assert__Z__F0__V = (function(assertion, message) {
 $c_s_Predef$.prototype.require__Z__V = (function(requirement) {
   if ((!requirement)) {
     throw new $c_jl_IllegalArgumentException().init___T("requirement failed")
+  }
+});
+$c_s_Predef$.prototype.require__Z__F0__V = (function(requirement, message) {
+  if ((!requirement)) {
+    throw new $c_jl_IllegalArgumentException().init___T(("requirement failed: " + message.apply__O()))
   }
 });
 $c_s_Predef$.prototype.ArrowAssoc__O__O = (function(self) {
@@ -14103,6 +14108,13 @@ $c_Lprobability_CoinTosses.prototype.$classData = $d_Lprobability_CoinTosses;
 /** @constructor */
 function $c_Lprobability_Percolation() {
   $c_O.call(this);
+  this.gridLines$1 = null;
+  this.edgeLines$1 = null;
+  this.leftToRight$1 = null;
+  this.blueLines$1 = null;
+  this.allLines$1 = null;
+  this.connected$1 = null;
+  this.view$1 = null;
   this.n$1 = 0;
   this.m$1 = 0;
   this.edges$1 = null;
@@ -14110,17 +14122,13 @@ function $c_Lprobability_Percolation() {
   this.ymax$1 = 0;
   this.xscale$1 = 0.0;
   this.yscale$1 = 0.0;
-  this.gridLines$1 = null;
-  this.edgeLines$1 = null;
   this.top$1 = null;
   this.bottom$1 = null;
   this.topToBottom$1 = null;
   this.left$1 = null;
   this.right$1 = null;
-  this.blueLines$1 = null;
-  this.allLines$1 = null;
-  this.connected$1 = null;
-  this.view$1 = null
+  this.redLines$1 = null;
+  this.bitmap$0$1 = 0
 }
 $c_Lprobability_Percolation.prototype = new $h_O();
 $c_Lprobability_Percolation.prototype.constructor = $c_Lprobability_Percolation;
@@ -14150,14 +14158,82 @@ $c_Lprobability_Percolation.prototype.xscale__D = (function() {
 $c_Lprobability_Percolation.prototype.yscale__D = (function() {
   return this.yscale$1
 });
-$c_Lprobability_Percolation.prototype.gridLines__sci_IndexedSeq = (function() {
+$c_Lprobability_Percolation.prototype.gridLines$lzycompute__p1__sci_IndexedSeq = (function() {
+  if (((this.bitmap$0$1 & 1) === 0)) {
+    this.gridLines$1 = $as_sci_IndexedSeq($as_sc_TraversableLike($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), this.m__I()).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+      return (function(i$2) {
+        var i = $uI(i$2);
+        return $this.$$anonfun$gridLines$1__p1__I__s_xml_Elem(i)
+      })
+    })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O($as_sc_GenTraversableOnce($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), this.n__I()).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+      return (function(j$2) {
+        var j = $uI(j$2);
+        return this$2.$$anonfun$gridLines$2__p1__I__s_xml_Elem(j)
+      })
+    })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
+    this.bitmap$0$1 = (this.bitmap$0$1 | 1)
+  };
   return this.gridLines$1
 });
-$c_Lprobability_Percolation.prototype.edgeLines__sci_Set = (function() {
+$c_Lprobability_Percolation.prototype.gridLines__sci_IndexedSeq = (function() {
+  return (((this.bitmap$0$1 & 1) === 0) ? this.gridLines$lzycompute__p1__sci_IndexedSeq() : this.gridLines$1)
+});
+$c_Lprobability_Percolation.prototype.edgeLines$lzycompute__p1__sci_Set = (function() {
+  if (((this.bitmap$0$1 & 2) === 0)) {
+    this.edgeLines$1 = $as_sci_Set(this.edges__sci_Set().withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+      return (function(check$ifrefutable$1$2) {
+        var check$ifrefutable$1 = $as_T2(check$ifrefutable$1$2);
+        return $this.$$anonfun$edgeLines$1__p1__T2__Z(check$ifrefutable$1)
+      })
+    })(this))).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+      return (function(x$1$2) {
+        var x$1 = $as_T2(x$1$2);
+        return this$2.$$anonfun$edgeLines$2__p1__T2__s_xml_Elem(x$1)
+      })
+    })(this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
+    this.bitmap$0$1 = (this.bitmap$0$1 | 2)
+  };
   return this.edgeLines$1
+});
+$c_Lprobability_Percolation.prototype.edgeLines__sci_Set = (function() {
+  return (((this.bitmap$0$1 & 2) === 0) ? this.edgeLines$lzycompute__p1__sci_Set() : this.edgeLines$1)
 });
 $c_Lprobability_Percolation.prototype.adjacent__I__I__sci_Set = (function(i, j) {
   return $as_sci_Set($m_s_Predef$().Set__sci_Set$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), new $c_s_Tuple2$mcII$sp().init___I__I(((i + 1) | 0), j)), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(((i - 1) | 0), j)), new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), new $c_s_Tuple2$mcII$sp().init___I__I(i, ((j + 1) | 0))), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, ((j - 1) | 0))), new $c_s_Tuple2$mcII$sp().init___I__I(i, j))])))
+});
+$c_Lprobability_Percolation.prototype.dualEdge__T2__T2 = (function(edge) {
+  var x1 = edge;
+  if ((x1 !== null)) {
+    var p2 = $as_T2(x1.$$und1__O());
+    var p3 = $as_T2(x1.$$und2__O());
+    if ((p2 !== null)) {
+      var a = p2.$$und1$mcI$sp__I();
+      var b = p2.$$und2$mcI$sp__I();
+      if ((p3 !== null)) {
+        var c = p3.$$und1$mcI$sp__I();
+        var d = p3.$$und2$mcI$sp__I();
+        if (((c === ((a + 1) | 0)) && (d === b))) {
+          return new $c_T2().init___O__O(new $c_s_Tuple2$mcII$sp().init___I__I(a, b), new $c_s_Tuple2$mcII$sp().init___I__I(a, ((b + 1) | 0)))
+        }
+      }
+    }
+  };
+  if ((x1 !== null)) {
+    var p4 = $as_T2(x1.$$und1__O());
+    var p5 = $as_T2(x1.$$und2__O());
+    if ((p4 !== null)) {
+      var a$2 = p4.$$und1$mcI$sp__I();
+      var b$2 = p4.$$und2$mcI$sp__I();
+      if ((p5 !== null)) {
+        var c$2 = p5.$$und1$mcI$sp__I();
+        var d$2 = p5.$$und2$mcI$sp__I();
+        if (((c$2 === a$2) && (d$2 === ((b$2 + 1) | 0)))) {
+          return new $c_T2().init___O__O(new $c_s_Tuple2$mcII$sp().init___I__I(((a$2 - 1) | 0), ((b$2 + 1) | 0)), new $c_s_Tuple2$mcII$sp().init___I__I(a$2, ((b$2 + 1) | 0)))
+        }
+      }
+    }
+  };
+  throw new $c_jl_IllegalArgumentException().init___T(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["dual of a strange edge ", ""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([edge])))
 });
 $c_Lprobability_Percolation.prototype.neighbours__I__I__sci_Set = (function(i, j) {
   return $as_sci_Set($as_sc_SetLike($as_sc_TraversableLike(this.adjacent__I__I__sci_Set(i, j).intersect__sc_GenSet__O(this.edges__sci_Set())).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
@@ -14166,6 +14242,29 @@ $c_Lprobability_Percolation.prototype.neighbours__I__I__sci_Set = (function(i, j
       return $this.$$anonfun$neighbours$1__p1__T2__sci_Set(x0$1)
     })
   })(this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom())).$$minus__O__sc_Set($m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i), j)))
+});
+$c_Lprobability_Percolation.prototype.dualNeighbours__I__I__sci_Set = (function(i, j) {
+  $m_s_Predef$().require__Z__F0__V(((0 <= j) && (j < this.m__I())), new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, i, j) {
+    return (function() {
+      return $this.$$anonfun$dualNeighbours$1__p1__I__I__T(i, j)
+    })
+  })(this, i, j)));
+  return $as_sci_Set($as_sc_SetLike($as_sc_TraversableLike(this.adjacent__I__I__sci_Set(i, j).filterNot__F1__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+    return (function(e$2) {
+      var e = $as_T2(e$2);
+      return this$2.$$anonfun$dualNeighbours$2__p1__T2__Z(e)
+    })
+  })(this)))).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
+    return (function(x0$2$2) {
+      var x0$2 = $as_T2(x0$2$2);
+      return this$3.$$anonfun$dualNeighbours$3__p1__T2__sci_Set(x0$2)
+    })
+  })(this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom())).$$minus__O__sc_Set($m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i), j)).filter__F1__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
+    return (function(x0$3$2) {
+      var x0$3 = $as_T2(x0$3$2);
+      return this$4.$$anonfun$dualNeighbours$4__p1__T2__Z(x0$3)
+    })
+  })(this))))
 });
 $c_Lprobability_Percolation.prototype.findPath__sci_Set__sci_Set__F2__s_Option = (function(source, target, nbrs) {
   var _$this = this;
@@ -14186,9 +14285,9 @@ $c_Lprobability_Percolation.prototype.findPath__sci_Set__sci_Set__F2__s_Option =
         })
       })(_$this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
       var adjPoints = $as_sci_Set(endPoints.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3, nbrs) {
-        return (function(x0$2$2) {
-          var x0$2 = $as_T2(x0$2$2);
-          return this$3.$$anonfun$findPath$3__p1__F2__T2__sci_Set(nbrs, x0$2)
+        return (function(x0$4$2) {
+          var x0$4 = $as_T2(x0$4$2);
+          return this$3.$$anonfun$findPath$3__p1__F2__T2__sci_Set(nbrs, x0$4)
         })
       })(_$this, nbrs)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
       var support = $as_sci_Set(source.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
@@ -14197,33 +14296,39 @@ $c_Lprobability_Percolation.prototype.findPath__sci_Set__sci_Set__F2__s_Option =
           return this$4.$$anonfun$findPath$4__p1__sci_Vector__sci_Set(p$3)
         })
       })(_$this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
+      $m_s_Predef$().assert__Z__F0__V($as_sc_SetLike(support.intersect__sc_GenSet__O(target)).isEmpty__Z(), new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$5) {
+        return (function() {
+          return this$5.$$anonfun$findPath$5__p1__T()
+        })
+      })(_$this)));
       var newPoints = $as_sci_Set(adjPoints.$$minus$minus__sc_GenTraversableOnce__scg_Subtractable(support));
       if (newPoints.isEmpty__Z()) {
         return $m_s_None$()
       } else {
-        var newPaths = $as_sci_Set(newPoints.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5, source, nbrs) {
-          return (function(x0$3$2) {
-            var x0$3 = $as_T2(x0$3$2);
-            return this$5.$$anonfun$findPath$5__p1__sci_Set__F2__T2__sc_Iterable(source, nbrs, x0$3)
+        var newPaths = $as_sci_Set(newPoints.flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$6, source, nbrs) {
+          return (function(x0$5$2) {
+            var x0$5 = $as_T2(x0$5$2);
+            return this$6.$$anonfun$findPath$6__p1__sci_Set__F2__T2__sc_Iterable(source, nbrs, x0$5)
           })
         })(_$this, source, nbrs)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
-        var temp$source = newPaths;
-        var temp$nbrs = _$this.findPath$default$3__F2();
-        source = temp$source;
-        nbrs = temp$nbrs;
+        var jsx$1 = $m_s_Predef$();
+        var x$4 = newPaths.map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7) {
+          return (function(x$3$2) {
+            var x$3 = $as_sci_Vector(x$3$2);
+            return this$7.$$anonfun$findPath$10__p1__sci_Vector__T2(x$3)
+          })
+        })(_$this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom());
+        var x$5 = newPoints;
+        jsx$1.assert__Z__F0__V(((x$4 === null) ? (x$5 === null) : $objectEquals(x$4, x$5)), new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$8, source, newPoints) {
+          return (function() {
+            return this$8.$$anonfun$findPath$9__p1__sci_Set__sci_Set__T(source, newPoints)
+          })
+        })(_$this, source, newPoints)));
+        source = newPaths;
         continue _findPath
       }
     }
   }
-});
-$c_Lprobability_Percolation.prototype.findPath$default$3__F2 = (function() {
-  return new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function($this) {
-    return (function(i$2, j$2) {
-      var i = $uI(i$2);
-      var j = $uI(j$2);
-      return $this.$$anonfun$findPath$default$3$1__p1__I__I__sci_Set(i, j)
-    })
-  })(this))
 });
 $c_Lprobability_Percolation.prototype.top__sci_Set = (function() {
   return this.top$1
@@ -14234,17 +14339,114 @@ $c_Lprobability_Percolation.prototype.bottom__sci_Set = (function() {
 $c_Lprobability_Percolation.prototype.topToBottom__s_Option = (function() {
   return this.topToBottom$1
 });
-$c_Lprobability_Percolation.prototype.blueLines__sc_Seq = (function() {
+$c_Lprobability_Percolation.prototype.left__sci_Set = (function() {
+  return this.left$1
+});
+$c_Lprobability_Percolation.prototype.right__sci_Set = (function() {
+  return this.right$1
+});
+$c_Lprobability_Percolation.prototype.leftToRight$lzycompute__p1__s_Option = (function() {
+  if (((this.bitmap$0$1 & 4) === 0)) {
+    this.leftToRight$1 = this.findPath__sci_Set__sci_Set__F2__s_Option(this.left__sci_Set(), this.right__sci_Set(), new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function($this) {
+      return (function(i$2, j$2) {
+        var i = $uI(i$2);
+        var j = $uI(j$2);
+        return $this.$$anonfun$leftToRight$1__p1__I__I__sci_Set(i, j)
+      })
+    })(this)));
+    this.bitmap$0$1 = (this.bitmap$0$1 | 4)
+  };
+  return this.leftToRight$1
+});
+$c_Lprobability_Percolation.prototype.leftToRight__s_Option = (function() {
+  return (((this.bitmap$0$1 & 4) === 0) ? this.leftToRight$lzycompute__p1__s_Option() : this.leftToRight$1)
+});
+$c_Lprobability_Percolation.prototype.blueLines$lzycompute__p1__sc_Seq = (function() {
+  if (((this.bitmap$0$1 & 8) === 0)) {
+    this.blueLines$1 = $as_sc_Seq(this.topToBottom__s_Option().map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+      return (function(v$2) {
+        var v = $as_sci_Vector(v$2);
+        return $this.$$anonfun$blueLines$1__p1__sci_Vector__sci_Vector(v)
+      })
+    })(this))).getOrElse__F0__O(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$2) {
+      return (function() {
+        return this$2.$$anonfun$blueLines$4__p1__sc_Seq()
+      })
+    })(this))));
+    this.bitmap$0$1 = (this.bitmap$0$1 | 8)
+  };
   return this.blueLines$1
 });
-$c_Lprobability_Percolation.prototype.allLines__sci_IndexedSeq = (function() {
+$c_Lprobability_Percolation.prototype.blueLines__sc_Seq = (function() {
+  return (((this.bitmap$0$1 & 8) === 0) ? this.blueLines$lzycompute__p1__sc_Seq() : this.blueLines$1)
+});
+$c_Lprobability_Percolation.prototype.redLines__sc_Seq = (function() {
+  return this.redLines$1
+});
+$c_Lprobability_Percolation.prototype.allLines$lzycompute__p1__sci_IndexedSeq = (function() {
+  if (((this.bitmap$0$1 & 16) === 0)) {
+    this.allLines$1 = $as_sci_IndexedSeq($as_sc_TraversableLike($as_sc_TraversableLike(this.gridLines__sci_IndexedSeq().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.edgeLines__sci_Set().toSeq__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.blueLines__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.redLines__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
+    this.bitmap$0$1 = (this.bitmap$0$1 | 16)
+  };
   return this.allLines$1
 });
-$c_Lprobability_Percolation.prototype.connected__s_xml_Elem = (function() {
+$c_Lprobability_Percolation.prototype.allLines__sci_IndexedSeq = (function() {
+  return (((this.bitmap$0$1 & 16) === 0) ? this.allLines$lzycompute__p1__sci_IndexedSeq() : this.allLines$1)
+});
+$c_Lprobability_Percolation.prototype.connected$lzycompute__p1__s_xml_Elem = (function() {
+  if (((this.bitmap$0$1 & 32) === 0)) {
+    if (this.topToBottom__s_Option().isEmpty__Z()) {
+      var jsx$3 = $m_s_xml_Null$();
+      var jsx$2 = $m_s_xml_TopScope$();
+      var $$buf = new $c_s_xml_NodeBuffer().init___();
+      $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("No path from top to bottom: nothing crosses the red line."));
+      var jsx$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", jsx$3, jsx$2, false, $$buf)
+    } else {
+      var jsx$5 = $m_s_xml_Null$();
+      var jsx$4 = $m_s_xml_TopScope$();
+      var $$buf$2 = new $c_s_xml_NodeBuffer().init___();
+      $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("The blue path connects the top to the bottom"));
+      var jsx$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", jsx$5, jsx$4, false, $$buf$2)
+    };
+    this.connected$1 = jsx$1;
+    this.bitmap$0$1 = (this.bitmap$0$1 | 32)
+  };
   return this.connected$1
 });
-$c_Lprobability_Percolation.prototype.view__s_xml_Elem = (function() {
+$c_Lprobability_Percolation.prototype.connected__s_xml_Elem = (function() {
+  return (((this.bitmap$0$1 & 32) === 0) ? this.connected$lzycompute__p1__s_xml_Elem() : this.connected$1)
+});
+$c_Lprobability_Percolation.prototype.view$lzycompute__p1__s_xml_Elem = (function() {
+  if (((this.bitmap$0$1 & 64) === 0)) {
+    var jsx$3 = $m_s_xml_Null$();
+    var jsx$2 = $m_s_xml_TopScope$();
+    var $$buf = new $c_s_xml_NodeBuffer().init___();
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+    var $$tmpscope = $m_s_xml_TopScope$();
+    $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
+    var $$scope = $$tmpscope;
+    var $$md = $m_s_xml_Null$();
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("800"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("viewBox", new $c_s_xml_Text().init___T("0 0 400 400"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    var jsx$1 = $$md;
+    var $$buf$2 = new $c_s_xml_NodeBuffer().init___();
+    $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+    $$buf$2.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.allLines__sci_IndexedSeq(), $m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable());
+    $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "svg", jsx$1, $$scope, false, $$buf$2));
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(this.connected__s_xml_Elem());
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+    this.view$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$3, jsx$2, false, $$buf);
+    this.bitmap$0$1 = (this.bitmap$0$1 | 64)
+  };
   return this.view$1
+});
+$c_Lprobability_Percolation.prototype.view__s_xml_Elem = (function() {
+  return (((this.bitmap$0$1 & 64) === 0) ? this.view$lzycompute__p1__s_xml_Elem() : this.view$1)
 });
 $c_Lprobability_Percolation.prototype.productPrefix__T = (function() {
   return "Percolation"
@@ -14386,14 +14588,40 @@ $c_Lprobability_Percolation.prototype.$$anonfun$neighbours$1__p1__T2__sci_Set = 
     throw new $c_s_MatchError().init___O(x1)
   }
 });
+$c_Lprobability_Percolation.prototype.$$anonfun$dualNeighbours$1__p1__I__I__T = (function(i$1, j$1) {
+  return new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["dual neighbours of (", ", ", ")"])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([i$1, j$1]))
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$dualNeighbours$2__p1__T2__Z = (function(e) {
+  return this.edges__sci_Set().contains__O__Z(this.dualEdge__T2__T2(e))
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$dualNeighbours$3__p1__T2__sci_Set = (function(x0$2) {
+  var x1 = x0$2;
+  if ((x1 !== null)) {
+    var p = $as_T2(x1.$$und1__O());
+    var q = $as_T2(x1.$$und2__O());
+    return $as_sci_Set($m_s_Predef$().Set__sci_Set$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([p, q])))
+  } else {
+    throw new $c_s_MatchError().init___O(x1)
+  }
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$dualNeighbours$4__p1__T2__Z = (function(x0$3) {
+  var x1 = x0$3;
+  if ((x1 !== null)) {
+    var x = x1.$$und1$mcI$sp__I();
+    var y = x1.$$und2$mcI$sp__I();
+    return ((((0 <= y) && (y < this.m__I())) && (0 <= x)) && (x <= ((this.n__I() + 1) | 0)))
+  } else {
+    throw new $c_s_MatchError().init___O(x1)
+  }
+});
 $c_Lprobability_Percolation.prototype.$$anonfun$findPath$1__p1__sci_Set__sci_Vector__Z = (function(target$1, p) {
   return target$1.contains__O__Z(p.last__O())
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$findPath$2__p1__sci_Vector__T2 = (function(x$2) {
   return $as_T2(x$2.last__O())
 });
-$c_Lprobability_Percolation.prototype.$$anonfun$findPath$3__p1__F2__T2__sci_Set = (function(nbrs$1, x0$2) {
-  var x1 = x0$2;
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$3__p1__F2__T2__sci_Set = (function(nbrs$1, x0$4) {
+  var x1 = x0$4;
   if ((x1 !== null)) {
     var i = x1.$$und1$mcI$sp__I();
     var j = x1.$$und2$mcI$sp__I();
@@ -14405,34 +14633,40 @@ $c_Lprobability_Percolation.prototype.$$anonfun$findPath$3__p1__F2__T2__sci_Set 
 $c_Lprobability_Percolation.prototype.$$anonfun$findPath$4__p1__sci_Vector__sci_Set = (function(p) {
   return p.toSet__sci_Set()
 });
-$c_Lprobability_Percolation.prototype.$$anonfun$findPath$6__p1__F2__I__I__sci_Vector__Z = (function(nbrs$1, i$1, j$1, path) {
-  return $as_sc_SetLike(nbrs$1.apply__O__O__O(i$1, j$1)).contains__O__Z(path.last__O())
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$5__p1__T = (function() {
+  return new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["point in support but not endpoint"])).s__sc_Seq__T($m_sci_Nil$())
 });
-$c_Lprobability_Percolation.prototype.$$anonfun$findPath$7__p1__I__I__sci_Vector__sci_Vector = (function(i$1, j$1, v) {
-  return $as_sci_Vector(v.$$colon$plus__O__scg_CanBuildFrom__O($m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i$1), j$1), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$7__p1__F2__I__I__sci_Vector__Z = (function(nbrs$1, i$2, j$2, path) {
+  return $as_sc_SetLike(nbrs$1.apply__O__O__O(i$2, j$2)).contains__O__Z(path.last__O())
 });
-$c_Lprobability_Percolation.prototype.$$anonfun$findPath$5__p1__sci_Set__F2__T2__sc_Iterable = (function(source$1, nbrs$1, x0$3) {
-  var x1 = x0$3;
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$8__p1__I__I__sci_Vector__sci_Vector = (function(i$2, j$2, v) {
+  return $as_sci_Vector(v.$$colon$plus__O__scg_CanBuildFrom__O($m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i$2), j$2), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$6__p1__sci_Set__F2__T2__sc_Iterable = (function(source$1, nbrs$1, x0$5) {
+  var x1 = x0$5;
   if ((x1 !== null)) {
     var i = x1.$$und1$mcI$sp__I();
     var j = x1.$$und2$mcI$sp__I();
     return $m_s_Option$().option2Iterable__s_Option__sc_Iterable(source$1.find__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, nbrs$1, i, j) {
       return (function(path$2) {
         var path = $as_sci_Vector(path$2);
-        return $this.$$anonfun$findPath$6__p1__F2__I__I__sci_Vector__Z(nbrs$1, i, j, path)
+        return $this.$$anonfun$findPath$7__p1__F2__I__I__sci_Vector__Z(nbrs$1, i, j, path)
       })
     })(this, nbrs$1, i, j))).map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2, i, j) {
       return (function(v$2) {
         var v = $as_sci_Vector(v$2);
-        return this$2.$$anonfun$findPath$7__p1__I__I__sci_Vector__sci_Vector(i, j, v)
+        return this$2.$$anonfun$findPath$8__p1__I__I__sci_Vector__sci_Vector(i, j, v)
       })
     })(this, i, j))))
   } else {
     throw new $c_s_MatchError().init___O(x1)
   }
 });
-$c_Lprobability_Percolation.prototype.$$anonfun$findPath$default$3$1__p1__I__I__sci_Set = (function(i, j) {
-  return this.neighbours__I__I__sci_Set(i, j)
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$10__p1__sci_Vector__T2 = (function(x$3) {
+  return $as_T2(x$3.last__O())
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$findPath$9__p1__sci_Set__sci_Set__T = (function(source$1, newPoints$1) {
+  return new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["Missing link: source: ", " \\nNew points: ", ""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([source$1, newPoints$1]))
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$top$1__p1__I__sci_Vector = (function(i) {
   return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i), 0)])))
@@ -14440,11 +14674,17 @@ $c_Lprobability_Percolation.prototype.$$anonfun$top$1__p1__I__sci_Vector = (func
 $c_Lprobability_Percolation.prototype.$$anonfun$bottom$1__p1__I__T2 = (function(i) {
   return $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i), this.m__I())
 });
+$c_Lprobability_Percolation.prototype.$$anonfun$topToBottom$1__p1__I__I__sci_Set = (function(i, j) {
+  return this.neighbours__I__I__sci_Set(i, j)
+});
 $c_Lprobability_Percolation.prototype.$$anonfun$left$1__p1__I__sci_Vector = (function(i) {
   return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(0), i)])))
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$right$1__p1__I__T2 = (function(i) {
-  return $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(((this.n__I() - 1) | 0)), i)
+  return $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(((this.n__I() + 1) | 0)), i)
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$leftToRight$1__p1__I__I__sci_Set = (function(i, j) {
+  return this.dualNeighbours__I__I__sci_Set(i, j)
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$blueLines$2__p1__T2__Z = (function(check$ifrefutable$2) {
   var x1 = check$ifrefutable$2;
@@ -14457,8 +14697,8 @@ $c_Lprobability_Percolation.prototype.$$anonfun$blueLines$2__p1__T2__Z = (functi
   };
   return false
 });
-$c_Lprobability_Percolation.prototype.$$anonfun$blueLines$3__p1__T2__s_xml_Elem = (function(x$3) {
-  var x1 = x$3;
+$c_Lprobability_Percolation.prototype.$$anonfun$blueLines$3__p1__T2__s_xml_Elem = (function(x$4) {
+  var x1 = x$4;
   if ((x1 !== null)) {
     var p2 = $as_T2(x1.$$und1__O());
     var p3 = $as_T2(x1.$$und2__O());
@@ -14491,13 +14731,67 @@ $c_Lprobability_Percolation.prototype.$$anonfun$blueLines$1__p1__sci_Vector__sci
       return $this.$$anonfun$blueLines$2__p1__T2__Z(check$ifrefutable$2)
     })
   })(this))).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
-    return (function(x$3$2) {
-      var x$3 = $as_T2(x$3$2);
-      return this$2.$$anonfun$blueLines$3__p1__T2__s_xml_Elem(x$3)
+    return (function(x$4$2) {
+      var x$4 = $as_T2(x$4$2);
+      return this$2.$$anonfun$blueLines$3__p1__T2__s_xml_Elem(x$4)
     })
   })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
 });
 $c_Lprobability_Percolation.prototype.$$anonfun$blueLines$4__p1__sc_Seq = (function() {
+  return $as_sc_Seq($m_sc_Seq$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$()))
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$redLines$2__p1__T2__Z = (function(check$ifrefutable$3) {
+  var x1 = check$ifrefutable$3;
+  if ((x1 !== null)) {
+    var p2 = $as_T2(x1.$$und1__O());
+    var p3 = $as_T2(x1.$$und2__O());
+    if (((p2 !== null) && (p3 !== null))) {
+      return true
+    }
+  };
+  return false
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$redLines$3__p1__T2__s_xml_Elem = (function(x$5) {
+  var x1 = x$5;
+  if ((x1 !== null)) {
+    var p2 = $as_T2(x1.$$und1__O());
+    var p3 = $as_T2(x1.$$und2__O());
+    if ((p2 !== null)) {
+      var x1$2 = p2.$$und1$mcI$sp__I();
+      var y1 = p2.$$und2$mcI$sp__I();
+      if ((p3 !== null)) {
+        var x2 = p3.$$und1$mcI$sp__I();
+        var y2 = p3.$$und2$mcI$sp__I();
+        var $$tmpscope = $m_s_xml_TopScope$();
+        $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
+        var $$scope = $$tmpscope;
+        var $$md = $m_s_xml_Null$();
+        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-width", new $c_s_xml_Text().init___T("2"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("red"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", $objectToString($doubleToInt(((y2 + 0.5) * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", $objectToString($doubleToInt(((x2 - 0.5) * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", $objectToString($doubleToInt(((y1 + 0.5) * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", $objectToString($doubleToInt(((x1$2 - 0.5) * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+        return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md, $$scope, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))
+      }
+    }
+  };
+  throw new $c_s_MatchError().init___O(x1)
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$redLines$1__p1__sci_Vector__sci_Vector = (function(v) {
+  return $as_sci_Vector($as_sc_TraversableLike(v.zip__sc_GenIterable__scg_CanBuildFrom__O(v.tail__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(check$ifrefutable$3$2) {
+      var check$ifrefutable$3 = $as_T2(check$ifrefutable$3$2);
+      return $this.$$anonfun$redLines$2__p1__T2__Z(check$ifrefutable$3)
+    })
+  })(this))).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+    return (function(x$5$2) {
+      var x$5 = $as_T2(x$5$2);
+      return this$2.$$anonfun$redLines$3__p1__T2__s_xml_Elem(x$5)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+});
+$c_Lprobability_Percolation.prototype.$$anonfun$redLines$4__p1__sc_Seq = (function() {
   return $as_sc_Seq($m_sc_Seq$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$()))
 });
 $c_Lprobability_Percolation.prototype.init___I__I__sci_Set = (function(n, m, edges) {
@@ -14510,103 +14804,47 @@ $c_Lprobability_Percolation.prototype.init___I__I__sci_Set = (function(n, m, edg
   this.ymax$1 = 400;
   this.xscale$1 = (this.xmax__I() / n);
   this.yscale$1 = (this.ymax__I() / m);
-  this.gridLines$1 = $as_sci_IndexedSeq($as_sc_TraversableLike($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), m).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+  this.top$1 = $as_sc_TraversableOnce($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), n).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(i$2) {
       var i = $uI(i$2);
-      return $this.$$anonfun$gridLines$1__p1__I__s_xml_Elem(i)
+      return $this.$$anonfun$top$1__p1__I__sci_Vector(i)
     })
-  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O($as_sc_GenTraversableOnce($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), n).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
-    return (function(j$2) {
-      var j = $uI(j$2);
-      return this$2.$$anonfun$gridLines$2__p1__I__s_xml_Elem(j)
-    })
-  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
-  this.edgeLines$1 = $as_sci_Set(edges.withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
-    return (function(check$ifrefutable$1$2) {
-      var check$ifrefutable$1 = $as_T2(check$ifrefutable$1$2);
-      return this$3.$$anonfun$edgeLines$1__p1__T2__Z(check$ifrefutable$1)
-    })
-  })(this))).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
-    return (function(x$1$2) {
-      var x$1 = $as_T2(x$1$2);
-      return this$4.$$anonfun$edgeLines$2__p1__T2__s_xml_Elem(x$1)
-    })
-  })(this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
-  this.top$1 = $as_sc_TraversableOnce($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), n).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
+  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).toSet__sci_Set();
+  this.bottom$1 = $as_sc_TraversableOnce($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), n).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
     return (function(i$3$2) {
       var i$3 = $uI(i$3$2);
-      return this$5.$$anonfun$top$1__p1__I__sci_Vector(i$3)
+      return this$2.$$anonfun$bottom$1__p1__I__T2(i$3)
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).toSet__sci_Set();
-  this.bottom$1 = $as_sc_TraversableOnce($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), n).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$6) {
-    return (function(i$4$2) {
+  this.topToBottom$1 = this.findPath__sci_Set__sci_Set__F2__s_Option(this.top__sci_Set(), this.bottom__sci_Set(), new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function(this$3) {
+    return (function(i$4$2, j$2) {
       var i$4 = $uI(i$4$2);
-      return this$6.$$anonfun$bottom$1__p1__I__T2(i$4)
+      var j = $uI(j$2);
+      return this$3.$$anonfun$topToBottom$1__p1__I__I__sci_Set(i$4, j)
     })
-  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).toSet__sci_Set();
-  this.topToBottom$1 = this.findPath__sci_Set__sci_Set__F2__s_Option(this.top__sci_Set(), this.bottom__sci_Set(), this.findPath$default$3__F2());
-  this.left$1 = $as_sc_TraversableOnce($m_sr_RichInt$().until$extension0__I__I__sci_Range($m_s_Predef$().intWrapper__I__I(0), m).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7) {
+  })(this)));
+  this.left$1 = $as_sc_TraversableOnce($m_sr_RichInt$().until$extension0__I__I__sci_Range($m_s_Predef$().intWrapper__I__I(0), m).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
     return (function(i$5$2) {
       var i$5 = $uI(i$5$2);
-      return this$7.$$anonfun$left$1__p1__I__sci_Vector(i$5)
+      return this$4.$$anonfun$left$1__p1__I__sci_Vector(i$5)
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).toSet__sci_Set();
-  this.right$1 = $as_sc_TraversableOnce($m_sr_RichInt$().until$extension0__I__I__sci_Range($m_s_Predef$().intWrapper__I__I(0), m).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$8) {
+  this.right$1 = $as_sc_TraversableOnce($m_sr_RichInt$().until$extension0__I__I__sci_Range($m_s_Predef$().intWrapper__I__I(0), m).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
     return (function(i$6$2) {
       var i$6 = $uI(i$6$2);
-      return this$8.$$anonfun$right$1__p1__I__T2(i$6)
+      return this$5.$$anonfun$right$1__p1__I__T2(i$6)
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).toSet__sci_Set();
-  this.blueLines$1 = $as_sc_Seq(this.topToBottom__s_Option().map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$9) {
+  this.redLines$1 = $as_sc_Seq(this.leftToRight__s_Option().map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$6) {
     return (function(v$2) {
       var v = $as_sci_Vector(v$2);
-      return this$9.$$anonfun$blueLines$1__p1__sci_Vector__sci_Vector(v)
+      return this$6.$$anonfun$redLines$1__p1__sci_Vector__sci_Vector(v)
     })
-  })(this))).getOrElse__F0__O(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$10) {
+  })(this))).getOrElse__F0__O(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$7) {
     return (function() {
-      return this$10.$$anonfun$blueLines$4__p1__sc_Seq()
+      return this$7.$$anonfun$redLines$4__p1__sc_Seq()
     })
   })(this))));
-  this.allLines$1 = $as_sci_IndexedSeq($as_sc_TraversableLike(this.gridLines__sci_IndexedSeq().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.edgeLines__sci_Set().toSeq__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.blueLines__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
-  if (this.topToBottom__s_Option().isEmpty__Z()) {
-    var jsx$3 = $m_s_xml_Null$();
-    var jsx$2 = $m_s_xml_TopScope$();
-    var $$buf = new $c_s_xml_NodeBuffer().init___();
-    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("No path from top to bottom"));
-    var jsx$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", jsx$3, jsx$2, false, $$buf)
-  } else {
-    var jsx$5 = $m_s_xml_Null$();
-    var jsx$4 = $m_s_xml_TopScope$();
-    var $$buf$2 = new $c_s_xml_NodeBuffer().init___();
-    $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("The blue path connects the top to the bottom"));
-    var jsx$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", jsx$5, jsx$4, false, $$buf$2)
-  };
-  this.connected$1 = jsx$1;
-  var jsx$8 = $m_s_xml_Null$();
-  var jsx$7 = $m_s_xml_TopScope$();
-  var $$buf$3 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
-  var $$tmpscope = $m_s_xml_TopScope$();
-  $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
-  var $$scope = $$tmpscope;
-  var $$md = $m_s_xml_Null$();
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("800"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("viewBox", new $c_s_xml_Text().init___T("0 0 400 400"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$6 = $$md;
-  var $$buf$4 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$4.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
-  $$buf$4.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.allLines__sci_IndexedSeq(), $m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable());
-  $$buf$4.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "svg", jsx$6, $$scope, false, $$buf$4));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(this.connected__s_xml_Elem());
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
-  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(edges.toString__T(), $m_s_xml_XmlElementEmbeddable$().stringElementEmbeddable__s_xml_XmlElementEmbeddable());
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
-  this.view$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$8, jsx$7, false, $$buf$3);
   return this
 });
 function $is_Lprobability_Percolation(obj) {
@@ -29335,6 +29573,10 @@ $c_sci_HashSet.prototype.filter__F1__sci_HashSet = (function(p) {
   var buffer = $newArrayObject($d_sci_HashSet.getArrayOf(), [$m_sci_HashSet$().scala$collection$immutable$HashSet$$bufferSize__I__I(this.size__I())]);
   return $m_sci_HashSet$().scala$collection$immutable$HashSet$$nullToEmpty__sci_HashSet__sci_HashSet(this.filter0__F1__Z__I__Asci_HashSet__I__sci_HashSet(p, false, 0, buffer, 0))
 });
+$c_sci_HashSet.prototype.filterNot__F1__sci_HashSet = (function(p) {
+  var buffer = $newArrayObject($d_sci_HashSet.getArrayOf(), [$m_sci_HashSet$().scala$collection$immutable$HashSet$$bufferSize__I__I(this.size__I())]);
+  return $m_sci_HashSet$().scala$collection$immutable$HashSet$$nullToEmpty__sci_HashSet__sci_HashSet(this.filter0__F1__Z__I__Asci_HashSet__I__sci_HashSet(p, true, 0, buffer, 0))
+});
 $c_sci_HashSet.prototype.filter0__F1__Z__I__Asci_HashSet__I__sci_HashSet = (function(p, negate, level, buffer, offset0) {
   return null
 });
@@ -29376,6 +29618,9 @@ $c_sci_HashSet.prototype.seq__sc_TraversableOnce = (function() {
 });
 $c_sci_HashSet.prototype.seq__sc_Set = (function() {
   return this.seq__sci_Set()
+});
+$c_sci_HashSet.prototype.filterNot__F1__O = (function(p) {
+  return this.filterNot__F1__sci_HashSet(p)
 });
 $c_sci_HashSet.prototype.filter__F1__O = (function(p) {
   return this.filter__F1__sci_HashSet(p)
