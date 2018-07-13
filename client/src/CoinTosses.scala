@@ -97,7 +97,7 @@ object CoinTosses {
       coins are tossed several times. We shall see some associated figures, with the coins represented by different colours.
       <h3> Number of heads</h3>
       <p>In the first figure we see the number of heads in the first $n$ tosses. The black line corresponds to half the tosses resulting in heads.</p>
-      <svg viewBox="0 0 400 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 400 400" width="100%" height="400" xmlns="http://www.w3.org/2000/svg">
       <rect width="400" height="400" stroke="grey" fill="none"></rect>
       <line x1="0" x2="400" y1="400" y2="200" stroke="black" xmlns="http://www.w3.org/2000/svg"></line>
         {tossesV.map(tossVec =>
@@ -113,7 +113,7 @@ object CoinTosses {
       <h3> Proportion of  heads </h3>
       <p>Next, we look at the proportion of tosses that are heads.
       The black line corresponds to half the tosses resulting in heads.</p>
-      <svg viewBox="0 0 400 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 400 400" width="100%" height="400" xmlns="http://www.w3.org/2000/svg">
       <rect width="400" height="400" stroke="grey" fill="none"></rect>
       <line x1="0" x2="400" y1="200" y2="200" stroke="black" xmlns="http://www.w3.org/2000/svg"></line>
         {tossesV.map(tossVec =>
@@ -130,7 +130,7 @@ object CoinTosses {
       <p>Finally, we look at the <em>normalized</em> proportion of tosses that are heads, given by
         {fmla}.
       The black line corresponds to half the tosses resulting in heads.</p>
-      <svg viewBox="0 0 400 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 400 400" width="100%" height="400" xmlns="http://www.w3.org/2000/svg">
       <rect width="400" height="400" stroke="grey" fill="none"></rect>
       <line x1="0" x2="400" y1="200" y2="200" stroke="black" xmlns="http://www.w3.org/2000/svg"></line>
         {tossesV.map(tossVec =>

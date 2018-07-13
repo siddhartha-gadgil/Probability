@@ -127,7 +127,7 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
 
   lazy val view =
       <div>
-      <svg viewBox={s"0 0 $xmax $ymax"} width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox={s"0 0 $xmax $ymax"} width="80%" height="400" xmlns="http://www.w3.org/2000/svg">
         {allLines}
       </svg>
       <p></p>
