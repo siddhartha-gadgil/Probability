@@ -14108,6 +14108,10 @@ $c_Lprobability_CoinTosses.prototype.$classData = $d_Lprobability_CoinTosses;
 /** @constructor */
 function $c_Lprobability_Percolation() {
   $c_O.call(this);
+  this.xmax$1 = 0;
+  this.ymax$1 = 0;
+  this.xscale$1 = 0.0;
+  this.yscale$1 = 0.0;
   this.gridLines$1 = null;
   this.edgeLines$1 = null;
   this.leftToRight$1 = null;
@@ -14118,10 +14122,6 @@ function $c_Lprobability_Percolation() {
   this.n$1 = 0;
   this.m$1 = 0;
   this.edges$1 = null;
-  this.xmax$1 = 0;
-  this.ymax$1 = 0;
-  this.xscale$1 = 0.0;
-  this.yscale$1 = 0.0;
   this.top$1 = null;
   this.bottom$1 = null;
   this.topToBottom$1 = null;
@@ -14146,20 +14146,48 @@ $c_Lprobability_Percolation.prototype.m__I = (function() {
 $c_Lprobability_Percolation.prototype.edges__sci_Set = (function() {
   return this.edges$1
 });
-$c_Lprobability_Percolation.prototype.xmax__I = (function() {
+$c_Lprobability_Percolation.prototype.xmax$lzycompute__p1__I = (function() {
+  if (((this.bitmap$0$1 & 1) === 0)) {
+    this.xmax$1 = $doubleToInt((this.xscale__D() * this.n__I()));
+    this.bitmap$0$1 = (this.bitmap$0$1 | 1)
+  };
   return this.xmax$1
 });
-$c_Lprobability_Percolation.prototype.ymax__I = (function() {
+$c_Lprobability_Percolation.prototype.xmax__I = (function() {
+  return (((this.bitmap$0$1 & 1) === 0) ? this.xmax$lzycompute__p1__I() : this.xmax$1)
+});
+$c_Lprobability_Percolation.prototype.ymax$lzycompute__p1__I = (function() {
+  if (((this.bitmap$0$1 & 2) === 0)) {
+    this.ymax$1 = $doubleToInt((this.yscale__D() * this.m__I()));
+    this.bitmap$0$1 = (this.bitmap$0$1 | 2)
+  };
   return this.ymax$1
 });
-$c_Lprobability_Percolation.prototype.xscale__D = (function() {
+$c_Lprobability_Percolation.prototype.ymax__I = (function() {
+  return (((this.bitmap$0$1 & 2) === 0) ? this.ymax$lzycompute__p1__I() : this.ymax$1)
+});
+$c_Lprobability_Percolation.prototype.xscale$lzycompute__p1__D = (function() {
+  if (((this.bitmap$0$1 & 4) === 0)) {
+    this.xscale$1 = 40.0;
+    this.bitmap$0$1 = (this.bitmap$0$1 | 4)
+  };
   return this.xscale$1
 });
-$c_Lprobability_Percolation.prototype.yscale__D = (function() {
+$c_Lprobability_Percolation.prototype.xscale__D = (function() {
+  return (((this.bitmap$0$1 & 4) === 0) ? this.xscale$lzycompute__p1__D() : this.xscale$1)
+});
+$c_Lprobability_Percolation.prototype.yscale$lzycompute__p1__D = (function() {
+  if (((this.bitmap$0$1 & 8) === 0)) {
+    this.yscale$1 = 40.0;
+    this.bitmap$0$1 = (this.bitmap$0$1 | 8)
+  };
   return this.yscale$1
 });
+$c_Lprobability_Percolation.prototype.yscale__D = (function() {
+  return (((this.bitmap$0$1 & 8) === 0) ? this.yscale$lzycompute__p1__D() : this.yscale$1)
+});
 $c_Lprobability_Percolation.prototype.gridLines$lzycompute__p1__sci_IndexedSeq = (function() {
-  if (((this.bitmap$0$1 & 1) === 0)) {
+  if (((this.bitmap$0$1 & 16) === 0)) {
     this.gridLines$1 = $as_sci_IndexedSeq($as_sc_TraversableLike($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), this.m__I()).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
       return (function(i$2) {
         var i = $uI(i$2);
@@ -14171,15 +14199,15 @@ $c_Lprobability_Percolation.prototype.gridLines$lzycompute__p1__sci_IndexedSeq =
         return this$2.$$anonfun$gridLines$2__p1__I__s_xml_Elem(j)
       })
     })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
-    this.bitmap$0$1 = (this.bitmap$0$1 | 1)
+    this.bitmap$0$1 = (this.bitmap$0$1 | 16)
   };
   return this.gridLines$1
 });
 $c_Lprobability_Percolation.prototype.gridLines__sci_IndexedSeq = (function() {
-  return (((this.bitmap$0$1 & 1) === 0) ? this.gridLines$lzycompute__p1__sci_IndexedSeq() : this.gridLines$1)
+  return (((this.bitmap$0$1 & 16) === 0) ? this.gridLines$lzycompute__p1__sci_IndexedSeq() : this.gridLines$1)
 });
 $c_Lprobability_Percolation.prototype.edgeLines$lzycompute__p1__sci_Set = (function() {
-  if (((this.bitmap$0$1 & 2) === 0)) {
+  if (((this.bitmap$0$1 & 32) === 0)) {
     this.edgeLines$1 = $as_sci_Set(this.edges__sci_Set().withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
       return (function(check$ifrefutable$1$2) {
         var check$ifrefutable$1 = $as_T2(check$ifrefutable$1$2);
@@ -14191,12 +14219,12 @@ $c_Lprobability_Percolation.prototype.edgeLines$lzycompute__p1__sci_Set = (funct
         return this$2.$$anonfun$edgeLines$2__p1__T2__s_xml_Elem(x$1)
       })
     })(this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom()));
-    this.bitmap$0$1 = (this.bitmap$0$1 | 2)
+    this.bitmap$0$1 = (this.bitmap$0$1 | 32)
   };
   return this.edgeLines$1
 });
 $c_Lprobability_Percolation.prototype.edgeLines__sci_Set = (function() {
-  return (((this.bitmap$0$1 & 2) === 0) ? this.edgeLines$lzycompute__p1__sci_Set() : this.edgeLines$1)
+  return (((this.bitmap$0$1 & 32) === 0) ? this.edgeLines$lzycompute__p1__sci_Set() : this.edgeLines$1)
 });
 $c_Lprobability_Percolation.prototype.adjacent__I__I__sci_Set = (function(i, j) {
   return $as_sci_Set($m_s_Predef$().Set__sci_Set$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), new $c_s_Tuple2$mcII$sp().init___I__I(((i + 1) | 0), j)), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(((i - 1) | 0), j)), new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, j)), new $c_s_Tuple2$mcII$sp().init___I__I(i, ((j + 1) | 0))), $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(new $c_s_Tuple2$mcII$sp().init___I__I(i, ((j - 1) | 0))), new $c_s_Tuple2$mcII$sp().init___I__I(i, j))])))
@@ -14346,7 +14374,7 @@ $c_Lprobability_Percolation.prototype.right__sci_Set = (function() {
   return this.right$1
 });
 $c_Lprobability_Percolation.prototype.leftToRight$lzycompute__p1__s_Option = (function() {
-  if (((this.bitmap$0$1 & 4) === 0)) {
+  if (((this.bitmap$0$1 & 64) === 0)) {
     this.leftToRight$1 = this.findPath__sci_Set__sci_Set__F2__s_Option(this.left__sci_Set(), this.right__sci_Set(), new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function($this) {
       return (function(i$2, j$2) {
         var i = $uI(i$2);
@@ -14354,15 +14382,15 @@ $c_Lprobability_Percolation.prototype.leftToRight$lzycompute__p1__s_Option = (fu
         return $this.$$anonfun$leftToRight$1__p1__I__I__sci_Set(i, j)
       })
     })(this)));
-    this.bitmap$0$1 = (this.bitmap$0$1 | 4)
+    this.bitmap$0$1 = (this.bitmap$0$1 | 64)
   };
   return this.leftToRight$1
 });
 $c_Lprobability_Percolation.prototype.leftToRight__s_Option = (function() {
-  return (((this.bitmap$0$1 & 4) === 0) ? this.leftToRight$lzycompute__p1__s_Option() : this.leftToRight$1)
+  return (((this.bitmap$0$1 & 64) === 0) ? this.leftToRight$lzycompute__p1__s_Option() : this.leftToRight$1)
 });
 $c_Lprobability_Percolation.prototype.blueLines$lzycompute__p1__sc_Seq = (function() {
-  if (((this.bitmap$0$1 & 8) === 0)) {
+  if (((this.bitmap$0$1 & 128) === 0)) {
     this.blueLines$1 = $as_sc_Seq(this.topToBottom__s_Option().map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
       return (function(v$2) {
         var v = $as_sci_Vector(v$2);
@@ -14373,28 +14401,28 @@ $c_Lprobability_Percolation.prototype.blueLines$lzycompute__p1__sc_Seq = (functi
         return this$2.$$anonfun$blueLines$4__p1__sc_Seq()
       })
     })(this))));
-    this.bitmap$0$1 = (this.bitmap$0$1 | 8)
+    this.bitmap$0$1 = (this.bitmap$0$1 | 128)
   };
   return this.blueLines$1
 });
 $c_Lprobability_Percolation.prototype.blueLines__sc_Seq = (function() {
-  return (((this.bitmap$0$1 & 8) === 0) ? this.blueLines$lzycompute__p1__sc_Seq() : this.blueLines$1)
+  return (((this.bitmap$0$1 & 128) === 0) ? this.blueLines$lzycompute__p1__sc_Seq() : this.blueLines$1)
 });
 $c_Lprobability_Percolation.prototype.redLines__sc_Seq = (function() {
   return this.redLines$1
 });
 $c_Lprobability_Percolation.prototype.allLines$lzycompute__p1__sci_IndexedSeq = (function() {
-  if (((this.bitmap$0$1 & 16) === 0)) {
+  if (((this.bitmap$0$1 & 256) === 0)) {
     this.allLines$1 = $as_sci_IndexedSeq($as_sc_TraversableLike($as_sc_TraversableLike(this.gridLines__sci_IndexedSeq().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.edgeLines__sci_Set().toSeq__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.blueLines__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(this.redLines__sc_Seq(), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
-    this.bitmap$0$1 = (this.bitmap$0$1 | 16)
+    this.bitmap$0$1 = (this.bitmap$0$1 | 256)
   };
   return this.allLines$1
 });
 $c_Lprobability_Percolation.prototype.allLines__sci_IndexedSeq = (function() {
-  return (((this.bitmap$0$1 & 16) === 0) ? this.allLines$lzycompute__p1__sci_IndexedSeq() : this.allLines$1)
+  return (((this.bitmap$0$1 & 256) === 0) ? this.allLines$lzycompute__p1__sci_IndexedSeq() : this.allLines$1)
 });
 $c_Lprobability_Percolation.prototype.connected$lzycompute__p1__s_xml_Elem = (function() {
-  if (((this.bitmap$0$1 & 32) === 0)) {
+  if (((this.bitmap$0$1 & 512) === 0)) {
     if (this.topToBottom__s_Option().isEmpty__Z()) {
       var jsx$3 = $m_s_xml_Null$();
       var jsx$2 = $m_s_xml_TopScope$();
@@ -14409,15 +14437,15 @@ $c_Lprobability_Percolation.prototype.connected$lzycompute__p1__s_xml_Elem = (fu
       var jsx$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", jsx$5, jsx$4, false, $$buf$2)
     };
     this.connected$1 = jsx$1;
-    this.bitmap$0$1 = (this.bitmap$0$1 | 32)
+    this.bitmap$0$1 = (this.bitmap$0$1 | 512)
   };
   return this.connected$1
 });
 $c_Lprobability_Percolation.prototype.connected__s_xml_Elem = (function() {
-  return (((this.bitmap$0$1 & 32) === 0) ? this.connected$lzycompute__p1__s_xml_Elem() : this.connected$1)
+  return (((this.bitmap$0$1 & 512) === 0) ? this.connected$lzycompute__p1__s_xml_Elem() : this.connected$1)
 });
 $c_Lprobability_Percolation.prototype.view$lzycompute__p1__s_xml_Elem = (function() {
-  if (((this.bitmap$0$1 & 64) === 0)) {
+  if (((this.bitmap$0$1 & 1024) === 0)) {
     var jsx$3 = $m_s_xml_Null$();
     var jsx$2 = $m_s_xml_TopScope$();
     var $$buf = new $c_s_xml_NodeBuffer().init___();
@@ -14426,9 +14454,9 @@ $c_Lprobability_Percolation.prototype.view$lzycompute__p1__s_xml_Elem = (functio
     $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
     var $$scope = $$tmpscope;
     var $$md = $m_s_xml_Null$();
-    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("400"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("600"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
     $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("800"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("viewBox", new $c_s_xml_Text().init___T("0 0 400 400"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("viewBox", new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["0 0 ", " ", ""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.xmax__I(), this.ymax__I()])), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
     var jsx$1 = $$md;
     var $$buf$2 = new $c_s_xml_NodeBuffer().init___();
     $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
@@ -14441,12 +14469,12 @@ $c_Lprobability_Percolation.prototype.view$lzycompute__p1__s_xml_Elem = (functio
     $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(this.connected__s_xml_Elem());
     $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
     this.view$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$3, jsx$2, false, $$buf);
-    this.bitmap$0$1 = (this.bitmap$0$1 | 64)
+    this.bitmap$0$1 = (this.bitmap$0$1 | 1024)
   };
   return this.view$1
 });
 $c_Lprobability_Percolation.prototype.view__s_xml_Elem = (function() {
-  return (((this.bitmap$0$1 & 64) === 0) ? this.view$lzycompute__p1__s_xml_Elem() : this.view$1)
+  return (((this.bitmap$0$1 & 1024) === 0) ? this.view$lzycompute__p1__s_xml_Elem() : this.view$1)
 });
 $c_Lprobability_Percolation.prototype.productPrefix__T = (function() {
   return "Percolation"
@@ -14800,10 +14828,6 @@ $c_Lprobability_Percolation.prototype.init___I__I__sci_Set = (function(n, m, edg
   this.edges$1 = edges;
   $c_O.prototype.init___.call(this);
   $f_s_Product__$$init$__V(this);
-  this.xmax$1 = 400;
-  this.ymax$1 = 400;
-  this.xscale$1 = (this.xmax__I() / n);
-  this.yscale$1 = (this.ymax__I() / m);
   this.top$1 = $as_sc_TraversableOnce($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), n).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(i$2) {
       var i = $uI(i$2);
