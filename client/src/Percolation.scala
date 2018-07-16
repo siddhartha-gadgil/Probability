@@ -10,11 +10,11 @@ import scala.collection.immutable
 import scala.xml.{Elem, Node}
 
 case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
-  val xmax = 400
-  val ymax = 400
+  lazy val xmax = (xscale * n).toInt // 400
+  lazy val ymax = (yscale * m).toInt// 400
 
-  val xscale = xmax.toDouble / n
-  val yscale = ymax.toDouble / m
+  lazy val xscale = 40.0 // xmax.toDouble / n
+  lazy val yscale = 40.0 //ymax.toDouble / m
 
   lazy val gridLines: immutable.IndexedSeq[Elem] =
     (0 to m).map { (i) =>
@@ -127,7 +127,7 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
 
   lazy val view =
       <div>
-      <svg viewBox="0 0 400 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox={s"0 0 $xmax $ymax"} width="80%" height="400" xmlns="http://www.w3.org/2000/svg">
         {allLines}
       </svg>
       <p></p>
