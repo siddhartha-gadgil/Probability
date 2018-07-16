@@ -254,8 +254,8 @@ val home =
         <li><strong>Instructor:</strong> <a href="http://math.iisc.ac.in/~gadgil" target="_blank"> Siddhartha Gadgil</a></li>
         <li><strong>E-mail:</strong> <a href="mailto:siddhartha.gadgil@gmail.com" target="_blank"> siddhartha.gadgil@gmail.com</a>.</li>
         <li> <strong>Office:</strong> N-15, Department of Mathematics. </li>
-        <li><strong>Lecture Timings: </strong> to be announced</li>
-        <li><strong>Lecture Venue: </strong> to be announced</li>
+        <li><strong>Lecture Timings: </strong> Monday, Wednesday, Friday : 9:00 am - 10:00 am. </li>
+        <li><strong>Lecture Venue: </strong> LH-5, Department of Mathematics.</li>
         <li><strong> Teaching Assistants: </strong>
           <ul>
             <li>
