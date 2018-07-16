@@ -8,6 +8,7 @@ import org.scalajs.dom.document
 
 import scala.collection.immutable
 import scala.xml.{Elem, Node}
+import math._
 
 case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
   lazy val xmax = (xscale * n).toInt // 400
@@ -116,7 +117,7 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
        for {
          ((x1, y1), (x2, y2)) <- v.zip(v.tail)
        } yield
-         <line x1={((x1 - 0.5) * xscale).toInt.toString} y1={((y1 + 0.5) * yscale).toInt.toString} x2={((x2 - 0.5) * xscale).toInt.toString} y2={((y2 + 0.5) * yscale).toInt.toString} stroke="red" stroke-width="2" xmlns="http://www.w3.org/2000/svg"></line>
+         <line x1={(max(x1 - 0.5, 0.0) * xscale).toInt.toString} y1={((y1 + 0.5) * yscale).toInt.toString} x2={(min(x2 - 0.5, n) * xscale).toInt.toString} y2={((y2 + 0.5) * yscale).toInt.toString} stroke="red" stroke-width="2" xmlns="http://www.w3.org/2000/svg"></line>
    }.getOrElse(Seq())
 
   lazy val allLines: immutable.IndexedSeq[Elem] = gridLines ++ edgeLines.toSeq ++ blueLines ++ redLines

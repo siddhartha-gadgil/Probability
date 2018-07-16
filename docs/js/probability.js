@@ -4151,8 +4151,14 @@ $h_jl_Math$.prototype = $c_jl_Math$.prototype;
 $c_jl_Math$.prototype.max__I__I__I = (function(a, b) {
   return ((a > b) ? a : b)
 });
+$c_jl_Math$.prototype.max__D__D__D = (function(a, b) {
+  return $uD($g.Math.max(a, b))
+});
 $c_jl_Math$.prototype.min__I__I__I = (function(a, b) {
   return ((a < b) ? a : b)
+});
+$c_jl_Math$.prototype.min__D__D__D = (function(a, b) {
+  return $uD($g.Math.min(a, b))
 });
 $c_jl_Math$.prototype.floor__D__D = (function(a) {
   return $uD($g.Math.floor(a))
@@ -5062,8 +5068,14 @@ $h_s_math_package$.prototype = $c_s_math_package$.prototype;
 $c_s_math_package$.prototype.max__I__I__I = (function(x, y) {
   return $m_jl_Math$().max__I__I__I(x, y)
 });
+$c_s_math_package$.prototype.max__D__D__D = (function(x, y) {
+  return $m_jl_Math$().max__D__D__D(x, y)
+});
 $c_s_math_package$.prototype.min__I__I__I = (function(x, y) {
   return $m_jl_Math$().min__I__I__I(x, y)
+});
+$c_s_math_package$.prototype.min__D__D__D = (function(x, y) {
+  return $m_jl_Math$().min__D__D__D(x, y)
 });
 $c_s_math_package$.prototype.sqrt__D__D = (function(x) {
   return $m_jl_Math$().sqrt__D__D(x)
@@ -14797,9 +14809,9 @@ $c_Lprobability_Percolation.prototype.$$anonfun$redLines$3__p1__T2__s_xml_Elem =
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-width", new $c_s_xml_Text().init___T("2"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("red"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", $objectToString($doubleToInt(((y2 + 0.5) * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", $objectToString($doubleToInt(((x2 - 0.5) * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", $objectToString($doubleToInt(($m_s_math_package$().min__D__D__D((x2 - 0.5), this.n__I()) * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", $objectToString($doubleToInt(((y1 + 0.5) * this.yscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", $objectToString($doubleToInt(((x1$2 - 0.5) * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+        $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", $objectToString($doubleToInt(($m_s_math_package$().max__D__D__D((x1$2 - 0.5), 0.0) * this.xscale__D()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
         return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md, $$scope, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))
       }
     }
