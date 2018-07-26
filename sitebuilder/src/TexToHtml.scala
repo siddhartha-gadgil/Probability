@@ -5,7 +5,7 @@ import ammonite.ops._
 import scala.util.matching._
 
 object TeXToHtml {
-  val top =
+  val top: String =
     """
       |<html>
       |<head>
@@ -134,6 +134,11 @@ object TeXToHtml {
   val renewCommReg: Regex =
     "(\\\\renewcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
 
+  /**
+    * remove latex comments from a line, unless the line is meant to mark a div to insert javascript
+    * @param l the original line
+    * @return the trimmed line
+    */
   def trimLine(l: String): String =
     if (l.startsWith("%"))
       if (l.trim.endsWith("</div>")) l.drop(1) else ""
@@ -143,36 +148,56 @@ object TeXToHtml {
         .map((m) => m.before.toString + m.group(0).head)
         .getOrElse(l)
 
-  def readTrim(f: Path): String =
-    read.lines(f).map(trimLine).mkString("", "\n", "\n")
+  val inputReg = """\\input\{([a-zA-Z0-9:+-_' ]+)\}""".r
+
+  def readTeXFile(name: String) : String = {
+    val source = read(wd / s"${name}.tex")
+    val fullSource = inputReg.replaceAllIn(source, (m) => {
+      pprint.log(s"including ${m.group(1)}")
+      val include =  readTeXFile(m.group(1))
+      pprint.log("include read")
+      Regex.quoteReplacement(include)
+    }
+    )
+    fullSource.split("\n").map(trimLine).mkString("", "\n", "\n")
+  }
 
   val wd: Path = pwd / 'sitebuilder / "resources"
 
-  val preamble: String = readTrim(wd / "mypreamble_2017.tex")
 
-  val texFile: String = readTrim(wd / "stat-and-prob.tex")
+  def replaceAll(t: String)(rpl : Seq[(String, String)]): String =
+     rpl.foldLeft(t){case (txt, (x, y)) => txt.replace(x, y)}
 
-  val fullText: String = texFile.replace("\\input{mypreamble_2017}", preamble)
+  val replacements =  Seq(
+    ("<" , " < "),
+    (">", " > "),
+    (" >  < /div >", "></div>"),
+    ("< div", "<div"),
+    ("~", "&nbsp;"),
+    ("\\newpage", ""),
+    ("\\vspace{4mm}", ""),
+    ("\\vspace{2mm}", ""),
+    ("""\"{o}""", "&ouml;"),
+    ("}}", "} }"),
+    ("""``""", "''"),
+    ("\\medskip", "<p></p>")
+  )
 
-  val Array(header: String, textPadded: String) =
-    fullText.split("\\\\begin\\{document\\}")
+  def teXConvertor(name: String) = {
+    val fullText: String = readTeXFile(name)
 
-  val text: String = textPadded
-    .split("""\\maketitle""")
-    .last
-    .split("""\\end\{document\}""")
-    .head
-    .replace("<", " < ")
-    .replace(">", " > ")
-    .replace(" >  < /div >", "></div>")
-    .replace("< div", "<div")
-    .replace("~", " ")
-    .replace("\\newpage", "")
-    .replace("\\vspace{4mm}", "")
-    .replace("\\vspace{2mm}", "")
-    .replace("""\"{o}""", "&ouml;")
-    .replace("}}", "} }")
-    .replace("""``""", "''").replace("\\medskip", "<p></p>")
+    val Array(header: String, textPadded: String) =
+      fullText.split("\\\\begin\\{document\\}")
+
+    val text: String =
+      replaceAll(textPadded
+        .split("""\\maketitle""")
+        .last
+        .split("""\\end\{document\}""")
+        .head)(replacements)
+
+     new TeXToHtml(header, text)
+  }
 
   val begReg: Regex = """\\begin\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
@@ -181,7 +206,6 @@ object TeXToHtml {
 
   val endReg: Regex = """\\end\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
-  val converter = new TeXToHtml(header, text)
 
   val dolReg: Regex = "\\$".r
 
@@ -225,10 +249,6 @@ object TeXToHtml {
 
   def indices(r: Regex, txt: String): Vector[Int] =
     r.findAllMatchIn(txt).toVector.map(_.start)
-
-//  def dollarIndices(txt: String): Vector[Int] = indices(dolReg, txt).map(_ + 1)
-
-//  def displayIndices(txt: String): Vector[Int] = indices(doldolReg, txt)
 
   def itemizeBegs(txt: String): Vector[Int] = indices(begItReg, txt)
 
@@ -286,9 +306,7 @@ object TeXToHtml {
               .map((s) => "(" + s.drop(1).dropRight(1) + ")")
               .getOrElse("")}</div><div class="panel-body">""".stripMargin
           else if (mathEnvs.contains(m.group(1)))
-//            Regex.quoteReplacement(
-            "$$" + m.group(0) //.replace("""\label""", """tag""")
-//            )
+            "$$" + m.group(0)
           else if (divEnvs.contains(m.group(1)))
             s"""<div class="${m.group(1)}">"""
           else Regex.quoteReplacement(m.group(0))
@@ -310,8 +328,6 @@ object TeXToHtml {
     endReg.replaceAllIn(
       txt,
       (m) =>
-//        if (inMath(m.start, txt) || inDisplayMath(m.start, txt)) {println(s"${m.group(0)} in math environment"); m.group(0)}
-//        else
         if (mathEnvs.contains(m.group(1)))
           Regex.quoteReplacement(m.group(0) + "$$")
         else if (thmEnvs.keySet.contains(m.group(1))) "</div></div></div>"
@@ -356,24 +372,12 @@ object TeXToHtml {
       }
       .getOrElse((head + txt, secs, chapters + (counter -> txt)))
 
-  def replacePara(txt: String): String =
-    """(\\para\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
-      .replaceAllIn(
-        txt,
-        (m) => s"<strong>${Regex.quoteReplacement(m.group(2))}:</strong>")
-
-  def replaceParag(txt: String): String =
-    """(\\parag\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
-      .replaceAllIn(
-        txt,
-        (m) => s"<strong>${Regex.quoteReplacement(m.group(2))}</strong>")
-
   val bfReg1: Regex = "(\\{\\\\bf)([^\\}]+)\\}".r
 
   val bfReg2: Regex = "(\\{\\\\bf\\{)([^\\}]+)\\}\\}".r
 
   def replaceBf(txt: String): String = {
-    val step = bfReg1.replaceAllIn(
+    bfReg1.replaceAllIn(
       txt,
       (m) =>
         if (dolReg
@@ -382,17 +386,6 @@ object TeXToHtml {
           Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
         else s"\\{\\\\bf ${m.group(2)}\\}"
     )
-
-//    bfReg2.replaceAllIn(
-//      step,
-//      (m) =>
-//        if (dolReg
-//              .findAllIn(m.before + " ")
-//              .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0)
-//          Regex.quoteReplacement(s"<strong>${m.group(2)}</strong>")
-//        else s"\\{\\\\bf ${m.group(2)}\\}"
-//    )
-    step
   }
 
   def purge(r: Regex)(txt: String): String =
@@ -410,10 +403,10 @@ object TeXToHtml {
 
   val emReg: Regex = "(\\{\\\\em[^a-zA-Z])([ \\\\])([^\\}]+)\\}".r
 
-  def replaceEm(txt: String): String =
-    emReg.replaceAllIn(
-      txt,
-      (m) => Regex.quoteReplacement(s"<em>${m.group(2)}${m.group(3)}</em>"))
+  // def replaceEm(txt: String): String =
+  //   emReg.replaceAllIn(
+  //     txt,
+  //     (m) => Regex.quoteReplacement(s"<em>${m.group(2)}${m.group(3)}</em>"))
 
 //  val undReg = "(\\{\\\\underline)([ \\\\])([^\\}]+)\\}".r
 
@@ -437,13 +430,8 @@ object TeXToHtml {
                          (m) => Regex.quoteReplacement(s"""{${m.group(2)}}"""))
 
   def bracesMatched(txt: String): Boolean = {
-//    println(txt.length)
     val opens = """\{""".r.findAllIn(txt).length
     val closes = """\}""".r.findAllIn(txt).length
-//    println(opens)
-//    println(closes)
-//    println(txt)
-//    if (opens != closes) scala.io.StdIn.readLine()
     opens == closes
   }
 
@@ -452,8 +440,6 @@ object TeXToHtml {
       if (doldolReg.findAllIn(secHead + head + m.before).size % 2 == 0)
         (head+ m.before, m.after.toString)
       else {
-//        println(
-//          s"not inserting paras,\n Between:\n${secHead + head + m.before}\n\n DolDol: ${doldolReg.findAllIn(secHead + head + m.before).size}\n and \n${m.after}")
         block(m.after.toString, head + m.before.toString + "\n", secHead)}
     }.getOrElse(head + txt, "")
   }
@@ -482,13 +468,6 @@ object TeXToHtml {
   def inBraces(txt: String, head: String): (String, String) = {
     """([^\\])(\})""".r.findFirstMatchIn(txt).map { (m) =>
       if (bracesMatched(head + m.before + m.group(1))) {
-//        println("Brace end")
-//        println(m.group(0))
-//        println(m.group(1))
-//        println(m.group(2))
-//        println(head + m.before)
-//
-//        println()
         (head + m.before.toString + m.group(1).toString, m.after.toString)
       }
       else {
@@ -504,8 +483,6 @@ object TeXToHtml {
       .findFirstMatchIn(txt)
       .map { (m) =>
         val (note, rest) = inBraces(m.after.toString, "")
-//        println("Footnote found")
-//        println(m.after.toString.take(50))
         val newHead =
           head + m.before + s"""<sup> <a data-toggle="collapse" href="#footnote-${counter + 1}" aria-expanded="false" aria-controls="footnote-${counter + 1}">
                                 ${counter + 1}
@@ -530,12 +507,12 @@ object TeXToHtml {
   def recReplaceParag(txt: String,
                      head: String = ""
                     ): String =
-    """\\para\{""".r
+    """\\parag\{""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
         val (header, rest) = inBraces(m.after.toString, "")
         val newHead =
-          head + m.before + s"<strong>$header :</strong>"
+          head + m.before + s"<strong>$header</strong>"
         recReplaceParag(rest, newHead)
       }
       .getOrElse(head + txt)
@@ -605,7 +582,7 @@ class TeXToHtml(header: String, text: String) {
     replaceEnds(
       replaceTiny(
         recReplaceMagenta(
-        recReplaceEm(recReplacePara(replaceParag(replaceItems(defReplaced)))))))
+        recReplaceEm(recReplacePara(recReplaceParag(replaceItems(defReplaced)))))))
 
 
   lazy val (begReplaced: String, labels: Map[String, Int]) = rplBegins(baseReplaced)
@@ -623,7 +600,7 @@ class TeXToHtml(header: String, text: String) {
     sections: Map[Int, String],
     chapters: Map[Int, String]) = recReplaceSection(refReplaced)
 
-  lazy val theoremChapters =
+  lazy val theoremChapters: Map[Int, Int] =
     {
       val regex = """(id="theorem-)([0-9]+)""".r
       chapters.toVector.map{case (n, txt) =>
@@ -633,7 +610,7 @@ class TeXToHtml(header: String, text: String) {
       }.flatten
     }.toMap
 
-  def refChapters(txt: String) = {
+  def refChapters(txt: String): String = {
     """(href="#theorem-)([0-9]+)""".r
     .replaceAllIn(txt,
       (m) =>
@@ -744,10 +721,10 @@ $foot"""
 object SiteBuild extends App {
   pprint.log("Converting notes")
   import TeXToHtml._
+  val converter = teXConvertor("stat-and-prob")
   converter.html()
   val js = read(resource/"out.js")
   write.over(pwd / "docs" / "js" / "probability.js", js)
-  // pprint.log(converter.theoremChapters.toVector.sortBy(_._1))
   import Site._
   pprint.log("making static site")
   mkHome()
