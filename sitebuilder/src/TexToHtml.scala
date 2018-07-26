@@ -6,8 +6,7 @@ import scala.util.matching._
 
 object TeXToHtml {
   val top: String =
-    """
-      |<html>
+    """<html>
       |<head>
       |<meta charset="utf-8">
       |   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -148,28 +147,26 @@ object TeXToHtml {
         .map((m) => m.before.toString + m.group(0).head)
         .getOrElse(l)
 
-  val inputReg = """\\input\{([a-zA-Z0-9:+-_' ]+)\}""".r
+  val inputReg: Regex = """\\input\{([a-zA-Z0-9:+-_' ]+)\}""".r
 
-  def readTeXFile(name: String) : String = {
-    val source = read(wd / s"${name}.tex")
+  def readTeXFile(name: String): String = {
+    val source = read(wd / s"$name.tex")
     val fullSource = inputReg.replaceAllIn(source, (m) => {
       pprint.log(s"including ${m.group(1)}")
-      val include =  readTeXFile(m.group(1))
+      val include = readTeXFile(m.group(1))
       pprint.log("include read")
       Regex.quoteReplacement(include)
-    }
-    )
+    })
     fullSource.split("\n").map(trimLine).mkString("", "\n", "\n")
   }
 
   val wd: Path = pwd / 'sitebuilder / "resources"
 
+  def replaceAll(t: String)(rpl: Seq[(String, String)]): String =
+    rpl.foldLeft(t) { case (txt, (x, y)) => txt.replace(x, y) }
 
-  def replaceAll(t: String)(rpl : Seq[(String, String)]): String =
-     rpl.foldLeft(t){case (txt, (x, y)) => txt.replace(x, y)}
-
-  val replacements =  Seq(
-    ("<" , " < "),
+  val replacements = Seq(
+    ("<", " < "),
     (">", " > "),
     (" >  < /div >", "></div>"),
     ("< div", "<div"),
@@ -183,29 +180,27 @@ object TeXToHtml {
     ("\\medskip", "<p></p>")
   )
 
-  def teXConvertor(name: String) = {
+  def teXConvertor(name: String): TeXToHtml = {
     val fullText: String = readTeXFile(name)
 
     val Array(header: String, textPadded: String) =
       fullText.split("\\\\begin\\{document\\}")
 
     val text: String =
-      replaceAll(textPadded
-        .split("""\\maketitle""")
-        .last
-        .split("""\\end\{document\}""")
-        .head)(replacements)
+      replaceAll(
+        textPadded
+          .split("""\\maketitle""")
+          .last
+          .split("""\\end\{document\}""")
+          .head)(replacements)
 
-     new TeXToHtml(header, text)
+    new TeXToHtml(header, text)
   }
-
-  val begReg: Regex = """\\begin\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
   val fullBegReg: Regex =
     """\\begin\{([a-zA-Z0-9\*]*)\}([\s]*\[[^\[\]]+\])?([\s]*\\label\{[a-zA-Z0-9:+-_' ]+\})?""".r
 
   val endReg: Regex = """\\end\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
-
 
   val dolReg: Regex = "\\$".r
 
@@ -278,7 +273,6 @@ object TeXToHtml {
       .replace("""\end{enumerate}""", "</ol>")
   }
 
-
   def recRplBegins(
       txt: String,
       head: String = "",
@@ -301,10 +295,10 @@ object TeXToHtml {
           if (thmEnvs.keySet.contains(m.group(1)))
             s"""<p>&nbsp;</p>
                 <div id="theorem-$newCounter"><div class="panel panel-${thmEnvs(
-              m.group(1))._2} ${m
-              .group(1)}"> <div class="panel-heading">${thmEnvs(m.group(1))._1} $newCounter ${title
-              .map((s) => "(" + s.drop(1).dropRight(1) + ")")
-              .getOrElse("")}</div><div class="panel-body">""".stripMargin
+                 m.group(1))._2} ${m
+                 .group(1)}"> <div class="panel-heading">${thmEnvs(m.group(1))._1} $newCounter ${title
+                 .map((s) => "(" + s.drop(1).dropRight(1) + ")")
+                 .getOrElse("")}</div><div class="panel-body">""".stripMargin
           else if (mathEnvs.contains(m.group(1)))
             "$$" + m.group(0)
           else if (divEnvs.contains(m.group(1)))
@@ -343,17 +337,18 @@ object TeXToHtml {
       .findFirstMatchIn(txt)
       .map { (m) =>
         val newHead =
-          head + blockParas(m.before.toString) + s"""<h3>$section.${counter + 1} ${m.group(2)}.</h3>"""
+          head + blockParas(m.before.toString) + s"""<h3>$section.${counter + 1} ${m
+            .group(2)}.</h3>"""
         recReplaceSubSection(m.after.toString, newHead, counter + 1, section)
       }
       .getOrElse(head + blockParas(txt))
 
-  def recReplaceSection(
-      txt: String,
-      head: String = "",
-      counter: Int = 0,
-      secs: Map[Int, String] = Map(),
-      chapters: Map[Int, String] = Map()): (String, Map[Int, String], Map[Int, String]) =
+  def recReplaceSection(txt: String,
+                        head: String = "",
+                        counter: Int = 0,
+                        secs: Map[Int, String] = Map(),
+                        chapters: Map[Int, String] = Map())
+    : (String, Map[Int, String], Map[Int, String]) =
     """(\\section\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
@@ -388,27 +383,27 @@ object TeXToHtml {
     )
   }
 
+  /**
+    * purges a regular expression when it is not it a mathematics environment
+    * @param r the regex to purge
+    * @param txt the source text
+    * @return purged text
+    */
   def purge(r: Regex)(txt: String): String =
     r.replaceAllIn(
       txt,
       (m) =>
         if (dolReg
-          .findAllIn(m.before + " ")
-          .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0
-          && """\\\[""".r.findAllIn(m.before).size == """\\\]""".r.findAllIn(m.before).size
-        )
+              .findAllIn(m.before + " ")
+              .size % 2 == 0 && doldolReg.findAllIn(m.before).size % 2 == 0
+            && """\\\[""".r
+              .findAllIn(m.before)
+              .size == """\\\]""".r.findAllIn(m.before).size)
           ""
         else m.group(0).toString
     )
 
   val emReg: Regex = "(\\{\\\\em[^a-zA-Z])([ \\\\])([^\\}]+)\\}".r
-
-  // def replaceEm(txt: String): String =
-  //   emReg.replaceAllIn(
-  //     txt,
-  //     (m) => Regex.quoteReplacement(s"<em>${m.group(2)}${m.group(3)}</em>"))
-
-//  val undReg = "(\\{\\\\underline)([ \\\\])([^\\}]+)\\}".r
 
   def replaceUnderline(txt: String): String =
     """(\\underline\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
@@ -435,23 +430,30 @@ object TeXToHtml {
     opens == closes
   }
 
-  def block(txt: String, head: String, secHead: String) : (String, String) = {
-    blankLineReg.findFirstMatchIn(txt).map { (m) =>
-      if (doldolReg.findAllIn(secHead + head + m.before).size % 2 == 0)
-        (head+ m.before, m.after.toString)
-      else {
-        block(m.after.toString, head + m.before.toString + "\n", secHead)}
-    }.getOrElse(head + txt, "")
+  def block(txt: String, head: String, secHead: String): (String, String) = {
+    blankLineReg
+      .findFirstMatchIn(txt)
+      .map { (m) =>
+        if (doldolReg.findAllIn(secHead + head + m.before).size % 2 == 0)
+          (head + m.before, m.after.toString)
+        else {
+          block(m.after.toString, head + m.before.toString + "\n", secHead)
+        }
+      }
+      .getOrElse(head + txt, "")
   }
 
   def blockParas(txt: String, head: String = ""): String = {
-    blankLineReg.findFirstMatchIn(txt).map{
-      (m) =>
+    blankLineReg
+      .findFirstMatchIn(txt)
+      .map { (m) =>
         val (blk, rest) = block(m.after.toString, "", head + m.before.toString)
-        val break = if (doldolReg.findAllIn(m.before.toString).size % 2 == 0)
-          """</p>
+        val break =
+          if (doldolReg.findAllIn(m.before.toString).size % 2 == 0)
+            """</p>
             |<p class="text-justify">
-          """.stripMargin else ""
+          """.stripMargin
+          else ""
         val newHead =
           s"""
              |$head
@@ -462,23 +464,26 @@ object TeXToHtml {
              | </p>
            """.stripMargin
         blockParas(rest, newHead)
-    }.getOrElse(head + txt)
+      }
+      .getOrElse(head + txt)
   }
 
   def inBraces(txt: String, head: String): (String, String) = {
-    """([^\\])(\})""".r.findFirstMatchIn(txt).map { (m) =>
-      if (bracesMatched(head + m.before + m.group(1))) {
-        (head + m.before.toString + m.group(1).toString, m.after.toString)
+    """([^\\])(\})""".r
+      .findFirstMatchIn(txt)
+      .map { (m) =>
+        if (bracesMatched(head + m.before + m.group(1))) {
+          (head + m.before.toString + m.group(1).toString, m.after.toString)
+        } else {
+          inBraces(m.after.toString, head + m.before.toString + m.group(0))
+        }
       }
-      else {
-        inBraces(m.after.toString, head + m.before.toString + m.group(0))}
-    }.getOrElse(throw new Exception("Unclosed brace for footnote"))
+      .getOrElse(throw new Exception("Unclosed brace for footnote"))
   }
 
   def recReplaceFootnotes(txt: String,
                           head: String = "",
-                          counter: Int = 0
-                          ): String =
+                          counter: Int = 0): String =
     """\\footnote\{""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
@@ -491,9 +496,7 @@ object TeXToHtml {
       }
       .getOrElse(head + txt)
 
-  def recReplacePara(txt: String,
-                          head: String = ""
-                         ): String =
+  def recReplacePara(txt: String, head: String = ""): String =
     """\\para\{""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
@@ -504,9 +507,7 @@ object TeXToHtml {
       }
       .getOrElse(head + txt)
 
-  def recReplaceParag(txt: String,
-                     head: String = ""
-                    ): String =
+  def recReplaceParag(txt: String, head: String = ""): String =
     """\\parag\{""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
@@ -517,27 +518,22 @@ object TeXToHtml {
       }
       .getOrElse(head + txt)
 
-  def recReplaceEm(txt: String,
-                      head: String = ""
-                     ): String =
+  def recReplaceEm(txt: String, head: String = ""): String =
     """\{\\em[^a-zA-Z]""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
-//        println("found em")
-        val (header, rest) = inBraces(m.group(0).toString.takeRight(1) + m.after.toString, "")
+        val (header, rest) =
+          inBraces(m.group(0).toString.takeRight(1) + m.after.toString, "")
         val newHead =
           head + m.before + s"<em>$header</em>"
         recReplaceEm(rest, newHead)
       }
       .getOrElse(head + txt)
 
-  def recReplaceMagenta(txt: String,
-                   head: String = ""
-                  ): String =
+  def recReplaceMagenta(txt: String, head: String = ""): String =
     """\{\\color\{magenta\}""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
-//        println("found magenta")
         val (header, rest) = inBraces(m.after.toString, "")
         val newHead =
           head + m.before + header
@@ -551,11 +547,10 @@ class TeXToHtml(header: String, text: String) {
 
   val defs: Vector[Regex.Match] = defReg.findAllMatchIn(header).toVector
 
-  val newCommands: Vector[Regex.Match] = newCommReg.findAllMatchIn(header).toVector
+  val newCommands: Vector[Regex.Match] =
+    newCommReg.findAllMatchIn(header).toVector
 
   val renewCommands: Vector[Regex.Match] = renewCommReg
-    .findAllMatchIn(header)
-    .toVector ++ renewCommReg
     .findAllMatchIn(header)
     .toVector
 
@@ -576,16 +571,17 @@ class TeXToHtml(header: String, text: String) {
     if (next == txt) next else recDefReplace(next)
   }
 
-  lazy val defReplaced: String = recDefReplace(text).replace("""\noindent""", "").replace("\\textrm", "")
+  lazy val defReplaced: String =
+    recDefReplace(text).replace("""\noindent""", "").replace("\\textrm", "")
 
   lazy val baseReplaced: String =
     replaceEnds(
       replaceTiny(
-        recReplaceMagenta(
-        recReplaceEm(recReplacePara(recReplaceParag(replaceItems(defReplaced)))))))
+        recReplaceMagenta(recReplaceEm(
+          recReplacePara(recReplaceParag(replaceItems(defReplaced)))))))
 
-
-  lazy val (begReplaced: String, labels: Map[String, Int]) = rplBegins(baseReplaced)
+  lazy val (begReplaced: String, labels: Map[String, Int]) = rplBegins(
+    baseReplaced)
 
   lazy val refReplaced: String =
     """\\ref\{([a-zA-Z0-9:+-_]+)\}""".r.replaceAllIn(
@@ -597,37 +593,33 @@ class TeXToHtml(header: String, text: String) {
           .getOrElse(m.group(0)))
 
   lazy val (secReplaced: String,
-    sections: Map[Int, String],
-    chapters: Map[Int, String]) = recReplaceSection(refReplaced)
+            sections: Map[Int, String],
+            chapters: Map[Int, String]) = recReplaceSection(refReplaced)
 
-  lazy val theoremChapters: Map[Int, Int] =
-    {
-      val regex = """(id="theorem-)([0-9]+)""".r
-      chapters.toVector.map{case (n, txt) =>
-        regex.findAllMatchIn(txt).map((m) =>
-          (m.group(2).toInt -> n)
-        ).toVector
-      }.flatten
-    }.toMap
+  lazy val theoremChapters: Map[Int, Int] = {
+    val regex = """(id="theorem-)([0-9]+)""".r
+    chapters.toVector.flatMap {
+      case (n, txt) =>
+        (regex findAllMatchIn txt).map((m) => m.group(2).toInt -> n).toVector
+    }
+  }.toMap
 
   def refChapters(txt: String): String = {
     """(href="#theorem-)([0-9]+)""".r
-    .replaceAllIn(txt,
-      (m) =>
-        {
-          val j = m.group(2).toInt
-          // println()
-          // println(s"reference $j in ${theoremChapters(j)}")
-          s"""href="chapter-${theoremChapters(j)}.html#theorem-$j"""
-        })
+      .replaceAllIn(txt, (m) => {
+        val j = m.group(2).toInt
+        s"""href="chapter-${theoremChapters(j)}.html#theorem-$j"""
+      })
   }
 
   lazy val allReplaced: String =
-    purge("""[\{\}]""".r)(recReplaceFootnotes(replaceUnderline(replaceBf(secReplaced))))
+    purge("""[\{\}]""".r)(
+      recReplaceFootnotes(replaceUnderline(replaceBf(secReplaced))))
 
-  lazy val chapReplaced =
-    chapters.filter(_._1 > 0).mapValues{(chapter) =>
-      purge("""[\{\}]""".r)(recReplaceFootnotes(replaceUnderline(replaceBf(refChapters(chapter)))))
+  lazy val chapReplaced: Map[Int, String] =
+    chapters.filter(_._1 > 0).mapValues { (chapter) =>
+      purge("""[\{\}]""".r)(
+        recReplaceFootnotes(replaceUnderline(replaceBf(refChapters(chapter)))))
     }
 
   lazy val sortedSections: Vector[(Int, String)] =
@@ -647,8 +639,9 @@ class TeXToHtml(header: String, text: String) {
       }
       .mkString("\n")
 
-  def tocList : String =
-    sortedSections.map {
+  def tocList: String =
+    sortedSections
+      .map {
         case (n, title) =>
           s"""<li><a href="chapter-$n.html">$title</a> </li>"""
       }
@@ -658,10 +651,9 @@ class TeXToHtml(header: String, text: String) {
 
   def replace(): Unit = write.over(wd / "repl.tex", newFile)
 
-  lazy val chapNav = nav(
-    chapterList(sortedSections.take(12)),
-    chapterList(sortedSections.slice(12, 27)),
-    chapterList(sortedSections.drop(27)))
+  lazy val chapNav: String = nav(chapterList(sortedSections.take(12)),
+                                 chapterList(sortedSections.slice(12, 27)),
+                                 chapterList(sortedSections.drop(27)))
 
   lazy val draftHtml: String = top + nav(
     sectionList(sortedSections.take(12)),
@@ -669,52 +661,64 @@ class TeXToHtml(header: String, text: String) {
     sectionList(sortedSections.drop(27))) + banner + allReplaced + foot
 
   def chapLink(n: Int): String =
-    sections.get(n).map{(t) =>
-      s"""<div class="pull-right"><a href="chapter-$n.html" class="btn btn-primary">Chapter $n. $t</a></div>"""
-    }.getOrElse("")
+    sections
+      .get(n)
+      .map { (t) =>
+        s"""<div class="pull-right"><a href="chapter-$n.html" class="btn btn-primary">Chapter $n. $t</a></div>"""
+      }
+      .getOrElse("")
 
-  lazy val chapHtml = chapReplaced.map{case (n, txt) =>
-    (n,
-      s"""$top
-<div class="container-fluid">
-<div class="banner">
-<h1 class="text-center bg-primary">Chapter $n : ${sections(n)}</h1>
-</div>
-</div>
-$chapNav
-<div class="container">
-$txt
-
-${chapLink(n + 1)}
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-$foot"""
-    )
+  lazy val chapHtml: Map[Int, String] = chapReplaced.map {
+    case (n, txt) =>
+      (n,
+       s"""
+         |$top
+         |<div class="container-fluid">
+         |<div class="banner">
+         |<h1 class="text-center bg-primary">Chapter $n : ${sections(n)}</h1>
+         |</div>
+         |</div>
+         |$chapNav
+         |<div class="container">
+         |$txt
+         |
+ |${chapLink(n + 1)}
+         |<p>&nbsp;</p>
+         |<p>&nbsp;</p>
+         |<p>&nbsp;</p>
+         |<p>&nbsp;</p>
+         |<p>&nbsp;</p>
+         |$foot""".stripMargin)
   }
 
-  lazy val tocHtml = s"""$top
-$banner
-$chapNav
-<h1 class="text-center bg-primary">Table of Contents</h1>
-<p>&nbsp;</p>
-<ol>
-$tocList
-</ol>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-$foot"""
+  lazy val tocHtml: String =
+    s"""
+       |$top
+       |$banner
+       |$chapNav
+       |<h1 class="text-center bg-primary">Table of Contents</h1>
+       |<p>&nbsp;</p>
+       |<ol>
+       |$tocList
+       |</ol>
+       |<p>&nbsp;</p>
+       |<p>&nbsp;</p>
+       |$foot""".stripMargin
 
+  def writeFull(target: String) =
+    write.over(pwd / "docs" / target / "index.html", draftHtml)
 
-  def html(): Unit = {
-    write.over(pwd / "docs" / "draft" / "index.html", draftHtml)
-    chapHtml.foreach{
+  def writeChaps(target: String): Unit = {
+    chapHtml.foreach {
       case (n, html) =>
-        write.over(pwd / "docs" / "notes" / s"chapter-$n.html", html)
+        write.over(pwd / "docs" / target / s"chapter-$n.html", html)
     }
-    write.over(pwd / "docs" / "notes" / "index.html", tocHtml)
+    write.over(pwd / "docs" / target / "index.html", tocHtml)
+  }
+
+  def writeHtml(target: String, fullTarget: String): Unit = {
+    writeFull(fullTarget)
+    writeChaps(target)
   }
 }
 
@@ -722,8 +726,8 @@ object SiteBuild extends App {
   pprint.log("Converting notes")
   import TeXToHtml._
   val converter = teXConvertor("stat-and-prob")
-  converter.html()
-  val js = read(resource/"out.js")
+  converter.writeHtml("notes", "draft")
+  val js = read(resource / "out.js")
   write.over(pwd / "docs" / "js" / "probability.js", js)
   import Site._
   pprint.log("making static site")
