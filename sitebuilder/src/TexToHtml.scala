@@ -46,7 +46,7 @@ object TeXToHtml {
       |<body>
     """.stripMargin
 
-  def nav(part1: String, part2: String, part3: String): String =
+  def nav(menu1: String, menu2: String, menu3: String): String =
     s"""
     |<nav class="navbar navbar-default navbar-fixed-bottom">
     |    <div class="container-fluid">
@@ -67,26 +67,9 @@ object TeXToHtml {
     |
     |        <ul class="nav navbar-nav">
     |          <li><a href="index.html">Table of Contents</a></li>
-    |          <li class="dropdown">
-    |            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Probabibility (part 1) <span class="caret"></span></a>
-    |            <ul class="dropdown-menu">
-    |             $part1
-    |            </ul>
-    |          </li>
-    |
-    |          <li class="dropdown">
-    |            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Probability (part 2) <span class="caret"></span></a>
-    |            <ul class="dropdown-menu">
-    |             $part2
-    |            </ul>
-    |          </li>
-    |
-    |          <li class="dropdown">
-    |            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Statistics <span class="caret"></span></a>
-    |            <ul class="dropdown-menu">
-    |             $part3
-    |            </ul>
-    |          </li>
+    |            $menu1
+    |            $menu2
+    |            $menu3
     |        </ul>
     |      </div><!-- /.navbar-collapse -->
     |    </div><!-- /.container-fluid -->
@@ -639,6 +622,16 @@ class TeXToHtml(header: String, text: String) {
       }
       .mkString("\n")
 
+  def chapterMenu(v: Vector[(Int, String)], title: String) =
+    s"""
+    |<li class="dropdown">
+    |<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> $title <span class="caret"></span></a>
+    |  <ul class="dropdown-menu">
+    |     ${chapterList(v)}
+    |  </ul>
+    |</li>
+    """.stripMargin
+
   def tocList: String =
     sortedSections
       .map {
@@ -647,9 +640,9 @@ class TeXToHtml(header: String, text: String) {
       }
       .mkString("\n")
 
-  lazy val chapNav: String = nav(chapterList(sortedSections.take(12)),
-                                 chapterList(sortedSections.slice(12, 27)),
-                                 chapterList(sortedSections.drop(27)))
+  lazy val chapNav: String = nav(chapterMenu(sortedSections.take(12), "Probability (part 1)"),
+                                 chapterMenu(sortedSections.slice(12, 27), "Probability (part 2)"),
+                                 chapterMenu(sortedSections.drop(27), "Statistics"))
 
   // lazy val draftHtml: String = top + nav(
   //   sectionList(sortedSections.take(12)),
@@ -678,7 +671,7 @@ class TeXToHtml(header: String, text: String) {
          |<div class="container">
          |$txt
          |
- |${chapLink(n + 1)}
+         |${chapLink(n + 1)}
          |<p>&nbsp;</p>
          |<p>&nbsp;</p>
          |<p>&nbsp;</p>
