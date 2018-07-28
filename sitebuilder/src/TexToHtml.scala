@@ -647,18 +647,14 @@ class TeXToHtml(header: String, text: String) {
       }
       .mkString("\n")
 
-  lazy val newFile: String = header + """\begin{document}""" + defReplaced
-
-  def replace(): Unit = write.over(wd / "repl.tex", newFile)
-
   lazy val chapNav: String = nav(chapterList(sortedSections.take(12)),
                                  chapterList(sortedSections.slice(12, 27)),
                                  chapterList(sortedSections.drop(27)))
 
-  lazy val draftHtml: String = top + nav(
-    sectionList(sortedSections.take(12)),
-    sectionList(sortedSections.slice(12, 27)),
-    sectionList(sortedSections.drop(27))) + banner + allReplaced + foot
+  // lazy val draftHtml: String = top + nav(
+  //   sectionList(sortedSections.take(12)),
+  //   sectionList(sortedSections.slice(12, 27)),
+  //   sectionList(sortedSections.drop(27))) + banner + allReplaced + foot
 
   def chapLink(n: Int): String =
     sections
@@ -705,8 +701,8 @@ class TeXToHtml(header: String, text: String) {
        |<p>&nbsp;</p>
        |$foot""".stripMargin
 
-  def writeFull(target: String) =
-    write.over(pwd / "docs" / target / "index.html", draftHtml)
+  // def writeFull(target: String) =
+  //   write.over(pwd / "docs" / target / "index.html", draftHtml)
 
   def writeChaps(target: String): Unit = {
     chapHtml.foreach {
@@ -716,8 +712,8 @@ class TeXToHtml(header: String, text: String) {
     write.over(pwd / "docs" / target / "index.html", tocHtml)
   }
 
-  def writeHtml(target: String, fullTarget: String): Unit = {
-    writeFull(fullTarget)
+  def writeHtml(target: String): Unit = {
+    // writeFull(fullTarget)
     writeChaps(target)
   }
 }
@@ -726,7 +722,7 @@ object SiteBuild extends App {
   pprint.log("Converting notes")
   import TeXToHtml._
   val converter = teXConvertor("stat-and-prob")
-  converter.writeHtml("notes", "draft")
+  converter.writeHtml("notes")
   val js = read(resource / "out.js")
   write.over(pwd / "docs" / "js" / "probability.js", js)
   import Site._
