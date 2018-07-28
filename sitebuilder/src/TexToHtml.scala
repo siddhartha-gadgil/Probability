@@ -46,7 +46,7 @@ object TeXToHtml {
       |<body>
     """.stripMargin
 
-  def nav(menu1: String, menu2: String, menu3: String): String =
+  def nav(menus: String*): String =
     s"""
     |<nav class="navbar navbar-default navbar-fixed-bottom">
     |    <div class="container-fluid">
@@ -67,9 +67,9 @@ object TeXToHtml {
     |
     |        <ul class="nav navbar-nav">
     |          <li><a href="index.html">Table of Contents</a></li>
-    |            $menu1
-    |            $menu2
-    |            $menu3
+    |            ${menus.mkString("\n")}
+    |
+    |
     |        </ul>
     |      </div><!-- /.navbar-collapse -->
     |    </div><!-- /.container-fluid -->
@@ -622,15 +622,17 @@ class TeXToHtml(header: String, text: String) {
       }
       .mkString("\n")
 
-  def chapterMenu(v: Vector[(Int, String)], title: String) =
+  def chapterMenu(v: Vector[(Int, String)]) = {
+    val ttl = s"Chapters ${v.head._1} to ${v.last._1}"
     s"""
     |<li class="dropdown">
-    |<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> $title <span class="caret"></span></a>
+    |<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> $ttl <span class="caret"></span></a>
     |  <ul class="dropdown-menu">
     |     ${chapterList(v)}
     |  </ul>
     |</li>
     """.stripMargin
+  }
 
   def tocList: String =
     sortedSections
@@ -640,9 +642,12 @@ class TeXToHtml(header: String, text: String) {
       }
       .mkString("\n")
 
-  lazy val chapNav: String = nav(chapterMenu(sortedSections.take(12), "Probability (part 1)"),
-                                 chapterMenu(sortedSections.slice(12, 27), "Probability (part 2)"),
-                                 chapterMenu(sortedSections.drop(27), "Statistics"))
+  lazy val chapNav: String = nav(
+    sortedSections.grouped(14).toVector.map(chapterMenu) : _*
+    // chapterMenu(sortedSections.take(12)),
+    //                              chapterMenu(sortedSections.slice(12, 27)),
+    //                              chapterMenu(sortedSections.drop(27))
+                               )
 
   // lazy val draftHtml: String = top + nav(
   //   sectionList(sortedSections.take(12)),
