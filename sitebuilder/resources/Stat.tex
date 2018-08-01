@@ -1,0 +1,1249 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[preprint,  11pt]{amsart}
+
+\usepackage{mathrsfs}
+\usepackage{fullpage}
+\usepackage{natbib}
+
+\linespread{1.28}
+
+\input{mypreamble_2018}
+
+\def\t{{\bf t}}
+\def\h{{\bf h}}
+\def\omeg{\underline{\ome}}
+\def\X{{\bf X}}
+\def\Y{{\bf Y}}
+%\newcommand{\para}[1]{\vspace{4mm}\noindent{\bf #1:}}
+%\newcommand{\parag}[1]{\vspace{4mm}\noindent{\bf #1}}
+\def\HH{\mathcal H}
+\def\LL{\mathcal L}
+\newcommand{\matrices}[4]{\l[\begin{array}{cc} #1 & #2 \\ #3 & #4  \end{array} \r]}
+\def\doublintfull{\int\!\!\!\int}
+\def\intg{\int\limits}
+\def\half{\frac{1}{2}}
+\def\sd{\mb{s.d.}}
+
+\def\sig{{\sigma}}
+\def\Sig{{\Sigma}}
+\def\LL{{\mathbb L}}
+\def\DD{{\mathcal D}}
+\def\CC{{\mathcal C}}
+\def\TT{{\mathcal T}}
+\renewcommand\phi{{\varphi}}
+\renewcommand{\benu}{\begin{enumerate}\setlength\itemsep{6pt}}
+\renewcommand{\beit}{\begin{itemize}\setlength\itemsep{3pt}}
+%\renewcommand\{Q}{\mathbf Q}
+
+\renewcommand{\bex}{\indent\begin{exercise}}
+\renewcommand\subset{\subseteq}
+\def\mod{\left.\vphantom{\hbox{\Large (}}\right|}
+
+\openup 0.4em
+
+\usepackage{palatino}
+
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+\setcounter{tocdepth}{1}
+
+\begin{document}
+
+\title{Probability and Statistics}
+\author{Manjunath Krishnapur}
+
+\maketitle
+
+ \tableofcontents
+
+\newpage
+
+\maketitle
+
+\setcounter{page}{4}
+
+\newpage
+\vspace*{\fill}
+\begin{center}
+\Huge {\bf Statistics}
+\end{center}
+\vspace*{\fill}
+\newpage
+%\setcounter{section}{0}
+\section{Introduction}
+In statistics we are faced with data, which could be measurements in an experiment, responses in a survey etc. There will be some randomness, which may be inherent in the problem or due to errors in measurement etc. The problem in statistics is to make various kinds of inferences about the underlying distribution, from realizations of the random variables.  We shall consider a few basic types of problems encountered in statistics. We shall mostly deal with examples, but sufficiently many that the general ideas should become clear too. It may be remarked that we stay with the simplest ``textbook type problems'' but we shall also see some real data. Unfortunately we shall not touch upon the problems of current interest, which typically involve very huge data sets etc. Here are the kinds of problems we study.
+
+\para{General setting} We shall have data (measurements perhaps), usually of the form $X_{1},\ldots ,X_{n}$ which are realizations of independent random variables  from a common distribution. The underlying distribution is not known. In the problems we consider, typically the distribution is known, except for the values of a few parameters. Thus, we may write the data as $X_{1},\ldots ,X_{n}$ i.i.d. $f_{\theta}(x)$ where $f_{\theta}(x)$ is a pdf or pmf for each value of the parameter(s) $\theta$. For example, the density could be of $N(\mu,\sig^{2})$ (two unknown parameters $\mu$ and $\sig^{2}$) or of $\mb{Pois}(\lam)$ (one unknown parameter $\lam$). 
+
+\para{(1) Estimation} Here, the question is to guess the value of the unknown $\theta$ from the sample $X_{1},\ldots ,X_{n}$. For example, if $X_{i}$ are i.i.d. from $\mb{Ber}(p)$ distribution ($p$ is unknown), then a reasonable guess for $\theta$ would be the sample mean $\bar{X}_{n}$ (an {\em estimator}). Is this the only one? Is it the ``best'' one? Such questions are addressed in estimation.
+ 
+\para{(2) Confidence intervals} Here again the problem is of estimating the value of a parameter, but instead of giving one value as a guess, we instead give an interval and quantify  how sure we are that the interval will contain the unknown parameter. For example, a coin with unknown probability $p$ of turning up head, is tossed $n$ times. Then, a confidence interval for $p$ could be of the form \ba \l[\bar{X}_{n}-\frac{3}{\sqrt{n}}\sqrt{\bar{X}_{n}(1-\bar{X}_{n})},\bar{X}_{n}+\frac{3}{\sqrt{n}}\sqrt{\bar{X}_{n}(1-\bar{X}_{n})}\r] \ea where $\bar{X}_{n}$ is the proportion of heads in $n$ tosses. The reason for such an interval will come later. It turns out that if $n$ is large, one can say that with probability $0.99$ (``confidence level''), this interval will contain the true value of the parameter. 
+
+\para{(3) Hypothesis testing} In this type of problem we are required to decide between two competing choices (``hypotheses''). For example, it is claimed that one batch of students is better than a second batch of students in mathematics. One way to check this is to give the same exam to students in both exams and record the scores. Based on the scores, we have to decide whether the first batch is better than the second (one hypothesis) or whether there is not much difference between the two (the other hypothesis). One can imagine that this can be done by comparing the sample means etc., but that will come later. 
+
+A good analogy for testing problems is from law, where the judge has to decide whether an accused is guilty or not guilty. Evidence presented by lawyers take the role of data (but of course one does not really compute any probabilities quantitatively here!).
+
+\para{(4) Regression} Consider two measurements, such as height and weight. It is reasonable to say that weight and height are positively correlated (if the height is larger, the weight tends to be larger too), but is there a more quantitative relationship? Can we predict the weight (roughly) from the height?  One could try to see if a linear function fits: $\mb{wt.}=a\ \mb{ht.}+b$ for some $a,b$. Or perhaps a more complicated fit such as $\mb{wt.}=a\ \mb{ht.}+b\ \mb{ht.}^{2}+c$, etc. To see if this is a good fit, and to know what values of $a,b,c$ to take, we need data. Thus, the problem is that we have some data $(H_{i},W_{i})$, $i=1,2,\ldots ,n$, and based on this data we try to find the best linear fit (or the best quadratic fit) etc. 
+
+As another example, consider the approximate law that the resistivity of a  material is proportional to the temperature. What is the constant of proportionality (for a given material). Here we have a law that says $R=aT$ where $a$ is not known. By taking many measurements at various temperatures we get data $(T_{i},R_{i})$, $i=1,2,\ldots ,n$. From this we must find the best possible $a$ (if all the data points were to lie on a line $y=ax$, there would be no problem. In reality they never will, and that is why the choice is an issue!).
+
+
+\section{Estimation problems}
+Consider the following examples.
+\benu
+\item A coin has an unknown probability $p$ of turning up head. We wish to determine the value of $p$. For this, we toss the coin $100$ times and observe the outcomes. How to give a guess for the value of $p$ based on the data?
+\item A factory manufacture light bulbs whose lifetimes may be assumed to be exponential random variables with a mean life-time $\mu$. We take a sample of $50$ bulbs at random and measure their life-times $X_{1},\ldots ,X_{50}$. Based on this data, how can we present a reasonable guess for $\mu$? We may want to do this so that the specifications can be printed on the product when sold. 
+\item Can we guess the average height $\mu$ of all people in India by taking a random sample of $100$ people and measuring their heights?
+\eenu
+In such questions, there is an unknown parameter $\mu$ (there could be more than one unknown parameter too) whose value we are trying to guess based on the data. The data consists of i.i.d. random variables from a family of distributions. We assume that the family of distributions is known and the only unknown is (are) the value of the parameter(s). 
+ Rather than present the ideas in abstract let us see a few examples.
+ 
+ \begin{example}Let $X_{1},\ldots ,X_{n}$ be i.i.d. random variables with Exponential density $f_{\mu}(x)=\frac{1}{\mu}e^{-x/\mu}$ (fro $x>0$) where the value of $\mu>0$ is unknown. How to  {\em estimate} it using the data $X=(X_{1},\ldots ,X_{n})$?
+
+
+This is the framework in which we would study the second example above, namely the lie-time distribution of light bulbs. Observe that we have parameterized the exponential family of distributions differently from usual. We could equivalently have considered $g_{\lam}(x)=\lam e^{-\lam x}$ but the interest is then in estimating $1/\lam$ (which is the expected value) rather than $\lam$. Here are two methods.
+
+\para{Method of moments} We observe that $\mu=\E_{\mu}[X_{1}]$, the mean of the distribution (also called {\em population mean}). Hence it seems reasonable to take the sample mean $\bar{X}_{n}$ as an estimate. On second thought, we realize that $\E_{\mu}[X_{1}^{2}]=2\mu^{2}$ and hence $\mu=\sqrt{\frac{1}{2}\E_{\mu}[X_{1}^{2}]}$. Therefore it also seems reasonable to take the corresponding sample quantity, $T_{n}:=\sqrt{\frac{1}{2n}(X_{1}^{2}+\ldots +X_{n}^{2})}$ as an estimate for $\mu$. One can go further and write $\mu$ in various ways as $\mu=\sqrt{\Var_{\mu}(X_{1})}$, $\mu=\sqrt[3]{\frac{1}{6}\E_{\mu}[X_{1}^{3}]}$ etc. Each such expression motivates an estimate, just by substituting sample moments for population moments.
+
+This is called estimating by the {\em method of moments} because we are equating the sample moments to population moments to obtain the estimate.
+
+We can also use other features of the distribution, such as quantiles (we may call this  the ``method of quantiles''). In other words, obtain estimates by equating the sample quantiles to population quantiles. For example, the median of $X_{1}$ is $\mu\log 2$, hence a reasonable estimate for $\mu$ is $M_{n}/\log 2$, where $M_{n}$ is a sample median. Alternately, the $25\%$ quantile of $\mb{Exponential}(1/\mu)$ distribution is $\mu\log(4/3)$ and hence another estimate for $\mu$ is $Q_{n}/\log(4/3)$ where $Q_{n}$ is a $25\%$ sample quantile.
+
+\para{Maximum likelihood method} The joint density of $X_{1},\ldots ,X_{n}$ is $$g_{\mu}(x_{1},\ldots ,x_{n})=\mu^{-n}e^{-\mu(x_{1}+\ldots +x_{n})} \qquad \mb{ if all }x_{i}>0$$ (since $X_{i}$ are independent, the joint density is a product). We evaluate the joint density at the observed data values. This is called the likelihood function. In other words, define,
+$$
+L_{X}(\mu) := \mu^{-n}e^{-\frac{1}{\mu}\sum_{i=1}^{n}X_{i}}.
+$$
+Two points: This is the joint density of $X_{1},\ldots ,X_{n}$, evaluated at the observed data. Further, we like to think of it as a function of $\mu$ with $X:=(X_{1},\ldots ,X_{n})$ being fixed. 
+
+When $\mu$ is the actual value, then $L_{X}(\mu)$ is the ``likelihood'' of seeing the data that we have actually observed. The {\em maximum likelihood estimate} is that value of $\mu$ that maximizes the likelihood function. In our case, by differentiating and setting equal to zero we get,
+$$
+0 =\frac{d}{d\mu}L_{X}(\mu) = -n\mu^{-n-1}e^{-\frac{1}{\mu}\sum_{i=1}^{n}X_{i}}+\mu^{-n}\l(\frac{1}{\mu^{2}}\sum_{i=1}^{n}X_{i}\r)e^{-\frac{1}{\mu}\sum_{i=1}^{n}X_{i}}
+$$
+which is satisfied when $\mu=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\bar{X}_{n}$. To distinguish this from the true value of $\mu$ which is unknown, it is customary to put a hat on the leter $\mu$. We write $\hat{\mu}_{MLE}=\bar{X}_{n}$. We should really verify whether $L(\mu)$ is maximized or minimized (or neither) at this point, but we leave it to you to do the checking (eg., by looking at the second derivative).
+\end{example}
+
+Let us see the same methods at work in two more examples.
+\begin{example} Let $X_{1},\ldots ,X_{n}$ be i.i.d. Ber($p$) random variables where the value of $p$ is unknown. How to  {\em estimate} it using the data $X=(X_{1},\ldots ,X_{n})$?
+
+\para{Method of moments} We observe that $p=\E_{p}[X_{1}]$, the mean of the distribution (also called {\em population mean}). Hence, a method of moments estimator would be   the sample mean $\bar{X}_{n}$. In this case, $\E_{p}[X_{1}^{2}]=p$ again but we don't get any new estimate because $X_{k}^{2}=X_{k}$ (as $X_{k}$ is $0$ or $1$)
+
+\para{Maximum likelihood method} Now we have a probability mass function instead of density. The joint pmf of of $X_{1},\ldots ,X_{n}$ is $f_{p}(x_{1},\ldots ,x_{n}=p^{\sum_{i=1}^{n}x_{i}}(1-p)^{n-\sum_{i=1}^{n}x_{i}}$ when each $x_{i}$ is $0$ or $1$. The likelihood function is
+$$
+L_{X}(p) := p^{\sum_{i=1}^{n}x_{i}}(1-p)^{n-\sum_{i=1}^{n}x_{i}} = p^{n\bar{X}_{n}}(1-p)^{n(1-\bar{X}_{n})}.
+$$
+We need to find the value of $p$ that maximizes $L_{X}(p)$. Here is a trick that almost always simplifies calculations (try it in the previous example too!). Instead of maximizing $L_{X}(p)$, maximize $\ell_{X}(p)=\log L_{X}(p)$ (called the {\em log-likelihood function}). Since ``$\log$'' is an increasing function, the maximizer will remain the same. In our case, 
+$$
+\ell_{X}(p)=\bar{X}_{n}\log p + n(1-\bar{X}_{n})\log (1-p).
+$$
+ Differentiating and setting equal to $0$, we get $\hat{p}_{MLE}=\bar{X}_{n}$. Again the sample mean is the maximum likelihood estimate.
+\end{example}
+
+A last example.
+\begin{example} Consider the two-parameter Laplace-density $f_{\theta,\alpha}(x)=\frac{1}{2\alp}e^{-\frac{|x-\theta|}{\alp}}$ for all $x\in \R$.  Check that $f_{\theta,\alp}$ is indeed a density for all $\theta\in \R$ and $\alp>0$.
+
+Now suppose we have data $X_{1},\ldots ,X_{n}$ i.i.d. from $f_{\theta,\alp}$ where we do not know the values of $\theta$ and $\alp$. How to estimate the parameters?
+
+\para{Method of moments} We compute
+\begin{align*}
+\E_{\theta,\alp}[X_{1}]&=\frac{1}{2\alp}\intt_{-\infty}^{+\infty}te^{-\frac{|t-\theta|}{\alp}}dt = \frac{1}{2}\intt_{-\infty}^{+\infty}(\alp s+\theta) e^{-|s|}ds = \theta.\\
+\E_{\theta,\alp}[X_{1}^{2}]&=\frac{1}{2\alp}\intt_{-\infty}^{+\infty}t^{2}e^{-\frac{|t-\theta|}{\alp}}dt = \frac{1}{2}\intt_{-\infty}^{+\infty}(\alp s+\theta)^{2} e^{-|s|}ds = 2\alp^{2}+\theta^{2}.
+\end{align*}
+Thus the variance is $\Var_{\theta,\alp}(X_{1})=2\alp^{2}$. Based on this, we can take the method of moments estimate to be $\hat{\theta}_{n}=\bar{X}_{n}$ (sample mean) and $\hat{\alp}_{n}=\frac{1}{\sqrt{2}}s_{n}$ where $s_{n}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$. At the moment the ideas of defining sample variance as $s_{n}^{2}$ may look strange and it might be more natural to take $V_{n}:=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ as an estimate for the population variance. As we shall see later, $s_{n}^{2}$ has some desirable properties that $V_{n}$ lacks. Whenever we say sample variance, we mean $s_{n}^{2}$, unless stated otherwise.
+
+\para{Maximum likelihood method} The likelihood function of the data is
+$$
+L_{X}(\theta,\alp)=\prodd_{k=1}^{n}\frac{1}{2\alp}\exp\l\{-\frac{|X_{k}-\theta|}{\alp}\r\}= 2^{-n}\alp^{-n}\exp\l\{-\sum_{k=1}^{n}\frac{|X_{k}-\theta|}{\alp}\r\}.
+$$
+The log-likelihood function is $$\ell_{X}(\theta,\alp)=\log L(\theta,\alp)=-n\log 2 - n\log \alp -\frac{1}{\alp}\sum_{k=1}^{n}|X_{k}-\theta|.$$ We know that\footnote{If you do not know here is an argument. Let $x_{1}<x_{2}<\ldots <x_{n}$ be $n$ distinct real numbers and let $a\in \R$. Rewrite $\sum_{k=1}^{n}|x_{k}-a|$ as $(|x_{1}-a|+|x_{n}-a|)+(|x_{2}-a|+|x_{n-1}-a|)+\ldots$. By triangle inequality, we see that $$|x_{1}-a|+|x_{n}-a|\ge x_{n}-x_{1}, \;\;\; |x_{2}-a|+|x_{n-1}-a|\ge x_{n-1}-x_{2}, \;\;\; |x_{3}-a|+|x_{n-2}-a|\ge x_{n-2}-x_{3}\ldots.
+$$
+Further the first inequality is an equality if and only if $x_{1}\le a\le x_{n}$, the second inequality is an equality if and only if $x_{2}\le a\le x_{n-1}$ etc. In particular, if $a$ is a median, then all these inequalities become equalities and shows that a median minimizes the given sum.
+} for fixed $X_{1},\ldots ,X_{n}$, the value of $\sum_{k=1}^{n}|X_{k}-\theta|$ is minimized when $\theta=M_{n}$, the median of $X_{1},\ldots ,X_{n}$ (strictly speaking the median may have several choices, all of them are equally good). Thus we fix $\hat{\theta}=M_{n}$ and then we maximize $\ell(\hat{\theta},\alp)$ over $\alp$ by differentiating. We get $\hat{\alp}=\frac{1}{n}\sum_{k=1}^{n}|X_{k}-\theta|$ (the sample mean-absolute deviation about the median). Thus the MLE of $(\theta,\alp)$ is $(\hat{\theta},\hat{\alp})$.
+\end{example}
+
+In homeworks and tutorials you will see several other estimation problems which we list in the exercise below.
+\bex Find an estimate for the unknown parameters by the method of moments and the maximum likelihood method.
+ \benu
+\item $X_{1},\ldots, X_{n}$ are i.i.d. $N(\mu,1)$. Estimate $\mu$. How do your estimates change if the distribution is $N(\mu,2)$?
+\item $X_{1},\ldots, X_{n}$ are i.i.d. $N(0,\sig^{2})$. Estimate $\sig^{2}$. How do your estimates change if the distribution is $N(7,\sig^{2})$?
+\item $X_{1},\ldots, X_{n}$ are i.i.d. $N(\mu,\sig^{2})$. Estimate $\mu$ and $\sig^{2}$.
+\eenu
+[{\bf Note:} The first case is when $\sig^{2}$ is known and $\mu$ is unknown. Then the known value of $\sig^{2}$ may be used to estimate $\mu$. In the second case it is similar, now $\mu$ is known and $\sig^{2}$ is not known. In the third case, both are unknown].
+\eex
+
+\bex $X_{1},\ldots, X_{n}$ are i.i.d. $\mb{Geo}(p)$ Estimate $\mu=1/p$.
+\eex
+
+\bex $X_{1},\ldots, X_{n}$ are i.i.d. $\mb{Pois}(\lam)$ Estimate $\lam$.
+\eex
+
+\bex $X_{1},\ldots, X_{n}$ are i.i.d. $\mb{Beta}(a,b)$ Estimate $a,b$.
+\eex
+
+The following exercise is approachable by the same methods but requires you to think a little.
+\bex $X_{1},\ldots, X_{n}$ are i.i.d. $\mb{Uniform}[a,b]$ Estimate $a,b$.
+\eex
+
+\section{Properties of estimates}
+We have seen that there may be several competing estimates that can be used to estimate a parameter. How can one choose between these estimates? In this section we present some properties that may be considered desirable in an estimator. However, having these properties does not lead to an unambiguous choice of one estimate as the best for a problem. 
+
+\para{The setting} Let $X_{1},\ldots ,X_{n}$ be i.i.d random variables with a common density $f_{\theta}(x)$. The parameter $\theta$ is unknown and the goal is to estimate it. Let $T_{n}$ be an estimator for $\theta$, this just means that $T_{n}$ is a function of $X_{1},\ldots ,X_{n}$ (in words, if we have the data at hand, we should be able to compute the value of $T_{n}$). 
+
+\para{Bias} Define the {\em bias} of the estimator as $\mb{bias}_{T_{n}}(\theta):=\E_{\theta}[T_{n}]-\theta$. If $\mb{Bias}_{T_{n}}(\theta)=0$ for all values of the parameter $\theta$ then we say that $T_{n}$ is  {\em unbiased} for $\theta$. Here we write $\theta$ in the subscript of $\E_{\theta}$ to remind ourself that in computing the expectation we use the density $f_{\theta}$. However we shall often omit the subscript for simplicity. 
+
+\para{Mean-squared error} The {\em mean squared error} of $T_{n}$ is defined as $\mb{m.s.e.}_{T_{n}}(\theta)=\E_{\theta}[(T_{n}-\theta)^{2}]$. This is a function of $\theta$. Smaller it is, better our estimate.
+
+In computing mean squared error, it is useful to observe the formula
+$$
+\mb{m.s.e.}_{T_{n}}(\theta) = \Var_{T_{n}}(\theta) + \l(\mb{Bias}_{T_{n}}(\theta)\r)^{2}.
+$$
+To prove this, consider and random variable $Y$ with mean $\mu$ and observe that for any real number $a$ we have
+\begin{align*}
+\E[(Y-a)^{2}] &=\E[(Y-\mu+\mu-a)^{2}] = \E[(Y-\mu)^{2}]+(\mu-a)^{2}+2(\mu-a)\E[Y-\mu] \\
+&= \E[(Y-\mu)^{2}]+(\mu-a)^{2} = \Var(Y) + (\mu-a)^{2}.
+\end{align*}
+Use this identity with $T_{n}$ in place of $Y$ and $\theta$ in place of $a$.
+
+\berk An analogy. Consider shooting with a rifle having a telescopic sight. A given target can be missed for two reasons. One, the marksman may be unskilled and shoot all over the place, sometimes a meter to the right of the target, sometimes a meter to the left, etc. In this case, the shots have a large variance. Another person may consistently hit a point 20 cm. to the right of the target. Perhaps the telescopic sight is not set right, and this caused the systematic error. This is the bias. Both bias and variance contribute to missing the target. 
+\eerk
+
+
+\beg Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,\sig^{2})$. Let $V_{n}=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$ be an estimate for $\sig^{2}$. By expanding the squares we get
+$$
+V_{n}=\bar{X}_{n}^{2}+\frac{1}{n}\sum_{k=1}^{n}X_{k}^{2} -\frac{2}{n}\bar{X}_{n}\sum_{k=1}^{n}X_{k} = \l(\frac{1}{n}\sum_{k=1}^{n}X_{k}^{2} \r)-\bar{X}_{n}^{2}.
+$$ 
+It is given that $\E[X_{k}]=\mu$ and $\Var(X_{k})=\sig^{2}$. Hence $\E[X_{k}^{2}]=\mu^{2}+\sig^{2}$. We have seen before that $\Var(\bar{X}_{n})=\sig^{2}$ and $\E[\bar{X}_{n}]=\mu$.  Hence $\E[\bar{X}_{n}^{2}]=\mu^{2}+\frac{\sig^{2}}{n}$. Putting all this together, we get
+$$
+\E\l[V_{n} \r] = \l( \frac{1}{n}\sum_{k=1}^{n}\mu^{2}+\sig^{2} \r) - \l(\mu^{2}+\frac{\sig^{2}}{n}\r)  = \frac{n-1}{n}\sig^{2}.
+$$
+Thus, the bias of $V_{n}$ is $\frac{n-1}{n}\sig^{2}-\sig^{2}=-\frac{1}{n}\sig^{2}$.
+\eeg
+
+\beg For the same setting as the previous example, suppose $W_{n}=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-\mu)^{2}$. Then it is easy to see that $\E[W_{n}]=\sig^{2}$. Can we say that $W_{n}$ is an unbiased estimate for $\sig^{2}$? There is a hitch!
+
+If the value of $\mu$ is unknown, then $W_{n}$ is {\em not} an estimate (cannot compute it using $X_{1},\ldots ,X_{n}$!). However if $\mu$ is known, then it is an unbiased estimate. For example, if we knew that $\mu=0$, then $W_{n}=\frac{1}{n}\sum_{k=1}^{n}X_{k}^{2}$ is an unbiased estimate for $\sig^{2}$. 
+
+When $\mu$ is unknown, we define $s_{n}^{2}=\frac{1}{n-1}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$. Clearly $s_{n}^{2}=\frac{n}{n-1}V_{n}$ and hence $\E[s_{n}^{2}]=\frac{n}{n-1}\E[V_{n}]= \sig^{2}$. Thus, $s_{n}^{2}$ is an unbiased estimate for $\sig^{2}$. Note that $s_{n}^{2}$ depends only on the data and hence it is an estimate, whether $\mu$ is known or unknown.
+\eeg
+All the remarks in the above two examples apply for any distribution, i.e., 
+\benu
+\item The sample mean is unbiased for the population mean.
+\item The sample variance $s_{n}^{2}=\frac{1}{n-1}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$ is unbiased for the population variance. But $V_{n}=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}$ is not, in fact $\E[V_{n}]=\frac{n-1}{n}\sig^{2}$.
+\eenu
+ It appears that $s_{n}^{2}$ is better, but the following remark says that one should be cautious in making such a statement.
+\berk In case of $N(\mu,\sig^{2})$ data, it turns out that although $s_{n}^{2}$ is unbiased and $V_{n}$ is biased, the mean squared error of $V_{n}$ is smaller! Further $V_{n}$ is the maximum likelihood estimate of $\sig^{2}$! Overall, unbiasedness is not so important as having smaller mean squared error, but for estimating variance (when the mean is not known), we always use $s_{n}^{2}$. The computation of the m.s.e is a bit tedious, so we skip it here.
+\eerk
+
+\beg Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mb{Ber}(p)$. Then $\bar{X}_{n}$ is an estimate for $p$. It is unbiased since $\E[\bar{X}_{n}]=p$. Hence, the m.s.e of $\bar{X}_{n}$ is just the variance which is equal to $p(1-p)/n$.
+\eeg
+
+\para{A puzzle} A coin $C_{1}$ has probability $p$ of turning up head and a coin $C_{2}$ has probability $2p$ of turning up head. All we know is that $0<p<\frac{1}{2}$. You are given $20$ tosses. You can choose all tosses from $C_{1}$ or all tosses from $C_{2}$ or some tosses from each (the total is $20$). If the objective is to estimate $p$, what do you do?
+
+\para{Solution} If we choose to have all $n=20$ tosses from $C_{1}$, then we get $X_{1},\ldots ,X_{n}$ that are i.i.d. $\mb{Ber}(p)$. An estimate for $p$ is $\bar{X}_{n}$ which is unbiased and hence $\mb{MSE}_{\bar{X}_{n}}(p)=\Var(\bar{X}_{n})=p(1-p)/n$. On the other hand if we choose to have all $20$ tosses from $C_{2}$, then we get $Y_{1},\ldots ,Y_{n}$ that are i.i.d. $\mb{Ber}(2p)$. The estimate for $p$ is now $\bar{Y}_{n}/2$ which is also unbiased and has $\mb{MSE}_{\bar{Y}_{n}/2}(p)=\Var(\bar{Y}_{n})=2p(1-2p)/4 = p(1-2p)/2$. It is not hard to see that for all $p<1/2$, $\mb{MSE}_{\bar{Y}_{n}/2}(p)<\mb{MSE}_{\bar{X}_{n}}(p)$ and hence choosing $C_{2}$ is better, at least by mean-squared criterion! It can be checked that if we choose to have $k$ tosses from $C_{1}$ and the rest from $C_{2}$, the MSE of the corresponding estimate will be between the two MSEs found above and hence not better than $\bar{Y}_{n}/2$.
+
+
+
+
+\para{Another puzzle} A factory produces light bulbs having an exponential distribution with mean $\mu$. Another factory produces light bulbs having an exponential distribution with mean $2\mu$. Your goal is to estimate $\mu$. You are allowed to choose a total of $50$ light bulbs (all from the first or all from the second or some from each factory). What do you do?
+
+\para{Solution} If we pick all $n=50$ bulbs from the first factory, we see $X_{1},\ldots ,X_{n}$ i.i.d. $\mb{Exp}(1/\mu)$. The estimate for $\mu$ is $\bar{X}_{n}$ which has $\mb{MSE}_{\bar{X}_{n}}(\mu)=\Var(\bar{X}_{n})=\mu^{2}/n$. If we choose  all bulbs from factory $2$ we get $Y_{1},\ldots ,Y_{n}$ i.i.d. $\mb{Exp}(1/2\mu)$. The estimate for $\mu$ is $\bar{Y}_{n}/2$. But $\mb{MSE}_{\bar{Y}_{n}/2}(\mu)=\Var(\bar{Y}_{n}/2)=(2\mu)^{2}/4n=\mu^{2}/n$. The two mean-squared errors are exactly the same!
+
+\para{Probabilistic thinking} Is there any calculation-free explanation why the answers to the two puzzles are as above? Yes, and it is illustrative of what may be called probabilistic thinking. Take the second puzzle. Why are the two estimates same by mean-squared error? Is one better by some other criterion? 
+
+Recall that if $X\sim \mb{Exp}(1/\mu)$ then $X/2\sim \mb{Exp}(1/2\mu)$ and vice versa. Therefore, if we have data from $\mb{Exp}(1/\mu)$ distribution, then we can divided all the numbers by $2$ and convert it into data from $\mb{Exp}(1/2\mu)$ distribution. Conversely if we have data from $\mb{Exp}(1/2\mu)$ distribution, then we can convert it into data from $\mb{Exp}(1/\mu)$ distribution by multiplying each number by $2$. Hence there should be no advantage in choosing either factory. We leave it for you to think in analogous ways why in the first puzzle $C_{2}$ is better than $C_{1}$.
+
+
+\section{Confidence intervals}
+ So far, in estimating of an unknown parameter, we give a single number as our guess for the known parameter. It would be better to give an interval and say with what confidence we expect the true parameter to lie within it.  As a very simple example, suppose we have one random variable $X$ with $N(\mu,1)$ distribution. How do we estimate $\mu$? Suppose the observed value of $X$ is $2.7$. Going by any method, the guess for $\mu$ would be $2.7$ itself. But of course $\mu$ is not equal to $X$, so we would like to give an interval in which $\mu$ lies. How about $[X-1,X+1]$? Or $[X-2,X+2]$? Using normal tables, we see that $\P(X-1<\mu<X+1)=\P(-1<(X-\mu)<1)=\P(-1<Z<1) \approx 0.68$ and similarly $\P(X-2<\mu<X+2)\approx 0.95$. Thus, by making the interval longer we can be more confident that the true parameter lies within. But the accuracy of our statement goes down (if you want to know the average height of people in India, and the answer you give is ``between 100cm and 200cm'', it is very probably correct, but of little use!). The probability with which our CI contains the unknown parameter is called the level of confidence. Usually we fix the level of confidence, say as $0.90$ and find an interval {\em as short as possible} but subject to the condition that it should have a confidence level of $0.90$.
+ 
+ In this section we consider the problem of confidence intervals in Normal population. In the next we see a few other examples.
+ 
+\para{The setting} Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,\sig^{2})$ random variables. We consider four situations.
+\benu
+\item Confidence interval for $\mu$ when $\sig^{2}$ is known.
+\item Confidence interval for $\sig^{2}$ when $\mu$ is known.
+\item Confidence interval for $\mu$ when $\sig^{2}$ is unknown.
+\item Confidence interval for $\sig^{2}$ when $\mu$ is unknown.
+\eenu
+
+A starting point in finding a confidence interval for a parameter is to first start with an estimate for the parameter. For example, in finding a CI for $\mu$, we may start with $\bar{X}_{n}$ and enlarge it to an interval $[\bar{X}_{n}-a,\bar{X}_{n}+a]$. Similarly, in finding a CI for $\sig^{2}$ we use the estimate $s_{n}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ if $\mu$ is unknown and $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ if the value of $\mu$ is known.
+
+\subsection{Estimating $\mu$ when $\sig^{2}$ is known} We look for a confidence interval of the form $I_{n}=[\bar{X}_{n}-a,\bar{X}_{n}+a]$. Then,
+$$
+\P\l(I_{n}\ni \mu\r) = \P\l(-a\le \bar{X}_{n}-\mu\le a\r) =\P\l(-\frac{a\sqrt{n}}{\sig}\le \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{\sig} \le \frac{a\sqrt{n}}{\sig}\r)
+$$
+Now we use two facts about normal distribution that we have seen before. 
+\benu
+\item If $Y\sim N(\mu,\sig^{2})$ then $aX+b\sim N(a\mu+b,a^{2}\sig^{2})$. 
+\item If $Y_{1}\sim N(\mu,\sig^{2})$ and $Y_{2}\sim N(\nu,\tau^{2})$ and they are independent, then $X+Y\sim N(\mu+\nu,\sig^{2}+\tau^{2})$. 
+\eenu
+Consequently, $\bar{X}_{n}\sim N(0,\sig^{2}/n)$ and $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{\sig}\sim N(0,1)$. 
+Therefore, 
+$$
+ \P\l(I_{n}\ni \mu\r)
+ = \P(-\frac{a\sqrt{n}}{\sig}\le Z\le -\frac{a\sqrt{n}}{\sig})
+$$
+ where $Z\sim N(0,1)$. Fix any $0<\alp<1$ and denote by $z_{\alp}$ the number such that $\P(Z>z_{\alp})=\alp$ (in other words, $z_{\alp}$ is the $(1-\alp)$-quantile of the standard normal distribution). For example, from normal tables we find that $z_{0.05}\approx1.65$ and $z_{0.005}\approx 2.58$ etc.
+ 
+  If we set $a=z_{\alp/2}\sig/\sqrt{n}$, we get 
+$$
+\P\l(\l[\bar{X}_{n}-\frac{\sig}{\sqrt{n}}z_{\alp/2},\bar{X}_{n}+\frac{\sig}{\sqrt{n}}z_{\alp/2}\r]\ni \mu\r)=1-\alp.
+$$
+This is our confidence interval.
+
+\subsection{Estimating $\sig^{2}$ when $\mu$ is known}
+Since $\mu$ is known, we use $W_{n}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\mu)^{2}$ to estimate $\sig^{2}$. Here is an exercise.
+\bex Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(0,1)$ random variables. Then, $Z_{1}^{2}+\ldots +Z_{n}^{2}\sim \mb{Gamma}(n/2,1/2)$. 
+\eex
+\noindent{\bf Solution:} For $t>0$ we have
+\begin{align*}
+\P\{Z_{1}^{2}\le t\} &= \P\{-\sqrt{t}\le Z_{1}\le \sqrt{t}\} 
+= 2\intt_{0}^{\sqrt{t}}\frac{1}{\sqrt{2\pi}}e^{-u^{2}/2}du = \frac{1}{\sqrt{2\pi}}\intt_{0}^{t}e^{-s/2}s^{-1/2}ds.
+\end{align*}
+Differentiate w.r.t $t$ to see that the density of $Z_{1}^{2}$ is $h(t)=\frac{1}{\sqrt{\pi}}e^{-t/2}t^{-1/2}\sqrt{(1/2)}$, which is just the $\mb{Gamma}(\half,\half)$ density. 
+
+Now, each $Z_{k}^{2}$ has the same $\mb{Gamma}(\half,\half)$ density, and they are independent. Earlier we have seen that when we add independent Gamma random variables with the same scale parameter, the sum has a Gamma distribution with the same scale but whose shape parameter is the sum of the shape parameters of the individual summands. Therefore, $Z_{1}^{2}+\ldots +Z_{n}^{2}$ has $\mb{Gamma}(n/2,1/2)$ distribution. This completes the solution to the exercise.
+
+\medskip
+
+
+In statistics, the distribution $\mb{Gamma}(1/2,1/2)$ is usually called the {\em chi-squared distribution with $n$ degrees of freedom}. Let $\chi_{n}^{2}\l(\alp\r)$ denote the $1-\alp$ quantile of this distribution. Similarly, $\chi_{n}^{2}\l(1-\alp\r)$ is the $\alp$ quantile (i.e., the probability for the chi-squared random variable to fall below $\chi_{n}^{2}\l(1-\alp\r)$ is exactly $\alp$).
+
+When $X_{i}$ are i.i.d. $N(\mu,\sig^{2})$, we know that $(X_{i}-\mu)/\sig$ are i.i.d. $N(0,1)$. Hence, by the above fact, we see that
+$$
+ \frac{nW_{n}}{\sig^{2}}=\sum_{i=1}^{n}\l(\frac{X_{i}-\mu}{\sig}\r)^{2} 
+$$
+has chi-squared distribution with $n$ degrees of freedom. Hence
+\begin{align*}
+\P\l\{   \frac{nW_{n}}{\chi_{n}^{2}\l(\frac{\alp}{2}\r)} \le \sig^{2}\le \frac{nW_{n}}{\chi_{n}^{2}\l(1-\frac{\alp}{2}\r)}\r\}&=\P\l\{ \chi_{n}^{2}\l(1-\frac{\alp}{2}\r) \le \frac{nW_{n}}{\sig^{2}} \le \chi_{n}^{2}\l(\frac{\alp}{2}\r)\r\}=1-\alp.
+\end{align*}
+ Thus, $\l[\frac{ns_{n}^{2}}{\chi_{n-1}^{2}\l(\frac{\alp}{2}\r)},\frac{ns_{n}^{2}}{\chi_{n-1}^{2}\l(1-\frac{\alp}{2}\r)}\r]$ is a $(1-\alp)$-confidence interval for $\sig^{2}$.
+
+\para{An important result} Before going to the next two confidence interval problems, let us try to understand the two examples already covered. In both cases, we came up with a random variable ($\sqrt{n}(\bar{X}_{n}-\mu)/\sig$ and $W_{n}/\sig^{2}$, respectively) which involved the data and the unknown parameter  whose distributions we knew (standard normal and $\chi^{2}_{n}$, respectively) and these distributions do not depend on any parameters. This is generally the key step in any confidence interval problem. For the next two problems, we cannot use the same two random variables as above as they depend on the other unknown parameter too (i.e.,  $\sqrt{n}(\bar{X}_{n}-\mu)/\sig$ uses $\sig$ which will be unknown and $W_{n}/\sig^{2}$ uses $\mu$ which will be unknown). Hence, we need a new result that we state without proof.
+
+\begin{theorem}\label{thm:indepofsamplemeanandvar} Let $Z_{1},\ldots ,Z_{n}$ be i.i.d. $N(\mu,\sig^{2})$ random variables. Let $\bar{Z}_{n}$ and $s_{n}^{2}$ be the sample mean and the sample variance, respectively. Then, 
+$$
+\bar{Z}_{n}\sim N(\mu,\frac{\sig^{2}}{n}), \;\;  \frac{(n-1)s_{n}^{2}}{\sig^{2}}\sim \chi^{2}_{n-1}, 
+$$
+and the two are independent.
+\end{theorem}
+This is not too hard to prove (a muscle-flexing exercise in change of variable formula) but we skip the proof. Note two important features. First, the surprising independence of the sample mean and the sample variance. Second, the sample variance (appropriately scaled) has $\chi^{2}$ distribution, just like $W_{n}$ in the previous example, but the degree of freedom is reduced by $1$. Now we use this theorem in computing confidence intervals.
+
+
+\subsection{Estimating $\sig^{2}$ when $\mu$ is unknown}
+The estimate $s_{n}^{2}$ must be used as $W_{n}$ depends on $\mu$ which is unknown. Theorem~{thm:indepofsamplemeanandvar} tells us that $\frac{(n-1)s_{n}^{2}}{\sig^{2}}\sim \chi^{2}_{n-1}$. Hence, by the same logic as before we get
+\begin{align*}
+\P\l\{   \frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\l(\frac{\alp}{2}\r)} \le \sig^{2}\le \frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\l(1-\frac{\alp}{2}\r)}\r\}&=\P\l\{ \chi_{n-1}^{2}\l(1-\frac{\alp}{2}\r) \le \frac{(n-1)s_{n}^{2}}{\sig^{2}} \le \chi_{n-1}^{2}\l(\frac{\alp}{2}\r)\r\} \\
+&=1-\alp.
+\end{align*}
+ Thus, $\l[\frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\l(\frac{\alp}{2}\r)} ,\frac{(n-1)s_{n}^{2}}{\chi_{n-1}^{2}\l(1-\frac{\alp}{2}\r)}\r]$ is a $(1-\alp)$-confidence interval for $\sig^{2}$.
+
+If $\mu$ is known, we could use the earlier confidence interval using $W_{n}$, or simply ignore the knowledge of $\mu$ and use the above confidence interval using $s_{n}^{2}$. What is the difference? The cost of ignoring the knowledge of $\mu$ is that the second confidence interval will be typically larger, although for large $n$ the difference is slight. On the other hand, if our knowledge of $\mu$ was inaccurate, then the first confidence interval is invalid (we have no idea what its level of confidence is!) which is more serious. In realistic situations it is unlikely that we will know one of the parameters but not the other - hence, most often one just uses the confidence interval based on $s_{n}^{2}$.
+
+
+\subsection{Estimating $\mu$ when $\sig^{2}$ is unknown} The earlier confidence interval We look for a confidence interval $[\bar{X}_{n}-\frac{\sig}{\sqrt{n}}z_{\alp/2},\bar{X}_{n}+\frac{\sig}{\sqrt{n}}z_{\alp/2}]$ cannot be used as we do not know the value of $\sig$.
+
+A natural idea would be to use the estimate $s_{n}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ in place of $\sig^{2}$. However, recall that the earlier confidence interval (in particular,  the cut-off values $z_{\alp/2}$ in the CI)  was an outcome of the fact that
+$$
+\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{\sig}\sim N(0,1).
+$$
+Is it true if $\sig$ is replaced by $s_{n}$? Actually no, but we have a different distribution called {\em Student's $t$-distribution}.
+
+\begin{exercise} Let $Z\sim N(0,1)$ and $S^{2}\sim \chi^{2}_{n}$ be independent. Then, the density of $\frac{Z}{S/\sqrt{n}}$ is given by 
+$$
+\frac{1}{\sqrt{n-1}\mb{Beta}(\frac{1}{2},\frac{n-1}{2})}\frac{1}{\l(1+\frac{t^{2}}{n-1}\r)^{\frac{n}{2}}}
+$$
+for all $t\in \R$. This is known as {\em Student's $t$-distribution}.
+\end{exercise}
+The exact density of  $t$-distribution is not important to remember, so the above exercise is optional. The point is that it can be computed from the change of variable formula and that by numerical integration its CDF can be tabulated.  
+
+How does this help us? From Theorem~\ref{thm:indepofsamplemeanandvar} we know that $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{\sig}\sim N(0,1)$, $\frac{(n-1)s_{n}^{2}}{\sig^{2}}\sim \chi^{2}_{n-1}$, and the two are independent. Take these random variables in the above exercise to conclude that $\frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n}}$ has $t_{n-1}$ distribution. 
+
+
+The $t$-distribution is symmetric about zero (the density at $t$ and at $-t$ are the same). Further, as the number of degrees of freedom goes to infinity, the $t$-density converges to the standard normal density. What we need to know is that there are tables from which we can read off specific quantiles of the distribution. In particular, by $t_{n}(\alp)$ we mean the $1-\alp$ quantile of the $t$-distribution with $n$ degrees of freedom. Then of course, the $\alp$ quantile is $-t_{n}(\alp)$.
+
+Returning to the problem of the confidence interval, from the fact stated above, we see that (use $T_{n}$ to indicate a random variable having $t$-distribution with $n$ degrees of freedom).
+\begin{align*}
+& \P\l(\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}t_{n-1}\l(\frac{\alp}{2}\r)\le \mu \le\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}t_{n-1}\l(\frac{\alp}{2}\r) \r) \\
+&=
+\P\l(-t_{n-1}\l(\frac{\alp}{2}\r)\le \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n}}\le t_{n-1}\l(\frac{\alp}{2}\r)\r) \\
+&= \P\l(-t_{n-1}\l(\frac{\alp}{2}\r)\le T_{n-1}\le t_{n-1}\l(\frac{\alp}{2}\r)\r) \\
+&= 1-\alp.
+\end{align*}
+Hence, our $(1-\alp)$-confidence interval is $\l[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}t_{n-1}\l(\frac{\alp}{2}\r),\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}t_{n-1}\l(\frac{\alp}{2}\r)\r]$.
+
+\berk We remarked earlier that as $n\to \infty$, the $t_{n-1}$ density approaches the standard normal density. Hence, $t_{n-1}(\alp)$ approaches $z_{\alp}$ for any $\alp$ (this can be seen by looking at the $t$-table for large degree of freedom). Therefore, when $n$ is large, we may as well use
+$$
+\l[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alp/2},\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alp/2}\r].
+$$
+Strictly speaking the level of confidence is smaller than for the one with $t_{n-1}(\alp/2)$. However for $n$ large the level of confidence is quite close to $1-\alp$.
+\eerk
+ 
+ 
+\section{Confidence interval for the mean}
+Now suppose $X_{1},\ldots ,X_{n}$ are i.i.d. random variables from some distribution with mean $\mu$ and variance $\sig^{2}$, both unknown. How can we construct a confidence interval for $\mu$?
+
+In case of normal distribution, recall that the $(1-\alp)$-CI that we gave was
+$$
+\l[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}t_{n-1}\l(\frac{\alp}{2}\r),\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}t_{n-1}\l(\frac{\alp}{2}\r)\r] or \l[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alp/2},\bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alp/2}\r]
+$$
+ Is this a valid confidence interval in general? The answer is ``No'' for both. If $X_{i}$ are from some general distribution then the distributions of $\sqrt{n}(\bar{X}_{n}-\mu)/s_{n}$ and $\sqrt{n}(\bar{X}_{n}-\mu)/\sig$ are very complicated to find. Even if $X_{i}$ come from binomial or exponential family, these distributions will depend on the parameters in a complex way (in particular, the distributions are not free from the parameters, which is important in constructing confidence intervals). 
+ 
+ But suppose $n$ is large. Then the sample variance is close to population variance and hence $s_{n}\approx \sig
+$. Further, by CLT, we know that $\sqrt{n}(\bar{X}_{n}-\mu)/\sig$ has approximately    $N(0,1)$ distribution. Hence, we see that
+$$
+\P\l\{-z_{\alp/2}\le  \frac{\sqrt{n}(\bar{X}_{n}-\mu)}{s_{n}} \le z_{\alp/2}\r\} \approx \Phi(z_{\alp/2})-\Phi(-z_{\alp/2}) =1-\alp.
+$$
+Consequently, we may say that 
+$$
+\P\l\{ \bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alp/2} \le \mu \le \bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alp/2}\r\} \approx 1-\alp.
+$$
+Thus, $\l[\bar{X}_{n}-\frac{s_{n}}{\sqrt{n}}z_{\alp/2}, \bar{X}_{n}+\frac{s_{n}}{\sqrt{n}}z_{\alp/2} \r]$ is an approximate $(1-\alp)$-confidence interval. Further, when $n$ is large, the difference between $V_{n}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ and $V_{n}:=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X}_{n})^{2}$ is small (indeed, $s_{n}^{2}=(n/(n-1))V_{n}$). Hence it is also okay to use $\l[\bar{X}_{n}-\frac{\sqrt{V_{n}}}{\sqrt{n}}z_{\alp/2}, \bar{X}_{n}+\frac{\sqrt{V_{n}}}{\sqrt{n}}z_{\alp/2} \r]$ as an approximate $(1-\alp)$-confidence interval.
+%%%\newpage
+
+\beg Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mb{Ber}(p)$. Consider the problem of finding a confidence interval for $p$. Since each $X_{i}$ is $0$ or $1$, observe that 
+$$
+\hat{s}_{n}^{2}= \frac{1}{n}\sum_{i=1}^{n}X_{i}^{2} - \bar{X}_{n}^{2} = \bar{X}_{n}-(\bar{X}_{n})^{2} = \bar{X}_{n}(1-\bar{X}_{n}).
+$$
+\eeg
+Hence, an approximate $(1-\alp)$-CI for $p$ is given by 
+$$
+\l[\bar{X}_{n}-z_{\alp/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}, \bar{X}_{n}+z_{\alp/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}\r].
+$$
+
+\section{Actual confidence by simulation}
+Suppose we have a candidate confidence interval whose confidence we do not know. For example, let us take the confidence interval $$
+\l[\bar{X}_{n}-z_{\alp/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}, \bar{X}_{n}+z_{\alp/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}\r].
+$$ for the parameter $p$ of i.i.d. $\mb{Ber}(p)$ samples. We saw that for large $n$ this has approximately $(1-\alp)$ confidence. But how large is large? One way to check this is by simulation. We explain how.
+
+Take $p=0.3$ and $n=10$. Simulate $n=10$ independent $\mb{Ber}(p)$ random variables and compute the confidence interval given above. Check whether it contains the true value of $p$ (i.e., $0.3)$ or not. Repeat this exercise $10000$ times and see what proportion of times it contains $0.3$. That proportion is the true confidence, as opposed to $1-\alp$ (which is valid only for large $n$). Repeat this experiment with $n=20$, $n=30$ etc. See how close the actual confidence is to $1-\alp$. Repeat this experiment with different value of $p$. The $n$ you need to get close to $1-\alp$ will depend on $p$ (in particular, on how close $p$ is to $1/2$).
+
+This was about checking the validity of a confidence interval that was specified. In a real situation, it may be that we can only get $n=20$ samples. Then what can we do? If we have an idea of the approximate value of $p$, we can first simulate $\mb{Ber}(p)$ random numbers on a computer. We compute the sample mean each time, and repeat  $10000$ times to get so many values of the sample mean. Note that the histogram of these $10000$ values tells us (approximately) the actual distribution of $\bar{X}_{n}$. Then we can find $t$ (numerically) such that $[\bar{X}_{n}-t,\bar{X}_{n}+t]$ contains the true value of $p$ in $(1-\alp)$-proportion of the $10000$ trials. Then, $[\bar{X}_{n}-t,\bar{X}_{n}+t]$ is a $(1-\alp)$-CI for $p$. Alternately, we may try a CI of the form $$
+\l[\bar{X}_{n}-t\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}, \bar{X}_{n}+t\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}\r].
+$$
+where we choose $t$ numerically to get $(1-\alp)$ confidence.
+
+\para{Summary} The gist of this discussion is this. In the neatly worked out examples of the previous sections, we got explicit confidence intervals. But we assumed that we knew the data came from $N(\mu,\sig^{2})$ distribution. What if that is not quite right? What if it is not any of the nicely studied distributions? The results also become invalid in such cases. For large $n$, using law of large numbers and CLT we could overcome this issue. But for small $n$? The point is that using simulations we can calculate probabilities, distributions, etc, numerically and approximately. That is often better, since it is more robust to assumptions.
+
+%%%%
+%%%%\section{Estimation problems - second example}
+%%%%We now consider a case with densities rather than mass functions and go over different methods of estimation.
+
+%%%%
+%%%%\begin{question}Let $X_{1},\ldots ,X_{n}$ be i.i.d. random variables with Laplace density $f_{\theta}(x)=\frac{1}{2}e^{-|x-\theta|}$ where the value of $\theta\in \R$ is unknown. How to  {\em estimate} it using the data $X=(X_{1},\ldots ,X_{n})$?
+%%%%\end{question}
+%%%%In this case, a statistic is a functions $T:\R^{n}\to \R$. What is a reasonable estimate?
+
+%%%%\benu
+%%%%\item {\em Maximum likelihood estimate:} The {\em likelihood function} is computed using density in place of mass functions. It is
+%%%%\begin{align*}
+%%%%\ell(\theta;X) &= \prod_{k=1}^{n}\frac{1}{2}e^{-|X_{k}-\theta|}
+%%%%= 2^{-n}\exp\l\{-\sum_{k=1}^{n}|X_{k}-\theta|\r\}.
+%%%%\end{align*}
+%%%%The MLE $\hat{\theta}$ is by definition the maximizer of  $\ell(\theta;X)$ for the given data $X$. This is equivalent to finding the minimizer of $\sum_{k=1}^{n}|X_{k}-\theta|$ for given $X_{k}$. The answer is $\hat{\theta}=\mb{median}$\footnote{Recall that for $w_{1}<w_{2}<\ldots <w_{n}$, the median is $w_{(n+1)/2}$ if $n$ is odd and any number in $[w_{n/2},w_{(n+2)/2}]$ if $n$ is even.} of $X_{1},\ldots ,X_{n}$.
+
+%%%%\begin{lemma}\label{lem:medianoptimal} Let $w_{1}<w_{2}<\ldots <w_{n}$ be real numbers. Let $f(t)=\sum_{k=1}^{n}|w_{k}-t|$ is minimized when $t$ is equal to a median of $w_{1},\ldots ,w_{n}$.
+%%%%\end{lemma}
+%%%%\bprf If $t\in [w_{i},w_{i+1}]$, we can write $f(t)=\sum_{k=1}^{i}(t-w_{i})+\sum_{k=i+1}^{n}(w_{i+1}-t)$. If $t,t+h$ are both in $(w_{i},w_{i+1})$, then $f(t+h)-f(t)=hi-h(n-i)=h(n-2i)$. Thus, when $2i<n$, it is advantageous to move $t$ upwards, and when $n>2i$, it is advantageous to move it downwards. Thus, $f$ is minimized when $t$ is a median. Note that if $n$ is even, $f(t)$ stays constant when $2i=n$, hence all medians are minimizing.
+%%%%\eprf
+
+%%%%\item {\em Uniformly minimum variance unbiased estimate:} $\mathcal U$ consists of statistics $T$ such that $\E_{\theta}[T(X)]=\theta$ for all $\theta\in \R$. Examples are $T_{1}(X)=X_{1}$, $T_{2}(X)=(X_{1}+X_{2})/2$, $T_{3}(X)=\bar{X}_{n}$, $T_{4}(X)=\mb{median}_{*}(X)$, where $\mb{median}_{*}(X)$ is defined as the central median when there is more than one median. For the first three, one must notice that $\E_{\theta}[X_{1}]=\theta$. 
+
+%%%%Let us compute the loss functions for just these statistics. Recall that for the squared loss function, $\LL_{T}(\theta)=\Var_{\theta}(T(X))$ for any unbiased statistic $T$. Thus,
+%%%%\begin{align*}
+%%%%\LL_{T_{1}}(\theta) &= \Var_{\theta}(X_{1})= \frac{1}{2} \int_{-\infty}^{\infty}u^{2}e^{-|u|}du = 2. \\
+%%%%\LL_{T_{2}}(\theta) &= \frac{1}{4}(\Var_{\theta}(X_{1})+\Var_{\theta}(X_{2}))=1. \\
+%%%%\LL_{T_{3}}(\theta) &= \frac{2}{n}.
+%%%%\end{align*}
+%%%%The variance of the median is more complicated. Let us take $n=2m+1$ and recall that $T_{4}(X)$ has the density $(2m+1)\binom{2m}{m}f(t)F(t)^{m}(1-F(t))^{m}$ where $f$ is the density and $F$ is the CDF. As $\E[T_{4}(X)]=0$ by symmetry, we get
+%%%%\begin{align*}
+%%%%\Var_{\theta}(T_{4}(X)) &= 2(2m+1)\binom{2m}{m}\int_{0}^{\infty}t^{2}\frac{1}{2}e^{-t}\l(\frac{1}{2}e^{-t}\r)^{m}(1-\frac{1}{2}e^{-t})^{m} dt \\
+%%%%&= 2^{-m}(2m+1)\binom{2m}{m}\int_{0}^{\infty}t^{2}e^{-(m+1)t}\l(1-\frac{1}{2}e^{-t}\r)^{m} dt. 
+%%%%\end{align*}
+%%%%Among these, it \marginpar{\tiny{Need to compute and compare the median. Anyway which is the UMVUE here?}}
+%%%%\bthm For i.i.d samples from a coin toss, $\bar{X}_{n}$ is the UMVUE for $p$.
+%%%%\ethm
+%%%%\berk Observe that the loss functions here were constant, not depending on $\theta$ at all!
+%%%%\eerk
+%%%%\item {\em Minimax estimate:} The problem with comparing loss functions was that two functions need not be comparable to each other. If we could associate one real number to a statistic (its ``loss''), then this problem would go away. For example, define $\LL_{\max}(T)=\max_{p\in [0,1]}\LL_{T}(p)$, which is the worst case performance of $T$ under the loss function $L$. If $T_{*}$ is a staistic such that $\LL_{\max}(T_{*})\le \LL_{\max}(T)$ for any other statistic $T$, then we say that $T_{*}$ is a {\em minimax estimator} of $p$.
+
+%%%%\bthm For i.i.d samples from a coin toss, $\bar{X}_{n}$ is the minimax estimator of $p$.
+%%%%\ethm
+%%%% 
+%%%%\item {\em Method of moments:} The mean of the distribution with density $\frac{1}{2}e^{-|x-\theta|}$ is $\theta$. Hence the method of moment estimate is $\hat\theta=\bar{X}_{n}$.
+%%%%\eenu
+
+%%%%
+
+%%%%%%%%\newpage
+%%%%\section{Estimation problems - first example}
+%%%%We start with an example. 
+
+%%%%
+%%%%\begin{question}Let $X_{1},\ldots ,X_{n}$ be i.i.d. Ber($p$) random variables where the value of $p$ is unknown. How to  {\em estimate} it using the data $X=(X_{1},\ldots ,X_{n})$?
+%%%%\end{question}
+%%%%Any function of the data, in this case $T:\{0,1\}^{n}\to [0,1]$, is called  a {\em statistic} or {\em estimate}. When the problem is of estimating $p$, our goal is to find a statistic $T$ such that $T(X)$ is close to $p$. But close in what sense? And for what values of $p$? Depending on the criterion, we may get different answers. Intuitively in the given case, $\bar{X}_{n}:=\frac{1}{n}(X_{1}+\ldots +X_{n})$ appears to be the best guess for $p$, and indeed it is, by some of the criteria we shall see.
+%%%%\benu
+%%%%\item {\em Maximum likelihood estimate:} We look at the {\em likelihood function} of the data, namely
+%%%%\begin{align*}
+%%%%\ell(p;X) &= \prod_{k=1}^{n}p^{X_{k}}(1-p)^{1-X_{k}} \\
+%%%%&= \exp\{n[\bar{X}_{n}\log p + (1-\bar{X}_{n})\log (1-p)]\}.
+%%%%\end{align*}
+%%%%The {\em maximum likelihood estimate} (MLE) of $p$ is the statistic $\hat{p}=\hat{p}(X)$ that maximizes $\ell(p;X)$ for the given data $X$. If there is more than one maximizer, we can take any of them.
+
+%%%%In our setting, the maximizer is the solution to $\frac{\bar{X}_{n}}{p}=\frac{1-\bar{X}_{n}}{1-p}$ which is in fact $\hat{p}(X)=\bar{X}_{n}$.
+
+%%%%\item {\em Loss minimizing estimate:} We fix a loss function $L:[0,1]\times [0,1]\to \R_{+}$, say $L(a,b)=(a-b)^{2}$ for definiteness. This measures the loss if the true answer is $a$ and our guess is $b$. Then, for any statistic $T(X)$, we can compute its {\em loss function} $\mathcal L_{T}(p):=\E_{p}[L(T(X),p)]=\E_{p}[(T(X)-p)^{2}]$. 
+
+%%%%If $T_{1}$ and $T_{2}$ are two estimators such that $\LL_{T_{1}}(p)\le \LL_{T_{2}}(p)$ for all $p\in [0,1]$. Then it is clear that $T_{1}$ is better than $T_{2}$ and no one in his or her right mind would use $T_{2}$. But what if $\LL_{T_{1}}$ and $\LL_{T_{2}}$ are as in the figure below? \marginpar{\tiny{Add a figure with three graphs of loss functions here. Two comparable, not the third.}} 
+
+%%%%If there is one statistic $T_{*}(X)$ such that $\LL_{T_{*}}(p)\le \LL_{T}(p)$ for all $p$ and for all other statistics $T$, then we could unambiguously declare $T_{*}$ to be the champion. Unfortunately, such a $T_{*}$ does not exist in any interesting example. To see this, consider $T_{1}(X)=1/2$ and $T_{2}(X)=1/4$ (constant estimates). Then, $\LL_{T_{1}}(1/2)=0$ while $\LL_{T_{2}}(1/4)=0$. Thus, $T_{*}$, if it exists, must satisfy $\LL_{T_{*}}(1/2)=0$ and $\LL_{T_{*}}(1/4)=0$. However, such a statistic clearly does not exist! We could break this impasse in two ways.
+
+%%%%\item {\em Uniformly minimum variance unbiased estimate:} Call an estimate $T$ unbiased if $\E_{p}[T(X)]=p$ for every $p$. Let $\mathcal U$ be the set of all unbiased estimates of $T$. For $T\in \mathcal U$, observe that $\LL_{T}(p)=\Var_{p}(T)$ (for the squared error loss function).
+
+%%%%We could ask for $T_{*}\in \mathcal U$ such that $\LL_{T_{*}}(p)\le \LL_{T}(p)$ for all $p$ and for all other statistics $T\in \mathcal U$. Any such $T_{*}$ is called a {\em uniformly minimum variance unbiased estimate}.
+
+%%%%The previous objections do not hold here, for instance, the $T_{1}$ and $T_{2}$ that we had were not unbiased. There are some (special) example, where a unique UMVUE does exist. In particular
+%%%%\bthm For i.i.d samples from a coin toss, $\bar{X}_{n}$ is the UMVU estimate for $p$.
+%%%%\ethm
+
+%%%%\item {\em Minimax estimate:} The problem with comparing loss functions was that two functions need not be comparable to each other. If we could associate one real number to a statistic (its ``loss''), then this problem would go away. For example, define $\LL_{\max}(T)=\max_{p\in [0,1]}\LL_{T}(p)$, which is the worst case performance of $T$ under the loss function $L$. If $T_{*}$ is a staistic such that $\LL_{\max}(T_{*})\le \LL_{\max}(T)$ for any other statistic $T$, then we say that $T_{*}$ is a {\em minimax estimator} of $p$.
+
+%%%%\bthm For i.i.d samples from a coin toss, $\bar{X}_{n}$ is the minimax estimator of $p$.
+%%%%\ethm
+%%%% 
+%%%%\item {\em Method of moments:} In this method, we consider the empirical distribution, namely the probability mass function that puts mass $1/n$ at each $X_{k}$. Then we find the value of $p$ for which the first moment of the population mean is equal to the first moment of the empirical distribution. If we had two parameters to estimate, we would equate the first two moments of the population with the first two moments of the sample and solve the equations to get our estimates. This method is naive but practically sometimes useful and easy to find.
+
+%%%%In the case at hand, the expected value of Ber($p$) is $p$, and the sample mean is $\bar{X}_{n}$, hence the MOM estimator is simply $\hat{p}=\bar{X}_{n}$.
+%%%%\eenu
+
+%%%%%%%\newpage
+%%%%\section{Estimation - generalities}
+%%%%We now abstract out the essence of the last two examples. 
+
+%%%%\vspace{4mm}\marginpar{\tiny{Should we use $P_{\theta}$ or $F_{\theta}$? Have earlier identified measures with CDFs!}}
+%%%%\noindent{\bf The setting:} Let $P_{\theta}$ be a family of probability distributions on $\R^{d}$ indexed by $\theta\in \II$. We shall assume that  all $P_{\theta}$ have p.m.f or all have p.d.f,  either of which we shall denote by $f_{\theta}(x)$, $\theta\in \II$, $x\in \R^{d}$. 
+
+%%%%The parameter $\theta$ will be deemed unknown. Note that $\II$ could be a subset in $\R^{2}$ in which case there are really two parameters, etc. What we observe is $X=(X_{1},\ldots ,X_{n})$, where $X_{k}$ are i.i.d. from the distribution $P_{\theta}$. The objective is to estimate $\theta$. Sometimes we may have a function $g:\II\to \R$ and be interested in estimating $g(\theta)$ (another parameter) only.
+
+%%%%\vspace{4mm}
+%%%%\noindent{\bf Statistic or estimate:} A function of the data is called a statistic. When it takes values in the parameter space, we called it an {\em estimate}. In other words, $T:(\R^{d})^{n}\to \II$ is an estimate for $\theta$ while in estimating $g(\theta)$ estimates are $\mb{Range}(g)$-valued.
+
+%%%%\vspace{4mm}
+%%%%\noindent{\bf Loss function:} A function $L:\II\times \II \to \R_{+}$ is called a loss function. If $\II$ is a subset of $\R$, popular choices are $L_{\alp}(\theta,\phi)=\|\theta-\phi\|^{\alp}$, in particular, the squared-loss function with $\alp=2$. If $\II$ is a discrete set, a popular choice is the zero-one loss function $L(\theta,\phi)=\one_{\theta=\phi}$.
+
+%%%%\vspace{4mm}
+%%%%\noindent{\bf Risk function of a statistic:} Fix a loss function $L$. For any estimate $T$, its risk function is defined as $\LL_{T}(\theta)=\E_{\theta}[L(\theta,T(X))]$.
+
+%%%%\vspace{4mm}
+%%%%\noindent{\bf Bias and variance:} We say that a statistic $T(X)$ is {\em unbiased} for $g(\theta)$ if $\E_{\theta}[T(X)]=g(\theta)$ for all $\theta\in \II$. In general, the {\em bias} of $T$ is the function $b_{T}(\theta)=\E_{\theta}[T(X)]-g(\theta)$. The variance of $T$ is of course the function $V_{T}(\theta)=\Var_{\theta}(T(X))$. The {\em mean squared error} of $T$ is $\mb{M.S.E}_{T}(\theta):=\E[(T(X)-g(\theta))^{2}]$. This is just the risk function associated to the squared error loss. It is a simple matter to check that $\mb{M.S.E}_{T}(\theta)=b_{T}(\theta)^{2}+Var_{\theta}(T)$. Note that it makes sense to talk of bias and variance only if the parameter is real-valued.
+%%%%\benu
+%%%%\item {\em Maximum likelihood estimate:} The likelihood function is defined as $\ell(\theta;X):=\prod_{k=1}^{n}f_{\theta}(X_{k})$. The MLE of $\theta$ is the statistic $\hat{\theta}(X):=\arg\max\limits_{\theta\in \II}\ell(\theta;X)$. This is well-defined if the maximizer is unique. If not, we must make up some rule to choose among the maximizers (so that $\hat{\theta}$ is a function) and each such rule is an MLE. 
+%%%%\item {\em Minimax estimate:} $T_{*}$ is called a minimax estimate of $\theta$ if $\max_{\theta\in \II}\LL_{T_{*}}(\theta)\le \max_{\theta\in \II}\LL_{T}(\theta)$. Minimax estimate need not be unique, but the maximal risk of all minimax estimates must be equal.
+%%%%\item {\em Uniformly minimum variance unbiased estimate:} Let $\mathcal U$ be the set of all unbiased estimators of $g(\theta)$. We say that a statistic $T_{*}$ is the UMVUE of $g(\theta)$ if $\Var_{T_{*}}(\theta)\le \Var_{T}(\theta)$ for all $\theta\in \II$. In general, it may not exist or if it exists, need not be unique.
+%%%%\item {\em Method of moments estimates:} Define the parameters $g_{p}(\theta):=\E_{\theta}[X_{1}^{p}]$. In typical situations, there is some $p_{0}$ such that $\theta\to (g_{1}(\theta),\ldots ,g_{p_{0}}(\theta))$ is a one-one function (for example, if $\II$ is an open set in $\R^{m}$, then we expect $p_{0}=m$). In such cases, we consider the equations
+%%%%$$
+%%%%\frac{1}{n}\sum_{k=1}^{n}X_{k}^{p} = g_{p}(\theta), \;\; 1\le p\le p_{0}.
+%%%%$$
+%%%%If there is some $\hat{\theta}$ that solves these equations, then it is unique. That is called the method of moments estimate.
+%%%%\eenu
+
+%%%%\bex Write down the parameter space, a few reasonable estimates for the parameters and discuss the estimation problem in light of the above criteria.
+%%%%\benu
+%%%%\item $P_{\mu}$ is the $N(\mu,1)$ distribution.
+%%%%\item $P_{\sig^{2}}$ is the $N(0,\sig^{2})$ distribution.
+%%%%\item $P_{\mu,\sig^{2}}$ is the $N(\mu,\sig^{2})$ distribution.
+%%%%\item $P_{\lam}$ is the Exponential($\lam$) distribution. Let $\theta=1/\lam$. Discuss the estimation of $\theta$. (There are some interesting aspects of estimation of $\lam$, for example, there is no unbiased estimate of $\lam$!).
+%%%%\item Let $P_{a,b}$ be Uniform($[a,b]$) distribution. 
+%%%%\item Let $P_{p}$ be Geometric($p$) distribution. Again, consider the parameter $1/p$ instead of $p$.
+%%%%\item Let $P_{\lam}$ be the Poisson($\lam$) distribution. (In this case, it is a fact that $1/\lam$ does not have any unbiased estimates!).
+%%%%\eenu
+%%%%\eex
+
+%%%%\berk Let $\phi=h(\theta)$ where $h$ is a one-one function. Then intuitively we would consider the estimation of $\theta$ or the estimation of $\phi$ as equivalent problems. In other words, if $\hat{\theta}$ is our estimate of $\theta$, then $\hat{\phi}=h(\hat{\theta})$ ought to be our estimate for $\phi$ and {\em vice versa}. This is indeed true of the MLE, but not for the other estimates above. For example, note that if $T(X)$ is unbiased for $\theta$, it is in general {\em not} the case that $h(T(X))$ is unbiased for $\phi$. Thus, UMVUE etc. depend on the way in which we parameterize the family of probability distributions and parameterization should not be thought of as an arbitrary labeling of the family of distributions at hand - some parameterizations are better than others.
+%%%%\eerk
+
+\section{Hypothesis testing - first examples}
+Earlier in the course we discussed the problem of how to test whether a ``psychic'' can make predictions better than a random guesser. This is a prototype of what are called {\em testing problems}. We start with this simple example and introduce various general terms and notions in the context of this problem.
+
+
+%\begin{question} A $p$-coin is tossed $n$ times with outcomes $X_{1},\ldots ,X_{n}$. Suppose we are told that the value of $p$ is either $1/2$ or $3/4$. How to decide which, using the data $X=(X_{1},\ldots ,X_{n})$?
+
+% For example, one can imagine a new drug released by a pharmaceutical company to cure a disease $\mathcal D$. The company claims that it is effective in 75\% of the cases while there is a contrary opinion that it is effective in only 50\% of the cases. Somewhat more realistic situations are discussed later.
+%\end{question}
+
+\begin{question} A ``psychic'' claims to guess the order of cards in a deck. We shuffle a deck of cards, ask her to guess and count the number of correct guesses, say $X$. 
+
+\medskip
+One hypotheses (we call it the {\em null hypothesis} and denote it by $H_{0}$) is that the psychic is guessing randomly. The {\em alternate hypothesis} (denoted $H_{1}$) is that his/her guesses are better than random guessing (in itself this does not imply existence of psychic powers. It could be that he/she has managed to see some of the cards etc.). Can we decide between the two hypotheses based on $X$?
+\end{question}
+
+What we need is a rule for deciding which hypothesis is true. A rule for deciding between the hypotheses is called a {\em test}. For example, the following are examples of rules (the only condition is that the rule must depend only on the data at hand).
+
+\beg We present three possible rules.
+\benu
+\item If $X$ is an even number declare that $H_{1}$ is true. Else declare that $H_{1}$ is false.
+\item If $X\ge 5$, then accept $H_{1}$, else reject $H_{1}$.
+\item If $X\ge 8$, then accept $H_{1}$, else reject $H_{1}$.
+\eenu
+The first rule does not make much sense as the parity (evenness or oddness) has little to do with either hypothesis. On the other hand, the other two rules make some sense. They rely on the fact that if $H_{1}$ is true then we expect $X$ to be larger than if $H_{0}$ is true. But the question still remains, should we draw the line at $5$ or at $8$ or somewhere else?
+\eeg
+In testing problems  there is only one objective, to avoid the following two possible types of mistakes.
+\begin{align*}
+\mb{Type-I error:} & \; H_{0} \mb{ is true but our rule concludes }H_{1}. \\
+\mb{Type-II error:} & \; H_{1} \mb{ is true but our rule concludes }H_{0}.
+\end{align*}
+The probability of type-I error is called the {\em significance level} of the test and usually denote by $\alp$. That is, $\alp=\P_{H_{0}}\{\mb{the test accepts }H_{1}\}$ where we write $\P_{H_{0}}$ to mean that the probability is calculated under the assumption that $H_{0}$ is true. Similarly one define the {\em power} of the test as $\bet=\P_{H_{1}}\{\mb{the test accepts }H_{1}\}$. Note that $\bet$ is the probability of not making type-II error, and hence we would like it to be close to $1$. Given two tests with the same level of significance, the one with higher power is better. Ideally we would like both to be small, but that is not always achievable.
+
+We fix the desired level of significance, usually $\alp=0.05$ or $0.1$ and only consider tests whose probability of type-I error is at most $\alp$. It may seem surprising that we take $\alp$ to be so small. Indeed the  two hypotheses are not treated equally. Usually $H_{0}$ is the default option, representing traditional belief and $H_{1}$ is a claim that must prove itself. As such, the burden of proof is on $H_{1}$. 
+
+To use analogy with law, when a person is convicted, there are two hypotheses, one that he is guilty and the other that he is not guilty. According to the maxim ``innocent till proved guilty'', one is not required to prove his/her innocence. On the other hand guilt must be proved. Thus the null hypothesis is ``not guilty'' and the alternative hypothesis is ``guilty''. 
+
+
+In our example of card-guessing, assuming random guessing, we have calculated the distribution of $X$ long ago. Let $p_{k}=\P\{X=k\}$ for $k=0,1,\ldots ,52$.  Now consider a test of the form ``Accept $H_{1}$ if $X\ge k_{0}$ and reject otherwise''. Its level of significance is
+$$
+\P_{H_{0}}\{\mb{accept }H_{1}\} = \P_{H_{0}}\{X\ge k_{0}\} = \sum_{i=k_{0}}^{52}p_{i}.
+$$
+For $k_{0}=0$, the right side is $1$ while for $k_{0}=52$ it is $1/52!$ which is tiny. As we increase $k_{0}$ there is a first time where it becomes less than or equal to $\alp$. We take that $k_{0}$ to be the threshold for cut-off.
+
+ In the same example of card-guessing, let $\alp=0.01$. Let us also assume that Poisson approximation holds. This means that $p_{j}\approx e^{-1}/j! $ for each $j$. Then, we are looking for the smallest $k_{0}$ such that $\sum_{j=k_{0}}^{\infty}e^{-1}/j! \le 0.01$. For $k_{0}=4$, this sum is about $0.019$ while for $k_{0}=5$ this sum is $0.004$. Hence, we take $k_{0}=5$. In other words, accept $H_{1}$ if $X\ge 5$ and reject if $X<5$. If we took $\alp=0.0001$ we would get $k_{0}=7$ and so on.
+
+\para{Strength of evidence} Rather than merely say that we accepted $H_{1}$ or rejected it would be better to say how strong the evidence is in favour of the alternative hypothesis. This is captured by the {\em $p$-value}, a central concept of decision making. It is defined as {\em the probability that data drawn from the null hypothesis would show closer agreement with the alternative hypothesis than the data we have at hand} (read it five times!).
+
+Before we compute it in our example, let us return to the analogy with law. Suppose  a man is convicted for murder. Recall that $H_{0}$ is that he is not guilty and $H_{1}$ is that he is guilty. Suppose his fingerprints were found in the house of the murdered person. Does it prove his guilt? It is some evidence in favour of it, but not necessarily strong. For example, if the convict was a friend of the murdered person, then he might be innocent but have left his fingerprints on his visits to his friend. However if the convict is a total stranger, then one wonders why, if he was innocent, his finger prints were found there. The evidence is stronger for guilt. If bloodstains are found on his shirt, the evidence would be even stronger! In saying this, we are  asking ourselves questions like ``if he was innocent, how likely is it that his shirt is blood-stained?''. That is $p$-value. Smaller the $p$-value, stronger the evidence for the alternate hypothesis.
+
+Now we return to our example. Suppose the observed value is $X_{\mb{\tiny obs}}=4$. Then the $p$-value is $\P\{X\ge 4\}=p_{4}+\ldots +p_{52}\approx 0.019$. If the observed value was $X_{\mb{\tiny obs}}=6$, then the $p$-value would be $p_{6}+\ldots +p_{52}\approx 0.00059$. Note that the computation of $p$-value does not depend on the level of significance. It just depends on the given hypotheses and the chosen test. 
+
+
+\section{Testing for the mean of a normal population}
+ Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu,\sig^{2})$. We shall consider the following  hypothesis testing problems.
+
+\benu
+\item One sided test for the mean. $H_{0}:\; \mu=\mu_{0}$ versus $H_{1}: \; \mu>\mu_{0}$.
+\item Two sided test for the mean.  $H_{0}:\; \mu=\mu_{0}$ versus $H_{1}: \; \mu\not=\mu_{0}$.
+\eenu
+%The sense is that in the first case we do not have to worry about the possibility that $\mu<\mu_{0}$
+This kind of problem arises in many situations in comparing the effect of a treatment as follows. 
+\beg Consider a drug claimed to reduce blood pressure. How do we check if it actually does? We take a random sample of $n$ patients, measure their blood pressures $Y_{1},\ldots ,Y_{n}$. We administer the drug to each of them and again measure the blood pressures $Y_{1}',\ldots ,Y_{n}'$, respectively.   Then, the question is whether the mean blood pressure decreases upon giving the treatment. To this effect, we define $X_{i}=Y_{i}-Y_{i}'$ and wish to test the hypothesis that the mean of $X_{i}$s is strictly positive. If $X_{i}$ are indeed normally distributed, this is exactly the one-sided test above. 
+\eeg
+\beg The same applies to test the efficacy of a fertilizer to increase yield, a proposed drug to decrease weight, a particular educational method to improve a skill, or a particular course such as the current {\em probability and statistics course} in increasing subject knowledge. To make a policy decision on such  matters, we can conduct an experiment as in the above example. 
+
+For example, a bunch of students are tested on probability and statistics and their scores are noted. Then they are subjected to the course for a semester. They are tested again after the course (for the same marks, and at the same level of difficulty) and the scores are again noted. Take differences of the scores before and after, and test whether the mean of these differences is positive (or negative, depending on how you take the difference). This is a  one-sided tests for the mean. Note that in these examples, we are taking the null hypothesis to be that there is no effect. In other words, the burden of proof is on the new drug or fertilizer or the instructor of the course.
+\eeg
+
+\para{The test} Now we present the test. We shall use the statistic $\mathcal T:=\frac{\sqrt{n}(\bar{X}-\mu_{0})}{s}$ where $\bar{X}$ and $s$ are the sample mean and sample standard deviation. 
+\benu
+\item In the one-sided test, we accept the alternative hypothesis if $\mathcal T>t_{n-1}(\alp)$.
+\item In the two sided-test, accept the alternative hypothesis if $\mathcal T>t_{n-1}(\alp/2)$ or $\mathcal T<-t_{n-1}(\alp/2)$.
+\eenu
+
+\para{The rationale behind the tests} If $\bar{X}$ is much larger than $\mu_{0}$ then the greater is the evidence that the true mean $\mu$ is greater than $\mu_{0}$. However, the magnitude depends on the standard deviation and hence we divide by $s$ (if we knew $\sig$ we would divide by that). Another way to see that this is reasonable is that $\mathcal T$ does not depend on the units in which you measure $X_{i}$s (whether $X_{i}$ are measured in meters or centimeters, the value of $\mathcal T$ does not change). 
+
+\para{The significance level is $\alp$} The question is where to draw the threshold. We have seen before that {\em under the null hypothesis}  $\mathcal T$ has a $t_{n-1}$ distribution. Recall that this is because, if the null hypothesis is true, then  $\frac{\sqrt{n}(\bar{X}-\mu_{0})}{\sig}\sim N(0,1)$, $(n-1)s^{2}/\sig^{2} \sim \chi^{2}_{n-1}$ and the two are independent.  Thus, the given tests have significance level $\alp$ for the two problems.
+
+\berk Earlier we considered the problem of constructing a $(1-\alp)$-CI for $\mu$ when $\sig^{2}$ is unknown. The two sided test abovecan be simply stated as follows: Accept the alternative at level $\alp$ if the corresponding $(1-\alp)$-CI does not contain $\mu_{0}$. Conversely, if we had dealt with testing problems first, we could define a confidence interval as the set of all those $\mu_{0}$ for which the corresponding test rejects the alternative.
+
+Thus, confidence intervals and testing are closely related. This is true in some greater generality. For example, we did not construct confidence interval for $\mu$, but you should do so and check that it is closely related to the one-sided tests above.
+\eerk
+
+\section{Testing for the difference between means of two normal populations}
+Let $X_{1},\ldots ,X_{n}$ be i.i.d. $N(\mu_{1},\sig_{1}^{2})$ and let $Y_{1},\ldots ,Y_{m}$ be i.i.d. $N(\mu_{2},\sig_{2}^{2})$. We shall consider the following  hypothesis testing problems.
+
+\benu
+\item One sided test for the difference in means. $H_{0}:\; \mu_{1}=\mu_{2}$ versus $H_{1}: \; \mu_{1}>\mu_{2}$.
+\item Two sided test for the mean.  $H_{0}:\; \mu_{1}=\mu_{2}$ versus $H_{1}: \; \mu_{1}\not=\mu_{2}$.
+\eenu
+
+
+This kind of problem arises in many situations in comparing two different populations or the effect of two different treatments etc. Actual data sets of such questions can be found in the homework.
+\beg Suppose a new drug to reduce blood pressure is introduced by a pharmaceutical company.  There is already an existing drug in the market which is working reasonably alright. But it is claimed by the company that the new drug is better. How to test this claim?
+
+We take a random sample of $n+m$ patients and break them into two groups of $n$ and of $m$ patients. The first group is administered the new drug while the second group is administered the old drug. Let $X_{1},\ldots ,X_{n}$ be the {\em decrease in blood pressures} in the first group. Let $Y_{1},\ldots ,Y_{m}$ be the {\em decrease} in blood pressures in the second group. The claim is that one average $X_{i}$s are larger than $Y_{i}$s.
+
+Note that it does not make sense to subtract $X_{i}-Y_{i}$ and reduce to a one sample test as in the previous section (here $X_{i}$ is a measurement on one person and $Y_{i}$ is a measurement on a completely different person! Even the number of persons in the two groups may differ). This is an example of a two-sample test as formulated above. 
+\eeg
+\beg The same applies to many studies of comparision. If someone claims that Americans are taller than Indians on average, or if it is claimed that cycling a lot leads to increase in height, or if it is claimed that Chinese have higher IQ than Europeans, or if it is claimed that {\em Honda Activa} gives better mileage than {\em Suzuki Access}, etc., etc., the claims can be reduced to the two-sample testing problem as introduced above.
+\eeg
+
+\parag{BIG ASSUMPTION:} We shall assume that $\sig_{1}^{2}=\sig_{2}^{2}=\sig^{2}$ (yet unknown). This assumption is not made because it is natural or because it is often observed, but because it leads to mathematical simplification. Without this assumption, no exact level-$\alp$ test has been found!
+
+\para{The test} Let $\bar{X},\bar{Y}$ denote the sample means of $X$ and $Y$ and let $s_{X}, s_{Y}$ denote the corresponding sample standard deviations. Since $\sig^{2}$ is the assumed to be the same for both populations, $s_{X}^{2}$ and $s_{Y}^{2}$ can be combined to define 
+$$
+S^{2}:=\frac{(n-1)s_{X}^{2}+(m-1)s_{Y}^{2}}{m+n-2}
+$$
+which is a better estimate for $\sig^{2}$ than just $s_{X}^{2}$ or $s_{Y}^{2}$ (this $S^{2}$ is better than simply taking $(s_{X}^{2}+s_{Y}^{2})/2$ because it gives greater weight to the larger sample). 
+
+Now define $\mathcal T =\sqrt{\frac{1}{n}+\frac{1}{m}}\l(\frac{\bar{X}-\bar{Y}}{S}\r)$.  The following tests hav significance level $\alp$.
+\benu
+\item For the one-sided test, accept the alternative if $\mathcal T>t_{n+m-2}(\alp)$.
+\item For the one-sided test, accept the alternative if $\mathcal T>t_{n+m-2}(\alp/2)$ or $\mathcal T<-t_{n+m-2}(\alp/2)$.
+\eenu
+
+\para{The rationale behind the tests} If $\bar{X}$ is much larger than $\bar{Y}$ then the greater is the evidence that the true mean $\mu_{1}$ is greater than $\mu_{2}$. But again we need to standardize by dividing this by an estimate of $\sig$, namely $S$. The resulting statistic $\mathcal T$ has a $t_{m+n-2}$ distribution as explained below.
+
+\para{The significance level is $\alp$} The question is where to draw the threshold. From the facts we know,
+\begin{align*}
+\bar{X}&\sim N(\mu_{1},\sig_{1}^{2}/n), \\
+\bar{Y}&\sim N(\mu_{2},\sig_{2}^{2}/m), \\
+\frac{(n-1)}{\sig^{2}}s_{X}^{2}&\sim \chi_{n-1}^{2}, \\
+\frac{(m-1)}{\sig^{2}}s_{Y}^{2}&\sim \chi_{m-1}^{2}
+\end{align*}
+and the four random variables are independent. From this, it follows that $(m+n-2)S^{2}$ has $\chi_{n+m-2}^{2}$ distribution. {\em Under the null hypothesis} $\frac{1}{\sig}\sqrt{\frac{1}{n}+\frac{1}{m}}(\bar{X}-\bar{Y})$ has $N(0,1)$ distribution and is independent of $S$. Taking ratios, we see that $\mathcal T$ has $t_{m+n-2}$ distribution (under the null hypothesis).
+
+
+\section{Testing for the mean in absence of normality} Suppose $X_{1},\ldots ,X_{n}$ are i.i.d. $\mb{Ber}(p)$. Consider the test
+$$
+H_{0}: \; p=p_{0} \;\;\; \mb{ versus }\;\;\; H_{1}: \; p\not=p_{0}.
+$$
+One can also consider the one-sided test. Just as in the confidence interval problem, we can give a solution when $n$ is large, using the approximation provided by the central limit theorem. Recall that an approximate $(1-\alp)$-CI is 
+ $$
+\l[\bar{X}_{n}-z_{\alp/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}, \bar{X}_{n}+z_{\alp/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}\r].
+$$
+Inverting this confidence interval, we see that a reasonable test is:
+
+Reject the alternative if $p_{0}$ belongs to the above CI. That is, accept the alternative if
+$$
+\bar{X}_{n}-z_{\alp/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}\le p_{0}\le \bar{X}_{n}+z_{\alp/2}\sqrt{\frac{\bar{X}_{n}(1-\bar{X}_{n})}{n}}
+$$
+This test has (approximately) significance level $\alp$.
+
+\medskip
+More generally, if we have data $X_{1},\ldots ,X_{n}$ from a population with mean $\mu$ and variance $\sig^{2}$, then consider the test
+$$
+H_{0}: \; \mu=\mu_{0} \;\;\; \mb{ versus }\;\;\; H_{1}: \; \mu\not=\mu_{0}.
+$$
+A test with approximate significance level $\alp$ is given by: Reject the alternative if
+$$
+\bar{X}_{n}-z_{\alp/2}\frac{s_{n}}{\sqrt{n}}\le \mu_{0}\le \bar{X}_{n}+z_{\alp/2}\frac{s_{n}}{\sqrt{n}}.
+$$
+Just as with confidence intervals, we can find the actual level of significance (if $n$ is not large enough) by simulating data on a computer.
+
+%\section{Testing for the difference in means of two normal populations}
+%The mathematical set-up is as follows. Let $X_{1},\ldots ,X_{n}$ be i.i.d. samples from $N(\mu_{1},\sig_{1}^{2})$ distribution and let $Y_{1},\ldots ,Y_{m}$ be i.i.d. samples from $N(\mu_{2},\sig_{2}^{2})$. We assume that $X_{i}$s are independent of $Y_{j}$s. Our objective is to test
+%$$
+%H_{0}: \; \mu_{1}=\mu_{2}\;\;\;  \mb{ versus} \;\;\; H_{1}: \; \mu_{1}>\mu_{2}.
+%$$
+
+%This is a very common question that arises in comparing two populations. For example, imagine a new fertilizer that claims to give better yields than an existing one. To test this, we conduct an experiment where we divide a large tract of land into $m+n$ equal areas. To the first $n$ tracts the new fertilizer is applied and to the first $m$ plots the old fertilizer is applied. The yields at the end of the season the first set of tracts are $X_{1},\ldots ,X_{n}$ and in the second set of tracts are $Y_{1},\ldots ,Y_{m}$. Based on this data we must decide whether the second fertilizer is indeed better as claimed. Note that we have taken the null hypothesis to be ``$\mu_{1}=\mu_{2}$'', indicating that the burden of proof is on the new fertilizer. 
+
+%Many similar problems can be considered.
+%\beit
+%\item A pharmaceutical company releases a new drug. Test if it is better than the old one.
+%\item A new method of teaching is claimed to be better than an existing one.
+%\item It is claimed that one race of people have higher IQ than another.
+%\eeit
+%Since comparing things is an ever present obsession of humans, you can add any number of other examples on your own! It is clear that the above testing problem captures all these situations except for one serious issue, the assumption of normality. We will only say that if $m$ and $n$ are both large, then like in the one sample test for the mean, we can use law of large numbers and central limit theorems to obtain approximate level $\alp$ tests.
+
+%Now we return to the mathematical setting. We have $X_{1},\ldots ,X_{n}$,  i.i.d. samples from $N(\mu_{1},\sig_{1}^{2})$ distribution and $Y_{1},\ldots ,Y_{m}$,   i.i.d. samples from $N(\mu_{2},\sig_{2}^{2})$ distribution. We assume that $X_{i}$s are independent of $Y_{j}$s. Our objective is to test
+%$$
+%H_{0}: \; \mu_{1}=\mu_{2}\;\;\;  \mb{ versus} \;\;\; H_{1}: \; \mu_{1}>\mu_{2}.
+%$$
+%From the facts we know about sample mean and sample variance, we know that 
+%\begin{align*}
+%\bar{X}\sim N(\mu_{1},\sig_{1}^{2}/n), & \hsp{5mm}   \frac{(n-1)}{\sig_{1}^{2}}s_{X}^{2}\sim \chi^{2}_{n-1}, \\
+%\bar{Y}\sim N(\mu_{2},\sig_{2}^{2}/m), & \hsp{5mm} \frac{(m-1)}{\sig_{2}^{2}}s_{Y}^{2}\sim \chi^{2}_{m-1}.
+%\end{align*}
+%Further, all these four random variables are mutually independent. Consequently, we see that
+%\begin{align*}
+%\bar{X}-\bar{Y}&\sim N\l(\mu_{1}-\mu_{2},\frac{\sig_{1}^{2}}{n}+\frac{\sig_{2}^{2}}{m}\r) \\
+% \frac{(n-1)}{\sig_{1}^{2}}s_{X}^{2}+\frac{(m-1)}{\sig_{2}^{2}}s_{Y}^{2}&\sim \chi^{2}_{m+n-2}.
+%\end{align*}
+
+%As with testing for the mean when the variance was unknown, we want to make a random variable that depends on the data and the difference in means (since we are testing whether $\mu_{1}-\mu_{2}$ is zero or positive) but not on the unknown variance. Unfortunately it is known how to do this (you can try manipulating the above random variables!). But we can do it, under a simplifying assumption.
+
+%\para{Assumption} The population variances are unknown but equal. That is, $\sig_{1}^{2}=\sig_{2}^{2}=\sig^{2}$ (not known). In that case, 
+%\begin{align*}
+%\frac{(\bar{X}-\bar{Y})-(\mu_{1}-\mu_{2})}{\sig\sqrt{\frac{1}{n}+\frac{1}{m}}}&\sim N\l(0,1\r) \\
+% \frac{1}{\sig^{2}}\{(n-1)s_{X}^{2}+(m-1)s_{Y}^{2}\}&\sim \chi^{2}_{m+n-2}.
+%\end{align*}
+%Further, the two random variables are independent. Therefore,
+%$$
+%\frac{(\bar{X}-\bar{Y})-(\mu_{1}-\mu_{2})}{\sqrt{\frac{1}{n}+\frac{1}{m}}\sqrt{\frac{(n-1)s_{X}^{2}+(m-1)s_{Y}^{2}}{n+m-2}}}\sim T_{n+m-2}.
+%$$
+%If the null hypothesis was true, the  left hand side become the statistic 
+%$$
+%\mathcal T_{m,n}:=\frac{\bar{X}-\bar{Y}}{\sqrt{\frac{1}{n}+\frac{1}{m}}\sqrt{\frac{(n-1)s_{X}^{2}+(m-1)s_{Y}^{2}}{n+m-2}}}
+%$$
+% Hence, we can use this to test for $\mu_{1}-\mu_{2}$ (or equivalently, to construct a confidence interval for it). 
+
+%\para{Testing rule} If $\mathcal T_{m,n}>t_{m+n-2}(\alp)$, then accept the alternate hypothesis. Else, reject it.
+
+%
+%\para{Without the normality assumption} For large $m,n$ we can still say that $\mathcal T_{m,n}$ has approximately standard normal distribution (under the null hypothesis). Hence, we can use it to test for $\mu_{1}-\mu_{2}$. 
+
+
+\section{Chi-squared test for goodness of fit}
+At various times we have made statements such as ``heights follow normal distribution'', ``lifetimes of bulbs follow exponential distribution'' etc. Where do such claims come from? Over years of analysing data, of course. This leads to an interesting question. Can we test whether  lifetimes of bulbs do follow exponential distribution? 
+
+We start with a simple example of testing whether a die is fair.  The hypotheses are  $H_{0}:$ the die is fair, versus $H_{1}:$ the die is unfair\footnote{You may feel that the null and alternative hypotheses are reversed. Is not independence a special property that should prove itself. Yes and no. Here we are imagining a situation where we have some reason to think that the die is fair. For example perhaps the die looks symmetric.}.
+
+We throw the die $n$ times and record the observations $X_{1},\ldots ,X_{n}$. For $j\le 6$, let $O_{j}$ be the number of times we observe the face $j$ turn up. In symbols $O_{j}=\sum_{i=1}^{n}\one_{X_{i}=j}$. Let $E_{j}=\E[O_{j}]=\frac{n}{6}$ be the expected number of times we see the face $j$ (under the null hypothesis). Common sense says that if $H_{0}$ is true then $O_{j}$ and $E_{j}$ must be rather close for each $j$. How to measure the closeness? Karl Pearson introduced the test statistic
+$$
+ T:=\sum_{j=1}^{6}\frac{(O_{j}-E_{j})^{2}}{E_{j}}.
+$$
+If the desired level of significance is $\alp$, then the Pearson $\chi^{2}$-test says ``Reject $H_{0}$ if $T\ge \chi^{2}_{5}(\alp)$''. The number of degrees of freedom is $5$ here. In general, it is one less than the number of bins (i.e., how many terms you are summing to get $T$). 
+
+\para{Some practical points} The $\chi^{2}$ test is really an asymptotic statement. For large $n$, the level of significance is approximately $1-\alp$. There is no assurance for small $n$. Further, in performing the test, it is recommended that each bin must have at least $5$ observations (i.e., $O_{j}\ge 5$). Otherwise we club together bins with fewer entries. The number $5$ is a rule of thumb, the more the better.
+
+\para{Fitting the Poisson distribution} We consider the famous data collected by Rutherford, Chadwick and Ellis on the number of radioactive disintegrations. For details see the book of Feller's book (section VI.7) or \href{http://galton.uchicago.edu/~lalley/Courses/312/PoissonProcesses.pdf}{this website}. 
+
+The data consists of $X_{1},\ldots ,X_{2608}$ (where $X_{k}$ is the number of particles detected by the counter in the $k^{\mb{\tiny th}}$ time interval. The hypotheses are
+ $$
+ H_{0}: \; F \mb{ is a Poisson distribution}. \qquad H_{1}: \; F \mb{ is not Poisson}.
+ $$ 
+The physical theories predict that the distribution ought to be Poisson and hence we have taken it as the null hypothesis\footnote{When a new theory is proposed, it should prove itself and is put in the alterntive hypotheis, but here we take it as null.}
+
+We define $O_{j}$ as the number of time intervals in which we see exactly $j$ particles. Thus $O_{j}=\sum_{i=1}^{2608}\one_{X_{i}=j}$. How do we find the expected numbers? If the null hypothesis had said that $F$ has Poisson(1) distribution, we could use that to find the expected numbers. But $H_{0}$ only says Poisson($\lam$) for an unspecified $\lam$? This brings in a new feature.
+
+First estimate $\lam$, for example $\hat{\lam}=\bar{X}_{n}$ is an MLE as well as method of moments estimate. Then we use this to calculate Poisson probabilities and the expected numbers. In other words, $E_{j}=e^{-\hat{\lam}}\frac{\hat{\lam}^{j}}{j!}$. For the given data we find that $\hat{\lam}=3.87$. The table is as follows.
+
+\begin{center}
+\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c||}
+\hline
+$j$  & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & $\ge$ 10 \\
+\hline
+$O_{j}$  & 57 & 203 & 383 & 525 & 532 & 408 & 273 & 139 & 45 & 27 & 16 \\
+\hline
+$E_{j}$ & 54.4 & 210.5 & 407.4 & 525.4 & 508.4 & 393.5 & 253.8 & 140.3 & 67.9 & 29.2 & 17.1 \\
+\hline
+\end{tabular}
+\end{center}
+Two remarks: The original data would have consisted of several more bins for $j=11,12\ldots$. These have been clubbed together to perform the $\chi^{2}$ test (instead of a minimum of $5$ per bin, they may have ensured that there are at least $10$ per bin). Also, the estimate $\hat{\lam}=3.87$ was obtained before clubbing these bins. Indeed, if the data is merely presented as the above table, there will be some ambiguity in how to find $\hat{\lam}$ as one of the bins says ``$\ge 10$''. 
+
+Then we compute
+$$
+ T=\sum_{j=0}^{10}\frac{(O_{j}-E_{j})^{2}}{E_{j}} = 14.7.
+$$
+Where should we look up in the $\chi^{2}$ table? Earlier we said that the degrees of freedom is one less than the number of bins. Here we give the more general rule.
+$$
+\mb{Degrees of freedom of the }\chi^{2} = \mb{ No. of bins }-1-\mb{No. of parameters estimated from data}.
+$$
+In our case we estimated one parameter, $\lam$ hence the d.f. of the $\chi^{2}$ is $11-1-1=9$. Looking at $\chi_{9}^{2}$ table one can see that the $p$-value is $0.10$. This is the probability that a $\chi_{9}^{2}$ random variable is greater than $14.7$. (Caution: Elsewhere I see that the $p$-value for this experiment is reported as $0.17$, please check my calculations!). This means that at $5\%$ level, we would not reject the null hypothesis. If the $p$-value was $0.17$, we would not reject the null hypothesis even at $10\%$ level.  
+
+\para{Fitting a continuous distribution} Chi-squared test can be used to test goodness of fit for continuous distributions too. We need some modifications. We must make bins of appropriate size, like $[a,a+h],[a+h,a+2h],\ldots ,[a+h(k-1),a+hk]$ for a suitable $h$ and $k$. Then we find the expected numbers in each bin using the null hypothesis (first estimating some parameters if necessary) and then proceed to compute $T$ in the same way as before. Then check against the $\chi^{2}$ table with the appropriate degrees of freedom. We omit details.
+
+
+\para{The probability theorem behind the $\chi^{2}$-test for goodness of fit} Let $(W_{1},\ldots ,W_{k})$ have multinomial distribution with parameters $n,m,(p_{1},\ldots ,p_{k})$. (In other words, place $n$ balls at random into $m$ bins, but each ball goes into the $i^{\mb{th}}$ bin with probability $p_{i}$ and distinct balls are assigned independently of each other). The following proposition is the mathematics behind Pearson's test.
+
+\para{Proposition [Pearson]} Fix $k,p_{1},\ldots,p_{k}$. Let $T_{n}=\sum_{i=1}^{k}\frac{(W_{i}-np_{i})^{2}}{np_{i}}$. Then  $T_{n}$ converges to a $\chi_{k-1}^{2}$ distribution in the sense that $\P\{T_{n}\le x\}\to \int_{0}^{x}f_{k-1}(u)du$ where $f_{k-1}$ is the density of $\chi_{k-1}^{2}$ distribution.
+
+\medskip
+How does this help? Suppose $X_{1},\ldots ,X_{n}$ are i.i.d. random variables taking $k$ values (does not matter what the values are, say $t_{1},t_{2},\ldots ,t_{k}$) with probabilities $p_{1},\ldots ,p_{k}$. Then, let $W_{i}$ be the number of $X_{i}$s whose value is $t_{i}$. Clearly, $(W_{1},\ldots ,W_{k})$ has a multinomial distribution.  Therefore, for large $n$, the random variable $T_{n}$ defined above (which is in fact the $\chi^{2}$-statistic of Pearson) has approximately $\chi_{k-1}^{2}$ distribution. This explains the test.
+
+\para{Sketch of proof of the proposition} Start with the case $k=2$. Then, $W_{1}\sim \mb{Bin}(n,p_{1})$ and $W_{2}=r-W_{1}$. Thus, $T_{n}=\frac{(W_{1}-np_{1})^{2}}{np_{1}p_{2}}$ (recall that $p_{1}+p_{2}=1$ and check this!). We know that $(W_{1}-np_{1})/\sqrt{np_{1}q_{1}}$ is approximately a $N(0,1)$ random variable, where $q_{i}=1-p_{i}$). Its square has (approximately$\chi_{1}^{2}$ distribution. Thus the proposition is proved for $k=2$.
+
+When $k>2$, what happens is that the random variables $\xi_{i}:=(W_{i}-np_{i})/\sqrt{np_{i}q_{i}}$ are approximately $N(0,1)$, but not independent. In fact the correlation between $\xi_{i}$ and $\xi_{j}$ is  close to $-\sqrt{p_{i}p_{j}/q_{i}q_{j}}$. The sum of squares of $\xi_{i}$s  gives the $\chi^{2}$ statistic. On the other hand, one can (with some clever linear algebra/matrix manipulation) write $\sum_{i=1}^{k}\xi_{i}^{2}$ as $\sum_{i=1}^{k-1}\eta_{i}^{2}$ where $\eta_{i}$ are   {\em independent} $N(0,1)$ random variables. Thus we get $\chi_{k-1}^{2}$ distribution.
+
+\section{Tests for independence}
+Suppose we have a bivariate sample $(X_{1},Y_{1}),(X_{2},Y_{2}),\ldots ,(X_{n},Y_{n})$ i.i.d. from a joint density (or joint pmf) $f(x,y)$. The question is to decide whether $X_{i}$ is independent of $Y_{i}$.
+
+\beg There are many situations in which such a problem arises. For example, suppose a bunch of students are given two exams, one testing mathematical skills and another testing verbal skills. The underlying goal may be to investigate whether the human brain has distinct centers for verbal and quantitative thinking. 
+\eeg
+\beg As another example, say we want to investigate whether smoking causes lung cancer. In this case, for each person  in the sample, we take two measurements - $X$ (equals $1$ if smoker and $0$ if not) and $Y$ (equal $1$ if the person has lung cancer, $0$ if not). The resulting data may be summarized in a two-way table as follows.
+$$
+\begin{array}{c|cc|c}
+ & X=0 & X=1 & \\
+ \hline 
+ Y=0 & n_{0,0} & n_{0,1} & n_{0\cdot}\\
+Y=1 & n_{1,0} & n_{1,1} & n_{1\cdot} \\
+\hline
+ & n_{\cdot 0} & n_{\cdot 1} & n
+\end{array}
+$$
+Here the total sample is of $n$ persons and $n_{i,j}$ denote the numbers in each of the four boxes. The numbers $n_{0\cdot}$ etc denote row or column sums. The statistical problem is to check if smoking ($X$) and incidence of lung cancer ($Y$) are positively correlated.
+\eeg
+
+\para{Testing independence in bivariate normal} We shall not discuss this problem in detail but instead quickly give some indicators and move on. Here we have $(X_{i},Y_{i})$ i.i.d bivariate normal random variables with $\E[X]=\mu_{1}$, $\E[Y]=\mu_{2}$, $\Var(X)=\sig_{1}^{2}$, $\Var(Y)=\sig_{2}^{2}$ and $\mb{Corr}(X,Y)=\rho$. The testing problem is $H_{0}: \; \rho=0$ versus $H_{1}: \; \rho\not=0$. (Remember that if $(X,Y)$ is bivariate normal, then $X$ and $Y$ are independent if and only if $X$ and $Y$ are uncorrelated.
+
+The natural statistic to consider is the sample correlation coefficient ({\em Pearson's $r$ statistic})
+$$
+r_{n}:=\frac{s_{X,Y}}{s_{X}.s_{Y}}
+$$
+where $s_{X}^{2},s_{Y}^{2}$ are the sample variances of $X$ and $Y$ and $s_{X,Y}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar{X})(Y_{i}-\bar{Y})$ is the sample covariance. It is clear that the test should reject null hypothesis if $r_{n}$ is away from $0$. To decide the threshold we need the distribution of $r_{n}$ under the null hypothesis. 
+
+\para{Fisher} Under the null hypothesis, $r_{n}^{2}$ has $\mb{Beta}(\half, \frac{n-2}{2})$ distribution.
+
+\medskip
+
+Using this result, we can draw the threshold for rejection using the Beta distribution (of course the explicit threshold can only be computed numerically). If the assumption of normality of the data is not satisfied, then this test is invalid. However, for large $n$ as usual we can obtain an asymptotically level-$\alp$ test.
+
+\para{Testing for independence in contingency tables}
+Here the measurements $X$ and $Y$ take values in $\{x_{1},\ldots ,x_{k}\}$ and $\{y_{1},\ldots ,y_{\ell}\}$, respectively. These $x_{i},y_{j}$ are categories, not numerical values (such as ``smoking'' and ``non-smoking''). Let the total number of samples be $n$ and let $N_{i,j}$ be the number of samples with values $(x_{i},y_{j})$. Let $N_{i\cdot}=\sum_{j}N_{i,j}$ and let $N_{\cdot j}=\sum_{i}N_{i,j}$.
+
+We want to test 
+\begin{align*}
+H_{0}&: \; X \mb{ and } Y \mb{ are independent} \\
+H_{1}&: \; X \mb{ and } Y \mb{ are not independent}.
+\end{align*}
+
+Let $\mu(i,j)=\P\{X=x_{i},Y=y_{j}\}$ be the joint pmf of $(X,Y)$ and let $p(i)$, $q(j)$ be the marginal pmfs of $X$ and $Y$ respectively. From the sample, our estimates for these probabilities would be $\hat{\mu}(i,j)=N_{i,j}/n$ and $\hat{p}(i)=N_{i\cdot}/n$ and $\hat{q}(j)=N_{\cdot j}/n$ (which are consistent in the sense that $\sum_{j}\hat{\mu}(i,j)=\hat{p}(i)$ etc).
+
+Under the null hypothesis we must have $\mu(i,j)=p(i)q(j)$. We test if these equalities hold (approximately) for the estimates. That is, define
+$$
+T=\sum_{i=1}^{k}\sum_{j=1}^{\ell}\frac{(N_{i,j}-n\hat{p}(i)\hat{q}(j))^{2}}{n\hat{p}(i)\hat{q}(j)}.
+$$
+Note that this is in the usual form of a $\chi^{2}$ statistic (sum of $(\mb{observed}-\mb{expected})^{2}/\mb{expected}$). 
+
+The number of terms is $k\ell$. We lose one d.f. as usual but in addition we estimate $(k-1)$ parameters $p(i)$ (the last one $p(k)$ can be got from the others) and $(\ell-1)$ parameters $q(j)$. Consequently, the total degress of freedom is $k\ell-1-(k-1)-(\ell-1)=(k-1)(\ell-1)$. 
+
+Hence, we reject the null hypothesis if $T>\chi_{(k-1)(\ell-1)}^{2}(\alp)$ to get (an approximately) level $\alp$ test.
+
+
+
+\section{Regression and Linear regression}
+Let $(X_{i},Y_{i})$ be i.i.d random variables. For example, we could pick people at random from a population and measure their height ($X$) and weight ($Y$). One question of interest is to predict the value of $Y$ from the value of $X$. This may be useful if $Y$ is difficult to measure directly. For instance, $X$ could be the height of a person and $Y$ could be the xxx
+
+In other words, we assume that there is an underlying relationship $Y=f(X)$ for an unknown function $f$ which we want to find. From a random sample $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$  we try to guess the function $f$.
+
+If we allow all possible functions, it is easy to find one that fits all the data points, i.e., there exists a function $f:\R\to \R$ (in fact we may take $f$ to be a polynomials of degree $n$) such that $f(X_{i})=Y_{i}$ for each $i\le n$ (this is true only if we assume that all $X_{i}$ are distinct which happens if $X$ has a continuous distribution). This is not a good predictor, because the next data point $(U,V)$ will fall way off the curve. We have found a function that ``predicts'' well all the data we have, but not for a future observation! 
+
+Instead, we fix a class of functions, for example the collection of all linear functions $y=mx+c$ where $m,c\in \R$ and within this class, find the best fitting function. 
+
+\berk One may wonder if linearity is too restrictive. To some extent, but perhaps not as much as it sounds at first.
+\benu
+\item Firstly, many relationships are linear in a reasonable range of the $X$ variable (for example, resistance of a materiaal versus temperature). 
+\item Secondly, we may sometimes transform the variables so that the relationship becomes linear. For example, if $Y=ae^{bX}$, then $\log(Y)=a'+b'X$ where $a'=\log(a)$ and $b'=\log(b)$ and hence in terms of the new variables $X$ and $\log(Y)$, we have a linear relationship. 
+\item Lastly, as a slight extension of linear regression,  one can study {\em multiple linear regression}, where one   has several independent variables $X^{(1)},\ldots, X^{(p)}$ and try to fit a linear  function $Y=\bet_{1}X^{(1)}+\ldots +\bet_{p}X^{(p)}$. Once that is done, it increases the scope of curve fitting even more. For example, if we have two variable $X,Y$, then we can take $X^{(1)}=1$, $X^{(2)}=X$, $X^{(3)}=X^{2}$. Then, linear regression of $Y$ against $X^{(1)},X^{(2)},X^{(3)}$ is tantamount to fitting a quadratic polynomial curve for $X,Y$. 
+\eenu
+In short, multiple linear regression along with non-linear transformations of the individual variables, the class of functions $f$ is greatly extended.
+ \eerk
+
+\para{Finding the best linear fit} We need a criterion for deciding the ``best''. A basic one is the {\em method of least squares} which recommends finding $\alp,\bet$ such that the error sum of squares $R^{2}:=\sum_{k=1}^{n}(Y_{k}-\alp-\bet X_{k})^{2}$ is minimized.
+
+For fixed $X_{i},Y_{i}$ this is a simple problem in calculus. We get
+$$
+\hat{\beta}=\frac{\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})(Y_{k}-\bar{Y}_{n})}{\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})^{2}}=\frac{s_{X,Y}}{s_{X}^{2}},  \qquad \hat{\alp}=\bar{Y}_{n}-\hat{\bet}\bar{X}_{n}
+$$
+where $s_{X,Y}$ is the sample covariance of $X,Y$ and $s_{X}$ is the sample variance of $X$.
+
+We leave the derivation of the least squares estimators by calculus to you. Instead we present another approach. 
+
+For a given choice of $\bet$, we know that the choice of $\alp$ which minimizes $R^{2}$ is the sample mean of $Y_{i}-\bet X_{i}$ which is $\bar{Y}-\bet \bar{X}$. Thus, we only need to find $\hat{\bet}$ that minimizes 
+$$\sum_{k=1}^{n}\l((Y_{k}-\bar{Y})-\bet(X_{k}-\bar{X})\r)^{2}$$
+and then we simply set $\hat{\alp}=\bar{Y}-\bet\bar{X}$. Let\footnote{We are dividing by $X_{k}-\bar{X}$. What if it is zero for some $k$? But note that in the expression $\sum \l((Y_{k}-\bar{Y})-\bet(X_{k}-\bar{X})\r)^{2}$, all such terms do not involve $\bet$ and hence can be safely left out of the summation. We leave the details for you to work out (the expressions at the end should involve all $X_{k},Y_{k}$). } $Z_{k}=\frac{Y_{k}-\bar{Y}}{X_{k}-\bar{X}}$ and $w_{k}=(X_{k}-\bar{X})^{2}/s_{X}^{2}$. Then,
+$$
+\sum_{k=1}^{n}\l((Y_{k}-\bar{Y})-\bet(X_{k}-\bar{X})\r)^{2}=s_{X}^{2}\sum_{k=1}^{n}w_{k}\l(Z_{k}-\bet \r)^{2}.
+$$
+Since $w_{k}$ are non-negative numbers that add to $1$, we can intepret it as a probability mass function and hence we see that the minimizing $\bet$ is given by the expectation with respect to this mass function. In other words, 
+$$
+\hat{\bet}=\sum_{k=1}^{n}w_{k}Z_{k} = \frac{s_{X,Y}}{s_{X}^{2}}.
+$$
+Another way to write it is $\hat{\bet}=\frac{s_{Y}}{s_{X}}r_{X,Y}$ where $r_{X,Y}$ is the sample correlation coefficient.
+
+\para{A motivation for the least squares criterion} Suppose we make more detailed model assumptions as follows. Let $X$ be a control variable (i.e., not random but we can tune it to any value, like temperature) and assume that $Y_{i}=\alp+\bet X_{i}+\eps_{i}$ where $\eps_{i}$ are i.i.d. $N(0,\sig^{2})$ ``errors''. Then, the data is essential $Y_{i}$ that are independent $N(\alp+\bet X_{i},\sig^{2})$ random variables. Now we can extimate $\alp,\bet$ by the maximum likelihood method.
+
+\beg [Hubble's 1929 experiment on the recession velocity of nebulae and their distance to earth] Hubble collected the following data that I took from \href{http://lib.stat.cmu.edu/DASL/Datafiles/Hubble.html}{this website}. Here $X$ is the number of megaparsecs from the nebula to earth and $Y$ is the observed recession velocity in $10^{3}$km/s.
+\begin{center}
+\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\hline
+$X$  & 0.032 & 0.034 & 0.214 & 0.263 & 0.275 & 0.275 & 0.45 & 0.5 & 0.5 & 0.63 & 0.8 &  2 \\
+\hline
+$Y$  & 0.17 & 0.29 & -0.13 & -0.07 & -0.185 & -0.22 & 0.2 & 0.29 & 0.27 & 0.2 & 0.3 & 1.09\\
+\hline
+\hline
+$X$ & 0.9 & 0.9 & 0.9 & 0.9 & 1 & 1.1 & 1.1 & 1.4 & 1.7 & 2 & 2 & 2 \\
+\hline
+$Y$ & -0.03 & 0.65 & 0.15 & 0.5 & 0.92 & 0.45 & 0.5 & 0.5 & 0.96 & 0.5 & 0.85 & 0.8   \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+We fit two straight lines to this data.
+\benu
+\item Fit the line $Y=\alp+\bet X$. The least squares estimators (as derived earlier) turn out to be $\hat{\alp}=-0.04078$ and $\hat{\bet}=0.45416$.  If $Z_{i}=\alp+\bet X_{i}$ are the predicted values of $Y_{i}$s, then one can see that the {\em residual sum of squares} is $\sum_{i}(Y_{i}-Z_{i})^{2}=1.1934$.
+\item Fit the line $Y=bX$. In this case we get $\hat{b}$ by minimizing $\sum_{i}(Y_{i}-bX_{i})^{2}$. This is slightly different from before, but the same methods (calculus or the alternate argument we gave) work to give 
+$$
+\hat{b}=\frac{\sum_{i=1}^{n}Y_{i}X_{i}}{\sum_{i=1}^{n}X_{i}^{2}}= 0.42394.
+$$
+The residual sum of squares $\sum_{i=1}^{n}(Y_{i}-bX_{i})^{2}$ turns out to be $1.2064$.
+\eenu
+The residual sum of squares is smaller in the first, thus one may naively think that it is a better fit. However, note that the reduction is due to an extra parameter. Purely statistically, introducing extra parametrs will always reduce the residual sum of squares for obvious reasons. But the question is whether the extra parameter is worth the reduction. More precisely, if we fit the data too closely, then the next data point to be discovered (which may be nebula that is $10$ megaparsecs away)  may fall way off the curve.
+
+More importantly, in this example, physics tells us  that the line must pass through zero (that is, there is no recession velocity when two objects are very close). Therefore it is the second line that we consider, not the first. This gives the Hubble constant to be $423$ km./s./megaparsec (the currently accepted values appear to be about $70$, with data going up to distances of hundreds of megaparsecs...see  \href{https://www.cfa.harvard.edu/~dfabricant/huchra/hubble.plot.dat}{this data}!).
+\eeg
+
+\beg I have taken this example from the \href{http://ces.iisc.ernet.in/hpg/nvjoshi/statspunedatabook/databook.html}{ wonderful compilation of data sets} by A. P. Gore, S. A. Paranjpe, M. B. Kulkarni. In this example, $Y$ denotes the number of frogs of age $X$ (in some delimited population). 
+\begin{center}
+\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\hline
+$X$  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\
+\hline
+$Y$  & 9093 & 35 & 30 & 28 & 12 & 8 & 5 & 2\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+A prediction about life-times says that the survival probability $P(t)$ (which is the chance that an individual survives up to age $t$ or more) decays as $P(t)=Ae^{-bt}$ for some constants $A$ and $b$. We would like to check this agains the given data.
+
+What we need are individuals that survive beyond age $t$. Taking $Z$ to be the cumulative sums of $Y$, this gives us
+\begin{center}
+\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\hline
+$X$  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\
+\hline
+$Z$  & 9213 &  120 & 85 & 55 & 27 & 15 & 7 & 2\\
+\hline
+$P=Z/n$ & 1.0000  &  0.0130 &   0.0092  &  0.0060  &  0.0029  &  0.0016  &  0.0008  &  0.0002 \\
+\hline
+$W=\log P$ &  0  & -4.3409  & -4.6857 &  -5.1210  & -5.8325  & -6.4203 &  -7.1825 &  -8.4352 \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+We compute that $\bar{X}=4.5$, $\bar{W}=-5.25$, $\mb{std}(X)=2.45$, $\mb{std}(W)= 2.52$ and $\mb{corr}(X,W)=0.92$. Hence, in the linear regression $W=a+bX$, we see that $\hat{b}=0.94$ and $\hat{a}=-9.49$. The residual sum of squares is $7.0$. 
+\eeg
+
+\parag{How good is the fit?} For the same data $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$, suppose we have two candidates \; (a) \; $Y=f(X)$ and \; (b) \; $Y=g(X)$. How to decide which is better? Or how to say if a fit is good at all? 
+
+By the least-squares criterion, the answer is  the one with smaller residual sum of squares $SS:=\sum_{k=1}^{n}(Y_{k}-f(X_{k}))^{2}$. Usually one presents a closely related quantity $R^{2}=1-\frac{SS}{SS_{0}}$ (where $\mb{SS}_{0}=\sum_{k=1}^{n}(Y_{k}-\bar{Y})^{2}=(n-1)s_{Y}^{2}$). Since $SS_{0}$ is (a multiple of) the total variance in $Y$, $R^{2}$ measures how much of it is ``explained'' by a particular fit. Note that $0\le R^{2}\le 1$. And higher (i.e., closer to $1$) the $R^{2}$ is, the better the fit.
+
+Thus, the first naive answer to the above question is to compute $R^{2}$ in the two situations (fitting by $f$ and fitting by $g$) and see which is higher. But a more nuanced approach is preferable. Consider the same data and three situations.
+\benu
+\item Fit a constant function. This means, choose  $\alp$  to minimize $\sum_{k=1}^{n}(Y_{k}-\alp)^{2}$. The solution is $\hat{\alp}=\bar{Y}$ and the residual sum of squares is $\mb{SS}_{0}$ itself. Then, $R_{0}^{2}=0$. 
+\item Fit a linear function. Then $\alp,\bet$ are chosen as discussed earlier and the residual sum of squares is $\mb{SS}_{1}=\sum_{k=1}^{n}(Y_{k}-\hat{\alp}-\hat{\bet}X_{k})^{2}$. Then, $R_{1}^{2}=1-\frac{SS_{1}}{SS_{0}}$. 
+\item Fit a quadratic function. The the residual sum of squares is $\mb{SS}_{2}=\sum_{k=1}^{n}(Y_{k}-\hat{\alp}-\hat{\bet}X_{k}-\hat{\gam}X_{k}^{2})^{2}$ where  $\hat{\alp},\hat{\bet},\hat{\gam}$ are chosen so as to minimize $\sum_{k=1}^{n}(Y_{k}-\alp-\bet X_{k}-\gam X_{k}^{2})^{2}$. Then $R_{2}^{2}=1-\frac{SS_{2}}{SS_{0}}$.
+\eenu
+Obviously we will have $R_{2}^{2}\ge R_{1}^{2}\ge R_{0}^{2}$ (since linear functions include constants and quadratic functions include linear ones). Does that mean that the third is better? If that were the conclusion, then we can continue to introduce more parameters as that will always reduce the residual sum of squares! But that comes at the cost of making the model more complicated (and having too many parameters means that it will fit the current data well, but not future data!). When to stop adding more parameters?
+
+Qualitatively,  a new parameter is desirable  if it leads to a  {\em significant increase} of the $R^{2}$. The question is, how big an increase is significant. For this, one introduces the notion of {\em adjusted} $R^{2}$, which is defined as follows:
+
+If the model has $p$ parameters, then define $\bar{SS}=SS/(n-1-p)$. In particular, $\bar{SS}_{0}=\frac{SS_{0}}{n-1}=s_{Y}^{2}$.  Then define the adjusted $R^{2}$ as $\bar{R}^{2}=1-\frac{\bar{SS}}{\bar{SS}_{0}}$. 
+
+In particular, $\bar{R}_{0}^{2}=R_{0}^{2}$ as before. But $R_{1}^{2}=1-\frac{SS_{1}/(n-2)}{SS_{0}/(n-1)}$. Note that $\bar{R}^{2}$ does not necessarily increase upon adding an extra parameter. If we want a polynomial fit, then a rule of thumb is to keep adding more powers as long as $\bar{R}^{2}$ continues to increase and stop the moment it decreases.
+\beg To illustrate the point let us look at a simulated data set. I generated $25$ i.i.d $N(0,1)$ variables $X_{i}$ and then generated $25$ i.i.d. $N(0,1/4)$ variables $\eps_{i}$. And set $Y_{i}=2X_{i}+\eps_{i}$. The  data set obtained was as follows.
+\begin{center}
+\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+\hline
+$X$  & -0.87&0.07&-1.22&-1.12&-0.01&1.53&-0.77&0.37&-0.23&1.11&-1.09&0.03&0.55 \\
+\hline
+$Y$  & -2.43&-0.56&-2.19&-2.32&-0.12&3.77&-1.4&0.84&0.34&1.83&-1.83&0.48&0.98 \\
+\hline
+\hline
+$X$ & 1.1&1.54&0.08&-1.5&-0.75&-1.07&2.35&-0.62&0.74&-0.2&0.88&-0.77 &\\
+\hline
+$Y$ & 2.3&2.5&-0.41&-2.94&-1.13&-0.84&4.36&-1.14&1.45&-1.36&1.55&-2.43  &  \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+To this data set we fit two models (A) $Y=\bet X$ and (B) $Y=a+bX$. The results are as follows.
+\begin{align*}
+\mb{SS}_{0}=96.20, &\;\;  R_{0}^{2}=0 \\
+\mb{SS}_{1}=6.8651, &\;\;  R_{1}^{2}=0.9286, \hsp{2mm} \bar{R}_{1}^{2}=0.9255 \\
+\mb{SS}_{2}= 6.8212, &\;\; R_{2}^{2}=0.9291, \hsp{2mm} \bar{R}_{2}^{2}=0.9227.
+\end{align*}
+Note that the adjusted $R^{2}$ decreases (slightly) for the the second model. Thus, if we go by that, then the model with one parameter is chosen (correctly, as we generated from that model!). You can try various simulations yourself. Also note the high value of $R_{1}^{2}$ (and $R_{2}^{2}$) which indicates that it is not a bad fit at all.
+\eeg
+
+%\begin{center}
+%\begin{tabular}{||r|c|c|c|c|c|c|c|c|c|c|c|c|c||}
+%\hline
+%Observed $Y$ &  0  & -4.3409  & -4.6857 &  -5.1210  & -5.8325  & -6.4203 &  -7.1825 &  -8.4352 \\
+%\hline
+%Predicted $Y$
+%\hline
+%\hline
+%\end{tabular}
+%\end{center}
+
+%\begin{thebibliography}{99}
+
+%\bibitem{freedmanpisanipurves}
+%\bibitem{freedmanpisanipurves} {\sc Freedma},
+% Statistics.
+
+%\bibitem{hkpv} {\sc Hough, J. B., Krishnapur, M., Peres, Y. and Vir\'{a}g, B. 
+%{Zeros of Gaussian analytic functions and determinantal point processes}, American Mathematical Society, (2009)}.
+%\end{thebibliography}
+
+
+\end{document}
+
+
+
+
+
+
+\appendix
+%    Include appendix "chapters" here.
+%\include{}
+\chapter{Plan of lectures}
+\begin{tabular}{r|l}
+02/08 & Intro. Probability space defns. \\
+03/08 & Examples of discrete prob spaces\\
+06/08 & Infinite sums \\
+09/08 & Basic rules of probability; Inclusion-exclusion \\
+10/08 & Bonferroni's inequalities. Combinatorial examples \\
+13/08 & -- \\
+16/08 & --These three days, have them go over lots of combinatorial problems \\
+17/08 & -- \\
+20/08 & Probability distributions. Binomial, Poisson, Geometric, Hypergeometric \\
+23/08 & Continuous CDFs and densities \\
+24/08 & Normal, Exponential and Gamma, Uniform and Beta, Cauchy \\
+27/08 & Padding \\
+30/08 & Expectation, variance, covariance \\
+31/08 & Inequalities - Cauchy-Schwarz, Jensen's, Markov, Chebyshev\\
+03/09 & Joint distributions. Change of variable formula. \\
+06/09 & Independence. Conditional probability.  \\
+07/09 & Examples. \\
+10/09 & \\
+13/09 & \\
+14/09 & \\
+17/09 & \\
+20/09 & \\
+21/09 & \\
+\end{tabular}
+ 
+ 
+ \bigskip
+ 
+\begin{tabular}{c|c|l}
+1 & 02& Intro. Prob spaces. Examples.\\
+2 & 05& Infinite sums. Basic rules. Inclusion-exclusion\\
+3 & 12& [Lost week]\\
+4 & 19& Distributions with examples. CDF. Uncountable prob spaces. Examples of pdf.\\
+5 & 26& Examples further. Simulation. Joint distributions. Independence.\\
+6 & 02& Conditioning. Bayes' rule. \\
+7 & 09& Expectation, variance, covariance. Inequalities. \\
+8 & 16& WLLN. \\
+9 & 23& Normal and Poisson convergence of Binomial.\\
+10 & 30& Distribution of the sum. Whatever else.\\
+\hline
+11 & 07& Basic problems in statistics. Summarizing data. \\
+12 & 14& Estimation problems. \\   
+13 & 21& Hypothesis testing problems. \\
+14 & 28& Linear regression and least squares method. \\
+15 & 04& Kolmogorov-Smirnov and Chi-squared tests. \\   
+16 & 11& Testing for independence. Contingency tables. \\
+17 & 18& \\
+18 & 25& \\   
+?? & ??& Random walks. P\'{o}lya's urn scheme. Branching processes. \\
+\end{tabular}
+
+\para{Must include} Coupon collector problem. Banach's matchbox problem. Boltzmann-Gibbs, Fermi-Dirac and Bose-Einstein statistics. Sampling error in polls. P\'{o}lya's urn scheme. Ballot problem. 
+
+
+%\backmatter
+%    Bibliographies can be prepared with BibTeX using amsplain,
+%    amsalpha, or (for "historical" overviews) natbib style.
+\bibliographystyle{amsplain}
+%\bibliography{Essentials/GAF_book}
+
+%    See note above about multiple indexes.
+\printindex
+
+\section{Lecture by lecture plan}
+\begin{tabular}{r||c|c||c}
+DATE   & TARGET & ACTUAL & COMMENTS \\
+\hline
+02/Aug & Introductory lecture & & \\
+\hline
+05/Aug & Probability space definition & & \\
+07/Aug & Examples of probability spaces & & \\
+09/Aug & ----& & \\
+\hline
+12/Aug & Balls in bins, Nonexamples& & \\
+14/Aug & Countability, Infinite sums & Only countability & \\
+16/Aug & Rules of probability&  Infinite sums &\\
+\hline
+19/Aug & Inclusion exclusion& Countable probability spaces & \\
+21/Aug & Bonferroni's inequalities& Rules of probability & \\
+23/Aug & $\approx\approx\approx\approx$(Independence?)& Inclusion-exclusion & \\
+\hline
+26/Aug & Random variables, mean, pmf, cdf& & \\
+28/Aug & Binomial, Geometric, Poisson & & \\
+30/Aug & Simulation & & \\
+\hline
+02/Sep & Conceptual difficulties of continuous distributions & & \\
+04/Sep & Continuous distributions& & \\
+06/Sep & Normal, exponential, Uniform& & \\
+\hline
+09/Sep & Simulation & & \\
+11/Sep & Joint distributions, Independence& & \\
+13/Sep & Conditioning & & \\
+\hline
+16/Sep & Conditioning& & \\
+18/Sep & Change of variable& & \\
+20/Sep & Change of variable& & \\
+\hline
+23/Sep & Mean, variance, covariance& & \\
+25/Sep & Cauchy-Shwarz, Markov, Chebyshev& & \\
+27/Sep & Weak law of large numbers& & \\
+\hline
+30/Sep & Monte Carlo integration& & \\
+02/Oct & Central limit theorem& & \\
+04/Oct & --End of probability--& & \\
+\hline
+\hline
+07/Sep & Statistics - introduction & & \\
+09/Oct & Estimation & & \\
+11/Oct & Estimation & & \\
+\hline
+14/Sep & Confidence intervals & & \\
+16/Oct & Confidence intervals & & \\
+18/Oct & Wrap up estimation & & \\
+\hline
+21/Oct & Testing & & \\
+23/Oct & Testing & & \\
+25/Oct & Testing & & \\
+\hline
+28/Oct & Testing & & \\
+30/Oct & Testing & & \\
+01/Nov & Regression & & \\
+\hline
+04/Nov & Regression & & \\
+06/Nov & $\approx\approx\approx\approx$ & & \\
+08/Nov & $\approx\approx\approx\approx$ & & \\
+\hline
+\end{tabular}
+\berk Probably losing one week for midterm. But there must be two more weeks at the end. Assuming loss of a couple of classes to holidays, there may be just enough time. But schedule must be adhered to.
+\eerk
+
+
+\section{Various pieces}
+There are many pieces that should be inserted in exercises if they cannot be covered in lectures or tutorials.
+\beit
+\item Stirling's formula
+\item Poisson limit of Binomial
+\item Banach's matchbox problem
+\item Coupon collector problem
+\item Polya's urn scheme (definition)
+\item Random walk in one and two dimensions
+\item Gambler's ruin problem
+\item Ballot problem
+\item Catalan numbers
+\item Gamma function
+\item Beta function
+\item Branching process
+\item Integration of $e^{-x^{2}}$
+\item Multidimensional normal integral (at least bivariate)
+\item Hardy-Weinberg law
+\item Fisher's explanation of sex-ratios
+\item Mendel's actual data, falsification?
+\item Comparing literary styles, with example
+\item Sample surveys - actual examples?
+\item 
+\eeit
+
+
+\end{document}
+
+
+
+
+%\appendix
+%    Include appendix "chapters" here.
+%\include{}
+
+%\backmatter
+%    Bibliographies can be prepared with BibTeX using amsplain,
+%    amsalpha, or (for "historical" overviews) natbib style.
+\bibliographystyle{amsplain}
+%\bibliography{Essentials/GAF_book}
+
+%    See note above about multiple indexes.
+%\printindex
+
+\end{document}
