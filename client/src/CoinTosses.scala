@@ -75,7 +75,7 @@ object CoinTosses {
       } yield (colour, random(400))
     )
 
-  val fmla = """$\frac{X - n}{\sqrt{n}}$"""
+  val fmla = """$\frac{X - n/2}{\sqrt{n}}$"""
 
   val fmlaK = Katex("""\frac{X - n}{\sqrt{n}}""")
 

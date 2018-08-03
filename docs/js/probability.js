@@ -10325,7 +10325,7 @@ $c_Lprobability_CoinTosses$.prototype.init___ = (function() {
       return $this.$$anonfun$tossesV$1__p1__T__T2(colour)
     })
   })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
-  this.fmla$1 = "$\\frac{X - n}{\\sqrt{n}}$";
+  this.fmla$1 = "$\\frac{X - n/2}{\\sqrt{n}}$";
   this.fmlaK$1 = $m_Lprobability_Katex$().apply__T__Lorg_scalajs_dom_raw_Element("\\frac{X - n}{\\sqrt{n}}");
   return this
 });
