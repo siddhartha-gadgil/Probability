@@ -93,21 +93,23 @@ object BayesCoin {
           <p></p>
           <div><button class="btn btn-primary" onclick = {() => {freshCoin(); guessOptV := None; tossesValV := Vector()}} >New coin</button></div>
           <p></p>
-          <div>
-            <label>Probability that the coin is biased:</label>
-            <input type="text" size="4" value={probOfBias.map(_.toString)} oninput={
+          <form>
+          <div  class="form-group">
+            <label for="bias">Probability that the coin is biased:</label>
+            <input type="text" id="bias" class="form-control" size="4" value={probOfBias.map(_.toString)} oninput={
           (e: js.Dynamic) =>
             probOfBias := e.target.value.asInstanceOf[String].toDouble
           }/>
               </div>
-            <div>
+            <div  class="form-group">
 
-            <label>Probability of head for a biased coin:</label>
-            <input type="text" size="4" value={biasedHeadsProb.map(_.toString)} oninput={
+            <label for="head">Probability of head for a biased coin:</label>
+            <input type="text" id="head" class="form-control" size="4" value={biasedHeadsProb.map(_.toString)} oninput={
           (e: js.Dynamic) =>
             biasedHeadsProb := e.target.value.asInstanceOf[String].toDouble
           }/>
           </div>
+          </form>
 
         </div>
       </div>
