@@ -14,6 +14,7 @@ object Illustrations{
     Birthdays.main()
     Percolation.main()
     CoinTosses.main()
+    BayesCoin.main()
   }
 }
 
