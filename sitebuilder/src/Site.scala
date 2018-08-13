@@ -193,7 +193,8 @@ object Site {
       "Repeated Tosses" -> "coin-tosses",
       "Birthday Paradox" -> "birthdays",
       "Percolation" -> "percolation",
-      "Bayes rule for Coins" -> "bayes-coin")
+      "Bayes rule for Coins" -> "bayes-coin",
+      "Dependent tosses" -> "dependent-tosses")
 
   def illusList(relDocsPath: String): Vector[Elem] =
     allIllus.map{

@@ -15,6 +15,7 @@ object Illustrations{
     Percolation.main()
     CoinTosses.main()
     BayesCoin.main()
+    DependentTosses.main()
   }
 }
 
