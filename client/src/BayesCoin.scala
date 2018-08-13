@@ -5,6 +5,7 @@ import org.scalajs.dom._
 
 import scala.scalajs.js.annotation._
 import scala.util.Random
+import scalajs.js
 
 @JSExportTopLevel("BayesCoin")
 object BayesCoin {
@@ -13,11 +14,34 @@ object BayesCoin {
 
   val rnd: Random = new Random()
 
+  val probOfBias: Var[Double] = Var(0.5)
+
+  val biasedHeadsProb: Var[Double] = Var(0.9)
+
   def getP: Double = if (rnd.nextBoolean()) 0.5 else rnd.nextDouble()
 
-  val pV: Var[Double] = Var(getP)
+  val biasChooser: Var[Double] = Var(rnd.nextDouble())
 
-  val tossesV: Var[Vector[Boolean]] = Var(Vector())
+  val headChooser: Var[Double] = Var(rnd.nextDouble())
+
+  def freshCoin(): Unit = {
+    biasChooser := rnd.nextDouble()
+    headChooser := rnd.nextDouble()
+  }
+
+  val pV: Rx[Double] =
+    probOfBias.zip(biasedHeadsProb).zip(biasChooser).zip(headChooser).map {
+      case (((pb, pbh), bc), hc) =>
+        if (bc < pb) pbh // biased coin
+        else 0.5
+    }
+
+  val tossesValV: Var[Vector[Double]] = Var(Vector())
+
+  val tossesV: Rx[Vector[Boolean]] =
+    tossesValV.zip(pV).map {
+      case (v, p) => v.map(_ < p)
+    }
 
   val guessOptV: Var[Option[Boolean]] = Var(None)
 
@@ -34,9 +58,9 @@ object BayesCoin {
       <div class="panel panel-primary">
         <div class="panel-heading">Is the coin fair?</div>
         <div class="panel-body">
-          <p>Try to figure out whether the coin is fair by tossing it several times.</p>{pV.map
-        {(p) => <button class="btn btn-primary" onclick={() =>
-          tossesV.update(_ :+ (rnd.nextDouble() < p))}>Toss the coin</button>}}
+          <p>Try to figure out whether the coin is fair by tossing it several times.</p>
+          <button class="btn btn-primary" onclick={() =>
+          tossesValV.update(_ :+ rnd.nextDouble())}>Toss the coin</button>
           <p></p>
           <div> <strong>Heads:</strong> {headsR} </div>
           <div><strong>Tails:</strong> {tailsR} </div>
@@ -54,8 +78,7 @@ object BayesCoin {
               else
                 <div>Sorry!</div>
             ).getOrElse(<div></div>)
-
-        }
+            }
           }
           {guessOptV.zip(fairR).zip(pV).map{
           case ((guessOpt, fair), p) =>
@@ -68,17 +91,30 @@ object BayesCoin {
         }
           }
           <p></p>
-          <div><button class="btn btn-primary" onclick = {() => {pV := getP; guessOptV := None; tossesV := Vector()}} >New coin</button></div>
+          <div><button class="btn btn-primary" onclick = {() => {freshCoin(); guessOptV := None; tossesValV := Vector()}} >New coin</button></div>
+          <p></p>
+          <div>
+            <label>Probability that the coin is biased:</label>
+            <input type="text" size="4" value={probOfBias.map(_.toString)} oninput={
+          (e: js.Dynamic) =>
+            probOfBias := e.target.value.asInstanceOf[String].toDouble
+          }/>
+              </div>
+            <div>
+
+            <label>Probability of head for a biased coin:</label>
+            <input type="text" size="4" value={biasedHeadsProb.map(_.toString)} oninput={
+          (e: js.Dynamic) =>
+            biasedHeadsProb := e.target.value.asInstanceOf[String].toDouble
+          }/>
+          </div>
 
         </div>
       </div>
 
-
-
-    val positionOpt = Option(dom.document.querySelector("#fair-coin"))
-    positionOpt.foreach{(position)=>
+    val positionOpt = Option(dom.document.querySelector("#bayes-coin"))
+    positionOpt.foreach { (position) =>
       val div = document.createElement("div")
-      // position.parentNode.insertBefore(div, position.nextSibling)
       position.appendChild(div)
       mount(div, coinDiv)
     }

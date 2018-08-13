@@ -111,15 +111,15 @@ object Site {
    """.stripMargin
 
 
-  def threeDash(s: String) = s.trim == "---"
+  def threeDash(s: String): Boolean = s.trim == "---"
 
-  def withTop(l: Vector[String]) =
-    (l.filter(threeDash).size == 2) && threeDash(l.head)
+  def withTop(l: Vector[String]): Boolean =
+    (l.count(threeDash) == 2) && threeDash(l.head)
 
-  def body(l: Vector[String]) =
+  def body(l: Vector[String]): Vector[String] =
     if (withTop(l)) l.tail.dropWhile((l) => !threeDash(l)).tail else l
 
-  def topmatter(lines: Vector[String]) =
+  def topmatter(lines: Vector[String]): Option[Vector[String]] =
     if (withTop(lines)) Some(lines.tail.takeWhile((l) => !threeDash(l)))
     else None
 
@@ -129,7 +129,7 @@ object Site {
       ln <- tm.find(_.startsWith("title: "))
     } yield ln.drop(6).trim
 
-  def filename(s: String) = s.toLowerCase.replaceAll("\\s", "-")
+  def filename(s: String): String = s.toLowerCase.replaceAll("\\s", "-")
 
 
   def dateOpt(l: Vector[String]): Option[(Int, Int, Int)] =
@@ -145,18 +145,18 @@ object Site {
                   content: String,
                   optDate: Option[(Int, Int, Int)],
                   optTitle: Option[String]) {
-    val title = optTitle.getOrElse(name)
+    val title: String = optTitle.getOrElse(name)
 
-    val dateString =
+    val dateString: String =
       optDate.map { case (y, m, d) => s"${months(m-1)} $d, $y" }.getOrElse("")
 
-    val target = pwd / "docs" / "assignments" / s"$name.html"
+    val target: Path = pwd / "docs" / "assignments" / s"$name.html"
 
     def url(relDocsPath: String) = s"${relDocsPath}assignments/$name.html"
 
     val date: (Int, Int, Int) = optDate.getOrElse((0, 0, 0))
 
-    val assContent =
+    val assContent: String =
       s"""
       <h2 class="text-center"> $title </h2>
       <h4 class="text-center"> due by $dateString </h4>
@@ -166,7 +166,7 @@ object Site {
     def output: String =
       page(assContent.toString, "../")
 
-    def save = write.over(target, output)
+    def save(): Unit = write.over(target, output)
   }
 
   def getAss(p: Path): Assignment = {
@@ -177,7 +177,7 @@ object Site {
     Assignment(name, content, dateOpt(l), titleOpt(l))
   }
 
-  def assDir = pwd / "sitebuilder" / "resources" / "assignments"
+  def assDir: Path = pwd / "sitebuilder" / "resources" / "assignments"
 
   def allAss: Seq[Assignment] =
     Try(ls(assDir).map(getAss).sortBy(_.date).reverse).getOrElse(Seq())
@@ -192,9 +192,10 @@ object Site {
     Vector("Fair Coin?" -> "fair-coin",
       "Repeated Tosses" -> "coin-tosses",
       "Birthday Paradox" -> "birthdays",
-      "Percolation" -> "percolation")
+      "Percolation" -> "percolation",
+      "Bayes rule for Coins" -> "bayes-coin")
 
-  def illusList(relDocsPath: String) =
+  def illusList(relDocsPath: String): Vector[Elem] =
     allIllus.map{
       case (name, tag) =>
         <li><a href={s"${relDocsPath}illustrations/$tag.html"}>{name}</a></li>
@@ -218,10 +219,10 @@ object Site {
        |</html>
    """.stripMargin
 
-val assList = allAss.map((ass) =>
+val assList: Seq[Elem] = allAss.map((ass) =>
   <li> <a href={ass.url("")}> {ass.title}</a>, due by {ass.dateString}.</li>)
 
-val home =
+val home: Elem =
   <section>
   <div class="col-md-9">
 
@@ -285,7 +286,7 @@ val home =
 
   </section>
 
-  val assignAll =
+  val assignAll: Elem =
     <section>
       <h2> Assignments </h2>
       <ul>
@@ -293,7 +294,7 @@ val home =
       </ul>
     </section>
 
-  def mkAss() = {
+  def mkAss(): Unit = {
     allAss.foreach { (ass) =>
       pprint.log(s"saving assignment ${ass.name} due on ${ass.dateString}")
       write.over(ass.target, ass.output)
@@ -301,7 +302,7 @@ val home =
     write.over(pwd / "docs" / "assign-all.html", page(assignAll.toString, ""))
   }
 
-  def mkIllus() = {
+  def mkIllus(): Unit = {
     allIllus.foreach { case (name, tag) =>
       pprint.log(s"writing illustration $name")
       write.over(

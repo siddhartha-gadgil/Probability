@@ -2885,7 +2885,12 @@ function $m_Lorg_scalajs_dom_package$() {
 function $c_Lprobability_BayesCoin$() {
   $c_O.call(this);
   this.rnd$1 = null;
+  this.probOfBias$1 = null;
+  this.biasedHeadsProb$1 = null;
+  this.biasChooser$1 = null;
+  this.headChooser$1 = null;
   this.pV$1 = null;
+  this.tossesValV$1 = null;
   this.tossesV$1 = null;
   this.guessOptV$1 = null;
   this.headsR$1 = null;
@@ -2902,13 +2907,29 @@ $h_Lprobability_BayesCoin$.prototype = $c_Lprobability_BayesCoin$.prototype;
 $c_Lprobability_BayesCoin$.prototype.rnd__s_util_Random = (function() {
   return this.rnd$1
 });
-$c_Lprobability_BayesCoin$.prototype.getP__D = (function() {
-  return (this.rnd__s_util_Random().nextBoolean__Z() ? 0.5 : this.rnd__s_util_Random().nextDouble__D())
+$c_Lprobability_BayesCoin$.prototype.probOfBias__Lmhtml_Var = (function() {
+  return this.probOfBias$1
 });
-$c_Lprobability_BayesCoin$.prototype.pV__Lmhtml_Var = (function() {
+$c_Lprobability_BayesCoin$.prototype.biasedHeadsProb__Lmhtml_Var = (function() {
+  return this.biasedHeadsProb$1
+});
+$c_Lprobability_BayesCoin$.prototype.biasChooser__Lmhtml_Var = (function() {
+  return this.biasChooser$1
+});
+$c_Lprobability_BayesCoin$.prototype.headChooser__Lmhtml_Var = (function() {
+  return this.headChooser$1
+});
+$c_Lprobability_BayesCoin$.prototype.freshCoin__V = (function() {
+  this.biasChooser__Lmhtml_Var().$$colon$eq__O__V(this.rnd__s_util_Random().nextDouble__D());
+  this.headChooser__Lmhtml_Var().$$colon$eq__O__V(this.rnd__s_util_Random().nextDouble__D())
+});
+$c_Lprobability_BayesCoin$.prototype.pV__Lmhtml_Rx = (function() {
   return this.pV$1
 });
-$c_Lprobability_BayesCoin$.prototype.tossesV__Lmhtml_Var = (function() {
+$c_Lprobability_BayesCoin$.prototype.tossesValV__Lmhtml_Var = (function() {
+  return this.tossesValV$1
+});
+$c_Lprobability_BayesCoin$.prototype.tossesV__Lmhtml_Rx = (function() {
   return this.tossesV$1
 });
 $c_Lprobability_BayesCoin$.prototype.guessOptV__Lmhtml_Var = (function() {
@@ -2926,8 +2947,8 @@ $c_Lprobability_BayesCoin$.prototype.fairR__Lmhtml_Rx = (function() {
 $c_Lprobability_BayesCoin$.prototype.main__V = (function() {
   var $$md = $m_s_xml_Null$();
   $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel panel-primary"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$28 = $$md;
-  var jsx$27 = $m_s_xml_TopScope$();
+  var jsx$38 = $$md;
+  var jsx$37 = $m_s_xml_TopScope$();
   var $$buf = new $c_s_xml_NodeBuffer().init___();
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
   var $$md$2 = $m_s_xml_Null$();
@@ -2940,8 +2961,8 @@ $c_Lprobability_BayesCoin$.prototype.main__V = (function() {
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
   var $$md$3 = $m_s_xml_Null$();
   $$md$3 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-body"), $$md$3, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$26 = $$md$3;
-  var jsx$25 = $m_s_xml_TopScope$();
+  var jsx$36 = $$md$3;
+  var jsx$35 = $m_s_xml_TopScope$();
   var $$buf$3 = new $c_s_xml_NodeBuffer().init___();
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
   var jsx$4 = $m_s_xml_Null$();
@@ -2949,126 +2970,227 @@ $c_Lprobability_BayesCoin$.prototype.main__V = (function() {
   var $$buf$4 = new $c_s_xml_NodeBuffer().init___();
   $$buf$4.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Try to figure out whether the coin is fair by tossing it several times."));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", jsx$4, jsx$3, false, $$buf$4));
-  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.pV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
-    return (function(p$2) {
-      var p = $uD(p$2);
-      return $this.$$anonfun$main$1__p1__D__s_xml_Elem(p)
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  var $$md$4 = $m_s_xml_Null$();
+  $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this) {
+    return (function() {
+      $this.$$anonfun$main$1__p1__V()
     })
-  })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().nodeElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  })(this)), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-primary"), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$6 = $$md$4;
+  var jsx$5 = $m_s_xml_TopScope$();
+  var $$buf$5 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Toss the coin"));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$6, jsx$5, false, $$buf$5));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  var jsx$8 = $m_s_xml_Null$();
-  var jsx$7 = $m_s_xml_TopScope$();
-  var $$buf$5 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" "));
-  var jsx$6 = $m_s_xml_Null$();
-  var jsx$5 = $m_s_xml_TopScope$();
-  var $$buf$6 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Heads:"));
-  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "strong", jsx$6, jsx$5, false, $$buf$6));
-  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" "));
-  $$buf$5.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.headsR__Lmhtml_Rx(), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().intElementEmbeddable__s_xml_XmlElementEmbeddable()));
-  $$buf$5.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" "));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$8, jsx$7, false, $$buf$5));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  var jsx$12 = $m_s_xml_Null$();
-  var jsx$11 = $m_s_xml_TopScope$();
-  var $$buf$7 = new $c_s_xml_NodeBuffer().init___();
   var jsx$10 = $m_s_xml_Null$();
   var jsx$9 = $m_s_xml_TopScope$();
-  var $$buf$8 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$8.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Tails:"));
-  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "strong", jsx$10, jsx$9, false, $$buf$8));
-  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" "));
-  $$buf$7.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.tailsR__Lmhtml_Rx(), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().intElementEmbeddable__s_xml_XmlElementEmbeddable()));
-  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" "));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$12, jsx$11, false, $$buf$7));
+  var $$buf$6 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" "));
+  var jsx$8 = $m_s_xml_Null$();
+  var jsx$7 = $m_s_xml_TopScope$();
+  var $$buf$7 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$7.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Heads:"));
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "strong", jsx$8, jsx$7, false, $$buf$7));
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" "));
+  $$buf$6.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.headsR__Lmhtml_Rx(), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().intElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$6.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$10, jsx$9, false, $$buf$6));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  var jsx$20 = $m_s_xml_Null$();
-  var jsx$19 = $m_s_xml_TopScope$();
-  var $$buf$9 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
   var jsx$14 = $m_s_xml_Null$();
   var jsx$13 = $m_s_xml_TopScope$();
+  var $$buf$8 = new $c_s_xml_NodeBuffer().init___();
+  var jsx$12 = $m_s_xml_Null$();
+  var jsx$11 = $m_s_xml_TopScope$();
+  var $$buf$9 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Tails:"));
+  $$buf$8.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "strong", jsx$12, jsx$11, false, $$buf$9));
+  $$buf$8.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" "));
+  $$buf$8.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.tailsR__Lmhtml_Rx(), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().intElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$8.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$14, jsx$13, false, $$buf$8));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  var jsx$22 = $m_s_xml_Null$();
+  var jsx$21 = $m_s_xml_TopScope$();
   var $$buf$10 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Your guess:"));
-  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "strong", jsx$14, jsx$13, false, $$buf$10));
-  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
-  var $$md$4 = $m_s_xml_Null$();
-  $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$2) {
-    return (function() {
-      this$2.$$anonfun$main$4__p1__V()
-    })
-  })(this)), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-success"), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$16 = $$md$4;
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var jsx$16 = $m_s_xml_Null$();
   var jsx$15 = $m_s_xml_TopScope$();
   var $$buf$11 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$11.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Fair"));
-  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$16, jsx$15, false, $$buf$11));
-  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  $$buf$11.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Your guess:"));
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "strong", jsx$16, jsx$15, false, $$buf$11));
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
   var $$md$5 = $m_s_xml_Null$();
-  $$md$5 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$3) {
+  $$md$5 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$2) {
     return (function() {
-      this$3.$$anonfun$main$5__p1__V()
+      this$2.$$anonfun$main$3__p1__V()
     })
   })(this)), $$md$5, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md$5 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-danger"), $$md$5, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$5 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-success"), $$md$5, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
   var jsx$18 = $$md$5;
   var jsx$17 = $m_s_xml_TopScope$();
   var $$buf$12 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$12.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Biased"));
-  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$18, jsx$17, false, $$buf$12));
-  $$buf$9.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$20, jsx$19, false, $$buf$9));
+  $$buf$12.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Fair"));
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$18, jsx$17, false, $$buf$12));
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var $$md$6 = $m_s_xml_Null$();
+  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$3) {
+    return (function() {
+      this$3.$$anonfun$main$4__p1__V()
+    })
+  })(this)), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-danger"), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$20 = $$md$6;
+  var jsx$19 = $m_s_xml_TopScope$();
+  var $$buf$13 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$13.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Biased"));
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$20, jsx$19, false, $$buf$13));
+  $$buf$10.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$22, jsx$21, false, $$buf$10));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
   $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.guessOptV__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.fairR__Lmhtml_Rx()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
-    return (function(x0$1$2) {
-      var x0$1 = $as_T2(x0$1$2);
-      return this$4.$$anonfun$main$6__p1__T2__s_xml_Elem(x0$1)
+    return (function(x0$3$2) {
+      var x0$3 = $as_T2(x0$3$2);
+      return this$4.$$anonfun$main$5__p1__T2__s_xml_Elem(x0$3)
     })
   })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().nodeElementEmbeddable__s_xml_XmlElementEmbeddable()));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.guessOptV__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.fairR__Lmhtml_Rx()).zip__Lmhtml_Rx__Lmhtml_Rx(this.pV__Lmhtml_Var()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
-    return (function(x0$2$2) {
-      var x0$2 = $as_T2(x0$2$2);
-      return this$5.$$anonfun$main$9__p1__T2__s_xml_Elem(x0$2)
+  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.guessOptV__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.fairR__Lmhtml_Rx()).zip__Lmhtml_Rx__Lmhtml_Rx(this.pV__Lmhtml_Rx()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
+    return (function(x0$4$2) {
+      var x0$4 = $as_T2(x0$4$2);
+      return this$5.$$anonfun$main$8__p1__T2__s_xml_Elem(x0$4)
     })
   })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().nodeElementEmbeddable__s_xml_XmlElementEmbeddable()));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  var jsx$24 = $m_s_xml_Null$();
-  var jsx$23 = $m_s_xml_TopScope$();
-  var $$buf$13 = new $c_s_xml_NodeBuffer().init___();
-  var $$md$6 = $m_s_xml_Null$();
-  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$6) {
-    return (function() {
-      this$6.$$anonfun$main$12__p1__V()
-    })
-  })(this)), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md$6 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-primary"), $$md$6, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$22 = $$md$6;
-  var jsx$21 = $m_s_xml_TopScope$();
+  var jsx$26 = $m_s_xml_Null$();
+  var jsx$25 = $m_s_xml_TopScope$();
   var $$buf$14 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$14.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("New coin"));
-  $$buf$13.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$22, jsx$21, false, $$buf$14));
-  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$24, jsx$23, false, $$buf$13));
+  var $$md$7 = $m_s_xml_Null$();
+  $$md$7 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$6) {
+    return (function() {
+      this$6.$$anonfun$main$11__p1__V()
+    })
+  })(this)), $$md$7, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$7 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-primary"), $$md$7, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$24 = $$md$7;
+  var jsx$23 = $m_s_xml_TopScope$();
+  var $$buf$15 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$15.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("New coin"));
+  $$buf$14.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$24, jsx$23, false, $$buf$15));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$26, jsx$25, false, $$buf$14));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  var jsx$30 = $m_s_xml_Null$();
+  var jsx$29 = $m_s_xml_TopScope$();
+  var $$buf$16 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$16.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var jsx$28 = $m_s_xml_Null$();
+  var jsx$27 = $m_s_xml_TopScope$();
+  var $$buf$17 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$17.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Probability that the coin is biased:"));
+  $$buf$16.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "label", jsx$28, jsx$27, false, $$buf$17));
+  $$buf$16.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var $$md$8 = $m_s_xml_Null$();
+  $$md$8 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("oninput", new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7) {
+    return (function(e$2) {
+      var e = e$2;
+      this$7.$$anonfun$main$12__p1__sjs_js_Dynamic__V(e)
+    })
+  })(this)), $$md$8, $m_s_xml_XmlAttributeEmbeddable$().function1AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$8 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("value", this.probOfBias__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$8) {
+    return (function(x$6$2) {
+      var x$6 = $uD(x$6$2);
+      return this$8.$$anonfun$main$13__p1__D__T(x$6)
+    })
+  })(this))), $$md$8, $m_s_xml_XmlAttributeEmbeddable$().rxAttributeEmbeddable__s_xml_XmlAttributeEmbeddable__s_xml_XmlAttributeEmbeddable($m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable()));
+  $$md$8 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("size", new $c_s_xml_Text().init___T("4"), $$md$8, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$8 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("type", new $c_s_xml_Text().init___T("text"), $$md$8, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$buf$16.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "input", $$md$8, $m_s_xml_TopScope$(), true, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+  $$buf$16.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n              "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$30, jsx$29, false, $$buf$16));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var jsx$34 = $m_s_xml_Null$();
+  var jsx$33 = $m_s_xml_TopScope$();
+  var $$buf$18 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n            "));
+  var jsx$32 = $m_s_xml_Null$();
+  var jsx$31 = $m_s_xml_TopScope$();
+  var $$buf$19 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$19.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Probability of head for a biased coin:"));
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "label", jsx$32, jsx$31, false, $$buf$19));
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n            "));
+  var $$md$9 = $m_s_xml_Null$();
+  $$md$9 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("oninput", new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$9) {
+    return (function(e$3$2) {
+      var e$3 = e$3$2;
+      this$9.$$anonfun$main$14__p1__sjs_js_Dynamic__V(e$3)
+    })
+  })(this)), $$md$9, $m_s_xml_XmlAttributeEmbeddable$().function1AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$9 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("value", this.biasedHeadsProb__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$10) {
+    return (function(x$7$2) {
+      var x$7 = $uD(x$7$2);
+      return this$10.$$anonfun$main$15__p1__D__T(x$7)
+    })
+  })(this))), $$md$9, $m_s_xml_XmlAttributeEmbeddable$().rxAttributeEmbeddable__s_xml_XmlAttributeEmbeddable__s_xml_XmlAttributeEmbeddable($m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable()));
+  $$md$9 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("size", new $c_s_xml_Text().init___T("4"), $$md$9, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$9 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("type", new $c_s_xml_Text().init___T("text"), $$md$9, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "input", $$md$9, $m_s_xml_TopScope$(), true, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+  $$buf$18.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$34, jsx$33, false, $$buf$18));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n\n        "));
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$26, jsx$25, false, $$buf$3));
+  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$36, jsx$35, false, $$buf$3));
   $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
-  var coinDiv = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$28, jsx$27, false, $$buf);
-  var positionOpt = $m_s_Option$().apply__O__s_Option($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().querySelector("#fair-coin"));
-  positionOpt.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7, coinDiv) {
+  var coinDiv = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$38, jsx$37, false, $$buf);
+  var positionOpt = $m_s_Option$().apply__O__s_Option($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().querySelector("#bayes-coin"));
+  positionOpt.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$11, coinDiv) {
     return (function(position$2) {
       var position = position$2;
-      return new $c_Lmhtml_Cancelable().init___F0(this$7.$$anonfun$main$13__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0(coinDiv, position))
+      return new $c_Lmhtml_Cancelable().init___F0(this$11.$$anonfun$main$16__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0(coinDiv, position))
     })
   })(this, coinDiv)))
 });
 $c_Lprobability_BayesCoin$.prototype.$$js$exported$meth$main__O = (function() {
   this.main__V()
+});
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$pV$1__p1__T2__D = (function(x0$1) {
+  var x1 = x0$1;
+  if ((x1 !== null)) {
+    var p2 = $as_T2(x1.$$und1__O());
+    if ((p2 !== null)) {
+      var p3 = $as_T2(p2.$$und1__O());
+      var bc = p2.$$und2$mcD$sp__D();
+      if ((p3 !== null)) {
+        var pb = p3.$$und1$mcD$sp__D();
+        var pbh = p3.$$und2$mcD$sp__D();
+        return ((bc < pb) ? pbh : 0.5)
+      }
+    }
+  };
+  throw new $c_s_MatchError().init___O(x1)
+});
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$tossesV$2__p1__D__D__Z = (function(p$1, x$1) {
+  return (x$1 < p$1)
+});
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$tossesV$1__p1__T2__sci_Vector = (function(x0$2) {
+  var x1 = x0$2;
+  if ((x1 !== null)) {
+    var v = $as_sci_Vector(x1.$$und1__O());
+    var p = x1.$$und2$mcD$sp__D();
+    return $as_sci_Vector(v.map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, p) {
+      return (function(x$1$2) {
+        var x$1 = $uD(x$1$2);
+        return $this.$$anonfun$tossesV$2__p1__D__D__Z(p, x$1)
+      })
+    })(this, p)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+  } else {
+    throw new $c_s_MatchError().init___O(x1)
+  }
 });
 $c_Lprobability_BayesCoin$.prototype.$$anonfun$headsR$2__p1__Z__Z = (function(x) {
   return $uZ($m_s_Predef$().identity__O__O(x))
@@ -3081,52 +3203,38 @@ $c_Lprobability_BayesCoin$.prototype.$$anonfun$headsR$1__p1__sci_Vector__I = (fu
     })
   })(this)))
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$tailsR$2__p1__Z__Z = (function(x$1) {
-  return (!x$1)
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$tailsR$2__p1__Z__Z = (function(x$2) {
+  return (!x$2)
 });
 $c_Lprobability_BayesCoin$.prototype.$$anonfun$tailsR$1__p1__sci_Vector__I = (function(tosses) {
   return tosses.count__F1__I(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
-    return (function(x$1$2) {
-      var x$1 = $uZ(x$1$2);
-      return $this.$$anonfun$tailsR$2__p1__Z__Z(x$1)
+    return (function(x$2$2) {
+      var x$2 = $uZ(x$2$2);
+      return $this.$$anonfun$tailsR$2__p1__Z__Z(x$2)
     })
   })(this)))
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$fairR$1__p1__D__Z = (function(x$2) {
-  return (x$2 === 0.5)
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$fairR$1__p1__D__Z = (function(x$3) {
+  return (x$3 === 0.5)
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$3__p1__D__sci_Vector__sci_Vector = (function(p$2, x$3) {
-  return $as_sci_Vector(x$3.$$colon$plus__O__scg_CanBuildFrom__O(($m_Lprobability_BayesCoin$().rnd__s_util_Random().nextDouble__D() < p$2), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$2__p1__sci_Vector__sci_Vector = (function(x$4) {
+  return $as_sci_Vector(x$4.$$colon$plus__O__scg_CanBuildFrom__O($m_Lprobability_BayesCoin$().rnd__s_util_Random().nextDouble__D(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$2__p1__D__V = (function(p$2) {
-  $m_Lprobability_BayesCoin$().tossesV__Lmhtml_Var().update__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, p$2) {
-    return (function(x$3$2) {
-      var x$3 = $as_sci_Vector(x$3$2);
-      return $this.$$anonfun$main$3__p1__D__sci_Vector__sci_Vector(p$2, x$3)
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$1__p1__V = (function() {
+  $m_Lprobability_BayesCoin$().tossesValV__Lmhtml_Var().update__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x$4$2) {
+      var x$4 = $as_sci_Vector(x$4$2);
+      return $this.$$anonfun$main$2__p1__sci_Vector__sci_Vector(x$4)
     })
-  })(this, p$2)))
+  })(this)))
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$1__p1__D__s_xml_Elem = (function(p) {
-  var $$md = $m_s_xml_Null$();
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onclick", new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, p) {
-    return (function() {
-      $this.$$anonfun$main$2__p1__D__V(p)
-    })
-  })(this, p)), $$md, $m_s_xml_XmlAttributeEmbeddable$().function0AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("btn btn-primary"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
-  var jsx$2 = $$md;
-  var jsx$1 = $m_s_xml_TopScope$();
-  var $$buf = new $c_s_xml_NodeBuffer().init___();
-  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Toss the coin"));
-  return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "button", jsx$2, jsx$1, false, $$buf)
-});
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$4__p1__V = (function() {
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$3__p1__V = (function() {
   $m_Lprobability_BayesCoin$().guessOptV__Lmhtml_Var().$$colon$eq__O__V(new $c_s_Some().init___O(true))
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$5__p1__V = (function() {
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$4__p1__V = (function() {
   $m_Lprobability_BayesCoin$().guessOptV__Lmhtml_Var().$$colon$eq__O__V(new $c_s_Some().init___O(false))
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$7__p1__Z__Z__s_xml_Elem = (function(fair$1, guess) {
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$6__p1__Z__Z__s_xml_Elem = (function(fair$1, guess) {
   if ((guess === fair$1)) {
     var jsx$2 = $m_s_xml_Null$();
     var jsx$1 = $m_s_xml_TopScope$();
@@ -3141,29 +3249,29 @@ $c_Lprobability_BayesCoin$.prototype.$$anonfun$main$7__p1__Z__Z__s_xml_Elem = (f
     return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$4, jsx$3, false, $$buf$2)
   }
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$8__p1__s_xml_Elem = (function() {
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$7__p1__s_xml_Elem = (function() {
   return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$6__p1__T2__s_xml_Elem = (function(x0$1) {
-  var x1 = x0$1;
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$5__p1__T2__s_xml_Elem = (function(x0$3) {
+  var x1 = x0$3;
   if ((x1 !== null)) {
     var guessOpt = $as_s_Option(x1.$$und1__O());
     var fair = x1.$$und2$mcZ$sp__Z();
     return $as_s_xml_Elem(guessOpt.map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, fair) {
       return (function(guess$2) {
         var guess = $uZ(guess$2);
-        return $this.$$anonfun$main$7__p1__Z__Z__s_xml_Elem(fair, guess)
+        return $this.$$anonfun$main$6__p1__Z__Z__s_xml_Elem(fair, guess)
       })
     })(this, fair))).getOrElse__F0__O(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$2) {
       return (function() {
-        return this$2.$$anonfun$main$8__p1__s_xml_Elem()
+        return this$2.$$anonfun$main$7__p1__s_xml_Elem()
       })
     })(this))))
   } else {
     throw new $c_s_MatchError().init___O(x1)
   }
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$10__p1__Z__D__Z__s_xml_Elem = (function(fair$2, p$1, x$4) {
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$9__p1__Z__D__Z__s_xml_Elem = (function(fair$2, p$2, x$5) {
   if (fair$2) {
     var jsx$4 = $m_s_xml_Null$();
     var jsx$3 = $m_s_xml_TopScope$();
@@ -3186,16 +3294,16 @@ $c_Lprobability_BayesCoin$.prototype.$$anonfun$main$10__p1__Z__D__Z__s_xml_Elem 
     $$buf$4.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("biased"));
     $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "strong", jsx$6, jsx$5, false, $$buf$4));
     $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T(" with probability of heads "));
-    $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(p$1, $m_s_xml_XmlElementEmbeddable$().doubleElementEmbeddable__s_xml_XmlElementEmbeddable());
+    $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(p$2, $m_s_xml_XmlElementEmbeddable$().doubleElementEmbeddable__s_xml_XmlElementEmbeddable());
     $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("."));
     return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$8, jsx$7, false, $$buf$3)
   }
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$11__p1__s_xml_Elem = (function() {
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$10__p1__s_xml_Elem = (function() {
   return new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$9__p1__T2__s_xml_Elem = (function(x0$2) {
-  var x1 = x0$2;
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$8__p1__T2__s_xml_Elem = (function(x0$4) {
+  var x1 = x0$4;
   if ((x1 !== null)) {
     var p2 = $as_T2(x1.$$und1__O());
     var p = x1.$$und2$mcD$sp__D();
@@ -3203,25 +3311,37 @@ $c_Lprobability_BayesCoin$.prototype.$$anonfun$main$9__p1__T2__s_xml_Elem = (fun
       var guessOpt = $as_s_Option(p2.$$und1__O());
       var fair = p2.$$und2$mcZ$sp__Z();
       return $as_s_xml_Elem(guessOpt.map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, fair, p) {
-        return (function(x$4$2) {
-          var x$4 = $uZ(x$4$2);
-          return $this.$$anonfun$main$10__p1__Z__D__Z__s_xml_Elem(fair, p, x$4)
+        return (function(x$5$2) {
+          var x$5 = $uZ(x$5$2);
+          return $this.$$anonfun$main$9__p1__Z__D__Z__s_xml_Elem(fair, p, x$5)
         })
       })(this, fair, p))).getOrElse__F0__O(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$2) {
         return (function() {
-          return this$2.$$anonfun$main$11__p1__s_xml_Elem()
+          return this$2.$$anonfun$main$10__p1__s_xml_Elem()
         })
       })(this))))
     }
   };
   throw new $c_s_MatchError().init___O(x1)
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$12__p1__V = (function() {
-  $m_Lprobability_BayesCoin$().pV__Lmhtml_Var().$$colon$eq__O__V($m_Lprobability_BayesCoin$().getP__D());
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$11__p1__V = (function() {
+  $m_Lprobability_BayesCoin$().freshCoin__V();
   $m_Lprobability_BayesCoin$().guessOptV__Lmhtml_Var().$$colon$eq__O__V($m_s_None$());
-  $m_Lprobability_BayesCoin$().tossesV__Lmhtml_Var().$$colon$eq__O__V($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$()))
+  $m_Lprobability_BayesCoin$().tossesValV__Lmhtml_Var().$$colon$eq__O__V($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$()))
 });
-$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$13__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0 = (function(coinDiv$1, position) {
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$12__p1__sjs_js_Dynamic__V = (function(e) {
+  $m_Lprobability_BayesCoin$().probOfBias__Lmhtml_Var().$$colon$eq__O__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T(e.target.value))).toDouble__D())
+});
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$13__p1__D__T = (function(x$6) {
+  return $objectToString(x$6)
+});
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$14__p1__sjs_js_Dynamic__V = (function(e) {
+  $m_Lprobability_BayesCoin$().biasedHeadsProb__Lmhtml_Var().$$colon$eq__O__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T(e.target.value))).toDouble__D())
+});
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$15__p1__D__T = (function(x$7) {
+  return $objectToString(x$7)
+});
+$c_Lprobability_BayesCoin$.prototype.$$anonfun$main$16__p1__s_xml_Node__Lorg_scalajs_dom_raw_Element__F0 = (function(coinDiv$1, position) {
   var div = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("div");
   position.appendChild(div);
   return $m_Lmhtml_mount$().apply__Lorg_scalajs_dom_raw_Node__s_xml_Node__F0(div, coinDiv$1)
@@ -3230,25 +3350,40 @@ $c_Lprobability_BayesCoin$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
   $n_Lprobability_BayesCoin$ = this;
   this.rnd$1 = new $c_s_util_Random().init___();
-  this.pV$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.getP__D());
-  this.tossesV$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$()));
+  this.probOfBias$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(0.5);
+  this.biasedHeadsProb$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(0.9);
+  this.biasChooser$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.rnd__s_util_Random().nextDouble__D());
+  this.headChooser$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.rnd__s_util_Random().nextDouble__D());
+  this.pV$1 = this.probOfBias__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.biasedHeadsProb__Lmhtml_Var()).zip__Lmhtml_Rx__Lmhtml_Rx(this.biasChooser__Lmhtml_Var()).zip__Lmhtml_Rx__Lmhtml_Rx(this.headChooser__Lmhtml_Var()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x0$1$2) {
+      var x0$1 = $as_T2(x0$1$2);
+      return $this.$$anonfun$pV$1__p1__T2__D(x0$1)
+    })
+  })(this)));
+  this.tossesValV$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$()));
+  this.tossesV$1 = this.tossesValV__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.pV__Lmhtml_Rx()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+    return (function(x0$2$2) {
+      var x0$2 = $as_T2(x0$2$2);
+      return this$2.$$anonfun$tossesV$1__p1__T2__sci_Vector(x0$2)
+    })
+  })(this)));
   this.guessOptV$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var($m_s_None$());
-  this.headsR$1 = this.tossesV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+  this.headsR$1 = this.tossesV__Lmhtml_Rx().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
     return (function(tosses$2) {
       var tosses = $as_sci_Vector(tosses$2);
-      return $this.$$anonfun$headsR$1__p1__sci_Vector__I(tosses)
+      return this$3.$$anonfun$headsR$1__p1__sci_Vector__I(tosses)
     })
   })(this)));
-  this.tailsR$1 = this.tossesV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+  this.tailsR$1 = this.tossesV__Lmhtml_Rx().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
     return (function(tosses$3$2) {
       var tosses$3 = $as_sci_Vector(tosses$3$2);
-      return this$2.$$anonfun$tailsR$1__p1__sci_Vector__I(tosses$3)
+      return this$4.$$anonfun$tailsR$1__p1__sci_Vector__I(tosses$3)
     })
   })(this)));
-  this.fairR$1 = this.pV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
-    return (function(x$2$2) {
-      var x$2 = $uD(x$2$2);
-      return this$3.$$anonfun$fairR$1__p1__D__Z(x$2)
+  this.fairR$1 = this.pV__Lmhtml_Rx().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
+    return (function(x$3$2) {
+      var x$3 = $uD(x$3$2);
+      return this$5.$$anonfun$fairR$1__p1__D__Z(x$3)
     })
   })(this)));
   return this
@@ -11197,6 +11332,23 @@ function $h_jl_Double$() {
 $h_jl_Double$.prototype = $c_jl_Double$.prototype;
 $c_jl_Double$.prototype.TYPE__jl_Class = (function() {
   return $d_D.getClassOf()
+});
+$c_jl_Double$.prototype.doubleStrPat$lzycompute__p1__sjs_js_RegExp = (function() {
+  if ((!this.bitmap$0$1)) {
+    this.doubleStrPat$1 = new $g.RegExp("^[\\x00-\\x20]*[+-]?(NaN|Infinity|(\\d+\\.?\\d*|\\.\\d+)([eE][+-]?\\d+)?)[fFdD]?[\\x00-\\x20]*$");
+    this.bitmap$0$1 = true
+  };
+  return this.doubleStrPat$1
+});
+$c_jl_Double$.prototype.doubleStrPat__p1__sjs_js_RegExp = (function() {
+  return ((!this.bitmap$0$1) ? this.doubleStrPat$lzycompute__p1__sjs_js_RegExp() : this.doubleStrPat$1)
+});
+$c_jl_Double$.prototype.parseDouble__T__D = (function(s) {
+  if ($uZ(this.doubleStrPat__p1__sjs_js_RegExp().test(s))) {
+    return $uD($m_sjs_js_Dynamic$().global__sjs_js_Dynamic().parseFloat($m_sjs_js_Any$().fromString__T__sjs_js_Any(s)))
+  } else {
+    throw new $c_jl_NumberFormatException().init___T(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["For input string: \"", "\""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([s])))
+  }
 });
 $c_jl_Double$.prototype.toString__D__T = (function(d) {
   return ("" + d)
@@ -24396,6 +24548,9 @@ function $f_sci_StringLike__slice__I__I__O($thiz, from, until) {
 function $f_sci_StringLike__toInt__I($thiz) {
   return $m_jl_Integer$().parseInt__T__I($thiz.toString__T())
 }
+function $f_sci_StringLike__toDouble__D($thiz) {
+  return $m_jl_Double$().parseDouble__T__D($thiz.toString__T())
+}
 function $f_sci_StringLike__$$init$__V($thiz) {
   /*<skip>*/
 }
@@ -24531,6 +24686,9 @@ function $h_sci_StringOps() {
 $h_sci_StringOps.prototype = $c_sci_StringOps.prototype;
 $c_sci_StringOps.prototype.toInt__I = (function() {
   return $f_sci_StringLike__toInt__I(this)
+});
+$c_sci_StringOps.prototype.toDouble__D = (function() {
+  return $f_sci_StringLike__toDouble__D(this)
 });
 $c_sci_StringOps.prototype.scala$collection$IndexedSeqOptimized$$super$zip__sc_GenIterable__scg_CanBuildFrom__O = (function(that, bf) {
   return $f_sc_IterableLike__zip__sc_GenIterable__scg_CanBuildFrom__O(this, that, bf)
