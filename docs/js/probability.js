@@ -2888,7 +2888,6 @@ function $c_Lprobability_BayesCoin$() {
   this.probOfBias$1 = null;
   this.biasedHeadsProb$1 = null;
   this.biasChooser$1 = null;
-  this.headChooser$1 = null;
   this.pV$1 = null;
   this.tossesValV$1 = null;
   this.tossesV$1 = null;
@@ -2916,12 +2915,8 @@ $c_Lprobability_BayesCoin$.prototype.biasedHeadsProb__Lmhtml_Var = (function() {
 $c_Lprobability_BayesCoin$.prototype.biasChooser__Lmhtml_Var = (function() {
   return this.biasChooser$1
 });
-$c_Lprobability_BayesCoin$.prototype.headChooser__Lmhtml_Var = (function() {
-  return this.headChooser$1
-});
 $c_Lprobability_BayesCoin$.prototype.freshCoin__V = (function() {
-  this.biasChooser__Lmhtml_Var().$$colon$eq__O__V(this.rnd__s_util_Random().nextDouble__D());
-  this.headChooser__Lmhtml_Var().$$colon$eq__O__V(this.rnd__s_util_Random().nextDouble__D())
+  this.biasChooser__Lmhtml_Var().$$colon$eq__O__V(this.rnd__s_util_Random().nextDouble__D())
 });
 $c_Lprobability_BayesCoin$.prototype.pV__Lmhtml_Rx = (function() {
   return this.pV$1
@@ -3186,14 +3181,11 @@ $c_Lprobability_BayesCoin$.prototype.$$anonfun$pV$1__p1__T2__D = (function(x0$1)
   var x1 = x0$1;
   if ((x1 !== null)) {
     var p2 = $as_T2(x1.$$und1__O());
+    var bc = x1.$$und2$mcD$sp__D();
     if ((p2 !== null)) {
-      var p3 = $as_T2(p2.$$und1__O());
-      var bc = p2.$$und2$mcD$sp__D();
-      if ((p3 !== null)) {
-        var pb = p3.$$und1$mcD$sp__D();
-        var pbh = p3.$$und2$mcD$sp__D();
-        return ((bc < pb) ? pbh : 0.5)
-      }
+      var pb = p2.$$und1$mcD$sp__D();
+      var pbh = p2.$$und2$mcD$sp__D();
+      return ((bc < pb) ? pbh : 0.5)
     }
   };
   throw new $c_s_MatchError().init___O(x1)
@@ -3377,8 +3369,7 @@ $c_Lprobability_BayesCoin$.prototype.init___ = (function() {
   this.probOfBias$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(0.5);
   this.biasedHeadsProb$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(0.9);
   this.biasChooser$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.rnd__s_util_Random().nextDouble__D());
-  this.headChooser$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.rnd__s_util_Random().nextDouble__D());
-  this.pV$1 = this.probOfBias__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.biasedHeadsProb__Lmhtml_Var()).zip__Lmhtml_Rx__Lmhtml_Rx(this.biasChooser__Lmhtml_Var()).zip__Lmhtml_Rx__Lmhtml_Rx(this.headChooser__Lmhtml_Var()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+  this.pV$1 = this.probOfBias__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.biasedHeadsProb__Lmhtml_Var()).zip__Lmhtml_Rx__Lmhtml_Rx(this.biasChooser__Lmhtml_Var()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(x0$1$2) {
       var x0$1 = $as_T2(x0$1$2);
       return $this.$$anonfun$pV$1__p1__T2__D(x0$1)
@@ -4014,8 +4005,7 @@ function $c_Lprobability_DependentTosses$() {
   this.rnd$1 = null;
   this.probOfDependence$1 = null;
   this.flipProb$1 = null;
-  this.biasChooser$1 = null;
-  this.flipChooser$1 = null;
+  this.dependenceChooser$1 = null;
   this.firstToss$1 = null;
   this.pV$1 = null;
   this.flipsValV$1 = null;
@@ -4025,7 +4015,7 @@ function $c_Lprobability_DependentTosses$() {
   this.guessOptV$1 = null;
   this.headsR$1 = null;
   this.tailsR$1 = null;
-  this.fairR$1 = null
+  this.independentR$1 = null
 }
 $c_Lprobability_DependentTosses$.prototype = new $h_O();
 $c_Lprobability_DependentTosses$.prototype.constructor = $c_Lprobability_DependentTosses$;
@@ -4043,18 +4033,14 @@ $c_Lprobability_DependentTosses$.prototype.probOfDependence__Lmhtml_Var = (funct
 $c_Lprobability_DependentTosses$.prototype.flipProb__Lmhtml_Var = (function() {
   return this.flipProb$1
 });
-$c_Lprobability_DependentTosses$.prototype.biasChooser__Lmhtml_Var = (function() {
-  return this.biasChooser$1
-});
-$c_Lprobability_DependentTosses$.prototype.flipChooser__Lmhtml_Var = (function() {
-  return this.flipChooser$1
+$c_Lprobability_DependentTosses$.prototype.dependenceChooser__Lmhtml_Var = (function() {
+  return this.dependenceChooser$1
 });
 $c_Lprobability_DependentTosses$.prototype.firstToss__Lmhtml_Var = (function() {
   return this.firstToss$1
 });
 $c_Lprobability_DependentTosses$.prototype.freshCoin__V = (function() {
-  this.biasChooser__Lmhtml_Var().$$colon$eq__O__V(this.rnd__s_util_Random().nextDouble__D());
-  this.flipChooser__Lmhtml_Var().$$colon$eq__O__V(this.rnd__s_util_Random().nextDouble__D());
+  this.dependenceChooser__Lmhtml_Var().$$colon$eq__O__V(this.rnd__s_util_Random().nextDouble__D());
   this.firstToss__Lmhtml_Var().$$colon$eq__O__V(this.rnd__s_util_Random().nextBoolean__Z())
 });
 $c_Lprobability_DependentTosses$.prototype.pV__Lmhtml_Rx = (function() {
@@ -4104,8 +4090,8 @@ $c_Lprobability_DependentTosses$.prototype.headsR__Lmhtml_Rx = (function() {
 $c_Lprobability_DependentTosses$.prototype.tailsR__Lmhtml_Rx = (function() {
   return this.tailsR$1
 });
-$c_Lprobability_DependentTosses$.prototype.fairR__Lmhtml_Rx = (function() {
-  return this.fairR$1
+$c_Lprobability_DependentTosses$.prototype.independentR__Lmhtml_Rx = (function() {
+  return this.independentR$1
 });
 $c_Lprobability_DependentTosses$.prototype.main__V = (function() {
   var $$md = $m_s_xml_Null$();
@@ -4236,14 +4222,14 @@ $c_Lprobability_DependentTosses$.prototype.main__V = (function() {
   $$buf$14.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$30, jsx$29, false, $$buf$14));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.guessOptV__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.fairR__Lmhtml_Rx()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
+  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.guessOptV__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.independentR__Lmhtml_Rx()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
     return (function(x0$4$2) {
       var x0$4 = $as_T2(x0$4$2);
       return this$4.$$anonfun$main$5__p1__T2__s_xml_Elem(x0$4)
     })
   })(this))), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().nodeElementEmbeddable__s_xml_XmlElementEmbeddable()));
   $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
-  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.guessOptV__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.fairR__Lmhtml_Rx()).zip__Lmhtml_Rx__Lmhtml_Rx(this.pV__Lmhtml_Rx()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
+  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.guessOptV__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.independentR__Lmhtml_Rx()).zip__Lmhtml_Rx__Lmhtml_Rx(this.pV__Lmhtml_Rx()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
     return (function(x0$5$2) {
       var x0$5 = $as_T2(x0$5$2);
       return this$5.$$anonfun$main$8__p1__T2__s_xml_Elem(x0$5)
@@ -4327,7 +4313,7 @@ $c_Lprobability_DependentTosses$.prototype.main__V = (function() {
   var jsx$42 = $$md$12;
   var jsx$41 = $m_s_xml_TopScope$();
   var $$buf$25 = new $c_s_xml_NodeBuffer().init___();
-  $$buf$25.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Probability of flip for dependent tosses:"));
+  $$buf$25.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Probability of change for dependent tosses:"));
   $$buf$24.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "label", jsx$42, jsx$41, false, $$buf$25));
   $$buf$24.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n              "));
   var $$md$13 = $m_s_xml_Null$();
@@ -4371,14 +4357,11 @@ $c_Lprobability_DependentTosses$.prototype.$$anonfun$pV$1__p1__T2__D = (function
   var x1 = x0$1;
   if ((x1 !== null)) {
     var p2 = $as_T2(x1.$$und1__O());
+    var bc = x1.$$und2$mcD$sp__D();
     if ((p2 !== null)) {
-      var p3 = $as_T2(p2.$$und1__O());
-      var bc = p2.$$und2$mcD$sp__D();
-      if ((p3 !== null)) {
-        var pb = p3.$$und1$mcD$sp__D();
-        var pbh = p3.$$und2$mcD$sp__D();
-        return ((bc < pb) ? pbh : 0.5)
-      }
+      var pb = p2.$$und1$mcD$sp__D();
+      var pbh = p2.$$und2$mcD$sp__D();
+      return ((bc < pb) ? pbh : 0.5)
     }
   };
   throw new $c_s_MatchError().init___O(x1)
@@ -4444,7 +4427,7 @@ $c_Lprobability_DependentTosses$.prototype.$$anonfun$tailsR$1__p1__sci_Vector__I
     })
   })(this)))
 });
-$c_Lprobability_DependentTosses$.prototype.$$anonfun$fairR$1__p1__D__Z = (function(x$3) {
+$c_Lprobability_DependentTosses$.prototype.$$anonfun$independentR$1__p1__D__Z = (function(x$3) {
   return (x$3 === 0.5)
 });
 $c_Lprobability_DependentTosses$.prototype.$$anonfun$main$2__p1__sci_Vector__sci_Vector = (function(x$4) {
@@ -4582,10 +4565,9 @@ $c_Lprobability_DependentTosses$.prototype.init___ = (function() {
   this.rnd$1 = new $c_s_util_Random().init___();
   this.probOfDependence$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(0.5);
   this.flipProb$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(0.7);
-  this.biasChooser$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.rnd__s_util_Random().nextDouble__D());
-  this.flipChooser$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.rnd__s_util_Random().nextDouble__D());
+  this.dependenceChooser$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.rnd__s_util_Random().nextDouble__D());
   this.firstToss$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(this.rnd__s_util_Random().nextBoolean__Z());
-  this.pV$1 = this.probOfDependence__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.flipProb__Lmhtml_Var()).zip__Lmhtml_Rx__Lmhtml_Rx(this.biasChooser__Lmhtml_Var()).zip__Lmhtml_Rx__Lmhtml_Rx(this.flipChooser__Lmhtml_Var()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+  this.pV$1 = this.probOfDependence__Lmhtml_Var().zip__Lmhtml_Rx__Lmhtml_Rx(this.flipProb__Lmhtml_Var()).zip__Lmhtml_Rx__Lmhtml_Rx(this.dependenceChooser__Lmhtml_Var()).map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(x0$1$2) {
       var x0$1 = $as_T2(x0$1$2);
       return $this.$$anonfun$pV$1__p1__T2__D(x0$1)
@@ -4623,10 +4605,10 @@ $c_Lprobability_DependentTosses$.prototype.init___ = (function() {
       return this$6.$$anonfun$tailsR$1__p1__sci_Vector__I(tosses$3)
     })
   })(this)));
-  this.fairR$1 = this.pV__Lmhtml_Rx().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7) {
+  this.independentR$1 = this.pV__Lmhtml_Rx().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7) {
     return (function(x$3$2) {
       var x$3 = $uD(x$3$2);
-      return this$7.$$anonfun$fairR$1__p1__D__Z(x$3)
+      return this$7.$$anonfun$independentR$1__p1__D__Z(x$3)
     })
   })(this)));
   return this

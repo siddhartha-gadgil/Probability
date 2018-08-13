@@ -8,8 +8,10 @@ import scala.util.Try
 
 object Site {
 
-
-  val mathjax =
+  /**
+    * inclusion for mathJax
+    */
+  val mathjax: String =
     """
       |<!-- mathjax config similar to math.stackexchange -->
       |<script type="text/x-mathjax-config">
@@ -30,6 +32,11 @@ object Site {
       |       </script>
     """.stripMargin
 
+  /**
+    * (html) head of a page
+    * @param relDocsPath relative path to the `docs` folder, which is the base of the site
+    * @return head
+    */
   def head(relDocsPath: String): String =
     s"""
        |<head>
@@ -51,6 +58,11 @@ object Site {
        |
    """.stripMargin
 
+  /**
+    * navigation bar
+    * @param relDocsPath relative path to the `docs` folder, which is the base of the site
+    * @return navigation bar
+    */
   def nav(relDocsPath: String = ""): Elem =
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -91,6 +103,11 @@ object Site {
       </div><!-- /.container-fluid -->
     </nav>
 
+  /**
+    * foot of a page, not including closing the body
+    * @param relDocsPath relative path to the `docs` folder, which is the base of the site
+    * @return text for foot
+    */
   def foot(relDocsPath: String): String =
     s"""
        |<div class="container-fluid">
@@ -110,28 +127,61 @@ object Site {
        |</script>
    """.stripMargin
 
-
+  /**
+    * whether a line is `---`
+    * @param s line
+    * @return
+    */
   def threeDash(s: String): Boolean = s.trim == "---"
 
+  /**
+    * whether a file has top matter
+    * @param l lines in the file
+    * @return boolean
+    */
   def withTop(l: Vector[String]): Boolean =
     (l.count(threeDash) == 2) && threeDash(l.head)
 
+  /**
+    * body of the file, excluding topmatter
+    * @param l lines of a file
+    * @return body
+    */
   def body(l: Vector[String]): Vector[String] =
-    if (withTop(l)) l.tail.dropWhile((l) => !threeDash(l)).tail else l
+    if (withTop(l)) l.tail.dropWhile(l => !threeDash(l)).tail else l
 
+  /**
+    * top matter in YAML, if any
+    * @param lines lines of the file
+    * @return optional top matter lines
+    */
   def topmatter(lines: Vector[String]): Option[Vector[String]] =
-    if (withTop(lines)) Some(lines.tail.takeWhile((l) => !threeDash(l)))
+    if (withTop(lines)) Some(lines.tail.takeWhile(l => !threeDash(l)))
     else None
 
+  /**
+    * title if present in top matter
+    * @param l lines of a file
+    * @return optional title
+    */
   def titleOpt(l: Vector[String]): Option[String] =
     for {
       tm <- topmatter(l)
       ln <- tm.find(_.startsWith("title: "))
     } yield ln.drop(6).trim
 
+  /**
+    * escaped filename, lowercase with hyphens not spaces
+    * @param s raw string
+    * @return
+    */
   def filename(s: String): String = s.toLowerCase.replaceAll("\\s", "-")
 
-
+  /**
+    * date if it is part of topmatter
+    * @param l lines of a file
+    * @return
+    */
   def dateOpt(l: Vector[String]): Option[(Int, Int, Int)] =
     for {
       tm <- topmatter(l)
@@ -139,23 +189,56 @@ object Site {
         tm.mkString("\n"))
     } yield (m.group(1).toInt, m.group(2).toInt, m.group(3).toInt)
 
-  val months = Vector("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+  /**
+    * months of the year
+    */
+  val months = Vector("Jan",
+                      "Feb",
+                      "Mar",
+                      "Apr",
+                      "May",
+                      "Jun",
+                      "Jul",
+                      "Aug",
+                      "Sep",
+                      "Oct",
+                      "Nov",
+                      "Dec")
 
+  /**
+    * Assignment
+    * @param name filename
+    * @param content the main body
+    * @param optDate date if part of top-matter
+    * @param optTitle title if part of top-matter
+    */
   case class Assignment(name: String,
-                  content: String,
-                  optDate: Option[(Int, Int, Int)],
-                  optTitle: Option[String]) {
+                        content: String,
+                        optDate: Option[(Int, Int, Int)],
+                        optTitle: Option[String]) {
+
     val title: String = optTitle.getOrElse(name)
 
     val dateString: String =
-      optDate.map { case (y, m, d) => s"${months(m-1)} $d, $y" }.getOrElse("")
+      optDate.map { case (y, m, d) => s"${months(m - 1)} $d, $y" }.getOrElse("")
 
+    /**
+      * file onto which to write
+      */
     val target: Path = pwd / "docs" / "assignments" / s"$name.html"
 
+    /**
+      * url of the file, for menus
+      * @param relDocsPath relative path to the `docs` folder, which is the base of the site
+      * @return
+      */
     def url(relDocsPath: String) = s"${relDocsPath}assignments/$name.html"
 
     val date: (Int, Int, Int) = optDate.getOrElse((0, 0, 0))
 
+    /**
+      * html body for the assignment
+      */
     val assContent: String =
       s"""
       <h2 class="text-center"> $title </h2>
@@ -163,6 +246,10 @@ object Site {
       $content
       """
 
+    /**
+      * the final output
+      * @return
+      */
     def output: String =
       page(assContent.toString, "../")
 
@@ -177,33 +264,55 @@ object Site {
     Assignment(name, content, dateOpt(l), titleOpt(l))
   }
 
-  def assDir: Path = pwd / "sitebuilder" / "resources" / "assignments"
+  val assDir: Path = pwd / "sitebuilder" / "resources" / "assignments"
 
-  def allAss: Seq[Assignment] =
+  /**
+    * collection of assignments
+    */
+  lazy val allAss: Seq[Assignment] =
     Try(ls(assDir).map(getAss).sortBy(_.date).reverse).getOrElse(Seq())
 
+  /**
+    * list of assignments to be used in menus
+    * @param relDocsPath relative path to the `docs` folder, which is the base of the site
+    * @return html list
+    */
   def assList(relDocsPath: String): Seq[Elem] =
-      allAss.map(
-        (ass) =>
-          <li><a href={s"${ass.url(relDocsPath)}"}>{ass.title}</a></li>
-      )
+    allAss.map(
+      ass => <li><a href={s"${ass.url(relDocsPath)}"}>{ass.title}</a></li>
+    )
 
+  /**
+    * map of illustrations
+    */
   val allIllus =
-    Vector("Fair Coin?" -> "fair-coin",
+    Vector(
+      "Fair Coin?" -> "fair-coin",
       "Repeated Tosses" -> "coin-tosses",
       "Birthday Paradox" -> "birthdays",
       "Percolation" -> "percolation",
       "Bayes rule for Coins" -> "bayes-coin",
-      "Dependent tosses" -> "dependent-tosses")
+      "Dependent tosses" -> "dependent-tosses"
+    )
 
+  /**
+    * list of illustrations to be used in menus
+    * @param relDocsPath relative path to the `docs` folder, which is the base of the site
+    * @return html list
+    */
   def illusList(relDocsPath: String): Vector[Elem] =
-    allIllus.map{
+    allIllus.map {
       case (name, tag) =>
         <li><a href={s"${relDocsPath}illustrations/$tag.html"}>{name}</a></li>
     }
 
-  def page(s: String,
-           relDocsPath: String): String =
+  /**
+    * make a page
+    * @param s the body
+    * @param relDocsPath relative path to the `docs` folder, which is the base of the site
+    * @return complete html for page
+    */
+  def page(s: String, relDocsPath: String): String =
     s"""
        |<!DOCTYPE html>
        |<html lang="en">
@@ -220,11 +329,17 @@ object Site {
        |</html>
    """.stripMargin
 
-val assList: Seq[Elem] = allAss.map((ass) =>
-  <li> <a href={ass.url("")}> {ass.title}</a>, due by {ass.dateString}.</li>)
+  /**
+    * list of assignments
+    */
+  val assList: Seq[Elem] = allAss.map(ass =>
+    <li> <a href={ass.url("")}> {ass.title}</a>, due by {ass.dateString}.</li>)
 
-val home: Elem =
-  <section>
+  /**
+    * body of the course home page
+    */
+  val home: Elem =
+    <section>
   <div class="col-md-9">
 
       <h1> MA 261: Probability Models </h1>
@@ -276,7 +391,7 @@ val home: Elem =
   <div class="col-md-3 section" id ="Alerts">
     <h4> <a href="assign-all.html">Upcoming Assignments</a> </h4>
     <ul>
-      {allAss.map((ass) =>
+      {allAss.map(ass =>
       <li>
         <a href={ass.url("")}> {ass.title}</a>, due by {ass.dateString}.
       </li>)
@@ -287,6 +402,9 @@ val home: Elem =
 
   </section>
 
+  /**
+    * body of page listing all assignments
+    */
   val assignAll: Elem =
     <section>
       <h2> Assignments </h2>
@@ -295,28 +413,35 @@ val home: Elem =
       </ul>
     </section>
 
+  /**
+    * write files for all assignments and the listing page
+    */
   def mkAss(): Unit = {
-    allAss.foreach { (ass) =>
+    allAss.foreach { ass =>
       pprint.log(s"saving assignment ${ass.name} due on ${ass.dateString}")
-      write.over(ass.target, ass.output)
+      ass.save()
     }
     write.over(pwd / "docs" / "assign-all.html", page(assignAll.toString, ""))
   }
 
+  /**
+    * write files for illustrations
+    */
   def mkIllus(): Unit = {
-    allIllus.foreach { case (name, tag) =>
-      pprint.log(s"writing illustration $name")
-      write.over(
-        pwd / "docs" / "illustrations" / s"$tag.html",
-        page(s"""<div id="$tag"></div>""", "../")
+    allIllus.foreach {
+      case (name, tag) =>
+        pprint.log(s"writing illustration $name")
+        write.over(
+          pwd / "docs" / "illustrations" / s"$tag.html",
+          page(s"""<div id="$tag"></div>""", "../")
         )
     }
   }
 
-
+  /**
+    * write the file for the home page
+    */
   def mkHome(): Unit =
     write.over(pwd / "docs" / "index.html", page(home.toString, ""))
-
-
 
 }

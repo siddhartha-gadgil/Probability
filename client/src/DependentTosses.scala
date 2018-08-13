@@ -12,31 +12,58 @@ object DependentTosses {
   import mhtml._
   import scala.xml.Node
 
+  /**
+    * random number generator
+    */
   val rnd: Random = new Random()
 
+  /**
+    * probability that tosses are dependents
+    */
   val probOfDependence: Var[Double] = Var(0.5)
 
+  /**
+    * probability of a toss being different from the previous, if the tosses are dependent
+    */
   val flipProb: Var[Double] = Var(0.7) // in the case of dependent tosses
 
-  val biasChooser: Var[Double] = Var(rnd.nextDouble())
+  /**
+    * uniform random number between 0 and 1 based on which it is decided whether tosses are dependent
+    */
+  val dependenceChooser: Var[Double] = Var(rnd.nextDouble())
 
-  val flipChooser: Var[Double] = Var(rnd.nextDouble())
+//  val flipChooser: Var[Double] = Var(rnd.nextDouble())
 
+  /**
+    * the first toss
+    */
   val firstToss : Var[Boolean] = Var(rnd.nextBoolean())
 
+  /**
+    * reset the coin, choosing the first toss and whe
+    */
   def freshCoin(): Unit = {
-    biasChooser := rnd.nextDouble()
-    flipChooser := rnd.nextDouble()
+    dependenceChooser := rnd.nextDouble()
+//    flipChooser := rnd.nextDouble()
     firstToss := rnd.nextBoolean()
   }
 
+  /**
+    * probability that a toss is different from the previous
+    */
   val pV: Rx[Double] =
-    probOfDependence.zip(flipProb).zip(biasChooser).zip(flipChooser).map {
-      case (((pb, pbh), bc), hc) =>
+    probOfDependence.zip(flipProb).zip(dependenceChooser).map {
+      case ((pb, pbh), bc) =>
         if (bc < pb) pbh // dependent tosses
         else 0.5
     }
 
+  /**
+    * determines sequences of heads and tails from first toss and sequence of flips
+    * @param first the first toss
+    * @param flips vector of whether tosses coincide with the previous
+    * @return sequence of booleans corresponding to heads
+    */
   def tosses(first: Boolean, flips: Vector[Boolean]): Vector[Boolean] =
     flips match {
       case Vector() => Vector()
@@ -46,25 +73,52 @@ object DependentTosses {
         if (fl) prev :+ !prev.last else prev :+ prev.last
     }
 
+  /**
+    * sequence of uniform random variables to decide whether to flip
+    */
   val flipsValV: Var[Vector[Double]] = Var(Vector())
 
+  /**
+    * sequence of booleans for whether we flip
+    */
   val flipsV: Rx[Vector[Boolean]] =
     flipsValV.zip(pV).map {
       case (v, p) => v.map(_ < p)
     }
 
+  /**
+    * sequence of tosses, as a boolean
+    */
   val tossesV: Rx[Vector[Boolean]] = firstToss.zip(flipsV).map{case (x, ys) => tosses(x, ys)}
 
+  /**
+    * view of sequence of tosses
+    */
   val tossesView: Rx[String] = tossesV.map(v => v.map(t => if (t) "H" else "T").mkString(","))
 
+  /**
+    * guess, if made
+    */
   val guessOptV: Var[Option[Boolean]] = Var(None)
 
+  /**
+    * number of heads
+    */
   val headsR: Rx[Int] = tossesV.map(tosses => tosses.count(identity))
 
+  /**
+    * number of tails
+    */
   val tailsR: Rx[Int] = tossesV.map(tosses => tosses.count(!_))
 
-  val fairR: Rx[Boolean] = pV.map(_ == 0.5)
+  /**
+    * whether tosses are independent
+    */
+  val independentR: Rx[Boolean] = pV.map(_ == 0.5)
 
+  /**
+    * render the view in a div based on id
+    */
   @JSExport
   def main(): Unit = {
 
@@ -85,7 +139,7 @@ object DependentTosses {
             <button class="btn btn-success" onclick = {() => guessOptV := Some(true)} >Independent</button>
             <button class="btn btn-danger" onclick = {() => guessOptV := Some(false)}>Dependent</button>
           </div>
-          {guessOptV.zip(fairR).map{
+          {guessOptV.zip(independentR).map{
           case (guessOpt, fair) =>
             guessOpt.map(guess =>
               if (guess == fair)
@@ -96,7 +150,7 @@ object DependentTosses {
             ).getOrElse(<div></div>)
         }
           }
-          {guessOptV.zip(fairR).zip(pV).map{
+          {guessOptV.zip(independentR).zip(pV).map{
           case ((guessOpt, fair), p) =>
             guessOpt.map(_ =>
               if (fair)
@@ -120,7 +174,7 @@ object DependentTosses {
             </div>
             <div  class="form-group">
 
-              <label for="head">Probability of flip for dependent tosses:</label>
+              <label for="head">Probability of change for dependent tosses:</label>
               <input type="text" id="head" class="form-control" size="4" value={flipProb.map(_.toString)} oninput={
             (e: js.Dynamic) =>
               flipProb := e.target.value.asInstanceOf[String].toDouble

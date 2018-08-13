@@ -12,43 +12,79 @@ object BayesCoin {
   import mhtml._
   import scala.xml.Node
 
+  /**
+    * random number generator
+    */
   val rnd: Random = new Random()
 
+  /**
+    * probability that the chosen coin is biased
+    */
   val probOfBias: Var[Double] = Var(0.5)
 
+  /**
+    * probability of heads for a biased coin
+    */
   val biasedHeadsProb: Var[Double] = Var(0.9)
 
+  /**
+    * uniform random variable based on which bias is chosen
+    */
   val biasChooser: Var[Double] = Var(rnd.nextDouble())
 
-  val headChooser: Var[Double] = Var(rnd.nextDouble())
-
+  /**
+    * generate a fresh coin, choosing whether biased
+    */
   def freshCoin(): Unit = {
     biasChooser := rnd.nextDouble()
-    headChooser := rnd.nextDouble()
   }
 
+  /**
+    * probability of head
+    */
   val pV: Rx[Double] =
-    probOfBias.zip(biasedHeadsProb).zip(biasChooser).zip(headChooser).map {
-      case (((pb, pbh), bc), hc) =>
+    probOfBias.zip(biasedHeadsProb).zip(biasChooser).map {
+      case ((pb, pbh), bc) =>
         if (bc < pb) pbh // biased coin
         else 0.5
     }
 
+  /**
+    * sequence of random variables, uniform
+    */
   val tossesValV: Var[Vector[Double]] = Var(Vector())
 
+  /**
+    * sequence of random tosses
+    */
   val tossesV: Rx[Vector[Boolean]] =
     tossesValV.zip(pV).map {
       case (v, p) => v.map(_ < p)
     }
 
+  /**
+    * guess, if any
+    */
   val guessOptV: Var[Option[Boolean]] = Var(None)
 
+  /**
+    * number of heads
+    */
   val headsR: Rx[Int] = tossesV.map(tosses => tosses.count(identity))
 
+  /**
+    * number of tails
+    */
   val tailsR: Rx[Int] = tossesV.map(tosses => tosses.count(!_))
 
+  /**
+    * whether the coin is fair
+    */
   val fairR: Rx[Boolean] = pV.map(_ == 0.5)
 
+  /**
+    * render the view
+    */
   @JSExport
   def main(): Unit = {
 

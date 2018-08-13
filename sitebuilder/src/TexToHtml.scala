@@ -4,7 +4,13 @@ import ammonite.ops._
 
 import scala.util.matching._
 
+/**
+  * converting Manjunath's notes into html with embedded illustrations
+  */
 object TeXToHtml {
+  /**
+    * top of each notes page
+    */
   val top: String =
     """<html>
       |<head>
@@ -46,6 +52,11 @@ object TeXToHtml {
       |<body>
     """.stripMargin
 
+  /**
+    * navigation bar
+    * @param menus menus for chapters
+    * @return
+    */
   def nav(menus: String*): String =
     s"""
     |<nav class="navbar navbar-default navbar-fixed-bottom">
@@ -77,6 +88,9 @@ object TeXToHtml {
     |
   """.stripMargin
 
+  /**
+    * the banner for the table of contents
+    */
   val banner: String =
     """
       |<div class="container-fluid">
@@ -93,6 +107,9 @@ object TeXToHtml {
       |<p>&nbsp;</p>
     """.stripMargin
 
+  /**
+    * foot of notes pages
+    */
   val foot: String =
     """
       |</div>
@@ -108,16 +125,26 @@ object TeXToHtml {
       |</html>
     """.stripMargin
 
+  /**
+    * regular expression for simple definitions
+    */
   val defReg: Regex =
     "(\\\\def|\\\\newcommand|\\\\renewcommand)(\\\\[a-zA-Z0-9]+)([^\n%]+)".r
 
+  /**
+    * regular expression for new commands
+    */
   val newCommReg: Regex = "(\\\\newcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
 
+  /**
+    * regular expression for `renewcommand`
+    */
   val renewCommReg: Regex =
     "(\\\\renewcommand\\{)(\\\\[a-zA-Z0-9]+)(\\}[^\n%]+)".r
 
   /**
     * remove latex comments from a line, unless the line is meant to mark a div to insert javascript
+    * TODO have a more uniform marker, say `!!!` in line
     * @param l the original line
     * @return the trimmed line
     */
@@ -127,14 +154,19 @@ object TeXToHtml {
     else
       """[^\\]%""".r
         .findFirstMatchIn(l)
-        .map((m) => m.before.toString + m.group(0).head)
+        .map(m => m.before.toString + m.group(0).head)
         .getOrElse(l)
 
   val inputReg: Regex = """\\input\{([a-zA-Z0-9:+-_' ]+)\}""".r
 
+  /**
+    * read rex file recursively including input tex files
+    * @param name filename without extension
+    * @return the body of the file
+    */
   def readTeXFile(name: String): String = {
     val source = read(wd / s"$name.tex")
-    val fullSource = inputReg.replaceAllIn(source, (m) => {
+    val fullSource = inputReg.replaceAllIn(source, m => {
       pprint.log(s"including ${m.group(1)}")
       val include = readTeXFile(m.group(1))
       pprint.log("include read")
@@ -143,11 +175,23 @@ object TeXToHtml {
     fullSource.split("\n").map(trimLine).mkString("", "\n", "\n")
   }
 
+  /**
+    * sources, placed in resources for automating rebuilds
+    */
   val wd: Path = pwd / 'sitebuilder / "resources"
 
+  /**
+    * bunch of replacements
+    * @param t original string
+    * @param rpl sequence of replacements
+    * @return string with replacements
+    */
   def replaceAll(t: String)(rpl: Seq[(String, String)]): String =
     rpl.foldLeft(t) { case (txt, (x, y)) => txt.replace(x, y) }
 
+  /**
+    * replacements to make in tex file before parsing
+    */
   val replacements = Seq(
     ("<", " < "),
     (">", " > "),
@@ -163,6 +207,11 @@ object TeXToHtml {
     ("\\medskip", "<p></p>")
   )
 
+  /**
+    * class for converting from latex file to html
+    * @param name filename for the latex file
+    * @return class with conversions
+    */
   def teXConvertor(name: String): TeXToHtml = {
     val fullText: String = readTeXFile(name)
 
@@ -180,6 +229,9 @@ object TeXToHtml {
     new TeXToHtml(header, text)
   }
 
+  /**
+    * regular expression for beginning environment, including labels
+    */
   val fullBegReg: Regex =
     """\\begin\{([a-zA-Z0-9\*]*)\}([\s]*\[[^\[\]]+\])?([\s]*\\label\{[a-zA-Z0-9:+-_' ]+\})?""".r
 
@@ -202,6 +254,9 @@ object TeXToHtml {
   def maxOpt[B: Ordering](v: Vector[B]): Option[B] =
     if (v.isEmpty) None else Some(v.max)
 
+  /**
+    * environments numbered as theorems and made into panels
+    */
   val thmEnvs: Map[String, (String, String)] = Map(
     "example" -> ("Example", "info"),
     "question" -> ("Question", "danger"),
@@ -214,6 +269,9 @@ object TeXToHtml {
     "theorem" -> ("Theorem", "primary")
   )
 
+  /**
+    * environments to be wrapped in display math so MathJax processes
+    */
   val mathEnvs = Set(
     "align*",
     "align",
@@ -223,6 +281,9 @@ object TeXToHtml {
     "eqnarray*"
   )
 
+  /**
+    * environment to be replaced by `div` without special styling
+    */
   val divEnvs = Set("proof")
 
   def indices(r: Regex, txt: String): Vector[Int] =
@@ -236,19 +297,35 @@ object TeXToHtml {
 
   def enumerateEnds(txt: String): Vector[Int] = indices(begEnReg, txt)
 
+  /**
+    * inidices of latex items
+    * @param txt the text
+    * @return vector of indices
+    */
   def items(txt: String): Vector[Int] = indices("""\\item""".r, txt)
 
+  /**
+    * whether an item is the first in its environment
+    * @param j index of the item
+    * @param txt full text
+    * @return boolean
+    */
   def firstItem(j: Int, txt: String): Boolean = {
     val lastBeg = (enumerateBegs(txt) ++ itemizeBegs(txt)).filter(_ < j).max
     maxOpt(items(txt).filter(_ < j)).forall(_ < lastBeg)
 
   }
 
+  /**
+    * replace latex items by html items
+    * @param txt the full text
+    * @return partially html conversion
+    */
   def replaceItems(txt: String): String = {
     val itemLess =
       """\\item""".r.replaceAllIn(
         txt,
-        (m) => if (firstItem(m.start, txt)) "<li>" else "</li>\n<li>")
+        m => if (firstItem(m.start, txt)) "<li>" else "</li>\n<li>")
     itemLess
       .replace("""\begin{itemize}""", "<ul>")
       .replace("""\end{itemize}""", "</ul>")
@@ -263,7 +340,7 @@ object TeXToHtml {
       labels: Map[String, Int] = Map()): (String, Int, Map[String, Int]) = {
     fullBegReg
       .findFirstMatchIn(txt)
-      .map { (m) =>
+      .map { m =>
         val title = Option(m.group(2))
         val labelOpt =
           Option(m.group(3)).map(_.trim.drop("""\label{""".length).dropRight(1))
@@ -272,7 +349,7 @@ object TeXToHtml {
           else thmCounter
         val newLabels =
           if (thmEnvs.keySet.contains(m.group(1)))
-            labelOpt.map((l) => labels + (l -> newCounter)).getOrElse(labels)
+            labelOpt.map(l => labels + (l -> newCounter)).getOrElse(labels)
           else labels
         val newString =
           if (thmEnvs.keySet.contains(m.group(1)))
@@ -280,7 +357,7 @@ object TeXToHtml {
                 <div id="theorem-$newCounter"><div class="panel panel-${thmEnvs(
                  m.group(1))._2} ${m
                  .group(1)}"> <div class="panel-heading">${thmEnvs(m.group(1))._1} $newCounter ${title
-                 .map((s) => "(" + s.drop(1).dropRight(1) + ")")
+                 .map(s => "(" + s.drop(1).dropRight(1) + ")")
                  .getOrElse("")}</div><div class="panel-body">""".stripMargin
           else if (mathEnvs.contains(m.group(1)))
             "$$" + m.group(0)
@@ -304,7 +381,7 @@ object TeXToHtml {
   def replaceEnds(txt: String): String =
     endReg.replaceAllIn(
       txt,
-      (m) =>
+      m =>
         if (mathEnvs.contains(m.group(1)))
           Regex.quoteReplacement(m.group(0) + "$$")
         else if (thmEnvs.keySet.contains(m.group(1))) "</div></div></div>"
@@ -318,7 +395,7 @@ object TeXToHtml {
                            section: Int): String =
     """(\\subsection\{)([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
       .findFirstMatchIn(txt)
-      .map { (m) =>
+      .map { m =>
         val newHead =
           head + blockParas(m.before.toString) + s"""<h3>$section.${counter + 1} ${m
             .group(2)}.</h3>"""
