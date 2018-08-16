@@ -19,7 +19,7 @@ object Site {
       |jax: ["input/TeX", "output/HTML-CSS"],
       |tex2jax: {
       |  inlineMath: [ ['$', '$'] ],
-      |  displayMath: [ ['$$', '$$']],
+      |  displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
       |  processEscapes: true,
       |  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       |},
