@@ -385,6 +385,9 @@ object Site {
 
           </ul>
         </li>
+        <li>
+          <strong>Tutorials:</strong> Friday : 5:30 pm.
+        </li>
       </ul>
     </div>
   </div>
