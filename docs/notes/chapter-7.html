@@ -190,10 +190,10 @@ $$
 $$
 Hence, the right hand side is given by adding over $i_{1} < \ldots  < i_{k}$, multiplying by $(-1)^{k-1}$ and then summing over $k$ from $1$ to $n$.
 $$\begin{eqnarray*}
-\mbox{RHS} &=& \sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n} \; \sum\limits_{\omega\in \Omega} \;p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega) \\
+\mbox{RHS} &=& \sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n}   \sum\limits_{\omega\in \Omega}  p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega) \\
 &=& \sum\limits_{\omega \in \Omega}\sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n} p_{\omega}\prod\limits_{\ell=1}^{k}{\mathbf 1}_{A_{i_{\ell} }}(\omega) \\
 &=& -\sum\limits_{\omega \in \Omega}p_{\omega}\sum\limits_{k=1}^{n}\sum\limits_{1\le i_{1} < \ldots  < i_{k}\le n}\prod\limits_{\ell=1}^{k}(-{\mathbf 1}_{A_{i_{\ell} }}(\omega)) \\
-&=& -\sum\limits_{\omega \in \Omega}p_{\omega} \left(\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j} }(\omega)) \; - \; 1\right) \\
+&=& -\sum\limits_{\omega \in \Omega}p_{\omega} \left(\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j} }(\omega))   -   1\right) \\
 &=& \sum\limits_{\omega \in \Omega}p_{\omega}{\mathbf 1}_{A}(\omega).
 \end{eqnarray*}$$
 because the quantity $\prod\limits_{j=1}^{n}(1-{\mathbf 1}_{A_{j} }(\omega))$ equals $-1$ if $\omega$ belongs to at least one of the $A_{i}$s, and is zero otherwise. Thus the claim follows.
@@ -235,7 +235,7 @@ B_{m}=\bigcup_{ 1\le i_{1} < i_{2} < \ldots  < i_{m}\le n} (A_{i_{1} }\cap A_{i_
 $$
 The event that ''exactly $m$ of the events $A_{1}, A_{2},\ldots ,A_{n}$ occur'' can be written as
 $$
-C_{m}=B_{m}\setminus B_{m+1} = \bigcup_{\stackrel{S\subseteq [n]}{|S|=m} } \; \left(\bigcap_{i\in S}A_{i}\right)\bigcap \left( \bigcap_{i\not\in S}A_{i}^{c}\right).
+C_{m}=B_{m}\setminus B_{m+1} = \bigcup_{\stackrel{S\subseteq [n]}{|S|=m} }   \left(\bigcap_{i\in S}A_{i}\right)\bigcap \left( \bigcap_{i\not\in S}A_{i}^{c}\right).
 $$
 <p>&nbsp;</p>
                 <div id="theorem-57"><div class="panel panel-warning exercise"> <div class="panel-heading">Exercise 57 </div><div class="panel-body"> Let $A_{1},\ldots ,A_{n}$ be events in a probability space $(\Omega,p)$ and let $m\le n$. Let $B_{m}$ and $C_{m}$ be as above. Show that

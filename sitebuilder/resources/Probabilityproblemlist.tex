@@ -1,0 +1,1153 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[preprint,  11pt]{amsart}
+
+\usepackage{mathrsfs}
+\usepackage{fullpage}
+\usepackage{natbib}
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage[normalem]{ulem} %for strikingout text
+%\usepackage{cancel} %for strikingout text
+
+
+
+\linespread{1.28}
+
+\input{mypreamble_2018}
+
+\usepackage{palatino}
+\def\half{\frac{1}{2}}
+\def\sig{{\sigma}}
+\def\Sig{{\Sigma}}
+\def\e{\bf e}
+\def\LL{{\mathcal L}}
+\def\DD{{\mathcal D}}
+\def\CC{{\mathcal C}}
+\def\TT{{\mathcal T}}
+\def\T{{\mathbb T}}
+\def\H{{\mathbb H}}
+\def\k{{\mathbf k}}
+\renewcommand\j{{\mathbf j}}
+\renewcommand\i{{\mathbf i}}
+
+\def\x{{\bf x}}
+\def\y{{\bf y}}
+\def\z{{\bf z}}
+
+%\renewtheorem{exercise}[theorem]{Exercise}
+
+\renewcommand{\benu}{\begin{enumerate}}
+%\renewcommand{\bex}{\indent\begin{exercise}}
+
+\begin{document}
+
+\title{Problems in basic probability}
+\author{Manjunath Krishnapur}
+
+
+
+\maketitle
+%\tableofcontents
+%\newpage
+
+\para{Note}  These are  problems I gave as homeworks in the many times I taught the first course in UG probability and statistics at IISc. They are taken from various sources and there are also some that I made up.
+%% (http://www.isibang.ac.in/~adean/infsys/database/index.html)
+%
+%
+%\newpage
+%%\section{Homework 1}
+
+
+
+\medskip
+\bepr (Feller, I.8.1) Among the digits 1,2,3,4,5 first one is chosen, and then a second selection is made among the remaining four digits. Assume that all twenty possible results have the same probability. Find the probability that an odd digit will be selected {\em (a)} the first time, {\em (b)} the second time, {\em (c)} both times.
+\eepr
+
+\medskip
+\bepr (*) (Feller, II.10.3) In how many ways can two rooks of different colours be put on a chessboard so that they can take each other?
+\eepr
+
+\medskip
+\bepr (Feller, II.10.5) The numbers $1,2,\ldots ,n$ are arranged in random order. Find the probability that the digits {\em (a)} 1 and 2,  {\em (b)} 1, 2, and 3,  \; appear as neighbours in the order named.
+\eepr
+
+\medskip
+\bepr (Feller, II.10.8) What is the probability that among $k$ digits  {\em (a)} 0 does not appear;  {\em (b)} 1 does not appear; {\em (c)} neither 0 nor 1 appears; {\em (d)} at least one of the two digits $0$ or $1$ does not appear? Let $A$ and $B$ represent the events in {\em (a)} and {\em (b)}. Express the other events in terms of $A$ and $B$.
+\eepr
+
+\medskip
+\bepr (Feller, II.10.11) A man is given $n$ keys of which only one fits his door. He tries them successively (sampling without replacement). The number of trials required may be $1,2,\ldots ,n$. Show that each of these outcomes has probability $1/n$.
+\eepr
+
+\medskip
+\bepr (*) (Feller, II.10.20) From a population of $N$ elements a sample of size $k$ is taken. Find the probability that none of $m$ prescribed elements will be included in the sample, assuming the sample to be {\em (a)} without replacement, \; {\em (b)} with replacement. Compare the numerical values for the two methods when {\em (i)} $N=100$, $m=k=3$, and {\em (ii)} $N=100$, $m=k=10$.
+\eepr
+
+\medskip
+\bepr (Feller, II.10.28) A group of $2N$ boys and $2N$ girls is divided into two equal groups. Find the probability $p$ that each group has equal number of boys and girls. Estimate $p$ using Stirling's approximation.
+\eepr
+
+\medskip
+\bepr (*) (Feller, II.10.39) If $r_{1}$ indistinguishable red balls and $r_{2}$ indistinguishable blue balls are placed into $n$ cells, find the number of distinguishable arrangements.
+\eepr
+
+\medskip
+\bepr (Feller, II.10.40) If $r_{1}$ dice and $r_{2}$ coins are thrown, how many results can be distinguished?
+\eepr
+
+
+
+\medskip
+\bepr  In how many ways can two bishops be put on a chessboard so that they can take each other?
+\eepr
+
+\medskip
+\bepr A deck of $n$ cards labelled $1,2,\ldots ,n$ is shuffled well. Find the probability that the digits {\em (a)} 1 and 2,  {\em (b)} 1, 2, and 3,  \; appear as neighbours in the order named.
+\eepr
+
+
+\medskip
+\bepr A deck of $n$ cards labelled $1,2,\ldots ,n$ is shuffled well. Find the probability that the digits {\em (a)} 1 and 2,  {\em (b)} 1, 2, and 3,  \; appear as neighbours in the order named.
+\eepr
+
+
+\medskip
+\bepr (Feller, II.12.1) Prove the following identities for $n\ge 2$. [{\em Convention:} Let $n$ be a positive integer. Then $\binom{n}{y}=0$ if $y$ is not an integer or if $y>n$].
+\begin{align*}
+1-\binom{n}{1}+\binom{n}{2} -\ldots &=0 \\
+\binom{n}{1}+2\binom{n}{2}+3\binom{n}{3}+\ldots &=n2^{n-1} \\
+\binom{n}{1}-2\binom{n}{2}+3\binom{n}{3}-\ldots &=0 \\
+2.1\binom{n}{2}+3.2\binom{n}{3}+4.3\binom{n}{4}+\ldots &=n(n-1)2^{n-2}
+\end{align*}
+\eepr
+
+\medskip
+\bepr (Feller, I.12.10) Prove that
+$$
+\binom{n}{0}^{2}+\binom{n}{1}^{2}+\ldots +\binom{n}{n}^{2}=\binom{2n}{n}.
+$$
+\eepr
+
+\medskip
+\bepr (Feller, I.12.20) Using Stirling's formula, prove that $\frac{1}{2^{2n}}\binom{2n}{n}\sim \frac{1}{\sqrt{\pi n}}$. [{\em Convention:} $a_{n}\sim b_{n}$ is shorthand for $\limm_{n\to \infty}\frac{a_{n}}{b_{n}}=1$].
+\eepr
+
+\medskip
+\bepr (*) Two positive integers $m\le N$ are fixed. A box contains $N$ coupons labelled $1,2,\ldots ,N$. A sample of $m$ coupons is drawn.
+\benu
+\item Write the probability space in the following two ways of drawing the sample.
+\benu
+\item (Sampling without replacement). A coupon is drawn uniformly at random, then a second coupon is drawn uniformly at random, and so on, till we have $m$ coupons.
+\item (Sampling with replacement). A coupon is drawn uniformly at random, its number is noted and the coupon is replaced in the box. Then a coupon is drawn at random from the box, the number is noted, and the coupon is returned to the box. This is done $m$ times.
+\eenu
+\item Let $N=k+\ell$ where $k,\ell$ are positive integers.  We think of $\{1,2,\ldots ,k\}$ as a sub-population of the whole population $\{1,2,\ldots ,N\}$. For each of the above two schemes of sampling (with and without replacement), calculate the probability that the sample of size $m$ contains no elements from the sub-population $\{1,2,\ldots ,k\}$.
+\eenu
+\eepr
+
+\medskip
+\bepr (*) Write the probability spaces for the following experiments. Coins and dice may not be fair!
+\benu
+\item A coin is tossed till we get a head followed immediately by a tail. Find the probability of the event that the total number of tosses is at least $N$.
+\item A die is thrown till we see the number $6$ turn up five times (not necessarily in succession). Find the probability that the number $1$ is never seen.
+\item A coin is tossed till the first time when the number of heads (strictly) exceeds the number of tails. What is the probability that the number of tosses is at least $5$.
+\item (Extra exercise for fun! \underline{Do not submit this part}) In the previous experiment, find the probability that the number of tosses is more than $N$.
+\eenu
+\eepr
+
+\medskip
+\bepr (*) A particular segment of the DNA in a woman is $ATTAGCGG$ and the corresponding segment in her husband is $CTAAGGCG$. Write the probability space for the same DNA segment in the future child of this man-woman pair. Assume that all possible combinations are equally likely, and ignore the possibility of mutation.
+\eepr
+
+\bigskip
+\bepr In a party there are $N$ unrelated people. Their birthdays are noted (ignore leap years and assume that a year has $365$ days). Find the probability of the event that no two of them have the same birthday. Get the numerical value for $N=20$ and $N=30$.
+\eepr
+
+\medskip
+\bepr {\color{blue} A deck of $52$ cards is shuffled well and $3$ cards are dealt. Find the probability of the event that all three cards are from distinct suits.}
+\eepr
+
+\medskip
+\bepr {\color{blue} Place $r_{1}$ indistinguishable blue balls and $r_{2}$ indistinguishable red balls into $m$ bins uniformly at random. Find the probability of the event that the first bin contains balls of both colors. }
+\eepr
+
+\medskip
+\bepr A coin with probability $p$ of turning up $H$ (assume $0<p<1$) is tossed till we get a $TH$ or a $HT$ (i.e., two consecutive tosses must be different, eg., $TTH$ or $HHHT$). Find the probability of the event that at least $5$ tosses are required.
+\eepr
+
+\medskip
+\bepr {\color{blue} A drunken man return home and tries to open the lock of his house from a  bunch of $n$ keys by trying them at random till the door opens. Consider two cases: \begin{inparaenum} \item He is so drunk that he may try the same key several times. \item He is moderately drunk and remembers which keys he has already tried.\end{inparaenum} In both cases, find the probability of the event that he needs $n$ or more attempts to open the door.}
+\eepr
+
+\medskip
+\bepr Let $\x=(0,1,1,1,0,1)$ and $\y=(1,1,0,1,0,1)$. A new $6$-tuple $\z$ is created at random by choosing each $z_{i}$ to be $x_{i}$ or $y_{i}$ with equal chance, for $1\le i\le 6$ (A toy model for how two DNA sequences can recombine to give a new one). Find the probability of the event that $\z$ is identical to $\x$.
+\eepr
+
+\medskip
+\bepr {\color{blue}From a group of $W$ women and $M$ men, a team of $L$ people is chosen at random (of course $L\le W+M$). Find the probability of the event that the teams consists of exactly $k$ women.}
+\eepr
+
+\medskip
+\bepr Place $r$ distinguishable balls in $m$ labelled bins in such a way that each bin contains at most one ball. All {\em distinguishable} arrangements are deemed equally likely (this is known as Fermi-Dirac statistics). Find the probability that the first bin is empty.
+\eepr
+
+\medskip
+\bepr A box contains $2N$ coupons labelled $1,2,\ldots ,2N$. Draw $k$ coupons (assume $k\le N$) from the box one after another \begin{inparaenum}\item with replacement, \item without replacement. \end{inparaenum} Find the probability of the event that no even numbered coupon is in the sample.
+\eepr
+
+\medskip
+\bepr In a class with 108 people, one student gets a joke by e-mail. He/she forwards it to one randomly chosen classmate. The recipient does the same - chooses a classmate at random (could be the sender too) and forwards it to him/her. The process goes on like this for $20$ steps and stops. What is the probability that the first person to get the mail does not get it again? What is the chance that no one gets the e-mail more than once?
+\eepr
+
+
+
+%\newpage
+%\section{Homework 2}
+%\para{Caution} Write the probability space before calculating probabilities!
+
+\medskip
+\bepr (Feller, III.6.3) Find the probability that in five tossings a coin falls head at least three times in succession.
+\eepr
+
+\medskip
+\bepr (*) (Feller, III.6.1) Ten pairs of shoes are in a closet. Four shoes are selected at random. Find the probability that there will be at least one pair among the fours shoes selected.
+\eepr
+
+\medskip
+\bepr (*) Let $A_{1},A_{2},A_{3},\ldots$ be events in a probability space. Write the following events in terms of $A_{1},A_{2},\ldots$ using the usual set operations (union, intersection, complement).
+\benu
+\item An infinite number of the events $A_{i}$ occur.
+\item All except finitely many of the events $A_{i}$ occur.
+\item Exactly $k$ of the events $A_{i}$ occur.
+\eenu
+\eepr
+
+\medskip
+\bepr (Feller, I.8.1)  Let $A_{1},\ldots ,A_{n}$ be events in a probability space $(\Ome,p)$ and let $0\le m\le n$. Let $B_{m}$ be the event that at least $m$ of the events $A_{1},\ldots ,A_{n}$  occur. Mathematically,
+$$
+B_{m}=\bigcup_{ 1\le i_{1}<i_{2}<\ldots <i_{m}\le n} (A_{i_{1}}\cap A_{i_{2}}\cap \ldots \cap A_{i_{m}}).
+$$
+Show that
+\begin{align*}
+\P(B_{m}) &= S_{m}-\binom{m}{1}S_{m+1}+\binom{m+1}{2}S_{m+2}-\binom{m+2}{3}S_{m+3}+\ldots  \\
+\end{align*}
+where $
+S_{k}=\summ_{1\le i_{1}<i_{2}<\ldots <i_{k}\le n}\P(A_{i_{1}}\cap A_{i_{2}}\cap \ldots \cap A_{i_{k}}).
+$
+\eepr
+
+\medskip
+\bepr (*) Recall the problem of matching two shuffled decks of cards, but with $n$ cards in each deck, so that $\Ome_{n}=S_{n}\times S_{n}$ and $p_{(\pi,\sig)}=\frac{1}{(n!)^{2}}$ for each $(\pi,\sig)\in \Ome$. Let $A_{m}$ be the event that there are exactly $m$ matches between the two decks\footnote{Strictly speaking, we should write $A_{n,m}$, since the $A_{n,m}\subseteq \Ome_{n}$ but for ease of notation we omit the subscript $n$. Similarly, it would be appropriate to write $p_{n}$ and $\P_{n}$ for the probabilities, but again, we simplify the notation when there is no risk of confusion.}.
+\benu
+\item For fixed $m\ge 0$, show that $\P(A_{m})\to e^{-1}\frac{1}{m!}$ as $n\to \infty$.
+\item Assume that the approximations above are valid for $n=52$ and $m\le 10$. Find the probability that there are at least $10$ matches.
+\eenu
+[{\bf Remark:} You may use the result of the previous problem to solve this one].
+\eepr
+
+
+\medskip
+\bepr Place $r_{n}$ distinguishable balls in $n$ distinguishable urns. Let $A_{n}$ be the event that at least one urn is empty\footnote{Similar to the previous comment, here it would be appropriate to write $\P_{n}(A_{n})$ as the probability spaces are changing, but we keep the notation simple and simply write $\P(A_{n})$.}.
+\benu
+\item If $r_{n}=n^{2}$, show that $\P(A_{n})\to 0$ as $n\to \infty$.
+\item If $r_{n}=Cn$ for some fixed constant $C$, show that $\P(A_{n})\to 1$ as $n\to \infty$.
+\item Can you find an increasing function $f(\cdot)$ such that if $r_{n}=f(n)$, then $\P(A_{n})$ does not converge to $0$ or $1$? [{\bf Hint:} First try $r_{n}=n^{\alp}$ for some $\alp$, not necessarily an integer].
+\eenu
+\eepr
+
+
+\medskip
+\bepr A box contains $N$ coupons labelled $1,2,\ldots ,N$. Draw $m_{N}$ coupons at random, with replacement, from the box. Let $A_{N}$ be the event that every coupon from the box has appeared at least once in the sample.
+\benu
+\item If $m_{N}=N^{2}$, show that $\P(A_{N})\to 1$ as $N\to \infty$.
+\item If $m_{N}=CN$ for some fixed constant $C$, show that $\P(A_{N})\to 0$ as $N\to \infty$
+\item Can you find an increasing function $f(\cdot)$ such that if $m_{N}=f(N)$, then $\P(A_{N})$ does not converge to $0$ or $1$? [{\bf Hint:} See if you can relate this problem to the previous one].
+\eenu
+\eepr
+
+\medskip
+\bepr {\color{blue}Let $A_{1},\ldots ,A_{n}$ be events in a common probability space.   Let $B$ be the event that {\em at least two} of the $A_{i}$s occur. Prove that
+\ba
+\P(B)= S_{2}-2S_{3}+3S_{4}-\ldots +(-1)^{m}(m-1)S_{m}
+\ea
+where $S_{k}=\sum_{1\le i_{1}<i_{2}<\ldots <i_{k}\le n}\P\{A_{i_{1}}\cap \ldots \cap A_{i_{k}}\}$ for $1\le k\le n$.
+}
+
+{\bf Not for submission:} More generally, you may show that the probability that at least $\ell$ of the $A_{i}$s occur is equal to
+\begin{align}\label{eq:inclexclforatleastell}
+S_{\ell}-\binom{\ell}{1}S_{\ell+1}+\binom{\ell+1}{2}S_{\ell+2}-\binom{\ell+2}{3}S_{\ell+3}+\ldots
+\end{align}
+\eepr
+
+\bigskip
+\bepr Continuing with the notation of the previous problem, assume the formula given in \eqref{eq:inclexclforatleastell} holds. If $C$ is the event that {\em exactly} $\ell$ of the events $A_{i}$s occur, then show that
+\begin{align}\label{ex:inclexclexactlyellmany}
+\P(C)=S_{\ell}-\binom{\ell+1}{\ell}S_{\ell+1}+\binom{\ell+2}{\ell}S_{\ell+2}-\ldots +(-1)^{n-\ell}S_{n}.
+\end{align}
+[{\bf Hint:} If you want to prove this directly, without using \eqref{eq:inclexclforatleastell}, that is also okay.]
+\eepr
+
+
+\bigskip
+\bepr If $r$ distinguishable balls are placed at random into $m$ labelled bins, write an expression for the probability that each  bin contains at least two balls.
+\eepr
+
+\bigskip
+\bepr {\color{blue}A deck of cards is dealt to four players ($13$ cards each). Find the probability that at least one of the players has two or more {\em aces}.}
+\eepr
+
+\bigskip
+\bepr {\color{blue}Let $p$ be the probability that in a gathering of 2500 people, there is some day of the year that is not the birthday of anyone in the gathering. Make reasonable assumptions and argue that $0.3\le p\le 0.4$.}
+\eepr
+
+\bigskip
+\bepr Consider the problem of a psychic guessing the order of a deck of shuffled cards. Assume complete randomness of the guesses. Use the formula in \eqref{ex:inclexclexactlyellmany} to derive an expression for the probability that the number of guesses is exactly $\ell$, for $0\le \ell\le 52$. Use meaningful approximation to these probabilities and give numerical values (to 3 decimal places) of the probabilities for $\ell=0,1,2\ldots ,6$.
+\eepr
+
+\bigskip
+\bepr Place $r_{m}$ distinguishable balls in $m$ distinguishable bins. Let $A_{m}$ be the event that at least one bin is empty\footnote{Here it would be appropriate to write $\P_{m}(A_{n})$ as the probability spaces are changing, but we keep the notation simple and simply write $\P(A_{n})$.}.
+\benu
+\item If $r_{n}=m^{2}$, show that $\P(A_{m})\to 0$ as $m\to \infty$.
+\item If $r_{m}=Cm$ for some fixed constant $C$, show that $\P(A_{m})\to 1$ as $n\to \infty$.
+\item Can you find an increasing function $f(\cdot)$ such that if $r_{m}=f(m)$, then $\P(A_{m})$ does not converge to $0$ or $1$? [{\bf Hint:} First try $r_{m}=m^{\alp}$ for some $\alp$, not necessarily an integer].
+\eenu
+\eepr
+
+
+%
+%\newpage
+%\section{Homework 3}
+
+\medskip
+\bepr(*) A random experiment is described and a random variable observed. In each case, write the probability space, the random variable and the pmf of the random variable.
+\benu
+\item Two fair dice are thrown. The sum of the two top faces is noted.
+\item Deal thirteen cards  from a shuffled deck and  count \; (a) the number of red cards (i.e., diamonds or hearts), \; (b) the number of kings, \; (c) the number of diamonds.
+\eenu
+\eepr
+
+\medskip
+\bepr (*) Place $r$ distinguishable balls in $m$ distinguishable bins at random. Count the number of balls in the first bin.
+\benu
+\item Write the probability space and the random variable described above.
+\item Find the probability mass function of the number of balls in the first bin.
+\item Find the expected value of the number of balls in the first bin.
+\eenu
+\eepr
+
+\medskip
+\bepr (*) Find $\E[X]$ and $\E[X^{2}]$ for the following random variables.
+\benu
+\item $X\sim \mb{Geo}(p)$.
+\item $X\sim \mb{Hypergeo}(N_{1},N_{2},m)$.
+\eenu
+\eepr
+
+\medskip
+\bepr  Let $X$ be a non-negative integer-valued random variable with CDF $F(\cdot)$. Show that $\E[X]=\sum_{k=0}^{\infty}(1-F(k))$.
+\eepr
+
+
+\medskip
+\bepr A coin has probability $p$ of falling head. Fix an integer $m\ge 1$. Toss the coin till the $m^{\mb{\tiny{th}}}$ head occurs. Let $X$ be the number of tosses required.
+\benu
+\item Show that $X$ has pmf
+$$
+f(k) = \binom{k-1}{m-1}p^{m}(1-p)^{k-m}, \hsp{4mm} k=m,m+1,m+2,\ldots.
+$$
+\item Find $\E[X]$ and $\E[X^{2}]$.
+\eenu
+[{\bf Note:} When $m=1$, you should get the Geometric distribution with parameter $p$. We say that $X$ has {\em negative-binomial distribution}. Some books define $Y:=X-m$ (the number of tails till you get $m$ heads) to be a negative binomial random variable. Then, $Y$ takes values  $0,1,2,\ldots$.]
+\eepr
+
+\medskip
+\bepr For a  pmf $f(\cdot)$, the {\em mode} is defined as any point at which $f$ attains its maximal value (i.e., $t$ is a mode if $f(t)\ge f(s)$ for any $s$). For each of the following distributions, find the mode(s) of the distribution and the value of the pmf at the modes.
+\benu
+\item $\mb{Bin}(n,p)$.
+\item $\mb{Pois}(\lam)$.
+\item $\mb{Geo}(p)$.
+\eenu
+\eepr
+
+\medskip
+\bepr Use MATLAB for the following exercise.
+\benu
+\item Plot the pmf of Binomial, Poisson and Geometric distributions for various values of the parameters. Observe the plots to say where the maximum is attained, how the shape changes with changes in parameter, etc. [For definiteness
+\item Simulate random numbers (number of samples can be $50$ or $100$ etc) from the same distributions and  plot their histograms. Visually compare the histograms with the plots of the pmf.
+\item Consider the ``real-life'' data given in Feller's book (chapter 6) and plot their histograms. Compare with the plot of the pmf for the appropriate distribution with appropriate choice of parameters.
+\eenu
+\eepr
+
+\medskip
+
+\bepr Let $A,B$ be events with positive probability in a common probability space. We have seen in class that $\P(A\big| B)$ and $\P(B\big| A)$ are not to be confused.
+\benu
+\item Show that $\P(A\big| B)=\P(B\big| A)$ if and only if $\P(A)=\P(B)$.
+\item Show that $\P(A\big| B)>\P(A)$ if and only if $\P(B\big| A)>\P(B)$. That is, if occurrence of $B$ makes $A$ more likely than it was before, then the occurrence of $A$ makes $B$ more likely than it was.
+\eenu
+\eepr
+
+\medskip
+\bepr {\color{blue}There are $10$ bins and the $k$th bin contains $k$ black and $11-k$ white balls. A bin is chosen uniformly at random. Then a ball is chosen uniformly at random from the chosen bin.
+\benu
+\item Find the conditional probability that the chosen ball is black, given that the $k$th bin was chosen. Use this to compute the (unconditional) probability that the chosen ball is white.
+\item Given that the chosen ball is black, what is the probability that the $k$th bin was chosen?
+\eenu }
+\eepr
+
+\medskip
+\bepr {\color{blue}A fair die is thrown $n$ times. For $1\le k\le n-1$, let $A_{k}$ be the event that the $k$th throw and the $(k+1)$st throw yield the same result. Are $A_{1},\ldots ,A_{n-1}$ independent? Are they pairwise independent?}
+\eepr
+
+\medskip
+\bepr {\color{blue}Suppose $r$ distinguishable balls are placed in $m$ labelled bins at random. Each ball has probability $p_{k}$ of going into the $k$th bin, where $p_{1}+\ldots +p_{m}=1$. Let $X_{k}$ be the number of balls that go into the $k$th bin.
+\benu
+\item Find the pmf of $X_{1}$.
+\item Find the pmf of the random variable $X_{1}+X_{2}$.
+\eenu}
+\eepr
+
+
+
+
+\medskip
+\bepr Two fair dice  are thrown and let $X$ be the total of the two numbers that show up. Find the pmf of $X$. What is the most likely value of $X$?
+\eepr
+
+\medskip
+\bepr Two dice (not necessarily identical, and not necessarily fair) are thrown and let $X$ be the total of the two numbers that turn up. Can you design the two dice so that $X$ is equally likely to be any of the numbers $2,3,\ldots ,12$?
+\eepr
+
+\medskip
+\bepr A coin has probability $p$ of falling head. Assume $0<p<1$ and fix an integer $m\ge 1$. Toss the coin till the $m^{\mb{\tiny{th}}}$ head occurs. Let $X$ be the number of tosses required. Show that $X$ has pmf
+$$
+f(k) = \binom{k-1}{m-1}p^{m}(1-p)^{k-m}, \hsp{4mm} k=m,m+1,m+2,\ldots.
+$$
+Find the CDF of $X$.
+
+[{\bf Note:} When $m=1$, this is the Geometric distribution with parameter $p$. We say that $X$ has {\em negative-binomial distribution}. Some books define $Y:=X-m$ (the number of tails till you get $m$ heads) to be a negative binomial random variable. Then, $Y$ takes values  $0,1,2,\ldots$.]
+\eepr
+
+\medskip
+\bepr A box contains $n$ coupons with one number on each coupon. We do not know the numbers but we know that they are distinct. Coupons are drawn one after another from the box, without replacement (i.e., after choosing a coupon at random, it is not put back into the box before drawing the next coupon). If the $k$th number drawn is larger than all the previous numbers, what is the chance that it is the largest of the $n$ numbers?
+%
+%[{\bf Remark:} This is related to the {\em secretary problem}. Suppose $n$ candidates with distinct abilities come for to interview for a secretarial job. Your aim is to choose the best person. But the constraint is that you have to interview them one after another, and immediately after interviewing a person, you must either accept or reject them. If you accept someone, the remaining candidates are not interviewed. If you reject someone, you cannot go back to them later...]
+\eepr
+
+
+%\newpage
+%\section{Homework 4}
+
+\medskip
+\bepr Let $X$ be a random variable with distribution (CDF) $F$ and density $f$.
+\benu
+\item Find the distribution and density of the random variable $2X$.
+\item Find the distribution and density of the random variable $X+5$.
+\item Find the distribution and density of the random variable $-X$.
+\item Find the distribution and density of the random variable $1/X$.
+\eenu
+\eepr
+
+\medskip
+\bepr Let $X$ be a random variable with $\mb{Gamma}(\nu,\lam)$ distribution. Let $F$ be the CDF of $X$. When $\nu$ is a positive integer, show that for $t\ge 0$,
+$$
+ F(t) = 1-e^{-\lam t}\sum_{k=0}^{\nu-1}\frac{\lam^{k}t^{k}}{k!}.
+$$
+[{\bf Note:} Observe that this quantity is the same as $\P(N\ge \nu)$ where $N$ is a Poisson random variable with parameter $\lam t$. There is a connection here but we cannot discuss it now].
+\eepr
+
+\medskip
+\bepr For a  pdf $f(\cdot)$, the {\em mode} is defined as any point at which $f$ attains its maximal value (i.e., $t$ is a mode if $f(t)\ge f(s)$ for any $s$). For each of the following distributions, find the mode(s) of the distribution and the value of the pmf at the modes.
+\benu
+\item $N(\mu,\sig^{2})$.
+\item $\mb{Exp}(\lam)$.
+\item $\mb{Gamma}(\nu,1)$.
+\eenu
+\eepr
+
+
+\medskip
+\bepr (*) Let $F$ be a CDF. For each $0<q<1$, the {\em $q$-quantile(s)} of $F$ is any number $t\in \R$ such that $F(s)\le q$ if $s<t$ and $F(s)\ge q$ if $s> t$.
+\benu
+\item If $F$ is the CDF of $\mb{Exp}(\lam)$ distribution, find its $q$-quantile(s).
+\item If $F$ is the $N(0,1)$ distribution, use the normal tables to find the unique $q$-quantile for the following values of $q$: $0.01,0.1,0.25,0.5,0.75,0.9,0.99$.
+\item If $F$ is the $\mb{Geo}(0.02)$ distribution, find a $q$-quantile for $q=0.01,0.25, 0.5,0.75,0.99$.
+\eenu
+\eepr
+
+
+
+\medskip
+\bepr(*) Give explicit description of how you would simulate random variables from the following distributions.
+\benu
+\item The standard Cauchy distribution with density $f(x)=\frac{1}{\pi(1+x^{2})}$ for $x\in \R$.
+\item The $\mb{Beta}(1/2,1/2)$ distribution with density $\frac{1}{\pi\sqrt{x(1-x)}}$.
+\item (\underline{Do not need to submit this}) Draw $100$ random numbers from either of these densities (on MATLAB or any other program that gives uniform random numbers) using the above procedure and draw the histograms. Compare the histograms to the plot of the densities.
+\eenu
+\eepr
+
+
+\medskip
+\bepr In each of the following situations, the distribution of the  random variable $X$ is given. Find the distributionof $Y$  (it is enough to find the density of $Y$).
+\benu
+\item $X\sim \mb{Unif}[0,1]$ and $Y=\sin^{-1}(X)$.
+\item $X\sim \mb{Unif}[0,1]$ and $Y=\cos^{-1}(X)$.
+\item $X\sim N(0,1)$ and $Y=X^{2}$.
+\eenu
+[{\bf Note:} We define $\sin^{-1}$ to take values in $[-\pi/2,\pi/2]$ and $\cos^{-1}$ to take values in $[0,\pi]$. In the third part, observe that $f(x)=x^{2}$ is not a one-one function, so the formula given in the notes does not apply directly].
+\eepr
+
+
+
+
+\bigskip
+\noindent{\bf For the next problem:}  If $X$ is a random variable with density $f(x)$, then its expected value is defined as $\E[X]=\int_{-\infty}^{+\infty} xf(x) dx$ (this integral is defined only if $\int_{-\infty}^{+\infty} |x|f(x) dx$ is finite). We shall study this notion in greater detail in class, but for now take it as an exercise in integration. More generally, if $T:\R\to \R$, the $\E[T(X)]=\int_{-\infty}^{+\infty} T(x)f(x) dx$.
+\bigskip
+
+\medskip
+\bepr Find $\E[X]$ and $\E[X^{2}]$ for the following cases.
+\benu
+\item $X\sim N(\mu,\sig^{2})$.
+\item $X\sim \mb{Gamma}(\nu,\lambda)$. Note the answers for the particular case of $\mb{Exp}(\lambda)$.
+\item $X\sim \mb{Beta}(p,q)$.  Note the answers for the particular case of $\mb{Unif}[0,1]$.
+\eenu
+\eepr
+
+\bepr What is the mode of the \begin{inparaenum}[(a)] \item $\mb{Pois}(\lam)$ distribution? \item $\mb{Hpergeometric}(M,W,K)$ distribution? \end{inparaenum}(Mode means the point(s) where the pmf (or pdf) attains its maximal value).
+\eepr
+
+
+\medskip
+\bepr {\color{blue}
+\benu
+\item Let $f(k)=\frac{1}{k(k+1)}$ for integer $k\ge 1$. Show that $f$ is a pmf and find the corresponding CDF.
+\item Let $\alp>0$ and set $F(x)=1-\frac{1}{x^{\alp}}$ for $x\ge 1$ and $F(x)=0$ for $x<1$. Show that $F$ is a CDF and find the corresponding density function. (This is known as the {\em Pareto} distribution).
+\eenu
+}
+\eepr
+
+\medskip
+\bepr {\color{blue} Give explicit description of how you would simulate random variables from the following distributions.
+\benu
+\item The standard Cauchy distribution with density $f(x)=\frac{1}{\pi(1+x^{2})}$ for $x\in \R$.
+\item The $\mb{Beta}(1/2,1/2)$ distribution with density $\frac{1}{\pi\sqrt{x(1-x)}}$.
+\item (\underline{Do not need to submit this}) Draw $100$ random numbers from either of these densities (on MATLAB or any other program that gives uniform random numbers) using the above procedure and draw the histograms. Compare the histograms to the plot of the densities.
+\eenu
+}
+\eepr
+
+\medskip
+\bepr Let $X$ be a random variable with distribution function $F$. Let $a>0$ and $b\in \R$ and define $Y=aX+b$.
+\benu
+\item What is the CDF of $Y$?
+\item If $X$ has a density $f$, find the density of $Y$.
+\eenu
+\eepr
+
+\medskip
+\bepr {\color{blue}
+\benu
+\item Let $X\sim \mb{Exp}(\lam)$. Fix $s,t>0$ and compute the conditional probability of the event $X>t+s$ given that $X>s$.
+\item Let $\nu$ be a positive integer. Show that the CDF of $\mb{Gamma}(\nu,\lam)$ distribution is given by
+\ba
+F(x)=1-e^{-\lam x}\sum_{k=0}^{\nu-1}\frac{\lam^{k}}{k!}x^{k}.
+\ea
+\eenu
+}
+\eepr
+
+\medskip
+\bepr Let $U\sim \mb{Uniform}[0,1]$. Find the density and distribution functions of \begin{inparaenum}[(a)] \item $U^{p}$ (where $p>0$), \item $U/(1-U)$, \item $\log(1/U)$, \item $\frac{2}{\pi}\arcsin(U)$. \end{inparaenum}
+\eepr
+
+\medskip
+\bepr Let $X\sim N(0,1)$. Find the density of \begin{inparaenum}[(a)] \item $aX+b$ (where $a,b\in \R$), \item $X^{2}$ , \item $X^{3}$, \item $e^{X}$. \end{inparaenum}
+\eepr
+%\medskip
+%\bepr A man has two children. We may assume that they are (in order of age) BB, BG, GB or GG with probability $1/4$ each (B=boy, G=girl).
+%\benu
+%\item He says ``One of my children is a boy''. What is the chance that the other child is a boy? Analyse this analogous to the Monty hall problem and make a case for the probability being $1/3$.
+%\item Suppose he says ``One of my children is a boy and he was born
+%\eenu
+%\eepr
+
+%\medskip
+%\bepr Using the definition of the Beta function as $B(\alp,\bet)=\int_{0}^{1}x^{\alp-1}(1-x)^{\bet-1}dx$ for $\alp,\bet>0$, show the following recursions. \begin{inparaenum}[(a)] \item $B(\alp+1,\bet)= \item. \end{inparaenum}
+%\eepr
+
+
+\medskip
+\bepr In a game, there are three closed boxes, in exactly one of which there is a prize. The player is asked to pick one of the three boxes. The organizer (who knows where the prize is), opens one of the other two boxes and shows that it is empty. Now the player has two choices, can stick to her first choice or to switch to the other closed closed. What should she do? This is known as the {\em onty hall paradox}. The word ``paradox'' is used to convey the strong feeling that many have that the probabilities of the two boxes are $1/2$ and $1/2$, since there is always one empty box out of the other two and it gives no information.
+
+To make the problem well-defined, one has to specify how the organizer chooses the empty box. If the player's first choice is empty, then exactly one of the other two boxes is empty and the organizer has no choice but to show that. If the player's first choice is correct, {\em assume} that the organizer (secretly) tosses a fair coin to choose which of the other two boxes to show. With this specification, show that the probability that the prize is in the original choice is $1/3$ (in other words, if you switch, the chances are higher, that is $2/3$).
+\eepr
+
+
+\medskip
+\bepr If $F$ is a CDF, show that it can have at most countably many discontinuity points.
+\eepr
+
+%
+%\newpage
+%\section{Homework 5}
+
+\medskip
+\bepr (*) Let $A,B$ be two events in a common probability space. Write the joint distributions (joint pmf) of the following random variables.
+\benu
+\item $X=\one_{A}$ and $Y=\one_{B}$.
+\item $X=\one_{A\cap B}$ and $Y=\one_{A\cup B}$.
+\eenu
+\eepr
+
+\medskip
+\bepr Let $a>0,b>0$ and $ab>c^{2}$. Let $(X,Y)$ have the bivariate normal distribution with density $$f(x,y)=\frac{\sqrt{ab-c^{2}}}{2\pi}e^{-\frac{1}{2}\l[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu)\r]}.$$ Show that the marginal distributions are one-dimensional normal and find the parameters. For what values of the parameters are $X$ and $Y$ independent?
+%\benu
+%\item Find the marginal distributions of $X$ and of $Y$.
+%\item Find means and  variances of $X$ and $Y$ and the  covariance and correlation of $X$ with $Y$. Under what conditions on the parameters are $X$ and $Y$ independent?
+%\eenu
+%[{\bf Note:} It is very useful to introduce the matrix $\Sigma=\mat{a}{c}{c}{b}^{-1}=\mat{\frac{b}{\Del}}{-\frac{c}{\Del}}{-\frac{c}{\Del}}{\frac{a}{\Del}}$ which is called the {\em covariance matrix} of $(X,Y)$. The answers can be written in terms of the entries of $\Sigma$.]
+\eepr
+
+\medskip
+\bepr (*) Fix $r>0$. Let $(X,Y)$ be a random vector with density
+\begin{align*}
+f(x,y)=\begin{cases} \frac{1}{\pi r^{2}} & \mb{ if }x^{2}+y^{2}\le r^{2}, \\ 0 & \mb{ otherwise}. \end{cases}
+\end{align*}
+ This models the experiment  of drawing a point at random from a disk of radius $r$ centered at $(0,0)$.
+\benu
+\item Find the marginal densities of $X$ and $Y$ (i.e., find the density of $X$ and find the density of $Y$ separately).
+\item Can you solve the same problem if the point is drawn uniformly from the ellipse $\{(x,y)\suchthat \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}\le 1\}$?
+\eenu
+\eepr
+
+\medskip
+\bepr (*) Let ${\bf X}=(X_{1},\ldots ,X_{n-1})$ be a Multinomial random variable with parameters $r,n,p_{1},\ldots,p_{n}$ where $r,n$ are positive integers and $p_{i}$ are non-negative numbers that sum to $1$. This means that ${\bf X}$ has pmf
+$$
+f(k_{1},\ldots ,k_{n-1})=\frac{n!}{k_{1}!k_{2}!\ldots k_{n-1}!(r-k_{1}-\ldots -k_{n-1})!}p_{1}^{k_{1}}\ldots p_{n-1}^{k_{n-1}}p_{n}^{r-k_{1}-\ldots -k_{n-1}}
+$$
+$\mb{ if }k_{i}\ge 0\mb{ are integers that add to at most }r$.
+\benu
+\item Let $m\le n$. Show that the  distribution of $(X_{1},\ldots ,X_{m-1})$ is Multinomial with parameters $r,m,\tilde{p}_{1},\ldots ,\tilde{p}_{m}$ where $\tilde{p}_{i}=p_{i}$ for $i\le m-1$ and $\tilde{p}_{m}=p_{m}+\ldots +p_{n}$.
+\item The distribution of $X_{k}$ is $\mb{Bin}(r,p_{k})$.
+\item (\underline{Do not need to submit this}) Let $k_{1}<k_{2}<\ldots <k_{m}=n$. Define $Y_{1}=X_{1}+\ldots +X_{k_{1}-1}$, $Y_{2}=X_{k_{1}}+\ldots +X_{k_{2}-1}$, \dots $Y_{m}=X_{k_{m-1}}+\ldots +X_{k_{m}-1}$. What is the distribution of $(Y_{1},\ldots ,Y_{m})$?
+\eenu
+[{\bf Note} Remember the balls-in-bins interpretation of Multinomial. Based on it, try to guess the answers before you start calculating anything!].
+\eepr
+
+
+
+\medskip
+\bepr Let $r$ balls be placed in $m$ bins at random. Let $X_{k}$ be the number of balls in the $k^{\mb{\tiny th}}$ bin. Recall that $(X_{1},\ldots ,X_{m})$ has a multinomial distribution. Find the joint distribution of $(X_{1},X_{2})$ and the marginal distribution of $X_{1}$ and of $X_{2}$.
+%\benu
+%\item
+%\item Find the means, variances, covariance and correlation of $X_{1}$ and $X_{2}$.
+%\eenu
+\eepr
+
+\medskip
+\bepr (*) [{\em Submit only parts (1) and (2)}]
+\benu
+\item Let $X$ and $Y$ be independent integer-valued random variables with pmf $f$ and $g$ respectively. That is, $\P\{X=k\}=f(k)$ and $\P\{Y=k\}g(k)$ for every $k\in \Z$. Then, show that $X+Y$ has the pmf $h$ given by $h(k)=\sum_{n\in \Z}f(n)g(k-n)$ for each $k\in \Z$.
+\item  Let $X\sim \mb{Pois}(\lam)$ and $Y\sim\mb{Pois}(\mu)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mb{Pois}(\lam+\mu)$.
+\item Let $X\sim \mb{Bin}(n,p)$ and $Y\sim\mb{Bin}(m,p)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mb{Bin}(n+m,p)$.
+\item Let $X\sim \mb{Geo}(p)$ and $Y\sim \mb{Geo}(p)$ and assume that $X$ and $Y$ are independent. Show that $X+Y$ has negative binomial distribution and find the parameters.
+\eenu
+\eepr
+
+\medskip
+\bepr (*) [{\em Submit only parts (1) and (2)}]
+\benu
+\item Let $X$ and $Y$ be independent random variables with densities $f(x)$ and $g(y)$ respectively. Use the change of variable formula to show that $X+Y$ has the density $h(u)$ given by $h(u)=\int_{-\infty}^{\infty}f(s)g(u-s)ds$.
+\item Let $X,Y$ be independent $\mb{Unif}[-1,1]$ random variables. Find the density of $X+Y$.
+\item Let $X\sim \mb{Gamma}(\mu,\lam)$ and $Y\sim\mb{Gamma}(\nu,\lam)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mb{Gamma}(\mu+\nu,\lam)$.
+\item Let $X\sim N(\mu_{1},\sig_{1}^{2})$ and $Y\sim N(\mu_{2},\sig_{2}^{2})$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim N(\mu_{1}+\mu_{2},\sig_{1}^{2}+\sig_{2}^{2})$.
+\eenu
+\eepr
+
+\medskip
+\bepr Find examples of discrete probability spaces and  events $A,B,C$ so that the following happen.
+\benu
+\item The events $A,B,C$ are pairwise independent but not mutually independent.
+\item $\P(A\cap B\cap C)=\P(A)\P(B)\P(C)$ but $A,B,C$ are not independent.
+\eenu
+\eepr
+
+
+\medskip
+\bepr (*) In each of the following cases, $X$ and $Y$ are \underline{independent} random variables with the given distributions. You are asked to find the distribution of $X+Y$ using the convolution formula (when you encounter a named distribution, do identify it!).
+\benu
+\item $X\sim \mb{Gamma}(\nu,\lam)$ and $Y\sim \mb{Gamma}(\nu',\lam)$.
+\item $X\sim N(\mu_{1},\sig_{1}^{2})$ and $Y\sim N(\mu_{2},\sig_{2}^{2})$.
+\item $X\sim \mb{Pois}(\lam)$ and $Y\sim \mb{Pois}(\lam')$.
+\item $X\sim \mb{Geo}(p)$ and $Y\sim \mb{Geo}(p)$.
+\eenu
+[{\bf Note:} Submit 2, 3, 4 only]
+\eepr
+
+
+\medskip
+\bepr  Use the change of variable formula to solve the following problems.
+\benu
+\item Let $X\sim \mb{Pois}(\lam)$ and $Y\sim \mb{Pois}(\lam')$ be independent. Let $Z=X+Y$. Show that the conditional distribution of $X$ given $Z=m$ is $\mb{Bin}(m,\frac{\lam}{\lam+\lam'})$.
+\item Let $X\sim \mb{Gamma}(\nu,\lam)$ and $Y\sim \mb{Gamma}(\nu',\lam)$ be independent. Show that $X/(X+Y)$ has a Beta distribution and find its parameters.
+\item Let $X\sim N(0,1)$ and $Y\sim N(0,1)$ be independent. Show that $X/Y$ has Cauchy distribution.
+\eenu
+%[{\bf Note:} Submit   1 and 2 only].
+\eepr
+
+
+\medskip
+\bepr (*) Let $(X,Y)$ be a bivariate normal with density
+$$
+\frac{\sqrt{ab-c^{2}}}{2\pi}e^{-\frac{1}{2}(a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu))}
+$$ where $a,b, ab-c^{2}$ are all positive and $\mu,\nu$ are any real numbers.
+\benu
+\item Show that $\E[X]=\mu$, $\E[Y]=\nu$, $\Var(X)=\sig_{1,1}$, $\Var(Y)\sim \sig_{2,2}$ and $\Cov(X,Y)=\sig_{1,2}$ where the matrix $\Sigma$ (called the covariance matrix of $(X,Y)$) is defined as
+$$
+\Sigma=\mat{\sig_{1,1}}{\sig_{1,2}}{\sig_{2,1}}{\sig_{2,2}} := \mat{a}{c}{c}{b}^{-1}.
+$$
+\item Find the conditional density of $Y$ given $X$. When  are  $X$ and $Y$ independent? (``When'' means  under what conditions on the parameters $a,b,c,\mu,\nu$ or in terms of $\sig_{1,1},\sig_{2,2},\sig_{1,2},\mu,\nu$?).
+%\item If $X\sim N(\mu_{1},\sig_{1}^{2})$ and $Y\sim N(\mu,\sig_{2}^{2})$ are independent, show that $X+Y\sim N(\mu_{1}+\mu_{2},\sig_{1}^{2}+\sig_{2}^{2})$.
+\eenu
+%[{\bf Note:} Submit 2 and 3 only]
+\eepr
+
+
+\medskip
+\bepr In these problems, use change of variable formula in one dimension to show that the families of distributions we have defined
+\benu
+\item If $X\sim \mb{Exp}(\lam)$, show that $\lam X\sim \mb{Exp}(1)$. More generally, if $X\sim \mb{Gamma}(\nu,\lam)$, show that $\lam X\sim \mb{Gamma}(\nu,1)$.
+\item If $X\sim N(\mu,\sig^{2})$, show that $\frac{X-\mu}{\sig}\sim N(0,1)$.
+\eenu
+\eepr
+
+
+
+\medskip
+\bepr Let $X_{1},X_{2},X_{3}$ be independent random variables, each having $\mb{Ber}_{\pm}(1/2)$ distribution. This means $\P(X_{1}=1)=\P(X_{1}=-1)=\half$.
+\benu
+\item Let $Y_{1}=X_{2}X_{3}$, $Y_{2}=X_{1}X_{3}$ and $Y_{3}=X_{1}X_{2}$. Show that $Y_{1},Y_{2},Y_{3}$ are pairwise independent (i.e., any two of them are independent) but  are not independent.
+\item Can you find three events $A,B,C$ in some probability space such that they are pair-wise independent but not independent?
+\eenu
+\eepr
+
+
+
+\medskip
+\bepr
+\benu
+\item Let $A_{1},\ldots ,A_{n}$ be independent with $\P(A_{i})=p$ for all $i$. Find the probability that  \; (a) \ none of the events $A_{1},\ldots ,A_{n}$ occur, \;\; (b) \ all of the events $A_{1},\ldots ,A_{n}$ occur.
+\item Let $X_{1},X_{2}$ be independent random variables, both having $\mb{Exp}(\lam)$ distribution. Let $Z=\min\{X_{1},X_{2}\}$. Show that $Z\sim \mb{Exp}(2\lam)$. What if we take the minimum of $n$ independent exponential random variables?
+\eenu
+\eepr
+
+\medskip
+{\color{blue}
+\bepr Let $A,B$ be two events in a common probability space. Write the joint distributions (joint pmf) of the following random variables.
+\benu
+\item $X=\one_{A}$ and $Y=\one_{B}$.
+\item $X=\one_{A\cap B}$ and $Y=\one_{A\cup B}$.
+\eenu
+\eepr
+}
+
+\medskip
+\bepr
+\benu
+\item Let $X\sim \mb{Exp}(\lam)$. For any $t,s>0$, show that $\P\{X>t+s\Given X>t\}=\P\{X>s\}$. (This is called the {\em memoryless property} of the exponential distribution).
+\item Show that if a non-negative random variable $Y$ has memoryless property (i.e., $\P\{Y>t+s\Given Y>t\}=\P\{Y>s\}$ for all $s,t>0$), then $Y$ must have exponential distribution.
+\eenu
+\eepr
+
+
+\medskip
+{\color{blue}
+\bepr
+\benu
+\item Let $X$ and $Y$ be independent integer-valued random variables with pmf $f$ and $g$ respectively. That is, $\P\{X=k\}=f(k)$ and $\P\{Y=k\}g(k)$ for every $k\in \Z$. Then, show that $X+Y$ has the pmf $h$ given by $h(k)=\sum_{n\in \Z}f(n)g(k-n)$ for each $k\in \Z$.
+\item  Let $X\sim \mb{Pois}(\lam)$ and $Y\sim\mb{Pois}(\mu)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mb{Pois}(\lam+\mu)$.
+\eenu
+\eepr
+}
+
+\medskip
+\bepr Continuation of the previous problem.
+\benu
+\item Let $X\sim \mb{Bin}(n,p)$ and $Y\sim\mb{Bin}(m,p)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mb{Bin}(n+m,p)$.
+\item Let $X\sim \mb{Geo}(p)$ and $Y\sim \mb{Geo}(p)$ and assume that $X$ and $Y$ are independent. Show that $X+Y$ has negative binomial distribution and find the parameters.
+\eenu
+\eepr
+
+\medskip
+{\color{blue}
+\bepr
+\benu  \color{blue}
+\item Let $X$ and $Y$ be independent random variables with densities $f(x)$ and $g(y)$ respectively. Use the change of variable formula to show that $X+Y$ has the density $h(u)$ given by $h(u)=\int_{-\infty}^{\infty}f(s)g(u-s)ds$.
+\item Let $X,Y$ be independent $\mb{Unif}[-1,1]$ random variables. Find the density of $X+Y$.
+\eenu
+\eepr
+}
+
+\medskip
+\bepr Continuation of the previous problem.
+\benu
+\item Let $X\sim \mb{Gamma}(\mu,\lam)$ and $Y\sim\mb{Gamma}(\nu,\lam)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mb{Gamma}(\mu+\nu,\lam)$.
+\item Let $X\sim N(\mu_{1},\sig_{1}^{2})$ and $Y\sim N(\mu_{2},\sig_{2}^{2})$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim N(\mu_{1}+\mu_{2},\sig_{1}^{2}+\sig_{2}^{2})$.
+\eenu
+\eepr
+
+\medskip
+\bepr Let $(X,Y)$ have the bivariate normal distribution with density $$f(x,y)=\frac{\sqrt{ab-c^{2}}}{2\pi}e^{-\frac{1}{2}\l[ax^{2}+by^{2}+2cxy\r]}.$$ Assume that $a>0,c>0,ab-c^{2}>0$ so that this is a valid density.
+\benu
+\item Show that the marginal distributions are one-dimensional normal and find the parameters.
+\item For what values of the parameters are $X$ and $Y$ independent?
+\eenu
+\eepr
+
+\medskip
+\bepr A few more exercises in change of variable formula.
+\benu
+\item If $X,Y$ are independent $N(0,1)$ random variables, show that $X/Y$ has the Cauchy distribution (with density $\frac{1}{\pi(1+x^{2})}$).
+\item If $X\sim \mb{Gamma}(\alp,1)$, $Y\sim \mb{Gamma}(\bet,1)$ are independent, then show that $X+Y$ and $X/(X+Y)$ are independent, $X+Y\sim \mb{Gamma}(\alp+\bet,1)$ and $X/(X+Y)\sim \mb{Beta}(\alp,\bet)$.
+\item If $X,Y$ are independent $N(0,1)$ random variables, show that $X^{2}+Y^{2}$ has $\mb{Exp}(1/2)$ distribution.
+\eenu
+\eepr
+
+
+%\newpage
+%\section{Homework 6}
+
+\medskip
+\bepr Find the means and variances of $X$ in each of the following cases.
+$$
+(a) \; X\sim \mb{Bin}(n,p). \qquad (b) \; X\sim \mb{Pois}(\lam). \qquad (c) X\sim \mb{Geo}(p).
+$$
+%\benu
+%\item $X\sim \mb{Bin}(n,p)$.
+%\item
+%\item $X\sim \mb{Geo}(p)$.
+%\eenu
+\eepr
+
+\medskip
+\bepr
+Find the means and variances of $X$ in each of the following cases.
+$$
+(a) \; X\sim \mb{N}(\mu,\sig^{2}). \qquad (b) \; X\sim \mb{Gamma}(\nu,\lam). \qquad (c) \; X\sim \mb{Beta}(\nu_{1},\nu_{2}). \qquad (d) \; X\sim \mb{Unif}[a,b].
+$$
+%\benu
+%\item $X\sim \mb{N}(\mu,\sig^{2})$.
+%\item $X\sim \mb{Gamma}(\nu,\lam)$.
+%\item $X\sim \mb{Beta}(\nu_{1},\nu_{2})$.
+%\eenu
+\eepr
+
+\medskip
+\bepr
+\benu
+\item Let $\xi\sim \mb{Exp}(\lam)$. For any $t,s\ge 0$, show that $\P\{\xi>t+s\Given \xi>t\}=\P\{\xi>s\}$. (This is called the {\em memoryless property} of the exponential distribution).
+\item Show that if a non-negative random variable $\xi$ has memoryless property (i.e., $\P\{\xi>t+s\Given \xi>t\}=\P\{\xi>s\}$), then $\xi$ must have exponential distribution.
+\eenu
+\eepr
+
+
+\medskip
+\bepr Let $X$ be a non-negative random variable with CDF $F(t)$.
+\benu
+\item Show that $\E[X]=\intt_{0}^{\infty}(1-F(t)) dt$ and more generally $\E[X^{p}]=\intt_{0}^{\infty}pt^{p-1}(1-F(t))dt$.
+\item If $X$ is non-negative integer valued, then $\E[X]=\sum_{k=1}^{\infty}\P\{X\ge k\}$.
+\eenu
+\eepr
+
+\medskip
+\bepr (*) Find all possible joint distributions of $(X,Y)$ such that $X\sim\mb{Ber}(1/2)$ and $Y\sim \mb{Ber}(1/2)$. Find the correlation for each such joint distribution.
+\eepr
+
+
+\medskip
+\bepr Let $(X,Y)$ have the bivariate normal distribution with density $$f(x,y)=\frac{\sqrt{ab-c^{2}}}{2\pi}e^{-\frac{1}{2}\l[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu)\r]}.$$
+\benu
+\item Find the marginal distributions of $X$ and of $Y$.
+\item Find means and  variances of $X$ and $Y$ and the  covariance and correlation of $X$ with $Y$. Under what conditions on the parameters are $X$ and $Y$ independent?
+\eenu
+[{\bf Note:} It is very useful to introduce the matrix $\Sigma=\mat{a}{c}{c}{b}^{-1}=\mat{\frac{b}{\Del}}{-\frac{c}{\Del}}{-\frac{c}{\Del}}{\frac{a}{\Del}}$ which is called the {\em covariance matrix} of $(X,Y)$. The answers can be written in terms of the entries of $\Sigma$.]
+\eepr
+
+\medskip
+\bepr Let $r$ balls be placed in $m$ bins at random. Let $X_{k}$ be the number of balls in the $k^{\mb{\tiny th}}$ bin. Recall that $(X_{1},\ldots ,X_{m})$ has a multinomial distribution.
+\benu
+\item Find the joint distribution of $(X_{1},X_{2})$ and the marginal distribution of $X_{1}$ and of $X_{2}$.
+\item Find the means, variances, covariance and correlation of $X_{1}$ and $X_{2}$.
+\item Let $Y$ be the number of empty bins. Find the mean and variance of $Y$. [{\bf Hint:} Write $Y$ as $\one_{A_{1}}+\ldots +\one_{A_{m}}$ where $A_{k}$ is the event that the $k^{\mb{\tiny th}}$ bin is empty].
+\eenu
+\eepr
+
+
+\medskip
+\medskip
+\bepr (*) A box contains $N$ coupons where the number $w_{k}$ is written on the $k^{\mb{\tiny th}}$ coupon. Let $\mu=\frac{1}{N}\sum_{k=1}^{N}w_{k}$ be the ``population mean'' and let $\sig^{2}=\frac{1}{n}\sum_{i=1}^{n}(w_{i}-\mu)^{2}$ be the ``population variance''. A sample of size $m$ is drawn from the population, the values seen are $X_{1},\ldots ,X_{m}$. The sample mean $\bar{X}_{m}=(X_{1}+\ldots +X_{m})/m$ is formed. Find the mean and variance of $\bar{X}_{m}$ in the following two cases.
+\benu
+\item The samples are drawn with replacement (i.e., draw a coupon, note the number, put the coupon back in the box, and draw again\dots).
+\item The samples are drawn without replacement.
+\eenu
+\eepr
+
+
+
+
+\medskip
+\bepr Find the expectation and variance for a random variable with the following distributions.
+\benu
+\item  \; (a) $\mb{Bin}(n,p)$, \; (b) $\mb{Geo}(p)$, \; (c) $\mb{Pois}(\lam)$, \; (d) $\mb{Hypergeo}(N_{1},N_{2},m)$.
+\item \; (a) $N(\mu,\sig^{2})$, \; (b) $\mb{Gamma}(\nu,\lambda)$, \; (c) $\mb{Beta}(p,q)$.
+\eenu
+[{\bf Note:} Although the computations are easy, the answers you get are worth remembering as they occur in various situations.]
+\eepr
+
+
+\medskip
+\bepr (*) Place $r$ balls in $n$ bins uniformly at random.  Let $X_{k}$ be the number of balls in the $k^{\mb{ \tiny th}}$ bin. Find $\E[X_{k}]$, $\Var(X_{k})$ and $\Cov(X_{k},X_{\ell})$ for $1\le k,\ell\le n$. [{\bf Hint:} First do the case when $r=1$. Then think how to use that to get the general case].
+\eepr
+
+
+\medskip
+\bepr Suppose $X,Y,Z$ are i.i.d. random variables with each having marginal density $f(t)$.
+\benu
+\item Find $\E\l[\frac{X}{X+Y+Z}\r]$ (assume that it exists).
+\item Find $\P(X<Y>Z)$.
+\eenu
+\eepr
+
+\medskip
+\bepr Consider the following integrals
+$$
+ \intt_{0}^{1}\frac{4}{1+x^{2}}dx = \pi, \qquad \intt_{0}^{1}\frac{1}{\sqrt{x(1-x)}}dx=\pi.
+$$
+In either case, use Monte-Carlo integration with $100$, $1000$ and $10000$ samples from uniform distribution to find approximations of $\pi$. Compare the approximations  to the true value $3.1416\ldots$.
+
+\eepr
+
+
+\medskip
+\bepr Recall the {\em coupon collector problem}. A box contains $n$ coupons labelled $1,2,\ldots ,n$. Coupons are drawn at random from the box, repeatedly and with replacement. Let $T_{n}$ be the number of draws needed till each of the coupons has appeared at least once.
+\benu
+\item Show that $\E[T_{n}]\sim n\log n$ (this just means $\frac{1}{n\log n}\E[T_{n}]\to 1$).
+\item Show that $\Var(T_{n})\le 2n^{2}$.
+\item Show that $\P\l( \given \frac{T_{n}}{n\log n}-1\given>\del\r) \to 0$ for any $\del>0$.
+\eenu
+[{\em Hint:} Consider the number of draws needed to get the first new coupon, the further number of draws needed to get the next coupon and so on].
+\eepr
+
+\medskip
+\bepr (**) Recall the coupon collector problem where coupons are drawn repeatedly (with replacement) from a box containing coupons labelled $1,2,\ldots ,N$. Let $T_{N}$ be the number of draws made till all the coupons are seen.
+\benu
+\item Find $\E[T_{N}]$ and $\Var(T_{N})$.
+\item Use Chebyshev's inequality to show that for any $\del>0$, as $N\to \infty$ we have $$\P\{(1-\del)N\log N\le T_{N}\le (1+\del)N\log N\}\to 1.$$
+\eenu
+\eepr
+
+
+\medskip
+\bepr (*) Recall the problem of a psychic guessing cards. Consider a shuffled deck of $n$ cards and a psychic is supposed to guess the order of cards. Let $M_{n}$ be the number of correct guesses.
+\benu
+\item Assuming random guessing by the psychic, show that $\E[M_{n}]=1$ and $\Var(M_{n})=1$. [{\bf Hint} Write $M_{n}$ as $X_{1}+\ldots +X_{n}$ where $X_{k}$ is the indicator of the event that the $k^{\mb{\tiny th}}$ card is guessed correctly].
+\item Consider a variant of the game where the cards are dealt one by one and before each card is dealt, the psychic guesses what  card it is going to be. In this case find $\E[M_{n}]$ and $\Var(M_{n})$.
+\eenu
+\eepr
+
+
+\medskip
+\bepr  (**) Let $X$ be a random variable. Let $f(a)=\E[|X-a|]$ (makes sense if the first moment exists) and $g(a)=\E[(X-a)^{2}]$ (makes sense if the second moment exists).
+\benu
+\item Show that $f$ is minimized uniquely at $a=\E[X]$.
+\item Show that the minimizers of $g$ are precisely the medians of $X$ (recall that a number $b$ is a median of $X$ if $\P\{X\ge t\}\ge \half$ and $\P\{X\le t\}\ge \half$).
+\eenu
+\eepr
+
+\medskip
+\bepr  (**) Let $X$ be a non-negative random variable. Read the discussion following the problem to understand the significance of this problem.
+\benu
+\item Suppose $X_{n}$ takes the values $n^{2}$ and $0$ with probabilities $1/n$ and $1-(1/n)$, respectively. Compare $\P\{X_{n}>0\}$ and $\E[X_{n}]$ for large $n$.
+\item Show the {\em second moment inequality} (aka {\em Paley-Zygmund inequality}): $\P\{X>0\}\ge (\E[X])^{2}/\E[X^{2}]$.
+\eenu
+[{\bf Discussion:} Markov's inequality tells us that that the tail probability $\P\{X\ge t\}$ can be bounded from above using $\E[X]$. In particular, $\P\{X\ge r\E[X]\}\le \frac{1}{r}$. A natural question is whether there is a lower bound for the tail probability in terms of the expected value. In other words, if the mean is large, must the random variable be large with significant probability?
+
+The first part shows that the answer is `No' in general. The second part shows that the answer is `Yes', provided we have control on the second moment $\E[X^{2}]$ from above. Notice why the inequality does not give any useful bound in the first part of the problem (what happens to the second moment of $X_{n}$?)]
+\eepr
+
+\medskip
+\para{Hoeffding's inequality} Using Chebyshev's  inequality we got a bound of $\sig^{2}/nt^{2}$ for the probability that the sample mean deviates from the population mean by more than $t$. This is very general. If we make more assumptions about our random variable, we can give better bounds. The following exercise is to illustrate this.
+\medskip
+\bepr (Optional!) Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mb{Ber}_{\pm}(1/2)$. That is,  $\P\{X_{k}=+1\}=\P\{X_{k}=-1\}=\frac{1}{2}$. Let  $\bar{X}_{n}=\frac{1}{n}(X_{1}+\ldots +X_{n})$. Show that
+$$
+\P\{|\bar{X}_{n}|>t\}\le 2e^{-nt^{2}/2}
+$$
+by following these steps.
+\benu
+\item Show that $\P\{\bar{X}_{n}>t\}\le e^{-\theta t}\l(\frac{e^{\theta/n }+e^{-\theta/n}}{2}\r)^{n}$ for any $\theta>0$.
+\item Prove the inequality $e^{x}+e^{-x}\le 2 e^{x^{2}/2}$ for any $x>0$.
+\item Use the first two parts to show that $\P\{\bar{X}_{n}>t\}\le e^{-nt^{2}/2}$ (you must make an appropriate choice of $\theta$ depending on $t$).
+\item Now consider $|\bar{X}_{n}|$ and break $\P\{|\bar{X}_{n}|>t\}$ into two summands to get the desired inequality.
+\eenu
+[{\bf Note:} Here $\mu=0$ and $\sig^{2}=1$, and hence Chebyshev's inequality only gives the bound $
+\P\{|\bar{X}_{n}|>t\}\le \frac{1}{nt^{2}}$. Do you see that Hoeffding's inequality is better?]
+
+
+\eepr
+
+
+\medskip
+\bepr Find the expectation and variance for a random variable with the following distributions.
+\begin{inparaenum}[(a)] \item $\mb{Bin}(n,p)$, \item $\mb{Geo}(p)$, \item $\mb{Pois}(\lam)$, \item $\mb{Hypergeo}(N_{1},N_{2},m)$.
+\end{inparaenum}
+[{\bf Note:} Although the computations are easy, the answers you get are worth remembering as they occur in various situations.]
+\eepr
+
+\medskip
+{\color{blue}
+\bepr Find the expectation and variance for a random variable with the following distributions.
+\begin{inparaenum}[(a)] \item  $N(\mu,\sig^{2})$, \item $\mb{Gamma}(\nu,\lambda)$, \item $\mb{Beta}(p,q)$.
+\end{inparaenum}
+[{\bf Note:} Although the computations are easy, the answers you get are worth remembering as they occur in various situations.]
+\eepr
+}
+
+\medskip
+\medskip
+\bepr Place $r$ balls in $n$ bins uniformly at random.  Let $X_{k}$ be the number of balls in the $k^{\mb{ \tiny th}}$ bin. Find $\E[X_{k}]$, $\Var(X_{k})$ and $\Cov(X_{k},X_{\ell})$ for $1\le k,\ell\le n$. [{\bf Hint:} First do the case when $r=1$. Then think how to use that to get the general case].
+\eepr
+
+\medskip
+{\color{blue}
+\bepr Let $X$ be a non-negative random variable with CDF $F(t)$.
+\benu
+\item Show that $\E[X]=\int_{0}^{\infty}(1-F(t)) dt$ and more generally $\E[X^{p}]=\int_{0}^{\infty}pt^{p-1}(1-F(t))dt$. [{\bf Hint:} In showing this, you may assume that $X$ has a density if you like, but it is not necessary for the above formulas to hold true]
+\item If $X$ is non-negative integer valued, then $\E[X]=\sum_{k=1}^{\infty}\P\{X\ge k\}$.
+\eenu
+\eepr
+}
+
+
+\medskip
+{\color{blue}
+\bepr A deck consists of  cards labelled $1,2,\ldots ,N$. The deck is shuffled well. Let $X$ be the label on the first card and let $Y$ be the label on the second card. Find the means and variances of $X$ and $Y$ and the  covariance of $X$ and $Y$.
+\eepr
+}
+
+\medskip
+\bepr A box contains $N$ coupons labelled $1,2,\ldots ,N$. A sample of size $m$ is drawn from the population and the sample average $\bar{X}_{m}$ is computed. Find the mean and  standard deviation of $\bar{X}_{m}$ in both the following cases.
+\benu
+\item The $m$ coupons are drawn with replacement.
+\item The $m$ coupons are drawn without replacement (in this case, assume $m\le N$).
+\eenu
+\eepr
+
+\medskip
+\bepr Let $X\sim N(0,1)$. Although it is not possible  to get an exact expression for the CDF of $X$, show that for any $t>0$,
+\ba
+\P\{X\ge t\}\le \frac{1}{\sqrt{2\pi}}\frac{e^{-t^{2}/2}}{t}
+\ea
+which shows that the tail of the CDF decays rapidly. [{\bf Hint:} Use the idea used in the proof of Markov's inequality]
+\eepr
+
+\medskip
+The following problem is for the more mathematically minded students. You may safely skip this.
+{\color{red}
+\bepr {\em The coupon collector problem}. A box contains $n$ coupons labelled $1,2,\ldots ,n$. Coupons are drawn at random from the box, repeatedly and with replacement. Let $T_{n}$ be the number of draws needed till each of the coupons has appeared at least once.
+\benu
+\item Show that $\E[T_{n}]\sim n\log n$ (this just means $\frac{1}{n\log n}\E[T_{n}]\to 1$).
+\item Show that $\Var(T_{n})\le 2n^{2}$.
+\item Show that $\P\l( \given \frac{T_{n}}{n\log n}-1\given>\del\r) \to 0$ for any $\del>0$.
+\eenu
+[{\em Hint:} Consider the number of draws needed to get the first new coupon, the further number of draws needed to get the next coupon and so on].
+\eepr
+}
+
+
+\medskip
+{\color{blue}
+\bepr Let $X_{1},X_{2},\ldots$ be i.i.d. $\mb{Uniform}[1,2]$ distribution. Let $S=X_{1}+\ldots +X_{100}$. Give approximate quantiles at levels $0.01$, $0.25$, $0.5$, $0.75$, $0.99$ for $S$. Use CLT and normal distribution tables.
+\eepr
+}
+
+\medskip
+{\color{blue}
+\bepr  Let $X_{1},\ldots ,X_{n}$ be i.i.d. samples from a parametric family of discrete distributions. In each of the following cases, find the MLE for the unknown parameter(s) and find the bias.
+\benu
+\item $X_{i}$ are i.i.d. $\mb{Ber}(p)$ where $p$ is unknown.
+\item $X_{i}$ are i.i.d. $N(\mu,\sig^{2})$ where $\mu,\sig^{2}$ are unknown.
+\eenu
+\eepr
+}
+
+\medskip
+{\color{blue}
+\bepr  Let $X_{1},\ldots ,X_{n}$ be i.i.d. samples from a parametric family of discrete distributions. In each of the following cases, find the MLE for the unknown parameter(s) and calculate the bias.
+\benu
+\item $X_{i}$ are i.i.d. $\mb{Geo}(p)$ where $p$ is unknown.
+\item $X_{i}$ are i.i.d. $\mb{Unif}[a,b]$ where $a,b$ are unknown.
+\eenu
+\eepr
+}
+
+\medskip
+\bepr Let $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$ be i.i.d. samples from a bivariate distribution. Let $\tau=\mb{Cov}(X_{1},Y_{1})$. Let $r_{n}=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})(Y_{k}-\bar{X}_{n})$ be the sample covariance.
+\benu
+\item Show that $r_{n}$ is a biased estimate for $\tau$ and find the bias.
+\item Modify the estimate $r_{n}$ to get an unbiased estimate of $\tau$.
+\eenu
+[{\bf Remark:} It is often convenient, here and elsewhere, to realise that $\tau=\E[X_{1}Y_{1}]-\E[X_{1}]\E[Y_{1}]$ and $r_{n}=(\frac{1}{n}\sum_{k=1}^{n}X_{k}Y_{k})-\bar{X}_{n}\bar{Y}_{n}$.]
+\eepr
+
+\medskip
+\bepr Let $X_{1},X_{2},\ldots ,X_{n}$ be i.i.d. random variables from a distribution $F$. Let $M_{n}$ be a median of $X_{1},\ldots ,X_{n}$. Assume that the distribution $F$ has a unique median, that is there is a unique number $m$ such that $F(m)=\frac12$. For any $\del>0$ show that $\P\{|M_{n}-m|\ge \del\}\to 0$ as $n\to \infty$.
+
+ [{\bf Remark:} The above statement justifies using the sample median to estimate the population median, in the sense that at least for large sample sizes, the two are close. Similar justification for using sample mean to estimate expected value came from the law of large numbers]
+\eepr
+
+
+\medskip
+The following problem is only for those mathematically minded.
+{\color{red}
+\bepr Let $X_{1},X_{2},\ldots $ be i.i.d. $\mb{Pois}(\lam)$ random variables. Work out the exact distribution of $X_{1}+\ldots +X_{n}$ and use it show the central limit theorem in this case. That is, show that for any $a<b$,
+\ba
+\P\l\{a\le \frac{\sqrt{n}(\bar{X}_{n}-\lam)}{\sqrt{\lam}}\le b\r\}\longrightarrow \P\{a\le Z\le b\}
+\ea
+where $Z\sim N(0,1)$.
+
+ [{\bf Remark:} This is analogous to the two cases of CLT that we showed in class, for exponential and for Bernoulli random variables].
+\eepr
+}
+
+\medskip
+The following problem shows that in certain situations, sums of random variables are approximately Poisson distributed. This gives a hint as to why Poisson distribution arises in many contexts. The question may be ignored safely from the exam point of view.
+{\color{red}
+\bepr Let $X_{n,1},X_{n,2},\ldots X_{n,n}$ be i.i.d. $\mb{Ber}(p_{n})$ random variables. Let $S_{n}=X_{n,1}+\ldots +X_{n,n}$.
+ If $np_{n}\to \lam$ (a finite positive number), show that $S_{n}$ has approximately $\mb{Pois}(\lam)$ distribution in the sense that for any $k\in \N$,
+\ba
+\P\{S_{n}=k\} \to e^{-\lam}\frac{\lam^{k}}{k!}.
+\ea
+[{\bf Remark:} In contrast, if $np_{n}\to \infty$, deduce from CLT that $S_{n}$ has approximately a normal distribution, i.e.,
+\ba
+\P\l\{ a\le \frac{S_{n}-\E[S_{n}]}{\sqrt{\Var(S_{n})}}\le b\r\} \to \P\{a\le Z\le b\}
+\ea
+for any $a<b$.]
+\eepr
+}
+
+
+
+%
+%\newpage
+%\section{Statistics problems}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

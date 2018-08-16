@@ -244,7 +244,7 @@ W=\log P &  0  & -4.3409  & -4.6857 &  -5.1210  & -5.8325  & -6.4203 &  -7.1825 
 We compute that $\bar{X}=4.5$, $\bar{W}=-5.25$, $\mbox{std}(X)=2.45$, $\mbox{std}(W)= 2.52$ and $\mbox{corr}(X,W)=0.92$. Hence, in the linear regression $W=a+bX$, we see that $\hat{b}=0.94$ and $\hat{a}=-9.49$. The residual sum of squares is $7.0$.
 </div></div></div>
 
-<strong>How good is the fit?</strong> For the same data $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$, suppose we have two candidates \; (a) \; $Y=f(X)$ and \; (b) \; $Y=g(X)$. How to decide which is better? Or how to say if a fit is good at all?
+<strong>How good is the fit?</strong> For the same data $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$, suppose we have two candidates   (a)   $Y=f(X)$ and   (b)   $Y=g(X)$. How to decide which is better? Or how to say if a fit is good at all?
 
 By the least-squares criterion, the answer is  the one with smaller residual sum of squares $SS:=\sum_{k=1}^{n}(Y_{k}-f(X_{k}))^{2}$. Usually one presents a closely related quantity $R^{2}=1-\frac{SS}{SS_{0} }$ (where $\mbox{SS}_{0}=\sum_{k=1}^{n}(Y_{k}-\bar{Y})^{2}=(n-1)s_{Y}^{2}$). Since $SS_{0}$ is (a multiple of) the total variance in $Y$, $R^{2}$ measures how much of it is ''explained'' by a particular fit. Note that $0\le R^{2}\le 1$. And higher (i.e., closer to $1$) the $R^{2}$ is, the better the fit.
 
@@ -282,9 +282,9 @@ Y & 2.3&2.5&-0.41&-2.94&-1.13&-0.84&4.36&-1.14&1.45&-1.36&1.55&-2.43  &  \\
 \]
 To this data set we fit two models (A) $Y=\beta X$ and (B) $Y=a+bX$. The results are as follows.
 $$\begin{align*}
-\mbox{SS}_{0}=96.20, &\;\;  R_{0}^{2}=0 \\
-\mbox{SS}_{1}=6.8651, &\;\;  R_{1}^{2}=0.9286, \hspace{2mm} \bar{R}_{1}^{2}=0.9255 \\
-\mbox{SS}_{2}= 6.8212, &\;\; R_{2}^{2}=0.9291, \hspace{2mm} \bar{R}_{2}^{2}=0.9227.
+\mbox{SS}_{0}=96.20, &    R_{0}^{2}=0 \\
+\mbox{SS}_{1}=6.8651, &    R_{1}^{2}=0.9286, \hspace{2mm} \bar{R}_{1}^{2}=0.9255 \\
+\mbox{SS}_{2}= 6.8212, &   R_{2}^{2}=0.9291, \hspace{2mm} \bar{R}_{2}^{2}=0.9227.
 \end{align*}$$
 Note that the adjusted $R^{2}$ decreases (slightly) for the the second model. Thus, if we go by that, then the model with one parameter is chosen (correctly, as we generated from that model!). You can try various simulations yourself. Also note the high value of $R_{1}^{2}$ (and $R_{2}^{2}$) which indicates that it is not a bad fit at all.
 </div></div></div>

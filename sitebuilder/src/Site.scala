@@ -97,6 +97,7 @@ object Site {
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <li> <a href={s"${relDocsPath}prob-problems.html"}>Problems</a></li>
             <li> <a href={s"${relDocsPath}notes/index.html"} target="_blank">Notes</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -444,4 +445,19 @@ object Site {
   def mkHome(): Unit =
     write.over(pwd / "docs" / "index.html", page(home.toString, ""))
 
+  lazy val probProblemsBody =
+    TeXToHtml.teXConvertor("Probabilityproblemlist")
+    .allReplaced
+
+  val probTop =
+    """<h2 class="text-center">Probability problems</h2>
+    <h3 class="text-center"> by Manjunath Krishnapur</h3>
+    <div class="text-right"><a href="Probabilityproblemlist.pdf">PDF version</a></div>
+    """
+
+  lazy val probPage = page(
+    probTop + probProblemsBody, "")
+
+  def mkProblems() : Unit =
+    write.over(pwd / "docs" / "prob-problems.html", probPage)
 }

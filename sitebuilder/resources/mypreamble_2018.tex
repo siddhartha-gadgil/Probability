@@ -1,0 +1,284 @@
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsbsy}
+%\usepackage{natbib}
+\usepackage{amssymb} % Without this \qed does not get filled square
+\usepackage{verbatim}
+\usepackage{bm} %for some types of bold letters
+\usepackage{paralist} %Need to use \inparaenum
+%\RequirePackage[dvips]{hyperref}
+%\usepackage{lineno}
+ \usepackage{color}
+ \usepackage{mathrsfs}
+ \usepackage{graphicx}
+\usepackage{hyperref}
+%\hypersetup{
+%  colorlinks   = true, %Colours links instead of ugly boxes
+%  urlcolor     = blue, %Colour for external hyperlinks
+%  linkcolor    = blue, %Colour of internal links
+%  citecolor   = red %Colour of citations
+%}
+
+
+
+% PROBABILITY RELATED
+\newcommand{\E}{\mathbf{E}}
+\def\P{\mathbf{P}}
+\def\Filt{\mathcal F_{\bullet}} %filtration
+\def\Var{\mbox{Var}}
+\def\sd{\mbox{s.d.}}
+\def\convd{\stackrel{d}{\rightarrow}}
+\def\convp{\stackrel{P}{\rightarrow}}
+\def\convas{\stackrel{a.s.}{\rightarrow}}
+\def\convlp{\stackrel{L^{p}}{\rightarrow}}
+\def\eqd{\stackrel{d}{=}}
+\def\given{\left.\vphantom{\hbox{\Large (}}\right|}
+%\def\Given{\left.\vphantom{\hbox{\large (}}\right|}
+\def\Given{\ \pmb{\big|} \ }
+\newcommand{\as}{$a.s.$}
+\newcommand{\dist}{\mbox{\rm dist}}
+\newcommand{\Poi}{\mbox{\rm Poi}}
+\newcommand{\EE}[1]{\E\l[#1\r]}
+\def\CN{CN}
+\renewcommand\Re{\operatorname{Re}}
+\renewcommand\Im{\operatorname{Im}}
+%\renewcommand{\Pr}[1]{\,\mathbb P\,\(\,#1\,\)\,}
+\newcommand\gauss{\ensuremath {e^{-x^{2}/2}}}
+\DeclareMathOperator\erf{erf}
+\newcommand\CRplus{\ensuremath{C[0,\infty)}}
+\newcommand\CI{\ensuremath{C[0,1]}}
+
+
+% COMMON MATHEMATICAL OBJECTS
+\newcommand{\mat}[4]{\l[\begin{array}{cc}  #1 & #2 \\ #3 & #4  \end{array} \r]}
+\newcommand{\vect}[2]{\l[\begin{array}{cc}  #1 \\ #2  \end{array} \r]}
+\def\half{\frac{1}{2}}
+\newcommand{\slfrac}[2]{\left.#1\middle/#2\right.}
+\def\ccinf{C_c^{\infty}}
+\newcommand{\one}{{\mathbf 1}}
+\def\I#1{\mathbf{1}_{#1}}
+\def\ind{{\mathbf 1}}
+\newcommand\der[2]{\frac{d^{#1}}{d  #2^{#1}}}
+%\renewcommand\matx[4]{\l[\begin{array}{cc}  #1 & #2 \\ #3 & #4\end{array} \r]}
+
+% COMMON OPERATIONS
+\def\summ{\sum\limits}
+\def\intt{\int\limits}
+\newcommand{\intg}[2]{\intt_{#1}^{#2}}
+\def\doublint{\int\!\!\int}
+\def\doublintfull{\intt_{-\infty}^{\infty}\!\!\intt_{-\infty}^{\infty}}
+\def\prodd{\prod\limits}
+\def\limm{\lim\limits}
+\def\to{\rightarrow}
+\def\tends{\rightarrow}
+\def\fr{\frac}
+\newcommand{\ontop}{\genfrac{}{}{0cm}{2}}
+%\newcommand{\frac}[2]{\genfrac{}{}{}{}{#1}{#2}}
+%\newcommand{\tfrac}[2]{\genfrac{}{}{}{1}{#1}{#2}}
+%\newcommand{\binom}[2]{\genfrac{(}{)}{0pt}{}{#1}{#2}}
+%\def\sgn{\mb{sgn}}
+\def\d{\partial}
+\def\dz{\frac{\partial }{ \partial z}}
+\def\dzbar{\frac{\partial }{ \partial {\bar z}}}
+\def\dw{\frac{\partial }{ \partial w}}
+\def\dwbar{\frac{\partial }{ \partial {\bar zw}}}
+\def\grad{\nabla}
+\def\lap{\Delta}
+\def\defn{\stackrel{\tiny def}{=}}
+\def\di{\mbox{d}}
+\newcommand{\diff}[1]{\frac{\partial}{\partial #1}}
+
+% IMPORTANT MATH FUNCTIONS
+\def\sgn{{\mb{sgn}}}
+\newcommand\Tr{{\mbox{Tr}}}
+\newcommand\tr{{\mbox{tr}}}
+\def\per{\mb{per}}
+\def\haf{\mb{haf}}
+%\def\bar{\overline}
+\newcommand{\Wi}[1]{:#1:}
+
+
+% SPACINGS
+\def\hsp{\hspace}
+\def\mb{\mbox}
+\newcommand{\head}[1]{{\noindent{\bfseries #1:}}}
+\newcommand{\para}[1]{\vspace{6mm}\noindent{\bfseries #1:}}
+\newcommand{\parau}[1]{\vspace{4mm}\noindent{\bfseries \underline{#1}:}}
+\newcommand{\parag}[1]{\vspace{5mm}\noindent{\bfseries #1}}
+\newcommand{\margin}[1]{\marginpar{\small \color{blue}{#1}}}
+
+% BRACKETS AND BRACES
+\def\Mid{\left\vert \right.}
+\def\l{\left}
+\def\r{\right}
+\def\<{\langle}
+\def\>{\rangle}
+
+%\def\given{\left.\vphantom{\hbox{\Large (}}\right|}
+
+
+% SHORTCUTS FOR ENVIRONMENTS
+%\newcommand{\align}[1]{\begin{align*}#1\end{align*}}
+\newcommand{\ba}{\[\begin{aligned}}
+\newcommand{\ea}{\end{aligned}\]}
+\newcommand\mnote[1]{} %off
+\newcommand{\beq}[1]{\begin{equation}\label{#1}}
+\newcommand\eeq{\end{equation}}
+%\newcommand\be{\begin{align*}}
+%\newcommand\ee{\end{align*}}
+\newcommand\ben{\begin{equation}}
+\newcommand\een{\end{equation}}
+\newcommand\bes{\begin{eqnarray*}}
+\newcommand\ees{\end{eqnarray*}}
+\newcommand\besn{\begin{eqnarray}}
+\newcommand\eesn{\end{eqnarray}}
+
+
+\def\bthm{\begin{theorem}}
+\def\ethm{\end{theorem}}
+\def\bdefn{\begin{definition}}
+\def\edefn{\end{definition}}
+\newcommand{\benu}{\begin{enumerate}}
+\newcommand{\beit}{\begin{itemize}}
+\def\eenu{\end{enumerate}}
+\def\eeit{\end{itemize}}
+\def\beds{\begin{description}}
+\def\eeds{\end{description}}
+\def\bepr{\begin{problem}}
+\def\eepr{\end{problem}}
+
+
+\def\bprf{\begin{proof}}
+\def\eprf{\end{proof}}
+\def\berk{\begin{remark}}
+\def\eerk{\end{remark}}
+\def\bex{\begin{exercise}}
+\def\eex{\end{exercise}}
+\def\beg{\begin{example}}
+\def\eeg{\end{example}}
+
+% COMMON PHRASES
+\newcommand\bllt{$\blacktriangleright$ \;\;}
+\def\suchthat{{\; : \;}}
+\renewcommand{\qed}{\hfill\text{$\blacksquare$}}
+\newcommand*{\Cdot}{{\scalebox{2}{$\cdot$}}}
+
+% CALLIGRAPHIC FONTS FOR GENERAL PURPOSE
+\def\AA{{\mathcal A}}
+\def\BB{{\mathcal B}}
+\def \CC{{\mathcal C}}
+\def\DD{{\mathcal D}}
+\def\FF{{\mathcal F}}
+\def\GG{{\mathcal G}}
+\def\HH{{\mathcal H}}
+\def\II{{\mathcal I}}
+\def\JJ{{\mathcal J}}
+\def \KK{{\mathcal K}}
+\def\LL{{\mathbb L}}
+\def\MM{{\mathcal M}}
+\def\PP{{\mathcal P}}
+\def\QQ{{\mathcal Q}}
+\def\TT{{\mathcal T}}
+\def\UU{{\mathcal U}}
+\def\XX{{\mathcal X}}
+\def\YY{{\mathcal Y}}
+\def\ZZ{{\mathcal Z}}
+
+% SETS OF REALS, INTEGERS, ETC.
+\def\C{\mathbb{C}}
+\def\D{\mathbb{D}} % unit disk
+%\def\H{\mathbb H} % hyperbolic plane
+%\renewcommand\H{{\varmathbb{H}}}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\Q{\mathbb{Q}}
+\def\S{\mathbb{S}} % for sphere
+\def\Z{\mathbb{Z}}
+\def\Sym{{\mathcal S}} % symmetric group
+\def\Uni{{\mathcal U}} % Unitary group
+
+
+% SPECIALIZED SHORTCUTS
+\newcommand{\intc}{\int_0^{2\pi}}
+\newcommand{\supp}{\mbox{\textrm supp}}
+\newcommand{\Arg}{\mbox{\textrm Arg}}
+\newcommand{\Vol}{\mbox{\textrm Vol}}
+\newcommand{\Cov}{\mbox{\textrm Cov}}
+\newcommand{\sm}{{\raise0.3ex\hbox{$\scriptstyle \setminus$}}}
+\newcommand{\agau}{a complex Gaussian analytic function}
+\newcommand{\gi}{\,|\,}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\wA}{\widetilde{A}}
+\newcommand{\zb}{\overline{z}}
+\newcommand{\const}{\operatorname{const}}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+
+
+% SPECIALIZED FONT USAGE
+%\newcommand{\phi}{\varphi}
+
+
+%  GREEK LETTERS
+\def\alp{\alpha}
+\def\bet{\beta}
+\def\gam{\gamma}
+\def\del{\delta}
+\def\eps{\epsilon}
+\renewcommand\phi{\varphi}
+\def\kap{\kappa}
+\def\lam{\lambda}
+\def\ome{\omega}
+\def\sig{{\sigma}}
+\def\Sig{{\Sigma}}
+\def\ups{\upsilon}
+\def\zet{\zeta}
+\def\Gam{\Gamma}
+\def\Del{\Delta}
+\def\Lam{\Lambda}
+\def\Ome{\Omega}
+%\newcommand\u{\mathbf{u}}
+\renewcommand\u{\mathbf{u}}
+\newcommand\x{\mathbf{x}}
+\newcommand\y{\mathbf{y}}
+\renewcommand\v{\mathbf{v}}
+\newcommand\w{\mathbf{w}}
+
+
+
+
+% THEOREM ENVIRONMENTS - DON'T REALLY UNDERSTAND ALL DETAILS BELOW
+\theoremstyle{plain} %documentation says there are only three styles
+                  %{plain},{definition},{remark}
+%\theoremstyle{theorem}
+    \newtheorem{theorem}{Theorem}
+    \newtheorem{lemma}[theorem]{Lemma}
+    \newtheorem{proposition}[theorem]{Proposition}
+    \newtheorem{corollary}[theorem]{Corollary}
+    \newtheorem{claim}[theorem]{Claim}
+    \newtheorem{conjecture}[theorem]{Conjecture}
+
+
+%    \newtheorem{proof}[proof]{Proof}
+
+\theoremstyle{definition} % For roman text in the body
+    \newtheorem{definition}[theorem]{Definition}
+    \newtheorem{fact}[theorem]{Fact}
+    \newtheorem{result}[theorem]{Result}
+    \newtheorem{question}[theorem]{Question}
+    \newtheorem{algorithm}[theorem]{Algorithm}
+    \newtheorem{assumption}[theorem]{Assumption}
+    \newtheorem{exercise}[theorem]{Exercise}
+    \newtheorem{problem}[theorem]{Problem}
+        \newtheorem{remark}[theorem]{Remark}
+    \newtheorem{example}[theorem]{Example}
+
+\newtheorem{protoeg}[theorem]{Example}
+\newtheorem{protoremark}[theorem]{Remark}
+\newtheorem{protodefinition}[theorem]{Definition}
+\renewcommand{\theequation}{\arabic{equation}}
+\renewcommand{\thetheorem}{\arabic{theorem}}
+
+
+\def\newblock{\hskip .11em plus .33em minus .07em}

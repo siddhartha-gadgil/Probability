@@ -1,0 +1,1464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>MA 261: Probability Models</title>
+    <link rel="icon" href="IIScLogo.jpg">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/extras.css" rel="stylesheet">
+   <link href="css/katex.min.css" rel="stylesheet">
+   <script src="js/katex.min.js"></script>
+
+    
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+jax: ["input/TeX", "output/HTML-CSS"],
+tex2jax: {
+  inlineMath: [ ['$', '$'] ],
+  displayMath: [ ['$$', '$$']],
+  processEscapes: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+},
+messageStyle: "none",
+"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+       </script>
+    
+  </head>
+
+   
+<body>
+<nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="navbar-brand">Instructor: <a href="http://math.iisc.ac.in/~gadgil" target="_blank">Siddhartha Gadgil</a></span>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" id="left-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Assignments<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Illustrations<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="illustrations/fair-coin.html">Fair Coin?</a></li><li><a href="illustrations/coin-tosses.html">Repeated Tosses</a></li><li><a href="illustrations/birthdays.html">Birthday Paradox</a></li><li><a href="illustrations/percolation.html">Percolation</a></li><li><a href="illustrations/bayes-coin.html">Bayes rule for Coins</a></li><li><a href="illustrations/dependent-tosses.html">Dependent tosses</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li> <a href="prob-problems.html">Problems</a></li>
+            <li> <a href="notes/index.html" target="_blank">Notes</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+<div class="container">
+
+<h2 class="text-center">Probability problems</h2>
+    <h3 class="text-center"> by Manjunath Krishnapur</h3>
+    <div class="text-right"><a href="Probabilityproblemlist.pdf">PDF version</a></div>
+    
+
+
+
+<strong>Note :</strong>  These are  problems I gave as homeworks in the many times I taught the first course in UG probability and statistics at IISc. They are taken from various sources and there are also some that I made up.
+
+
+
+
+
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-1"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 1 </div><div class="panel-body"> (Feller, I.8.1) Among the digits 1,2,3,4,5 first one is chosen, and then a second selection is made among the remaining four digits. Assume that all twenty possible results have the same probability. Find the probability that an odd digit will be selected <em> (a)</em> the first time, <em> (b)</em> the second time, <em> (c)</em> both times.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-2"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 2 </div><div class="panel-body"> (*) (Feller, II.10.3) In how many ways can two rooks of different colours be put on a chessboard so that they can take each other?
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-3"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 3 </div><div class="panel-body"> (Feller, II.10.5) The numbers $1,2,\ldots ,n$ are arranged in random order. Find the probability that the digits <em> (a)</em> 1 and 2,  <em> (b)</em> 1, 2, and 3,    appear as neighbours in the order named.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-4"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 4 </div><div class="panel-body"> (Feller, II.10.8) What is the probability that among $k$ digits  <em> (a)</em> 0 does not appear;  <em> (b)</em> 1 does not appear; <em> (c)</em> neither 0 nor 1 appears; <em> (d)</em> at least one of the two digits $0$ or $1$ does not appear? Let $A$ and $B$ represent the events in <em> (a)</em> and <em> (b)</em>. Express the other events in terms of $A$ and $B$.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-5"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 5 </div><div class="panel-body"> (Feller, II.10.11) A man is given $n$ keys of which only one fits his door. He tries them successively (sampling without replacement). The number of trials required may be $1,2,\ldots ,n$. Show that each of these outcomes has probability $1/n$.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-6"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 6 </div><div class="panel-body"> (*) (Feller, II.10.20) From a population of $N$ elements a sample of size $k$ is taken. Find the probability that none of $m$ prescribed elements will be included in the sample, assuming the sample to be <em> (a)</em> without replacement,   <em> (b)</em> with replacement. Compare the numerical values for the two methods when <em> (i)</em> $N=100$, $m=k=3$, and <em> (ii)</em> $N=100$, $m=k=10$.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-7"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 7 </div><div class="panel-body"> (Feller, II.10.28) A group of $2N$ boys and $2N$ girls is divided into two equal groups. Find the probability $p$ that each group has equal number of boys and girls. Estimate $p$ using Stirling's approximation.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-8"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 8 </div><div class="panel-body"> (*) (Feller, II.10.39) If $r_{1}$ indistinguishable red balls and $r_{2}$ indistinguishable blue balls are placed into $n$ cells, find the number of distinguishable arrangements.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-9"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 9 </div><div class="panel-body"> (Feller, II.10.40) If $r_{1}$ dice and $r_{2}$ coins are thrown, how many results can be distinguished?
+</div></div></div>
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-10"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 10 </div><div class="panel-body">  In how many ways can two bishops be put on a chessboard so that they can take each other?
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-11"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 11 </div><div class="panel-body"> A deck of $n$ cards labelled $1,2,\ldots ,n$ is shuffled well. Find the probability that the digits <em> (a)</em> 1 and 2,  <em> (b)</em> 1, 2, and 3,    appear as neighbours in the order named.
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-12"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 12 </div><div class="panel-body"> A deck of $n$ cards labelled $1,2,\ldots ,n$ is shuffled well. Find the probability that the digits <em> (a)</em> 1 and 2,  <em> (b)</em> 1, 2, and 3,    appear as neighbours in the order named.
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-13"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 13 </div><div class="panel-body"> (Feller, II.12.1) Prove the following identities for $n\ge 2$. [<em> Convention:</em> Let $n$ be a positive integer. Then $\binom{n}{y}=0$ if $y$ is not an integer or if $y > n$].
+$$\begin{align*}
+1-\binom{n}{1}+\binom{n}{2} -\ldots &=0 \\
+\binom{n}{1}+2\binom{n}{2}+3\binom{n}{3}+\ldots &=n2^{n-1} \\
+\binom{n}{1}-2\binom{n}{2}+3\binom{n}{3}-\ldots &=0 \\
+2.1\binom{n}{2}+3.2\binom{n}{3}+4.3\binom{n}{4}+\ldots &=n(n-1)2^{n-2}
+\end{align*}$$
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-14"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 14 </div><div class="panel-body"> (Feller, I.12.10) Prove that
+$$
+\binom{n}{0}^{2}+\binom{n}{1}^{2}+\ldots +\binom{n}{n}^{2}=\binom{2n}{n}.
+$$
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-15"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 15 </div><div class="panel-body"> (Feller, I.12.20) Using Stirling's formula, prove that $\frac{1}{2^{2n} }\binom{2n}{n}\sim \frac{1}{\sqrt{\pi n} }$. [<em> Convention:</em> $a_{n}\sim b_{n}$ is shorthand for $\lim\limits_{n\rightarrow \infty}\frac{a_{n} }{b_{n} }=1$].
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-16"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 16 </div><div class="panel-body"> (*) Two positive integers $m\le N$ are fixed. A box contains $N$ coupons labelled $1,2,\ldots ,N$. A sample of $m$ coupons is drawn.
+<ol>
+<li> Write the probability space in the following two ways of drawing the sample.
+<ol>
+<li> (Sampling without replacement). A coupon is drawn uniformly at random, then a second coupon is drawn uniformly at random, and so on, till we have $m$ coupons.
+</li>
+<li> (Sampling with replacement). A coupon is drawn uniformly at random, its number is noted and the coupon is replaced in the box. Then a coupon is drawn at random from the box, the number is noted, and the coupon is returned to the box. This is done $m$ times.
+</ol>
+</li>
+<li> Let $N=k+\ell$ where $k,\ell$ are positive integers.  We think of $\{1,2,\ldots ,k\}$ as a sub-population of the whole population $\{1,2,\ldots ,N\}$. For each of the above two schemes of sampling (with and without replacement), calculate the probability that the sample of size $m$ contains no elements from the sub-population $\{1,2,\ldots ,k\}$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-17"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 17 </div><div class="panel-body"> (*) Write the probability spaces for the following experiments. Coins and dice may not be fair!
+<ol>
+<li> A coin is tossed till we get a head followed immediately by a tail. Find the probability of the event that the total number of tosses is at least $N$.
+</li>
+<li> A die is thrown till we see the number $6$ turn up five times (not necessarily in succession). Find the probability that the number $1$ is never seen.
+</li>
+<li> A coin is tossed till the first time when the number of heads (strictly) exceeds the number of tails. What is the probability that the number of tosses is at least $5$.
+</li>
+<li> (Extra exercise for fun! <u>Do not submit this part</u>) In the previous experiment, find the probability that the number of tosses is more than $N$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-18"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 18 </div><div class="panel-body"> (*) A particular segment of the DNA in a woman is $ATTAGCGG$ and the corresponding segment in her husband is $CTAAGGCG$. Write the probability space for the same DNA segment in the future child of this man-woman pair. Assume that all possible combinations are equally likely, and ignore the possibility of mutation.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-19"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 19 </div><div class="panel-body"> In a party there are $N$ unrelated people. Their birthdays are noted (ignore leap years and assume that a year has $365$ days). Find the probability of the event that no two of them have the same birthday. Get the numerical value for $N=20$ and $N=30$.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-20"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 20 </div><div class="panel-body">  A deck of $52$ cards is shuffled well and $3$ cards are dealt. Find the probability of the event that all three cards are from distinct suits.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-21"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 21 </div><div class="panel-body">  Place $r_{1}$ indistinguishable blue balls and $r_{2}$ indistinguishable red balls into $m$ bins uniformly at random. Find the probability of the event that the first bin contains balls of both colors. 
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-22"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 22 </div><div class="panel-body"> A coin with probability $p$ of turning up $H$ (assume $0 < p < 1$) is tossed till we get a $TH$ or a $HT$ (i.e., two consecutive tosses must be different, eg., $TTH$ or $HHHT$). Find the probability of the event that at least $5$ tosses are required.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-23"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 23 </div><div class="panel-body">  A drunken man return home and tries to open the lock of his house from a  bunch of $n$ keys by trying them at random till the door opens. Consider two cases: \begininparaenum </li>
+<li> He is so drunk that he may try the same key several times. </li>
+<li> He is moderately drunk and remembers which keys he has already tried.\endinparaenum In both cases, find the probability of the event that he needs $n$ or more attempts to open the door.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-24"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 24 </div><div class="panel-body"> Let $\mathbf{x}=(0,1,1,1,0,1)$ and $\mathbf{y}=(1,1,0,1,0,1)$. A new $6$-tuple ${\bf  z}$ is created at random by choosing each $z_{i}$ to be $x_{i}$ or $y_{i}$ with equal chance, for $1\le i\le 6$ (A toy model for how two DNA sequences can recombine to give a new one). Find the probability of the event that ${\bf  z}$ is identical to $\mathbf{x}$.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-25"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 25 </div><div class="panel-body"> From a group of $W$ women and $M$ men, a team of $L$ people is chosen at random (of course $L\le W+M$). Find the probability of the event that the teams consists of exactly $k$ women.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-26"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 26 </div><div class="panel-body"> Place $r$ distinguishable balls in $m$ labelled bins in such a way that each bin contains at most one ball. All <em> distinguishable</em> arrangements are deemed equally likely (this is known as Fermi-Dirac statistics). Find the probability that the first bin is empty.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-27"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 27 </div><div class="panel-body"> A box contains $2N$ coupons labelled $1,2,\ldots ,2N$. Draw $k$ coupons (assume $k\le N$) from the box one after another \begininparaenum</li>
+<li> with replacement, </li>
+<li> without replacement. \endinparaenum Find the probability of the event that no even numbered coupon is in the sample.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-28"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 28 </div><div class="panel-body"> In a class with 108 people, one student gets a joke by e-mail. He/she forwards it to one randomly chosen classmate. The recipient does the same - chooses a classmate at random (could be the sender too) and forwards it to him/her. The process goes on like this for $20$ steps and stops. What is the probability that the first person to get the mail does not get it again? What is the chance that no one gets the e-mail more than once?
+</div></div></div>
+
+
+
+
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-29"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 29 </div><div class="panel-body"> (Feller, III.6.3) Find the probability that in five tossings a coin falls head at least three times in succession.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-30"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 30 </div><div class="panel-body"> (*) (Feller, III.6.1) Ten pairs of shoes are in a closet. Four shoes are selected at random. Find the probability that there will be at least one pair among the fours shoes selected.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-31"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 31 </div><div class="panel-body"> (*) Let $A_{1},A_{2},A_{3},\ldots$ be events in a probability space. Write the following events in terms of $A_{1},A_{2},\ldots$ using the usual set operations (union, intersection, complement).
+<ol>
+<li> An infinite number of the events $A_{i}$ occur.
+</li>
+<li> All except finitely many of the events $A_{i}$ occur.
+</li>
+<li> Exactly $k$ of the events $A_{i}$ occur.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-32"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 32 </div><div class="panel-body"> (Feller, I.8.1)  Let $A_{1},\ldots ,A_{n}$ be events in a probability space $(\Omega,p)$ and let $0\le m\le n$. Let $B_{m}$ be the event that at least $m$ of the events $A_{1},\ldots ,A_{n}$  occur. Mathematically,
+$$
+B_{m}=\bigcup_{ 1\le i_{1} < i_{2} < \ldots  < i_{m}\le n} (A_{i_{1} }\cap A_{i_{2} }\cap \ldots \cap A_{i_{m} }).
+$$
+Show that
+$$\begin{align*}
+\mathbf{P}(B_{m}) &= S_{m}-\binom{m}{1}S_{m+1}+\binom{m+1}{2}S_{m+2}-\binom{m+2}{3}S_{m+3}+\ldots  \\
+\end{align*}$$
+where $
+S_{k}=\sum\limits_{1\le i_{1} < i_{2} < \ldots  < i_{k}\le n}\mathbf{P}(A_{i_{1} }\cap A_{i_{2} }\cap \ldots \cap A_{i_{k} }).
+$
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-33"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 33 </div><div class="panel-body"> (*) Recall the problem of matching two shuffled decks of cards, but with $n$ cards in each deck, so that $\Omega_{n}=S_{n}\times S_{n}$ and $p_{(\pi,{\sigma})}=\frac{1}{(n!)^{2} }$ for each $(\pi,{\sigma})\in \Omega$. Let $A_{m}$ be the event that there are exactly $m$ matches between the two decks<sup> <a data-toggle="collapse" href="#footnote-1" aria-expanded="false" aria-controls="footnote-1">
+                                1
+                                 </a> </sup><span class="collapse small" id="footnote-1">Strictly speaking, we should write $A_{n,m}$, since the $A_{n,m}\subseteq \Omega_{n}$ but for ease of notation we omit the subscript $n$. Similarly, it would be appropriate to write $p_{n}$ and $\mathbf{P}_{n}$ for the probabilities, but again, we simplify the notation when there is no risk of confusion.</span> .
+<ol>
+<li> For fixed $m\ge 0$, show that $\mathbf{P}(A_{m})\rightarrow e^{-1}\frac{1}{m!}$ as $n\rightarrow \infty$.
+</li>
+<li> Assume that the approximations above are valid for $n=52$ and $m\le 10$. Find the probability that there are at least $10$ matches.
+</ol>
+[<strong> Remark:</strong> You may use the result of the previous problem to solve this one].
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-34"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 34 </div><div class="panel-body"> Place $r_{n}$ distinguishable balls in $n$ distinguishable urns. Let $A_{n}$ be the event that at least one urn is empty<sup> <a data-toggle="collapse" href="#footnote-2" aria-expanded="false" aria-controls="footnote-2">
+                                2
+                                 </a> </sup><span class="collapse small" id="footnote-2">Similar to the previous comment, here it would be appropriate to write $\mathbf{P}_{n}(A_{n})$ as the probability spaces are changing, but we keep the notation simple and simply write $\mathbf{P}(A_{n})$.</span> .
+<ol>
+<li> If $r_{n}=n^{2}$, show that $\mathbf{P}(A_{n})\rightarrow 0$ as $n\rightarrow \infty$.
+</li>
+<li> If $r_{n}=Cn$ for some fixed constant $C$, show that $\mathbf{P}(A_{n})\rightarrow 1$ as $n\rightarrow \infty$.
+</li>
+<li> Can you find an increasing function $f(\cdot)$ such that if $r_{n}=f(n)$, then $\mathbf{P}(A_{n})$ does not converge to $0$ or $1$? [<strong> Hint:</strong> First try $r_{n}=n^{\alpha}$ for some $\alpha$, not necessarily an integer].
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-35"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 35 </div><div class="panel-body"> A box contains $N$ coupons labelled $1,2,\ldots ,N$. Draw $m_{N}$ coupons at random, with replacement, from the box. Let $A_{N}$ be the event that every coupon from the box has appeared at least once in the sample.
+<ol>
+<li> If $m_{N}=N^{2}$, show that $\mathbf{P}(A_{N})\rightarrow 1$ as $N\rightarrow \infty$.
+</li>
+<li> If $m_{N}=CN$ for some fixed constant $C$, show that $\mathbf{P}(A_{N})\rightarrow 0$ as $N\rightarrow \infty$
+</li>
+<li> Can you find an increasing function $f(\cdot)$ such that if $m_{N}=f(N)$, then $\mathbf{P}(A_{N})$ does not converge to $0$ or $1$? [<strong> Hint:</strong> See if you can relate this problem to the previous one].
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-36"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 36 </div><div class="panel-body"> Let $A_{1},\ldots ,A_{n}$ be events in a common probability space.   Let $B$ be the event that <em> at least two</em> of the $A_{i}$s occur. Prove that
+\[\begin{aligned}
+\mathbf{P}(B)= S_{2}-2S_{3}+3S_{4}-\ldots +(-1)^{m}(m-1)S_{m}
+\end{aligned}\]
+where $S_{k}=\sum_{1\le i_{1} < i_{2} < \ldots  < i_{k}\le n}\mathbf{P}\{A_{i_{1} }\cap \ldots \cap A_{i_{k} }\}$ for $1\le k\le n$.
+
+
+<strong> Not for submission:</strong> More generally, you may show that the probability that at least $\ell$ of the $A_{i}$s occur is equal to
+$$\begin{align}\label{eq:inclexclforatleastell}
+S_{\ell}-\binom{\ell}{1}S_{\ell+1}+\binom{\ell+1}{2}S_{\ell+2}-\binom{\ell+2}{3}S_{\ell+3}+\ldots
+\end{align}$$
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-37"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 37 </div><div class="panel-body"> Continuing with the notation of the previous problem, assume the formula given in \eqrefeq:inclexclforatleastell holds. If $C$ is the event that <em> exactly</em> $\ell$ of the events $A_{i}$s occur, then show that
+$$\begin{align}\label{ex:inclexclexactlyellmany}
+\mathbf{P}(C)=S_{\ell}-\binom{\ell+1}{\ell}S_{\ell+1}+\binom{\ell+2}{\ell}S_{\ell+2}-\ldots +(-1)^{n-\ell}S_{n}.
+\end{align}$$
+[<strong> Hint:</strong> If you want to prove this directly, without using \eqrefeq:inclexclforatleastell, that is also okay.]
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-38"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 38 </div><div class="panel-body"> If $r$ distinguishable balls are placed at random into $m$ labelled bins, write an expression for the probability that each  bin contains at least two balls.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-39"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 39 </div><div class="panel-body"> A deck of cards is dealt to four players ($13$ cards each). Find the probability that at least one of the players has two or more <em> aces</em>.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-40"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 40 </div><div class="panel-body"> Let $p$ be the probability that in a gathering of 2500 people, there is some day of the year that is not the birthday of anyone in the gathering. Make reasonable assumptions and argue that $0.3\le p\le 0.4$.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-41"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 41 </div><div class="panel-body"> Consider the problem of a psychic guessing the order of a deck of shuffled cards. Assume complete randomness of the guesses. Use the formula in \eqrefex:inclexclexactlyellmany to derive an expression for the probability that the number of guesses is exactly $\ell$, for $0\le \ell\le 52$. Use meaningful approximation to these probabilities and give numerical values (to 3 decimal places) of the probabilities for $\ell=0,1,2\ldots ,6$.
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-42"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 42 </div><div class="panel-body"> Place $r_{m}$ distinguishable balls in $m$ distinguishable bins. Let $A_{m}$ be the event that at least one bin is empty<sup> <a data-toggle="collapse" href="#footnote-3" aria-expanded="false" aria-controls="footnote-3">
+                                3
+                                 </a> </sup><span class="collapse small" id="footnote-3">Here it would be appropriate to write $\mathbf{P}_{m}(A_{n})$ as the probability spaces are changing, but we keep the notation simple and simply write $\mathbf{P}(A_{n})$.</span> .
+<ol>
+<li> If $r_{n}=m^{2}$, show that $\mathbf{P}(A_{m})\rightarrow 0$ as $m\rightarrow \infty$.
+</li>
+<li> If $r_{m}=Cm$ for some fixed constant $C$, show that $\mathbf{P}(A_{m})\rightarrow 1$ as $n\rightarrow \infty$.
+</li>
+<li> Can you find an increasing function $f(\cdot)$ such that if $r_{m}=f(m)$, then $\mathbf{P}(A_{m})$ does not converge to $0$ or $1$? [<strong> Hint:</strong> First try $r_{m}=m^{\alpha}$ for some $\alpha$, not necessarily an integer].
+</ol>
+</div></div></div>
+
+
+
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-43"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 43 </div><div class="panel-body">(*) A random experiment is described and a random variable observed. In each case, write the probability space, the random variable and the pmf of the random variable.
+<ol>
+<li> Two fair dice are thrown. The sum of the two top faces is noted.
+</li>
+<li> Deal thirteen cards  from a shuffled deck and  count   (a) the number of red cards (i.e., diamonds or hearts),   (b) the number of kings,   (c) the number of diamonds.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-44"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 44 </div><div class="panel-body"> (*) Place $r$ distinguishable balls in $m$ distinguishable bins at random. Count the number of balls in the first bin.
+<ol>
+<li> Write the probability space and the random variable described above.
+</li>
+<li> Find the probability mass function of the number of balls in the first bin.
+</li>
+<li> Find the expected value of the number of balls in the first bin.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-45"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 45 </div><div class="panel-body"> (*) Find $\mathbf{E}[X]$ and $\mathbf{E}[X^{2}]$ for the following random variables.
+<ol>
+<li> $X\sim \mbox{Geo}(p)$.
+</li>
+<li> $X\sim \mbox{Hypergeo}(N_{1},N_{2},m)$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-46"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 46 </div><div class="panel-body">  Let $X$ be a non-negative integer-valued random variable with CDF $F(\cdot)$. Show that $\mathbf{E}[X]=\sum_{k=0}^{\infty}(1-F(k))$.
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-47"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 47 </div><div class="panel-body"> A coin has probability $p$ of falling head. Fix an integer $m\ge 1$. Toss the coin till the $m^{\mbox{\tiny{th} }}$ head occurs. Let $X$ be the number of tosses required.
+<ol>
+<li> Show that $X$ has pmf
+$$
+f(k) = \binom{k-1}{m-1}p^{m}(1-p)^{k-m}, \hspace{4mm} k=m,m+1,m+2,\ldots.
+$$
+</li>
+<li> Find $\mathbf{E}[X]$ and $\mathbf{E}[X^{2}]$.
+</ol>
+[<strong> Note:</strong> When $m=1$, you should get the Geometric distribution with parameter $p$. We say that $X$ has <em> negative-binomial distribution</em>. Some books define $Y:=X-m$ (the number of tails till you get $m$ heads) to be a negative binomial random variable. Then, $Y$ takes values  $0,1,2,\ldots$.]
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-48"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 48 </div><div class="panel-body"> For a  pmf $f(\cdot)$, the <em> mode</em> is defined as any point at which $f$ attains its maximal value (i.e., $t$ is a mode if $f(t)\ge f(s)$ for any $s$). For each of the following distributions, find the mode(s) of the distribution and the value of the pmf at the modes.
+<ol>
+<li> $\mbox{Bin}(n,p)$.
+</li>
+<li> $\mbox{Pois}(\lambda)$.
+</li>
+<li> $\mbox{Geo}(p)$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-49"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 49 </div><div class="panel-body"> Use MATLAB for the following exercise.
+<ol>
+<li> Plot the pmf of Binomial, Poisson and Geometric distributions for various values of the parameters. Observe the plots to say where the maximum is attained, how the shape changes with changes in parameter, etc. [For definiteness
+</li>
+<li> Simulate random numbers (number of samples can be $50$ or $100$ etc) from the same distributions and  plot their histograms. Visually compare the histograms with the plots of the pmf.
+</li>
+<li> Consider the ''real-life'' data given in Feller's book (chapter 6) and plot their histograms. Compare with the plot of the pmf for the appropriate distribution with appropriate choice of parameters.
+</ol>
+</div></div></div>
+
+<p></p>
+
+<p>&nbsp;</p>
+                <div id="theorem-50"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 50 </div><div class="panel-body"> Let $A,B$ be events with positive probability in a common probability space. We have seen in class that $\mathbf{P}(A\big| B)$ and $\mathbf{P}(B\big| A)$ are not to be confused.
+<ol>
+<li> Show that $\mathbf{P}(A\big| B)=\mathbf{P}(B\big| A)$ if and only if $\mathbf{P}(A)=\mathbf{P}(B)$.
+</li>
+<li> Show that $\mathbf{P}(A\big| B) > \mathbf{P}(A)$ if and only if $\mathbf{P}(B\big| A) > \mathbf{P}(B)$. That is, if occurrence of $B$ makes $A$ more likely than it was before, then the occurrence of $A$ makes $B$ more likely than it was.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-51"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 51 </div><div class="panel-body"> There are $10$ bins and the $k$th bin contains $k$ black and $11-k$ white balls. A bin is chosen uniformly at random. Then a ball is chosen uniformly at random from the chosen bin.
+<ol>
+<li> Find the conditional probability that the chosen ball is black, given that the $k$th bin was chosen. Use this to compute the (unconditional) probability that the chosen ball is white.
+</li>
+<li> Given that the chosen ball is black, what is the probability that the $k$th bin was chosen?
+</ol> 
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-52"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 52 </div><div class="panel-body"> A fair die is thrown $n$ times. For $1\le k\le n-1$, let $A_{k}$ be the event that the $k$th throw and the $(k+1)$st throw yield the same result. Are $A_{1},\ldots ,A_{n-1}$ independent? Are they pairwise independent?
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-53"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 53 </div><div class="panel-body"> Suppose $r$ distinguishable balls are placed in $m$ labelled bins at random. Each ball has probability $p_{k}$ of going into the $k$th bin, where $p_{1}+\ldots +p_{m}=1$. Let $X_{k}$ be the number of balls that go into the $k$th bin.
+<ol>
+<li> Find the pmf of $X_{1}$.
+</li>
+<li> Find the pmf of the random variable $X_{1}+X_{2}$.
+</ol>
+</div></div></div>
+
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-54"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 54 </div><div class="panel-body"> Two fair dice  are thrown and let $X$ be the total of the two numbers that show up. Find the pmf of $X$. What is the most likely value of $X$?
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-55"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 55 </div><div class="panel-body"> Two dice (not necessarily identical, and not necessarily fair) are thrown and let $X$ be the total of the two numbers that turn up. Can you design the two dice so that $X$ is equally likely to be any of the numbers $2,3,\ldots ,12$?
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-56"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 56 </div><div class="panel-body"> A coin has probability $p$ of falling head. Assume $0 < p < 1$ and fix an integer $m\ge 1$. Toss the coin till the $m^{\mbox{\tiny{th} }}$ head occurs. Let $X$ be the number of tosses required. Show that $X$ has pmf
+$$
+f(k) = \binom{k-1}{m-1}p^{m}(1-p)^{k-m}, \hspace{4mm} k=m,m+1,m+2,\ldots.
+$$
+Find the CDF of $X$.
+
+[<strong> Note:</strong> When $m=1$, this is the Geometric distribution with parameter $p$. We say that $X$ has <em> negative-binomial distribution</em>. Some books define $Y:=X-m$ (the number of tails till you get $m$ heads) to be a negative binomial random variable. Then, $Y$ takes values  $0,1,2,\ldots$.]
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-57"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 57 </div><div class="panel-body"> A box contains $n$ coupons with one number on each coupon. We do not know the numbers but we know that they are distinct. Coupons are drawn one after another from the box, without replacement (i.e., after choosing a coupon at random, it is not put back into the box before drawing the next coupon). If the $k$th number drawn is larger than all the previous numbers, what is the chance that it is the largest of the $n$ numbers?
+
+
+</div></div></div>
+
+
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-58"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 58 </div><div class="panel-body"> Let $X$ be a random variable with distribution (CDF) $F$ and density $f$.
+<ol>
+<li> Find the distribution and density of the random variable $2X$.
+</li>
+<li> Find the distribution and density of the random variable $X+5$.
+</li>
+<li> Find the distribution and density of the random variable $-X$.
+</li>
+<li> Find the distribution and density of the random variable $1/X$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-59"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 59 </div><div class="panel-body"> Let $X$ be a random variable with $\mbox{Gamma}(\nu,\lambda)$ distribution. Let $F$ be the CDF of $X$. When $\nu$ is a positive integer, show that for $t\ge 0$,
+$$
+ F(t) = 1-e^{-\lambda t}\sum_{k=0}^{\nu-1}\frac{\lambda^{k}t^{k} }{k!}.
+$$
+[<strong> Note:</strong> Observe that this quantity is the same as $\mathbf{P}(N\ge \nu)$ where $N$ is a Poisson random variable with parameter $\lambda t$. There is a connection here but we cannot discuss it now].
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-60"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 60 </div><div class="panel-body"> For a  pdf $f(\cdot)$, the <em> mode</em> is defined as any point at which $f$ attains its maximal value (i.e., $t$ is a mode if $f(t)\ge f(s)$ for any $s$). For each of the following distributions, find the mode(s) of the distribution and the value of the pmf at the modes.
+<ol>
+<li> $N(\mu,{\sigma}^{2})$.
+</li>
+<li> $\mbox{Exp}(\lambda)$.
+</li>
+<li> $\mbox{Gamma}(\nu,1)$.
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-61"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 61 </div><div class="panel-body"> (*) Let $F$ be a CDF. For each $0 < q < 1$, the <em> $q$-quantile(s)</em> of $F$ is any number $t\in \mathbb{R}$ such that $F(s)\le q$ if $s < t$ and $F(s)\ge q$ if $s >  t$.
+<ol>
+<li> If $F$ is the CDF of $\mbox{Exp}(\lambda)$ distribution, find its $q$-quantile(s).
+</li>
+<li> If $F$ is the $N(0,1)$ distribution, use the normal tables to find the unique $q$-quantile for the following values of $q$: $0.01,0.1,0.25,0.5,0.75,0.9,0.99$.
+</li>
+<li> If $F$ is the $\mbox{Geo}(0.02)$ distribution, find a $q$-quantile for $q=0.01,0.25, 0.5,0.75,0.99$.
+</ol>
+</div></div></div>
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-62"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 62 </div><div class="panel-body">(*) Give explicit description of how you would simulate random variables from the following distributions.
+<ol>
+<li> The standard Cauchy distribution with density $f(x)=\frac{1}{\pi(1+x^{2})}$ for $x\in \mathbb{R}$.
+</li>
+<li> The $\mbox{Beta}(1/2,1/2)$ distribution with density $\frac{1}{\pi\sqrt{x(1-x)} }$.
+</li>
+<li> (<u>Do not need to submit this</u>) Draw $100$ random numbers from either of these densities (on MATLAB or any other program that gives uniform random numbers) using the above procedure and draw the histograms. Compare the histograms to the plot of the densities.
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-63"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 63 </div><div class="panel-body"> In each of the following situations, the distribution of the  random variable $X$ is given. Find the distributionof $Y$  (it is enough to find the density of $Y$).
+<ol>
+<li> $X\sim \mbox{Unif}[0,1]$ and $Y=\sin^{-1}(X)$.
+</li>
+<li> $X\sim \mbox{Unif}[0,1]$ and $Y=\cos^{-1}(X)$.
+</li>
+<li> $X\sim N(0,1)$ and $Y=X^{2}$.
+</ol>
+[<strong> Note:</strong> We define $\sin^{-1}$ to take values in $[-\pi/2,\pi/2]$ and $\cos^{-1}$ to take values in $[0,\pi]$. In the third part, observe that $f(x)=x^{2}$ is not a one-one function, so the formula given in the notes does not apply directly].
+</div></div></div>
+
+
+
+
+<p></p>
+<strong> For the next problem:</strong>  If $X$ is a random variable with density $f(x)$, then its expected value is defined as $\mathbf{E}[X]=\int_{-\infty}^{+\infty} xf(x) dx$ (this integral is defined only if $\int_{-\infty}^{+\infty} |x|f(x) dx$ is finite). We shall study this notion in greater detail in class, but for now take it as an exercise in integration. More generally, if $T:\mathbb{R}\rightarrow \mathbb{R}$, the $\mathbf{E}[T(X)]=\int_{-\infty}^{+\infty} T(x)f(x) dx$.
+<p></p>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-64"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 64 </div><div class="panel-body"> Find $\mathbf{E}[X]$ and $\mathbf{E}[X^{2}]$ for the following cases.
+<ol>
+<li> $X\sim N(\mu,{\sigma}^{2})$.
+</li>
+<li> $X\sim \mbox{Gamma}(\nu,\lambda)$. Note the answers for the particular case of $\mbox{Exp}(\lambda)$.
+</li>
+<li> $X\sim \mbox{Beta}(p,q)$.  Note the answers for the particular case of $\mbox{Unif}[0,1]$.
+</ol>
+</div></div></div>
+
+<p>&nbsp;</p>
+                <div id="theorem-65"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 65 </div><div class="panel-body"> What is the mode of the \begininparaenum[(a)] </li>
+<li> $\mbox{Pois}(\lambda)$ distribution? </li>
+<li> $\mbox{Hpergeometric}(M,W,K)$ distribution? \endinparaenum(Mode means the point(s) where the pmf (or pdf) attains its maximal value).
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-66"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 66 </div><div class="panel-body"> 
+<ol>
+<li> Let $f(k)=\frac{1}{k(k+1)}$ for integer $k\ge 1$. Show that $f$ is a pmf and find the corresponding CDF.
+</li>
+<li> Let $\alpha > 0$ and set $F(x)=1-\frac{1}{x^{\alpha} }$ for $x\ge 1$ and $F(x)=0$ for $x < 1$. Show that $F$ is a CDF and find the corresponding density function. (This is known as the <em> Pareto</em> distribution).
+</ol>
+
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-67"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 67 </div><div class="panel-body">  Give explicit description of how you would simulate random variables from the following distributions.
+<ol>
+<li> The standard Cauchy distribution with density $f(x)=\frac{1}{\pi(1+x^{2})}$ for $x\in \mathbb{R}$.
+</li>
+<li> The $\mbox{Beta}(1/2,1/2)$ distribution with density $\frac{1}{\pi\sqrt{x(1-x)} }$.
+</li>
+<li> (<u>Do not need to submit this</u>) Draw $100$ random numbers from either of these densities (on MATLAB or any other program that gives uniform random numbers) using the above procedure and draw the histograms. Compare the histograms to the plot of the densities.
+</ol>
+
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-68"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 68 </div><div class="panel-body"> Let $X$ be a random variable with distribution function $F$. Let $a > 0$ and $b\in \mathbb{R}$ and define $Y=aX+b$.
+<ol>
+<li> What is the CDF of $Y$?
+</li>
+<li> If $X$ has a density $f$, find the density of $Y$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-69"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 69 </div><div class="panel-body"> 
+<ol>
+<li> Let $X\sim \mbox{Exp}(\lambda)$. Fix $s,t > 0$ and compute the conditional probability of the event $X > t+s$ given that $X > s$.
+</li>
+<li> Let $\nu$ be a positive integer. Show that the CDF of $\mbox{Gamma}(\nu,\lambda)$ distribution is given by
+\[\begin{aligned}
+F(x)=1-e^{-\lambda x}\sum_{k=0}^{\nu-1}\frac{\lambda^{k} }{k!}x^{k}.
+\end{aligned}\]
+</ol>
+
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-70"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 70 </div><div class="panel-body"> Let $U\sim \mbox{Uniform}[0,1]$. Find the density and distribution functions of \begininparaenum[(a)] </li>
+<li> $U^{p}$ (where $p > 0$), </li>
+<li> $U/(1-U)$, </li>
+<li> $\log(1/U)$, </li>
+<li> $\frac{2}{\pi}\arcsin(U)$. \endinparaenum
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-71"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 71 </div><div class="panel-body"> Let $X\sim N(0,1)$. Find the density of \begininparaenum[(a)] </li>
+<li> $aX+b$ (where $a,b\in \mathbb{R}$), </li>
+<li> $X^{2}$ , </li>
+<li> $X^{3}$, </li>
+<li> $e^{X}$. \endinparaenum
+</div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-72"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 72 </div><div class="panel-body"> In a game, there are three closed boxes, in exactly one of which there is a prize. The player is asked to pick one of the three boxes. The organizer (who knows where the prize is), opens one of the other two boxes and shows that it is empty. Now the player has two choices, can stick to her first choice or to switch to the other closed closed. What should she do? This is known as the <em> onty hall paradox</em>. The word ''paradox'' is used to convey the strong feeling that many have that the probabilities of the two boxes are $1/2$ and $1/2$, since there is always one empty box out of the other two and it gives no information.
+
+To make the problem well-defined, one has to specify how the organizer chooses the empty box. If the player's first choice is empty, then exactly one of the other two boxes is empty and the organizer has no choice but to show that. If the player's first choice is correct, <em> assume</em> that the organizer (secretly) tosses a fair coin to choose which of the other two boxes to show. With this specification, show that the probability that the prize is in the original choice is $1/3$ (in other words, if you switch, the chances are higher, that is $2/3$).
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-73"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 73 </div><div class="panel-body"> If $F$ is a CDF, show that it can have at most countably many discontinuity points.
+</div></div></div>
+
+
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-74"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 74 </div><div class="panel-body"> (*) Let $A,B$ be two events in a common probability space. Write the joint distributions (joint pmf) of the following random variables.
+<ol>
+<li> $X={\mathbf 1}_{A}$ and $Y={\mathbf 1}_{B}$.
+</li>
+<li> $X={\mathbf 1}_{A\cap B}$ and $Y={\mathbf 1}_{A\cup B}$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-75"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 75 </div><div class="panel-body"> Let $a > 0,b > 0$ and $ab > c^{2}$. Let $(X,Y)$ have the bivariate normal distribution with density $$f(x,y)=\frac{\sqrt{ab-c^{2} }}{2\pi}e^{-\frac{1}{2}\left[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu)\right]}.$$ Show that the marginal distributions are one-dimensional normal and find the parameters. For what values of the parameters are $X$ and $Y$ independent?
+
+
+
+
+
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-76"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 76 </div><div class="panel-body"> (*) Fix $r > 0$. Let $(X,Y)$ be a random vector with density
+$$\begin{align*}
+f(x,y)=\begin{cases} \frac{1}{\pi r^{2} } & \mbox{ if }x^{2}+y^{2}\le r^{2}, \\ 0 & \mbox{ otherwise}. \end{cases}
+\end{align*}$$
+ This models the experiment  of drawing a point at random from a disk of radius $r$ centered at $(0,0)$.
+<ol>
+<li> Find the marginal densities of $X$ and $Y$ (i.e., find the density of $X$ and find the density of $Y$ separately).
+</li>
+<li> Can you solve the same problem if the point is drawn uniformly from the ellipse $\{(x,y){\; : \;} \frac{x^{2} }{a^{2} }+\frac{y^{2} }{b^{2} }\le 1\}$?
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-77"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 77 </div><div class="panel-body"> (*) Let ${\bf  X}=(X_{1},\ldots ,X_{n-1})$ be a Multinomial random variable with parameters $r,n,p_{1},\ldots,p_{n}$ where $r,n$ are positive integers and $p_{i}$ are non-negative numbers that sum to $1$. This means that ${\bf  X}$ has pmf
+$$
+f(k_{1},\ldots ,k_{n-1})=\frac{n!}{k_{1}!k_{2}!\ldots k_{n-1}!(r-k_{1}-\ldots -k_{n-1})!}p_{1}^{k_{1} }\ldots p_{n-1}^{k_{n-1} }p_{n}^{r-k_{1}-\ldots -k_{n-1} }
+$$
+$\mbox{ if }k_{i}\ge 0\mbox{ are integers that add to at most }r$.
+<ol>
+<li> Let $m\le n$. Show that the  distribution of $(X_{1},\ldots ,X_{m-1})$ is Multinomial with parameters $r,m,\tilde{p}_{1},\ldots ,\tilde{p}_{m}$ where $\tilde{p}_{i}=p_{i}$ for $i\le m-1$ and $\tilde{p}_{m}=p_{m}+\ldots +p_{n}$.
+</li>
+<li> The distribution of $X_{k}$ is $\mbox{Bin}(r,p_{k})$.
+</li>
+<li> (<u>Do not need to submit this</u>) Let $k_{1} < k_{2} < \ldots  < k_{m}=n$. Define $Y_{1}=X_{1}+\ldots +X_{k_{1}-1}$, $Y_{2}=X_{k_{1} }+\ldots +X_{k_{2}-1}$, \dots $Y_{m}=X_{k_{m-1} }+\ldots +X_{k_{m}-1}$. What is the distribution of $(Y_{1},\ldots ,Y_{m})$?
+</ol>
+[<strong> Note</strong> Remember the balls-in-bins interpretation of Multinomial. Based on it, try to guess the answers before you start calculating anything!].
+</div></div></div>
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-78"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 78 </div><div class="panel-body"> Let $r$ balls be placed in $m$ bins at random. Let $X_{k}$ be the number of balls in the $k^{\mbox{th} }$ bin. Recall that $(X_{1},\ldots ,X_{m})$ has a multinomial distribution. Find the joint distribution of $(X_{1},X_{2})$ and the marginal distribution of $X_{1}$ and of $X_{2}$.
+
+
+
+
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-79"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 79 </div><div class="panel-body"> (*) [<em> Submit only parts (1) and (2)</em>]
+<ol>
+<li> Let $X$ and $Y$ be independent integer-valued random variables with pmf $f$ and $g$ respectively. That is, $\mathbf{P}\{X=k\}=f(k)$ and $\mathbf{P}\{Y=k\}g(k)$ for every $k\in \mathbb{Z}$. Then, show that $X+Y$ has the pmf $h$ given by $h(k)=\sum_{n\in \mathbb{Z}}f(n)g(k-n)$ for each $k\in \mathbb{Z}$.
+</li>
+<li>  Let $X\sim \mbox{Pois}(\lambda)$ and $Y\sim\mbox{Pois}(\mu)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mbox{Pois}(\lambda+\mu)$.
+</li>
+<li> Let $X\sim \mbox{Bin}(n,p)$ and $Y\sim\mbox{Bin}(m,p)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mbox{Bin}(n+m,p)$.
+</li>
+<li> Let $X\sim \mbox{Geo}(p)$ and $Y\sim \mbox{Geo}(p)$ and assume that $X$ and $Y$ are independent. Show that $X+Y$ has negative binomial distribution and find the parameters.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-80"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 80 </div><div class="panel-body"> (*) [<em> Submit only parts (1) and (2)</em>]
+<ol>
+<li> Let $X$ and $Y$ be independent random variables with densities $f(x)$ and $g(y)$ respectively. Use the change of variable formula to show that $X+Y$ has the density $h(u)$ given by $h(u)=\int_{-\infty}^{\infty}f(s)g(u-s)ds$.
+</li>
+<li> Let $X,Y$ be independent $\mbox{Unif}[-1,1]$ random variables. Find the density of $X+Y$.
+</li>
+<li> Let $X\sim \mbox{Gamma}(\mu,\lambda)$ and $Y\sim\mbox{Gamma}(\nu,\lambda)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mbox{Gamma}(\mu+\nu,\lambda)$.
+</li>
+<li> Let $X\sim N(\mu_{1},{\sigma}_{1}^{2})$ and $Y\sim N(\mu_{2},{\sigma}_{2}^{2})$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim N(\mu_{1}+\mu_{2},{\sigma}_{1}^{2}+{\sigma}_{2}^{2})$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-81"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 81 </div><div class="panel-body"> Find examples of discrete probability spaces and  events $A,B,C$ so that the following happen.
+<ol>
+<li> The events $A,B,C$ are pairwise independent but not mutually independent.
+</li>
+<li> $\mathbf{P}(A\cap B\cap C)=\mathbf{P}(A)\mathbf{P}(B)\mathbf{P}(C)$ but $A,B,C$ are not independent.
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-82"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 82 </div><div class="panel-body"> (*) In each of the following cases, $X$ and $Y$ are <u>independent</u> random variables with the given distributions. You are asked to find the distribution of $X+Y$ using the convolution formula (when you encounter a named distribution, do identify it!).
+<ol>
+<li> $X\sim \mbox{Gamma}(\nu,\lambda)$ and $Y\sim \mbox{Gamma}(\nu',\lambda)$.
+</li>
+<li> $X\sim N(\mu_{1},{\sigma}_{1}^{2})$ and $Y\sim N(\mu_{2},{\sigma}_{2}^{2})$.
+</li>
+<li> $X\sim \mbox{Pois}(\lambda)$ and $Y\sim \mbox{Pois}(\lambda')$.
+</li>
+<li> $X\sim \mbox{Geo}(p)$ and $Y\sim \mbox{Geo}(p)$.
+</ol>
+[<strong> Note:</strong> Submit 2, 3, 4 only]
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-83"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 83 </div><div class="panel-body">  Use the change of variable formula to solve the following problems.
+<ol>
+<li> Let $X\sim \mbox{Pois}(\lambda)$ and $Y\sim \mbox{Pois}(\lambda')$ be independent. Let $Z=X+Y$. Show that the conditional distribution of $X$ given $Z=m$ is $\mbox{Bin}(m,\frac{\lambda}{\lambda+\lambda'})$.
+</li>
+<li> Let $X\sim \mbox{Gamma}(\nu,\lambda)$ and $Y\sim \mbox{Gamma}(\nu',\lambda)$ be independent. Show that $X/(X+Y)$ has a Beta distribution and find its parameters.
+</li>
+<li> Let $X\sim N(0,1)$ and $Y\sim N(0,1)$ be independent. Show that $X/Y$ has Cauchy distribution.
+</ol>
+
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-84"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 84 </div><div class="panel-body"> (*) Let $(X,Y)$ be a bivariate normal with density
+$$
+\frac{\sqrt{ab-c^{2} }}{2\pi}e^{-\frac{1}{2}(a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu))}
+$$ where $a,b, ab-c^{2}$ are all positive and $\mu,\nu$ are any real numbers.
+<ol>
+<li> Show that $\mathbf{E}[X]=\mu$, $\mathbf{E}[Y]=\nu$, $\mbox{Var}(X)={\sigma}_{1,1}$, $\mbox{Var}(Y)\sim {\sigma}_{2,2}$ and $\mbox{ Cov}(X,Y)={\sigma}_{1,2}$ where the matrix $\Sigma$ (called the covariance matrix of $(X,Y)$) is defined as
+$$
+\Sigma=4]{\left[\begin{array}{cc}  #1 & #2 \\ #3 & #4  \end{array} \right]{{\sigma}_{1,1} }{{\sigma}_{1,2} }{{\sigma}_{2,1} }{{\sigma}_{2,2} } := 4]{\left[\begin{array}{cc}  #1 & #2 \\ #3 & #4  \end{array} \right]{a}{c}{c}{b}^{-1}.
+$$
+</li>
+<li> Find the conditional density of $Y$ given $X$. When  are  $X$ and $Y$ independent? (''When'' means  under what conditions on the parameters $a,b,c,\mu,\nu$ or in terms of ${\sigma}_{1,1},{\sigma}_{2,2},{\sigma}_{1,2},\mu,\nu$?).
+
+</ol>
+
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-85"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 85 </div><div class="panel-body"> In these problems, use change of variable formula in one dimension to show that the families of distributions we have defined
+<ol>
+<li> If $X\sim \mbox{Exp}(\lambda)$, show that $\lambda X\sim \mbox{Exp}(1)$. More generally, if $X\sim \mbox{Gamma}(\nu,\lambda)$, show that $\lambda X\sim \mbox{Gamma}(\nu,1)$.
+</li>
+<li> If $X\sim N(\mu,{\sigma}^{2})$, show that $\frac{X-\mu}{{\sigma}}\sim N(0,1)$.
+</ol>
+</div></div></div>
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-86"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 86 </div><div class="panel-body"> Let $X_{1},X_{2},X_{3}$ be independent random variables, each having $\mbox{Ber}_{\pm}(1/2)$ distribution. This means $\mathbf{P}(X_{1}=1)=\mathbf{P}(X_{1}=-1)=\frac{1}{2}$.
+<ol>
+<li> Let $Y_{1}=X_{2}X_{3}$, $Y_{2}=X_{1}X_{3}$ and $Y_{3}=X_{1}X_{2}$. Show that $Y_{1},Y_{2},Y_{3}$ are pairwise independent (i.e., any two of them are independent) but  are not independent.
+</li>
+<li> Can you find three events $A,B,C$ in some probability space such that they are pair-wise independent but not independent?
+</ol>
+</div></div></div>
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-87"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 87 </div><div class="panel-body">
+<ol>
+<li> Let $A_{1},\ldots ,A_{n}$ be independent with $\mathbf{P}(A_{i})=p$ for all $i$. Find the probability that    (a) \ none of the events $A_{1},\ldots ,A_{n}$ occur,    (b) \ all of the events $A_{1},\ldots ,A_{n}$ occur.
+</li>
+<li> Let $X_{1},X_{2}$ be independent random variables, both having $\mbox{Exp}(\lambda)$ distribution. Let $Z=\min\{X_{1},X_{2}\}$. Show that $Z\sim \mbox{Exp}(2\lambda)$. What if we take the minimum of $n$ independent exponential random variables?
+</ol>
+</div></div></div>
+
+<p></p>
+
+<p>&nbsp;</p>
+                <div id="theorem-88"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 88 </div><div class="panel-body"> Let $A,B$ be two events in a common probability space. Write the joint distributions (joint pmf) of the following random variables.
+<ol>
+<li> $X={\mathbf 1}_{A}$ and $Y={\mathbf 1}_{B}$.
+</li>
+<li> $X={\mathbf 1}_{A\cap B}$ and $Y={\mathbf 1}_{A\cup B}$.
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-89"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 89 </div><div class="panel-body">
+<ol>
+<li> Let $X\sim \mbox{Exp}(\lambda)$. For any $t,s > 0$, show that $\mathbf{P}\{X > t+s\ \pmb{\big|} \  X > t\}=\mathbf{P}\{X > s\}$. (This is called the <em> memoryless property</em> of the exponential distribution).
+</li>
+<li> Show that if a non-negative random variable $Y$ has memoryless property (i.e., $\mathbf{P}\{Y > t+s\ \pmb{\big|} \  Y > t\}=\mathbf{P}\{Y > s\}$ for all $s,t > 0$), then $Y$ must have exponential distribution.
+</ol>
+</div></div></div>
+
+
+<p></p>
+
+<p>&nbsp;</p>
+                <div id="theorem-90"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 90 </div><div class="panel-body">
+<ol>
+<li> Let $X$ and $Y$ be independent integer-valued random variables with pmf $f$ and $g$ respectively. That is, $\mathbf{P}\{X=k\}=f(k)$ and $\mathbf{P}\{Y=k\}g(k)$ for every $k\in \mathbb{Z}$. Then, show that $X+Y$ has the pmf $h$ given by $h(k)=\sum_{n\in \mathbb{Z}}f(n)g(k-n)$ for each $k\in \mathbb{Z}$.
+</li>
+<li>  Let $X\sim \mbox{Pois}(\lambda)$ and $Y\sim\mbox{Pois}(\mu)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mbox{Pois}(\lambda+\mu)$.
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-91"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 91 </div><div class="panel-body"> Continuation of the previous problem.
+<ol>
+<li> Let $X\sim \mbox{Bin}(n,p)$ and $Y\sim\mbox{Bin}(m,p)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mbox{Bin}(n+m,p)$.
+</li>
+<li> Let $X\sim \mbox{Geo}(p)$ and $Y\sim \mbox{Geo}(p)$ and assume that $X$ and $Y$ are independent. Show that $X+Y$ has negative binomial distribution and find the parameters.
+</ol>
+</div></div></div>
+
+<p></p>
+
+<p>&nbsp;</p>
+                <div id="theorem-92"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 92 </div><div class="panel-body">
+<ol>  \colorblue
+<li> Let $X$ and $Y$ be independent random variables with densities $f(x)$ and $g(y)$ respectively. Use the change of variable formula to show that $X+Y$ has the density $h(u)$ given by $h(u)=\int_{-\infty}^{\infty}f(s)g(u-s)ds$.
+</li>
+<li> Let $X,Y$ be independent $\mbox{Unif}[-1,1]$ random variables. Find the density of $X+Y$.
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-93"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 93 </div><div class="panel-body"> Continuation of the previous problem.
+<ol>
+<li> Let $X\sim \mbox{Gamma}(\mu,\lambda)$ and $Y\sim\mbox{Gamma}(\nu,\lambda)$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim \mbox{Gamma}(\mu+\nu,\lambda)$.
+</li>
+<li> Let $X\sim N(\mu_{1},{\sigma}_{1}^{2})$ and $Y\sim N(\mu_{2},{\sigma}_{2}^{2})$ and assume that $X$ and $Y$ are independent. Show that $X+Y\sim N(\mu_{1}+\mu_{2},{\sigma}_{1}^{2}+{\sigma}_{2}^{2})$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-94"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 94 </div><div class="panel-body"> Let $(X,Y)$ have the bivariate normal distribution with density $$f(x,y)=\frac{\sqrt{ab-c^{2} }}{2\pi}e^{-\frac{1}{2}\left[ax^{2}+by^{2}+2cxy\right]}.$$ Assume that $a > 0,c > 0,ab-c^{2} > 0$ so that this is a valid density.
+<ol>
+<li> Show that the marginal distributions are one-dimensional normal and find the parameters.
+</li>
+<li> For what values of the parameters are $X$ and $Y$ independent?
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-95"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 95 </div><div class="panel-body"> A few more exercises in change of variable formula.
+<ol>
+<li> If $X,Y$ are independent $N(0,1)$ random variables, show that $X/Y$ has the Cauchy distribution (with density $\frac{1}{\pi(1+x^{2})}$).
+</li>
+<li> If $X\sim \mbox{Gamma}(\alpha,1)$, $Y\sim \mbox{Gamma}(\beta,1)$ are independent, then show that $X+Y$ and $X/(X+Y)$ are independent, $X+Y\sim \mbox{Gamma}(\alpha+\beta,1)$ and $X/(X+Y)\sim \mbox{Beta}(\alpha,\beta)$.
+</li>
+<li> If $X,Y$ are independent $N(0,1)$ random variables, show that $X^{2}+Y^{2}$ has $\mbox{Exp}(1/2)$ distribution.
+</ol>
+</div></div></div>
+
+
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-96"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 96 </div><div class="panel-body"> Find the means and variances of $X$ in each of the following cases.
+$$
+(a)   X\sim \mbox{Bin}(n,p). \qquad (b)   X\sim \mbox{Pois}(\lambda). \qquad (c) X\sim \mbox{Geo}(p).
+$$
+
+
+
+
+
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-97"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 97 </div><div class="panel-body">
+Find the means and variances of $X$ in each of the following cases.
+$$
+(a)   X\sim \mbox{N}(\mu,{\sigma}^{2}). \qquad (b)   X\sim \mbox{Gamma}(\nu,\lambda). \qquad (c)   X\sim \mbox{Beta}(\nu_{1},\nu_{2}). \qquad (d)   X\sim \mbox{Unif}[a,b].
+$$
+
+
+
+
+
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-98"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 98 </div><div class="panel-body">
+<ol>
+<li> Let $\xi\sim \mbox{Exp}(\lambda)$. For any $t,s\ge 0$, show that $\mathbf{P}\{\xi > t+s\ \pmb{\big|} \  \xi > t\}=\mathbf{P}\{\xi > s\}$. (This is called the <em> memoryless property</em> of the exponential distribution).
+</li>
+<li> Show that if a non-negative random variable $\xi$ has memoryless property (i.e., $\mathbf{P}\{\xi > t+s\ \pmb{\big|} \  \xi > t\}=\mathbf{P}\{\xi > s\}$), then $\xi$ must have exponential distribution.
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-99"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 99 </div><div class="panel-body"> Let $X$ be a non-negative random variable with CDF $F(t)$.
+<ol>
+<li> Show that $\mathbf{E}[X]=\int\limits_{0}^{\infty}(1-F(t)) dt$ and more generally $\mathbf{E}[X^{p}]=\int\limits_{0}^{\infty}pt^{p-1}(1-F(t))dt$.
+</li>
+<li> If $X$ is non-negative integer valued, then $\mathbf{E}[X]=\sum_{k=1}^{\infty}\mathbf{P}\{X\ge k\}$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-100"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 100 </div><div class="panel-body"> (*) Find all possible joint distributions of $(X,Y)$ such that $X\sim\mbox{Ber}(1/2)$ and $Y\sim \mbox{Ber}(1/2)$. Find the correlation for each such joint distribution.
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-101"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 101 </div><div class="panel-body"> Let $(X,Y)$ have the bivariate normal distribution with density $$f(x,y)=\frac{\sqrt{ab-c^{2} }}{2\pi}e^{-\frac{1}{2}\left[a(x-\mu)^{2}+b(y-\nu)^{2}+2c(x-\mu)(y-\nu)\right]}.$$
+<ol>
+<li> Find the marginal distributions of $X$ and of $Y$.
+</li>
+<li> Find means and  variances of $X$ and $Y$ and the  covariance and correlation of $X$ with $Y$. Under what conditions on the parameters are $X$ and $Y$ independent?
+</ol>
+[<strong> Note:</strong> It is very useful to introduce the matrix $\Sigma=4]{\left[\begin{array}{cc}  #1 & #2 \\ #3 & #4  \end{array} \right]{a}{c}{c}{b}^{-1}=4]{\left[\begin{array}{cc}  #1 & #2 \\ #3 & #4  \end{array} \right]{\frac{b}{\Delta} }{-\frac{c}{\Delta} }{-\frac{c}{\Delta} }{\frac{a}{\Delta} }$ which is called the <em> covariance matrix</em> of $(X,Y)$. The answers can be written in terms of the entries of $\Sigma$.]
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-102"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 102 </div><div class="panel-body"> Let $r$ balls be placed in $m$ bins at random. Let $X_{k}$ be the number of balls in the $k^{\mbox{th} }$ bin. Recall that $(X_{1},\ldots ,X_{m})$ has a multinomial distribution.
+<ol>
+<li> Find the joint distribution of $(X_{1},X_{2})$ and the marginal distribution of $X_{1}$ and of $X_{2}$.
+</li>
+<li> Find the means, variances, covariance and correlation of $X_{1}$ and $X_{2}$.
+</li>
+<li> Let $Y$ be the number of empty bins. Find the mean and variance of $Y$. [<strong> Hint:</strong> Write $Y$ as ${\mathbf 1}_{A_{1} }+\ldots +{\mathbf 1}_{A_{m} }$ where $A_{k}$ is the event that the $k^{\mbox{th} }$ bin is empty].
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-103"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 103 </div><div class="panel-body"> (*) A box contains $N$ coupons where the number $w_{k}$ is written on the $k^{\mbox{th} }$ coupon. Let $\mu=\frac{1}{N}\sum_{k=1}^{N}w_{k}$ be the ''population mean'' and let ${\sigma}^{2}=\frac{1}{n}\sum_{i=1}^{n}(w_{i}-\mu)^{2}$ be the ''population variance''. A sample of size $m$ is drawn from the population, the values seen are $X_{1},\ldots ,X_{m}$. The sample mean $\bar{X}_{m}=(X_{1}+\ldots +X_{m})/m$ is formed. Find the mean and variance of $\bar{X}_{m}$ in the following two cases.
+<ol>
+<li> The samples are drawn with replacement (i.e., draw a coupon, note the number, put the coupon back in the box, and draw again\dots).
+</li>
+<li> The samples are drawn without replacement.
+</ol>
+</div></div></div>
+
+
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-104"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 104 </div><div class="panel-body"> Find the expectation and variance for a random variable with the following distributions.
+<ol>
+<li>    (a) $\mbox{Bin}(n,p)$,   (b) $\mbox{Geo}(p)$,   (c) $\mbox{Pois}(\lambda)$,   (d) $\mbox{Hypergeo}(N_{1},N_{2},m)$.
+</li>
+<li>   (a) $N(\mu,{\sigma}^{2})$,   (b) $\mbox{Gamma}(\nu,\lambda)$,   (c) $\mbox{Beta}(p,q)$.
+</ol>
+[<strong> Note:</strong> Although the computations are easy, the answers you get are worth remembering as they occur in various situations.]
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-105"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 105 </div><div class="panel-body"> (*) Place $r$ balls in $n$ bins uniformly at random.  Let $X_{k}$ be the number of balls in the $k^{\mbox{ \tiny th} }$ bin. Find $\mathbf{E}[X_{k}]$, $\mbox{Var}(X_{k})$ and $\mbox{ Cov}(X_{k},X_{\ell})$ for $1\le k,\ell\le n$. [<strong> Hint:</strong> First do the case when $r=1$. Then think how to use that to get the general case].
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-106"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 106 </div><div class="panel-body"> Suppose $X,Y,Z$ are i.i.d. random variables with each having marginal density $f(t)$.
+<ol>
+<li> Find $\mathbf{E}\left[\frac{X}{X+Y+Z}\right]$ (assume that it exists).
+</li>
+<li> Find $\mathbf{P}(X < Y > Z)$.
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-107"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 107 </div><div class="panel-body"> Consider the following integrals
+$$
+ \int\limits_{0}^{1}\frac{4}{1+x^{2} }dx = \pi, \qquad \int\limits_{0}^{1}\frac{1}{\sqrt{x(1-x)} }dx=\pi.
+$$
+In either case, use Monte-Carlo integration with $100$, $1000$ and $10000$ samples from uniform distribution to find approximations of $\pi$. Compare the approximations  to the true value $3.1416\ldots$.
+
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-108"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 108 </div><div class="panel-body"> Recall the <em> coupon collector problem</em>. A box contains $n$ coupons labelled $1,2,\ldots ,n$. Coupons are drawn at random from the box, repeatedly and with replacement. Let $T_{n}$ be the number of draws needed till each of the coupons has appeared at least once.
+<ol>
+<li> Show that $\mathbf{E}[T_{n}]\sim n\log n$ (this just means $\frac{1}{n\log n}\mathbf{E}[T_{n}]\rightarrow 1$).
+</li>
+<li> Show that $\mbox{Var}(T_{n})\le 2n^{2}$.
+</li>
+<li> Show that $\mathbf{P}\left( \left.\vphantom{\hbox{\Large (}}\right| \frac{T_{n} }{n\log n}-1\left.\vphantom{\hbox{\Large (}}\right| > \delta\right) \rightarrow 0$ for any $\delta > 0$.
+</ol>
+[<em> Hint:</em> Consider the number of draws needed to get the first new coupon, the further number of draws needed to get the next coupon and so on].
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-109"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 109 </div><div class="panel-body"> (**) Recall the coupon collector problem where coupons are drawn repeatedly (with replacement) from a box containing coupons labelled $1,2,\ldots ,N$. Let $T_{N}$ be the number of draws made till all the coupons are seen.
+<ol>
+<li> Find $\mathbf{E}[T_{N}]$ and $\mbox{Var}(T_{N})$.
+</li>
+<li> Use Chebyshev's inequality to show that for any $\delta > 0$, as $N\rightarrow \infty$ we have $$\mathbf{P}\{(1-\delta)N\log N\le T_{N}\le (1+\delta)N\log N\}\rightarrow 1.$$
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-110"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 110 </div><div class="panel-body"> (*) Recall the problem of a psychic guessing cards. Consider a shuffled deck of $n$ cards and a psychic is supposed to guess the order of cards. Let $M_{n}$ be the number of correct guesses.
+<ol>
+<li> Assuming random guessing by the psychic, show that $\mathbf{E}[M_{n}]=1$ and $\mbox{Var}(M_{n})=1$. [<strong> Hint</strong> Write $M_{n}$ as $X_{1}+\ldots +X_{n}$ where $X_{k}$ is the indicator of the event that the $k^{\mbox{th} }$ card is guessed correctly].
+</li>
+<li> Consider a variant of the game where the cards are dealt one by one and before each card is dealt, the psychic guesses what  card it is going to be. In this case find $\mathbf{E}[M_{n}]$ and $\mbox{Var}(M_{n})$.
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-111"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 111 </div><div class="panel-body">  (**) Let $X$ be a random variable. Let $f(a)=\mathbf{E}[|X-a|]$ (makes sense if the first moment exists) and $g(a)=\mathbf{E}[(X-a)^{2}]$ (makes sense if the second moment exists).
+<ol>
+<li> Show that $f$ is minimized uniquely at $a=\mathbf{E}[X]$.
+</li>
+<li> Show that the minimizers of $g$ are precisely the medians of $X$ (recall that a number $b$ is a median of $X$ if $\mathbf{P}\{X\ge t\}\ge \frac{1}{2}$ and $\mathbf{P}\{X\le t\}\ge \frac{1}{2}$).
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-112"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 112 </div><div class="panel-body">  (**) Let $X$ be a non-negative random variable. Read the discussion following the problem to understand the significance of this problem.
+<ol>
+<li> Suppose $X_{n}$ takes the values $n^{2}$ and $0$ with probabilities $1/n$ and $1-(1/n)$, respectively. Compare $\mathbf{P}\{X_{n} > 0\}$ and $\mathbf{E}[X_{n}]$ for large $n$.
+</li>
+<li> Show the <em> second moment inequality</em> (aka <em> Paley-Zygmund inequality</em>): $\mathbf{P}\{X > 0\}\ge (\mathbf{E}[X])^{2}/\mathbf{E}[X^{2}]$.
+</ol>
+[<strong> Discussion:</strong> Markov's inequality tells us that that the tail probability $\mathbf{P}\{X\ge t\}$ can be bounded from above using $\mathbf{E}[X]$. In particular, $\mathbf{P}\{X\ge r\mathbf{E}[X]\}\le \frac{1}{r}$. A natural question is whether there is a lower bound for the tail probability in terms of the expected value. In other words, if the mean is large, must the random variable be large with significant probability?
+
+The first part shows that the answer is `No' in general. The second part shows that the answer is `Yes', provided we have control on the second moment $\mathbf{E}[X^{2}]$ from above. Notice why the inequality does not give any useful bound in the first part of the problem (what happens to the second moment of $X_{n}$?)]
+</div></div></div>
+
+<p></p>
+<strong>Hoeffding's inequality :</strong> Using Chebyshev's  inequality we got a bound of ${\sigma}^{2}/nt^{2}$ for the probability that the sample mean deviates from the population mean by more than $t$. This is very general. If we make more assumptions about our random variable, we can give better bounds. The following exercise is to illustrate this.
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-113"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 113 </div><div class="panel-body"> (Optional!) Let $X_{1},\ldots ,X_{n}$ be i.i.d. $\mbox{Ber}_{\pm}(1/2)$. That is,  $\mathbf{P}\{X_{k}=+1\}=\mathbf{P}\{X_{k}=-1\}=\frac{1}{2}$. Let  $\bar{X}_{n}=\frac{1}{n}(X_{1}+\ldots +X_{n})$. Show that
+$$
+\mathbf{P}\{|\bar{X}_{n}| > t\}\le 2e^{-nt^{2}/2}
+$$
+by following these steps.
+<ol>
+<li> Show that $\mathbf{P}\{\bar{X}_{n} > t\}\le e^{-\theta t}\left(\frac{e^{\theta/n }+e^{-\theta/n} }{2}\right)^{n}$ for any $\theta > 0$.
+</li>
+<li> Prove the inequality $e^{x}+e^{-x}\le 2 e^{x^{2}/2}$ for any $x > 0$.
+</li>
+<li> Use the first two parts to show that $\mathbf{P}\{\bar{X}_{n} > t\}\le e^{-nt^{2}/2}$ (you must make an appropriate choice of $\theta$ depending on $t$).
+</li>
+<li> Now consider $|\bar{X}_{n}|$ and break $\mathbf{P}\{|\bar{X}_{n}| > t\}$ into two summands to get the desired inequality.
+</ol>
+[<strong> Note:</strong> Here $\mu=0$ and ${\sigma}^{2}=1$, and hence Chebyshev's inequality only gives the bound $
+\mathbf{P}\{|\bar{X}_{n}| > t\}\le \frac{1}{nt^{2} }$. Do you see that Hoeffding's inequality is better?]
+
+
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-114"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 114 </div><div class="panel-body"> Find the expectation and variance for a random variable with the following distributions.
+\begininparaenum[(a)] </li>
+<li> $\mbox{Bin}(n,p)$, </li>
+<li> $\mbox{Geo}(p)$, </li>
+<li> $\mbox{Pois}(\lambda)$, </li>
+<li> $\mbox{Hypergeo}(N_{1},N_{2},m)$.
+\endinparaenum
+[<strong> Note:</strong> Although the computations are easy, the answers you get are worth remembering as they occur in various situations.]
+</div></div></div>
+
+<p></p>
+
+<p>&nbsp;</p>
+                <div id="theorem-115"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 115 </div><div class="panel-body"> Find the expectation and variance for a random variable with the following distributions.
+\begininparaenum[(a)] </li>
+<li>  $N(\mu,{\sigma}^{2})$, </li>
+<li> $\mbox{Gamma}(\nu,\lambda)$, </li>
+<li> $\mbox{Beta}(p,q)$.
+\endinparaenum
+[<strong> Note:</strong> Although the computations are easy, the answers you get are worth remembering as they occur in various situations.]
+</div></div></div>
+
+
+<p></p>
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-116"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 116 </div><div class="panel-body"> Place $r$ balls in $n$ bins uniformly at random.  Let $X_{k}$ be the number of balls in the $k^{\mbox{ \tiny th} }$ bin. Find $\mathbf{E}[X_{k}]$, $\mbox{Var}(X_{k})$ and $\mbox{ Cov}(X_{k},X_{\ell})$ for $1\le k,\ell\le n$. [<strong> Hint:</strong> First do the case when $r=1$. Then think how to use that to get the general case].
+</div></div></div>
+
+<p></p>
+
+<p>&nbsp;</p>
+                <div id="theorem-117"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 117 </div><div class="panel-body"> Let $X$ be a non-negative random variable with CDF $F(t)$.
+<ol>
+<li> Show that $\mathbf{E}[X]=\int_{0}^{\infty}(1-F(t)) dt$ and more generally $\mathbf{E}[X^{p}]=\int_{0}^{\infty}pt^{p-1}(1-F(t))dt$. [<strong> Hint:</strong> In showing this, you may assume that $X$ has a density if you like, but it is not necessary for the above formulas to hold true]
+</li>
+<li> If $X$ is non-negative integer valued, then $\mathbf{E}[X]=\sum_{k=1}^{\infty}\mathbf{P}\{X\ge k\}$.
+</ol>
+</div></div></div>
+
+
+
+<p></p>
+
+<p>&nbsp;</p>
+                <div id="theorem-118"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 118 </div><div class="panel-body"> A deck consists of  cards labelled $1,2,\ldots ,N$. The deck is shuffled well. Let $X$ be the label on the first card and let $Y$ be the label on the second card. Find the means and variances of $X$ and $Y$ and the  covariance of $X$ and $Y$.
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-119"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 119 </div><div class="panel-body"> A box contains $N$ coupons labelled $1,2,\ldots ,N$. A sample of size $m$ is drawn from the population and the sample average $\bar{X}_{m}$ is computed. Find the mean and  standard deviation of $\bar{X}_{m}$ in both the following cases.
+<ol>
+<li> The $m$ coupons are drawn with replacement.
+</li>
+<li> The $m$ coupons are drawn without replacement (in this case, assume $m\le N$).
+</ol>
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-120"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 120 </div><div class="panel-body"> Let $X\sim N(0,1)$. Although it is not possible  to get an exact expression for the CDF of $X$, show that for any $t > 0$,
+\[\begin{aligned}
+\mathbf{P}\{X\ge t\}\le \frac{1}{\sqrt{2\pi} }\frac{e^{-t^{2}/2} }{t}
+\end{aligned}\]
+which shows that the tail of the CDF decays rapidly. [<strong> Hint:</strong> Use the idea used in the proof of Markov's inequality]
+</div></div></div>
+
+<p></p>
+The following problem is for the more mathematically minded students. You may safely skip this.
+
+<p>&nbsp;</p>
+                <div id="theorem-121"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 121 </div><div class="panel-body"> <em> The coupon collector problem</em>. A box contains $n$ coupons labelled $1,2,\ldots ,n$. Coupons are drawn at random from the box, repeatedly and with replacement. Let $T_{n}$ be the number of draws needed till each of the coupons has appeared at least once.
+<ol>
+<li> Show that $\mathbf{E}[T_{n}]\sim n\log n$ (this just means $\frac{1}{n\log n}\mathbf{E}[T_{n}]\rightarrow 1$).
+</li>
+<li> Show that $\mbox{Var}(T_{n})\le 2n^{2}$.
+</li>
+<li> Show that $\mathbf{P}\left( \left.\vphantom{\hbox{\Large (}}\right| \frac{T_{n} }{n\log n}-1\left.\vphantom{\hbox{\Large (}}\right| > \delta\right) \rightarrow 0$ for any $\delta > 0$.
+</ol>
+[<em> Hint:</em> Consider the number of draws needed to get the first new coupon, the further number of draws needed to get the next coupon and so on].
+</div></div></div>
+
+
+
+<p></p>
+
+<p>&nbsp;</p>
+                <div id="theorem-122"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 122 </div><div class="panel-body"> Let $X_{1},X_{2},\ldots$ be i.i.d. $\mbox{Uniform}[1,2]$ distribution. Let $S=X_{1}+\ldots +X_{100}$. Give approximate quantiles at levels $0.01$, $0.25$, $0.5$, $0.75$, $0.99$ for $S$. Use CLT and normal distribution tables.
+</div></div></div>
+
+
+<p></p>
+
+<p>&nbsp;</p>
+                <div id="theorem-123"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 123 </div><div class="panel-body">  Let $X_{1},\ldots ,X_{n}$ be i.i.d. samples from a parametric family of discrete distributions. In each of the following cases, find the MLE for the unknown parameter(s) and find the bias.
+<ol>
+<li> $X_{i}$ are i.i.d. $\mbox{Ber}(p)$ where $p$ is unknown.
+</li>
+<li> $X_{i}$ are i.i.d. $N(\mu,{\sigma}^{2})$ where $\mu,{\sigma}^{2}$ are unknown.
+</ol>
+</div></div></div>
+
+
+<p></p>
+
+<p>&nbsp;</p>
+                <div id="theorem-124"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 124 </div><div class="panel-body">  Let $X_{1},\ldots ,X_{n}$ be i.i.d. samples from a parametric family of discrete distributions. In each of the following cases, find the MLE for the unknown parameter(s) and calculate the bias.
+<ol>
+<li> $X_{i}$ are i.i.d. $\mbox{Geo}(p)$ where $p$ is unknown.
+</li>
+<li> $X_{i}$ are i.i.d. $\mbox{Unif}[a,b]$ where $a,b$ are unknown.
+</ol>
+</div></div></div>
+
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-125"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 125 </div><div class="panel-body"> Let $(X_{1},Y_{1}),\ldots ,(X_{n},Y_{n})$ be i.i.d. samples from a bivariate distribution. Let $\tau=\mbox{Cov}(X_{1},Y_{1})$. Let $r_{n}=\frac{1}{n}\sum_{k=1}^{n}(X_{k}-\bar{X}_{n})(Y_{k}-\bar{X}_{n})$ be the sample covariance.
+<ol>
+<li> Show that $r_{n}$ is a biased estimate for $\tau$ and find the bias.
+</li>
+<li> Modify the estimate $r_{n}$ to get an unbiased estimate of $\tau$.
+</ol>
+[<strong> Remark:</strong> It is often convenient, here and elsewhere, to realise that $\tau=\mathbf{E}[X_{1}Y_{1}]-\mathbf{E}[X_{1}]\mathbf{E}[Y_{1}]$ and $r_{n}=(\frac{1}{n}\sum_{k=1}^{n}X_{k}Y_{k})-\bar{X}_{n}\bar{Y}_{n}$.]
+</div></div></div>
+
+<p></p>
+<p>&nbsp;</p>
+                <div id="theorem-126"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 126 </div><div class="panel-body"> Let $X_{1},X_{2},\ldots ,X_{n}$ be i.i.d. random variables from a distribution $F$. Let $M_{n}$ be a median of $X_{1},\ldots ,X_{n}$. Assume that the distribution $F$ has a unique median, that is there is a unique number $m$ such that $F(m)=\frac12$. For any $\delta > 0$ show that $\mathbf{P}\{|M_{n}-m|\ge \delta\}\rightarrow 0$ as $n\rightarrow \infty$.
+
+ [<strong> Remark:</strong> The above statement justifies using the sample median to estimate the population median, in the sense that at least for large sample sizes, the two are close. Similar justification for using sample mean to estimate expected value came from the law of large numbers]
+</div></div></div>
+
+
+<p></p>
+The following problem is only for those mathematically minded.
+
+<p>&nbsp;</p>
+                <div id="theorem-127"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 127 </div><div class="panel-body"> Let $X_{1},X_{2},\ldots $ be i.i.d. $\mbox{Pois}(\lambda)$ random variables. Work out the exact distribution of $X_{1}+\ldots +X_{n}$ and use it show the central limit theorem in this case. That is, show that for any $a < b$,
+\[\begin{aligned}
+\mathbf{P}\left\{a\le \frac{\sqrt{n}(\bar{X}_{n}-\lambda)}{\sqrt{\lambda} }\le b\right\}\longrightarrow \mathbf{P}\{a\le Z\le b\}
+\end{aligned}\]
+where $Z\sim N(0,1)$.
+
+ [<strong> Remark:</strong> This is analogous to the two cases of CLT that we showed in class, for exponential and for Bernoulli random variables].
+</div></div></div>
+
+
+<p></p>
+The following problem shows that in certain situations, sums of random variables are approximately Poisson distributed. This gives a hint as to why Poisson distribution arises in many contexts. The question may be ignored safely from the exam point of view.
+
+<p>&nbsp;</p>
+                <div id="theorem-128"><div class="panel panel-danger problem"> <div class="panel-heading">Problem 128 </div><div class="panel-body"> Let $X_{n,1},X_{n,2},\ldots X_{n,n}$ be i.i.d. $\mbox{Ber}(p_{n})$ random variables. Let $S_{n}=X_{n,1}+\ldots +X_{n,n}$.
+ If $np_{n}\rightarrow \lambda$ (a finite positive number), show that $S_{n}$ has approximately $\mbox{Pois}(\lambda)$ distribution in the sense that for any $k\in \mathbb{N}$,
+\[\begin{aligned}
+\mathbf{P}\{S_{n}=k\} \rightarrow e^{-\lambda}\frac{\lambda^{k} }{k!}.
+\end{aligned}\]
+[<strong> Remark:</strong> In contrast, if $np_{n}\rightarrow \infty$, deduce from CLT that $S_{n}$ has approximately a normal distribution, i.e.,
+\[\begin{aligned}
+\mathbf{P}\left\{ a\le \frac{S_{n}-\mathbf{E}[S_{n}]}{\sqrt{\mbox{Var}(S_{n})} }\le b\right\} \rightarrow \mathbf{P}\{a\le Z\le b\}
+\end{aligned}\]
+for any $a < b$.]
+</div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="container-fluid">
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+ <div class="footer navbar-fixed-bottom navbar-default">
+  <h4> &nbsp;<a href="http://math.iisc.ac.in" target="_blank">&nbsp; Department of Mathematics,</a>
+ &nbsp;<a href="http://iisc.ac.in" target="_blank">Indian Institute of Science.</a></h4>
+ </div>
+</div>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/probability.js"></script>
+<script>
+  Illustrations.main()
+</script>
+   
+</body>
+</html>
+   

@@ -204,7 +204,9 @@ object TeXToHtml {
     ("""\"{o}""", "&ouml;"),
     ("}}", "} }"),
     ("""``""", "''"),
-    ("\\medskip", "<p></p>")
+    ("\\medskip", "<p></p>"),
+    ("\\bigskip", "<p></p>"),
+    ("\\;", " ")
   )
 
   /**
@@ -591,7 +593,7 @@ object TeXToHtml {
       .getOrElse(head + txt)
 
   def recReplaceMagenta(txt: String, head: String = ""): String =
-    """\{\\color\{magenta\}""".r
+    """\{\\color\{[a-zA-Z]+\}""".r
       .findFirstMatchIn(txt)
       .map { (m) =>
         val (header, rest) = inBraces(m.after.toString, "")
@@ -805,4 +807,5 @@ object SiteBuild extends App {
   mkHome()
   mkAss()
   mkIllus()
+  mkProblems()
 }
