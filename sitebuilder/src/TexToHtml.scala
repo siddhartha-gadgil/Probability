@@ -238,6 +238,8 @@ object TeXToHtml {
   val fullBegReg: Regex =
     """\\begin\{([a-zA-Z0-9\*]*)\}([\s]*\[[^\[\]]+\])?([\s]*\\label\{[a-zA-Z0-9:+-_' ]+\})?""".r
 
+  val labelReg: Regex = """\\label\{([a-zA-Z0-9:+-_' ]+)\}""".r
+
   val endReg: Regex = """\\end\{([^\}\{]+|[^\{\}]*\{[^\{\}]*\}[^\{\}]*)\}""".r
 
   val dolReg: Regex = "\\$".r
@@ -376,6 +378,18 @@ object TeXToHtml {
                      newLabels)
       }
       .getOrElse((head + txt, thmCounter, labels))
+  }
+
+  def labelTags(t: String): Vector[(String, String)] =
+    labelReg.findAllMatchIn(t).map{
+      m => m.group(1).toString
+    }.toVector.zipWithIndex.map{
+      case(l, n) => s"\\label{$l}" -> s"\\label{$l}\\tag{${n + 1}}"
+    }
+
+  def addTags(t: String): String = {
+    pprint.log(labelTags(t))
+    replaceAll(t)(labelTags(t))
   }
 
   def rplBegins(txt: String): (String, Map[String, Int]) =
@@ -680,13 +694,13 @@ class TeXToHtml(header: String, text: String) {
 
   lazy val allReplaced: String =
     // purge("""[\{\}]""".r)
-    (
+    addTags(
       recReplaceFootnotes(replaceUnderline(replaceBf(secReplaced))))
 
   lazy val chapReplaced: Map[Int, String] =
     chapters.filter(_._1 > 0).mapValues { (chapter) =>
-      purge("""[\{\}]""".r)(
-        recReplaceFootnotes(replaceUnderline(replaceBf(refChapters(chapter)))))
+      addTags(purge("""[\{\}]""".r)(
+        recReplaceFootnotes(replaceUnderline(replaceBf(refChapters(chapter))))))
     }
 
   lazy val sortedSections: Vector[(Int, String)] =

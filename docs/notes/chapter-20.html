@@ -228,7 +228,7 @@ from which we deduce that $X$ and $Y$ are independent and $X\sim N(\mu_{1},\frac
                                 1
                                  </a> </sup><span class="collapse small" id="footnote-1">This part was not covered in class and may be safely omitted .</span> 
 Let $X_{1},\ldots ,X_{k+\ell}$ be random variables on a common probability space. Let $f(t_{1},\ldots ,t_{k+\ell})$ be the pmf of $(X_{1},\ldots ,X_{k+\ell})$ and let $g(t_{1},\ldots ,t_{\ell})$ be the pmf of $(X_{k+1},\ldots ,X_{k+\ell})$ (of course we can compute $g$ from $f$ by summing over the first $k$ indices). Then, for any $s_{1},\ldots ,s_{\ell}$ such that $\mathbf{P}\{X_{k+1}=s_{1},\ldots X_{m}=s_{\ell}\} > 0$, we can define
-$$\begin{equation}\label{eq:conditionalpmf}
+$$\begin{equation}\label{eq:conditionalpmf}\tag{1}
 h_{s_{1},\ldots ,s_{\ell} }(t_{1},\ldots,t_{k})=\mathbf{P}\{X_{1}= t_{1},\ldots ,X_{k}= t_{k}\left.\vphantom{\hbox{\Large (}}\right| X_{k+1}=s_{1},\ldots X_{m}=s_{\ell}\}=\frac{f(t_{1},\ldots ,t_{k},s_{1},\ldots ,s_{\ell})}{g(s_{1},\ldots ,s_{\ell})}.
 \end{equation}$$
 It is easy to see that $h_{s_{1},\ldots,s_{\ell} }(\cdot)$ is a pmf on $\mathbb{R}^{k}$. It is called the conditional pmf of $(X_{1},\ldots ,X_{k})$ given that $X_{k+1}=s_{1},\ldots X_{m}=s_{\ell}$.
@@ -250,7 +250,7 @@ It is easy to see that $h_{s_{1},\ldots,s_{\ell} }(\cdot)$ is a pmf on $\mathbb{
            
  <p class="text-justify">
 <strong>Conditional densities</strong> Now suppose $X_{1},\ldots ,X_{k+\ell}$ have joint density $f(t_{1},\ldots ,t_{k+\ell})$ and let $g(s_{1},\ldots ,s_{\ell})$ by the density of $(X_{k+1},\ldots ,X_{k+\ell})$. Then, we define the conditional density of $(X_{1},\ldots ,X_{k})$ given $X_{k+1}=s_{1},\ldots ,X_{k+\ell}=s_{\ell}$ as
-$$\begin{equation}\label{eq:conditionalpdf}
+$$\begin{equation}\label{eq:conditionalpdf}\tag{2}
 h_{s_{1},\ldots ,s_{\ell} }(t_{1},\ldots,t_{k})=\frac{f(t_{1},\ldots ,t_{k},s_{1},\ldots ,s_{\ell})}{g(s_{1},\ldots ,s_{\ell})}.
 \end{equation}$$
 This is well-defined whenever $g(s_{1},\ldots ,s_{\ell}) > 0$.
