@@ -206,7 +206,8 @@ object TeXToHtml {
     ("""``""", "''"),
     ("\\medskip", "<p></p>"),
     ("\\bigskip", "<p></p>"),
-    ("\\;", " ")
+    ("\\;", " "),
+    ("\\ ", " ")
   )
 
   /**
@@ -266,7 +267,7 @@ object TeXToHtml {
     "remark" -> ("Remark", "success"),
     "exercise" -> ("Exercise", "warning"),
     "lemma" -> ("Lemma", "primary"),
-    "problem" -> ("Problem", "danger"),
+    "problem" -> ("Problem", "info"),
     "proposition" -> ("Proposition", "primary"),
     "theorem" -> ("Theorem", "primary")
   )
@@ -333,6 +334,9 @@ object TeXToHtml {
       .replace("""\end{itemize}""", "</ul>")
       .replace("""\begin{enumerate}""", "<ol>")
       .replace("""\end{enumerate}""", "</ol>")
+      .replace("""\begin{inparaenum}[(a)]""", "<ol>")
+      .replace("""\begin{inparaenum}""", "<ol>")
+      .replace("""\end{inparaenum}""", "</ol>")
   }
 
   def recRplBegins(
@@ -675,7 +679,8 @@ class TeXToHtml(header: String, text: String) {
   }
 
   lazy val allReplaced: String =
-    purge("""[\{\}]""".r)(
+    // purge("""[\{\}]""".r)
+    (
       recReplaceFootnotes(replaceUnderline(replaceBf(secReplaced))))
 
   lazy val chapReplaced: Map[Int, String] =

@@ -182,8 +182,8 @@ $$
 <p>&nbsp;</p>
                 <div id="theorem-93"><div class="panel panel-info example"> <div class="panel-heading">Example 93 </div><div class="panel-body"> <strong>Uniform distribution on the interval $[a,b]$ :</strong>, denoted Unif($[a,b]$) where $a < b$ is the distribution with density and distribution given by
 $$
-\mbox{PDF:}  f(t) = \begin{cases}\frac{1}{b-a} & \mbox{if } t\in(a,b) \\ 0 & \mbox{otherwise} \end{cases}\qquad
-\mbox{CDF:}  F(t) = \begin{cases}0 & \mbox{if } t\le a \\ \frac{t-a}{b-a} & \mbox{if }t\in (a,b) \\ 1 & \mbox{if }t\ge b.\end{cases}
+\mbox{PDF:}  f(t) = \begin{cases}\frac{1}{b-a} & \mbox{if } t\in(a,b) \ 0 & \mbox{otherwise} \end{cases}\qquad
+\mbox{CDF:}  F(t) = \begin{cases}0 & \mbox{if } t\le a \ \frac{t-a}{b-a} & \mbox{if }t\in (a,b) \ 1 & \mbox{if }t\ge b.\end{cases}
 $$
  </p>
 <p class="text-justify">
@@ -195,8 +195,8 @@ $$
 <p>&nbsp;</p>
                 <div id="theorem-94"><div class="panel panel-info example"> <div class="panel-heading">Example 94 </div><div class="panel-body"> <strong>Exponential distribution with parameter $\lambda$ :</strong>, denoted Exp($\lambda$) where $\lambda > 0$ is the distribution with density and distribution given by
 $$
-\mbox{PDF:}  f(t) = \begin{cases}\lambda e^{-\lambda t}& \mbox{if } t > 0 \\ 0 & \mbox{otherwise} \end{cases}\qquad
-\mbox{CDF:}  F(t) = \begin{cases}0 & \mbox{if } t\le 0 \\ 1-e^{-\lambda t} & \mbox{if }t > 0.\end{cases}
+\mbox{PDF:}  f(t) = \begin{cases}\lambda e^{-\lambda t}& \mbox{if } t > 0 \ 0 & \mbox{otherwise} \end{cases}\qquad
+\mbox{CDF:}  F(t) = \begin{cases}0 & \mbox{if } t\le 0 \ 1-e^{-\lambda t} & \mbox{if }t > 0.\end{cases}
 $$
 </div></div></div>
 <p>&nbsp;</p>
@@ -233,8 +233,8 @@ since $\frac{d}{dr}e^{-r^{2}/2}=-re^{-r^{2}/2}$. Thus $I^{2}=1$ and hence $I=1$.
 <p>&nbsp;</p>
                 <div id="theorem-97"><div class="panel panel-info example"> <div class="panel-heading">Example 97 </div><div class="panel-body"> <strong>Gamma distribution with shape parameter $\nu$ and scaler parameter $\lambda$ :</strong>, where $\nu > 0$ and $\lambda > 0$, denoted Gamma($\nu,\lambda$) is the distribution with density and distribution given by -
 $$
-\mbox{PDF:}  f(t) = \begin{cases}\frac{1}{\Gamma(\nu)}\lambda^{\nu} t^{\nu-1}e^{-\lambda t}& \mbox{if } t > 0 \\ 0 & \mbox{otherwise} \end{cases}\qquad
-\mbox{CDF:}  F(t) = \begin{cases}0 & \mbox{if } t\le 0 \\ \int_{0}^{t}f(u)du & \mbox{if }t > 0.\end{cases}
+\mbox{PDF:}  f(t) = \begin{cases}\frac{1}{\Gamma(\nu)}\lambda^{\nu} t^{\nu-1}e^{-\lambda t}& \mbox{if } t > 0 \ 0 & \mbox{otherwise} \end{cases}\qquad
+\mbox{CDF:}  F(t) = \begin{cases}0 & \mbox{if } t\le 0 \ \int_{0}^{t}f(u)du & \mbox{if }t > 0.\end{cases}
 $$
 Here $\Gamma(\nu):=\int_{0}^{\infty}t^{\nu-1}e^{-t}dt$. Firstly, $f$ is a density, that is, that it integrates to $1$. To see this, make the change of variable $\lambda t=u$ to see that
 $$
@@ -269,15 +269,15 @@ by substituting $x=y^{2}/2$. The last integral was computed above in the context
  <p class="text-justify">
 <strong>A small digression :</strong> It was Euler's  idea to observe that $n!=\int_{0}^{\infty}x^{n}e^{-x}dx$ and that on the right side $n$ could be replaced by  any real number greater than $-1$. But this was his second approach to defining the Gamma function. His first approach was as follows. Fix a positive integer $n$. Then for any $\ell\ge 1$ (also a positive integer), we may write
 \[\begin{aligned}
-n!=\frac{(n+\ell)!}{(n+1)(n+2)\ldots (n+\ell)} = \frac{\ell!(\ell+1)\ldots (\ell+n)}{(n+1)\ldots (n+\ell)} = \frac{\ell! \ \ell^{n} }{(n+1)\ldots (n+\ell)}\cdot\frac{(\ell+1)\ldots (\ell+n)}{\ell^{n} }
+n!=\frac{(n+\ell)!}{(n+1)(n+2)\ldots (n+\ell)} = \frac{\ell!(\ell+1)\ldots (\ell+n)}{(n+1)\ldots (n+\ell)} = \frac{\ell!  \ell^{n} }{(n+1)\ldots (n+\ell)}\cdot\frac{(\ell+1)\ldots (\ell+n)}{\ell^{n} }
 \end{aligned}\]
 The second factor approaches $1$ as $\ell\rightarrow \infty$. Hence,
 \[\begin{aligned}
-n!=\lim_{\ell\rightarrow \infty}\frac{\ell! \ \ell^{n} }{(n+1)\ldots (n+\ell)}.
+n!=\lim_{\ell\rightarrow \infty}\frac{\ell!  \ell^{n} }{(n+1)\ldots (n+\ell)}.
 \end{aligned}\]
 Euler then showed (by a rather simple argument that we skip) that the limit on the right exists if we replace $n$ by any complex number other than $\{-1,-2,-3,\ldots \}$ (negative integers are a problem as they make the denominator zero). Thus, he extended the factorial function to all complex numbers except negative integers! It is a fun exercise to check that this agrees with the definition by the integral given earlier. In other words, for $\nu > -1$, we have
 \[\begin{aligned}
-\lim_{\ell\rightarrow \infty}\frac{\ell! \ \ell^{\nu} }{(\nu+1)\ldots (\nu+\ell)}=\int_{0}^{\infty}x^{\nu}e^{-x}dx.
+\lim_{\ell\rightarrow \infty}\frac{\ell!  \ell^{\nu} }{(\nu+1)\ldots (\nu+\ell)}=\int_{0}^{\infty}x^{\nu}e^{-x}dx.
 \end{aligned}\]
 </span> 
 </div></div></div>
@@ -287,8 +287,8 @@ Euler then showed (by a rather simple argument that we skip) that the limit on t
  <p>&nbsp;</p>
                 <div id="theorem-98"><div class="panel panel-info example"> <div class="panel-heading">Example 98 </div><div class="panel-body"> <strong>Beta distributions :</strong> Let $\alpha,\beta > 0$. The Beta distribution with parameters $\alpha,\beta$, denoted Beta($\alpha,\beta$), is the distribution with density and distribution given by -
 \[\begin{aligned}
-\mbox{PDF:}  f(t) = \begin{cases}\frac{1}{B(\alpha,\beta)}t^{\alpha-1}(1-t)^{\beta-1}& \mbox{if } t\in(0,1) \\ 0 & \mbox{otherwise} \end{cases}\qquad
-\mbox{CDF:}  F(t) = \begin{cases}0 & \mbox{if } t\le 0 \\ \int_{0}^{t}f(u)du & \mbox{if }t\in(0,1) \\
+\mbox{PDF:}  f(t) = \begin{cases}\frac{1}{B(\alpha,\beta)}t^{\alpha-1}(1-t)^{\beta-1}& \mbox{if } t\in(0,1) \ 0 & \mbox{otherwise} \end{cases}\qquad
+\mbox{CDF:}  F(t) = \begin{cases}0 & \mbox{if } t\le 0 \ \int_{0}^{t}f(u)du & \mbox{if }t\in(0,1) \\
 0 &\mbox{if }t\ge 1.\end{cases}
 \end{aligned}\]
 Here $B(\alpha,\beta):=\int_{0}^{1}t^{\alpha-1}(1-t)^{\beta-1}dt$. Again, for special values of $\alpha,\beta$ (eg., positive integers), one can find the value of $B(\alpha,\beta)$, but in general there is no simple expression. However, it can be expressed in terms of the Gamma function!

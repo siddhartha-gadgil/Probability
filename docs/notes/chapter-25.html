@@ -207,9 +207,9 @@ The CLT cuts short all this and directly gives an approximate answer! And what i
           
  Now let $Y_{n}=\frac{S_{n}-n\mu}{{\sigma}\sqrt{n} }=\frac{S_{n}-n}{\sqrt{n} }$. By a change of variable (in one-dimension) we see that the density of $Y_{n}$ is given by $g_{n}(t)=\sqrt{n}f_{n}(n+t\sqrt{n})$. Let us analyse this.
 $$\begin{align*}
-g_{n}(t) &= \sqrt{n}\ \frac{1}{(n-1)!}e^{-(n+t\sqrt{n})}(n+t\sqrt{n})^{n-1}  \\
-&= \sqrt{n}\ \frac{n^{n-1} }{(n-1)!}e^{-n-t\sqrt{n} }\left(1+\frac{t}{\sqrt{n} }\right)^{n-1} \\
-&\approx \sqrt{n}\ \frac{n^{n-1} }{\sqrt{2\pi}(n-1)^{n-\frac{1}{2} }e^{-n+1} }e^{-n-t\sqrt{n} }\left(1+\frac{t}{\sqrt{n} }\right)^{n-1} \hspace{2mm}(\mbox{by Stirling's formula})\\
+g_{n}(t) &= \sqrt{n} \frac{1}{(n-1)!}e^{-(n+t\sqrt{n})}(n+t\sqrt{n})^{n-1}  \\
+&= \sqrt{n} \frac{n^{n-1} }{(n-1)!}e^{-n-t\sqrt{n} }\left(1+\frac{t}{\sqrt{n} }\right)^{n-1} \\
+&\approx \sqrt{n} \frac{n^{n-1} }{\sqrt{2\pi}(n-1)^{n-\frac{1}{2} }e^{-n+1} }e^{-n-t\sqrt{n} }\left(1+\frac{t}{\sqrt{n} }\right)^{n-1} \hspace{2mm}(\mbox{by Stirling's formula})\\
 &= \frac{1}{\sqrt{2\pi}(1-\frac{1}{n})^{n-\frac{1}{2} }e^{1} }e^{-t\sqrt{n} }\left(1+\frac{t}{\sqrt{n} }\right)^{n-1}.
 \end{align*}$$
 To find the limit of this, first observe that $(1-\frac{1}{n})^{n-\frac{1}{2} }\rightarrow e^{-1}$. It remains to find the limit of $w_{n}:=e^{-t\sqrt{n} }\left(1+\frac{t}{\sqrt{n} }\right)^{n-1}$. Easiest to do this by taking logarithms. Recall that $\log(1+t)=t-\frac{t^{2} }{2}+\frac{t^{3} }{3}-\ldots$. Hence

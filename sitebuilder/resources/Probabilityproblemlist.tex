@@ -348,7 +348,7 @@ S_{\ell}-\binom{\ell}{1}S_{\ell+1}+\binom{\ell+1}{2}S_{\ell+2}-\binom{\ell+2}{3}
 
 
 \medskip
-\bepr A coin has probability $p$ of falling head. Fix an integer $m\ge 1$. Toss the coin till the $m^{\mb{\tiny{th}}}$ head occurs. Let $X$ be the number of tosses required.
+\bepr A coin has probability $p$ of falling head. Fix an integer $m\ge 1$. Toss the coin till the $m^{\mb{\tiny {th}}}$ head occurs. Let $X$ be the number of tosses required.
 \benu
 \item Show that $X$ has pmf
 $$
@@ -418,7 +418,7 @@ $$
 \eepr
 
 \medskip
-\bepr A coin has probability $p$ of falling head. Assume $0<p<1$ and fix an integer $m\ge 1$. Toss the coin till the $m^{\mb{\tiny{th}}}$ head occurs. Let $X$ be the number of tosses required. Show that $X$ has pmf
+\bepr A coin has probability $p$ of falling head. Assume $0<p<1$ and fix an integer $m\ge 1$. Toss the coin till the $m^{\mb{\tiny {th}}}$ head occurs. Let $X$ be the number of tosses required. Show that $X$ has pmf
 $$
 f(k) = \binom{k-1}{m-1}p^{m}(1-p)^{k-m}, \hsp{4mm} k=m,m+1,m+2,\ldots.
 $$
@@ -628,7 +628,7 @@ $\mb{ if }k_{i}\ge 0\mb{ are integers that add to at most }r$.
 \benu
 \item Let $m\le n$. Show that the  distribution of $(X_{1},\ldots ,X_{m-1})$ is Multinomial with parameters $r,m,\tilde{p}_{1},\ldots ,\tilde{p}_{m}$ where $\tilde{p}_{i}=p_{i}$ for $i\le m-1$ and $\tilde{p}_{m}=p_{m}+\ldots +p_{n}$.
 \item The distribution of $X_{k}$ is $\mb{Bin}(r,p_{k})$.
-\item (\underline{Do not need to submit this}) Let $k_{1}<k_{2}<\ldots <k_{m}=n$. Define $Y_{1}=X_{1}+\ldots +X_{k_{1}-1}$, $Y_{2}=X_{k_{1}}+\ldots +X_{k_{2}-1}$, \dots $Y_{m}=X_{k_{m-1}}+\ldots +X_{k_{m}-1}$. What is the distribution of $(Y_{1},\ldots ,Y_{m})$?
+\item (\underline{Do not need to submit this}) Let $k_{1}<k_{2}<\ldots <k_{m}=n$. Define $Y_{1}=X_{1}+\ldots +X_{k_{1}-1}$, $Y_{2}=X_{k_{1}}+\ldots +X_{k_{2}-1}$, ... $Y_{m}=X_{k_{m-1}}+\ldots +X_{k_{m}-1}$. What is the distribution of $(Y_{1},\ldots ,Y_{m})$?
 \eenu
 [{\bf Note} Remember the balls-in-bins interpretation of Multinomial. Based on it, try to guess the answers before you start calculating anything!].
 \eepr
@@ -703,7 +703,7 @@ $$ where $a,b, ab-c^{2}$ are all positive and $\mu,\nu$ are any real numbers.
 \benu
 \item Show that $\E[X]=\mu$, $\E[Y]=\nu$, $\Var(X)=\sig_{1,1}$, $\Var(Y)\sim \sig_{2,2}$ and $\Cov(X,Y)=\sig_{1,2}$ where the matrix $\Sigma$ (called the covariance matrix of $(X,Y)$) is defined as
 $$
-\Sigma=\mat{\sig_{1,1}}{\sig_{1,2}}{\sig_{2,1}}{\sig_{2,2}} := \mat{a}{c}{c}{b}^{-1}.
+\Sigma=\l[\begin{array}{cc}  {\sig_{1,1}} & {\sig_{1,2}} \\ {\sig_{2,1}} & {\sig_{2,2}}  \end{array} \r] := \l[\begin{array}{cc}  a & c \\ c & b  \end{array} \r]^{-1}.
 $$
 \item Find the conditional density of $Y$ given $X$. When  are  $X$ and $Y$ independent? (``When'' means  under what conditions on the parameters $a,b,c,\mu,\nu$ or in terms of $\sig_{1,1},\sig_{2,2},\sig_{1,2},\mu,\nu$?).
 %\item If $X\sim N(\mu_{1},\sig_{1}^{2})$ and $Y\sim N(\mu,\sig_{2}^{2})$ are independent, show that $X+Y\sim N(\mu_{1}+\mu_{2},\sig_{1}^{2}+\sig_{2}^{2})$.
@@ -780,7 +780,7 @@ $$
 \medskip
 {\color{blue}
 \bepr
-\benu  \color{blue}
+\benu 
 \item Let $X$ and $Y$ be independent random variables with densities $f(x)$ and $g(y)$ respectively. Use the change of variable formula to show that $X+Y$ has the density $h(u)$ given by $h(u)=\int_{-\infty}^{\infty}f(s)g(u-s)ds$.
 \item Let $X,Y$ be independent $\mb{Unif}[-1,1]$ random variables. Find the density of $X+Y$.
 \eenu
@@ -869,7 +869,7 @@ $$
 \item Find the marginal distributions of $X$ and of $Y$.
 \item Find means and  variances of $X$ and $Y$ and the  covariance and correlation of $X$ with $Y$. Under what conditions on the parameters are $X$ and $Y$ independent?
 \eenu
-[{\bf Note:} It is very useful to introduce the matrix $\Sigma=\mat{a}{c}{c}{b}^{-1}=\mat{\frac{b}{\Del}}{-\frac{c}{\Del}}{-\frac{c}{\Del}}{\frac{a}{\Del}}$ which is called the {\em covariance matrix} of $(X,Y)$. The answers can be written in terms of the entries of $\Sigma$.]
+[{\bf Note:} It is very useful to introduce the matrix $\Sigma=\l[\begin{array}{cc} a & c \\ c & b  \end{array} \r]=\l[\begin{array}{cc}  {\frac{b}{\Del}} & {-\frac{c}{\Del}} \\ {-\frac{c}{\Del}} & {\frac{a}{\Del}} \end{array} \r]$ which is called the {\em covariance matrix} of $(X,Y)$. The answers can be written in terms of the entries of $\Sigma$.]
 \eepr
 
 \medskip
@@ -886,7 +886,7 @@ $$
 \medskip
 \bepr (*) A box contains $N$ coupons where the number $w_{k}$ is written on the $k^{\mb{\tiny th}}$ coupon. Let $\mu=\frac{1}{N}\sum_{k=1}^{N}w_{k}$ be the ``population mean'' and let $\sig^{2}=\frac{1}{n}\sum_{i=1}^{n}(w_{i}-\mu)^{2}$ be the ``population variance''. A sample of size $m$ is drawn from the population, the values seen are $X_{1},\ldots ,X_{m}$. The sample mean $\bar{X}_{m}=(X_{1}+\ldots +X_{m})/m$ is formed. Find the mean and variance of $\bar{X}_{m}$ in the following two cases.
 \benu
-\item The samples are drawn with replacement (i.e., draw a coupon, note the number, put the coupon back in the box, and draw again\dots).
+\item The samples are drawn with replacement (i.e., draw a coupon, note the number, put the coupon back in the box, and draw again ...).
 \item The samples are drawn without replacement.
 \eenu
 \eepr
@@ -905,7 +905,7 @@ $$
 
 
 \medskip
-\bepr (*) Place $r$ balls in $n$ bins uniformly at random.  Let $X_{k}$ be the number of balls in the $k^{\mb{ \tiny th}}$ bin. Find $\E[X_{k}]$, $\Var(X_{k})$ and $\Cov(X_{k},X_{\ell})$ for $1\le k,\ell\le n$. [{\bf Hint:} First do the case when $r=1$. Then think how to use that to get the general case].
+\bepr (*) Place $r$ balls in $n$ bins uniformly at random.  Let $X_{k}$ be the number of balls in the $k^{\mb{\tiny th}}$ bin. Find $\E[X_{k}]$, $\Var(X_{k})$ and $\Cov(X_{k},X_{\ell})$ for $1\le k,\ell\le n$. [{\bf Hint:} First do the case when $r=1$. Then think how to use that to get the general case].
 \eepr
 
 
@@ -1013,7 +1013,7 @@ by following these steps.
 
 \medskip
 \medskip
-\bepr Place $r$ balls in $n$ bins uniformly at random.  Let $X_{k}$ be the number of balls in the $k^{\mb{ \tiny th}}$ bin. Find $\E[X_{k}]$, $\Var(X_{k})$ and $\Cov(X_{k},X_{\ell})$ for $1\le k,\ell\le n$. [{\bf Hint:} First do the case when $r=1$. Then think how to use that to get the general case].
+\bepr Place $r$ balls in $n$ bins uniformly at random.  Let $X_{k}$ be the number of balls in the $k^{\mb{\tiny th}}$ bin. Find $\E[X_{k}]$, $\Var(X_{k})$ and $\Cov(X_{k},X_{\ell})$ for $1\le k,\ell\le n$. [{\bf Hint:} First do the case when $r=1$. Then think how to use that to get the general case].
 \eepr
 
 \medskip

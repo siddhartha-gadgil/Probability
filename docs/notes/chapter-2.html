@@ -181,7 +181,7 @@ Let $p_{\underline{\omega}}=2^{-n}$ for each $\underline{\omega}\in \Omega$. Sin
  There are $2^{\#\Omega}=2^{2^{n} }$ events. One example is $A_{k}=\{\underline{\omega}{\; : \;} \underline{\omega}\in \Omega \mbox{ and } \omega_{1}+\ldots +\omega_{n}=k
 \}$ where $k$ is some fixed integer. In words, $A_{k}$ consists of those $n$-tuples of zeros and ones that have a total of $k$ many ones. Since there are $\binom{n}{k}$ ways to choose where to place these ones, we see that $\#A_{k}=\binom{n}{k}$. Consequently,
 $$
-\mathbf{P}\{A_{k}\}=\sum_{\underline{\omega}\in A_{k} }p_{\underline{\omega}} = \frac{\# A_{k} }{2^{n} }=\begin{cases} \binom{n}{k}2^{-n} &\mbox{ if }0\le k\le n, \\ 0 & \mbox{ otherwise}. \end{cases}
+\mathbf{P}\{A_{k}\}=\sum_{\underline{\omega}\in A_{k} }p_{\underline{\omega}} = \frac{\# A_{k} }{2^{n} }=\begin{cases} \binom{n}{k}2^{-n} &\mbox{ if }0\le k\le n, \ 0 & \mbox{ otherwise}. \end{cases}
 $$
 It will be convenient to adopt the notation that $\binom{a}{b}=0$ if $a,b$ are positive integers and if $b > a$ or if $b < 0$. Then we can simply write $\mathbf{P}\{A_{k}\}=\binom{n}{k}2^{-n}$ without having to split the values of $k$ into cases.
 </div></div></div>
@@ -319,7 +319,7 @@ To assign probabilities, one must know the parents. Let the two parents have gen
 <ol>
 <li> Let $\Omega_{0}$ be the sample space and let $p_{\mathbf{x}}=2^{-L}$ for each $\mathbf{x} \in \Omega_{0}$.
 </li>
-<li> Let $\Omega$ be the sample space and let $$p_{\mathbf{x}}=\begin{cases}2^{-L} & \mbox{ if }\mathbf{x}\in \Omega_{0}\\ 0 & \mbox{ if }\mathbf{x} \not\in \Omega_{0}. \end{cases}$$
+<li> Let $\Omega$ be the sample space and let $$p_{\mathbf{x}}=\begin{cases}2^{-L} & \mbox{ if }\mathbf{x}\in \Omega_{0}\ 0 & \mbox{ if }\mathbf{x} \not\in \Omega_{0}. \end{cases}$$
 </ol>
 The second one has the advantage that if we change the parent pair, we don't have to change the sample space, only the elementary probabilities. What are some interesting events? Hypothetically, the susceptibility to a disease $X$ could be determined by the first ten genes, say the person is likely to get the disease if there are at-most four $1$s among the first ten. This would correspond to the event that $A=\{\mathbf{x}\in \Omega_{0}{\; : \;} x_{0}+\ldots+x_{10}\le 4\}$. (Caution: As far as I know, reading the genetic sequence to infer about the phenotype is still an impractical task in general).
  </p>

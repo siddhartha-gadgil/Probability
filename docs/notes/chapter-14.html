@@ -145,7 +145,7 @@ If $(\Omega,p)$ is a discrete probability space and $X:\Omega\mapsto \mathbb{R}$
 <p>&nbsp;</p>
                 <div id="theorem-83"><div class="panel panel-info example"> <div class="panel-heading">Example 83 </div><div class="panel-body"> Let
 \[\begin{aligned}
-F(t)=\begin{cases} 0 & \mbox{ if } t\le 0, \\ t &\mbox{ if }0 < t < 1, \\ 1 &\mbox{ if }t\ge 1. \end{cases}
+F(t)=\begin{cases} 0 & \mbox{ if } t\le 0, \ t &\mbox{ if }0 < t < 1, \ 1 &\mbox{ if }t\ge 1. \end{cases}
 \end{aligned}\]
 Then it is easy to see that $F$ is a distribution function. However, it has no jumps and hence it does not arise as the CDF of any random variable on a discrete probability space.
 </div></div></div>
@@ -155,7 +155,7 @@ There are two ways to rectify this issue.
 </li>
 <li> Just regard CDFs such as in the above example as reasonable approximations to CDFs of some discrete random variables. For example, if $\Omega=\{\omega_{0},\omega_{1},\ldots ,\omega_{N}\}$ and $p(\omega_{k})=1/(N+1)$ for all $0\le k\le N$, and $X:\Omega\mapsto \mathbb{R}$ is defined by $X(\omega_{k})=k/n$, then it is easy to check that the CDF of $X$ is the function $G$ given by
 \[\begin{aligned}
-G(t)=\begin{cases} 0 & \mbox{ if } t\le 0, \\ \frac{k}{N+1} &\mbox{ if }\frac{k-1}{N}\le t < \frac{k}{N}\mbox{ for some }k=1,2,\ldots ,N \\ 1 &\mbox{ if }t\ge 1. \end{cases}
+G(t)=\begin{cases} 0 & \mbox{ if } t\le 0, \ \frac{k}{N+1} &\mbox{ if }\frac{k-1}{N}\le t < \frac{k}{N}\mbox{ for some }k=1,2,\ldots ,N \ 1 &\mbox{ if }t\ge 1. \end{cases}
 \end{aligned}\]
 Now, if $N$ is very large, then the function $G$ looks approximately like the function $F$. Just as it is convenient to regard water as a continuous medium in some problems (although water is made up of molecules and is discrete at small scales), it is convenient to use the continuous function $F$ as a reasonable approximation to the step function $G$.
 </ol>

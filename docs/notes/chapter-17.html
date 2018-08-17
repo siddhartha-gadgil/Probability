@@ -179,7 +179,7 @@ It is clear how to generalize this.
  <p class="text-justify">
 <strong>General rule :</strong> Suppose we are given a pmf $f$
 $$
-\left(\begin{array}{cccc} t_{1} & t_{2} & t_{3} & \ldots \\ f(t_{1}) & f(t_{2}) & f(t_{3}) & \ldots \end{array} \right).
+\left(\begin{array}{cccc} t_{1} & t_{2} & t_{3} & \ldots \ f(t_{1}) & f(t_{2}) & f(t_{3}) & \ldots \end{array} \right).
 $$
 Then, define $\psi:[0,1]\rightarrow \mathbb{R}$ as
 $$
@@ -248,16 +248,16 @@ This gives us the idea that to generate random number from a CDF $F$, we should 
  <p>&nbsp;</p>
                 <div id="theorem-106"><div class="panel panel-primary lemma"> <div class="panel-heading">Lemma 106 </div><div class="panel-body"> Let $\psi:(0,1)\rightarrow \mathbb{R}$ be a  strictly increasing function with $a=\psi(0+)$ and $b=\psi(1-)$. Let $X=\psi(U)$. Then $X$ has CDF
 $$
-F(t)=\begin{cases} 0 & \mbox{ if }t\le a \\ \psi^{-1}(t) & \mbox{ if }a < t < b \\ 1 & \mbox{ if }t\ge b. \end{cases}
+F(t)=\begin{cases} 0 & \mbox{ if }t\le a \ \psi^{-1}(t) & \mbox{ if }a < t < b \ 1 & \mbox{ if }t\ge b. \end{cases}
 $$
 If is $\psi$  also differentiable and the derivative does not vanish anywhere (or vanishes at finitely many points only), then $X$ has pdf
 $$
-f(t)=\begin{cases} \left(\psi^{-1}\right)'(t) & \mbox{ if }a < t < b\\ 0 & \mbox{ if }t\not\in (a,b). \end{cases}
+f(t)=\begin{cases} \left(\psi^{-1}\right)'(t) & \mbox{ if }a < t < b\ 0 & \mbox{ if }t\not\in (a,b). \end{cases}
 $$
 </div></div></div>
 <div class="proof"> Since $\psi$ is strictly increasing, $\psi(u)\le t$ if and only if $u\le \psi^{-1}(t)$. Hence,
 $$
-F(t)=\mathbf{P}\{X\le t\} = \mathbf{P}\{U\le \psi^{-1}(t)\} = \begin{cases} 0 & \mbox{ if }t\le a \\ \psi^{-1}(t) & \mbox{ if }a < t < b \\ 1 & \mbox{ if }t\ge b. \end{cases}
+F(t)=\mathbf{P}\{X\le t\} = \mathbf{P}\{U\le \psi^{-1}(t)\} = \begin{cases} 0 & \mbox{ if }t\le a \ \psi^{-1}(t) & \mbox{ if }a < t < b \ 1 & \mbox{ if }t\ge b. \end{cases}
 $$
 If $\psi$ is differentiable at and $\psi(u)\not=0$, then $\psi^{-1}$ is differentiable at $t=\psi(u)$ (and indeed, $(\psi^{-1})'(t)=\frac{1}{\psi'(u)}$). Thus we get the formula for the density.
 </div>
@@ -279,7 +279,7 @@ This follows from the lemma because $\psi$ is define as the inverse of $F$ and h
  <p>&nbsp;</p>
                 <div id="theorem-107"><div class="panel panel-info example"> <div class="panel-heading">Example 107 </div><div class="panel-body"> Consider the Exponential distribution with parameter $\lambda$ whose CDF is
 $$
-F(t)=\begin{cases} 0 & \mbox{ if }t\le 0 \\ 1-e^{-\lambda t} \mbox{ if }t > 0 \end{cases}
+F(t)=\begin{cases} 0 & \mbox{ if }t\le 0 \ 1-e^{-\lambda t} \mbox{ if }t > 0 \end{cases}
 $$ Take $A=0$ and $B=+\infty$. Then $F$ is increasing on $(0,\infty)$ and its inverse is the function $\psi(u)=-\frac{1}{\lambda}\log(1-u)$. Thus to simulate a random number from Exp($\lambda$) distribution, we set $X=-\frac{1}{\lambda}\log(1-U)$.
 </div></div></div>
  </p>
@@ -306,7 +306,7 @@ Now draw a uniform random number $U$. Look up the table and find the value of $i
 </li>
 <li> Beta($\frac{1}{2},\frac{1}{2}$) density $\frac{1}{\pi}\frac{1}{\sqrt{x(1-x)} }$ on $[0,1]$ (and zero elsewhere).
 </li>
-<li> Pareto($\alpha$) distribution which by definition has the density $$f(t)=\begin{cases} \alpha t^{-\alpha-1} & \mbox{ if }t\ge 1, \\ 0 & \mbox{ if }t < 1. \end{cases}$$
+<li> Pareto($\alpha$) distribution which by definition has the density $$f(t)=\begin{cases} \alpha t^{-\alpha-1} & \mbox{ if }t\ge 1, \ 0 & \mbox{ if }t < 1. \end{cases}$$
 </ol>
 </div></div></div>
  </p>

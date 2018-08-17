@@ -157,7 +157,7 @@ $$.
 $$
 F(s,t)=\begin{cases}
 0 & \mbox{ if }s <  0 \mbox{ or }t <  0 \\
-\mathbf{P}(A^{c}\cap B^{c}) & \mbox{ if }s\ge 0, \ t < 1\mbox{ or }t\ge 0, \ s < 1 \\
+\mathbf{P}(A^{c}\cap B^{c}) & \mbox{ if }s\ge 0,  t < 1\mbox{ or }t\ge 0,  s < 1 \\
 \mathbf{P}(A) & \mbox{ if }0\le s < 1\mbox{ and }t\ge 1 \\
 \mathbf{P}(B) & \mbox{ if }0\le t < 1\mbox{ and }s\ge 1 \\
 \mathbf{P}(A\cap B) & \mbox{ if } s\ge1, t\ge 1
@@ -247,7 +247,7 @@ This completes the proof that $f(x,y)$ is indeed a density. Note that $b > 0$ an
  </p>
 <p class="text-justify">
           
- <strong>Matrix form of writing the density :</strong> Let $\Sigma^{-1}=\left[\begin{array}{cc} a & c \\ c & b \end{array}\right]$. Then, $\det(\Sigma)=\frac{1}{\det(\Sigma^{-1})}=\frac{1}{ab-c^{2} }$. Hence, we may re-write the density above as (let $\mathbf{u}$ be the column vector with co-ordinates $x,y$)
+ <strong>Matrix form of writing the density :</strong> Let $\Sigma^{-1}=\left[\begin{array}{cc} a & c \ c & b \end{array}\right]$. Then, $\det(\Sigma)=\frac{1}{\det(\Sigma^{-1})}=\frac{1}{ab-c^{2} }$. Hence, we may re-write the density above as (let $\mathbf{u}$ be the column vector with co-ordinates $x,y$)
 $$
 f(x,y) = \frac{1}{2\pi \sqrt{\det(\Sigma)} } e^{-\frac{1}{2}\mathbf{u}^{t}\Sigma^{-1}\mathbf{u} }.
 $$
