@@ -373,7 +373,7 @@ object Site {
         <li><strong>E-mail:</strong> <a href="mailto:siddhartha.gadgil@gmail.com" target="_blank"> siddhartha.gadgil@gmail.com</a>.</li>
         <li> <strong>Office:</strong> N-15, Department of Mathematics. </li>
         <li><strong>Lecture Timings: </strong> Monday, Wednesday, Friday : 9:00 am - 10:00 am. </li>
-        <li><strong>Lecture Venue: </strong> LH-5, Department of Mathematics.</li>
+        <li><strong>Lecture Venue: </strong> LH-1 (if available) or LH-5, Department of Mathematics.</li>
         <li><strong> Teaching Assistants: </strong>
           <ul>
             <li>
@@ -386,8 +386,10 @@ object Site {
           </ul>
         </li>
         <li>
-          <strong>Tutorials:</strong> Friday : 5:30 pm.
+          <strong>Tutorial Timings:</strong> Friday : 5:30 pm - 6:30 pm.
         </li>
+        <li><strong>Tutorial Venue: </strong> LH-4, Department of Mathematics.</li>
+
       </ul>
     </div>
   </div>

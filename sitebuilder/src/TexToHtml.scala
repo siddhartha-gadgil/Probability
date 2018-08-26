@@ -720,7 +720,7 @@ class TeXToHtml(header: String, text: String) {
       }
       .mkString("\n")
 
-  def chapterMenu(v: Vector[(Int, String)]) = {
+  def chapterMenu(v: Vector[(Int, String)]): String = {
     val ttl = s"Chapters ${v.head._1} to ${v.last._1}"
     s"""
     |<li class="dropdown">
