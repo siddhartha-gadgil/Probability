@@ -354,7 +354,6 @@ object Site {
     </div>
     <div class="section" id ="Assignments">
       <h3> <a href="assign-all.html">Assignments</a> </h3>
-      <p>Assignments will be posted roughly once a week.</p>
       <ul>
         {assList}
       </ul>
