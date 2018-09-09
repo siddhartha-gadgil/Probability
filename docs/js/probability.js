@@ -5036,7 +5036,8 @@ $c_Lprobability_Illustrations$.prototype.main__V = (function() {
   $m_Lprobability_Percolation$().main__V();
   $m_Lprobability_CoinTosses$().main__V();
   $m_Lprobability_BayesCoin$().main__V();
-  $m_Lprobability_DependentTosses$().main__V()
+  $m_Lprobability_DependentTosses$().main__V();
+  $m_Lprobability_Cantor$().main__V()
 });
 $c_Lprobability_Illustrations$.prototype.$$js$exported$meth$main__O = (function() {
   this.main__V()
@@ -11144,6 +11145,147 @@ function $m_Lmhtml_RxImpureOps$() {
   return $n_Lmhtml_RxImpureOps$
 }
 /** @constructor */
+function $c_Lprobability_Cantor$() {
+  $c_O.call(this);
+  this.xscale$1 = 0;
+  this.yscale$1 = 0;
+  this.base$1 = null;
+  this.nV$1 = null;
+  this.cantorViewR$1 = null
+}
+$c_Lprobability_Cantor$.prototype = new $h_O();
+$c_Lprobability_Cantor$.prototype.constructor = $c_Lprobability_Cantor$;
+/** @constructor */
+function $h_Lprobability_Cantor$() {
+  /*<skip>*/
+}
+$h_Lprobability_Cantor$.prototype = $c_Lprobability_Cantor$.prototype;
+$c_Lprobability_Cantor$.prototype.xscale__I = (function() {
+  return this.xscale$1
+});
+$c_Lprobability_Cantor$.prototype.yscale__I = (function() {
+  return this.yscale$1
+});
+$c_Lprobability_Cantor$.prototype.base__Lprobability_Cantor = (function() {
+  return this.base$1
+});
+$c_Lprobability_Cantor$.prototype.step__I__Lprobability_Cantor__Lprobability_Cantor = (function(n, accum) {
+  var _$this = this;
+  _step: while (true) {
+    if ((n < 1)) {
+      return accum
+    } else {
+      var temp$n = ((n - 1) | 0);
+      var temp$accum = accum.next__Lprobability_Cantor();
+      n = temp$n;
+      accum = temp$accum;
+      continue _step
+    }
+  }
+});
+$c_Lprobability_Cantor$.prototype.step$default$2__Lprobability_Cantor = (function() {
+  return this.base__Lprobability_Cantor()
+});
+$c_Lprobability_Cantor$.prototype.nV__Lmhtml_Var = (function() {
+  return this.nV$1
+});
+$c_Lprobability_Cantor$.prototype.cantorViewR__Lmhtml_Rx = (function() {
+  return this.cantorViewR$1
+});
+$c_Lprobability_Cantor$.prototype.main__V = (function() {
+  var $$md = $m_s_xml_Null$();
+  $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel panel-primary"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$8 = $$md;
+  var jsx$7 = $m_s_xml_TopScope$();
+  var $$buf = new $c_s_xml_NodeBuffer().init___();
+  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+  var $$md$2 = $m_s_xml_Null$();
+  $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-heading"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$2 = $$md$2;
+  var jsx$1 = $m_s_xml_TopScope$();
+  var $$buf$2 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          Approximating the Cantor Distribution\n        "));
+  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$2, jsx$1, false, $$buf$2));
+  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+  var $$md$3 = $m_s_xml_Null$();
+  $$md$3 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("class", new $c_s_xml_Text().init___T("panel-body"), $$md$3, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  var jsx$6 = $$md$3;
+  var jsx$5 = $m_s_xml_TopScope$();
+  var $$buf$3 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  var jsx$4 = $m_s_xml_Null$();
+  var jsx$3 = $m_s_xml_TopScope$();
+  var $$buf$4 = new $c_s_xml_NodeBuffer().init___();
+  $$buf$4.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("Number of steps:"));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "label", jsx$4, jsx$3, false, $$buf$4));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  var $$md$4 = $m_s_xml_Null$();
+  $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("onchange", new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(e$2) {
+      var e = e$2;
+      $this.$$anonfun$main$1__p1__sjs_js_Dynamic__V(e)
+    })
+  })(this)), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().function1AttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("value", new $c_s_xml_Text().init___T("1"), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$md$4 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("type", new $c_s_xml_Text().init___T("number"), $$md$4, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "input", $$md$4, $m_s_xml_TopScope$(), true, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n          "));
+  $$buf$3.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.cantorViewR__Lmhtml_Rx(), $m_s_xml_XmlElementEmbeddable$().rxElementEmbeddable__s_xml_XmlElementEmbeddable__s_xml_XmlElementEmbeddable($m_s_xml_XmlElementEmbeddable$().nodeElementEmbeddable__s_xml_XmlElementEmbeddable()));
+  $$buf$3.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$6, jsx$5, false, $$buf$3));
+  $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+  var cantorDiv = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$8, jsx$7, false, $$buf);
+  var positionOpt = $m_s_Option$().apply__O__s_Option($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().querySelector("#cantor"));
+  positionOpt.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2, cantorDiv) {
+    return (function(position$2) {
+      var position = position$2;
+      return new $c_Lmhtml_Cancelable().init___F0(this$2.$$anonfun$main$2__p1__s_xml_Elem__Lorg_scalajs_dom_raw_Element__F0(cantorDiv, position))
+    })
+  })(this, cantorDiv)))
+});
+$c_Lprobability_Cantor$.prototype.$$anonfun$cantorViewR$1__p1__I__s_xml_Elem = (function(n) {
+  return $m_Lprobability_Cantor$().step__I__Lprobability_Cantor__Lprobability_Cantor(n, $m_Lprobability_Cantor$().step$default$2__Lprobability_Cantor()).view__s_xml_Elem()
+});
+$c_Lprobability_Cantor$.prototype.$$anonfun$main$1__p1__sjs_js_Dynamic__V = (function(e) {
+  $m_Lprobability_Cantor$().nV__Lmhtml_Var().$$colon$eq__O__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T(e.target.value))).toInt__I())
+});
+$c_Lprobability_Cantor$.prototype.$$anonfun$main$2__p1__s_xml_Elem__Lorg_scalajs_dom_raw_Element__F0 = (function(cantorDiv$1, position) {
+  var div = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("div");
+  position.appendChild(div);
+  return $m_Lmhtml_mount$().apply__Lorg_scalajs_dom_raw_Node__s_xml_Node__F0(div, cantorDiv$1)
+});
+$c_Lprobability_Cantor$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lprobability_Cantor$ = this;
+  this.xscale$1 = 600;
+  this.yscale$1 = 600;
+  this.base$1 = new $c_Lprobability_Cantor().init___sci_Vector__sci_Vector($as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$())), $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lprobability_Cantor$UndefinedFunc().init___D__D__D__D(0.0, 1.0, 0.0, 1.0)]))));
+  this.nV$1 = $m_Lmhtml_Var$().apply__O__Lmhtml_Var(1);
+  this.cantorViewR$1 = this.nV__Lmhtml_Var().map__F1__Lmhtml_Rx(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(n$2) {
+      var n = $uI(n$2);
+      return $this.$$anonfun$cantorViewR$1__p1__I__s_xml_Elem(n)
+    })
+  })(this)));
+  return this
+});
+var $d_Lprobability_Cantor$ = new $TypeData().initClass({
+  Lprobability_Cantor$: 0
+}, false, "probability.Cantor$", {
+  Lprobability_Cantor$: 1,
+  O: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lprobability_Cantor$.prototype.$classData = $d_Lprobability_Cantor$;
+var $n_Lprobability_Cantor$ = (void 0);
+function $m_Lprobability_Cantor$() {
+  if ((!$n_Lprobability_Cantor$)) {
+    $n_Lprobability_Cantor$ = new $c_Lprobability_Cantor$().init___()
+  };
+  return $n_Lprobability_Cantor$
+}
+/** @constructor */
 function $c_Lprobability_CoinTosses$() {
   $c_O.call(this);
   this.rnd$1 = null;
@@ -15064,6 +15206,520 @@ $c_Ljava_io_FilterOutputStream.prototype.init___Ljava_io_OutputStream = (functio
   return this
 });
 /** @constructor */
+function $c_Lprobability_Cantor() {
+  $c_O.call(this);
+  this.next$1 = null;
+  this.allLines$1 = null;
+  this.view$1 = null;
+  this.consts$1 = null;
+  this.undefs$1 = null;
+  this.bitmap$0$1 = 0
+}
+$c_Lprobability_Cantor.prototype = new $h_O();
+$c_Lprobability_Cantor.prototype.constructor = $c_Lprobability_Cantor;
+/** @constructor */
+function $h_Lprobability_Cantor() {
+  /*<skip>*/
+}
+$h_Lprobability_Cantor.prototype = $c_Lprobability_Cantor.prototype;
+$c_Lprobability_Cantor.prototype.consts__sci_Vector = (function() {
+  return this.consts$1
+});
+$c_Lprobability_Cantor.prototype.undefs__sci_Vector = (function() {
+  return this.undefs$1
+});
+$c_Lprobability_Cantor.prototype.next$lzycompute__p1__Lprobability_Cantor = (function() {
+  if (((this.bitmap$0$1 & 1) === 0)) {
+    this.next$1 = new $c_Lprobability_Cantor().init___sci_Vector__sci_Vector($as_sci_Vector($as_sc_SeqLike(this.consts__sci_Vector().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O($as_sc_GenTraversableOnce(this.undefs__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+      return (function(x$1$2) {
+        var x$1 = $as_Lprobability_Cantor$UndefinedFunc(x$1$2);
+        return $this.$$anonfun$next$1__p1__Lprobability_Cantor$UndefinedFunc__Lprobability_Cantor$ConstFunc(x$1)
+      })
+    })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).sortBy__F1__s_math_Ordering__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+      return (function(x$2$2) {
+        var x$2 = $as_Lprobability_Cantor$ConstFunc(x$2$2);
+        return this$2.$$anonfun$next$2__p1__Lprobability_Cantor$ConstFunc__D(x$2)
+      })
+    })(this)), $m_s_math_Ordering$Double$())), $as_sci_Vector($as_sc_SeqLike(this.undefs__sci_Vector().flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
+      return (function(x$3$2) {
+        var x$3 = $as_Lprobability_Cantor$UndefinedFunc(x$3$2);
+        return this$3.$$anonfun$next$3__p1__Lprobability_Cantor$UndefinedFunc__sci_Vector(x$3)
+      })
+    })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).sortBy__F1__s_math_Ordering__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
+      return (function(x$4$2) {
+        var x$4 = $as_Lprobability_Cantor$UndefinedFunc(x$4$2);
+        return this$4.$$anonfun$next$4__p1__Lprobability_Cantor$UndefinedFunc__D(x$4)
+      })
+    })(this)), $m_s_math_Ordering$Double$())));
+    this.bitmap$0$1 = (this.bitmap$0$1 | 1)
+  };
+  return this.next$1
+});
+$c_Lprobability_Cantor.prototype.next__Lprobability_Cantor = (function() {
+  return (((this.bitmap$0$1 & 1) === 0) ? this.next$lzycompute__p1__Lprobability_Cantor() : this.next$1)
+});
+$c_Lprobability_Cantor.prototype.allLines$lzycompute__p1__sci_Vector = (function() {
+  if (((this.bitmap$0$1 & 2) === 0)) {
+    this.allLines$1 = $as_sci_Vector($as_sci_Vector(this.consts__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+      return (function(x$5$2) {
+        var x$5 = $as_Lprobability_Cantor$ConstFunc(x$5$2);
+        return $this.$$anonfun$allLines$1__p1__Lprobability_Cantor$ConstFunc__s_xml_Elem(x$5)
+      })
+    })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O($as_sc_GenTraversableOnce(this.undefs__sci_Vector().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+      return (function(x$6$2) {
+        var x$6 = $as_Lprobability_Cantor$UndefinedFunc(x$6$2);
+        return this$2.$$anonfun$allLines$2__p1__Lprobability_Cantor$UndefinedFunc__s_xml_Elem(x$6)
+      })
+    })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
+    this.bitmap$0$1 = (this.bitmap$0$1 | 2)
+  };
+  return this.allLines$1
+});
+$c_Lprobability_Cantor.prototype.allLines__sci_Vector = (function() {
+  return (((this.bitmap$0$1 & 2) === 0) ? this.allLines$lzycompute__p1__sci_Vector() : this.allLines$1)
+});
+$c_Lprobability_Cantor.prototype.view$lzycompute__p1__s_xml_Elem = (function() {
+  if (((this.bitmap$0$1 & 4) === 0)) {
+    var jsx$3 = $m_s_xml_Null$();
+    var jsx$2 = $m_s_xml_TopScope$();
+    var $$buf = new $c_s_xml_NodeBuffer().init___();
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+    var $$tmpscope = $m_s_xml_TopScope$();
+    $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
+    var $$scope = $$tmpscope;
+    var $$md = $m_s_xml_Null$();
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("600"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("80%"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("viewBox", new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["0 0 ", " ", ""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lprobability_Cantor$().xscale__I(), $m_Lprobability_Cantor$().yscale__I()])), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    var jsx$1 = $$md;
+    var $$buf$2 = new $c_s_xml_NodeBuffer().init___();
+    $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+    var $$md$2 = $m_s_xml_Null$();
+    $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-width", new $c_s_xml_Text().init___T("1"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("fill", new $c_s_xml_Text().init___T("transparent"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("grey"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("height", new $c_s_xml_Text().init___T("600"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("width", new $c_s_xml_Text().init___T("600"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y", new $c_s_xml_Text().init___T("0"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md$2 = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x", new $c_s_xml_Text().init___T("0"), $$md$2, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "rect", $$md$2, $$scope, true, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+    $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n        "));
+    $$buf$2.$$amp$plus__O__s_xml_XmlElementEmbeddable__s_xml_NodeBuffer(this.allLines__sci_Vector(), $m_s_xml_XmlElementEmbeddable$().seqElementEmbeddable__s_xml_XmlElementEmbeddable());
+    $$buf$2.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "svg", jsx$1, $$scope, false, $$buf$2));
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n      "));
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "p", $m_s_xml_Null$(), $m_s_xml_TopScope$(), false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([])));
+    $$buf.$$amp$plus__s_xml_Node__s_xml_NodeBuffer(new $c_s_xml_Text().init___T("\n    "));
+    this.view$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "div", jsx$3, jsx$2, false, $$buf);
+    this.bitmap$0$1 = (this.bitmap$0$1 | 4)
+  };
+  return this.view$1
+});
+$c_Lprobability_Cantor.prototype.view__s_xml_Elem = (function() {
+  return (((this.bitmap$0$1 & 4) === 0) ? this.view$lzycompute__p1__s_xml_Elem() : this.view$1)
+});
+$c_Lprobability_Cantor.prototype.productPrefix__T = (function() {
+  return "Cantor"
+});
+$c_Lprobability_Cantor.prototype.productArity__I = (function() {
+  return 2
+});
+$c_Lprobability_Cantor.prototype.productElement__I__O = (function(x$1) {
+  var x1 = x$1;
+  switch (x1) {
+    case 0: {
+      return this.consts__sci_Vector();
+      break
+    }
+    case 1: {
+      return this.undefs__sci_Vector();
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T($objectToString(x$1))
+    }
+  }
+});
+$c_Lprobability_Cantor.prototype.productIterator__sc_Iterator = (function() {
+  return $m_sr_ScalaRunTime$().typedProductIterator__s_Product__sc_Iterator(this)
+});
+$c_Lprobability_Cantor.prototype.canEqual__O__Z = (function(x$1) {
+  return $is_Lprobability_Cantor(x$1)
+});
+$c_Lprobability_Cantor.prototype.hashCode__I = (function() {
+  return $m_sr_ScalaRunTime$().$$undhashCode__s_Product__I(this)
+});
+$c_Lprobability_Cantor.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lprobability_Cantor.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else {
+    var x1 = x$1;
+    if (($is_Lprobability_Cantor(x1) || false)) {
+      var Cantor$1 = $as_Lprobability_Cantor(x$1);
+      var x = this.consts__sci_Vector();
+      var x$2 = Cantor$1.consts__sci_Vector();
+      if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+        var x$3 = this.undefs__sci_Vector();
+        var x$4 = Cantor$1.undefs__sci_Vector();
+        var jsx$1 = ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
+      } else {
+        var jsx$1 = false
+      };
+      if (jsx$1) {
+        return Cantor$1.canEqual__O__Z(this)
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
+  }
+});
+$c_Lprobability_Cantor.prototype.$$anonfun$next$1__p1__Lprobability_Cantor$UndefinedFunc__Lprobability_Cantor$ConstFunc = (function(x$1) {
+  return x$1.nextConst__Lprobability_Cantor$ConstFunc()
+});
+$c_Lprobability_Cantor.prototype.$$anonfun$next$2__p1__Lprobability_Cantor$ConstFunc__D = (function(x$2) {
+  return x$2.x1__D()
+});
+$c_Lprobability_Cantor.prototype.$$anonfun$next$3__p1__Lprobability_Cantor$UndefinedFunc__sci_Vector = (function(x$3) {
+  return x$3.nextUndefs__sci_Vector()
+});
+$c_Lprobability_Cantor.prototype.$$anonfun$next$4__p1__Lprobability_Cantor$UndefinedFunc__D = (function(x$4) {
+  return x$4.x1__D()
+});
+$c_Lprobability_Cantor.prototype.$$anonfun$allLines$1__p1__Lprobability_Cantor$ConstFunc__s_xml_Elem = (function(x$5) {
+  return x$5.view__s_xml_Elem()
+});
+$c_Lprobability_Cantor.prototype.$$anonfun$allLines$2__p1__Lprobability_Cantor$UndefinedFunc__s_xml_Elem = (function(x$6) {
+  return x$6.view__s_xml_Elem()
+});
+$c_Lprobability_Cantor.prototype.init___sci_Vector__sci_Vector = (function(consts, undefs) {
+  this.consts$1 = consts;
+  this.undefs$1 = undefs;
+  $c_O.prototype.init___.call(this);
+  $f_s_Product__$$init$__V(this);
+  return this
+});
+function $is_Lprobability_Cantor(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lprobability_Cantor)))
+}
+function $as_Lprobability_Cantor(obj) {
+  return (($is_Lprobability_Cantor(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "probability.Cantor"))
+}
+function $isArrayOf_Lprobability_Cantor(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lprobability_Cantor)))
+}
+function $asArrayOf_Lprobability_Cantor(obj, depth) {
+  return (($isArrayOf_Lprobability_Cantor(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lprobability.Cantor;", depth))
+}
+var $d_Lprobability_Cantor = new $TypeData().initClass({
+  Lprobability_Cantor: 0
+}, false, "probability.Cantor", {
+  Lprobability_Cantor: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lprobability_Cantor.prototype.$classData = $d_Lprobability_Cantor;
+/** @constructor */
+function $c_Lprobability_Cantor$ConstFunc() {
+  $c_O.call(this);
+  this.view$1 = null;
+  this.x1$1 = 0.0;
+  this.x2$1 = 0.0;
+  this.y$1 = 0.0;
+  this.bitmap$0$1 = false
+}
+$c_Lprobability_Cantor$ConstFunc.prototype = new $h_O();
+$c_Lprobability_Cantor$ConstFunc.prototype.constructor = $c_Lprobability_Cantor$ConstFunc;
+/** @constructor */
+function $h_Lprobability_Cantor$ConstFunc() {
+  /*<skip>*/
+}
+$h_Lprobability_Cantor$ConstFunc.prototype = $c_Lprobability_Cantor$ConstFunc.prototype;
+$c_Lprobability_Cantor$ConstFunc.prototype.x1__D = (function() {
+  return this.x1$1
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.x2__D = (function() {
+  return this.x2$1
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.y__D = (function() {
+  return this.y$1
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.view$lzycompute__p1__s_xml_Elem = (function() {
+  if ((!this.bitmap$0$1)) {
+    var $$tmpscope = $m_s_xml_TopScope$();
+    $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
+    var $$scope = $$tmpscope;
+    var $$md = $m_s_xml_Null$();
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-width", new $c_s_xml_Text().init___T("1"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("blue"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", $objectToString((($m_Lprobability_Cantor$().yscale__I() - $doubleToInt((this.y__D() * $m_Lprobability_Cantor$().yscale__I()))) | 0)), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", $objectToString($doubleToInt((this.x2__D() * $m_Lprobability_Cantor$().xscale__I()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", $objectToString((($m_Lprobability_Cantor$().yscale__I() - $doubleToInt((this.y__D() * $m_Lprobability_Cantor$().yscale__I()))) | 0)), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", $objectToString($doubleToInt((this.x1__D() * $m_Lprobability_Cantor$().xscale__I()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    this.view$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md, $$scope, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]));
+    this.bitmap$0$1 = true
+  };
+  return this.view$1
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.view__s_xml_Elem = (function() {
+  return ((!this.bitmap$0$1) ? this.view$lzycompute__p1__s_xml_Elem() : this.view$1)
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.productPrefix__T = (function() {
+  return "ConstFunc"
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.productArity__I = (function() {
+  return 3
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.productElement__I__O = (function(x$1) {
+  var x1 = x$1;
+  switch (x1) {
+    case 0: {
+      return this.x1__D();
+      break
+    }
+    case 1: {
+      return this.x2__D();
+      break
+    }
+    case 2: {
+      return this.y__D();
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T($objectToString(x$1))
+    }
+  }
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.productIterator__sc_Iterator = (function() {
+  return $m_sr_ScalaRunTime$().typedProductIterator__s_Product__sc_Iterator(this)
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.canEqual__O__Z = (function(x$1) {
+  return $is_Lprobability_Cantor$ConstFunc(x$1)
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.x1__D()));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.x2__D()));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.y__D()));
+  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 3)
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else {
+    var x1 = x$1;
+    if (($is_Lprobability_Cantor$ConstFunc(x1) || false)) {
+      var ConstFunc$1 = $as_Lprobability_Cantor$ConstFunc(x$1);
+      return ((((this.x1__D() === ConstFunc$1.x1__D()) && (this.x2__D() === ConstFunc$1.x2__D())) && (this.y__D() === ConstFunc$1.y__D())) && ConstFunc$1.canEqual__O__Z(this))
+    } else {
+      return false
+    }
+  }
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.init___D__D__D = (function(x1, x2, y) {
+  this.x1$1 = x1;
+  this.x2$1 = x2;
+  this.y$1 = y;
+  $c_O.prototype.init___.call(this);
+  $f_s_Product__$$init$__V(this);
+  return this
+});
+function $is_Lprobability_Cantor$ConstFunc(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lprobability_Cantor$ConstFunc)))
+}
+function $as_Lprobability_Cantor$ConstFunc(obj) {
+  return (($is_Lprobability_Cantor$ConstFunc(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "probability.Cantor$ConstFunc"))
+}
+function $isArrayOf_Lprobability_Cantor$ConstFunc(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lprobability_Cantor$ConstFunc)))
+}
+function $asArrayOf_Lprobability_Cantor$ConstFunc(obj, depth) {
+  return (($isArrayOf_Lprobability_Cantor$ConstFunc(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lprobability.Cantor$ConstFunc;", depth))
+}
+var $d_Lprobability_Cantor$ConstFunc = new $TypeData().initClass({
+  Lprobability_Cantor$ConstFunc: 0
+}, false, "probability.Cantor$ConstFunc", {
+  Lprobability_Cantor$ConstFunc: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lprobability_Cantor$ConstFunc.prototype.$classData = $d_Lprobability_Cantor$ConstFunc;
+/** @constructor */
+function $c_Lprobability_Cantor$UndefinedFunc() {
+  $c_O.call(this);
+  this.view$1 = null;
+  this.x1$1 = 0.0;
+  this.x2$1 = 0.0;
+  this.y1$1 = 0.0;
+  this.y2$1 = 0.0;
+  this.a$1 = 0.0;
+  this.b$1 = 0.0;
+  this.y$1 = 0.0;
+  this.bitmap$0$1 = false
+}
+$c_Lprobability_Cantor$UndefinedFunc.prototype = new $h_O();
+$c_Lprobability_Cantor$UndefinedFunc.prototype.constructor = $c_Lprobability_Cantor$UndefinedFunc;
+/** @constructor */
+function $h_Lprobability_Cantor$UndefinedFunc() {
+  /*<skip>*/
+}
+$h_Lprobability_Cantor$UndefinedFunc.prototype = $c_Lprobability_Cantor$UndefinedFunc.prototype;
+$c_Lprobability_Cantor$UndefinedFunc.prototype.x1__D = (function() {
+  return this.x1$1
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.x2__D = (function() {
+  return this.x2$1
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.y1__D = (function() {
+  return this.y1$1
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.y2__D = (function() {
+  return this.y2$1
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.a__D = (function() {
+  return this.a$1
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.b__D = (function() {
+  return this.b$1
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.y__D = (function() {
+  return this.y$1
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.nextConst__Lprobability_Cantor$ConstFunc = (function() {
+  return new $c_Lprobability_Cantor$ConstFunc().init___D__D__D(this.a__D(), this.b__D(), this.y__D())
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.nextUndefs__sci_Vector = (function() {
+  return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lprobability_Cantor$UndefinedFunc().init___D__D__D__D(this.x1__D(), this.a__D(), this.y1__D(), this.y__D()), new $c_Lprobability_Cantor$UndefinedFunc().init___D__D__D__D(this.b__D(), this.x2__D(), this.y__D(), this.y2__D())])))
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.view$lzycompute__p1__s_xml_Elem = (function() {
+  if ((!this.bitmap$0$1)) {
+    var $$tmpscope = $m_s_xml_TopScope$();
+    $$tmpscope = new $c_s_xml_NamespaceBinding().init___T__T__s_xml_NamespaceBinding(null, "http://www.w3.org/2000/svg", $$tmpscope);
+    var $$scope = $$tmpscope;
+    var $$md = $m_s_xml_Null$();
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke-dasharray", new $c_s_xml_Text().init___T("1 2"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("stroke", new $c_s_xml_Text().init___T("grey"), $$md, $m_s_xml_XmlAttributeEmbeddable$().textNodeAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y2", $objectToString((($m_Lprobability_Cantor$().yscale__I() - $doubleToInt((this.y2__D() * $m_Lprobability_Cantor$().yscale__I()))) | 0)), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x2", $objectToString($doubleToInt((this.x2__D() * $m_Lprobability_Cantor$().xscale__I()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("y1", $objectToString((($m_Lprobability_Cantor$().yscale__I() - $doubleToInt((this.y1__D() * $m_Lprobability_Cantor$().yscale__I()))) | 0)), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    $$md = new $c_s_xml_UnprefixedAttribute().init___T__O__s_xml_MetaData__s_xml_XmlAttributeEmbeddable("x1", $objectToString($doubleToInt((this.x1__D() * $m_Lprobability_Cantor$().xscale__I()))), $$md, $m_s_xml_XmlAttributeEmbeddable$().stringAttributeEmbeddable__s_xml_XmlAttributeEmbeddable());
+    this.view$1 = new $c_s_xml_Elem().init___T__T__s_xml_MetaData__s_xml_Scope__Z__sc_Seq(null, "line", $$md, $$scope, false, new $c_sjs_js_WrappedArray().init___sjs_js_Array([]));
+    this.bitmap$0$1 = true
+  };
+  return this.view$1
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.view__s_xml_Elem = (function() {
+  return ((!this.bitmap$0$1) ? this.view$lzycompute__p1__s_xml_Elem() : this.view$1)
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.productPrefix__T = (function() {
+  return "UndefinedFunc"
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.productArity__I = (function() {
+  return 4
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.productElement__I__O = (function(x$1) {
+  var x1 = x$1;
+  switch (x1) {
+    case 0: {
+      return this.x1__D();
+      break
+    }
+    case 1: {
+      return this.x2__D();
+      break
+    }
+    case 2: {
+      return this.y1__D();
+      break
+    }
+    case 3: {
+      return this.y2__D();
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T($objectToString(x$1))
+    }
+  }
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.productIterator__sc_Iterator = (function() {
+  return $m_sr_ScalaRunTime$().typedProductIterator__s_Product__sc_Iterator(this)
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.canEqual__O__Z = (function(x$1) {
+  return $is_Lprobability_Cantor$UndefinedFunc(x$1)
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.x1__D()));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.x2__D()));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.y1__D()));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.y2__D()));
+  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 4)
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else {
+    var x1 = x$1;
+    if (($is_Lprobability_Cantor$UndefinedFunc(x1) || false)) {
+      var UndefinedFunc$1 = $as_Lprobability_Cantor$UndefinedFunc(x$1);
+      return (((((this.x1__D() === UndefinedFunc$1.x1__D()) && (this.x2__D() === UndefinedFunc$1.x2__D())) && (this.y1__D() === UndefinedFunc$1.y1__D())) && (this.y2__D() === UndefinedFunc$1.y2__D())) && UndefinedFunc$1.canEqual__O__Z(this))
+    } else {
+      return false
+    }
+  }
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.init___D__D__D__D = (function(x1, x2, y1, y2) {
+  this.x1$1 = x1;
+  this.x2$1 = x2;
+  this.y1$1 = y1;
+  this.y2$1 = y2;
+  $c_O.prototype.init___.call(this);
+  $f_s_Product__$$init$__V(this);
+  this.a$1 = (((2 * x1) + x2) / 3);
+  this.b$1 = (((2 * x2) + x1) / 3);
+  this.y$1 = ((y1 + y2) / 2);
+  return this
+});
+function $is_Lprobability_Cantor$UndefinedFunc(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lprobability_Cantor$UndefinedFunc)))
+}
+function $as_Lprobability_Cantor$UndefinedFunc(obj) {
+  return (($is_Lprobability_Cantor$UndefinedFunc(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "probability.Cantor$UndefinedFunc"))
+}
+function $isArrayOf_Lprobability_Cantor$UndefinedFunc(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lprobability_Cantor$UndefinedFunc)))
+}
+function $asArrayOf_Lprobability_Cantor$UndefinedFunc(obj, depth) {
+  return (($isArrayOf_Lprobability_Cantor$UndefinedFunc(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lprobability.Cantor$UndefinedFunc;", depth))
+}
+var $d_Lprobability_Cantor$UndefinedFunc = new $TypeData().initClass({
+  Lprobability_Cantor$UndefinedFunc: 0
+}, false, "probability.Cantor$UndefinedFunc", {
+  Lprobability_Cantor$UndefinedFunc: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lprobability_Cantor$UndefinedFunc.prototype.$classData = $d_Lprobability_Cantor$UndefinedFunc;
+/** @constructor */
 function $c_Lprobability_CoinTosses() {
   $c_O.call(this);
   this.tosses$1 = null;
@@ -16702,6 +17358,9 @@ var $d_s_StringContext = new $TypeData().initClass({
 $c_s_StringContext.prototype.$classData = $d_s_StringContext;
 function $f_s_math_Ordering__lteq__O__O__Z($thiz, x, y) {
   return ($thiz.compare__O__O__I(x, y) <= 0)
+}
+function $f_s_math_Ordering__on__F1__s_math_Ordering($thiz, f) {
+  return new $c_s_math_Ordering$$anon$5().init___s_math_Ordering__F1($thiz, f)
 }
 function $f_s_math_Ordering__$$init$__V($thiz) {
   /*<skip>*/
@@ -19168,6 +19827,15 @@ var $d_s_StringContext$InvalidEscapeException = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_s_StringContext$InvalidEscapeException.prototype.$classData = $d_s_StringContext$InvalidEscapeException;
+function $f_s_math_Ordering$DoubleOrdering__compare__D__D__I($thiz, x, y) {
+  return $m_jl_Double$().compare__D__D__I(x, y)
+}
+function $f_s_math_Ordering$DoubleOrdering__lteq__D__D__Z($thiz, x, y) {
+  return (x <= y)
+}
+function $f_s_math_Ordering$DoubleOrdering__$$init$__V($thiz) {
+  /*<skip>*/
+}
 function $f_s_math_Ordering$IntOrdering__compare__I__I__I($thiz, x, y) {
   return $m_jl_Integer$().compare__I__I__I(x, y)
 }
@@ -20851,6 +21519,9 @@ $h_ju_Arrays$$anon$3.prototype = $c_ju_Arrays$$anon$3.prototype;
 $c_ju_Arrays$$anon$3.prototype.lteq__O__O__Z = (function(x, y) {
   return $f_s_math_Ordering__lteq__O__O__Z(this, x, y)
 });
+$c_ju_Arrays$$anon$3.prototype.on__F1__s_math_Ordering = (function(f) {
+  return $f_s_math_Ordering__on__F1__s_math_Ordering(this, f)
+});
 $c_ju_Arrays$$anon$3.prototype.compare__O__O__I = (function(x, y) {
   return this.cmp$1$1.compare__O__O__I(x, y)
 });
@@ -20875,6 +21546,53 @@ var $d_ju_Arrays$$anon$3 = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_ju_Arrays$$anon$3.prototype.$classData = $d_ju_Arrays$$anon$3;
+/** @constructor */
+function $c_s_math_Ordering$$anon$5() {
+  $c_O.call(this);
+  this.$$outer$1 = null;
+  this.f$1$1 = null
+}
+$c_s_math_Ordering$$anon$5.prototype = new $h_O();
+$c_s_math_Ordering$$anon$5.prototype.constructor = $c_s_math_Ordering$$anon$5;
+/** @constructor */
+function $h_s_math_Ordering$$anon$5() {
+  /*<skip>*/
+}
+$h_s_math_Ordering$$anon$5.prototype = $c_s_math_Ordering$$anon$5.prototype;
+$c_s_math_Ordering$$anon$5.prototype.lteq__O__O__Z = (function(x, y) {
+  return $f_s_math_Ordering__lteq__O__O__Z(this, x, y)
+});
+$c_s_math_Ordering$$anon$5.prototype.on__F1__s_math_Ordering = (function(f) {
+  return $f_s_math_Ordering__on__F1__s_math_Ordering(this, f)
+});
+$c_s_math_Ordering$$anon$5.prototype.compare__O__O__I = (function(x, y) {
+  return this.$$outer$1.compare__O__O__I(this.f$1$1.apply__O__O(x), this.f$1$1.apply__O__O(y))
+});
+$c_s_math_Ordering$$anon$5.prototype.init___s_math_Ordering__F1 = (function($$outer, f$1) {
+  if (($$outer === null)) {
+    throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+  } else {
+    this.$$outer$1 = $$outer
+  };
+  this.f$1$1 = f$1;
+  $c_O.prototype.init___.call(this);
+  $f_s_math_PartialOrdering__$$init$__V(this);
+  $f_s_math_Ordering__$$init$__V(this);
+  return this
+});
+var $d_s_math_Ordering$$anon$5 = new $TypeData().initClass({
+  s_math_Ordering$$anon$5: 0
+}, false, "scala.math.Ordering$$anon$5", {
+  s_math_Ordering$$anon$5: 1,
+  O: 1,
+  s_math_Ordering: 1,
+  ju_Comparator: 1,
+  s_math_PartialOrdering: 1,
+  s_math_Equiv: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_math_Ordering$$anon$5.prototype.$classData = $d_s_math_Ordering$$anon$5;
 /** @constructor */
 function $c_s_reflect_ClassTag$GenericClassTag() {
   $c_O.call(this);
@@ -21505,6 +22223,61 @@ var $d_s_Tuple2$mcII$sp = new $TypeData().initClass({
 });
 $c_s_Tuple2$mcII$sp.prototype.$classData = $d_s_Tuple2$mcII$sp;
 /** @constructor */
+function $c_s_math_Ordering$Double$() {
+  $c_O.call(this)
+}
+$c_s_math_Ordering$Double$.prototype = new $h_O();
+$c_s_math_Ordering$Double$.prototype.constructor = $c_s_math_Ordering$Double$;
+/** @constructor */
+function $h_s_math_Ordering$Double$() {
+  /*<skip>*/
+}
+$h_s_math_Ordering$Double$.prototype = $c_s_math_Ordering$Double$.prototype;
+$c_s_math_Ordering$Double$.prototype.compare__D__D__I = (function(x, y) {
+  return $f_s_math_Ordering$DoubleOrdering__compare__D__D__I(this, x, y)
+});
+$c_s_math_Ordering$Double$.prototype.lteq__D__D__Z = (function(x, y) {
+  return $f_s_math_Ordering$DoubleOrdering__lteq__D__D__Z(this, x, y)
+});
+$c_s_math_Ordering$Double$.prototype.on__F1__s_math_Ordering = (function(f) {
+  return $f_s_math_Ordering__on__F1__s_math_Ordering(this, f)
+});
+$c_s_math_Ordering$Double$.prototype.lteq__O__O__Z = (function(x, y) {
+  return this.lteq__D__D__Z($uD(x), $uD(y))
+});
+$c_s_math_Ordering$Double$.prototype.compare__O__O__I = (function(x, y) {
+  return this.compare__D__D__I($uD(x), $uD(y))
+});
+$c_s_math_Ordering$Double$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_s_math_Ordering$Double$ = this;
+  $f_s_math_PartialOrdering__$$init$__V(this);
+  $f_s_math_Ordering__$$init$__V(this);
+  $f_s_math_Ordering$DoubleOrdering__$$init$__V(this);
+  return this
+});
+var $d_s_math_Ordering$Double$ = new $TypeData().initClass({
+  s_math_Ordering$Double$: 0
+}, false, "scala.math.Ordering$Double$", {
+  s_math_Ordering$Double$: 1,
+  O: 1,
+  s_math_Ordering$DoubleOrdering: 1,
+  s_math_Ordering: 1,
+  ju_Comparator: 1,
+  s_math_PartialOrdering: 1,
+  s_math_Equiv: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_math_Ordering$Double$.prototype.$classData = $d_s_math_Ordering$Double$;
+var $n_s_math_Ordering$Double$ = (void 0);
+function $m_s_math_Ordering$Double$() {
+  if ((!$n_s_math_Ordering$Double$)) {
+    $n_s_math_Ordering$Double$ = new $c_s_math_Ordering$Double$().init___()
+  };
+  return $n_s_math_Ordering$Double$
+}
+/** @constructor */
 function $c_s_math_Ordering$Int$() {
   $c_O.call(this)
 }
@@ -21520,6 +22293,9 @@ $c_s_math_Ordering$Int$.prototype.compare__I__I__I = (function(x, y) {
 });
 $c_s_math_Ordering$Int$.prototype.lteq__O__O__Z = (function(x, y) {
   return $f_s_math_Ordering__lteq__O__O__Z(this, x, y)
+});
+$c_s_math_Ordering$Int$.prototype.on__F1__s_math_Ordering = (function(f) {
+  return $f_s_math_Ordering__on__F1__s_math_Ordering(this, f)
 });
 $c_s_math_Ordering$Int$.prototype.compare__O__O__I = (function(x, y) {
   return this.compare__I__I__I($uI(x), $uI(y))
@@ -24725,6 +25501,9 @@ function $f_sc_SeqLike__$$colon$plus__O__scg_CanBuildFrom__O($thiz, elem, bf) {
   b.$$plus$eq__O__scm_Builder(elem);
   return b.result__O()
 }
+function $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O($thiz, f, ord) {
+  return $thiz.sorted__s_math_Ordering__O(ord.on__F1__s_math_Ordering(f))
+}
 function $f_sc_SeqLike__sorted__s_math_Ordering__O($thiz, ord) {
   var len = $thiz.length__I();
   var b = $thiz.newBuilder__scm_Builder();
@@ -25461,6 +26240,9 @@ $c_sci_StringOps.prototype.size__I = (function() {
 $c_sci_StringOps.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
 });
+$c_sci_StringOps.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
+});
 $c_sci_StringOps.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
 });
@@ -25826,6 +26608,9 @@ $c_scm_ArrayOps$ofBoolean.prototype.size__I = (function() {
 $c_scm_ArrayOps$ofBoolean.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
 });
+$c_scm_ArrayOps$ofBoolean.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
+});
 $c_scm_ArrayOps$ofBoolean.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
 });
@@ -26148,6 +26933,9 @@ $c_scm_ArrayOps$ofByte.prototype.size__I = (function() {
 });
 $c_scm_ArrayOps$ofByte.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
+});
+$c_scm_ArrayOps$ofByte.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
 });
 $c_scm_ArrayOps$ofByte.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
@@ -26472,6 +27260,9 @@ $c_scm_ArrayOps$ofChar.prototype.size__I = (function() {
 $c_scm_ArrayOps$ofChar.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
 });
+$c_scm_ArrayOps$ofChar.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
+});
 $c_scm_ArrayOps$ofChar.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
 });
@@ -26794,6 +27585,9 @@ $c_scm_ArrayOps$ofDouble.prototype.size__I = (function() {
 });
 $c_scm_ArrayOps$ofDouble.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
+});
+$c_scm_ArrayOps$ofDouble.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
 });
 $c_scm_ArrayOps$ofDouble.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
@@ -27118,6 +27912,9 @@ $c_scm_ArrayOps$ofFloat.prototype.size__I = (function() {
 $c_scm_ArrayOps$ofFloat.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
 });
+$c_scm_ArrayOps$ofFloat.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
+});
 $c_scm_ArrayOps$ofFloat.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
 });
@@ -27440,6 +28237,9 @@ $c_scm_ArrayOps$ofInt.prototype.size__I = (function() {
 });
 $c_scm_ArrayOps$ofInt.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
+});
+$c_scm_ArrayOps$ofInt.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
 });
 $c_scm_ArrayOps$ofInt.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
@@ -27764,6 +28564,9 @@ $c_scm_ArrayOps$ofLong.prototype.size__I = (function() {
 $c_scm_ArrayOps$ofLong.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
 });
+$c_scm_ArrayOps$ofLong.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
+});
 $c_scm_ArrayOps$ofLong.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
 });
@@ -28086,6 +28889,9 @@ $c_scm_ArrayOps$ofRef.prototype.size__I = (function() {
 });
 $c_scm_ArrayOps$ofRef.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
+});
+$c_scm_ArrayOps$ofRef.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
 });
 $c_scm_ArrayOps$ofRef.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
@@ -28413,6 +29219,9 @@ $c_scm_ArrayOps$ofShort.prototype.size__I = (function() {
 $c_scm_ArrayOps$ofShort.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
 });
+$c_scm_ArrayOps$ofShort.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
+});
 $c_scm_ArrayOps$ofShort.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
 });
@@ -28735,6 +29544,9 @@ $c_scm_ArrayOps$ofUnit.prototype.size__I = (function() {
 });
 $c_scm_ArrayOps$ofUnit.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
+});
+$c_scm_ArrayOps$ofUnit.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
 });
 $c_scm_ArrayOps$ofUnit.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
@@ -29129,6 +29941,9 @@ $c_sjs_js_ArrayOps.prototype.size__I = (function() {
 $c_sjs_js_ArrayOps.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
 });
+$c_sjs_js_ArrayOps.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
+});
 $c_sjs_js_ArrayOps.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)
 });
@@ -29492,6 +30307,9 @@ $c_sc_AbstractSeq.prototype.indexWhere__F1__I__I = (function(p, from) {
 });
 $c_sc_AbstractSeq.prototype.distinct__O = (function() {
   return $f_sc_SeqLike__distinct__O(this)
+});
+$c_sc_AbstractSeq.prototype.sortBy__F1__s_math_Ordering__O = (function(f, ord) {
+  return $f_sc_SeqLike__sortBy__F1__s_math_Ordering__O(this, f, ord)
 });
 $c_sc_AbstractSeq.prototype.sorted__s_math_Ordering__O = (function(ord) {
   return $f_sc_SeqLike__sorted__s_math_Ordering__O(this, ord)

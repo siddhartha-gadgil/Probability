@@ -11,8 +11,8 @@ import scala.xml.{Elem, Node}
 import math._
 
 case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
-  lazy val xmax = (xscale * n).toInt // 400
-  lazy val ymax = (yscale * m).toInt// 400
+  lazy val xmax: Int = (xscale * n).toInt // 400
+  lazy val ymax: Int = (yscale * m).toInt// 400
 
   lazy val xscale = 40.0 // xmax.toDouble / n
   lazy val yscale = 40.0 //ymax.toDouble / m
@@ -86,21 +86,21 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
       }
   }
 
-  val top = (0 to n).map((i) => Vector(i -> 0)).toSet
+  val top: Set[Vector[(Int, Int)]] = (0 to n).map((i) => Vector(i -> 0)).toSet
 
-  val bottom = (0 to n).map((i) => i -> m).toSet
+  val bottom: Set[(Int, Int)] = (0 to n).map((i) => i -> m).toSet
 
-  val topToBottom =
+  val topToBottom: Option[Vector[(Int, Int)]] =
     findPath(
       top,
       bottom,
       neighbours
     )
 
-  val left = (0 until m).map((i) => Vector(0 -> i)).toSet
-  val right = (0 until m).map(i => (n + 1) -> i).toSet
+  val left: Set[Vector[(Int, Int)]] = (0 until m).map((i) => Vector(0 -> i)).toSet
+  val right: Set[(Int, Int)] = (0 until m).map(i => (n + 1) -> i).toSet
 
-  lazy val leftToRight = findPath(left, right, dualNeighbours)
+  lazy val leftToRight: Option[Vector[(Int, Int)]] = findPath(left, right, dualNeighbours)
 
   lazy val blueLines: Seq[Elem] =
     topToBottom.map{
@@ -122,11 +122,11 @@ case class Percolation(n: Int, m: Int, edges: Set[((Int, Int), (Int, Int))]) {
 
   lazy val allLines: immutable.IndexedSeq[Elem] = gridLines ++ edgeLines.toSeq ++ blueLines ++ redLines
 
-  lazy val connected =
+  lazy val connected: Elem =
     if (topToBottom.isEmpty) <p>No path from top to bottom: nothing crosses the red line.</p>
     else <p>The blue path connects the top to the bottom</p>
 
-  lazy val view =
+  lazy val view: Elem =
       <div>
       <svg viewBox={s"0 0 $xmax $ymax"} width="80%" height="400" xmlns="http://www.w3.org/2000/svg">
         {allLines}
@@ -164,7 +164,7 @@ object Percolation {
 
   val percolation: Var[Percolation] = Var(random(10, 10))
 
-  val percView = percolation.map(_.view)
+  val percView: Rx[Elem] = percolation.map(_.view)
 
   def main() : Unit = {
     val percDiv: Node =

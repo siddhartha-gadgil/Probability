@@ -16,6 +16,7 @@ object Illustrations{
     CoinTosses.main()
     BayesCoin.main()
     DependentTosses.main()
+    Cantor.main()
   }
 }
 

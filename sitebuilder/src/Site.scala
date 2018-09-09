@@ -293,7 +293,8 @@ object Site {
       "Birthday Paradox" -> "birthdays",
       "Percolation" -> "percolation",
       "Bayes rule for Coins" -> "bayes-coin",
-      "Dependent tosses" -> "dependent-tosses"
+      "Dependent tosses" -> "dependent-tosses",
+      "Cantor Distribution" -> "cantor"
     )
 
   /**
