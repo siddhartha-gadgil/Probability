@@ -31,6 +31,15 @@ a:focus {
   text-decoration: underline;
 }
 
+.link {
+  color: #3498db;
+}
+
+.link:hover,
+.link:focus {
+  color: #3498db;
+  text-decoration: underline;
+}
 
 .navbar-default .navbar-nav > li > a:hover {
   color: #ffffff;
