@@ -827,4 +827,5 @@ object SiteBuild extends App {
   mkAss()
   mkIllus()
   mkProblems()
+  mkMidterm()
 }

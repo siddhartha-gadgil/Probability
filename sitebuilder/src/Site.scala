@@ -396,6 +396,10 @@ object Site {
   </div>
 
   <div class="col-md-3 section" id ="Alerts">
+    <h4>Announcements</h4>
+    <ul>
+      <li> <a href="midterm.html"> Midterm Examination</a> on Fri, 28/9/2018 </li>
+    </ul>
     <h4> <a href="assign-all.html">Upcoming Assignments</a> </h4>
     <ul>
       {allAss.map(ass =>
@@ -451,7 +455,7 @@ object Site {
   def mkHome(): Unit =
     write.over(pwd / "docs" / "index.html", page(home.toString, ""))
 
-  lazy val probProblemsBody =
+  lazy val probProblemsBody: String =
     TeXToHtml.teXConvertor("Probabilityproblemlist")
     .allReplaced
 
@@ -461,9 +465,16 @@ object Site {
     <div class="text-right"><a href="Probabilityproblemlist.pdf">PDF version</a></div>
     """
 
-  lazy val probPage = page(
+  lazy val probPage: String = page(
     probTop + probProblemsBody, "")
 
   def mkProblems() : Unit =
     write.over(pwd / "docs" / "prob-problems.html", probPage)
+
+  val midterm: Elem =
+    <p>
+      The midterm examination will be on Friday, September 28, 2018. More details will be posted by Friday, September 21, 2018.
+    </p>
+
+  def mkMidterm(): Unit = write.over(pwd / "docs" / "midterm.html", page(midterm.toString, ""))
 }
