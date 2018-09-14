@@ -359,6 +359,14 @@ object Site {
         {assList}
       </ul>
     </div>
+    <div class="section">
+      <h3>Grading</h3>
+      <ul> There will be one <a href="midterm.html"> midterm</a> and a final examination. The weightages in the final grades are as follows:
+        <li> Assignments: 10%.</li>
+        <li> Midterm: 40%.</li>
+        <li> Final: 50%.</li>
+      </ul>
+    </div>
     <div id="refs" class="section">
       <h3>Suggested books</h3>
       <ol>
@@ -472,9 +480,19 @@ object Site {
     write.over(pwd / "docs" / "prob-problems.html", probPage)
 
   val midterm: Elem =
+    <div>
+      <h2 class="text-center"> Midterm Examination</h2>
+      <p> The midterm examination is scheduled as follows:</p>
+      <ul>
+        <li><strong>Date:</strong> Friday, September 28, 2018.</li>
+        <li><strong>Time:</strong> 8:30 am - 10:00 am</li>
+        <li><strong>Venue:</strong> LH-1, Department of Mathematics, IISc </li>
+      </ul>
     <p>
-      The midterm examination will be on Friday, September 28, 2018. More details will be posted by Friday, September 21, 2018.
+      The syllabus is the material covered in the lectures up to Wednesday, September 19, 2018.
+      More details of the syllabus will be posted by Wednesday.
     </p>
+    </div>
 
   def mkMidterm(): Unit = write.over(pwd / "docs" / "midterm.html", page(midterm.toString, ""))
 }
