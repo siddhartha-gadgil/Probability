@@ -490,8 +490,17 @@ object Site {
       </ul>
     <p>
       The syllabus is the material covered in the lectures up to Wednesday, September 19, 2018.
-      More details of the syllabus will be posted by Wednesday.
+      Topics for the midterm with  (roughly corresponding) chapters in the <a href="http://math.iisc.ac.in/~gadgil/MA261/notes/index.html" target="_blank">notes</a> are as follows
     </p>
+    <ul>
+         <li>Discrete Probability spaces (Chapters 2 and 3).</li>
+        <li> Laws of Probability (Chapter 6). </li>
+        <li> Combinations of Events (Chapters 8 and 9). </li>
+        <li> Independence and Conditional Probabilities (Chapters 9 to 12). </li>
+        <li> Discrete and Continuous distributions (Chapters 13 to 16).</li>
+        <li> Some important distributions: Bernoulli, Binomial, Geometric, Exponential, Poisson, Normal.</li>
+        <li> Random variables: Distributions, Independence, Expectation and Variance (Chapters 18, 20, 21).</li>
+    </ul>
     </div>
 
   def mkMidterm(): Unit = write.over(pwd / "docs" / "midterm.html", page(midterm.toString, ""))
