@@ -361,7 +361,8 @@ object Site {
     </div>
     <div class="section">
       <h3>Grading</h3>
-      <ul> There will be one <a href="midterm.html"> midterm</a> and a final examination. The weightages in the final grades are as follows:
+      <ul> There will be one <a href="midterm.html"> midterm</a> and a final examination. <strong> Please note the <a href="rules.html">rules</a> for the examinations.  </strong>
+        The weightages in the final grades are as follows:
         <li> Assignments: 10%.</li>
         <li> Midterm: 40%.</li>
         <li> Final: 50%.</li>
@@ -488,6 +489,12 @@ object Site {
         <li><strong>Time:</strong> 8:30 am - 10:00 am</li>
         <li><strong>Venue:</strong> LH-1, Department of Mathematics, IISc </li>
       </ul>
+      <p>
+        <strong>
+        Please note the <a href="rules.html">rules</a> for the examination.
+        </strong>
+      </p>
+
     <p>
       The syllabus is the material covered in the lectures up to Wednesday, September 19, 2018.
       Topics for the midterm with  (roughly corresponding) chapters in the <a href="http://math.iisc.ac.in/~gadgil/MA261/notes/index.html" target="_blank">notes</a> are as follows
@@ -504,4 +511,8 @@ object Site {
     </div>
 
   def mkMidterm(): Unit = write.over(pwd / "docs" / "midterm.html", page(midterm.toString, ""))
+
+  val rules = read(pwd / "sitebuilder" / "resources" / "rules.html")
+
+  def mkRules(): Unit =  write.over(pwd / "docs" / "rules.html", page(rules, ""))
 }

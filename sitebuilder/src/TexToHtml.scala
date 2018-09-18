@@ -828,4 +828,5 @@ object SiteBuild extends App {
   mkIllus()
   mkProblems()
   mkMidterm()
+  mkRules()
 }
