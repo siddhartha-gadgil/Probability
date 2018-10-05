@@ -80,7 +80,8 @@ object client extends ScalaJSModule with MetalsModule{
 
   def ivyDeps = Agg(
     ivy"org.scala-js::scalajs-dom::0.9.4",
-    ivy"in.nvilla::monadic-html::0.4.0-RC1"
+    ivy"in.nvilla::monadic-html::0.4.0-RC1",
+    ivy"com.lihaoyi::scalatags::0.6.7"
   )
 
   def pack(): define.Command[PathRef] = T.command {
