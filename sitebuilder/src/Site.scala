@@ -407,7 +407,7 @@ object Site {
   <div class="col-md-3 section" id ="Alerts">
     <h4>Announcements</h4>
     <ul>
-      <li> <a href="midterm.html"> Midterm Examination</a> on Fri, 28/9/2018 </li>
+      <li> <a href="midterm.html"> Midterm Examination</a> on Fri, 28/9/2018 (updated) </li>
     </ul>
     <h4> <a href="assign-all.html">Upcoming Assignments</a> </h4>
     <ul>
@@ -483,12 +483,22 @@ object Site {
   val midterm: Elem =
     <div>
       <h2 class="text-center"> Midterm Examination</h2>
-      <p> The midterm examination is scheduled as follows:</p>
+      <p> The midterm examination was scheduled as follows:</p>
       <ul>
         <li><strong>Date:</strong> Friday, September 28, 2018.</li>
         <li><strong>Time:</strong> 8:30 am - 10:00 am</li>
         <li><strong>Venue:</strong> LH-1, Department of Mathematics, IISc </li>
       </ul>
+      <h3>Distribution of scores in the midterm</h3>
+      <iframe width="478" height="292" frameborder="0" scrolling="no"
+              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSslrC0hE4JnahiPyHIQn1BMdnjHjPrsFKwkm4ez6mCSyQwEQRaLTm-ucGDl3hx7LEn8ec-9rjPRMD0/pubchart?oid=497977102&amp;format=interactive">
+      </iframe>
+      <h3> Answer scripts, queries etc.</h3>
+      <p>
+        If you have not seen your answer script or want to meet me (Siddhartha Gadgil) about any related issue, I will be available on Tuesday, October 9, 2019
+        between 8:30 am and 11:20 am. in my office N-15, Department of Mathematics.
+      </p>
+      <h3> Syllabus etc</h3>
       <p>
         <strong>
         Please note the <a href="rules.html">rules</a> for the examination.
