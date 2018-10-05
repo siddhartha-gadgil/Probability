@@ -294,7 +294,8 @@ object Site {
       "Percolation" -> "percolation",
       "Bayes rule for Coins" -> "bayes-coin",
       "Dependent tosses" -> "dependent-tosses",
-      "Cantor Distribution" -> "cantor"
+      "Cantor Distribution" -> "cantor",
+      "Markov Process" -> "markov"
     )
 
   /**

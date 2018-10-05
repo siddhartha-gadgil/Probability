@@ -388,7 +388,7 @@ object TeXToHtml {
     }
 
   def addTags(t: String): String = {
-    pprint.log(labelTags(t))
+//    pprint.log(labelTags(t))
     replaceAll(t)(labelTags(t))
   }
 

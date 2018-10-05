@@ -6,9 +6,7 @@ import mhtml._
 import org.scalajs.dom
 import org.scalajs.dom.document
 
-import scala.collection.immutable
 import scala.xml.{Elem, Node}
-import math._
 import annotation._
 
 import Cantor._
