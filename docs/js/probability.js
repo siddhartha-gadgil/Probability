@@ -1159,6 +1159,9 @@ function $asArrayOf_Lmhtml_Rx(obj, depth) {
 function $f_Lscalatags_DataConverters__$$init$__V($thiz) {
   /*<skip>*/
 }
+function $f_Lscalatags_LowPriorityImplicits__bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode($thiz, e) {
+  return new $c_Lscalatags_LowPriorityImplicits$bindNode().init___Lscalatags_LowPriorityImplicits__Lorg_scalajs_dom_raw_Node($thiz, e)
+}
 function $f_Lscalatags_LowPriorityImplicits__$$init$__V($thiz) {
   /*<skip>*/
 }
@@ -5196,37 +5199,16 @@ function $h_Lprobability_MarkovProcess() {
   /*<skip>*/
 }
 $h_Lprobability_MarkovProcess.prototype = $c_Lprobability_MarkovProcess.prototype;
-$c_Lprobability_MarkovProcess.prototype.getChain__sci_Vector__sci_Vector__sci_Vector = (function(accum, choosers) {
-  var _$this = this;
-  _getChain: while (true) {
-    var x1 = choosers;
-    var o8 = $m_s_package$().Vector__sci_Vector$().unapplySeq__sc_Seq__s_Some(x1);
-    if (((!o8.isEmpty__Z()) && ((o8.get__O() !== null) && ($as_sci_Vector(o8.get__O()).lengthCompare__I__I(0) === 0)))) {
-      return accum
-    };
-    var o10 = $m_s_package$().$$plus$colon__sc_$plus$colon$().unapply__sc_SeqLike__s_Option(x1);
-    if ((!o10.isEmpty__Z())) {
-      var head = $as_T2(o10.get__O()).$$und1$mcD$sp__D();
-      var tail = $as_sci_Vector($as_T2(o10.get__O()).$$und2__O());
-      var nextState = $as_Lprobability_ProbDist(_$this.nextDist$1.apply__O__O(accum.last__O())).pick__D__O(head);
-      var temp$accum = $as_sci_Vector(accum.$$colon$plus__O__scg_CanBuildFrom__O(nextState, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
-      var temp$choosers = tail;
-      accum = temp$accum;
-      choosers = temp$choosers;
-      continue _getChain
-    };
-    throw new $c_s_MatchError().init___O(x1)
-  }
-});
-$c_Lprobability_MarkovProcess.prototype.randomChain__sci_Vector__I__sci_Vector = (function(accum, n) {
-  return this.getChain__sci_Vector__sci_Vector__sci_Vector(accum, $as_sci_Vector($m_s_package$().Vector__sci_Vector$().fill__I__F0__sc_GenTraversable(n, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this) {
-    return (function() {
-      return $this.$$anonfun$randomChain$1__p1__D()
+$c_Lprobability_MarkovProcess.prototype.getStream__O__sci_Stream = (function(init) {
+  return $m_s_package$().Stream__sci_Stream$().iterate__O__F1__sci_Stream(init, new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(s$2) {
+      var s = s$2;
+      return $this.$$anonfun$getStream$1__p1__O__O(s)
     })
-  })(this)))))
+  })(this)))
 });
-$c_Lprobability_MarkovProcess.prototype.$$anonfun$randomChain$1__p1__D = (function() {
-  return $m_Lprobability_ProbDist$().rnd__s_util_Random().nextDouble__D()
+$c_Lprobability_MarkovProcess.prototype.$$anonfun$getStream$1__p1__O__O = (function(s) {
+  return $as_Lprobability_ProbDist(this.nextDist$1.apply__O__O(s)).pick__D__O($m_Lprobability_ProbDist$().rnd__s_util_Random().nextDouble__D())
 });
 $c_Lprobability_MarkovProcess.prototype.init___F1 = (function(nextDist) {
   this.nextDist$1 = nextDist;
@@ -5309,12 +5291,22 @@ function $m_Lprobability_MarkovProcess$() {
 function $c_Lprobability_MarkovView$() {
   $c_O.call(this);
   this.n$1 = 0;
-  this.p$1 = 0.0;
+  this.prob$1 = 0.0;
+  this.intervalId$1 = 0;
+  this.logDiv$1 = null;
   this.markovProcess$1 = null;
-  this.steps$1 = 0;
-  this.path$1 = null;
+  this.matrixBox$1 = null;
+  this.pathBox$1 = null;
+  this.statesBox$1 = null;
+  this.probBox$1 = null;
+  this.speedBox$1 = null;
+  this.speed$1 = 0;
+  this.counter$1 = 0;
+  this.pth$1 = null;
   this.sc$1 = 0;
-  this.rad$1 = 0
+  this.rad$1 = 0;
+  this.dynamicView$1 = null;
+  this.fullView$1 = null
 }
 $c_Lprobability_MarkovView$.prototype = new $h_O();
 $c_Lprobability_MarkovView$.prototype.constructor = $c_Lprobability_MarkovView$;
@@ -5326,11 +5318,32 @@ $h_Lprobability_MarkovView$.prototype = $c_Lprobability_MarkovView$.prototype;
 $c_Lprobability_MarkovView$.prototype.n__I = (function() {
   return this.n$1
 });
-$c_Lprobability_MarkovView$.prototype.p__D = (function() {
-  return this.p$1
+$c_Lprobability_MarkovView$.prototype.n$und$eq__I__V = (function(x$1) {
+  this.n$1 = x$1
+});
+$c_Lprobability_MarkovView$.prototype.prob__D = (function() {
+  return this.prob$1
+});
+$c_Lprobability_MarkovView$.prototype.prob$und$eq__D__V = (function(x$1) {
+  this.prob$1 = x$1
+});
+$c_Lprobability_MarkovView$.prototype.intervalId__I = (function() {
+  return this.intervalId$1
+});
+$c_Lprobability_MarkovView$.prototype.intervalId$und$eq__I__V = (function(x$1) {
+  this.intervalId$1 = x$1
+});
+$c_Lprobability_MarkovView$.prototype.logDiv__Lorg_scalajs_dom_raw_HTMLDivElement = (function() {
+  return this.logDiv$1
 });
 $c_Lprobability_MarkovView$.prototype.markovProcess__Lprobability_MarkovProcess$FiniteMarkovProcess = (function() {
   return this.markovProcess$1
+});
+$c_Lprobability_MarkovView$.prototype.markovProcess$und$eq__Lprobability_MarkovProcess$FiniteMarkovProcess__V = (function(x$1) {
+  this.markovProcess$1 = x$1
+});
+$c_Lprobability_MarkovView$.prototype.updateProcess__V = (function() {
+  this.markovProcess$und$eq__Lprobability_MarkovProcess$FiniteMarkovProcess__V($m_Lprobability_MarkovProcess$().sparseRandom__I__D__Lprobability_MarkovProcess$FiniteMarkovProcess(this.n__I(), this.prob__D()))
 });
 $c_Lprobability_MarkovView$.prototype.transProb__I__I__D = (function(i, j) {
   return $as_Lprobability_ProbDist(this.markovProcess__Lprobability_MarkovProcess$FiniteMarkovProcess().transition__sci_Map().apply__O__O(i)).prob__O__D(j)
@@ -5353,14 +5366,44 @@ $c_Lprobability_MarkovView$.prototype.transMat__Lscalatags_JsDom$TypedTag = (fun
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
   return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().table__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("table table-bordered", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(rows)
 });
-$c_Lprobability_MarkovView$.prototype.steps__I = (function() {
-  return this.steps$1
+$c_Lprobability_MarkovView$.prototype.matrixBox__Lorg_scalajs_dom_raw_HTMLInputElement = (function() {
+  return this.matrixBox$1
+});
+$c_Lprobability_MarkovView$.prototype.pathBox__Lorg_scalajs_dom_raw_HTMLInputElement = (function() {
+  return this.pathBox$1
+});
+$c_Lprobability_MarkovView$.prototype.statesBox__Lorg_scalajs_dom_raw_HTMLInputElement = (function() {
+  return this.statesBox$1
+});
+$c_Lprobability_MarkovView$.prototype.probBox__Lorg_scalajs_dom_raw_HTMLInputElement = (function() {
+  return this.probBox$1
+});
+$c_Lprobability_MarkovView$.prototype.speedBox__Lorg_scalajs_dom_raw_HTMLInputElement = (function() {
+  return this.speedBox$1
+});
+$c_Lprobability_MarkovView$.prototype.speed__I = (function() {
+  return this.speed$1
+});
+$c_Lprobability_MarkovView$.prototype.speed$und$eq__I__V = (function(x$1) {
+  this.speed$1 = x$1
+});
+$c_Lprobability_MarkovView$.prototype.counter__I = (function() {
+  return this.counter$1
+});
+$c_Lprobability_MarkovView$.prototype.counter$und$eq__I__V = (function(x$1) {
+  this.counter$1 = x$1
 });
 $c_Lprobability_MarkovView$.prototype.init__I = (function() {
   return (($m_Lprobability_ProbDist$().rnd__s_util_Random().nextInt__I__I(this.n__I()) + 1) | 0)
 });
-$c_Lprobability_MarkovView$.prototype.path__sci_Vector = (function() {
-  return this.path$1
+$c_Lprobability_MarkovView$.prototype.pth__sci_Stream = (function() {
+  return this.pth$1
+});
+$c_Lprobability_MarkovView$.prototype.pth$und$eq__sci_Stream__V = (function(x$1) {
+  this.pth$1 = x$1
+});
+$c_Lprobability_MarkovView$.prototype.pthHead__sci_Vector = (function() {
+  return this.pth__sci_Stream().take__I__sci_Stream(((this.counter__I() + 1) | 0)).toVector__sci_Vector()
 });
 $c_Lprobability_MarkovView$.prototype.freqs__F1 = (function() {
   return new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
@@ -5371,7 +5414,7 @@ $c_Lprobability_MarkovView$.prototype.freqs__F1 = (function() {
   })(this))
 });
 $c_Lprobability_MarkovView$.prototype.propns__s_Option = (function() {
-  return $m_Lprobability_MarkovProcess$().proportions__sci_Vector__s_Option(this.path__sci_Vector())
+  return $m_Lprobability_MarkovProcess$().proportions__sci_Vector__s_Option(this.pthHead__sci_Vector())
 });
 $c_Lprobability_MarkovView$.prototype.freqTable__Lscalatags_JsDom$TypedTag = (function() {
   var rows = $as_sci_IndexedSeq($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), this.n__I()).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
@@ -5382,6 +5425,10 @@ $c_Lprobability_MarkovView$.prototype.freqTable__Lscalatags_JsDom$TypedTag = (fu
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
   return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().table__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("table table-striped", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(rows)
 });
+$c_Lprobability_MarkovView$.prototype.newPath__V = (function() {
+  this.pth$und$eq__sci_Stream__V(this.markovProcess__Lprobability_MarkovProcess$FiniteMarkovProcess().getStream__O__sci_Stream(this.init__I()));
+  this.counter$und$eq__I__V(0)
+});
 $c_Lprobability_MarkovView$.prototype.sc__I = (function() {
   return this.sc$1
 });
@@ -5389,7 +5436,7 @@ $c_Lprobability_MarkovView$.prototype.rad__I = (function() {
   return this.rad$1
 });
 $c_Lprobability_MarkovView$.prototype.vertex__I__T2 = (function(j) {
-  var theta = ((6.283185307179586 / this.n__I()) * j);
+  var theta = ((6.283185307179586 / this.n__I()) * ((j - 1) | 0));
   return new $c_s_Tuple2$mcDD$sp().init___D__D($doubleToInt((((this.sc__I() / 2) | 0) + (((this.sc__I() / 4) | 0) * $m_s_math_package$().cos__D__D(theta)))), $doubleToInt((((this.sc__I() / 2) | 0) - (((this.sc__I() / 4) | 0) * $m_s_math_package$().sin__D__D(theta)))))
 });
 $c_Lprobability_MarkovView$.prototype.unit__D__D__T2 = (function(x, y) {
@@ -5413,12 +5460,31 @@ $c_Lprobability_MarkovView$.prototype.svgView__Lscalatags_JsDom$TypedTag = (func
       return this$3.$$anonfun$svgView$6__p1__T2__Lscalatags_JsDom$TypedTag(x$8)
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
-  var x$9 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().rect__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("white", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(2, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("black", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
-  var content = $as_sci_Vector($as_sci_Vector(vertices.toVector__sci_Vector().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(lines.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$colon__O__scg_CanBuildFrom__O(x$9, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
+  var v = $uI(this.pth__sci_Stream().apply__I__O(this.counter__I()));
+  var x1 = this.vertex__I__T2(v);
+  if ((x1 !== null)) {
+    var x = x1.$$und1$mcD$sp__D();
+    var y = x1.$$und2$mcD$sp__D();
+    var x$9 = new $c_s_Tuple2$mcDD$sp().init___D__D(x, y)
+  } else {
+    var x$9;
+    throw new $c_s_MatchError().init___O(x1)
+  };
+  var x$2 = x$9.$$und1$mcD$sp__D();
+  var y$2 = x$9.$$und2$mcD$sp__D();
+  var active = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().circle__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().cx__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(x$2), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().cy__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(y$2), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().r__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($imul(this.rad__I(), 2), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("red", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
+  var x$10 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().rect__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("white", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(2, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("black", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
+  var content = $as_sci_Vector($as_sci_Vector($as_sci_Vector(vertices.toVector__sci_Vector().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(lines.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$colon__O__scg_CanBuildFrom__O(x$10, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$colon$plus__O__scg_CanBuildFrom__O(active, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
   return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().svg__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().viewBox__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["0 0 ", " ", ""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.sc__I(), this.sc__I()])), $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("600", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("80%", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(content)
 });
 $c_Lprobability_MarkovView$.prototype.view__Lscalatags_JsDom$TypedTag = (function() {
-  return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Transition Matrix")])), this.transMat__Lscalatags_JsDom$TypedTag(), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Frequencies of Numbers")])), this.freqTable__Lscalatags_JsDom$TypedTag(), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Sequence of states")])), $m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag(this.path__sci_Vector().mkString__T__T(" -> ")), this.svgView__Lscalatags_JsDom$TypedTag()]))
+  return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("row", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("col-md-6", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h3__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Transition Matrix")])), this.transMat__Lscalatags_JsDom$TypedTag(), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.matrixBox__Lorg_scalajs_dom_raw_HTMLInputElement())])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("col-md-6", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h3__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Frequencies and Proportions")])), this.freqTable__Lscalatags_JsDom$TypedTag()]))])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("row", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h3__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Sequence of states")])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.svgView__Lscalatags_JsDom$TypedTag()])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag(this.pthHead__sci_Vector().mkString__T__T(" -> "))])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.pathBox__Lorg_scalajs_dom_raw_HTMLInputElement())])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.logDiv__Lorg_scalajs_dom_raw_HTMLDivElement())]))
+});
+$c_Lprobability_MarkovView$.prototype.dynamicView__Lorg_scalajs_dom_raw_HTMLDivElement = (function() {
+  return this.dynamicView$1
+});
+$c_Lprobability_MarkovView$.prototype.fullView__Lscalatags_JsDom$TypedTag = (function() {
+  return this.fullView$1
 });
 $c_Lprobability_MarkovView$.prototype.main__V = (function() {
   var positionOpt = $m_s_Option$().apply__O__s_Option($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().querySelector("#markov"));
@@ -5427,7 +5493,28 @@ $c_Lprobability_MarkovView$.prototype.main__V = (function() {
       var node = node$2;
       return $this.$$anonfun$main$1__p1__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Node(node)
     })
-  })(this)))
+  })(this)));
+  this.matrixBox__Lorg_scalajs_dom_raw_HTMLInputElement().onclick = (function(arg1$2) {
+    var arg1 = arg1$2;
+    $m_Lprobability_MarkovView$().probability$MarkovView$$$anonfun$main$2__Lorg_scalajs_dom_raw_MouseEvent__V(arg1)
+  });
+  this.pathBox__Lorg_scalajs_dom_raw_HTMLInputElement().onclick = (function(arg1$2) {
+    var arg1 = arg1$2;
+    $m_Lprobability_MarkovView$().probability$MarkovView$$$anonfun$main$3__Lorg_scalajs_dom_raw_MouseEvent__V(arg1)
+  });
+  this.statesBox__Lorg_scalajs_dom_raw_HTMLInputElement().onchange = (function(arg1$2) {
+    var arg1 = arg1$2;
+    $m_Lprobability_MarkovView$().probability$MarkovView$$$anonfun$main$4__Lorg_scalajs_dom_raw_Event__V(arg1)
+  });
+  this.probBox__Lorg_scalajs_dom_raw_HTMLInputElement().onchange = (function(arg1$2) {
+    var arg1 = arg1$2;
+    $m_Lprobability_MarkovView$().probability$MarkovView$$$anonfun$main$5__Lorg_scalajs_dom_raw_Event__V(arg1)
+  });
+  this.animate$1__p1__V();
+  this.speedBox__Lorg_scalajs_dom_raw_HTMLInputElement().onchange = (function(arg1$2) {
+    var arg1 = arg1$2;
+    $m_Lprobability_MarkovView$().probability$MarkovView$$$anonfun$main$7__Lorg_scalajs_dom_raw_Event__V(arg1)
+  })
 });
 $c_Lprobability_MarkovView$.prototype.$$anonfun$transRow$1__p1__I__I__Lscalatags_JsDom$TypedTag = (function(i$1, j) {
   var jsx$2 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().td__Lscalatags_generic_TypedTag());
@@ -5442,7 +5529,7 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$freqs$2__p1__I = (function() {
   return 0
 });
 $c_Lprobability_MarkovView$.prototype.$$anonfun$freqs$1__p1__I__I = (function(j) {
-  return $uI($m_Lprobability_MarkovProcess$().frequencies__sci_Vector__sci_Map($m_Lprobability_MarkovView$().path__sci_Vector()).getOrElse__O__F0__O(j, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this) {
+  return $uI($m_Lprobability_MarkovProcess$().frequencies__sci_Vector__sci_Map($m_Lprobability_MarkovView$().pthHead__sci_Vector()).getOrElse__O__F0__O(j, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this) {
     return (function() {
       return $this.$$anonfun$freqs$2__p1__I()
     })
@@ -5467,7 +5554,7 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$freqTable$1__p1__I__Lscalatags_J
   var jsx$3 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().td__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().intFrag__I__Lscalatags_generic_Frag($m_Lprobability_MarkovView$().freqs__F1().apply$mcII$sp__I__I(j))]));
   var jsx$2 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().td__Lscalatags_generic_TypedTag());
   var jsx$1 = $m_Lscalatags_JsDom$all$();
-  var arg$macro$2 = $uD($m_Lprobability_MarkovView$().propns__s_Option().map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, j) {
+  var arg$macro$3 = $uD($m_Lprobability_MarkovView$().propns__s_Option().map__F1__s_Option(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, j) {
     return (function(x$1$2) {
       var x$1 = $as_sci_Map(x$1$2);
       return $this.$$anonfun$freqTable$2__p1__I__sci_Map__D(j, x$1)
@@ -5477,7 +5564,7 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$freqTable$1__p1__I__Lscalatags_J
       return this$2.$$anonfun$freqTable$4__p1__D()
     })
   })(this))));
-  return jsx$5.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$4, jsx$3, jsx$2.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$1.stringFrag__T__Lscalatags_JsDom$StringFrag(new $c_sci_StringOps().init___T("%1.3f").format__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([arg$macro$2])))]))]))
+  return jsx$5.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$4, jsx$3, jsx$2.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$1.stringFrag__T__Lscalatags_JsDom$StringFrag(new $c_sci_StringOps().init___T("%1.3f").format__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([arg$macro$3])))]))]))
 });
 $c_Lprobability_MarkovView$.prototype.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag = (function(init, term, colour, w) {
   return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().line__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().x1__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(init.$$und1$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().y1__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(init.$$und2$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().x2__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(term.$$und1$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().y2__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(term.$$und2$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(colour, $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(w, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().xmlns__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("http://www.w3.org/2000/svg", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]))
@@ -5591,18 +5678,72 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$6__p1__T2__Lscalatags_Js
   throw new $c_s_MatchError().init___O(x1)
 });
 $c_Lprobability_MarkovView$.prototype.$$anonfun$main$1__p1__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Node = (function(node) {
-  return node.appendChild($m_Lprobability_MarkovView$().view__Lscalatags_JsDom$TypedTag().render__Lorg_scalajs_dom_raw_Element())
+  return node.appendChild($m_Lprobability_MarkovView$().fullView__Lscalatags_JsDom$TypedTag().render__Lorg_scalajs_dom_raw_Element())
+});
+$c_Lprobability_MarkovView$.prototype.update$1__p1__V = (function() {
+  this.dynamicView__Lorg_scalajs_dom_raw_HTMLDivElement().innerHTML = "";
+  this.dynamicView__Lorg_scalajs_dom_raw_HTMLDivElement().appendChild(this.view__Lscalatags_JsDom$TypedTag().render__Lorg_scalajs_dom_raw_Element())
+});
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$2__Lorg_scalajs_dom_raw_MouseEvent__V = (function(x$11) {
+  $m_Lprobability_MarkovView$().updateProcess__V();
+  $m_Lprobability_MarkovView$().newPath__V();
+  this.update$1__p1__V()
+});
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$3__Lorg_scalajs_dom_raw_MouseEvent__V = (function(x$12) {
+  $m_Lprobability_MarkovView$().newPath__V();
+  this.update$1__p1__V()
+});
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$4__Lorg_scalajs_dom_raw_Event__V = (function(x$13) {
+  $m_Lprobability_MarkovView$().n$und$eq__I__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T($m_Lprobability_MarkovView$().statesBox__Lorg_scalajs_dom_raw_HTMLInputElement().value))).toInt__I());
+  $m_Lprobability_MarkovView$().updateProcess__V();
+  $m_Lprobability_MarkovView$().newPath__V();
+  this.update$1__p1__V()
+});
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$5__Lorg_scalajs_dom_raw_Event__V = (function(x$14) {
+  $m_Lprobability_MarkovView$().prob$und$eq__D__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T($m_Lprobability_MarkovView$().probBox__Lorg_scalajs_dom_raw_HTMLInputElement().value))).toDouble__D());
+  $m_Lprobability_MarkovView$().updateProcess__V();
+  $m_Lprobability_MarkovView$().newPath__V();
+  this.update$1__p1__V()
+});
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$6__O = (function() {
+  $m_Lprobability_MarkovView$().counter$und$eq__I__V((($m_Lprobability_MarkovView$().counter__I() + 1) | 0));
+  this.update$1__p1__V()
+});
+$c_Lprobability_MarkovView$.prototype.animate$1__p1__V = (function() {
+  this.intervalId$und$eq__I__V($uI($m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().setInterval((function() {
+    return $m_Lprobability_MarkovView$().probability$MarkovView$$$anonfun$main$6__O()
+  }), ((1000 / this.speed__I()) | 0))))
+});
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$7__Lorg_scalajs_dom_raw_Event__V = (function(x$15) {
+  $m_Lprobability_MarkovView$().speed$und$eq__I__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T($m_Lprobability_MarkovView$().speedBox__Lorg_scalajs_dom_raw_HTMLInputElement().value))).toInt__I());
+  $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().clearTimeout($m_Lprobability_MarkovView$().intervalId__I());
+  this.animate$1__p1__V();
+  this.update$1__p1__V()
 });
 $c_Lprobability_MarkovView$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
   $n_Lprobability_MarkovView$ = this;
   this.n$1 = 5;
-  this.p$1 = 0.2;
-  this.markovProcess$1 = $m_Lprobability_MarkovProcess$().sparseRandom__I__D__Lprobability_MarkovProcess$FiniteMarkovProcess(this.n__I(), this.p__D());
-  this.steps$1 = 30;
-  this.path$1 = this.markovProcess__Lprobability_MarkovProcess$FiniteMarkovProcess().randomChain__sci_Vector__I__sci_Vector($as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.init__I()]))), this.steps__I());
+  this.prob$1 = 0.2;
+  this.intervalId$1 = 0;
+  this.logDiv$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag($m_sci_Nil$()).render__Lorg_scalajs_dom_raw_Element();
+  this.markovProcess$1 = $m_Lprobability_MarkovProcess$().sparseRandom__I__D__Lprobability_MarkovProcess$FiniteMarkovProcess(this.n__I(), this.prob__D());
+  this.matrixBox$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("button", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("New Transition Matrix", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("input-btn btn btn-primary", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
+  this.pathBox$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("button", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("New Path", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("input-btn btn btn-primary", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
+  this.statesBox$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("text", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.n__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().size__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("2", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
+  var jsx$3 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag());
+  var jsx$2 = $m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("text", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue());
+  var jsx$1 = $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr();
+  var arg$macro$2 = this.prob__D();
+  this.probBox$1 = jsx$3.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$2, jsx$1.$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(new $c_sci_StringOps().init___T("%1.3f").format__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([arg$macro$2])), $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().size__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("4", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
+  this.speedBox$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("text", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("2", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().size__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("2", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
+  this.speed$1 = 2;
+  this.counter$1 = 0;
+  this.pth$1 = this.markovProcess__Lprobability_MarkovProcess$FiniteMarkovProcess().getStream__O__sci_Stream(this.init__I());
   this.sc$1 = 600;
   this.rad$1 = 5;
+  this.dynamicView$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.view__Lscalatags_JsDom$TypedTag()])).render__Lorg_scalajs_dom_raw_Element();
+  this.fullView$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Finite state Markov Process")])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().ul__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().span__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Number of States: ")])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.statesBox__Lorg_scalajs_dom_raw_HTMLInputElement())])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().span__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Probability of transition between a pair of vertices: ")])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.probBox__Lorg_scalajs_dom_raw_HTMLInputElement())])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().span__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Steps per second: ")])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.speedBox__Lorg_scalajs_dom_raw_HTMLInputElement())]))])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.dynamicView__Lorg_scalajs_dom_raw_HTMLDivElement())]));
   return this
 });
 var $d_Lprobability_MarkovView$ = new $TypeData().initClass({
@@ -7108,11 +7249,11 @@ function $h_s_package$() {
   /*<skip>*/
 }
 $h_s_package$.prototype = $c_s_package$.prototype;
-$c_s_package$.prototype.$$plus$colon__sc_$plus$colon$ = (function() {
-  return this.$$plus$colon$1
-});
 $c_s_package$.prototype.$$colon$plus__sc_$colon$plus$ = (function() {
   return this.$$colon$plus$1
+});
+$c_s_package$.prototype.Stream__sci_Stream$ = (function() {
+  return this.Stream$1
 });
 $c_s_package$.prototype.Vector__sci_Vector$ = (function() {
   return this.Vector$1
@@ -7777,9 +7918,6 @@ function $h_sc_$plus$colon$() {
   /*<skip>*/
 }
 $h_sc_$plus$colon$.prototype = $c_sc_$plus$colon$.prototype;
-$c_sc_$plus$colon$.prototype.unapply__sc_SeqLike__s_Option = (function(t) {
-  return (t.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O($m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(t.head__O()), t.tail__O())))
-});
 $c_sc_$plus$colon$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
   $n_sc_$plus$colon$ = this;
@@ -13579,6 +13717,53 @@ function $m_Lscalatags_JsDom$TypedTag$() {
   };
   return $n_Lscalatags_JsDom$TypedTag$
 }
+/** @constructor */
+function $c_Lscalatags_LowPriorityImplicits$bindNode() {
+  $c_O.call(this);
+  this.e$1 = null;
+  this.$$outer$1 = null
+}
+$c_Lscalatags_LowPriorityImplicits$bindNode.prototype = new $h_O();
+$c_Lscalatags_LowPriorityImplicits$bindNode.prototype.constructor = $c_Lscalatags_LowPriorityImplicits$bindNode;
+/** @constructor */
+function $h_Lscalatags_LowPriorityImplicits$bindNode() {
+  /*<skip>*/
+}
+$h_Lscalatags_LowPriorityImplicits$bindNode.prototype = $c_Lscalatags_LowPriorityImplicits$bindNode.prototype;
+$c_Lscalatags_LowPriorityImplicits$bindNode.prototype.applyTo__Lorg_scalajs_dom_raw_Element__V = (function(t) {
+  t.appendChild(this.e$1)
+});
+$c_Lscalatags_LowPriorityImplicits$bindNode.prototype.applyTo__O__V = (function(t) {
+  this.applyTo__Lorg_scalajs_dom_raw_Element__V(t)
+});
+$c_Lscalatags_LowPriorityImplicits$bindNode.prototype.init___Lscalatags_LowPriorityImplicits__Lorg_scalajs_dom_raw_Node = (function($$outer, e) {
+  this.e$1 = e;
+  if (($$outer === null)) {
+    throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+  } else {
+    this.$$outer$1 = $$outer
+  };
+  $c_O.prototype.init___.call(this);
+  return this
+});
+var $d_Lscalatags_LowPriorityImplicits$bindNode = new $TypeData().initClass({
+  Lscalatags_LowPriorityImplicits$bindNode: 0
+}, false, "scalatags.LowPriorityImplicits$bindNode", {
+  Lscalatags_LowPriorityImplicits$bindNode: 1,
+  O: 1,
+  Lscalatags_generic_Frag: 1,
+  Lscalatags_generic_Modifier: 1
+});
+$c_Lscalatags_LowPriorityImplicits$bindNode.prototype.$classData = $d_Lscalatags_LowPriorityImplicits$bindNode;
+function $f_Lscalatags_generic_InputAttrs__size__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("size", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_InputAttrs__type__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("type", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_InputAttrs__value__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("value", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
 function $f_Lscalatags_generic_InputAttrs__$$init$__V($thiz) {
   /*<skip>*/
 }
@@ -16283,8 +16468,20 @@ function $f_Lscalatags_jsdom_SvgTags__$$init$__V($thiz) {
 function $f_Lscalatags_jsdom_Tags__h2__Lscalatags_generic_TypedTag($thiz) {
   return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("h2", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
 }
+function $f_Lscalatags_jsdom_Tags__h3__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("h3", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_Tags__ul__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("ul", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_Tags__li__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("li", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
+}
 function $f_Lscalatags_jsdom_Tags__div__Lscalatags_generic_TypedTag($thiz) {
   return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("div", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_Tags__span__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("span", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
 }
 function $f_Lscalatags_jsdom_Tags__table__Lscalatags_generic_TypedTag($thiz) {
   return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("table", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
@@ -16294,6 +16491,9 @@ function $f_Lscalatags_jsdom_Tags__tr__Lscalatags_generic_TypedTag($thiz) {
 }
 function $f_Lscalatags_jsdom_Tags__td__Lscalatags_generic_TypedTag($thiz) {
   return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("td", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_Tags__input__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("input", true, $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
 }
 function $f_Lscalatags_jsdom_Tags__$$init$__V($thiz) {
   /*<skip>*/
@@ -29341,6 +29541,13 @@ $c_sci_Stream$.prototype.empty__sci_Stream = (function() {
 $c_sci_Stream$.prototype.apply__sc_Seq__sci_Stream = (function(xs) {
   return xs.toStream__sci_Stream()
 });
+$c_sci_Stream$.prototype.iterate__O__F1__sci_Stream = (function(start, f) {
+  return $m_sci_Stream$cons$().apply__O__F0__sci_Stream$Cons(start, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, start, f) {
+    return (function() {
+      return $this.$$anonfun$iterate$1__p5__O__F1__sci_Stream(start, f)
+    })
+  })(this, start, f)))
+});
 $c_sci_Stream$.prototype.filteredTail__sci_Stream__F1__Z__sci_Stream$Cons = (function(stream, p, isFlipped) {
   return $m_sci_Stream$cons$().apply__O__F0__sci_Stream$Cons(stream.head__O(), new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, stream, p, isFlipped) {
     return (function() {
@@ -29350,6 +29557,9 @@ $c_sci_Stream$.prototype.filteredTail__sci_Stream__F1__Z__sci_Stream$Cons = (fun
 });
 $c_sci_Stream$.prototype.empty__sc_GenTraversable = (function() {
   return this.empty__sci_Stream()
+});
+$c_sci_Stream$.prototype.$$anonfun$iterate$1__p5__O__F1__sci_Stream = (function(start$2, f$3) {
+  return $m_sci_Stream$().iterate__O__F1__sci_Stream(f$3.apply__O__O(start$2), f$3)
 });
 $c_sci_Stream$.prototype.$$anonfun$filteredTail$1__p5__sci_Stream__F1__Z__sci_Stream = (function(stream$2, p$1, isFlipped$1) {
   return $as_sci_Stream(stream$2.tail__O()).filterImpl__F1__Z__sci_Stream(p$1, isFlipped$1)
@@ -36033,6 +36243,9 @@ function $h_Lscalatags_JsDom$all$() {
   /*<skip>*/
 }
 $h_Lscalatags_JsDom$all$.prototype = $c_Lscalatags_JsDom$all$.prototype;
+$c_Lscalatags_JsDom$all$.prototype.bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode = (function(e) {
+  return $f_Lscalatags_LowPriorityImplicits__bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this, e)
+});
 $c_Lscalatags_JsDom$all$.prototype.genericAttr__Lscalatags_JsDom$GenericAttr = (function() {
   return $f_Lscalatags_JsDom$Aggregate__genericAttr__Lscalatags_JsDom$GenericAttr(this)
 });
@@ -36178,6 +36391,36 @@ $c_Lscalatags_JsDom$all$.prototype.h2$lzycompute__p1__Lscalatags_JsDom$TypedTag 
 $c_Lscalatags_JsDom$all$.prototype.h2__Lscalatags_JsDom$TypedTag = (function() {
   return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(256, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.h2$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.h2$1)
 });
+$c_Lscalatags_JsDom$all$.prototype.h3$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(512, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.h3$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_Tags__h3__Lscalatags_generic_TypedTag(this));
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(512, 0))
+  };
+  return this.h3$1
+});
+$c_Lscalatags_JsDom$all$.prototype.h3__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(512, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.h3$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.h3$1)
+});
+$c_Lscalatags_JsDom$all$.prototype.ul$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1048576, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.ul$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_Tags__ul__Lscalatags_generic_TypedTag(this));
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1048576, 0))
+  };
+  return this.ul$1
+});
+$c_Lscalatags_JsDom$all$.prototype.ul__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1048576, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.ul$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.ul$1)
+});
+$c_Lscalatags_JsDom$all$.prototype.li$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(2097152, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.li$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_Tags__li__Lscalatags_generic_TypedTag(this));
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(2097152, 0))
+  };
+  return this.li$1
+});
+$c_Lscalatags_JsDom$all$.prototype.li__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(2097152, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.li$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.li$1)
+});
 $c_Lscalatags_JsDom$all$.prototype.div$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
   if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(134217728, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
     this.div$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_Tags__div__Lscalatags_generic_TypedTag(this));
@@ -36187,6 +36430,16 @@ $c_Lscalatags_JsDom$all$.prototype.div$lzycompute__p1__Lscalatags_JsDom$TypedTag
 });
 $c_Lscalatags_JsDom$all$.prototype.div__Lscalatags_JsDom$TypedTag = (function() {
   return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(134217728, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.div$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.div$1)
+});
+$c_Lscalatags_JsDom$all$.prototype.span$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 256)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.span$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_Tags__span__Lscalatags_generic_TypedTag(this));
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 256))
+  };
+  return this.span$1
+});
+$c_Lscalatags_JsDom$all$.prototype.span__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 256)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.span$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.span$1)
 });
 $c_Lscalatags_JsDom$all$.prototype.table$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
   if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 33554432)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
@@ -36218,8 +36471,48 @@ $c_Lscalatags_JsDom$all$.prototype.td$lzycompute__p1__Lscalatags_JsDom$TypedTag 
 $c_Lscalatags_JsDom$all$.prototype.td__Lscalatags_JsDom$TypedTag = (function() {
   return (this.bitmap$1$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(2, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.td$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.td$1)
 });
+$c_Lscalatags_JsDom$all$.prototype.input$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$1$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(128, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.input$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_Tags__input__Lscalatags_generic_TypedTag(this));
+    this.bitmap$1$1 = this.bitmap$1$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(128, 0))
+  };
+  return this.input$1
+});
+$c_Lscalatags_JsDom$all$.prototype.input__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$1$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(128, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.input$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.input$1)
+});
 $c_Lscalatags_JsDom$all$.prototype.scalatags$generic$MouseEventAttrs$$undsetter$und$ondrag$und$eq__Lscalatags_generic_Attr__V = (function(x$1) {
   this.ondrag$1 = x$1
+});
+$c_Lscalatags_JsDom$all$.prototype.size$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$4$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(65536, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.size$1 = $f_Lscalatags_generic_InputAttrs__size__Lscalatags_generic_Attr(this);
+    this.bitmap$4$1 = this.bitmap$4$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(65536, 0))
+  };
+  return this.size$1
+});
+$c_Lscalatags_JsDom$all$.prototype.size__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$4$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(65536, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.size$lzycompute__p1__Lscalatags_generic_Attr() : this.size$1)
+});
+$c_Lscalatags_JsDom$all$.prototype.type$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$4$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(524288, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.type$1 = $f_Lscalatags_generic_InputAttrs__type__Lscalatags_generic_Attr(this);
+    this.bitmap$4$1 = this.bitmap$4$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(524288, 0))
+  };
+  return this.type$1
+});
+$c_Lscalatags_JsDom$all$.prototype.type__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$4$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(524288, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.type$lzycompute__p1__Lscalatags_generic_Attr() : this.type$1)
+});
+$c_Lscalatags_JsDom$all$.prototype.value$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$4$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(2097152, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.value$1 = $f_Lscalatags_generic_InputAttrs__value__Lscalatags_generic_Attr(this);
+    this.bitmap$4$1 = this.bitmap$4$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(2097152, 0))
+  };
+  return this.value$1
+});
+$c_Lscalatags_JsDom$all$.prototype.value__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$4$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(2097152, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.value$lzycompute__p1__Lscalatags_generic_Attr() : this.value$1)
 });
 $c_Lscalatags_JsDom$all$.prototype.class$lzycompute__p1__Lscalatags_generic_Attr = (function() {
   if (this.bitmap$4$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(16777216, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
@@ -36243,6 +36536,9 @@ $c_Lscalatags_JsDom$all$.prototype.genericStyle__Lscalatags_generic_StyleValue =
 $c_Lscalatags_JsDom$all$.prototype.genericAttr__Lscalatags_generic_AttrValue = (function() {
   return this.genericAttr__Lscalatags_JsDom$GenericAttr()
 });
+$c_Lscalatags_JsDom$all$.prototype.input__Lscalatags_generic_TypedTag = (function() {
+  return this.input__Lscalatags_JsDom$TypedTag()
+});
 $c_Lscalatags_JsDom$all$.prototype.td__Lscalatags_generic_TypedTag = (function() {
   return this.td__Lscalatags_JsDom$TypedTag()
 });
@@ -36252,8 +36548,20 @@ $c_Lscalatags_JsDom$all$.prototype.tr__Lscalatags_generic_TypedTag = (function()
 $c_Lscalatags_JsDom$all$.prototype.table__Lscalatags_generic_TypedTag = (function() {
   return this.table__Lscalatags_JsDom$TypedTag()
 });
+$c_Lscalatags_JsDom$all$.prototype.span__Lscalatags_generic_TypedTag = (function() {
+  return this.span__Lscalatags_JsDom$TypedTag()
+});
 $c_Lscalatags_JsDom$all$.prototype.div__Lscalatags_generic_TypedTag = (function() {
   return this.div__Lscalatags_JsDom$TypedTag()
+});
+$c_Lscalatags_JsDom$all$.prototype.li__Lscalatags_generic_TypedTag = (function() {
+  return this.li__Lscalatags_JsDom$TypedTag()
+});
+$c_Lscalatags_JsDom$all$.prototype.ul__Lscalatags_generic_TypedTag = (function() {
+  return this.ul__Lscalatags_JsDom$TypedTag()
+});
+$c_Lscalatags_JsDom$all$.prototype.h3__Lscalatags_generic_TypedTag = (function() {
+  return this.h3__Lscalatags_JsDom$TypedTag()
 });
 $c_Lscalatags_JsDom$all$.prototype.h2__Lscalatags_generic_TypedTag = (function() {
   return this.h2__Lscalatags_JsDom$TypedTag()
