@@ -3,7 +3,6 @@ package probability
 import scala.util.Random
 import annotation.tailrec
 import ProbDist._
-import math._
 
 case class ProbDist[S](pmf: Vector[(S, Double)]) {
   def pick(chooser: Double): S = ProbDist.pick(pmf, chooser)
@@ -74,11 +73,4 @@ object MarkovProcess {
   def frequencies[S](vec: Vector[S]): Map[S, Int] = vec.groupBy(identity).mapValues(_.size)
 
   def proportions[S](vec: Vector[S]): Option[Map[S, Double]] = if (vec.isEmpty) None else Some(frequencies(vec).mapValues((f) => f.toDouble / vec.size))
-}
-
-object PolyGon{
-  def vertex(j: Int, n: Int): (Int, Int) = {
-    val theta = 2 * Pi / n * j
-    ((50 + 25 * cos(theta)).toInt, (50 + 25 * (sin(theta))).toInt)
-  }
 }

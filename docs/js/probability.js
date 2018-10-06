@@ -5312,8 +5312,9 @@ function $c_Lprobability_MarkovView$() {
   this.p$1 = 0.0;
   this.markovProcess$1 = null;
   this.steps$1 = 0;
-  this.init$1 = 0;
-  this.path$1 = null
+  this.path$1 = null;
+  this.sc$1 = 0;
+  this.rad$1 = 0
 }
 $c_Lprobability_MarkovView$.prototype = new $h_O();
 $c_Lprobability_MarkovView$.prototype.constructor = $c_Lprobability_MarkovView$;
@@ -5356,7 +5357,7 @@ $c_Lprobability_MarkovView$.prototype.steps__I = (function() {
   return this.steps$1
 });
 $c_Lprobability_MarkovView$.prototype.init__I = (function() {
-  return this.init$1
+  return (($m_Lprobability_ProbDist$().rnd__s_util_Random().nextInt__I__I(this.n__I()) + 1) | 0)
 });
 $c_Lprobability_MarkovView$.prototype.path__sci_Vector = (function() {
   return this.path$1
@@ -5381,8 +5382,43 @@ $c_Lprobability_MarkovView$.prototype.freqTable__Lscalatags_JsDom$TypedTag = (fu
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
   return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().table__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("table table-striped", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(rows)
 });
+$c_Lprobability_MarkovView$.prototype.sc__I = (function() {
+  return this.sc$1
+});
+$c_Lprobability_MarkovView$.prototype.rad__I = (function() {
+  return this.rad$1
+});
+$c_Lprobability_MarkovView$.prototype.vertex__I__T2 = (function(j) {
+  var theta = ((6.283185307179586 / this.n__I()) * j);
+  return new $c_s_Tuple2$mcDD$sp().init___D__D($doubleToInt((((this.sc__I() / 2) | 0) + (((this.sc__I() / 4) | 0) * $m_s_math_package$().cos__D__D(theta)))), $doubleToInt((((this.sc__I() / 2) | 0) - (((this.sc__I() / 4) | 0) * $m_s_math_package$().sin__D__D(theta)))))
+});
+$c_Lprobability_MarkovView$.prototype.unit__D__D__T2 = (function(x, y) {
+  return new $c_s_Tuple2$mcDD$sp().init___D__D((x / $m_s_math_package$().sqrt__D__D(((x * x) + (y * y)))), (y / $m_s_math_package$().sqrt__D__D(((x * x) + (y * y)))))
+});
+$c_Lprobability_MarkovView$.prototype.svgView__Lscalatags_JsDom$TypedTag = (function() {
+  var lines = $as_sci_IndexedSeq($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), this.n__I()).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(i$2) {
+      var i = $uI(i$2);
+      return $this.$$anonfun$svgView$1__p1__I__sci_IndexedSeq(i)
+    })
+  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
+  var vertices = $as_sci_IndexedSeq($as_sc_TraversableLike($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), this.n__I()).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+    return (function(j$2) {
+      var j = $uI(j$2);
+      return this$2.$$anonfun$svgView$5__p1__I__T2(j)
+    })
+  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
+    return (function(x$8$2) {
+      var x$8 = $as_T2(x$8$2);
+      return this$3.$$anonfun$svgView$6__p1__T2__Lscalatags_JsDom$TypedTag(x$8)
+    })
+  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
+  var x$9 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().rect__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("white", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(2, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("black", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
+  var content = $as_sci_Vector($as_sci_Vector(vertices.toVector__sci_Vector().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(lines.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$colon__O__scg_CanBuildFrom__O(x$9, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
+  return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().svg__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().viewBox__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["0 0 ", " ", ""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.sc__I(), this.sc__I()])), $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("600", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("80%", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(content)
+});
 $c_Lprobability_MarkovView$.prototype.view__Lscalatags_JsDom$TypedTag = (function() {
-  return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Transition Matrix")])), this.transMat__Lscalatags_JsDom$TypedTag(), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Frequencies of Numbers")])), this.freqTable__Lscalatags_JsDom$TypedTag(), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Sequence of states")])), $m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag(this.path__sci_Vector().mkString__T__T(" -> "))]))
+  return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Transition Matrix")])), this.transMat__Lscalatags_JsDom$TypedTag(), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Frequencies of Numbers")])), this.freqTable__Lscalatags_JsDom$TypedTag(), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Sequence of states")])), $m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag(this.path__sci_Vector().mkString__T__T(" -> ")), this.svgView__Lscalatags_JsDom$TypedTag()]))
 });
 $c_Lprobability_MarkovView$.prototype.main__V = (function() {
   var positionOpt = $m_s_Option$().apply__O__s_Option($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().querySelector("#markov"));
@@ -5443,6 +5479,117 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$freqTable$1__p1__I__Lscalatags_J
   })(this))));
   return jsx$5.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$4, jsx$3, jsx$2.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$1.stringFrag__T__Lscalatags_JsDom$StringFrag(new $c_sci_StringOps().init___T("%1.3f").format__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([arg$macro$2])))]))]))
 });
+$c_Lprobability_MarkovView$.prototype.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag = (function(init, term, colour, w) {
+  return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().line__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().x1__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(init.$$und1$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().y1__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(init.$$und2$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().x2__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(term.$$und1$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().y2__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(term.$$und2$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(colour, $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(w, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().xmlns__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("http://www.w3.org/2000/svg", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]))
+});
+$c_Lprobability_MarkovView$.prototype.drawLine$default$3$1__p1__T = (function() {
+  return "blue"
+});
+$c_Lprobability_MarkovView$.prototype.drawLine$default$4$1__p1__I = (function() {
+  return 1
+});
+$c_Lprobability_MarkovView$.prototype.lineArrow$1__p1__T2__T2__sci_Vector = (function(init, term) {
+  var x1 = init;
+  if ((x1 !== null)) {
+    var xinit = x1.$$und1$mcD$sp__D();
+    var yinit = x1.$$und2$mcD$sp__D();
+    var x$2 = new $c_s_Tuple2$mcDD$sp().init___D__D(xinit, yinit)
+  } else {
+    var x$2;
+    throw new $c_s_MatchError().init___O(x1)
+  };
+  var xinit$2 = x$2.$$und1$mcD$sp__D();
+  var yinit$2 = x$2.$$und2$mcD$sp__D();
+  var x1$2 = term;
+  if ((x1$2 !== null)) {
+    var xt = x1$2.$$und1$mcD$sp__D();
+    var yterm = x1$2.$$und2$mcD$sp__D();
+    var x$3 = new $c_s_Tuple2$mcDD$sp().init___D__D(xt, yterm)
+  } else {
+    var x$3;
+    throw new $c_s_MatchError().init___O(x1$2)
+  };
+  var xt$2 = x$3.$$und1$mcD$sp__D();
+  var yterm$2 = x$3.$$und2$mcD$sp__D();
+  var arrowBase = new $c_s_Tuple2$mcDD$sp().init___D__D((((xt$2 * 3) + xinit$2) / 4), (((yterm$2 * 3) + yinit$2) / 4));
+  var x1$3 = arrowBase;
+  if ((x1$3 !== null)) {
+    var bu = x1$3.$$und1$mcD$sp__D();
+    var tu = x1$3.$$und2$mcD$sp__D();
+    var x$4 = new $c_s_Tuple2$mcDD$sp().init___D__D(bu, tu)
+  } else {
+    var x$4;
+    throw new $c_s_MatchError().init___O(x1$3)
+  };
+  var bu$2 = x$4.$$und1$mcD$sp__D();
+  var tu$2 = x$4.$$und2$mcD$sp__D();
+  var x1$4 = this.unit__D__D__T2((xt$2 - xinit$2), (yterm$2 - yinit$2));
+  if ((x1$4 !== null)) {
+    var xu = x1$4.$$und1$mcD$sp__D();
+    var yu = x1$4.$$und2$mcD$sp__D();
+    var x$5 = new $c_s_Tuple2$mcDD$sp().init___D__D(xu, yu)
+  } else {
+    var x$5;
+    throw new $c_s_MatchError().init___O(x1$4)
+  };
+  var xu$2 = x$5.$$und1$mcD$sp__D();
+  var yu$2 = x$5.$$und2$mcD$sp__D();
+  return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(init, term, this.drawLine$default$3$1__p1__T(), this.drawLine$default$4$1__p1__I()), this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(arrowBase, new $c_s_Tuple2$mcDD$sp().init___D__D(((bu$2 - (xu$2 * this.rad__I())) - (yu$2 * this.rad__I())), ((tu$2 - (yu$2 * this.rad__I())) + (xu$2 * this.rad__I()))), "black", 2), this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(arrowBase, new $c_s_Tuple2$mcDD$sp().init___D__D(((bu$2 - (xu$2 * this.rad__I())) + (yu$2 * this.rad__I())), ((tu$2 - (yu$2 * this.rad__I())) - (xu$2 * this.rad__I()))), "black", 2)])))
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$2__p1__I__I__Z = (function(i$2, j) {
+  return (($m_Lprobability_MarkovView$().transProb__I__I__D(i$2, j) > 0) && (i$2 !== j))
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$4__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag = (function(l) {
+  return l
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$3__p1__I__I__sci_Vector = (function(i$2, j) {
+  return $as_sci_Vector(this.lineArrow$1__p1__T2__T2__sci_Vector($m_Lprobability_MarkovView$().vertex__I__T2(i$2), $m_Lprobability_MarkovView$().vertex__I__T2(j)).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(l$2) {
+      var l = $as_Lscalatags_JsDom$TypedTag(l$2);
+      return $this.$$anonfun$svgView$4__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag(l)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$1__p1__I__sci_IndexedSeq = (function(i) {
+  return $as_sci_IndexedSeq($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), $m_Lprobability_MarkovView$().n__I()).withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, i) {
+    return (function(j$2) {
+      var j = $uI(j$2);
+      return $this.$$anonfun$svgView$2__p1__I__I__Z(i, j)
+    })
+  })(this, i))).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2, i) {
+    return (function(j$3$2) {
+      var j$3 = $uI(j$3$2);
+      return this$2.$$anonfun$svgView$3__p1__I__I__sci_Vector(i, j$3)
+    })
+  })(this, i)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()))
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$5__p1__I__T2 = (function(j) {
+  var x1 = $m_Lprobability_MarkovView$().vertex__I__T2(j);
+  if ((x1 !== null)) {
+    var x = x1.$$und1$mcD$sp__D();
+    var y = x1.$$und2$mcD$sp__D();
+    var x$7 = new $c_T3().init___O__O__O(x1, x, y)
+  } else {
+    var x$7;
+    throw new $c_s_MatchError().init___O(x1)
+  };
+  var x$6 = $as_T2(x$7.$$und1__O());
+  var x$2 = $uD(x$7.$$und2__O());
+  var y$2 = $uD(x$7.$$und3__O());
+  return new $c_T2().init___O__O(j, x$6)
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$6__p1__T2__Lscalatags_JsDom$TypedTag = (function(x$8) {
+  var x1 = x$8;
+  if ((x1 !== null)) {
+    var p2 = $as_T2(x1.$$und2__O());
+    if ((p2 !== null)) {
+      var x = p2.$$und1$mcD$sp__D();
+      var y = p2.$$und2$mcD$sp__D();
+      return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().circle__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().cx__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(x), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().cy__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(y), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().r__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($m_Lprobability_MarkovView$().rad__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("green", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]))
+    }
+  };
+  throw new $c_s_MatchError().init___O(x1)
+});
 $c_Lprobability_MarkovView$.prototype.$$anonfun$main$1__p1__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Node = (function(node) {
   return node.appendChild($m_Lprobability_MarkovView$().view__Lscalatags_JsDom$TypedTag().render__Lorg_scalajs_dom_raw_Element())
 });
@@ -5453,8 +5600,9 @@ $c_Lprobability_MarkovView$.prototype.init___ = (function() {
   this.p$1 = 0.2;
   this.markovProcess$1 = $m_Lprobability_MarkovProcess$().sparseRandom__I__D__Lprobability_MarkovProcess$FiniteMarkovProcess(this.n__I(), this.p__D());
   this.steps$1 = 30;
-  this.init$1 = 1;
   this.path$1 = this.markovProcess__Lprobability_MarkovProcess$FiniteMarkovProcess().randomChain__sci_Vector__I__sci_Vector($as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.init__I()]))), this.steps__I());
+  this.sc$1 = 600;
+  this.rad$1 = 5;
   return this
 });
 var $d_Lprobability_MarkovView$ = new $TypeData().initClass({
@@ -5670,6 +5818,9 @@ $h_Lscalatags_generic_Namespace$.prototype = $c_Lscalatags_generic_Namespace$.pr
 $c_Lscalatags_generic_Namespace$.prototype.htmlNamespaceConfig__Lscalatags_generic_Namespace = (function() {
   return this.htmlNamespaceConfig$1
 });
+$c_Lscalatags_generic_Namespace$.prototype.svgNamespaceConfig__Lscalatags_generic_Namespace = (function() {
+  return this.svgNamespaceConfig$1
+});
 $c_Lscalatags_generic_Namespace$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
   $n_Lscalatags_generic_Namespace$ = this;
@@ -5861,6 +6012,12 @@ $c_jl_Math$.prototype.log__D__D = (function(a) {
 });
 $c_jl_Math$.prototype.log10__D__D = (function(a) {
   return (($m_sjs_LinkingInfo$().assumingES6__Z() || (!$m_sjs_js_package$().isUndefined__O__Z($m_sjs_js_Dynamic$().global__sjs_js_Dynamic().Math.log10))) ? $uD($g.Math.log10(a)) : (this.log__D__D(a) / 2.302585092994046))
+});
+$c_jl_Math$.prototype.sin__D__D = (function(a) {
+  return $uD($g.Math.sin(a))
+});
+$c_jl_Math$.prototype.cos__D__D = (function(a) {
+  return $uD($g.Math.cos(a))
 });
 $c_jl_Math$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
@@ -6872,6 +7029,12 @@ function $h_s_math_package$() {
   /*<skip>*/
 }
 $h_s_math_package$.prototype = $c_s_math_package$.prototype;
+$c_s_math_package$.prototype.sin__D__D = (function(x) {
+  return $m_jl_Math$().sin__D__D(x)
+});
+$c_s_math_package$.prototype.cos__D__D = (function(x) {
+  return $m_jl_Math$().cos__D__D(x)
+});
 $c_s_math_package$.prototype.max__I__I__I = (function(x, y) {
   return $m_jl_Math$().max__I__I__I(x, y)
 });
@@ -10948,6 +11111,51 @@ function $f_Lscalatags_generic_SharedEventAttrs__$$init$__V($thiz) {
 function $f_Lscalatags_generic_StyleMisc__$$init$__V($thiz) {
   /*<skip>*/
 }
+function $f_Lscalatags_generic_SvgAttrs__cx__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("cx", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__cy__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("cy", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__fill__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("fill", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__height__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("height", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__r__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("r", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__stroke__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("stroke", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__strokeWidth__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("stroke-width", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__viewBox__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("viewBox", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__width__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("width", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__x1__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("x1", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__x2__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("x2", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__xmlns__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("xmlns", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__y1__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("y1", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__y2__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("y2", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__$$init$__V($thiz) {
+  /*<skip>*/
+}
 function $f_Lscalatags_generic_TypedTag__build__O__V($thiz, b) {
   var current = $thiz.modifiers__sci_List();
   var arr = $newArrayObject($d_sc_Seq.getArrayOf(), [$thiz.modifiers__sci_List().length__I()]);
@@ -11730,6 +11938,16 @@ $c_sc_TraversableLike$WithFilter.prototype.map__F1__scg_CanBuildFrom__O = (funct
   })(this, f, b)));
   return b.result__O()
 });
+$c_sc_TraversableLike$WithFilter.prototype.flatMap__F1__scg_CanBuildFrom__O = (function(f, bf) {
+  var b = bf.apply__O__scm_Builder(this.scala$collection$TraversableLike$WithFilter$$$outer__sc_TraversableLike().repr__O());
+  this.scala$collection$TraversableLike$WithFilter$$$outer__sc_TraversableLike().foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, f, b) {
+    return (function(x$2) {
+      var x = x$2;
+      return $this.$$anonfun$flatMap$2__p1__F1__scm_Builder__O__O(f, b, x)
+    })
+  })(this, f, b)));
+  return b.result__O()
+});
 $c_sc_TraversableLike$WithFilter.prototype.foreach__F1__V = (function(f) {
   this.scala$collection$TraversableLike$WithFilter$$$outer__sc_TraversableLike().foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, f) {
     return (function(x$2) {
@@ -11743,6 +11961,9 @@ $c_sc_TraversableLike$WithFilter.prototype.scala$collection$TraversableLike$With
 });
 $c_sc_TraversableLike$WithFilter.prototype.$$anonfun$map$2__p1__F1__scm_Builder__O__O = (function(f$4, b$12, x) {
   return ($uZ(this.p$1.apply__O__O(x)) ? b$12.$$plus$eq__O__scm_Builder(f$4.apply__O__O(x)) : (void 0))
+});
+$c_sc_TraversableLike$WithFilter.prototype.$$anonfun$flatMap$2__p1__F1__scm_Builder__O__O = (function(f$5, b$13, x) {
+  return ($uZ(this.p$1.apply__O__O(x)) ? b$13.$$plus$plus$eq__sc_TraversableOnce__scg_Growable($as_sc_GenTraversableOnce(f$5.apply__O__O(x)).seq__sc_TraversableOnce()) : (void 0))
 });
 $c_sc_TraversableLike$WithFilter.prototype.$$anonfun$foreach$1__p1__F1__O__O = (function(f$6, x) {
   return ($uZ(this.p$1.apply__O__O(x)) ? f$6.apply__O__O(x) : (void 0))
@@ -12044,6 +12265,9 @@ $c_sci_Stream$StreamWithFilter.prototype.filtered__p1__sci_Stream = (function() 
 });
 $c_sci_Stream$StreamWithFilter.prototype.map__F1__scg_CanBuildFrom__O = (function(f, bf) {
   return this.filtered__p1__sci_Stream().map__F1__scg_CanBuildFrom__O(f, bf)
+});
+$c_sci_Stream$StreamWithFilter.prototype.flatMap__F1__scg_CanBuildFrom__O = (function(f, bf) {
+  return this.filtered__p1__sci_Stream().flatMap__F1__scg_CanBuildFrom__O(f, bf)
 });
 $c_sci_Stream$StreamWithFilter.prototype.foreach__F1__V = (function(f) {
   this.filtered__p1__sci_Stream().foreach__F1__V(f)
@@ -16038,6 +16262,24 @@ $c_Ljava_io_OutputStream.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
   return this
 });
+function $f_Lscalatags_jsdom_SvgTags__svgNamespaceConfig__Lscalatags_generic_Namespace($thiz) {
+  return $m_Lscalatags_generic_Namespace$().svgNamespaceConfig__Lscalatags_generic_Namespace()
+}
+function $f_Lscalatags_jsdom_SvgTags__circle__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("circle", $thiz.typedTag$default$2__Z(), $thiz.svgNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_SvgTags__line__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("line", $thiz.typedTag$default$2__Z(), $thiz.svgNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_SvgTags__rect__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("rect", $thiz.typedTag$default$2__Z(), $thiz.svgNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_SvgTags__svg__Lscalatags_generic_TypedTag($thiz) {
+  return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("svg", $thiz.typedTag$default$2__Z(), $thiz.svgNamespaceConfig__Lscalatags_generic_Namespace())
+}
+function $f_Lscalatags_jsdom_SvgTags__$$init$__V($thiz) {
+  /*<skip>*/
+}
 function $f_Lscalatags_jsdom_Tags__h2__Lscalatags_generic_TypedTag($thiz) {
   return $thiz.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag("h2", $thiz.typedTag$default$2__Z(), $m_Lscalatags_generic_Namespace$().htmlNamespaceConfig__Lscalatags_generic_Namespace())
 }
@@ -22288,6 +22530,374 @@ var $d_Lscalatags_JsDom$RawFrag = new $TypeData().initClass({
 });
 $c_Lscalatags_JsDom$RawFrag.prototype.$classData = $d_Lscalatags_JsDom$RawFrag;
 /** @constructor */
+function $c_Lscalatags_JsDom$svgAttrs$() {
+  $c_O.call(this);
+  this.accentHeight$1 = null;
+  this.accumulate$1 = null;
+  this.additive$1 = null;
+  this.alignmentBaseline$1 = null;
+  this.ascent$1 = null;
+  this.attributeName$1 = null;
+  this.attributeType$1 = null;
+  this.azimuth$1 = null;
+  this.baseFrequency$1 = null;
+  this.baselineShift$1 = null;
+  this.begin$1 = null;
+  this.bias$1 = null;
+  this.calcMode$1 = null;
+  this.class$1 = null;
+  this.clip$1 = null;
+  this.clipPath$1 = null;
+  this.clipPathUnits$1 = null;
+  this.clipRule$1 = null;
+  this.color$1 = null;
+  this.colorInterpolation$1 = null;
+  this.colorInterpolationFilters$1 = null;
+  this.colorProfile$1 = null;
+  this.colorRendering$1 = null;
+  this.contentScriptType$1 = null;
+  this.contentStyleType$1 = null;
+  this.cursor$1 = null;
+  this.cx$1 = null;
+  this.cy$1 = null;
+  this.d$1 = null;
+  this.diffuseConstant$1 = null;
+  this.direction$1 = null;
+  this.display$1 = null;
+  this.divisor$1 = null;
+  this.dominantBaseline$1 = null;
+  this.dur$1 = null;
+  this.dx$1 = null;
+  this.dy$1 = null;
+  this.edgeMode$1 = null;
+  this.elevation$1 = null;
+  this.end$1 = null;
+  this.externalResourcesRequired$1 = null;
+  this.fill$1 = null;
+  this.fillOpacity$1 = null;
+  this.fillRule$1 = null;
+  this.filter$1 = null;
+  this.filterRes$1 = null;
+  this.filterUnits$1 = null;
+  this.floodColor$1 = null;
+  this.floodOpacity$1 = null;
+  this.fontFamily$1 = null;
+  this.fontSize$1 = null;
+  this.fontSizeAdjust$1 = null;
+  this.fontStretch$1 = null;
+  this.fontVariant$1 = null;
+  this.fontWeight$1 = null;
+  this.from$1 = null;
+  this.fx$1 = null;
+  this.fy$1 = null;
+  this.gradientTransform$1 = null;
+  this.gradientUnits$1 = null;
+  this.height$1 = null;
+  this.imageRendering$1 = null;
+  this.id$1 = null;
+  this.in$1 = null;
+  this.in2$1 = null;
+  this.k1$1 = null;
+  this.k2$1 = null;
+  this.k3$1 = null;
+  this.k4$1 = null;
+  this.kernelMatrix$1 = null;
+  this.kernelUnitLength$1 = null;
+  this.kerning$1 = null;
+  this.keySplines$1 = null;
+  this.keyTimes$1 = null;
+  this.letterSpacing$1 = null;
+  this.lightingColor$1 = null;
+  this.limitingConeAngle$1 = null;
+  this.local$1 = null;
+  this.markerEnd$1 = null;
+  this.markerMid$1 = null;
+  this.markerStart$1 = null;
+  this.markerHeight$1 = null;
+  this.markerUnits$1 = null;
+  this.markerWidth$1 = null;
+  this.maskContentUnits$1 = null;
+  this.maskUnits$1 = null;
+  this.mask$1 = null;
+  this.max$1 = null;
+  this.min$1 = null;
+  this.mode$1 = null;
+  this.numOctaves$1 = null;
+  this.offset$1 = null;
+  this.orient$1 = null;
+  this.opacity$1 = null;
+  this.operator$1 = null;
+  this.order$1 = null;
+  this.overflow$1 = null;
+  this.paintOrder$1 = null;
+  this.pathLength$1 = null;
+  this.patternContentUnits$1 = null;
+  this.patternTransform$1 = null;
+  this.patternUnits$1 = null;
+  this.pointerEvents$1 = null;
+  this.points$1 = null;
+  this.pointsAtX$1 = null;
+  this.pointsAtY$1 = null;
+  this.pointsAtZ$1 = null;
+  this.preserveAlpha$1 = null;
+  this.preserveAspectRatio$1 = null;
+  this.primitiveUnits$1 = null;
+  this.r$1 = null;
+  this.radius$1 = null;
+  this.refX$1 = null;
+  this.refY$1 = null;
+  this.repeatCount$1 = null;
+  this.repeatDur$1 = null;
+  this.requiredFeatures$1 = null;
+  this.restart$1 = null;
+  this.result$1 = null;
+  this.rx$1 = null;
+  this.ry$1 = null;
+  this.scale$1 = null;
+  this.seed$1 = null;
+  this.shapeRendering$1 = null;
+  this.specularConstant$1 = null;
+  this.specularExponent$1 = null;
+  this.spreadMethod$1 = null;
+  this.stdDeviation$1 = null;
+  this.stitchTiles$1 = null;
+  this.stopColor$1 = null;
+  this.stopOpacity$1 = null;
+  this.stroke$1 = null;
+  this.strokeDasharray$1 = null;
+  this.strokeDashoffset$1 = null;
+  this.strokeLinecap$1 = null;
+  this.strokeLinejoin$1 = null;
+  this.strokeMiterlimit$1 = null;
+  this.strokeOpacity$1 = null;
+  this.strokeWidth$1 = null;
+  this.style$1 = null;
+  this.surfaceScale$1 = null;
+  this.targetX$1 = null;
+  this.targetY$1 = null;
+  this.textAnchor$1 = null;
+  this.textDecoration$1 = null;
+  this.textRendering$1 = null;
+  this.to$1 = null;
+  this.transform$1 = null;
+  this.type$1 = null;
+  this.values$1 = null;
+  this.viewBox$1 = null;
+  this.visibility$1 = null;
+  this.width$1 = null;
+  this.wordSpacing$1 = null;
+  this.writingMode$1 = null;
+  this.x$1 = null;
+  this.x1$1 = null;
+  this.x2$1 = null;
+  this.xChannelSelector$1 = null;
+  this.xLinkHref$1 = null;
+  this.xLink$1 = null;
+  this.xLinkTitle$1 = null;
+  this.xmlSpace$1 = null;
+  this.xmlns$1 = null;
+  this.xmlnsXlink$1 = null;
+  this.y$1 = null;
+  this.y1$1 = null;
+  this.y2$1 = null;
+  this.yChannelSelector$1 = null;
+  this.z$1 = null;
+  this.bitmap$0$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
+  this.bitmap$1$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
+  this.bitmap$2$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong()
+}
+$c_Lscalatags_JsDom$svgAttrs$.prototype = new $h_O();
+$c_Lscalatags_JsDom$svgAttrs$.prototype.constructor = $c_Lscalatags_JsDom$svgAttrs$;
+/** @constructor */
+function $h_Lscalatags_JsDom$svgAttrs$() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$svgAttrs$.prototype = $c_Lscalatags_JsDom$svgAttrs$.prototype;
+$c_Lscalatags_JsDom$svgAttrs$.prototype.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag = (function(tag, $void, namespaceConfig) {
+  return $f_Lscalatags_JsDom$Cap__makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag(this, tag, $void, namespaceConfig)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr = (function(s, ns, raw) {
+  return $f_Lscalatags_generic_Util__attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr(this, s, ns, raw)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.attr$default$2__Lscalatags_generic_Namespace = (function() {
+  return $f_Lscalatags_generic_Util__attr$default$2__Lscalatags_generic_Namespace(this)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.attr$default$3__Z = (function() {
+  return $f_Lscalatags_generic_Util__attr$default$3__Z(this)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.cx$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(67108864, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.cx$1 = $f_Lscalatags_generic_SvgAttrs__cx__Lscalatags_generic_Attr(this);
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(67108864, 0))
+  };
+  return this.cx$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.cx__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(67108864, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.cx$lzycompute__p1__Lscalatags_generic_Attr() : this.cx$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.cy$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(134217728, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.cy$1 = $f_Lscalatags_generic_SvgAttrs__cy__Lscalatags_generic_Attr(this);
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(134217728, 0))
+  };
+  return this.cy$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.cy__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(134217728, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.cy$lzycompute__p1__Lscalatags_generic_Attr() : this.cy$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.fill$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 512)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.fill$1 = $f_Lscalatags_generic_SvgAttrs__fill__Lscalatags_generic_Attr(this);
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 512))
+  };
+  return this.fill$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.fill__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 512)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.fill$lzycompute__p1__Lscalatags_generic_Attr() : this.fill$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.height$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 268435456)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.height$1 = $f_Lscalatags_generic_SvgAttrs__height__Lscalatags_generic_Attr(this);
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 268435456))
+  };
+  return this.height$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.height__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 268435456)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.height$lzycompute__p1__Lscalatags_generic_Attr() : this.height$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.r$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$1$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 16384)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.r$1 = $f_Lscalatags_generic_SvgAttrs__r__Lscalatags_generic_Attr(this);
+    this.bitmap$1$1 = this.bitmap$1$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 16384))
+  };
+  return this.r$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.r__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$1$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 16384)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.r$lzycompute__p1__Lscalatags_generic_Attr() : this.r$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.stroke$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(8, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.stroke$1 = $f_Lscalatags_generic_SvgAttrs__stroke__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(8, 0))
+  };
+  return this.stroke$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.stroke__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(8, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.stroke$lzycompute__p1__Lscalatags_generic_Attr() : this.stroke$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.strokeWidth$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1024, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.strokeWidth$1 = $f_Lscalatags_generic_SvgAttrs__strokeWidth__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1024, 0))
+  };
+  return this.strokeWidth$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.strokeWidth__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1024, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.strokeWidth$lzycompute__p1__Lscalatags_generic_Attr() : this.strokeWidth$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.viewBox$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(4194304, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.viewBox$1 = $f_Lscalatags_generic_SvgAttrs__viewBox__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(4194304, 0))
+  };
+  return this.viewBox$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.viewBox__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(4194304, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.viewBox$lzycompute__p1__Lscalatags_generic_Attr() : this.viewBox$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.width$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(16777216, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.width$1 = $f_Lscalatags_generic_SvgAttrs__width__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(16777216, 0))
+  };
+  return this.width$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.width__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(16777216, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.width$lzycompute__p1__Lscalatags_generic_Attr() : this.width$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.x1$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(268435456, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.x1$1 = $f_Lscalatags_generic_SvgAttrs__x1__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(268435456, 0))
+  };
+  return this.x1$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.x1__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(268435456, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.x1$lzycompute__p1__Lscalatags_generic_Attr() : this.x1$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.x2$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(536870912, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.x2$1 = $f_Lscalatags_generic_SvgAttrs__x2__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(536870912, 0))
+  };
+  return this.x2$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.x2__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(536870912, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.x2$lzycompute__p1__Lscalatags_generic_Attr() : this.x2$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.xmlns$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 8)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.xmlns$1 = $f_Lscalatags_generic_SvgAttrs__xmlns__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 8))
+  };
+  return this.xmlns$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.xmlns__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 8)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.xmlns$lzycompute__p1__Lscalatags_generic_Attr() : this.xmlns$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.y1$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 64)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.y1$1 = $f_Lscalatags_generic_SvgAttrs__y1__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 64))
+  };
+  return this.y1$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.y1__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 64)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.y1$lzycompute__p1__Lscalatags_generic_Attr() : this.y1$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.y2$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 128)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.y2$1 = $f_Lscalatags_generic_SvgAttrs__y2__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 128))
+  };
+  return this.y2$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.y2__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 128)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.y2$lzycompute__p1__Lscalatags_generic_Attr() : this.y2$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag = (function(tag, $void, namespaceConfig) {
+  return this.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag(tag, $void, namespaceConfig)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lscalatags_JsDom$svgAttrs$ = this;
+  $f_Lscalatags_generic_LowPriUtil__$$init$__V(this);
+  $f_Lscalatags_generic_Util__$$init$__V(this);
+  $f_Lscalatags_jsdom_TagFactory__$$init$__V(this);
+  $f_Lscalatags_JsDom$Cap__$$init$__V(this);
+  $f_Lscalatags_generic_SvgAttrs__$$init$__V(this);
+  return this
+});
+var $d_Lscalatags_JsDom$svgAttrs$ = new $TypeData().initClass({
+  Lscalatags_JsDom$svgAttrs$: 0
+}, false, "scalatags.JsDom$svgAttrs$", {
+  Lscalatags_JsDom$svgAttrs$: 1,
+  O: 1,
+  Lscalatags_JsDom$Cap: 1,
+  Lscalatags_generic_Util: 1,
+  Lscalatags_generic_LowPriUtil: 1,
+  Lscalatags_jsdom_TagFactory: 1,
+  Lscalatags_generic_SvgAttrs: 1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.$classData = $d_Lscalatags_JsDom$svgAttrs$;
+var $n_Lscalatags_JsDom$svgAttrs$ = (void 0);
+function $m_Lscalatags_JsDom$svgAttrs$() {
+  if ((!$n_Lscalatags_JsDom$svgAttrs$)) {
+    $n_Lscalatags_JsDom$svgAttrs$ = new $c_Lscalatags_JsDom$svgAttrs$().init___()
+  };
+  return $n_Lscalatags_JsDom$svgAttrs$
+}
+/** @constructor */
 function $c_Lscalatags_generic_AttrPair() {
   $c_O.call(this);
   this.a$1 = null;
@@ -24596,6 +25206,199 @@ $c_Ljava_io_PrintStream.prototype.init___Ljava_io_OutputStream = (function(out) 
   $c_Ljava_io_PrintStream.prototype.init___Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset.call(this, out, false, null);
   return this
 });
+/** @constructor */
+function $c_Lscalatags_JsDom$svgTags$() {
+  $c_O.call(this);
+  this.svgNamespaceConfig$1 = null;
+  this.altGlyph$1 = null;
+  this.altGlyphDef$1 = null;
+  this.altGlyphItem$1 = null;
+  this.animate$1 = null;
+  this.animateMotion$1 = null;
+  this.animateTransform$1 = null;
+  this.circle$1 = null;
+  this.clipPath$1 = null;
+  this.color$minusprofile$1 = null;
+  this.cursor$1 = null;
+  this.defs$1 = null;
+  this.desc$1 = null;
+  this.ellipse$1 = null;
+  this.feBlend$1 = null;
+  this.feColorMatrix$1 = null;
+  this.feComponentTransfer$1 = null;
+  this.feComposite$1 = null;
+  this.feConvolveMatrix$1 = null;
+  this.feDiffuseLighting$1 = null;
+  this.feDisplacementMap$1 = null;
+  this.feDistantLighting$1 = null;
+  this.feFlood$1 = null;
+  this.feFuncA$1 = null;
+  this.feFuncB$1 = null;
+  this.feFuncG$1 = null;
+  this.feFuncR$1 = null;
+  this.feGaussianBlur$1 = null;
+  this.feImage$1 = null;
+  this.feMerge$1 = null;
+  this.feMergeNode$1 = null;
+  this.feMorphology$1 = null;
+  this.feOffset$1 = null;
+  this.fePointLight$1 = null;
+  this.feSpecularLighting$1 = null;
+  this.feSpotlight$1 = null;
+  this.feTile$1 = null;
+  this.feTurbulance$1 = null;
+  this.filter$1 = null;
+  this.font$1 = null;
+  this.font$minusface$1 = null;
+  this.font$minusface$minusformat$1 = null;
+  this.font$minusface$minusname$1 = null;
+  this.font$minusface$minussrc$1 = null;
+  this.font$minusface$minusuri$1 = null;
+  this.foreignObject$1 = null;
+  this.g$1 = null;
+  this.glyph$1 = null;
+  this.glyphRef$1 = null;
+  this.hkern$1 = null;
+  this.image$1 = null;
+  this.line$1 = null;
+  this.linearGradient$1 = null;
+  this.marker$1 = null;
+  this.mask$1 = null;
+  this.metadata$1 = null;
+  this.missing$minusglyph$1 = null;
+  this.mpath$1 = null;
+  this.path$1 = null;
+  this.pattern$1 = null;
+  this.polygon$1 = null;
+  this.polyline$1 = null;
+  this.radialGradient$1 = null;
+  this.rect$1 = null;
+  this.set$1 = null;
+  this.stop$1 = null;
+  this.svg$1 = null;
+  this.switch$1 = null;
+  this.symbol$1 = null;
+  this.text$1 = null;
+  this.textPath$1 = null;
+  this.tref$1 = null;
+  this.tspan$1 = null;
+  this.use$1 = null;
+  this.view$1 = null;
+  this.vkern$1 = null;
+  this.bitmap$0$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
+  this.bitmap$1$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong()
+}
+$c_Lscalatags_JsDom$svgTags$.prototype = new $h_O();
+$c_Lscalatags_JsDom$svgTags$.prototype.constructor = $c_Lscalatags_JsDom$svgTags$;
+/** @constructor */
+function $h_Lscalatags_JsDom$svgTags$() {
+  /*<skip>*/
+}
+$h_Lscalatags_JsDom$svgTags$.prototype = $c_Lscalatags_JsDom$svgTags$.prototype;
+$c_Lscalatags_JsDom$svgTags$.prototype.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag = (function(tag, $void, namespaceConfig) {
+  return $f_Lscalatags_JsDom$Cap__makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag(this, tag, $void, namespaceConfig)
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag = (function(s, $void, ns) {
+  return $f_Lscalatags_jsdom_TagFactory__typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag(this, s, $void, ns)
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.typedTag$default$2__Z = (function() {
+  return $f_Lscalatags_jsdom_TagFactory__typedTag$default$2__Z(this)
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.svgNamespaceConfig$lzycompute__p1__Lscalatags_generic_Namespace = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.svgNamespaceConfig$1 = $f_Lscalatags_jsdom_SvgTags__svgNamespaceConfig__Lscalatags_generic_Namespace(this);
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1, 0))
+  };
+  return this.svgNamespaceConfig$1
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.svgNamespaceConfig__Lscalatags_generic_Namespace = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.svgNamespaceConfig$lzycompute__p1__Lscalatags_generic_Namespace() : this.svgNamespaceConfig$1)
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.circle$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(128, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.circle$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_SvgTags__circle__Lscalatags_generic_TypedTag(this));
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(128, 0))
+  };
+  return this.circle$1
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.circle__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(128, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.circle$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.circle$1)
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.line$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 524288)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.line$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_SvgTags__line__Lscalatags_generic_TypedTag(this));
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 524288))
+  };
+  return this.line$1
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.line__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 524288)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.line$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.line$1)
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.rect$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, (-2147483648))).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.rect$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_SvgTags__rect__Lscalatags_generic_TypedTag(this));
+    this.bitmap$0$1 = this.bitmap$0$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, (-2147483648)))
+  };
+  return this.rect$1
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.rect__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$0$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, (-2147483648))).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.rect$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.rect$1)
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.svg$lzycompute__p1__Lscalatags_JsDom$TypedTag = (function() {
+  if (this.bitmap$1$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(4, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.svg$1 = $as_Lscalatags_JsDom$TypedTag($f_Lscalatags_jsdom_SvgTags__svg__Lscalatags_generic_TypedTag(this));
+    this.bitmap$1$1 = this.bitmap$1$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(4, 0))
+  };
+  return this.svg$1
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.svg__Lscalatags_JsDom$TypedTag = (function() {
+  return (this.bitmap$1$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(4, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.svg$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.svg$1)
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag = (function(tag, $void, namespaceConfig) {
+  return this.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag(tag, $void, namespaceConfig)
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.svg__Lscalatags_generic_TypedTag = (function() {
+  return this.svg__Lscalatags_JsDom$TypedTag()
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.rect__Lscalatags_generic_TypedTag = (function() {
+  return this.rect__Lscalatags_JsDom$TypedTag()
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.line__Lscalatags_generic_TypedTag = (function() {
+  return this.line__Lscalatags_JsDom$TypedTag()
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.circle__Lscalatags_generic_TypedTag = (function() {
+  return this.circle__Lscalatags_JsDom$TypedTag()
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.init___ = (function() {
+  $c_O.prototype.init___.call(this);
+  $n_Lscalatags_JsDom$svgTags$ = this;
+  $f_Lscalatags_generic_LowPriUtil__$$init$__V(this);
+  $f_Lscalatags_generic_Util__$$init$__V(this);
+  $f_Lscalatags_jsdom_TagFactory__$$init$__V(this);
+  $f_Lscalatags_JsDom$Cap__$$init$__V(this);
+  $f_Lscalatags_jsdom_SvgTags__$$init$__V(this);
+  return this
+});
+var $d_Lscalatags_JsDom$svgTags$ = new $TypeData().initClass({
+  Lscalatags_JsDom$svgTags$: 0
+}, false, "scalatags.JsDom$svgTags$", {
+  Lscalatags_JsDom$svgTags$: 1,
+  O: 1,
+  Lscalatags_JsDom$Cap: 1,
+  Lscalatags_generic_Util: 1,
+  Lscalatags_generic_LowPriUtil: 1,
+  Lscalatags_jsdom_TagFactory: 1,
+  Lscalatags_jsdom_SvgTags: 1,
+  Lscalatags_generic_SvgTags: 1
+});
+$c_Lscalatags_JsDom$svgTags$.prototype.$classData = $d_Lscalatags_JsDom$svgTags$;
+var $n_Lscalatags_JsDom$svgTags$ = (void 0);
+function $m_Lscalatags_JsDom$svgTags$() {
+  if ((!$n_Lscalatags_JsDom$svgTags$)) {
+    $n_Lscalatags_JsDom$svgTags$ = new $c_Lscalatags_JsDom$svgTags$().init___()
+  };
+  return $n_Lscalatags_JsDom$svgTags$
+}
 /** @constructor */
 function $c_ju_Arrays$$anon$3() {
   $c_O.call(this);
@@ -35283,6 +36086,9 @@ $c_Lscalatags_JsDom$all$.prototype.scalatags$JsDom$Aggregate$$undsetter$und$Tag$
 });
 $c_Lscalatags_JsDom$all$.prototype.stringAttr__Lscalatags_generic_AttrValue = (function() {
   return this.stringAttr$1
+});
+$c_Lscalatags_JsDom$all$.prototype.intAttr__Lscalatags_generic_AttrValue = (function() {
+  return this.intAttr$1
 });
 $c_Lscalatags_JsDom$all$.prototype.stringStyle__Lscalatags_generic_StyleValue = (function() {
   return this.stringStyle$1
