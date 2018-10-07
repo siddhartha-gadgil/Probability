@@ -5301,6 +5301,8 @@ function $c_Lprobability_MarkovView$() {
   this.probBox$1 = null;
   this.speedBox$1 = null;
   this.speed$1 = 0;
+  this.startStopBox$1 = null;
+  this.running$1 = false;
   this.counter$1 = 0;
   this.pth$1 = null;
   this.sc$1 = 0;
@@ -5387,6 +5389,15 @@ $c_Lprobability_MarkovView$.prototype.speed__I = (function() {
 $c_Lprobability_MarkovView$.prototype.speed$und$eq__I__V = (function(x$1) {
   this.speed$1 = x$1
 });
+$c_Lprobability_MarkovView$.prototype.startStopBox__Lorg_scalajs_dom_raw_HTMLInputElement = (function() {
+  return this.startStopBox$1
+});
+$c_Lprobability_MarkovView$.prototype.running__Z = (function() {
+  return this.running$1
+});
+$c_Lprobability_MarkovView$.prototype.running$und$eq__Z__V = (function(x$1) {
+  this.running$1 = x$1
+});
 $c_Lprobability_MarkovView$.prototype.counter__I = (function() {
   return this.counter$1
 });
@@ -5455,9 +5466,20 @@ $c_Lprobability_MarkovView$.prototype.svgView__Lscalatags_JsDom$TypedTag = (func
       return this$2.$$anonfun$svgView$5__p1__I__T2(j)
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
-    return (function(x$8$2) {
-      var x$8 = $as_T2(x$8$2);
-      return this$3.$$anonfun$svgView$6__p1__T2__Lscalatags_JsDom$TypedTag(x$8)
+    return (function(x$9$2) {
+      var x$9 = $as_T2(x$9$2);
+      return this$3.$$anonfun$svgView$6__p1__T2__Lscalatags_JsDom$TypedTag(x$9)
+    })
+  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
+  var loops = $as_sci_IndexedSeq($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), this.n__I()).withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
+    return (function(j$3$2) {
+      var j$3 = $uI(j$3$2);
+      return this$4.$$anonfun$svgView$7__p1__I__Z(j$3)
+    })
+  })(this))).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
+    return (function(j$4$2) {
+      var j$4 = $uI(j$4$2);
+      return this$5.$$anonfun$svgView$8__p1__I__sci_Vector(j$4)
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
   var v = $uI(this.pth__sci_Stream().apply__I__O(this.counter__I()));
@@ -5465,16 +5487,16 @@ $c_Lprobability_MarkovView$.prototype.svgView__Lscalatags_JsDom$TypedTag = (func
   if ((x1 !== null)) {
     var x = x1.$$und1$mcD$sp__D();
     var y = x1.$$und2$mcD$sp__D();
-    var x$9 = new $c_s_Tuple2$mcDD$sp().init___D__D(x, y)
+    var x$10 = new $c_s_Tuple2$mcDD$sp().init___D__D(x, y)
   } else {
-    var x$9;
+    var x$10;
     throw new $c_s_MatchError().init___O(x1)
   };
-  var x$2 = x$9.$$und1$mcD$sp__D();
-  var y$2 = x$9.$$und2$mcD$sp__D();
+  var x$2 = x$10.$$und1$mcD$sp__D();
+  var y$2 = x$10.$$und2$mcD$sp__D();
   var active = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().circle__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().cx__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(x$2), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().cy__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(y$2), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().r__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($imul(this.rad__I(), 2), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("red", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
-  var x$10 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().rect__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("white", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(2, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("black", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
-  var content = $as_sci_Vector($as_sci_Vector($as_sci_Vector(vertices.toVector__sci_Vector().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(lines.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$colon__O__scg_CanBuildFrom__O(x$10, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$colon$plus__O__scg_CanBuildFrom__O(active, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
+  var x$11 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().rect__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("white", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(2, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("black", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
+  var content = $as_sci_Vector($as_sci_Vector($as_sci_Vector($as_sci_Vector(vertices.toVector__sci_Vector().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(lines.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(loops.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$colon__O__scg_CanBuildFrom__O(x$11, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$colon$plus__O__scg_CanBuildFrom__O(active, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
   return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().svg__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().viewBox__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["0 0 ", " ", ""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.sc__I(), this.sc__I()])), $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("600", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("80%", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(content)
 });
 $c_Lprobability_MarkovView$.prototype.view__Lscalatags_JsDom$TypedTag = (function() {
@@ -5514,6 +5536,10 @@ $c_Lprobability_MarkovView$.prototype.main__V = (function() {
   this.speedBox__Lorg_scalajs_dom_raw_HTMLInputElement().onchange = (function(arg1$2) {
     var arg1 = arg1$2;
     $m_Lprobability_MarkovView$().probability$MarkovView$$$anonfun$main$7__Lorg_scalajs_dom_raw_Event__V(arg1)
+  });
+  this.startStopBox__Lorg_scalajs_dom_raw_HTMLInputElement().onclick = (function(arg1$2) {
+    var arg1 = arg1$2;
+    return $m_Lprobability_MarkovView$().probability$MarkovView$$$anonfun$main$8__Lorg_scalajs_dom_raw_MouseEvent__O(arg1)
   })
 });
 $c_Lprobability_MarkovView$.prototype.$$anonfun$transRow$1__p1__I__I__Lscalatags_JsDom$TypedTag = (function(i$1, j) {
@@ -5623,6 +5649,25 @@ $c_Lprobability_MarkovView$.prototype.lineArrow$1__p1__T2__T2__sci_Vector = (fun
   var yu$2 = x$5.$$und2$mcD$sp__D();
   return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(init, term, this.drawLine$default$3$1__p1__T(), this.drawLine$default$4$1__p1__I()), this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(arrowBase, new $c_s_Tuple2$mcDD$sp().init___D__D(((bu$2 - (xu$2 * this.rad__I())) - (yu$2 * this.rad__I())), ((tu$2 - (yu$2 * this.rad__I())) + (xu$2 * this.rad__I()))), "black", 2), this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(arrowBase, new $c_s_Tuple2$mcDD$sp().init___D__D(((bu$2 - (xu$2 * this.rad__I())) + (yu$2 * this.rad__I())), ((tu$2 - (yu$2 * this.rad__I())) - (xu$2 * this.rad__I()))), "black", 2)])))
 });
+$c_Lprobability_MarkovView$.prototype.vertexLoop$1__p1__I__sci_Vector = (function(j) {
+  var theta = ((6.283185307179586 / this.n__I()) * ((j - 1) | 0));
+  var x1 = new $c_s_Tuple2$mcDD$sp().init___D__D($m_s_math_package$().cos__D__D(theta), (-$m_s_math_package$().sin__D__D(theta)));
+  if ((x1 !== null)) {
+    var ux = x1.$$und1$mcD$sp__D();
+    var uy = x1.$$und2$mcD$sp__D();
+    var x$6 = new $c_s_Tuple2$mcDD$sp().init___D__D(ux, uy)
+  } else {
+    var x$6;
+    throw new $c_s_MatchError().init___O(x1)
+  };
+  var ux$2 = x$6.$$und1$mcD$sp__D();
+  var uy$2 = x$6.$$und2$mcD$sp__D();
+  var cr = $m_s_math_package$().min__D__D__D((((this.sc__I() / 12) | 0) * $m_s_math_package$().tan__D__D((3.141592653589793 / this.n__I()))), ((this.sc__I() / 12) | 0));
+  var loop = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().circle__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().cx__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair((((this.sc__I() / 2) | 0) + ((((this.sc__I() / 4) | 0) + cr) * ux$2)), $m_Lscalatags_JsDom$all$().doubleAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().cy__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair((((this.sc__I() / 2) | 0) + ((((this.sc__I() / 4) | 0) + cr) * uy$2)), $m_Lscalatags_JsDom$all$().doubleAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().r__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(cr, $m_Lscalatags_JsDom$all$().doubleAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("white", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("1", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("blue", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
+  var baseX = (((this.sc__I() / 2) | 0) + ((((this.sc__I() / 4) | 0) + (2 * cr)) * ux$2));
+  var baseY = (((this.sc__I() / 2) | 0) + ((((this.sc__I() / 4) | 0) + (2 * cr)) * uy$2));
+  return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([loop, this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(new $c_s_Tuple2$mcDD$sp().init___D__D(baseX, baseY), new $c_s_Tuple2$mcDD$sp().init___D__D((baseX + (this.rad__I() * (ux$2 - uy$2))), (baseY + (this.rad__I() * (ux$2 + uy$2)))), "black", 2), this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(new $c_s_Tuple2$mcDD$sp().init___D__D(baseX, baseY), new $c_s_Tuple2$mcDD$sp().init___D__D((baseX - (this.rad__I() * (uy$2 + ux$2))), (baseY + (this.rad__I() * (ux$2 - uy$2)))), "black", 2)])))
+});
 $c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$2__p1__I__I__Z = (function(i$2, j) {
   return (($m_Lprobability_MarkovView$().transProb__I__I__D(i$2, j) > 0) && (i$2 !== j))
 });
@@ -5655,18 +5700,18 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$5__p1__I__T2 = (function
   if ((x1 !== null)) {
     var x = x1.$$und1$mcD$sp__D();
     var y = x1.$$und2$mcD$sp__D();
-    var x$7 = new $c_T3().init___O__O__O(x1, x, y)
+    var x$8 = new $c_T3().init___O__O__O(x1, x, y)
   } else {
-    var x$7;
+    var x$8;
     throw new $c_s_MatchError().init___O(x1)
   };
-  var x$6 = $as_T2(x$7.$$und1__O());
-  var x$2 = $uD(x$7.$$und2__O());
-  var y$2 = $uD(x$7.$$und3__O());
-  return new $c_T2().init___O__O(j, x$6)
+  var x$7 = $as_T2(x$8.$$und1__O());
+  var x$2 = $uD(x$8.$$und2__O());
+  var y$2 = $uD(x$8.$$und3__O());
+  return new $c_T2().init___O__O(j, x$7)
 });
-$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$6__p1__T2__Lscalatags_JsDom$TypedTag = (function(x$8) {
-  var x1 = x$8;
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$6__p1__T2__Lscalatags_JsDom$TypedTag = (function(x$9) {
+  var x1 = x$9;
   if ((x1 !== null)) {
     var p2 = $as_T2(x1.$$und2__O());
     if ((p2 !== null)) {
@@ -5677,6 +5722,20 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$6__p1__T2__Lscalatags_Js
   };
   throw new $c_s_MatchError().init___O(x1)
 });
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$7__p1__I__Z = (function(j) {
+  return ($m_Lprobability_MarkovView$().transProb__I__I__D(j, j) > 0)
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$9__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag = (function(l) {
+  return l
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$8__p1__I__sci_Vector = (function(j) {
+  return $as_sci_Vector(this.vertexLoop$1__p1__I__sci_Vector(j).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(l$2) {
+      var l = $as_Lscalatags_JsDom$TypedTag(l$2);
+      return $this.$$anonfun$svgView$9__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag(l)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+});
 $c_Lprobability_MarkovView$.prototype.$$anonfun$main$1__p1__Lorg_scalajs_dom_raw_Element__Lorg_scalajs_dom_raw_Node = (function(node) {
   return node.appendChild($m_Lprobability_MarkovView$().fullView__Lscalatags_JsDom$TypedTag().render__Lorg_scalajs_dom_raw_Element())
 });
@@ -5684,22 +5743,22 @@ $c_Lprobability_MarkovView$.prototype.update$1__p1__V = (function() {
   this.dynamicView__Lorg_scalajs_dom_raw_HTMLDivElement().innerHTML = "";
   this.dynamicView__Lorg_scalajs_dom_raw_HTMLDivElement().appendChild(this.view__Lscalatags_JsDom$TypedTag().render__Lorg_scalajs_dom_raw_Element())
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$2__Lorg_scalajs_dom_raw_MouseEvent__V = (function(x$11) {
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$2__Lorg_scalajs_dom_raw_MouseEvent__V = (function(x$12) {
   $m_Lprobability_MarkovView$().updateProcess__V();
   $m_Lprobability_MarkovView$().newPath__V();
   this.update$1__p1__V()
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$3__Lorg_scalajs_dom_raw_MouseEvent__V = (function(x$12) {
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$3__Lorg_scalajs_dom_raw_MouseEvent__V = (function(x$13) {
   $m_Lprobability_MarkovView$().newPath__V();
   this.update$1__p1__V()
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$4__Lorg_scalajs_dom_raw_Event__V = (function(x$13) {
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$4__Lorg_scalajs_dom_raw_Event__V = (function(x$14) {
   $m_Lprobability_MarkovView$().n$und$eq__I__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T($m_Lprobability_MarkovView$().statesBox__Lorg_scalajs_dom_raw_HTMLInputElement().value))).toInt__I());
   $m_Lprobability_MarkovView$().updateProcess__V();
   $m_Lprobability_MarkovView$().newPath__V();
   this.update$1__p1__V()
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$5__Lorg_scalajs_dom_raw_Event__V = (function(x$14) {
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$5__Lorg_scalajs_dom_raw_Event__V = (function(x$15) {
   $m_Lprobability_MarkovView$().prob$und$eq__D__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T($m_Lprobability_MarkovView$().probBox__Lorg_scalajs_dom_raw_HTMLInputElement().value))).toDouble__D());
   $m_Lprobability_MarkovView$().updateProcess__V();
   $m_Lprobability_MarkovView$().newPath__V();
@@ -5712,13 +5771,27 @@ $c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$6__O
 $c_Lprobability_MarkovView$.prototype.animate$1__p1__V = (function() {
   this.intervalId$und$eq__I__V($uI($m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().setInterval((function() {
     return $m_Lprobability_MarkovView$().probability$MarkovView$$$anonfun$main$6__O()
-  }), ((1000 / this.speed__I()) | 0))))
+  }), ((1000 / this.speed__I()) | 0))));
+  this.running$und$eq__Z__V(true);
+  this.startStopBox__Lorg_scalajs_dom_raw_HTMLInputElement().value = "Pause";
+  this.startStopBox__Lorg_scalajs_dom_raw_HTMLInputElement().classList.remove("btn-success");
+  this.startStopBox__Lorg_scalajs_dom_raw_HTMLInputElement().classList.add("btn-warning")
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$7__Lorg_scalajs_dom_raw_Event__V = (function(x$15) {
+$c_Lprobability_MarkovView$.prototype.stop$1__p1__V = (function() {
+  this.running$und$eq__Z__V(false);
+  this.startStopBox__Lorg_scalajs_dom_raw_HTMLInputElement().value = "Start";
+  this.startStopBox__Lorg_scalajs_dom_raw_HTMLInputElement().classList.remove("btn-warning");
+  this.startStopBox__Lorg_scalajs_dom_raw_HTMLInputElement().classList.add("btn-success");
+  $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().clearTimeout(this.intervalId__I())
+});
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$7__Lorg_scalajs_dom_raw_Event__V = (function(x$16) {
   $m_Lprobability_MarkovView$().speed$und$eq__I__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T($m_Lprobability_MarkovView$().speedBox__Lorg_scalajs_dom_raw_HTMLInputElement().value))).toInt__I());
   $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().clearTimeout($m_Lprobability_MarkovView$().intervalId__I());
   this.animate$1__p1__V();
   this.update$1__p1__V()
+});
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$8__Lorg_scalajs_dom_raw_MouseEvent__O = (function(x$17) {
+  return ($m_Lprobability_MarkovView$().running__Z() ? (this.stop$1__p1__V(), (void 0)) : (this.animate$1__p1__V(), (void 0)))
 });
 $c_Lprobability_MarkovView$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
@@ -5738,12 +5811,14 @@ $c_Lprobability_MarkovView$.prototype.init___ = (function() {
   this.probBox$1 = jsx$3.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$2, jsx$1.$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(new $c_sci_StringOps().init___T("%1.3f").format__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([arg$macro$2])), $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().size__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("4", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
   this.speedBox$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("text", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("2", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().size__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("2", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
   this.speed$1 = 2;
+  this.startStopBox$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("button", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("Start", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("input-btn btn btn-success", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
+  this.running$1 = false;
   this.counter$1 = 0;
   this.pth$1 = this.markovProcess__Lprobability_MarkovProcess$FiniteMarkovProcess().getStream__O__sci_Stream(this.init__I());
   this.sc$1 = 600;
   this.rad$1 = 5;
   this.dynamicView$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.view__Lscalatags_JsDom$TypedTag()])).render__Lorg_scalajs_dom_raw_Element();
-  this.fullView$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Finite state Markov Process")])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().ul__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().span__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Number of States: ")])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.statesBox__Lorg_scalajs_dom_raw_HTMLInputElement())])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().span__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Probability of transition between a pair of vertices: ")])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.probBox__Lorg_scalajs_dom_raw_HTMLInputElement())])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().span__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Steps per second: ")])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.speedBox__Lorg_scalajs_dom_raw_HTMLInputElement())]))])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.dynamicView__Lorg_scalajs_dom_raw_HTMLDivElement())]));
+  this.fullView$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().h2__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Finite state Markov Process")])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().ul__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().span__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Number of States: ")])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.statesBox__Lorg_scalajs_dom_raw_HTMLInputElement())])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().span__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Probability of transition between a pair of vertices: ")])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.probBox__Lorg_scalajs_dom_raw_HTMLInputElement())])), $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().span__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().stringFrag__T__Lscalatags_JsDom$StringFrag("Steps per second: ")])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.speedBox__Lorg_scalajs_dom_raw_HTMLInputElement())])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.startStopBox__Lorg_scalajs_dom_raw_HTMLInputElement())])), $m_Lscalatags_JsDom$all$().bindNode__Lorg_scalajs_dom_raw_Node__Lscalatags_LowPriorityImplicits$bindNode(this.dynamicView__Lorg_scalajs_dom_raw_HTMLDivElement())]));
   return this
 });
 var $d_Lprobability_MarkovView$ = new $TypeData().initClass({
@@ -6159,6 +6234,9 @@ $c_jl_Math$.prototype.sin__D__D = (function(a) {
 });
 $c_jl_Math$.prototype.cos__D__D = (function(a) {
   return $uD($g.Math.cos(a))
+});
+$c_jl_Math$.prototype.tan__D__D = (function(a) {
+  return $uD($g.Math.tan(a))
 });
 $c_jl_Math$.prototype.init___ = (function() {
   $c_O.prototype.init___.call(this);
@@ -7175,6 +7253,9 @@ $c_s_math_package$.prototype.sin__D__D = (function(x) {
 });
 $c_s_math_package$.prototype.cos__D__D = (function(x) {
   return $m_jl_Math$().cos__D__D(x)
+});
+$c_s_math_package$.prototype.tan__D__D = (function(x) {
+  return $m_jl_Math$().tan__D__D(x)
 });
 $c_s_math_package$.prototype.max__I__I__I = (function(x, y) {
   return $m_jl_Math$().max__I__I__I(x, y)
@@ -36302,6 +36383,9 @@ $c_Lscalatags_JsDom$all$.prototype.stringAttr__Lscalatags_generic_AttrValue = (f
 });
 $c_Lscalatags_JsDom$all$.prototype.intAttr__Lscalatags_generic_AttrValue = (function() {
   return this.intAttr$1
+});
+$c_Lscalatags_JsDom$all$.prototype.doubleAttr__Lscalatags_generic_AttrValue = (function() {
+  return this.doubleAttr$1
 });
 $c_Lscalatags_JsDom$all$.prototype.stringStyle__Lscalatags_generic_StyleValue = (function() {
   return this.stringStyle$1

@@ -60,6 +60,11 @@ object MarkovView {
 
   var speed: Int = 2
 
+  val startStopBox = input(
+    `type` := "button", value := "Start", `class` := "input-btn btn btn-success").render
+
+  var running: Boolean = false
+
 //  var steps: Int = 120
 
   var counter = 0
@@ -138,6 +143,31 @@ object MarkovView {
       )
     }
 
+    def vertexLoop(j: Int) = {
+      val theta = (2 * Pi / n) * (j - 1)
+      val (ux, uy) = (cos(theta), -sin(theta))
+      val cr = math.min(sc / 12 * tan(Pi / n), sc/12)
+      val loop = circle(cx := sc / 2 + (sc / 4 + cr) * ux,
+                        cy := sc / 2 + (sc / 4 + cr) * uy,
+                        r := cr,
+                        fill := "white",
+                        strokeWidth := "1",
+                        stroke := "blue")
+      val baseX = sc / 2 + (sc / 4 + 2 * cr) * ux
+      val baseY = sc / 2 + (sc / 4 + 2 * cr) * uy
+      Vector(
+        loop,
+        drawLine(
+          (baseX, baseY),
+          (baseX + rad * (ux - uy), baseY + rad * (ux + uy)),
+        "black", 2),
+        drawLine(
+          (baseX, baseY),
+          (baseX - rad * (uy + ux), baseY + rad * (ux - uy)),
+          "black", 2)
+      )
+    }
+
     val lines =
       for {
         i <- 1 to n
@@ -152,12 +182,16 @@ object MarkovView {
         (x, y) = vertex(j)
       } yield circle(cx := x.toInt, cy := y.toInt, r := rad, fill := "green")
 
+    val loops =
+      for {
+        j <- 1 to n
+        if transProb(j, j) > 0
+        l <- vertexLoop(j)
+      } yield l
+
     val active = {
       val v = pth(counter)
       val (x, y) = vertex(v)
-//      log(s"counter: $counter")
-//      log(s"v: $v")
-//      log(s"x : $x, y: $y")
       circle(cx := x.toInt, cy := y.toInt, r := rad * 2, fill := "red")
     }
 
@@ -166,7 +200,7 @@ object MarkovView {
       width := sc,
       fill := "white",
       strokeWidth := 2,
-      stroke := "black") +: (vertices.toVector ++ lines.toVector) :+ active
+      stroke := "black") +: (vertices.toVector ++ lines.toVector ++ loops.toVector) :+ active
 
     svg(viewBox := { s"0 0 $sc $sc" }, height := "600", width := "80%")(
       content: _*
@@ -196,7 +230,8 @@ object MarkovView {
       li(span("Number of States: "), statesBox),
       li(span("Probability of transition between a pair of vertices: "),
          probBox),
-      li(span("Steps per second: "), speedBox)
+      li(span("Steps per second: "), speedBox),
+      startStopBox
     ),
     dynamicView
   )
@@ -245,6 +280,18 @@ object MarkovView {
         },
         1000 / speed
       )
+      running = true
+      startStopBox.value = "Pause"
+      startStopBox.classList.remove("btn-success")
+      startStopBox.classList.add("btn-warning")
+    }
+
+    def stop() : Unit = {
+      running = false
+      startStopBox.value = "Start"
+      startStopBox.classList.remove("btn-warning")
+      startStopBox.classList.add("btn-success")
+      dom.window.clearTimeout(intervalId)
     }
 
     animate()
@@ -255,6 +302,9 @@ object MarkovView {
       animate()
       update()
     }
+
+    startStopBox.onclick = (_) =>
+      if (running) stop() else animate()
 
   }
 
