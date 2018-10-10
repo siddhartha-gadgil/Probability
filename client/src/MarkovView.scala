@@ -60,7 +60,7 @@ object MarkovView {
 
   var speed: Int = 2
 
-  val startStopBox = input(
+  val startStopBox: Input = input(
     `type` := "button", value := "Start", `class` := "input-btn btn btn-success").render
 
   var running: Boolean = false
@@ -119,28 +119,58 @@ object MarkovView {
            x2 := term._1.toInt,
            y2 := term._2.toInt,
            stroke := colour,
-           strokeWidth := w,
+            strokeWidth := w,
            xmlns := "http://www.w3.org/2000/svg")
     }
 
+    def dashedLine(init: (Double, Double),
+                 term: (Double, Double),
+                 colour: String = "blue",
+                 w: Int = 1): JsDom.TypedTag[Line] = {
+      line(x1 := init._1.toInt,
+        y1 := init._2.toInt,
+        x2 := term._1.toInt,
+        y2 := term._2.toInt,
+        stroke := colour,
+        strokeWidth := w,
+        strokeDasharray := "1 2",
+        xmlns := "http://www.w3.org/2000/svg")
+    }
+
     def lineArrow(init: (Double, Double),
-                  term: (Double, Double)): Vector[JsDom.TypedTag[Line]] = {
+                  term: (Double, Double), colour: String = "black"): Vector[JsDom.TypedTag[Line]] = {
       val (xinit, yinit) = init
       val (xt, yterm) = term
       val arrowBase = ((xt * 3 + xinit) / 4, (yterm * 3 + yinit) / 4)
       val (bu, tu) = arrowBase
       val (xu, yu) = unit(xt - xinit, yterm - yinit)
       Vector(
-        drawLine(init, term),
+        drawLine(init, term, colour),
         drawLine(arrowBase,
-                 (bu - (xu * rad) - (yu * rad), tu - (yu * rad) + (xu * rad)),
-                 "black",
-                 2),
+          (bu - (xu * rad) - (yu * rad), tu - (yu * rad) + (xu * rad)), "black",
+          2),
         drawLine(arrowBase,
-                 (bu - (xu * rad) + (yu * rad), tu - (yu * rad) - (xu * rad)),
-                 "black",
-                 2)
+          (bu - (xu * rad) + (yu * rad), tu - (yu * rad) - (xu * rad)), "black",
+          2)
       )
+    }
+
+      def dashedLineArrow(init: (Double, Double),
+                          term: (Double, Double), colour: String = "black"): Vector[JsDom.TypedTag[Line]] = {
+        val (xinit, yinit) = init
+        val (xt, yterm) = term
+        val arrowBase = ((xt * 3 + xinit) / 4, (yterm * 3 + yinit) / 4)
+        val (bu, tu) = arrowBase
+        val (xu, yu) = unit(xt - xinit, yterm - yinit)
+        Vector(
+          dashedLine(init, term, colour),
+          dashedLine(arrowBase,
+            (bu - (xu * rad) - (yu * rad), tu - (yu * rad) + (xu * rad)), "black",
+            2),
+          dashedLine(arrowBase,
+            (bu - (xu * rad) + (yu * rad), tu - (yu * rad) - (xu * rad)), "black",
+            2)
+        )
     }
 
     def vertexLoop(j: Int) = {
@@ -176,6 +206,14 @@ object MarkovView {
         l <- lineArrow(vertex(i), vertex(j))
       } yield l
 
+    val accessLines =
+      for {
+        i <- 1 to n
+        j <- 1 to n
+        if transProb(i, j) == 0 && markovProcess.accessible(i, j)  && i != j
+        l <- dashedLineArrow(vertex(i), vertex(j), "green")
+      } yield l
+
     val vertices =
       for {
         j <- 1 to n
@@ -200,7 +238,7 @@ object MarkovView {
       width := sc,
       fill := "white",
       strokeWidth := 2,
-      stroke := "black") +: (vertices.toVector ++ lines.toVector ++ loops.toVector) :+ active
+      stroke := "black") +: (vertices.toVector ++ lines.toVector ++ accessLines.toVector ++ loops.toVector) :+ active
 
     svg(viewBox := { s"0 0 $sc $sc" }, height := "600", width := "80%")(
       content: _*

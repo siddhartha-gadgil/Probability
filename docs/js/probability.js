@@ -5460,26 +5460,32 @@ $c_Lprobability_MarkovView$.prototype.svgView__Lscalatags_JsDom$TypedTag = (func
       return $this.$$anonfun$svgView$1__p1__I__sci_IndexedSeq(i)
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
-  var vertices = $as_sci_IndexedSeq($as_sc_TraversableLike($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), this.n__I()).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
-    return (function(j$2) {
-      var j = $uI(j$2);
-      return this$2.$$anonfun$svgView$5__p1__I__T2(j)
-    })
-  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
-    return (function(x$9$2) {
-      var x$9 = $as_T2(x$9$2);
-      return this$3.$$anonfun$svgView$6__p1__T2__Lscalatags_JsDom$TypedTag(x$9)
+  var accessLines = $as_sci_IndexedSeq($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), this.n__I()).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+    return (function(i$3$2) {
+      var i$3 = $uI(i$3$2);
+      return this$2.$$anonfun$svgView$5__p1__I__sci_IndexedSeq(i$3)
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
-  var loops = $as_sci_IndexedSeq($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), this.n__I()).withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
+  var vertices = $as_sci_IndexedSeq($as_sc_TraversableLike($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), this.n__I()).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3) {
+    return (function(j$2) {
+      var j = $uI(j$2);
+      return this$3.$$anonfun$svgView$9__p1__I__T2(j)
+    })
+  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom())).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4) {
+    return (function(x$13$2) {
+      var x$13 = $as_T2(x$13$2);
+      return this$4.$$anonfun$svgView$10__p1__T2__Lscalatags_JsDom$TypedTag(x$13)
+    })
+  })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
+  var loops = $as_sci_IndexedSeq($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), this.n__I()).withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
     return (function(j$3$2) {
       var j$3 = $uI(j$3$2);
-      return this$4.$$anonfun$svgView$7__p1__I__Z(j$3)
+      return this$5.$$anonfun$svgView$11__p1__I__Z(j$3)
     })
-  })(this))).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
+  })(this))).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$6) {
     return (function(j$4$2) {
       var j$4 = $uI(j$4$2);
-      return this$5.$$anonfun$svgView$8__p1__I__sci_Vector(j$4)
+      return this$6.$$anonfun$svgView$12__p1__I__sci_Vector(j$4)
     })
   })(this)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()));
   var v = $uI(this.pth__sci_Stream().apply__I__O(this.counter__I()));
@@ -5487,16 +5493,16 @@ $c_Lprobability_MarkovView$.prototype.svgView__Lscalatags_JsDom$TypedTag = (func
   if ((x1 !== null)) {
     var x = x1.$$und1$mcD$sp__D();
     var y = x1.$$und2$mcD$sp__D();
-    var x$10 = new $c_s_Tuple2$mcDD$sp().init___D__D(x, y)
+    var x$14 = new $c_s_Tuple2$mcDD$sp().init___D__D(x, y)
   } else {
-    var x$10;
+    var x$14;
     throw new $c_s_MatchError().init___O(x1)
   };
-  var x$2 = x$10.$$und1$mcD$sp__D();
-  var y$2 = x$10.$$und2$mcD$sp__D();
+  var x$2 = x$14.$$und1$mcD$sp__D();
+  var y$2 = x$14.$$und2$mcD$sp__D();
   var active = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().circle__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().cx__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(x$2), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().cy__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(y$2), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().r__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($imul(this.rad__I(), 2), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("red", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
-  var x$11 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().rect__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("white", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(2, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("black", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
-  var content = $as_sci_Vector($as_sci_Vector($as_sci_Vector($as_sci_Vector(vertices.toVector__sci_Vector().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(lines.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(loops.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$colon__O__scg_CanBuildFrom__O(x$11, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$colon$plus__O__scg_CanBuildFrom__O(active, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
+  var x$15 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().rect__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.sc__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("white", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(2, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("black", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
+  var content = $as_sci_Vector($as_sci_Vector($as_sci_Vector($as_sci_Vector($as_sci_Vector(vertices.toVector__sci_Vector().$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(lines.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(accessLines.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(loops.toVector__sci_Vector(), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$plus$colon__O__scg_CanBuildFrom__O(x$15, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom())).$$colon$plus__O__scg_CanBuildFrom__O(active, $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()));
   return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().svg__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().viewBox__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["0 0 ", " ", ""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.sc__I(), this.sc__I()])), $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().height__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("600", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().width__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("80%", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(content)
 });
 $c_Lprobability_MarkovView$.prototype.view__Lscalatags_JsDom$TypedTag = (function() {
@@ -5595,13 +5601,16 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$freqTable$1__p1__I__Lscalatags_J
 $c_Lprobability_MarkovView$.prototype.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag = (function(init, term, colour, w) {
   return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().line__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().x1__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(init.$$und1$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().y1__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(init.$$und2$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().x2__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(term.$$und1$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().y2__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(term.$$und2$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(colour, $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(w, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().xmlns__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("http://www.w3.org/2000/svg", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]))
 });
-$c_Lprobability_MarkovView$.prototype.drawLine$default$3$1__p1__T = (function() {
-  return "blue"
-});
 $c_Lprobability_MarkovView$.prototype.drawLine$default$4$1__p1__I = (function() {
   return 1
 });
-$c_Lprobability_MarkovView$.prototype.lineArrow$1__p1__T2__T2__sci_Vector = (function(init, term) {
+$c_Lprobability_MarkovView$.prototype.dashedLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag = (function(init, term, colour, w) {
+  return $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().line__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().x1__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(init.$$und1$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().y1__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(init.$$und2$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().x2__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(term.$$und1$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().y2__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($doubleToInt(term.$$und2$mcD$sp__D()), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(colour, $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(w, $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeDasharray__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("1 2", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().xmlns__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("http://www.w3.org/2000/svg", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]))
+});
+$c_Lprobability_MarkovView$.prototype.dashedLine$default$4$1__p1__I = (function() {
+  return 1
+});
+$c_Lprobability_MarkovView$.prototype.lineArrow$1__p1__T2__T2__T__sci_Vector = (function(init, term, colour) {
   var x1 = init;
   if ((x1 !== null)) {
     var xinit = x1.$$und1$mcD$sp__D();
@@ -5647,7 +5656,58 @@ $c_Lprobability_MarkovView$.prototype.lineArrow$1__p1__T2__T2__sci_Vector = (fun
   };
   var xu$2 = x$5.$$und1$mcD$sp__D();
   var yu$2 = x$5.$$und2$mcD$sp__D();
-  return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(init, term, this.drawLine$default$3$1__p1__T(), this.drawLine$default$4$1__p1__I()), this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(arrowBase, new $c_s_Tuple2$mcDD$sp().init___D__D(((bu$2 - (xu$2 * this.rad__I())) - (yu$2 * this.rad__I())), ((tu$2 - (yu$2 * this.rad__I())) + (xu$2 * this.rad__I()))), "black", 2), this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(arrowBase, new $c_s_Tuple2$mcDD$sp().init___D__D(((bu$2 - (xu$2 * this.rad__I())) + (yu$2 * this.rad__I())), ((tu$2 - (yu$2 * this.rad__I())) - (xu$2 * this.rad__I()))), "black", 2)])))
+  return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(init, term, colour, this.drawLine$default$4$1__p1__I()), this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(arrowBase, new $c_s_Tuple2$mcDD$sp().init___D__D(((bu$2 - (xu$2 * this.rad__I())) - (yu$2 * this.rad__I())), ((tu$2 - (yu$2 * this.rad__I())) + (xu$2 * this.rad__I()))), "black", 2), this.drawLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(arrowBase, new $c_s_Tuple2$mcDD$sp().init___D__D(((bu$2 - (xu$2 * this.rad__I())) + (yu$2 * this.rad__I())), ((tu$2 - (yu$2 * this.rad__I())) - (xu$2 * this.rad__I()))), "black", 2)])))
+});
+$c_Lprobability_MarkovView$.prototype.lineArrow$default$3$1__p1__T = (function() {
+  return "black"
+});
+$c_Lprobability_MarkovView$.prototype.dashedLineArrow$1__p1__T2__T2__T__sci_Vector = (function(init, term, colour) {
+  var x1 = init;
+  if ((x1 !== null)) {
+    var xinit = x1.$$und1$mcD$sp__D();
+    var yinit = x1.$$und2$mcD$sp__D();
+    var x$6 = new $c_s_Tuple2$mcDD$sp().init___D__D(xinit, yinit)
+  } else {
+    var x$6;
+    throw new $c_s_MatchError().init___O(x1)
+  };
+  var xinit$2 = x$6.$$und1$mcD$sp__D();
+  var yinit$2 = x$6.$$und2$mcD$sp__D();
+  var x1$2 = term;
+  if ((x1$2 !== null)) {
+    var xt = x1$2.$$und1$mcD$sp__D();
+    var yterm = x1$2.$$und2$mcD$sp__D();
+    var x$7 = new $c_s_Tuple2$mcDD$sp().init___D__D(xt, yterm)
+  } else {
+    var x$7;
+    throw new $c_s_MatchError().init___O(x1$2)
+  };
+  var xt$2 = x$7.$$und1$mcD$sp__D();
+  var yterm$2 = x$7.$$und2$mcD$sp__D();
+  var arrowBase = new $c_s_Tuple2$mcDD$sp().init___D__D((((xt$2 * 3) + xinit$2) / 4), (((yterm$2 * 3) + yinit$2) / 4));
+  var x1$3 = arrowBase;
+  if ((x1$3 !== null)) {
+    var bu = x1$3.$$und1$mcD$sp__D();
+    var tu = x1$3.$$und2$mcD$sp__D();
+    var x$8 = new $c_s_Tuple2$mcDD$sp().init___D__D(bu, tu)
+  } else {
+    var x$8;
+    throw new $c_s_MatchError().init___O(x1$3)
+  };
+  var bu$2 = x$8.$$und1$mcD$sp__D();
+  var tu$2 = x$8.$$und2$mcD$sp__D();
+  var x1$4 = this.unit__D__D__T2((xt$2 - xinit$2), (yterm$2 - yinit$2));
+  if ((x1$4 !== null)) {
+    var xu = x1$4.$$und1$mcD$sp__D();
+    var yu = x1$4.$$und2$mcD$sp__D();
+    var x$9 = new $c_s_Tuple2$mcDD$sp().init___D__D(xu, yu)
+  } else {
+    var x$9;
+    throw new $c_s_MatchError().init___O(x1$4)
+  };
+  var xu$2 = x$9.$$und1$mcD$sp__D();
+  var yu$2 = x$9.$$und2$mcD$sp__D();
+  return $as_sci_Vector($m_s_package$().Vector__sci_Vector$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.dashedLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(init, term, colour, this.dashedLine$default$4$1__p1__I()), this.dashedLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(arrowBase, new $c_s_Tuple2$mcDD$sp().init___D__D(((bu$2 - (xu$2 * this.rad__I())) - (yu$2 * this.rad__I())), ((tu$2 - (yu$2 * this.rad__I())) + (xu$2 * this.rad__I()))), "black", 2), this.dashedLine$1__p1__T2__T2__T__I__Lscalatags_JsDom$TypedTag(arrowBase, new $c_s_Tuple2$mcDD$sp().init___D__D(((bu$2 - (xu$2 * this.rad__I())) + (yu$2 * this.rad__I())), ((tu$2 - (yu$2 * this.rad__I())) - (xu$2 * this.rad__I()))), "black", 2)])))
 });
 $c_Lprobability_MarkovView$.prototype.vertexLoop$1__p1__I__sci_Vector = (function(j) {
   var theta = ((6.283185307179586 / this.n__I()) * ((j - 1) | 0));
@@ -5655,13 +5715,13 @@ $c_Lprobability_MarkovView$.prototype.vertexLoop$1__p1__I__sci_Vector = (functio
   if ((x1 !== null)) {
     var ux = x1.$$und1$mcD$sp__D();
     var uy = x1.$$und2$mcD$sp__D();
-    var x$6 = new $c_s_Tuple2$mcDD$sp().init___D__D(ux, uy)
+    var x$10 = new $c_s_Tuple2$mcDD$sp().init___D__D(ux, uy)
   } else {
-    var x$6;
+    var x$10;
     throw new $c_s_MatchError().init___O(x1)
   };
-  var ux$2 = x$6.$$und1$mcD$sp__D();
-  var uy$2 = x$6.$$und2$mcD$sp__D();
+  var ux$2 = x$10.$$und1$mcD$sp__D();
+  var uy$2 = x$10.$$und2$mcD$sp__D();
   var cr = $m_s_math_package$().min__D__D__D((((this.sc__I() / 12) | 0) * $m_s_math_package$().tan__D__D((3.141592653589793 / this.n__I()))), ((this.sc__I() / 12) | 0));
   var loop = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$svgTags$().circle__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$svgAttrs$().cx__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair((((this.sc__I() / 2) | 0) + ((((this.sc__I() / 4) | 0) + cr) * ux$2)), $m_Lscalatags_JsDom$all$().doubleAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().cy__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair((((this.sc__I() / 2) | 0) + ((((this.sc__I() / 4) | 0) + cr) * uy$2)), $m_Lscalatags_JsDom$all$().doubleAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().r__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(cr, $m_Lscalatags_JsDom$all$().doubleAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().fill__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("white", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().strokeWidth__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("1", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$svgAttrs$().stroke__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("blue", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())]));
   var baseX = (((this.sc__I() / 2) | 0) + ((((this.sc__I() / 4) | 0) + (2 * cr)) * ux$2));
@@ -5675,7 +5735,7 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$4__p1__Lscalatags_JsDom$
   return l
 });
 $c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$3__p1__I__I__sci_Vector = (function(i$2, j) {
-  return $as_sci_Vector(this.lineArrow$1__p1__T2__T2__sci_Vector($m_Lprobability_MarkovView$().vertex__I__T2(i$2), $m_Lprobability_MarkovView$().vertex__I__T2(j)).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+  return $as_sci_Vector(this.lineArrow$1__p1__T2__T2__T__sci_Vector($m_Lprobability_MarkovView$().vertex__I__T2(i$2), $m_Lprobability_MarkovView$().vertex__I__T2(j), this.lineArrow$default$3$1__p1__T()).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(l$2) {
       var l = $as_Lscalatags_JsDom$TypedTag(l$2);
       return $this.$$anonfun$svgView$4__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag(l)
@@ -5695,23 +5755,50 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$1__p1__I__sci_IndexedSeq
     })
   })(this, i)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()))
 });
-$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$5__p1__I__T2 = (function(j) {
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$6__p1__I__I__Z = (function(i$3, j) {
+  return ((($m_Lprobability_MarkovView$().transProb__I__I__D(i$3, j) === 0) && $m_Lprobability_MarkovView$().markovProcess__Lprobability_MarkovProcess$FiniteMarkovProcess().accessible__O__O__Z(i$3, j)) && (i$3 !== j))
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$8__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag = (function(l) {
+  return l
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$7__p1__I__I__sci_Vector = (function(i$3, j) {
+  return $as_sci_Vector(this.dashedLineArrow$1__p1__T2__T2__T__sci_Vector($m_Lprobability_MarkovView$().vertex__I__T2(i$3), $m_Lprobability_MarkovView$().vertex__I__T2(j), "green").map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(l$2) {
+      var l = $as_Lscalatags_JsDom$TypedTag(l$2);
+      return $this.$$anonfun$svgView$8__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag(l)
+    })
+  })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$5__p1__I__sci_IndexedSeq = (function(i) {
+  return $as_sci_IndexedSeq($m_sr_RichInt$().to$extension0__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(1), $m_Lprobability_MarkovView$().n__I()).withFilter__F1__scg_FilterMonadic(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, i) {
+    return (function(j$2) {
+      var j = $uI(j$2);
+      return $this.$$anonfun$svgView$6__p1__I__I__Z(i, j)
+    })
+  })(this, i))).flatMap__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2, i) {
+    return (function(j$3$2) {
+      var j$3 = $uI(j$3$2);
+      return this$2.$$anonfun$svgView$7__p1__I__I__sci_Vector(i, j$3)
+    })
+  })(this, i)), $m_sci_IndexedSeq$().canBuildFrom__scg_CanBuildFrom()))
+});
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$9__p1__I__T2 = (function(j) {
   var x1 = $m_Lprobability_MarkovView$().vertex__I__T2(j);
   if ((x1 !== null)) {
     var x = x1.$$und1$mcD$sp__D();
     var y = x1.$$und2$mcD$sp__D();
-    var x$8 = new $c_T3().init___O__O__O(x1, x, y)
+    var x$12 = new $c_T3().init___O__O__O(x1, x, y)
   } else {
-    var x$8;
+    var x$12;
     throw new $c_s_MatchError().init___O(x1)
   };
-  var x$7 = $as_T2(x$8.$$und1__O());
-  var x$2 = $uD(x$8.$$und2__O());
-  var y$2 = $uD(x$8.$$und3__O());
-  return new $c_T2().init___O__O(j, x$7)
+  var x$11 = $as_T2(x$12.$$und1__O());
+  var x$2 = $uD(x$12.$$und2__O());
+  var y$2 = $uD(x$12.$$und3__O());
+  return new $c_T2().init___O__O(j, x$11)
 });
-$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$6__p1__T2__Lscalatags_JsDom$TypedTag = (function(x$9) {
-  var x1 = x$9;
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$10__p1__T2__Lscalatags_JsDom$TypedTag = (function(x$13) {
+  var x1 = x$13;
   if ((x1 !== null)) {
     var p2 = $as_T2(x1.$$und2__O());
     if ((p2 !== null)) {
@@ -5722,17 +5809,17 @@ $c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$6__p1__T2__Lscalatags_Js
   };
   throw new $c_s_MatchError().init___O(x1)
 });
-$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$7__p1__I__Z = (function(j) {
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$11__p1__I__Z = (function(j) {
   return ($m_Lprobability_MarkovView$().transProb__I__I__D(j, j) > 0)
 });
-$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$9__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag = (function(l) {
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$13__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag = (function(l) {
   return l
 });
-$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$8__p1__I__sci_Vector = (function(j) {
+$c_Lprobability_MarkovView$.prototype.$$anonfun$svgView$12__p1__I__sci_Vector = (function(j) {
   return $as_sci_Vector(this.vertexLoop$1__p1__I__sci_Vector(j).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(l$2) {
       var l = $as_Lscalatags_JsDom$TypedTag(l$2);
-      return $this.$$anonfun$svgView$9__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag(l)
+      return $this.$$anonfun$svgView$13__p1__Lscalatags_JsDom$TypedTag__Lscalatags_JsDom$TypedTag(l)
     })
   })(this)), $m_sci_Vector$().canBuildFrom__scg_CanBuildFrom()))
 });
@@ -5743,22 +5830,22 @@ $c_Lprobability_MarkovView$.prototype.update$1__p1__V = (function() {
   this.dynamicView__Lorg_scalajs_dom_raw_HTMLDivElement().innerHTML = "";
   this.dynamicView__Lorg_scalajs_dom_raw_HTMLDivElement().appendChild(this.view__Lscalatags_JsDom$TypedTag().render__Lorg_scalajs_dom_raw_Element())
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$2__Lorg_scalajs_dom_raw_MouseEvent__V = (function(x$12) {
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$2__Lorg_scalajs_dom_raw_MouseEvent__V = (function(x$16) {
   $m_Lprobability_MarkovView$().updateProcess__V();
   $m_Lprobability_MarkovView$().newPath__V();
   this.update$1__p1__V()
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$3__Lorg_scalajs_dom_raw_MouseEvent__V = (function(x$13) {
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$3__Lorg_scalajs_dom_raw_MouseEvent__V = (function(x$17) {
   $m_Lprobability_MarkovView$().newPath__V();
   this.update$1__p1__V()
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$4__Lorg_scalajs_dom_raw_Event__V = (function(x$14) {
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$4__Lorg_scalajs_dom_raw_Event__V = (function(x$18) {
   $m_Lprobability_MarkovView$().n$und$eq__I__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T($m_Lprobability_MarkovView$().statesBox__Lorg_scalajs_dom_raw_HTMLInputElement().value))).toInt__I());
   $m_Lprobability_MarkovView$().updateProcess__V();
   $m_Lprobability_MarkovView$().newPath__V();
   this.update$1__p1__V()
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$5__Lorg_scalajs_dom_raw_Event__V = (function(x$15) {
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$5__Lorg_scalajs_dom_raw_Event__V = (function(x$19) {
   $m_Lprobability_MarkovView$().prob$und$eq__D__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T($m_Lprobability_MarkovView$().probBox__Lorg_scalajs_dom_raw_HTMLInputElement().value))).toDouble__D());
   $m_Lprobability_MarkovView$().updateProcess__V();
   $m_Lprobability_MarkovView$().newPath__V();
@@ -5784,13 +5871,13 @@ $c_Lprobability_MarkovView$.prototype.stop$1__p1__V = (function() {
   this.startStopBox__Lorg_scalajs_dom_raw_HTMLInputElement().classList.add("btn-success");
   $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().clearTimeout(this.intervalId__I())
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$7__Lorg_scalajs_dom_raw_Event__V = (function(x$16) {
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$7__Lorg_scalajs_dom_raw_Event__V = (function(x$20) {
   $m_Lprobability_MarkovView$().speed$und$eq__I__V(new $c_sci_StringOps().init___T($m_s_Predef$().augmentString__T__T($as_T($m_Lprobability_MarkovView$().speedBox__Lorg_scalajs_dom_raw_HTMLInputElement().value))).toInt__I());
   $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().clearTimeout($m_Lprobability_MarkovView$().intervalId__I());
   this.animate$1__p1__V();
   this.update$1__p1__V()
 });
-$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$8__Lorg_scalajs_dom_raw_MouseEvent__O = (function(x$17) {
+$c_Lprobability_MarkovView$.prototype.probability$MarkovView$$$anonfun$main$8__Lorg_scalajs_dom_raw_MouseEvent__O = (function(x$21) {
   return ($m_Lprobability_MarkovView$().running__Z() ? (this.stop$1__p1__V(), (void 0)) : (this.animate$1__p1__V(), (void 0)))
 });
 $c_Lprobability_MarkovView$.prototype.init___ = (function() {
@@ -11347,6 +11434,9 @@ function $f_Lscalatags_generic_SvgAttrs__r__Lscalatags_generic_Attr($thiz) {
 }
 function $f_Lscalatags_generic_SvgAttrs__stroke__Lscalatags_generic_Attr($thiz) {
   return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("stroke", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
+}
+function $f_Lscalatags_generic_SvgAttrs__strokeDasharray__Lscalatags_generic_Attr($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("stroke-dasharray", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
 }
 function $f_Lscalatags_generic_SvgAttrs__strokeWidth__Lscalatags_generic_Attr($thiz) {
   return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("stroke-width", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z())
@@ -21064,6 +21154,64 @@ var $d_sc_LinearSeqLike$$anon$1 = new $TypeData().initClass({
 });
 $c_sc_LinearSeqLike$$anon$1.prototype.$classData = $d_sc_LinearSeqLike$$anon$1;
 /** @constructor */
+function $c_sc_MapLike$$anon$1() {
+  $c_sc_AbstractIterator.call(this);
+  this.iter$2 = null
+}
+$c_sc_MapLike$$anon$1.prototype = new $h_sc_AbstractIterator();
+$c_sc_MapLike$$anon$1.prototype.constructor = $c_sc_MapLike$$anon$1;
+/** @constructor */
+function $h_sc_MapLike$$anon$1() {
+  /*<skip>*/
+}
+$h_sc_MapLike$$anon$1.prototype = $c_sc_MapLike$$anon$1.prototype;
+$c_sc_MapLike$$anon$1.prototype.iter__p2__sc_Iterator = (function() {
+  return this.iter$2
+});
+$c_sc_MapLike$$anon$1.prototype.hasNext__Z = (function() {
+  return this.iter__p2__sc_Iterator().hasNext__Z()
+});
+$c_sc_MapLike$$anon$1.prototype.next__O = (function() {
+  return $as_T2(this.iter__p2__sc_Iterator().next__O()).$$und1__O()
+});
+$c_sc_MapLike$$anon$1.prototype.init___sc_MapLike = (function($$outer) {
+  $c_sc_AbstractIterator.prototype.init___.call(this);
+  this.iter$2 = $$outer.iterator__sc_Iterator();
+  return this
+});
+$c_sc_MapLike$$anon$1.prototype.$$anonfun$count$1__psc_TraversableOnce__F1__sr_IntRef__O__V = (function(p$1, cnt$1, x) {
+  $f_sc_TraversableOnce__$$anonfun$count$1__psc_TraversableOnce__F1__sr_IntRef__O__V(this, p$1, cnt$1, x)
+});
+$c_sc_MapLike$$anon$1.prototype.$$anonfun$addString$1__psc_TraversableOnce__scm_StringBuilder__T__sr_BooleanRef__O__O = (function(b$1, sep$1, first$4, x) {
+  return $f_sc_TraversableOnce__$$anonfun$addString$1__psc_TraversableOnce__scm_StringBuilder__T__sr_BooleanRef__O__O(this, b$1, sep$1, first$4, x)
+});
+$c_sc_MapLike$$anon$1.prototype.$$anonfun$toStream$1__psc_Iterator__sci_Stream = (function() {
+  return $f_sc_Iterator__$$anonfun$toStream$1__psc_Iterator__sci_Stream(this)
+});
+$c_sc_MapLike$$anon$1.prototype.$$anonfun$foldLeft$1__psc_TraversableOnce__F2__sr_ObjectRef__O__V = (function(op$3, result$2, x) {
+  $f_sc_TraversableOnce__$$anonfun$foldLeft$1__psc_TraversableOnce__F2__sr_ObjectRef__O__V(this, op$3, result$2, x)
+});
+$c_sc_MapLike$$anon$1.prototype.$$anonfun$sum$1__psc_TraversableOnce__s_math_Numeric__O__O__O = (function(num$1, x, y) {
+  return $f_sc_TraversableOnce__$$anonfun$sum$1__psc_TraversableOnce__s_math_Numeric__O__O__O(this, num$1, x, y)
+});
+$c_sc_MapLike$$anon$1.prototype.$$anonfun$toMap$1__psc_TraversableOnce__s_Predef$$less$colon$less__scm_Builder__O__scm_Builder = (function(ev$1, b$2, x) {
+  return $f_sc_TraversableOnce__$$anonfun$toMap$1__psc_TraversableOnce__s_Predef$$less$colon$less__scm_Builder__O__scm_Builder(this, ev$1, b$2, x)
+});
+$c_sc_MapLike$$anon$1.prototype.$$anonfun$size$1__psc_TraversableOnce__sr_IntRef__O__V = (function(result$1, x) {
+  $f_sc_TraversableOnce__$$anonfun$size$1__psc_TraversableOnce__sr_IntRef__O__V(this, result$1, x)
+});
+var $d_sc_MapLike$$anon$1 = new $TypeData().initClass({
+  sc_MapLike$$anon$1: 0
+}, false, "scala.collection.MapLike$$anon$1", {
+  sc_MapLike$$anon$1: 1,
+  sc_AbstractIterator: 1,
+  O: 1,
+  sc_Iterator: 1,
+  sc_TraversableOnce: 1,
+  sc_GenTraversableOnce: 1
+});
+$c_sc_MapLike$$anon$1.prototype.$classData = $d_sc_MapLike$$anon$1;
+/** @constructor */
 function $c_sc_Traversable$() {
   $c_scg_GenTraversableFactory.call(this);
   this.breaks$3 = null
@@ -21663,6 +21811,64 @@ var $d_scm_FlatHashTable$$anon$1 = new $TypeData().initClass({
   sc_GenTraversableOnce: 1
 });
 $c_scm_FlatHashTable$$anon$1.prototype.$classData = $d_scm_FlatHashTable$$anon$1;
+/** @constructor */
+function $c_scm_HashMap$$anon$3() {
+  $c_sc_AbstractIterator.call(this);
+  this.iter$2 = null
+}
+$c_scm_HashMap$$anon$3.prototype = new $h_sc_AbstractIterator();
+$c_scm_HashMap$$anon$3.prototype.constructor = $c_scm_HashMap$$anon$3;
+/** @constructor */
+function $h_scm_HashMap$$anon$3() {
+  /*<skip>*/
+}
+$h_scm_HashMap$$anon$3.prototype = $c_scm_HashMap$$anon$3.prototype;
+$c_scm_HashMap$$anon$3.prototype.iter__p2__sc_Iterator = (function() {
+  return this.iter$2
+});
+$c_scm_HashMap$$anon$3.prototype.hasNext__Z = (function() {
+  return this.iter__p2__sc_Iterator().hasNext__Z()
+});
+$c_scm_HashMap$$anon$3.prototype.next__O = (function() {
+  return $as_scm_DefaultEntry(this.iter__p2__sc_Iterator().next__O()).key__O()
+});
+$c_scm_HashMap$$anon$3.prototype.init___scm_HashMap = (function($$outer) {
+  $c_sc_AbstractIterator.prototype.init___.call(this);
+  this.iter$2 = $$outer.entriesIterator__sc_Iterator();
+  return this
+});
+$c_scm_HashMap$$anon$3.prototype.$$anonfun$count$1__psc_TraversableOnce__F1__sr_IntRef__O__V = (function(p$1, cnt$1, x) {
+  $f_sc_TraversableOnce__$$anonfun$count$1__psc_TraversableOnce__F1__sr_IntRef__O__V(this, p$1, cnt$1, x)
+});
+$c_scm_HashMap$$anon$3.prototype.$$anonfun$addString$1__psc_TraversableOnce__scm_StringBuilder__T__sr_BooleanRef__O__O = (function(b$1, sep$1, first$4, x) {
+  return $f_sc_TraversableOnce__$$anonfun$addString$1__psc_TraversableOnce__scm_StringBuilder__T__sr_BooleanRef__O__O(this, b$1, sep$1, first$4, x)
+});
+$c_scm_HashMap$$anon$3.prototype.$$anonfun$toStream$1__psc_Iterator__sci_Stream = (function() {
+  return $f_sc_Iterator__$$anonfun$toStream$1__psc_Iterator__sci_Stream(this)
+});
+$c_scm_HashMap$$anon$3.prototype.$$anonfun$foldLeft$1__psc_TraversableOnce__F2__sr_ObjectRef__O__V = (function(op$3, result$2, x) {
+  $f_sc_TraversableOnce__$$anonfun$foldLeft$1__psc_TraversableOnce__F2__sr_ObjectRef__O__V(this, op$3, result$2, x)
+});
+$c_scm_HashMap$$anon$3.prototype.$$anonfun$sum$1__psc_TraversableOnce__s_math_Numeric__O__O__O = (function(num$1, x, y) {
+  return $f_sc_TraversableOnce__$$anonfun$sum$1__psc_TraversableOnce__s_math_Numeric__O__O__O(this, num$1, x, y)
+});
+$c_scm_HashMap$$anon$3.prototype.$$anonfun$toMap$1__psc_TraversableOnce__s_Predef$$less$colon$less__scm_Builder__O__scm_Builder = (function(ev$1, b$2, x) {
+  return $f_sc_TraversableOnce__$$anonfun$toMap$1__psc_TraversableOnce__s_Predef$$less$colon$less__scm_Builder__O__scm_Builder(this, ev$1, b$2, x)
+});
+$c_scm_HashMap$$anon$3.prototype.$$anonfun$size$1__psc_TraversableOnce__sr_IntRef__O__V = (function(result$1, x) {
+  $f_sc_TraversableOnce__$$anonfun$size$1__psc_TraversableOnce__sr_IntRef__O__V(this, result$1, x)
+});
+var $d_scm_HashMap$$anon$3 = new $TypeData().initClass({
+  scm_HashMap$$anon$3: 0
+}, false, "scala.collection.mutable.HashMap$$anon$3", {
+  scm_HashMap$$anon$3: 1,
+  sc_AbstractIterator: 1,
+  O: 1,
+  sc_Iterator: 1,
+  sc_TraversableOnce: 1,
+  sc_GenTraversableOnce: 1
+});
+$c_scm_HashMap$$anon$3.prototype.$classData = $d_scm_HashMap$$anon$3;
 /** @constructor */
 function $c_scm_HashTable$$anon$1() {
   $c_sc_AbstractIterator.call(this);
@@ -22624,7 +22830,9 @@ $c_Lmhtml_Rx$Zip.prototype.$classData = $d_Lmhtml_Rx$Zip;
 /** @constructor */
 function $c_Lprobability_MarkovProcess$FiniteMarkovProcess() {
   $c_Lprobability_MarkovProcess.call(this);
-  this.transition$2 = null
+  this.transition$2 = null;
+  this.states$2 = null;
+  this.accessMap$2 = null
 }
 $c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype = new $h_Lprobability_MarkovProcess();
 $c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.constructor = $c_Lprobability_MarkovProcess$FiniteMarkovProcess;
@@ -22635,6 +22843,37 @@ function $h_Lprobability_MarkovProcess$FiniteMarkovProcess() {
 $h_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype = $c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype;
 $c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.transition__sci_Map = (function() {
   return this.transition$2
+});
+$c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.states__sci_Set = (function() {
+  return this.states$2
+});
+$c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.accessStep__sci_Set__sci_Set = (function(s) {
+  return $as_sci_Set(s.union__sc_GenSet__sc_Set($as_sc_GenSet(this.states__sci_Set().filter__F1__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, s) {
+    return (function(j$2) {
+      var j = j$2;
+      return $this.$$anonfun$accessStep$1__p2__sci_Set__O__Z(s, j)
+    })
+  })(this, s))))))
+});
+$c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.accessSet__sci_Set__sci_Set = (function(s) {
+  var _$this = this;
+  _accessSet: while (true) {
+    var next = _$this.accessStep__sci_Set__sci_Set(s);
+    var x$2 = next;
+    var x$3 = s;
+    if (((x$2 === null) ? (x$3 === null) : x$2.equals__O__Z(x$3))) {
+      return s
+    } else {
+      s = next;
+      continue _accessSet
+    }
+  }
+});
+$c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.accessMap__sci_Map = (function() {
+  return this.accessMap$2
+});
+$c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.accessible__O__O__Z = (function(i, j) {
+  return $as_sc_SetLike(this.accessMap__sci_Map().apply__O__O(i)).contains__O__Z(j)
 });
 $c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.productPrefix__T = (function() {
   return "FiniteMarkovProcess"
@@ -22685,10 +22924,31 @@ $c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.equals__O__Z = (func
     }
   }
 });
+$c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.$$anonfun$accessStep$2__p2__O__O__Z = (function(j$1, i) {
+  return ($as_Lprobability_ProbDist(this.transition__sci_Map().apply__O__O(i)).prob__O__D(j$1) > 0)
+});
+$c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.$$anonfun$accessStep$1__p2__sci_Set__O__Z = (function(s$2, j) {
+  return s$2.exists__F1__Z(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, j) {
+    return (function(i$2) {
+      var i = i$2;
+      return $this.$$anonfun$accessStep$2__p2__O__O__Z(j, i)
+    })
+  })(this, j)))
+});
+$c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.$$anonfun$accessMap$1__p2__O__T2 = (function(i) {
+  return $m_s_Predef$ArrowAssoc$().$$minus$greater$extension__O__O__T2($m_s_Predef$().ArrowAssoc__O__O(i), this.accessSet__sci_Set__sci_Set($as_sci_Set($m_s_Predef$().Set__sci_Set$().apply__sc_Seq__sc_GenTraversable(new $c_sjs_js_WrappedArray().init___sjs_js_Array([i])))))
+});
 $c_Lprobability_MarkovProcess$FiniteMarkovProcess.prototype.init___sci_Map = (function(transition) {
   this.transition$2 = transition;
   $c_Lprobability_MarkovProcess.prototype.init___F1.call(this, transition);
   $f_s_Product__$$init$__V(this);
+  this.states$2 = transition.keySet__sci_Set();
+  this.accessMap$2 = $as_sc_TraversableOnce(this.states__sci_Set().map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(i$2) {
+      var i = i$2;
+      return $this.$$anonfun$accessMap$1__p2__O__T2(i)
+    })
+  })(this)), $m_sci_Set$().canBuildFrom__scg_CanBuildFrom())).toMap__s_Predef$$less$colon$less__sci_Map($m_s_Predef$().$$conforms__s_Predef$$less$colon$less());
   return this
 });
 function $is_Lprobability_MarkovProcess$FiniteMarkovProcess(obj) {
@@ -23065,6 +23325,16 @@ $c_Lscalatags_JsDom$svgAttrs$.prototype.stroke$lzycompute__p1__Lscalatags_generi
 });
 $c_Lscalatags_JsDom$svgAttrs$.prototype.stroke__Lscalatags_generic_Attr = (function() {
   return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(8, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.stroke$lzycompute__p1__Lscalatags_generic_Attr() : this.stroke$1)
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.strokeDasharray$lzycompute__p1__Lscalatags_generic_Attr = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(16, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.strokeDasharray$1 = $f_Lscalatags_generic_SvgAttrs__strokeDasharray__Lscalatags_generic_Attr(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(16, 0))
+  };
+  return this.strokeDasharray$1
+});
+$c_Lscalatags_JsDom$svgAttrs$.prototype.strokeDasharray__Lscalatags_generic_Attr = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(16, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.strokeDasharray$lzycompute__p1__Lscalatags_generic_Attr() : this.strokeDasharray$1)
 });
 $c_Lscalatags_JsDom$svgAttrs$.prototype.strokeWidth$lzycompute__p1__Lscalatags_generic_Attr = (function() {
   if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(1024, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
@@ -31039,6 +31309,9 @@ function $f_sc_MapLike__contains__O__Z($thiz, key) {
 function $f_sc_MapLike__isDefinedAt__O__Z($thiz, key) {
   return $thiz.contains__O__Z(key)
 }
+function $f_sc_MapLike__keysIterator__sc_Iterator($thiz) {
+  return new $c_sc_MapLike$$anon$1().init___sc_MapLike($thiz)
+}
 function $f_sc_MapLike__$default__O__O($thiz, key) {
   throw new $c_ju_NoSuchElementException().init___T(("key not found: " + key))
 }
@@ -31084,6 +31357,9 @@ function $f_sc_MapLike__$$init$__V($thiz) {
 }
 function $f_sci_MapLike__mapValues__F1__sci_Map($thiz, f) {
   return new $c_sci_MapLike$$anon$2().init___sci_MapLike__F1($thiz, f)
+}
+function $f_sci_MapLike__keySet__sci_Set($thiz) {
+  return new $c_sci_MapLike$ImmutableDefaultKeySet().init___sci_MapLike($thiz)
 }
 function $f_sci_MapLike__$$init$__V($thiz) {
   /*<skip>*/
@@ -36744,6 +37020,9 @@ $c_sc_AbstractMap.prototype.contains__O__Z = (function(key) {
 $c_sc_AbstractMap.prototype.isDefinedAt__O__Z = (function(key) {
   return $f_sc_MapLike__isDefinedAt__O__Z(this, key)
 });
+$c_sc_AbstractMap.prototype.keysIterator__sc_Iterator = (function() {
+  return $f_sc_MapLike__keysIterator__sc_Iterator(this)
+});
 $c_sc_AbstractMap.prototype.$default__O__O = (function(key) {
   return $f_sc_MapLike__$default__O__O(this, key)
 });
@@ -37052,6 +37331,42 @@ function $f_sci_LinearSeq__seq__sci_LinearSeq($thiz) {
 function $f_sci_LinearSeq__$$init$__V($thiz) {
   /*<skip>*/
 }
+/** @constructor */
+function $c_sc_MapLike$DefaultKeySet() {
+  $c_sc_AbstractSet.call(this);
+  this.$$outer$4 = null
+}
+$c_sc_MapLike$DefaultKeySet.prototype = new $h_sc_AbstractSet();
+$c_sc_MapLike$DefaultKeySet.prototype.constructor = $c_sc_MapLike$DefaultKeySet;
+/** @constructor */
+function $h_sc_MapLike$DefaultKeySet() {
+  /*<skip>*/
+}
+$h_sc_MapLike$DefaultKeySet.prototype = $c_sc_MapLike$DefaultKeySet.prototype;
+$c_sc_MapLike$DefaultKeySet.prototype.contains__O__Z = (function(key) {
+  return this.scala$collection$MapLike$DefaultKeySet$$$outer__sc_MapLike().contains__O__Z(key)
+});
+$c_sc_MapLike$DefaultKeySet.prototype.iterator__sc_Iterator = (function() {
+  return this.scala$collection$MapLike$DefaultKeySet$$$outer__sc_MapLike().keysIterator__sc_Iterator()
+});
+$c_sc_MapLike$DefaultKeySet.prototype.size__I = (function() {
+  return this.scala$collection$MapLike$DefaultKeySet$$$outer__sc_MapLike().size__I()
+});
+$c_sc_MapLike$DefaultKeySet.prototype.foreach__F1__V = (function(f) {
+  this.scala$collection$MapLike$DefaultKeySet$$$outer__sc_MapLike().keysIterator__sc_Iterator().foreach__F1__V(f)
+});
+$c_sc_MapLike$DefaultKeySet.prototype.scala$collection$MapLike$DefaultKeySet$$$outer__sc_MapLike = (function() {
+  return this.$$outer$4
+});
+$c_sc_MapLike$DefaultKeySet.prototype.init___sc_MapLike = (function($$outer) {
+  if (($$outer === null)) {
+    throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+  } else {
+    this.$$outer$4 = $$outer
+  };
+  $c_sc_AbstractSet.prototype.init___.call(this);
+  return this
+});
 function $f_scm_Seq__seq__scm_Seq($thiz) {
   return $thiz
 }
@@ -37080,6 +37395,9 @@ $c_sci_AbstractMap.prototype.seq__sci_Map = (function() {
 });
 $c_sci_AbstractMap.prototype.mapValues__F1__sci_Map = (function(f) {
   return $f_sci_MapLike__mapValues__F1__sci_Map(this, f)
+});
+$c_sci_AbstractMap.prototype.keySet__sci_Set = (function() {
+  return $f_sci_MapLike__keySet__sci_Set(this)
 });
 $c_sci_AbstractMap.prototype.companion__scg_GenericCompanion = (function() {
   return $f_sci_Iterable__companion__scg_GenericCompanion(this)
@@ -38946,6 +39264,180 @@ var $d_sci_ListSet$Node = new $TypeData().initClass({
 });
 $c_sci_ListSet$Node.prototype.$classData = $d_sci_ListSet$Node;
 /** @constructor */
+function $c_sci_MapLike$ImmutableDefaultKeySet() {
+  $c_sc_MapLike$DefaultKeySet.call(this)
+}
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype = new $h_sc_MapLike$DefaultKeySet();
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.constructor = $c_sci_MapLike$ImmutableDefaultKeySet;
+/** @constructor */
+function $h_sci_MapLike$ImmutableDefaultKeySet() {
+  /*<skip>*/
+}
+$h_sci_MapLike$ImmutableDefaultKeySet.prototype = $c_sci_MapLike$ImmutableDefaultKeySet.prototype;
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.companion__scg_GenericCompanion = (function() {
+  return $f_sci_Set__companion__scg_GenericCompanion(this)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.seq__sci_Set = (function() {
+  return $f_sci_Set__seq__sci_Set(this)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$plus__O__sci_Set = (function(elem) {
+  return (this.apply__O__Z(elem) ? this : $as_sci_Set($as_sc_SetLike($m_sci_Set$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$())).$$plus$plus__sc_GenTraversableOnce__sc_Set(this).$$plus__O__sc_Set(elem)))
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$minus__O__sci_Set = (function(elem) {
+  return (this.apply__O__Z(elem) ? $as_sci_Set($as_sc_SetLike($m_sci_Set$().apply__sc_Seq__sc_GenTraversable($m_sci_Nil$())).$$plus$plus__sc_GenTraversableOnce__sc_Set(this).$$minus__O__sc_Set(elem)) : this)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.toSet__sci_Set = (function() {
+  return this
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.repr__scg_Subtractable = (function() {
+  return $as_scg_Subtractable(this.repr__O())
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.thisCollection__sc_Traversable = (function() {
+  return this.thisCollection__sc_Iterable()
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.apply__O__O = (function(v1) {
+  return this.apply__O__Z(v1)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.empty__sc_Set = (function() {
+  return $as_sc_Set(this.empty__sc_GenSet())
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.seq__sc_TraversableOnce = (function() {
+  return this.seq__sci_Set()
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.seq__sc_Set = (function() {
+  return this.seq__sci_Set()
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$minus__O__scg_Subtractable = (function(elem) {
+  return this.$$minus__O__sci_Set(elem)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$minus__O__sc_Set = (function(elem) {
+  return this.$$minus__O__sci_Set(elem)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$plus__O__sc_Set = (function(elem) {
+  return this.$$plus__O__sci_Set(elem)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.init___sci_MapLike = (function($$outer) {
+  $c_sc_MapLike$DefaultKeySet.prototype.init___sc_MapLike.call(this, $$outer);
+  $f_sci_Traversable__$$init$__V(this);
+  $f_sci_Iterable__$$init$__V(this);
+  $f_sci_Set__$$init$__V(this);
+  return this
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$count$1__psc_TraversableOnce__F1__sr_IntRef__O__V = (function(p$1, cnt$1, x) {
+  $f_sc_TraversableOnce__$$anonfun$count$1__psc_TraversableOnce__F1__sr_IntRef__O__V(this, p$1, cnt$1, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$flatMap$1__psc_TraversableLike__F1__scm_Builder__O__scm_Builder = (function(f$2, b$2, x) {
+  return $f_sc_TraversableLike__$$anonfun$flatMap$1__psc_TraversableLike__F1__scm_Builder__O__scm_Builder(this, f$2, b$2, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.builder$2__psc_TraversableLike__scg_CanBuildFrom__scm_Builder = (function(bf$2) {
+  return $f_sc_TraversableLike__builder$2__psc_TraversableLike__scg_CanBuildFrom__scm_Builder(this, bf$2)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.isPartLikelySynthetic$1__psc_TraversableLike__T__I__Z = (function(fqn$1, partStart$1) {
+  return $f_sc_TraversableLike__isPartLikelySynthetic$1__psc_TraversableLike__T__I__Z(this, fqn$1, partStart$1)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$map$1__psc_TraversableLike__F1__scm_Builder__O__scm_Builder = (function(f$1, b$1, x) {
+  return $f_sc_TraversableLike__$$anonfun$map$1__psc_TraversableLike__F1__scm_Builder__O__scm_Builder(this, f$1, b$1, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$scanLeft$1__psc_TraversableLike__F2__scm_Builder__sr_ObjectRef__O__scm_Builder = (function(op$1, b$6, acc$1, x) {
+  return $f_sc_TraversableLike__$$anonfun$scanLeft$1__psc_TraversableLike__F2__scm_Builder__sr_ObjectRef__O__scm_Builder(this, op$1, b$6, acc$1, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$toBuffer$1__psc_SetLike__scm_ArrayBuffer__O__scm_ArrayBuffer = (function(result$1, x$2) {
+  return $f_sc_SetLike__$$anonfun$toBuffer$1__psc_SetLike__scm_ArrayBuffer__O__scm_ArrayBuffer(this, result$1, x$2)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$$minus$minus$1__pscg_Subtractable__scg_Subtractable__O__scg_Subtractable = (function(x$2, x$3) {
+  return $f_scg_Subtractable__$$anonfun$$minus$minus$1__pscg_Subtractable__scg_Subtractable__O__scg_Subtractable(this, x$2, x$3)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$addString$1__psc_TraversableOnce__scm_StringBuilder__T__sr_BooleanRef__O__O = (function(b$1, sep$1, first$4, x) {
+  return $f_sc_TraversableOnce__$$anonfun$addString$1__psc_TraversableOnce__scm_StringBuilder__T__sr_BooleanRef__O__O(this, b$1, sep$1, first$4, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$sum$1__psc_TraversableOnce__s_math_Numeric__O__O__O = (function(num$1, x, y) {
+  return $f_sc_TraversableOnce__$$anonfun$sum$1__psc_TraversableOnce__s_math_Numeric__O__O__O(this, num$1, x, y)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$foldLeft$1__psc_TraversableOnce__F2__sr_ObjectRef__O__V = (function(op$3, result$2, x) {
+  $f_sc_TraversableOnce__$$anonfun$foldLeft$1__psc_TraversableOnce__F2__sr_ObjectRef__O__V(this, op$3, result$2, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$groupBy$1__psc_TraversableLike__F1__scm_Map__O__scm_Builder = (function(f$3, m$1, elem) {
+  return $f_sc_TraversableLike__$$anonfun$groupBy$1__psc_TraversableLike__F1__scm_Map__O__scm_Builder(this, f$3, m$1, elem)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$groupBy$4__psc_TraversableLike__scm_Builder__T2__scm_Builder = (function(b$5, x$2) {
+  return $f_sc_TraversableLike__$$anonfun$groupBy$4__psc_TraversableLike__scm_Builder__T2__scm_Builder(this, b$5, x$2)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$filterImpl$1__psc_TraversableLike__F1__Z__scm_Builder__O__O = (function(p$8, isFlipped$1, b$3, x) {
+  return $f_sc_TraversableLike__$$anonfun$filterImpl$1__psc_TraversableLike__F1__Z__scm_Builder__O__O(this, p$8, isFlipped$1, b$3, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$groupBy$2__psc_TraversableLike__scm_Builder = (function() {
+  return $f_sc_TraversableLike__$$anonfun$groupBy$2__psc_TraversableLike__scm_Builder(this)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$toMap$1__psc_TraversableOnce__s_Predef$$less$colon$less__scm_Builder__O__scm_Builder = (function(ev$1, b$2, x) {
+  return $f_sc_TraversableOnce__$$anonfun$toMap$1__psc_TraversableOnce__s_Predef$$less$colon$less__scm_Builder__O__scm_Builder(this, ev$1, b$2, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$toSeq$1__psc_SetLike__scm_Builder__O__scm_Builder = (function(vb$1, x$1) {
+  return $f_sc_SetLike__$$anonfun$toSeq$1__psc_SetLike__scm_Builder__O__scm_Builder(this, vb$1, x$1)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.liftedTree1$1__psc_GenSetLike__sc_GenSet__Z = (function(x2$1) {
+  return $f_sc_GenSetLike__liftedTree1$1__psc_GenSetLike__sc_GenSet__Z(this, x2$1)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$size$1__psc_TraversableOnce__sr_IntRef__O__V = (function(result$1, x) {
+  $f_sc_TraversableOnce__$$anonfun$size$1__psc_TraversableOnce__sr_IntRef__O__V(this, result$1, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$zipWithIndex$1__psc_IterableLike__scm_Builder__sr_IntRef__O__V = (function(b$1, i$1, x) {
+  $f_sc_IterableLike__$$anonfun$zipWithIndex$1__psc_IterableLike__scm_Builder__sr_IntRef__O__V(this, b$1, i$1, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.builder$1__psc_TraversableLike__scg_CanBuildFrom__scm_Builder = (function(bf$1) {
+  return $f_sc_TraversableLike__builder$1__psc_TraversableLike__scg_CanBuildFrom__scm_Builder(this, bf$1)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$init$1__psc_TraversableLike__sr_ObjectRef__sr_BooleanRef__scm_Builder__O__V = (function(lst$2, follow$1, b$8, x) {
+  $f_sc_TraversableLike__$$anonfun$init$1__psc_TraversableLike__sr_ObjectRef__sr_BooleanRef__scm_Builder__O__V(this, lst$2, follow$1, b$8, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$last$1__psc_TraversableLike__sr_ObjectRef__O__V = (function(lst$1, x) {
+  $f_sc_TraversableLike__$$anonfun$last$1__psc_TraversableLike__sr_ObjectRef__O__V(this, lst$1, x)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$groupBy$3__psc_TraversableLike__T2__Z = (function(check$ifrefutable$1) {
+  return $f_sc_TraversableLike__$$anonfun$groupBy$3__psc_TraversableLike__T2__Z(this, check$ifrefutable$1)
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$$anonfun$$plus$plus$1__psc_SetLike__sc_Set__O__sc_Set = (function(x$4, x$5) {
+  return $f_sc_SetLike__$$anonfun$$plus$plus$1__psc_SetLike__sc_Set__O__sc_Set(this, x$4, x$5)
+});
+var $d_sci_MapLike$ImmutableDefaultKeySet = new $TypeData().initClass({
+  sci_MapLike$ImmutableDefaultKeySet: 0
+}, false, "scala.collection.immutable.MapLike$ImmutableDefaultKeySet", {
+  sci_MapLike$ImmutableDefaultKeySet: 1,
+  sc_MapLike$DefaultKeySet: 1,
+  sc_AbstractSet: 1,
+  sc_AbstractIterable: 1,
+  sc_AbstractTraversable: 1,
+  O: 1,
+  sc_Traversable: 1,
+  sc_TraversableLike: 1,
+  scg_HasNewBuilder: 1,
+  scg_FilterMonadic: 1,
+  sc_TraversableOnce: 1,
+  sc_GenTraversableOnce: 1,
+  sc_GenTraversableLike: 1,
+  sc_Parallelizable: 1,
+  sc_GenTraversable: 1,
+  scg_GenericTraversableTemplate: 1,
+  sc_Iterable: 1,
+  sc_GenIterable: 1,
+  sc_GenIterableLike: 1,
+  sc_IterableLike: 1,
+  s_Equals: 1,
+  sc_Set: 1,
+  F1: 1,
+  sc_GenSet: 1,
+  sc_GenSetLike: 1,
+  scg_GenericSetTemplate: 1,
+  sc_SetLike: 1,
+  scg_Subtractable: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1,
+  sci_Set: 1,
+  sci_Iterable: 1,
+  sci_Traversable: 1,
+  s_Immutable: 1
+});
+$c_sci_MapLike$ImmutableDefaultKeySet.prototype.$classData = $d_sci_MapLike$ImmutableDefaultKeySet;
+/** @constructor */
 function $c_scm_AbstractSeq() {
   $c_sc_AbstractSeq.call(this)
 }
@@ -40503,6 +40995,9 @@ $c_sci_MapLike$$anon$2.prototype.seq__sci_Map = (function() {
 });
 $c_sci_MapLike$$anon$2.prototype.mapValues__F1__sci_Map = (function(f) {
   return $f_sci_MapLike__mapValues__F1__sci_Map(this, f)
+});
+$c_sci_MapLike$$anon$2.prototype.keySet__sci_Set = (function() {
+  return $f_sci_MapLike__keySet__sci_Set(this)
 });
 $c_sci_MapLike$$anon$2.prototype.companion__scg_GenericCompanion = (function() {
   return $f_sci_Iterable__companion__scg_GenericCompanion(this)
@@ -45854,6 +46349,9 @@ $c_scm_HashMap.prototype.foreach__F1__V = (function(f) {
       return $this.$$anonfun$foreach$1__p5__F1__scm_DefaultEntry__O(f, e)
     })
   })(this, f)))
+});
+$c_scm_HashMap.prototype.keysIterator__sc_Iterator = (function() {
+  return new $c_scm_HashMap$$anon$3().init___scm_HashMap(this)
 });
 $c_scm_HashMap.prototype.createNewEntry__O__O__scm_DefaultEntry = (function(key, value) {
   return new $c_scm_DefaultEntry().init___O__O(key, value)

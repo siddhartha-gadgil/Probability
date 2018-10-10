@@ -61,7 +61,24 @@ class MarkovProcess[S](nextDist: S => ProbDist[S]) {
 }
 
 object MarkovProcess {
-  case class FiniteMarkovProcess[S](transition: Map[S, ProbDist[S]]) extends  MarkovProcess(transition)
+  case class FiniteMarkovProcess[S](transition: Map[S, ProbDist[S]]) extends  MarkovProcess(transition){
+    val states: Set[S] = transition.keySet
+
+    def accessStep(s: Set[S]): Set[S] =
+      s union {
+        states.filter((j) => s.exists((i) => transition(i).prob(j) > 0))
+      }
+
+    @tailrec
+    final def accessSet(s: Set[S]): Set[S] = {
+      val next = accessStep(s)
+      if (next == s) s else accessSet(next)
+    }
+
+    val accessMap: Map[S, Set[S]] = states.map((i) =>  i -> accessSet(Set(i))).toMap
+
+    def accessible(i: S, j: S): Boolean = accessMap(i).contains(j)
+  }
 
   def sparseRandom(n: Int, p: Double): FiniteMarkovProcess[Int] = {
     val succMap =  (1 to n).map{
