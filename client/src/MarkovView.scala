@@ -3,7 +3,7 @@ package probability
 import MarkovProcess._
 import org.scalajs.dom
 import org.scalajs.dom._
-import org.scalajs.dom.html.{Div, Input, Table, TableRow}
+import org.scalajs.dom.html.{Div, Input, Table, TableRow, UList}
 import org.scalajs.dom.svg.{Line, SVG}
 import scalatags.JsDom
 import scalatags.JsDom.all._
@@ -60,8 +60,9 @@ object MarkovView {
 
   var speed: Int = 2
 
-  val startStopBox: Input = input(
-    `type` := "button", value := "Start", `class` := "input-btn btn btn-success").render
+  val startStopBox: Input = input(`type` := "button",
+                                  value := "Start",
+                                  `class` := "input-btn btn btn-success").render
 
   var running: Boolean = false
 
@@ -119,26 +120,29 @@ object MarkovView {
            x2 := term._1.toInt,
            y2 := term._2.toInt,
            stroke := colour,
-            strokeWidth := w,
+           strokeWidth := w,
            xmlns := "http://www.w3.org/2000/svg")
     }
 
     def dashedLine(init: (Double, Double),
-                 term: (Double, Double),
-                 colour: String = "blue",
-                 w: Int = 1): JsDom.TypedTag[Line] = {
-      line(x1 := init._1.toInt,
+                   term: (Double, Double),
+                   colour: String = "blue",
+                   w: Int = 1): JsDom.TypedTag[Line] = {
+      line(
+        x1 := init._1.toInt,
         y1 := init._2.toInt,
         x2 := term._1.toInt,
         y2 := term._2.toInt,
         stroke := colour,
         strokeWidth := w,
         strokeDasharray := "1 2",
-        xmlns := "http://www.w3.org/2000/svg")
+        xmlns := "http://www.w3.org/2000/svg"
+      )
     }
 
     def lineArrow(init: (Double, Double),
-                  term: (Double, Double), colour: String = "black"): Vector[JsDom.TypedTag[Line]] = {
+                  term: (Double, Double),
+                  colour: String = "black"): Vector[JsDom.TypedTag[Line]] = {
       val (xinit, yinit) = init
       val (xt, yterm) = term
       val arrowBase = ((xt * 3 + xinit) / 4, (yterm * 3 + yinit) / 4)
@@ -147,36 +151,42 @@ object MarkovView {
       Vector(
         drawLine(init, term, colour),
         drawLine(arrowBase,
-          (bu - (xu * rad) - (yu * rad), tu - (yu * rad) + (xu * rad)), "black",
-          2),
+                 (bu - (xu * rad) - (yu * rad), tu - (yu * rad) + (xu * rad)),
+                 "black",
+                 2),
         drawLine(arrowBase,
-          (bu - (xu * rad) + (yu * rad), tu - (yu * rad) - (xu * rad)), "black",
-          2)
+                 (bu - (xu * rad) + (yu * rad), tu - (yu * rad) - (xu * rad)),
+                 "black",
+                 2)
       )
     }
 
-      def dashedLineArrow(init: (Double, Double),
-                          term: (Double, Double), colour: String = "black"): Vector[JsDom.TypedTag[Line]] = {
-        val (xinit, yinit) = init
-        val (xt, yterm) = term
-        val arrowBase = ((xt * 3 + xinit) / 4, (yterm * 3 + yinit) / 4)
-        val (bu, tu) = arrowBase
-        val (xu, yu) = unit(xt - xinit, yterm - yinit)
-        Vector(
-          dashedLine(init, term, colour),
-          dashedLine(arrowBase,
-            (bu - (xu * rad) - (yu * rad), tu - (yu * rad) + (xu * rad)), "black",
-            2),
-          dashedLine(arrowBase,
-            (bu - (xu * rad) + (yu * rad), tu - (yu * rad) - (xu * rad)), "black",
-            2)
-        )
+    def dashedLineArrow(
+        init: (Double, Double),
+        term: (Double, Double),
+        colour: String = "black"): Vector[JsDom.TypedTag[Line]] = {
+      val (xinit, yinit) = init
+      val (xt, yterm) = term
+      val arrowBase = ((xt * 3 + xinit) / 4, (yterm * 3 + yinit) / 4)
+      val (bu, tu) = arrowBase
+      val (xu, yu) = unit(xt - xinit, yterm - yinit)
+      Vector(
+        dashedLine(init, term, colour),
+        dashedLine(arrowBase,
+                   (bu - (xu * rad) - (yu * rad), tu - (yu * rad) + (xu * rad)),
+                   "black",
+                   2),
+        dashedLine(arrowBase,
+                   (bu - (xu * rad) + (yu * rad), tu - (yu * rad) - (xu * rad)),
+                   "black",
+                   2)
+      )
     }
 
     def vertexLoop(j: Int) = {
       val theta = (2 * Pi / n) * (j - 1)
       val (ux, uy) = (cos(theta), -sin(theta))
-      val cr = math.min(sc / 12 * tan(Pi / n), sc/12)
+      val cr = math.min(sc / 12 * tan(Pi / n), sc / 12)
       val loop = circle(cx := sc / 2 + (sc / 4 + cr) * ux,
                         cy := sc / 2 + (sc / 4 + cr) * uy,
                         r := cr,
@@ -187,14 +197,14 @@ object MarkovView {
       val baseY = sc / 2 + (sc / 4 + 2 * cr) * uy
       Vector(
         loop,
-        drawLine(
-          (baseX, baseY),
-          (baseX + rad * (ux - uy), baseY + rad * (ux + uy)),
-        "black", 2),
-        drawLine(
-          (baseX, baseY),
-          (baseX - rad * (uy + ux), baseY + rad * (ux - uy)),
-          "black", 2)
+        drawLine((baseX, baseY),
+                 (baseX + rad * (ux - uy), baseY + rad * (ux + uy)),
+                 "black",
+                 2),
+        drawLine((baseX, baseY),
+                 (baseX - rad * (uy + ux), baseY + rad * (ux - uy)),
+                 "black",
+                 2)
       )
     }
 
@@ -210,7 +220,7 @@ object MarkovView {
       for {
         i <- 1 to n
         j <- 1 to n
-        if transProb(i, j) == 0 && markovProcess.accessible(i, j)  && i != j
+        if transProb(i, j) == 0 && markovProcess.accessible(i, j) && i != j
         l <- dashedLineArrow(vertex(i), vertex(j), "green")
       } yield l
 
@@ -245,6 +255,15 @@ object MarkovView {
     )
   }
 
+  def classes: JsDom.TypedTag[UList] = {
+    val cs = markovProcess.commClasses.toVector.sortBy(_.min).map { (c) =>
+      li(c.toVector.sortBy(identity).mkString(", "),
+         strong(" ; closed: "),
+         s"${markovProcess.isClosed(c)}")
+    }
+    ul(cs: _*)
+  }
+
   def view =
     div(
       div(`class` := "row")(
@@ -256,7 +275,9 @@ object MarkovView {
       div(`class` := "row")(h3("Sequence of states"),
                             div(svgView),
                             div(pthHead.mkString(" -> ")),
-                            pathBox),
+                            pathBox,
+                            h3("Communicating classes"),
+                            div(classes)),
       logDiv
     )
 
@@ -324,7 +345,7 @@ object MarkovView {
       startStopBox.classList.add("btn-warning")
     }
 
-    def stop() : Unit = {
+    def stop(): Unit = {
       running = false
       startStopBox.value = "Start"
       startStopBox.classList.remove("btn-warning")
@@ -341,8 +362,7 @@ object MarkovView {
       update()
     }
 
-    startStopBox.onclick = (_) =>
-      if (running) stop() else animate()
+    startStopBox.onclick = (_) => if (running) stop() else animate()
 
   }
 

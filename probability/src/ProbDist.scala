@@ -78,6 +78,20 @@ object MarkovProcess {
     val accessMap: Map[S, Set[S]] = states.map((i) =>  i -> accessSet(Set(i))).toMap
 
     def accessible(i: S, j: S): Boolean = accessMap(i).contains(j)
+
+    def communicate(i: S, j: S): Boolean = accessible(i, j) && accessible(j, i)
+
+    def commGps(ungrouped: Set[S], groups: Set[Set[S]]) : Set[Set[S]] =
+      if (ungrouped.isEmpty) groups
+      else {
+        val elem = ungrouped.head
+        val newGroup = ungrouped.filter(communicate(elem, _))
+        commGps(ungrouped -- newGroup, groups + newGroup)
+      }
+
+    val commClasses: Set[Set[S]] = commGps(states, Set())
+
+    def isClosed(s: Set[S]) : Boolean = accessSet(s) == s
   }
 
   def sparseRandom(n: Int, p: Double): FiniteMarkovProcess[Int] = {
