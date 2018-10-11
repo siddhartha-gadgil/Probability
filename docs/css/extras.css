@@ -47,6 +47,13 @@ a:focus {
   text-decoration: underline;
 }
 
+.view {
+  overflow-y: auto;
+  height: 200px;
+  border-style: dotted;
+  border-width: 1px;
+}
+
 /*.navbar-nav > li > a {padding-top:8px !important; padding-bottom:3px !important;}
 .navbar {min-height:32px !important}
 

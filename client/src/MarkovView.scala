@@ -257,9 +257,12 @@ object MarkovView {
 
   def classes: JsDom.TypedTag[UList] = {
     val cs = markovProcess.commClasses.toVector.sortBy(_.min).map { (c) =>
-      li(c.toVector.sortBy(identity).mkString(", "),
-         strong(" ; closed: "),
-         s"${markovProcess.isClosed(c)}")
+      if (markovProcess.isClosed(c))
+      li(strong (c.toVector.sortBy(identity).mkString(", ")),
+         span(" (closed)"))
+         else
+         li(c.toVector.sortBy(identity).mkString(", "))
+
     }
     ul(cs: _*)
   }
@@ -273,10 +276,12 @@ object MarkovView {
         div(`class` := "col-md-6")(h3("Frequencies and Proportions"),
                                    freqTable)),
       div(`class` := "row")(h3("Sequence of states"),
+                            p("The solid arrows correspond to positive transition probabilities, and dashed arrows to accessibility (excluding positive transition probabilities and loops)."),
                             div(svgView),
-                            div(pthHead.mkString(" -> ")),
+                            div(`class` := "view")(pthHead.mkString(" -> ")),
                             pathBox,
                             h3("Communicating classes"),
+                            p("Closed classes are bold"),
                             div(classes)),
       logDiv
     )
@@ -286,10 +291,13 @@ object MarkovView {
   val fullView = div(
     h2("Finite state Markov Process"),
     ul(
-      li(span("Number of States: "), statesBox),
-      li(span("Probability of transition between a pair of vertices: "),
+      li(span("Number of States (n): "), statesBox),
+      li(span("Probability of transition between a pair of vertices (p): "),
          probBox),
       li(span("Steps per second: "), speedBox),
+      p("For each state", em(" i "), "we choose", em(" n "), em( " Ber(p) "), "random variables determining whether the transition from", em(" i "), "to", em(" j "), "has positive probability. ",
+      "If all the random variables are", em(" false "), "we choose again, iterating till at least one is", em(" true.")," We then choose a", em(" Uniform(0, 1) "),
+      "random variable and normalize to get the transition probabilities."),
       startStopBox
     ),
     dynamicView
