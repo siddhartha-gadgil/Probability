@@ -278,8 +278,8 @@ object MarkovView {
       div(`class` := "row")(h3("Sequence of states"),
                             p("The solid arrows correspond to positive transition probabilities, and dashed arrows to accessibility (excluding positive transition probabilities and loops)."),
                             div(svgView),
-                            div(`class` := "view")(pthHead.mkString(" -> ")),
                             pathBox,
+                            div(`class` := "view")(pthHead.mkString(" -> ")),
                             h3("Communicating classes"),
                             p("Closed classes are bold"),
                             div(classes)),
@@ -365,7 +365,7 @@ object MarkovView {
 
     speedBox.onchange = (_) => {
       speed = speedBox.value.toInt
-      dom.window.clearTimeout(intervalId)
+      stop()
       animate()
       update()
     }

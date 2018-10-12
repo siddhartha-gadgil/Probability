@@ -49,7 +49,7 @@ a:focus {
 
 .view {
   overflow-y: auto;
-  height: 200px;
+  height: 100px;
   border-style: dotted;
   border-width: 1px;
 }
