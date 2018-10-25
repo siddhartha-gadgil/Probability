@@ -362,7 +362,7 @@ object Site {
     </div>
     <div class="section">
       <h3>Grading</h3>
-      <ul> There will be one <a href="midterm.html"> midterm</a> and a final examination. <strong> Please note the <a href="rules.html">rules</a> for the examinations.  </strong>
+      <ul> There will be one <a href="midterm.html"> midterm</a> and a <a href="final.html">final</a> examination. <strong> Please note the <a href="rules.html">rules</a> for the examinations.  </strong>
         The weightages in the final grades are as follows:
         <li> Assignments: 10%.</li>
         <li> Midterm: 40%.</li>
@@ -409,6 +409,7 @@ object Site {
     <h4>Announcements</h4>
     <ul>
       <li> <a href="midterm.html"> Midterm Examination</a> on Fri, 28/9/2018 (updated) </li>
+      <li> <a href="final.html"> Final Examination</a> on Fri, 30/11/2018  </li>
     </ul>
     <h4> <a href="assign-all.html">Upcoming Assignments</a> </h4>
     <ul>
@@ -481,6 +482,18 @@ object Site {
   def mkProblems() : Unit =
     write.over(pwd / "docs" / "prob-problems.html", probPage)
 
+  val finalExam: Elem =
+    <div>
+    <h2 class="text-center"> Final Examination</h2>
+      <p> The final examination is scheduled as follows:</p>
+      <ul>
+        <li><strong>Date:</strong> Friday, November 30, 2018.</li>
+        <li><strong>Time:</strong> 9:00 am - 12:00 noon</li>
+        <li><strong>Venue:</strong> LH-1, Department of Mathematics, IISc </li>
+      </ul>
+      <p>The syllabus includes all the material covered in the course.</p>
+    </div>
+
   val midterm: Elem =
     <div>
       <h2 class="text-center"> Midterm Examination</h2>
@@ -522,6 +535,8 @@ object Site {
     </div>
 
   def mkMidterm(): Unit = write.over(pwd / "docs" / "midterm.html", page(midterm.toString, ""))
+
+  def mkFinal(): Unit = write.over(pwd / "docs" / "final.html", page(finalExam.toString, ""))
 
   val rules = read(pwd / "sitebuilder" / "resources" / "rules.html")
 
