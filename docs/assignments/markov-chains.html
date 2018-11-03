@@ -101,16 +101,16 @@ messageStyle: "none",
       <li> Conclude that every state is positively recurrent. </li>
     </ol>
   </li>
-  <li> For $i \geq 1$, let $P_i$ be the event that $X_i - X_{i-1} = 1$. Show that the events $P_i$ are mutually independent and $Prob(P_i) = r$ for all $i$.</li>
-  <li> Let $N_i = \sum_{i=1}^n \mathbb{1}_{P_i}$. Show that if $X_0 = 0$ and $X_n = 0$ then $N_n \leq n/2$. </li>
-  <li> Consider the case $r > \frac{1}{2}$.
+  <li> For $i \geq 1$, let $P_i$ be the event that $X_i - X_{i-1} = 1$. Show that the events $P_i$ are mutually independent and $Prob(P_i) = r$ for all $i \geq 1$.</li>
+  <li> Let $N_k = \sum\limits_{i=1}^k \mathbb{1}_{P_i}$. Show that if $X_0 = 0$ and $X_n = 0$ then $N_n \leq n/2$. </li>
+  <li> Consider the case when $r > \frac{1}{2}$.
     <ol type="a">
       <li> Show that $N_k - \frac{k}{2} \to \infty$ almost surely.</li>
       <li> Conclude that every state of the Markov chain is transient. </li>
     </ol>
    </li>
    <li>
-     Consider the case where $r = \frac{1}{2}$.
+     Consider the case when $r = \frac{1}{2}$.
      <ol type="a">
        <li> Show that if $\pi_i$ is the probability mass function of a stationary distribution, then we must have  $\pi_k = \pi_0 + k (\pi_1 - \pi_0)$ for $k\geq 1$.</li>
        <li> Conclude that a stationary distribution does not exist. </li>
