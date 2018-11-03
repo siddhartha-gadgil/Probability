@@ -44,7 +44,7 @@ object MarkovView {
 
   val matrixBox: Input = input(`type` := "button",
                                value := "New Transition Matrix",
-                               `class` := "input-btn btn btn-primary").render
+                               `class` := "input-btn btn btn-primary", disabled, selected).render
 
   val pathBox: Input = input(`type` := "button",
                              value := "New Path",

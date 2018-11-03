@@ -5924,7 +5924,7 @@ $c_Lprobability_MarkovView$.prototype.init___ = (function() {
   this.intervalId$1 = 0;
   this.logDiv$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag($m_sci_Nil$()).render__Lorg_scalajs_dom_raw_Element();
   this.markovProcess$1 = $m_Lprobability_MarkovProcess$().sparseRandom__I__D__Lprobability_MarkovProcess$FiniteMarkovProcess(this.n__I(), this.prob__D());
-  this.matrixBox$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("button", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("New Transition Matrix", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("input-btn btn btn-primary", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
+  this.matrixBox$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("button", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("New Transition Matrix", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("input-btn btn btn-primary", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().disabled__Lscalatags_generic_AttrPair(), $m_Lscalatags_JsDom$all$().selected__Lscalatags_generic_AttrPair()])).render__Lorg_scalajs_dom_raw_Element();
   this.pathBox$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("button", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("New Path", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().$class__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("input-btn btn btn-primary", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
   this.statesBox$1 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag()).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().type__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("text", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().value__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.n__I(), $m_Lscalatags_JsDom$all$().intAttr__Lscalatags_generic_AttrValue()), $m_Lscalatags_JsDom$all$().size__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("2", $m_Lscalatags_JsDom$all$().stringAttr__Lscalatags_generic_AttrValue())])).render__Lorg_scalajs_dom_raw_Element();
   var jsx$3 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag());
@@ -11424,6 +11424,9 @@ $c_Lscalatags_JsDom$GenericStyle.prototype.$classData = $d_Lscalatags_JsDom$Gene
 function $f_Lscalatags_generic_ClipboardEventAttrs__$$init$__V($thiz) {
   /*<skip>*/
 }
+function $f_Lscalatags_generic_FormEventAttrs__selected__Lscalatags_generic_AttrPair($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("selected", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z()).empty__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($thiz.stringAttrX__Lscalatags_generic_AttrValue())
+}
 function $f_Lscalatags_generic_FormEventAttrs__$$init$__V($thiz) {
   /*<skip>*/
 }
@@ -13952,6 +13955,9 @@ function $m_Lprobability_ProbDist$() {
     $n_Lprobability_ProbDist$ = new $c_Lprobability_ProbDist$().init___()
   };
   return $n_Lprobability_ProbDist$
+}
+function $f_Lscalatags_JsDom$Cap__stringAttrX__Lscalatags_JsDom$GenericAttr($thiz) {
+  return new $c_Lscalatags_JsDom$GenericAttr().init___()
 }
 function $f_Lscalatags_JsDom$Cap__makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag($thiz, tag, $void, namespaceConfig) {
   return new $c_Lscalatags_JsDom$TypedTag().init___T__sci_List__Z__Lscalatags_generic_Namespace(tag, $m_sci_Nil$(), $void, namespaceConfig)
@@ -19991,6 +19997,9 @@ $c_Lscalatags_generic_Attr.prototype.raw__Z = (function() {
 $c_Lscalatags_generic_Attr.prototype.$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair = (function(v, ev) {
   $m_ju_Objects$().requireNonNull__O__O(v);
   return new $c_Lscalatags_generic_AttrPair().init___Lscalatags_generic_Attr__O__Lscalatags_generic_AttrValue(this, v, ev)
+});
+$c_Lscalatags_generic_Attr.prototype.empty__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair = (function(ev) {
+  return this.$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(this.name__T(), ev)
 });
 $c_Lscalatags_generic_Attr.prototype.productPrefix__T = (function() {
   return "Attr"
@@ -31010,6 +31019,9 @@ function $f_sci_Traversable__$$init$__V($thiz) {
 function $f_scm_Traversable__$$init$__V($thiz) {
   /*<skip>*/
 }
+function $f_Lscalatags_generic_Attrs__disabled__Lscalatags_generic_AttrPair($thiz) {
+  return $thiz.attr__T__Lscalatags_generic_Namespace__Z__Lscalatags_generic_Attr("disabled", $thiz.attr$default$2__Lscalatags_generic_Namespace(), $thiz.attr$default$3__Z()).empty__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($thiz.stringAttrX__Lscalatags_generic_AttrValue())
+}
 function $f_Lscalatags_generic_Attrs__$$init$__V($thiz) {
   /*<skip>*/
 }
@@ -37046,6 +37058,9 @@ $c_Lscalatags_JsDom$all$.prototype.stringFrag__T__Lscalatags_JsDom$StringFrag = 
 $c_Lscalatags_JsDom$all$.prototype.intFrag__I__Lscalatags_generic_Frag = (function(v) {
   return $f_Lscalatags_generic_Aggregate__intFrag__I__Lscalatags_generic_Frag(this, v)
 });
+$c_Lscalatags_JsDom$all$.prototype.stringAttrX__Lscalatags_JsDom$GenericAttr = (function() {
+  return $f_Lscalatags_JsDom$Cap__stringAttrX__Lscalatags_JsDom$GenericAttr(this)
+});
 $c_Lscalatags_JsDom$all$.prototype.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag = (function(tag, $void, namespaceConfig) {
   return $f_Lscalatags_JsDom$Cap__makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag(this, tag, $void, namespaceConfig)
 });
@@ -37296,6 +37311,26 @@ $c_Lscalatags_JsDom$all$.prototype.input$lzycompute__p1__Lscalatags_JsDom$TypedT
 $c_Lscalatags_JsDom$all$.prototype.input__Lscalatags_JsDom$TypedTag = (function() {
   return (this.bitmap$1$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(128, 0)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.input$lzycompute__p1__Lscalatags_JsDom$TypedTag() : this.input$1)
 });
+$c_Lscalatags_JsDom$all$.prototype.disabled$lzycompute__p1__Lscalatags_generic_AttrPair = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 4)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.disabled$1 = $f_Lscalatags_generic_Attrs__disabled__Lscalatags_generic_AttrPair(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 4))
+  };
+  return this.disabled$1
+});
+$c_Lscalatags_JsDom$all$.prototype.disabled__Lscalatags_generic_AttrPair = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 4)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.disabled$lzycompute__p1__Lscalatags_generic_AttrPair() : this.disabled$1)
+});
+$c_Lscalatags_JsDom$all$.prototype.selected$lzycompute__p1__Lscalatags_generic_AttrPair = (function() {
+  if (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 268435456)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0))) {
+    this.selected$1 = $f_Lscalatags_generic_FormEventAttrs__selected__Lscalatags_generic_AttrPair(this);
+    this.bitmap$2$1 = this.bitmap$2$1.$$bar__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 268435456))
+  };
+  return this.selected$1
+});
+$c_Lscalatags_JsDom$all$.prototype.selected__Lscalatags_generic_AttrPair = (function() {
+  return (this.bitmap$2$1.$$amp__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I(0, 268435456)).equals__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I(0)) ? this.selected$lzycompute__p1__Lscalatags_generic_AttrPair() : this.selected$1)
+});
 $c_Lscalatags_JsDom$all$.prototype.scalatags$generic$MouseEventAttrs$$undsetter$und$ondrag$und$eq__Lscalatags_generic_Attr__V = (function(x$1) {
   this.ondrag$1 = x$1
 });
@@ -37341,6 +37376,9 @@ $c_Lscalatags_JsDom$all$.prototype.$class__Lscalatags_generic_Attr = (function()
 });
 $c_Lscalatags_JsDom$all$.prototype.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag = (function(tag, $void, namespaceConfig) {
   return this.makeAbstractTypedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_JsDom$TypedTag(tag, $void, namespaceConfig)
+});
+$c_Lscalatags_JsDom$all$.prototype.stringAttrX__Lscalatags_generic_AttrValue = (function() {
+  return this.stringAttrX__Lscalatags_JsDom$GenericAttr()
 });
 $c_Lscalatags_JsDom$all$.prototype.stringFrag__T__Lscalatags_generic_Frag = (function(v) {
   return this.stringFrag__T__Lscalatags_JsDom$StringFrag(v)

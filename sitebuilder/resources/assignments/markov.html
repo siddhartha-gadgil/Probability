@@ -1,0 +1,30 @@
+---
+title: Markov Chains
+date: 2018-11-12
+---
+
+<p> Fix $r\in (0, 1)$. Consider the Markov chain with  state space $S = \{n \in \mathbb{Z}, n \geq 0 \}$ and with transition probabilities $p_{ij}$ given by
+  <ul>
+    <li>$p_{ij} = r$ if $j=i + 1$.  </li>
+    <li>$p_{ij} = 1- r$ if $j = i-1$ or $j = i = 0$.</li>
+    <li>$p_{ij} =0$ in all other cases. </li>
+  </ul>
+</p>
+
+<ol>
+  <li> Show that the Markov chain is <em>irreducible</em> and <em>aperiodic</em>.</li>
+  <li> Consider the case when $r < 1/2$.
+    <ol type="a">
+      <li> Find a stationary distribution for the Markov chain.</li>
+      <li> Conclude that every state is positively recurrent. </li>
+    </ol>
+  </li>
+  <li> For $i \geq 1$, let $P_i$ be the event that $X_i - X_{i-1} = 1$. Show that the events $P_i$ are mutually independent and $P(P_i) = r$ for all $i$.</li>
+  <li> Let $N_i = \sum_{i=1}^n \mathbb{1}_{P_i}$. Assume $X_0 = 0$. Show that if $X_n = 0$ then $N_n \leq n/2$. </li>
+  <li> Consider the case $r > 1/2$.
+    <ol type="a">
+      <li> Show that $N_k - \frac{k}{2} \to \infty$ almost surely.</li>
+      <li> Conclude that every state of the Markov chain is transient. </li>
+    </ol>
+   </li>
+</ol>
