@@ -84,7 +84,7 @@ messageStyle: "none",
       <h2 class="text-center"> Markov Chains </h2>
       <h4 class="text-center"> due by Nov 12, 2018 </h4>
       
-<div> Fix $r\in (0, 1)$. Consider the Markov chain with  state space $S = \{n \in \mathbb{Z}, n \geq 0 \}$ and with transition probabilities $p_{ij}$ given by
+<div> Fix $r\in (0, 1)$. Consider the Markov chain $\{X_n\}$ with  state space $S = \{n \in \mathbb{Z}, n \geq 0 \}$ and with transition probabilities $p_{ij} = P(X_{n+1} = j\vert X_n = i)$ given by
   <ul>
     <li>$p_{ij} = r$ if $j=i + 1$.  </li>
     <li>$p_{ij} = 1- r$ if $j = i-1$ or $j = i = 0$.</li>
@@ -94,11 +94,11 @@ messageStyle: "none",
 
 <div class="row">
 <ol>
-  <li> Show that the Markov chain is <em>irreducible</em> and <em>aperiodic</em>.</li>
+  <li> Show that the Markov chain $\{X_n\}$ is <em>irreducible</em> and <em>aperiodic</em>.</li>
   <li> Consider the case when $r < \frac{1}{2}$.
     <ol type="a">
       <li> Find a stationary distribution for the Markov chain.</li>
-      <li> Conclude that every state is positively recurrent. </li>
+      <li> Conclude that every state is <em>positively recurrent</em>. </li>
     </ol>
   </li>
   <li> For $i \geq 1$, let $P_i$ be the event that $X_i - X_{i-1} = 1$. Show that the events $P_i$ are mutually independent and $Prob(P_i) = r$ for all $i \geq 1$.</li>
@@ -106,15 +106,15 @@ messageStyle: "none",
   <li> Consider the case when $r > \frac{1}{2}$.
     <ol type="a">
       <li> Show that $N_k - \frac{k}{2} \to \infty$ almost surely.</li>
-      <li> Conclude that every state of the Markov chain is transient. </li>
+      <li> Conclude that every state of the Markov chain is <em>transient.</em> </li>
     </ol>
    </li>
    <li>
      Consider the case when $r = \frac{1}{2}$.
      <ol type="a">
        <li> Show that if $\pi_i$ is the probability mass function of a stationary distribution, then we must have  $\pi_k = \pi_0 + k (\pi_1 - \pi_0)$ for $k\geq 1$.</li>
-       <li> Conclude that a stationary distribution does not exist. </li>
-       <li> Show that the Markov chain is recurrent (it is straightforward to modify proofs of the corresponding fact for the balanced random walk on $\mathbb{Z}$). </li>
+       <li> Conclude that a stationary distribution <em>does not</em> exist. </li>
+       <li> Show that the Markov chain is <em>recurrent</em> (it is straightforward to modify proofs of the corresponding fact for the balanced random walk on $\mathbb{Z}$). </li>
      </ol>
    </li>
 </ol>
