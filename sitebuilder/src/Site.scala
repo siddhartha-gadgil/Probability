@@ -495,7 +495,7 @@ object Site {
           Please note the <a href="rules.html">rules</a> for the examination.
         </strong>
       </p>
-      <p>The syllabus includes all the material covered in the course. A rough list of topics is below.</p>
+      <p>The syllabus includes all the material covered in the course. However, most of the weightage will be for topics in the second half of the course. A rough list of topics is below.</p>
       <ul>
         <li><strong>Probablitity</strong>
           <ul>
