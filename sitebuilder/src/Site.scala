@@ -467,8 +467,7 @@ object Site {
     write.over(pwd / "docs" / "index.html", page(home.toString, ""))
 
   lazy val probProblemsBody: String =
-    TeXToHtml.teXConvertor("Probabilityproblemlist")
-    .allReplaced
+    TeXToHtml.teXConvertor("Probabilityproblemlist").allReplaced
 
   val probTop =
     """<h2 class="text-center">Probability problems</h2>
@@ -476,10 +475,9 @@ object Site {
     <div class="text-right"><a href="Probabilityproblemlist.pdf">PDF version</a></div>
     """
 
-  lazy val probPage: String = page(
-    probTop + probProblemsBody, "")
+  lazy val probPage: String = page(probTop + probProblemsBody, "")
 
-  def mkProblems() : Unit =
+  def mkProblems(): Unit =
     write.over(pwd / "docs" / "prob-problems.html", probPage)
 
   val finalExam: Elem =
@@ -491,7 +489,39 @@ object Site {
         <li><strong>Time:</strong> 9:00 am - 12:00 noon</li>
         <li><strong>Venue:</strong> LH-1, Department of Mathematics, IISc </li>
       </ul>
-      <p>The syllabus includes all the material covered in the course.</p>
+      <h3> Syllabus etc</h3>
+      <p>
+        <strong>
+          Please note the <a href="rules.html">rules</a> for the examination.
+        </strong>
+      </p>
+      <p>The syllabus includes all the material covered in the course. A rough list of topics is below.</p>
+      <ul>
+        <li><strong>Probablitity</strong>
+          <ul>
+            <li>Discrete Probability spaces; laws of Probability; combinations of Events. </li>
+          <li> Independence and Conditional Probabilities. </li>
+          <li> Discrete and Continuous distributions;
+            some important distributions: Bernoulli, Binomial, Geometric, Exponential, Cauchy, Poisson.</li>
+          <li> Random variables: Distributions, Independence, Expectation and Variance;
+            conditional distributions and conditional expectation.</li>
+          </ul>
+        </li>
+        <li><strong>Markov Chains</strong>
+        <ul>
+          <li> Classification of States: accesibility, communicating classes, essential states, irreducibility.</li>
+          <li> Transience and recurrence; criteria for recurrence.</li>
+          <li> Null and positive recurrence; stationary distributions.</li>
+          <li> Random walks on integers and tuples of integers: symmetric and assymmetric.</li>
+        </ul></li>
+        <li><strong>Poisson Process</strong>
+          <ul>
+            <li> Counting processes; charactrization of the Poisson process.</li>
+            <li> Associated distributions: Exponential, Poisson, Gamma.</li>
+            <li> Thinning and superposition.</li>
+          </ul>
+        </li>
+      </ul>
     </div>
 
   val midterm: Elem =
@@ -534,11 +564,13 @@ object Site {
     </ul>
     </div>
 
-  def mkMidterm(): Unit = write.over(pwd / "docs" / "midterm.html", page(midterm.toString, ""))
+  def mkMidterm(): Unit =
+    write.over(pwd / "docs" / "midterm.html", page(midterm.toString, ""))
 
-  def mkFinal(): Unit = write.over(pwd / "docs" / "final.html", page(finalExam.toString, ""))
+  def mkFinal(): Unit =
+    write.over(pwd / "docs" / "final.html", page(finalExam.toString, ""))
 
   val rules = read(pwd / "sitebuilder" / "resources" / "rules.html")
 
-  def mkRules(): Unit =  write.over(pwd / "docs" / "rules.html", page(rules, ""))
+  def mkRules(): Unit = write.over(pwd / "docs" / "rules.html", page(rules, ""))
 }
