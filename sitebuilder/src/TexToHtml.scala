@@ -701,7 +701,7 @@ class TeXToHtml(header: String, text: String) {
     chapters.filter(_._1 > 0).mapValues { (chapter) =>
       addTags(purge("""[\{\}]""".r)(
         recReplaceFootnotes(replaceUnderline(replaceBf(refChapters(chapter))))))
-    }
+    }.toMap
 
   lazy val sortedSections: Vector[(Int, String)] =
     sections.toVector.sortBy(_._1)

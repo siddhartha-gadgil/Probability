@@ -260,7 +260,7 @@ object Site {
   def getAss(p: Path): Assignment = {
     val l = ops.read.lines(p).toVector
     val name =
-      titleOpt(l).map(filename).getOrElse(p.name.dropRight(p.ext.length + 1))
+      titleOpt(l).map(filename).getOrElse(p.segments.toVector.last.dropRight(p.ext.length + 1))
     val content = body(l).mkString("\n")
     Assignment(name, content, dateOpt(l), titleOpt(l))
   }

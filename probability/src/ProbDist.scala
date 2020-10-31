@@ -101,7 +101,7 @@ object MarkovProcess {
     FiniteMarkovProcess(succMap)
   }
 
-  def frequencies[S](vec: Vector[S]): Map[S, Int] = vec.groupBy(identity).mapValues(_.size)
+  def frequencies[S](vec: Vector[S]): Map[S, Int] = vec.groupBy(identity).mapValues(_.size).toMap
 
-  def proportions[S](vec: Vector[S]): Option[Map[S, Double]] = if (vec.isEmpty) None else Some(frequencies(vec).mapValues((f) => f.toDouble / vec.size))
+  def proportions[S](vec: Vector[S]): Option[Map[S, Double]] = if (vec.isEmpty) None else Some(frequencies(vec).mapValues((f) => f.toDouble / vec.size).toMap)
 }
